@@ -62,7 +62,7 @@ from datetime import datetime, timedelta, timezone
 # ==================================================================
 
 SCHEMA_VERSION = 3          # 契約§3
-MODEL = "gemini-3.6-flash"  # 契約§3 で指定。他モデルに変えると無料枠の実測値が変わる
+MODEL = "gemini-3.5-flash-lite"  # 契約§3 で指定。他モデルに変えると無料枠の実測値が変わる
 API_BASE = "https://generativelanguage.googleapis.com/v1beta/models"
 
 # 1リクエストにまとめる記事数。
@@ -82,7 +82,7 @@ REQUEST_BUDGET = 30
 MAX_BATCHES = 20
 
 MAX_RETRY = 3               # 契約§3「429/5xxは指数バックオフで最大3回」
-BACKOFF_BASE_SEC = 8.0      # 2秒 → 4秒 → 8秒（指数バックオフ）
+BACKOFF_BASE_SEC = 2.0      # 2秒 → 4秒 → 8秒（指数バックオフ）
 TIMEOUT_SEC = 240           # 生成は時間がかかるのでRSS取得(20秒)より長く取る
 
 # RPM 10（最終検証レポート §1-1）に対して6秒間隔なら毎分10リクエストで収まる。
