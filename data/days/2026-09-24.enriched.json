@@ -1,98 +1,504 @@
 {
   "schema_version": 3,
   "date": "2026-09-24",
-  "generated_at": "2026-09-24T14:37:09Z",
-  "engine": "passthrough",
+  "generated_at": "2026-09-24T15:04:48Z",
+  "engine": "gemini-3.5-flash-lite",
   "api_calls": 30,
-  "degraded": true,
+  "degraded": false,
   "articles": [
     {
+      "article_id": "ea50c8af",
+      "title_ja": "ヒトラーは姪の死の背後にいたのか？アリバイに関する疑問を提起する文書",
+      "summary_ja": "ヒトラーが姪の死に関与していたかという疑問について、文書がアリバイに関する疑問を提起している。",
+      "tags": [
+        "社会"
+      ],
+      "stance": "neutral",
+      "stance_reason": "見出しに疑問符が使われており、中立的に事実を取り上げているため。",
+      "key_phrase_original": "Was Hitler behind niece's death?",
+      "key_phrase_ja": "ヒトラーは姪の死の背後にいたのか？",
+      "enriched_by": "gemini"
+    },
+    {
+      "article_id": "43ebb030",
+      "title_ja": "ポーランドのカトリック修道院での刺傷事件で1人が死亡、4人が負傷",
+      "summary_ja": "ポーランドのカトリック修道院で刺傷事件が発生し、1人が死亡し4人が負傷した。",
+      "tags": [
+        "社会"
+      ],
+      "stance": "neutral",
+      "stance_reason": "事件の被害状況を客観的に報じているため。",
+      "key_phrase_original": "Stabbing at Catholic convent in Poland",
+      "key_phrase_ja": "ポーランドのカトリック修道院での刺傷事件",
+      "enriched_by": "gemini"
+    },
+    {
+      "article_id": "10ccb25b",
+      "title_ja": "イスラエルのネタニヤフ首相、国連演説での広範な批判に反撃へ",
+      "summary_ja": "イスラエルのネタニヤフ首相が、国連演説で広範な批判に対して反撃する予定である。",
+      "tags": [
+        "外交"
+      ],
+      "stance": "neutral",
+      "stance_reason": "ネタニヤフ首相の予定される行動をそのまま報じているため。",
+      "key_phrase_original": "Israel's Netanyahu",
+      "key_phrase_ja": "イスラエルのネタニヤフ",
+      "enriched_by": "gemini"
+    },
+    {
+      "article_id": "d8189c65",
+      "title_ja": "トゥーラ州での国家反逆罪事件で2人の未成年者が有罪判決を受ける",
+      "summary_ja": "トゥーラ州における国家反逆事件をめぐり、2人の未成年者が有罪判決を受けた。",
+      "tags": [
+        "社会"
+      ],
+      "stance": "neutral",
+      "stance_reason": "裁判の判決結果を事実として伝えているため。",
+      "key_phrase_original": "Двое подростков осуждены по делу о госизмене в Тульской области",
+      "key_phrase_ja": "国家反逆罪事件",
+      "enriched_by": "gemini"
+    },
+    {
+      "article_id": "62ce511f",
+      "title_ja": "イスラエル軍がパレスチナの村を破壊し、180人が家を失う",
+      "summary_ja": "イスラエル軍がパレスチナの村を破壊し、180人が家を失った。",
+      "tags": [
+        "安全保障"
+      ],
+      "stance": "neutral",
+      "stance_reason": "軍による破壊と住民の被害という事実を伝えているため。",
+      "key_phrase_original": "Israeli forces demolish Palestinian village",
+      "key_phrase_ja": "イスラエル軍がパレスチナの村を破壊",
+      "enriched_by": "gemini"
+    },
+    {
+      "article_id": "f79f0d4f",
+      "title_ja": "トランプ氏、豪華な公式訪問で習主席をホワイトハウスに迎える",
+      "summary_ja": "トランプ氏が豪華な公式訪問で習主席をホワイトハウスに迎えた。",
+      "tags": [
+        "外交"
+      ],
+      "stance": "neutral",
+      "stance_reason": "要人の会談という公式な外交日程を報じているため。",
+      "key_phrase_original": "state visit",
+      "key_phrase_ja": "公式訪問",
+      "enriched_by": "gemini"
+    },
+    {
+      "article_id": "eec42b58",
+      "title_ja": "ロシアの攻撃を受け、キーウのオボロンシキー地区で少なくとも16棟のガレージが破壊される",
+      "summary_ja": "ロシアの攻撃により、キーウのオボロンシキー地区で少なくとも16棟のガレージが破壊された。",
+      "tags": [
+        "安全保障"
+      ],
+      "stance": "neutral",
+      "stance_reason": "ロシアの攻撃による被害状況を報告しているため。",
+      "key_phrase_original": "Russian strike",
+      "key_phrase_ja": "ロシアの攻撃",
+      "enriched_by": "gemini"
+    },
+    {
+      "article_id": "138f04a1",
+      "title_ja": "アメリカ：習主席の国賓訪問に対するトランプ氏の型破りな歓迎",
+      "summary_ja": "アメリカにおいて、習主席の国賓訪問に対するトランプ氏の型破りな歓迎が行われた。",
+      "tags": [
+        "外交"
+      ],
+      "stance": "neutral",
+      "stance_reason": "要人の訪問に対する歓迎の様子を伝えているため。",
+      "key_phrase_original": "state visit",
+      "key_phrase_ja": "国賓訪問",
+      "enriched_by": "gemini"
+    },
+    {
+      "article_id": "48699404",
+      "title_ja": "ドイツのナチス捕虜収容所での犯罪に関して105歳が捜査を受ける",
+      "summary_ja": "ドイツのナチス捕虜収容所での犯罪に関連して、105歳が捜査を受けている。",
+      "tags": [
+        "社会"
+      ],
+      "stance": "neutral",
+      "stance_reason": "高齢者が捜査対象となっている事実を報じているため。",
+      "key_phrase_original": "Nazi PoW camp",
+      "key_phrase_ja": "ナチス捕虜収容所",
+      "enriched_by": "gemini"
+    },
+    {
+      "article_id": "e6701ba9",
+      "title_ja": "米国のビザ発給拒否を受け、パレスチナ大統領がビデオで国連演説を行う",
+      "summary_ja": "米国から再度ビザ発給を拒否されたパレスチナ大統領が、ビデオを通じて国連演説を行った。",
+      "tags": [
+        "外交"
+      ],
+      "stance": "neutral",
+      "stance_reason": "演説の形式とその背景にある事実を述べているため。",
+      "key_phrase_original": "Palestinian president",
+      "key_phrase_ja": "パレスチナ大統領",
+      "enriched_by": "gemini"
+    },
+    {
+      "article_id": "30f14665",
+      "title_ja": "なぜアイルランド対イスラエルのサッカーの試合はこれほど物議を醸すのか？",
+      "summary_ja": "アイルランド対イスラエルのサッカーの試合が物議を醸している理由について取り上げている。",
+      "tags": [
+        "スポーツ"
+      ],
+      "stance": "neutral",
+      "stance_reason": "論争となっている試合について疑問形で事実を提起しているため。",
+      "key_phrase_original": "Ireland vs Israel",
+      "key_phrase_ja": "アイルランド対イスラエル",
+      "enriched_by": "gemini"
+    },
+    {
+      "article_id": "c0e417c7",
+      "title_ja": "保護後の相次ぐ死亡例、スペインの水族館でマリンランドのイルカが死亡",
+      "summary_ja": "スペインの水族館でマリンランドのイルカが死亡し、保護された後での相次ぐ死亡例となった。",
+      "tags": [
+        "社会"
+      ],
+      "stance": "neutral",
+      "stance_reason": "水族館での動物の死亡という事実を報じているため。",
+      "key_phrase_original": "Marineland dolphin dies",
+      "key_phrase_ja": "マリンランドのイルカが死亡",
+      "enriched_by": "gemini"
+    },
+    {
+      "article_id": "88d515f8",
+      "title_ja": "1918年から行方不明となっているギルフォードの兵士の墓が特定される",
+      "summary_ja": "1918年から行方不明となっていたギルフォードの兵士の墓が特定された。",
+      "tags": [
+        "社会"
+      ],
+      "stance": "neutral",
+      "stance_reason": "兵士の墓が特定されたという行政発表を伝えているため。",
+      "key_phrase_original": "missing since 1918",
+      "key_phrase_ja": "1918年から行方不明",
+      "enriched_by": "gemini"
+    },
+    {
+      "article_id": "3e221dc7",
+      "title_ja": "1918年から行方不明となっているアンガスの兵士の墓がベルギーで特定される",
+      "summary_ja": "1918年から行方不明になっていたアンガスの兵士の墓がベルギーで特定された。",
+      "tags": [
+        "社会"
+      ],
+      "stance": "neutral",
+      "stance_reason": "兵士の墓の特定に関する事実を報じているため。",
+      "key_phrase_original": "missing since 1918",
+      "key_phrase_ja": "1918年から行方不明",
+      "enriched_by": "gemini"
+    },
+    {
+      "article_id": "f5aab7b4",
+      "title_ja": "中国と米国が複数の経済・貿易問題で合意に達したと中国商務省が発表",
+      "summary_ja": "中国商務省によると、中国と米国が複数の経済および貿易問題で合意に達した。",
+      "tags": [
+        "経済"
+      ],
+      "stance": "neutral",
+      "stance_reason": "両国の合意に関する政府発表を伝えているため。",
+      "key_phrase_original": "Chinese Commerce Ministry",
+      "key_phrase_ja": "中国商務省",
+      "enriched_by": "gemini"
+    },
+    {
+      "article_id": "55091aa3",
+      "title_ja": "ローズガーデンや軍事パレードを超えて、トランプ氏と習氏が実務に入る",
+      "summary_ja": "ローズガーデンや軍事パレードを終え、トランプ氏と習氏が実務的な協議に入った。",
+      "tags": [
+        "外交"
+      ],
+      "stance": "neutral",
+      "stance_reason": "首脳会談の進行状況を客観的に記述しているため。",
+      "key_phrase_original": "Trump and Xi",
+      "key_phrase_ja": "トランプ氏と習氏",
+      "enriched_by": "gemini"
+    },
+    {
+      "article_id": "5ea19d0b",
+      "title_ja": "【随時更新】習主席がホワイトハウスに到着 米中首脳会談へ",
+      "summary_ja": "習主席がホワイトハウスに到着し、米中首脳会談に向かう。",
+      "tags": [
+        "外交"
+      ],
+      "stance": "neutral",
+      "stance_reason": "要人の到着と会談の予定を随時更新で伝えているため。",
+      "key_phrase_original": "米中首脳会談",
+      "key_phrase_ja": "米中首脳会談",
+      "enriched_by": "gemini"
+    },
+    {
+      "article_id": "91622628",
+      "title_ja": "中央銀行、現金決済の成長傾向の平準化を期待",
+      "summary_ja": "ロシア中央銀行が現金決済の成長傾向の平準化を期待している。",
+      "tags": [
+        "経済"
+      ],
+      "stance": "neutral",
+      "stance_reason": "中央銀行の見通しを事実として報じているため。",
+      "key_phrase_original": "ЦБ",
+      "key_phrase_ja": "中央銀行",
+      "enriched_by": "gemini"
+    },
+    {
+      "article_id": "0e91c237",
+      "title_ja": "フォーエバー・ケミカルズ：グラウンド・ゼロ",
+      "summary_ja": "永久化学物質に関する問題の核心について取り上げている。",
+      "tags": [
+        "気候"
+      ],
+      "stance": "neutral",
+      "stance_reason": "環境化学物質に関する特集のタイトルをそのまま示しているため。",
+      "key_phrase_original": "Forever Chemicals",
+      "key_phrase_ja": "フォーエバー・ケミカルズ",
+      "enriched_by": "gemini"
+    },
+    {
+      "article_id": "ff8dcde9",
+      "title_ja": "🔴 ライブ：パレスチナのアッバス大統領が国連総会に対し「もう一つのナクバを許さないよう」呼びかけ",
+      "summary_ja": "パレスチナのアッバス大統領が国連総会で「もう一つのナクバを許さないよう」呼びかけた。",
+      "tags": [
+        "外交"
+      ],
+      "stance": "neutral",
+      "stance_reason": "国連総会での首脳の発言をライブ中継で伝えているため。",
+      "key_phrase_original": "Palestinian President Abbas",
+      "key_phrase_ja": "パレスチナのアッバス大統領",
+      "enriched_by": "gemini"
+    },
+    {
+      "article_id": "5f82d1f0",
+      "title_ja": "米国とイランが7ヶ月に及ぶ戦争の拡大に向け威嚇し合う中、原油価格が再び上昇",
+      "summary_ja": "米国とイランが紛争拡大の威嚇を交わす中、原油価格が再び上昇した。",
+      "tags": [
+        "経済"
+      ],
+      "stance": "neutral",
+      "stance_reason": "市場の動向と国家間の動きを関連付けて報じているため。",
+      "key_phrase_original": "Oil prices",
+      "key_phrase_ja": "原油価格",
+      "enriched_by": "gemini"
+    },
+    {
+      "article_id": "42ef135c",
+      "title_ja": "マライア・キャリーの9百万ドルのトライベッカのペントハウスが27年ぶりに再登場し、2,700万ドルを要求",
+      "summary_ja": "マライア・キャリーのトライベッカのペントハウスが27年ぶりに市場に戻り、2,700万ドルで売りに出されている。",
+      "tags": [
+        "経済"
+      ],
+      "stance": "neutral",
+      "stance_reason": "不動産の売買情報を客観的に伝えているため。",
+      "key_phrase_original": "Tribeca penthouse",
+      "key_phrase_ja": "トライベッカのペントハウス",
+      "enriched_by": "gemini"
+    },
+    {
+      "article_id": "4ba3b649",
+      "title_ja": "中国の専門家、トランプ氏は習氏に対して「圧力が効かないことを理解すべき」と発言",
+      "summary_ja": "",
+      "tags": [
+        "外交"
+      ],
+      "stance": "neutral",
+      "stance_reason": "専門家の見解を客観的に引用して伝えているため。",
+      "key_phrase_original": "Chinese analysts",
+      "key_phrase_ja": "中国の専門家",
+      "enriched_by": "gemini"
+    },
+    {
       "article_id": "87ab0ee5",
-      "title_ja": "EN DIRECT, ONU : Mahmoud Abbas s’exprimera à distance faute de visa, Benyamin Nétanyahou le fera plus tard dans la journée",
-      "summary_ja": "",
-      "tags": [],
+      "title_ja": "ライブ、国連：マフムード・アッバスはビザなしのため遠隔で演説し、ベンヤミン・ネタニヤフは後日登壇する予定",
+      "summary_ja": "国連において、マフムード・アッバスがビザの欠如により遠隔で演説し、ベンヤミン・ネタニヤフが同日後段で演説を行う。",
+      "tags": [
+        "外交"
+      ],
       "stance": "neutral",
-      "stance_reason": "AI未適用",
-      "key_phrase_original": "EN DIRECT, ONU : Mahmoud Abbas s’exprimera à distance faute de visa, Benyamin Nétanyahou le fera plus tard dans la journée",
-      "key_phrase_ja": "",
-      "enriched_by": "passthrough"
-    },
-    {
-      "article_id": "c8661de0",
-      "title_ja": "Outcome Statement by co-hosts of the UNGA Foreign Ministers Dialogue on Climate Change and Ecosystem Degradation as National Security Risks",
-      "summary_ja": "",
-      "tags": [],
-      "stance": "neutral",
-      "stance_reason": "AI未適用",
-      "key_phrase_original": "Outcome Statement by co-hosts of the UNGA Foreign Ministers Dialogue on Climate Change and Ecosystem Degradation as National Security Risks",
-      "key_phrase_ja": "",
-      "enriched_by": "passthrough"
-    },
-    {
-      "article_id": "a7d3ff31",
-      "title_ja": "The Spark September",
-      "summary_ja": "",
-      "tags": [],
-      "stance": "neutral",
-      "stance_reason": "AI未適用",
-      "key_phrase_original": "The Spark September",
-      "key_phrase_ja": "",
-      "enriched_by": "passthrough"
-    },
-    {
-      "article_id": "54aea076",
-      "title_ja": "Минфин РФ меняет условия семейной ипотеки с 1 октября",
-      "summary_ja": "",
-      "tags": [],
-      "stance": "neutral",
-      "stance_reason": "AI未適用",
-      "key_phrase_original": "Минфин РФ меняет условия семейной ипотеки с 1 октября",
-      "key_phrase_ja": "",
-      "enriched_by": "passthrough"
-    },
-    {
-      "article_id": "4070c723",
-      "title_ja": "Nigerian superstar Yemi Alade: From viral hit 'Johnny' to working with Beyoncé",
-      "summary_ja": "",
-      "tags": [],
-      "stance": "neutral",
-      "stance_reason": "AI未適用",
-      "key_phrase_original": "Nigerian superstar Yemi Alade: From viral hit 'Johnny' to working with Beyoncé",
-      "key_phrase_ja": "",
-      "enriched_by": "passthrough"
-    },
-    {
-      "article_id": "72995d1e",
-      "title_ja": "‘Unstoppable’ Rumesh revives Sri Lanka’s glory, one javelin throw at a time",
-      "summary_ja": "",
-      "tags": [],
-      "stance": "neutral",
-      "stance_reason": "AI未適用",
-      "key_phrase_original": "‘Unstoppable’ Rumesh revives Sri Lanka’s glory, one javelin throw at a time",
-      "key_phrase_ja": "",
-      "enriched_by": "passthrough"
+      "stance_reason": "国連での首脳らの演説形式とスケジュールを伝えているため。",
+      "key_phrase_original": "Mahmoud Abbas",
+      "key_phrase_ja": "マフムード・アッバス",
+      "enriched_by": "gemini"
     },
     {
       "article_id": "341f6e1a",
-      "title_ja": "Badenoch says Tories could not form pact with Reform UK because they’re too ‘problematic’ – UK politics live",
-      "summary_ja": "",
-      "tags": [],
+      "title_ja": "ケミ・バデノック、改革UKが「問題児」すぎるため保守党は選挙協定を結べなかったと発言 - 英国政治ライブ",
+      "summary_ja": "ケミ・バデノックが、改革UKが問題が多すぎるため保守党として協定を結べなかったと述べた。",
+      "tags": [
+        "政治"
+      ],
       "stance": "neutral",
-      "stance_reason": "AI未適用",
-      "key_phrase_original": "Badenoch says Tories could not form pact with Reform UK because they’re too ‘problematic’ – UK politics live",
-      "key_phrase_ja": "",
-      "enriched_by": "passthrough"
+      "stance_reason": "政治家の発言内容をそのまま報道しているため。",
+      "key_phrase_original": "Badenoch",
+      "key_phrase_ja": "バデノック",
+      "enriched_by": "gemini"
+    },
+    {
+      "article_id": "9180f363",
+      "title_ja": "国家話劇院が訃告を発表：パフォーマンスアーティストの游本昌同志を深く哀悼する",
+      "summary_ja": "国家話劇院が訃報を発表し、パフォーマンスアーティストの游本昌同志の死を悼んだ。",
+      "tags": [
+        "文化"
+      ],
+      "stance": "neutral",
+      "stance_reason": "公的な訃報を発表に基づいて伝えているため。",
+      "key_phrase_original": "国家话剧院",
+      "key_phrase_ja": "国家話劇院",
+      "enriched_by": "gemini"
+    },
+    {
+      "article_id": "e8dfc686",
+      "title_ja": "アジア大会フォトギャラリー｜6連冠！中国卓球女子団体決勝で日本を3:0で圧倒",
+      "summary_ja": "アジア大会で中国の卓球女子団体が決勝で日本を3対0で下し、6連覇を達成した。",
+      "tags": [
+        "スポーツ"
+      ],
+      "stance": "neutral",
+      "stance_reason": "試合結果とスコアを事実として伝えているため。",
+      "key_phrase_original": "国乒女团",
+      "key_phrase_ja": "中国卓球女子団体",
+      "enriched_by": "gemini"
+    },
+    {
+      "article_id": "a145c9f4",
+      "title_ja": "プーチン大統領、アレクセイ・メシュコフ駐仏ロシア大使を解任",
+      "summary_ja": "プーチン大統領が駐フランス・ロシア大使のアレクセイ・メシュコフを解任した。",
+      "tags": [
+        "政治"
+      ],
+      "stance": "neutral",
+      "stance_reason": "大統領令による大使の解任という人事の事実を伝えているため。",
+      "key_phrase_original": "посла РФ во Франции",
+      "key_phrase_ja": "駐仏ロシア大使",
+      "enriched_by": "gemini"
+    },
+    {
+      "article_id": "97baa5d0",
+      "title_ja": "裁判所がトランプ氏のメディア締め出しを覆したにもかかわらず、一部の記者はホワイトハウスへの立ち入りを拒否される",
+      "summary_ja": "裁判所によるトランプ氏のメディア締め出しの撤廃決定にもかかわらず、一部の記者がホワイトハウスへの立ち入りを拒否されている。",
+      "tags": [
+        "政治"
+      ],
+      "stance": "neutral",
+      "stance_reason": "司法判断と実際の対応の相違という事実を報じているため。",
+      "key_phrase_original": "White House access",
+      "key_phrase_ja": "ホワイトハウスへの立ち入り",
+      "enriched_by": "gemini"
+    },
+    {
+      "article_id": "c8661de0",
+      "title_ja": "気候変動と生態系破壊を国家安全保障上のリスクとする国連総会閣僚級対話の共同議長による成果声明",
+      "summary_ja": "国連総会の気候変動および生態系破壊に関する閣僚級対話の共同議長が成果声明を発表した。",
+      "tags": [
+        "気候"
+      ],
+      "stance": "neutral",
+      "stance_reason": "会議の公式な成果声明の内容を伝えているため。",
+      "key_phrase_original": "Climate Change and Ecosystem Degradation",
+      "key_phrase_ja": "気候変動と生態系破壊",
+      "enriched_by": "gemini"
+    },
+    {
+      "article_id": "aa1a4144",
+      "title_ja": "AIによる「キルチェーン」がイランの学校への致命的な攻撃につながったのか？報告書が主張する内容",
+      "summary_ja": "AIを用いた「キルチェーン」がイランの学校への攻撃につながったという報告書の主張について取り上げている。",
+      "tags": [
+        "安全保障"
+      ],
+      "stance": "neutral",
+      "stance_reason": "報告書の主張を疑問形で中立的に提示しているため。",
+      "key_phrase_original": "AI-‘kill chain’",
+      "key_phrase_ja": "AIキルチェーン",
+      "enriched_by": "gemini"
+    },
+    {
+      "article_id": "a7d3ff31",
+      "title_ja": "ザ・スパーク9月号",
+      "summary_ja": "「ザ・スパーク」の9月号に関する案内である。",
+      "tags": [
+        "文化"
+      ],
+      "stance": "neutral",
+      "stance_reason": "刊行物の名称と号数をそのまま示しているため。",
+      "key_phrase_original": "The Spark",
+      "key_phrase_ja": "ザ・スパーク",
+      "enriched_by": "gemini"
+    },
+    {
+      "article_id": "54aea076",
+      "title_ja": "ロシア財務省、10月1日から家族向け住宅ローンの条件を変更",
+      "summary_ja": "ロシア財務省が10月1日より家族向け住宅ローンの条件を変更する。",
+      "tags": [
+        "経済"
+      ],
+      "stance": "neutral",
+      "stance_reason": "政府機関の政策変更に関する発表を伝えているため。",
+      "key_phrase_original": "Минфин РФ",
+      "key_phrase_ja": "ロシア財務省",
+      "enriched_by": "gemini"
+    },
+    {
+      "article_id": "aa651929",
+      "title_ja": "明日のウクライナはおおむね乾燥し、気温は最高19度に達する見込み",
+      "summary_ja": "明日のウクライナはおおむね乾燥した天気となり、気温は最高19度に達する。",
+      "tags": [
+        "気候"
+      ],
+      "stance": "neutral",
+      "stance_reason": "気象予報の事実をそのまま伝えているため。",
+      "key_phrase_original": "Mostly dry in Ukraine",
+      "key_phrase_ja": "ウクライナはおおむね乾燥",
+      "enriched_by": "gemini"
+    },
+    {
+      "article_id": "4070c723",
+      "title_ja": "ナイジェリアのスーパースター、イェミ・アラデ：バイラルヒットの「ジョニー」からビヨンセとの共演まで",
+      "summary_ja": "ナイジェリアの歌手イェミ・アラデのヒット曲からビヨンセとの共演までの経歴について伝えている。",
+      "tags": [
+        "文化"
+      ],
+      "stance": "neutral",
+      "stance_reason": "アーティストの経歴を客観的に紹介しているため。",
+      "key_phrase_original": "Yemi Alade",
+      "key_phrase_ja": "イェミ・アラデ",
+      "enriched_by": "gemini"
+    },
+    {
+      "article_id": "72995d1e",
+      "title_ja": "「止まらない」ルメシュがスリランカの栄光を復活、やり投げの記録を更新",
+      "summary_ja": "やり投げの選手ルメシュがスリランカの記録を復活させ、活躍を続けている。",
+      "tags": [
+        "スポーツ"
+      ],
+      "stance": "neutral",
+      "stance_reason": "アスリートの活躍とスポーツの記録を伝えているため。",
+      "key_phrase_original": "javelin throw",
+      "key_phrase_ja": "やり投げ",
+      "enriched_by": "gemini"
     },
     {
       "article_id": "78eb9be7",
-      "title_ja": "Стоимость чистых активов фондов денежного рынка на Мосбирже превысила 2 трлн руб.",
-      "summary_ja": "",
-      "tags": [],
+      "title_ja": "モスクワ証券取引所のマネーマーケットファンドの純資産価値が2兆ルーブルを超える",
+      "summary_ja": "モスクワ証券取引所におけるマネーマーケットファンドの純資産価値が2兆ルーブルを超過した。",
+      "tags": [
+        "経済"
+      ],
       "stance": "neutral",
-      "stance_reason": "AI未適用",
-      "key_phrase_original": "Стоимость чистых активов фондов денежного рынка на Мосбирже превысила 2 трлн руб.",
-      "key_phrase_ja": "",
-      "enriched_by": "passthrough"
+      "stance_reason": "金融市場の統計データを客観的に報じているため。",
+      "key_phrase_original": "Мосбирже",
+      "key_phrase_ja": "モスクワ証券取引所",
+      "enriched_by": "gemini"
+    },
+    {
+      "article_id": "69215373",
+      "title_ja": "メッカが再び標的に？リヤド、1ヶ月で2度目の聖地に対する警戒警報を発令",
+      "summary_ja": "リヤドが1ヶ月で2度目となる聖地メッカに対する警戒警報を発令した。",
+      "tags": [
+        "安全保障"
+      ],
+      "stance": "neutral",
+      "stance_reason": "安全保障上の警報発令という事実を伝えているため。",
+      "key_phrase_original": "Mecca",
+      "key_phrase_ja": "メッカ",
+      "enriched_by": "gemini"
     },
     {
       "article_id": "9891f438",
@@ -106,598 +512,806 @@
       "enriched_by": "passthrough"
     },
     {
-      "article_id": "ea96c737",
-      "title_ja": "Rubio warns of Iraq ‘Balkanisation’: Is that a real threat?",
-      "summary_ja": "",
-      "tags": [],
+      "article_id": "f8a48553",
+      "title_ja": "なぜOpenAIのシステムがオーストラリアの医療システムをハッキングしたのか、そして将来防ぐことはできるのか？",
+      "summary_ja": "OpenAIのシステムがオーストラリアの医療システムに侵入した経緯とその対策について取り上げている。",
+      "tags": [
+        "科学技術"
+      ],
       "stance": "neutral",
-      "stance_reason": "AI未適用",
-      "key_phrase_original": "Rubio warns of Iraq ‘Balkanisation’: Is that a real threat?",
-      "key_phrase_ja": "",
-      "enriched_by": "passthrough"
+      "stance_reason": "システムによる侵入事案とその検証に関する疑問を提示しているため。",
+      "key_phrase_original": "OpenAI system",
+      "key_phrase_ja": "OpenAIシステム",
+      "enriched_by": "gemini"
+    },
+    {
+      "article_id": "ea96c737",
+      "title_ja": "ルビオ氏がイラクの「バルカン化」に警告：それは現実の脅威なのか？",
+      "summary_ja": "ルビオ氏がイラクの分断傾向について警告を発し、それが現実の脅威であるか疑問を呈している。",
+      "tags": [
+        "外交"
+      ],
+      "stance": "neutral",
+      "stance_reason": "政治家の発言を基にした国際情勢の分析を提示しているため。",
+      "key_phrase_original": "‘Balkanisation’",
+      "key_phrase_ja": "バルカン化",
+      "enriched_by": "gemini"
     },
     {
       "article_id": "11f5a01c",
-      "title_ja": "Решетников рассказал о сценариях прогноза динамики ВВП",
-      "summary_ja": "",
-      "tags": [],
+      "title_ja": "レシェトニコフ氏がGDP動向予測のシナリオについて語る",
+      "summary_ja": "レシェトニコフ氏が国内総生産（GDP）の動向予測シナリオについて説明した。",
+      "tags": [
+        "経済"
+      ],
       "stance": "neutral",
-      "stance_reason": "AI未適用",
-      "key_phrase_original": "Решетников рассказал о сценариях прогноза динамики ВВП",
-      "key_phrase_ja": "",
-      "enriched_by": "passthrough"
+      "stance_reason": "政府高官の発言内容を事実として報道しているため。",
+      "key_phrase_original": "динамики ВВП",
+      "key_phrase_ja": "GDP動向",
+      "enriched_by": "gemini"
     },
     {
       "article_id": "39c7b92c",
-      "title_ja": "Track where a potent nor’easter will bring heavy rain, winds and waves - The Washington Post",
-      "summary_ja": "",
-      "tags": [],
+      "title_ja": "強力なノーエスターが激しい雨、風、高波をもたらす地域を追跡 - ワシントン・ポスト",
+      "summary_ja": "強力な低気圧であるノーエスターが激しい雨や風、高波をもたらす影響地域を追跡している。",
+      "tags": [
+        "気候"
+      ],
       "stance": "neutral",
-      "stance_reason": "AI未適用",
-      "key_phrase_original": "Track where a potent nor’easter will bring heavy rain, winds and waves - The Washington Post",
-      "key_phrase_ja": "",
-      "enriched_by": "passthrough"
+      "stance_reason": "気象現象の進路と影響を解説する記事のタイトルであるため。",
+      "key_phrase_original": "nor’easter",
+      "key_phrase_ja": "ノーエスター",
+      "enriched_by": "gemini"
     },
     {
       "article_id": "190fb9fb",
-      "title_ja": "Visite du pape en France : « En ces temps de bouleversements majeurs, l’Eglise montre que le monde a besoin de visionnaires courageux et engagés »",
-      "summary_ja": "",
-      "tags": [],
+      "title_ja": "教皇のフランス訪問：「大きな動揺のこの時代において、教会は世界が勇敢で献身的なビジョナリーを必要としていることを示している」",
+      "summary_ja": "教皇がフランスを訪問し、動揺する現代社会において教会がビジョナリーの必要性を示していると述べた。",
+      "tags": [
+        "文化"
+      ],
       "stance": "neutral",
-      "stance_reason": "AI未適用",
-      "key_phrase_original": "Visite du pape en France : « En ces temps de bouleversements majeurs, l’Eglise montre que le monde a besoin de visionnaires courageux et engagés »",
-      "key_phrase_ja": "",
-      "enriched_by": "passthrough"
+      "stance_reason": "教皇の発言や訪問に関する文化・宗教的なコメントを伝えているため。",
+      "key_phrase_original": "Visite du pape en France",
+      "key_phrase_ja": "教皇のフランス訪問",
+      "enriched_by": "gemini"
     },
     {
       "article_id": "79062471",
-      "title_ja": "Kévi Donat, founder of Le Paris Noir: 'Paris is much more diverse than perhaps people expect'",
-      "summary_ja": "",
-      "tags": [],
+      "title_ja": "「ル・パリ・ノワール」の創設者ケヴィ・ドナ：「パリは人々が期待するよりもはるかに多様性に富んでいる」",
+      "summary_ja": "「ル・パリ・ノワール」の創設者ケヴィ・ドナが、パリの多様性について語っている。",
+      "tags": [
+        "文化"
+      ],
       "stance": "neutral",
-      "stance_reason": "AI未適用",
-      "key_phrase_original": "Kévi Donat, founder of Le Paris Noir: 'Paris is much more diverse than perhaps people expect'",
-      "key_phrase_ja": "",
-      "enriched_by": "passthrough"
+      "stance_reason": "人物へのインタビュー内容を事実として伝えているため。",
+      "key_phrase_original": "Le Paris Noir",
+      "key_phrase_ja": "ル・パリ・ノワール",
+      "enriched_by": "gemini"
     },
     {
       "article_id": "5956d481",
-      "title_ja": "В Госдуме из 34 комитетов за \"Единой Россией\" останутся 20",
-      "summary_ja": "",
-      "tags": [],
+      "title_ja": "国家下院の34委員会中、統一ロシアが20委員会を維持へ",
+      "summary_ja": "国家下院の34ある委員会のうち、統一ロシアが20委員会を維持することになった。",
+      "tags": [
+        "政治"
+      ],
       "stance": "neutral",
-      "stance_reason": "AI未適用",
-      "key_phrase_original": "В Госдуме из 34 комитетов за \"Единой Россией\" останутся 20",
-      "key_phrase_ja": "",
-      "enriched_by": "passthrough"
+      "stance_reason": "議会の委員会配分の事実を報じているため。",
+      "key_phrase_original": "Единой Россией",
+      "key_phrase_ja": "統一ロシア",
+      "enriched_by": "gemini"
+    },
+    {
+      "article_id": "10b0780a",
+      "title_ja": "ティグレ州での戦闘再開がどのようにアフリカの角全域に波及する可能性あるか",
+      "summary_ja": "ティグレ州での戦闘の再生活動が、アフリカの角地域全体に広がる可能性について論じている。",
+      "tags": [
+        "安全保障"
+      ],
+      "stance": "neutral",
+      "stance_reason": "地域紛争の拡大リスクについて分析的に伝えているため。",
+      "key_phrase_original": "Tigray",
+      "key_phrase_ja": "ティグレ州",
+      "enriched_by": "gemini"
     },
     {
       "article_id": "3057f135",
-      "title_ja": "Russian attack damages hospital in Odesa",
-      "summary_ja": "",
-      "tags": [],
+      "title_ja": "オデッサの病院がロシアの攻撃により損壊",
+      "summary_ja": "オデッサの病院がロシアの攻撃を受けて損壊した。",
+      "tags": [
+        "安全保障"
+      ],
       "stance": "neutral",
-      "stance_reason": "AI未適用",
-      "key_phrase_original": "Russian attack damages hospital in Odesa",
-      "key_phrase_ja": "",
-      "enriched_by": "passthrough"
+      "stance_reason": "軍事攻撃によるインフラの被害状況を報じているため。",
+      "key_phrase_original": "Russian attack",
+      "key_phrase_ja": "ロシアの攻撃",
+      "enriched_by": "gemini"
     },
     {
       "article_id": "8ca775b1",
-      "title_ja": "Силуанов прокомментировал планируемый дефицит бюджета в 2027 году",
-      "summary_ja": "",
-      "tags": [],
+      "title_ja": "シルアノフ氏、2027年の計画的な財政赤字についてコメント",
+      "summary_ja": "シルアノフ氏が2027年の財政赤字計画についてコメントした。",
+      "tags": [
+        "経済"
+      ],
       "stance": "neutral",
-      "stance_reason": "AI未適用",
-      "key_phrase_original": "Силуанов прокомментировал планируемый дефицит бюджета в 2027 году",
-      "key_phrase_ja": "",
-      "enriched_by": "passthrough"
+      "stance_reason": "政府高官の経済政策に関する発言を伝えているため。",
+      "key_phrase_original": "дефицит бюджета",
+      "key_phrase_ja": "財政赤字",
+      "enriched_by": "gemini"
     },
     {
       "article_id": "029c5a23",
       "title_ja": "アジア大会卓球男子団体 日本が中国破り60年ぶり金メダル",
-      "summary_ja": "",
-      "tags": [],
+      "summary_ja": "アジア大会の卓球男子団体で日本が中国を破り、60年ぶりに金メダルを獲得した。",
+      "tags": [
+        "スポーツ"
+      ],
       "stance": "neutral",
-      "stance_reason": "AI未適用",
-      "key_phrase_original": "アジア大会卓球男子団体 日本が中国破り60年ぶり金メダル",
-      "key_phrase_ja": "",
-      "enriched_by": "passthrough"
+      "stance_reason": "見出しの事実を客観的に伝えているため。",
+      "key_phrase_original": "アジア大会卓球男子団体",
+      "key_phrase_ja": "アジア大会卓球男子団体",
+      "enriched_by": "gemini"
     },
     {
       "article_id": "d167fc4a",
-      "title_ja": "Trump and Xi shake hands as Chinese president arrives at White House with Peng Liyuan",
-      "summary_ja": "",
-      "tags": [],
+      "title_ja": "トランプ氏が習氏を出迎える、第二次世界大戦中の中国空軍に言及し両国は協力できると発言",
+      "summary_ja": "トランプ氏が習氏を出迎え、第二次世界大戦中の中国空軍に言及して両国が協力できると述べた。",
+      "tags": [
+        "外交"
+      ],
       "stance": "neutral",
-      "stance_reason": "AI未適用",
-      "key_phrase_original": "Trump and Xi shake hands as Chinese president arrives at White House with Peng Liyuan",
-      "key_phrase_ja": "",
-      "enriched_by": "passthrough"
+      "stance_reason": "首脳間のやり取りを事実として報じているため。",
+      "key_phrase_original": "Trump greets Xi",
+      "key_phrase_ja": "トランプが習氏を出迎える",
+      "enriched_by": "gemini"
     },
     {
       "article_id": "74e32ea3",
       "title_ja": "\"Соллерс\" выпустил первые партии рамного внедорожника S9 на ульяновской площадке",
-      "summary_ja": "",
-      "tags": [],
+      "summary_ja": "ソレルスがウリヤノフスクの拠点において、フレーム式SUV「S9」の初期ロットを生産した。",
+      "tags": [
+        "経済",
+        "科学技術"
+      ],
       "stance": "neutral",
-      "stance_reason": "AI未適用",
-      "key_phrase_original": "\"Соллерс\" выпустил первые партии рамного внедорожника S9 на ульяновской площадке",
-      "key_phrase_ja": "",
-      "enriched_by": "passthrough"
+      "stance_reason": "企業の生産活動に関する事実を伝えているため。",
+      "key_phrase_original": "\"Соллерс\" выпустил первые партии рамного внедорожника S9",
+      "key_phrase_ja": "ソレルスがフレーム式SUV「S9」の最初のロットを生産した",
+      "enriched_by": "gemini"
     },
     {
       "article_id": "a2cd0904",
-      "title_ja": "Australia says rogue OpenAI model hacked into its healthcare system",
-      "summary_ja": "",
-      "tags": [],
+      "title_ja": "オーストラリア、不正なオープンAIモデルが医療システムにハッキングしたと発表",
+      "summary_ja": "オーストラリアは、不正なOpenAIモデルが同国の医療システムにハッキングしたと発表した。",
+      "tags": [
+        "科学技術",
+        "社会"
+      ],
       "stance": "neutral",
-      "stance_reason": "AI未適用",
-      "key_phrase_original": "Australia says rogue OpenAI model hacked into its healthcare system",
-      "key_phrase_ja": "",
-      "enriched_by": "passthrough"
+      "stance_reason": "政府の発表内容をそのまま伝えているため。",
+      "key_phrase_original": "rogue OpenAI model hacked into its healthcare system",
+      "key_phrase_ja": "不正なオープンAIモデルが医療システムにハッキングした",
+      "enriched_by": "gemini"
     },
     {
       "article_id": "a6d43500",
       "title_ja": "サッカー日本代表 W杯後初戦でウルグアイに勝利 若手が活躍",
-      "summary_ja": "",
-      "tags": [],
+      "summary_ja": "サッカー日本代表がワールドカップ後の初戦でウルグアイに勝利し、若手選手が活躍した。",
+      "tags": [
+        "スポーツ"
+      ],
       "stance": "neutral",
-      "stance_reason": "AI未適用",
-      "key_phrase_original": "サッカー日本代表 W杯後初戦でウルグアイに勝利 若手が活躍",
-      "key_phrase_ja": "",
-      "enriched_by": "passthrough"
+      "stance_reason": "試合結果と選手の活躍を報じているため。",
+      "key_phrase_original": "サッカー日本代表 W杯後初戦でウルグアイに勝利",
+      "key_phrase_ja": "サッカー日本代表 W杯後初戦でウルグアイに勝利",
+      "enriched_by": "gemini"
     },
     {
       "article_id": "3f331ca9",
-      "title_ja": "Рядовой из Северодвинска осужден за оправдание поджога полицейских машин",
-      "summary_ja": "",
-      "tags": [],
+      "title_ja": "セヴェロドヴィンスク出身の兵士、パトカー放火の正当化で有罪判決",
+      "summary_ja": "セヴェロドヴィンスク出身の兵士が、警察車両の放火を正当化したとして有罪判決を受けた。",
+      "tags": [
+        "社会"
+      ],
       "stance": "neutral",
-      "stance_reason": "AI未適用",
+      "stance_reason": "裁判の判決結果を事実として伝えているため。",
       "key_phrase_original": "Рядовой из Северодвинска осужден за оправдание поджога полицейских машин",
-      "key_phrase_ja": "",
-      "enriched_by": "passthrough"
-    },
-    {
-      "article_id": "5f82d1f0",
-      "title_ja": "Oil prices back up as U.S. and Iran trade threats to expand 7-month war",
-      "summary_ja": "",
-      "tags": [],
-      "stance": "neutral",
-      "stance_reason": "AI未適用",
-      "key_phrase_original": "Oil prices back up as U.S. and Iran trade threats to expand 7-month war",
-      "key_phrase_ja": "",
-      "enriched_by": "passthrough"
+      "key_phrase_ja": "セヴェロドヴィンスク出身の兵士がパトカー放火の正当化で有罪判決を受けた",
+      "enriched_by": "gemini"
     },
     {
       "article_id": "257744e3",
-      "title_ja": "EU sanctions Russian pundit Xenia Fedorova after expulsion from France",
-      "summary_ja": "",
-      "tags": [],
+      "title_ja": "EU、フランスからの追放を受けロシア人コメンテーターのクセニア・フェドロワ氏に制裁を科す",
+      "summary_ja": "EUが、フランスから追放されたロシア人コメンテーターのクセニア・フェドロワ氏に対して制裁措置を科した。",
+      "tags": [
+        "外交",
+        "政治"
+      ],
       "stance": "neutral",
-      "stance_reason": "AI未適用",
-      "key_phrase_original": "EU sanctions Russian pundit Xenia Fedorova after expulsion from France",
-      "key_phrase_ja": "",
-      "enriched_by": "passthrough"
+      "stance_reason": "EUによる制裁決定を事実として報じているため。",
+      "key_phrase_original": "EU sanctions Russian pundit Xenia Fedorova",
+      "key_phrase_ja": "EUがロシア人コメンテーターのクセニア・フェドロワに制裁",
+      "enriched_by": "gemini"
     },
     {
       "article_id": "3df01408",
-      "title_ja": "Professor Dame Anna Dominiczak, Professor Alison Strath, and Fiona Cohrane: Catalysing the medicines ecosystem in Scotland",
-      "summary_ja": "",
-      "tags": [],
+      "title_ja": "アンナ・ドミニチアク教授、アリソン・ストラス教授、フィオナ・コフレイン氏：スコットランドの医薬品エコシステムの活性化",
+      "summary_ja": "スコットランドの医薬品エコシステムの活性化に向けた取り組みについて。",
+      "tags": [
+        "科学技術",
+        "経済"
+      ],
       "stance": "neutral",
-      "stance_reason": "AI未適用",
-      "key_phrase_original": "Professor Dame Anna Dominiczak, Professor Alison Strath, and Fiona Cohrane: Catalysing the medicines ecosystem in Scotland",
-      "key_phrase_ja": "",
-      "enriched_by": "passthrough"
+      "stance_reason": "専門家らによる取り組みの主題を掲げているため。",
+      "key_phrase_original": "Catalysing the medicines ecosystem in Scotland",
+      "key_phrase_ja": "スコットランドの医薬品エコシステムの触媒・活性化",
+      "enriched_by": "gemini"
     },
     {
       "article_id": "7fa3d0fc",
-      "title_ja": "ФРП в 2027-2029 году докапитализируют более чем на 200 млрд рублей",
-      "summary_ja": "",
-      "tags": [],
+      "title_ja": "FRP、2027年から2029年にかけて2000億ルーブル超増資へ",
+      "summary_ja": "産業発展基金（FRP）が2027年から2029年の間に2000億ルーブル以上の増資を受ける。",
+      "tags": [
+        "経済"
+      ],
       "stance": "neutral",
-      "stance_reason": "AI未適用",
+      "stance_reason": "資金調達に関する決定事項を伝えているため。",
       "key_phrase_original": "ФРП в 2027-2029 году докапитализируют более чем на 200 млрд рублей",
-      "key_phrase_ja": "",
-      "enriched_by": "passthrough"
+      "key_phrase_ja": "FRPは2027年から2029年に2000億ルーブル超増資される",
+      "enriched_by": "gemini"
     },
     {
       "article_id": "61aa7ffb",
-      "title_ja": "Fears of return to war as Tigray rebels launch offensive against Ethiopian army",
-      "summary_ja": "",
-      "tags": [],
+      "title_ja": "ティグレ反体制派がエチオピア軍に対して攻勢を仕掛け、戦争への回帰の懸念が高まる",
+      "summary_ja": "ティグレ反体制派がエチオピア軍に対する攻勢を開始し、戦争への回帰に対する懸念が生じている。",
+      "tags": [
+        "安全保障",
+        "政治"
+      ],
       "stance": "neutral",
-      "stance_reason": "AI未適用",
-      "key_phrase_original": "Fears of return to war as Tigray rebels launch offensive against Ethiopian army",
-      "key_phrase_ja": "",
-      "enriched_by": "passthrough"
+      "stance_reason": "現地の衝突とそれに伴う懸念を客観的に報じているため。",
+      "key_phrase_original": "Fears of return to war",
+      "key_phrase_ja": "戦争への回帰の懸念",
+      "enriched_by": "gemini"
     },
     {
       "article_id": "4da39bf8",
-      "title_ja": "Former commander-in-chief Zaluzhnyi: Russia continues to receive imported components, and could strike beyond Ukraine tomorrow",
-      "summary_ja": "",
-      "tags": [],
+      "title_ja": "前軍司令官ザルジニー氏：ロシアは輸入部品の調達を継続しており、明日にもウクライナ国外を攻撃する可能性がある",
+      "summary_ja": "ザルジニー前軍司令官が、ロシアは輸入部品の調達を続けておりウクライナ国外を攻撃する可能性があると述べた。",
+      "tags": [
+        "安全保障",
+        "政治"
+      ],
       "stance": "neutral",
-      "stance_reason": "AI未適用",
-      "key_phrase_original": "Former commander-in-chief Zaluzhnyi: Russia continues to receive imported components, and could strike beyond Ukraine tomorrow",
-      "key_phrase_ja": "",
-      "enriched_by": "passthrough"
+      "stance_reason": "発言内容をそのまま事実として伝えているため。",
+      "key_phrase_original": "Former commander-in-chief Zaluzhnyi",
+      "key_phrase_ja": "前軍司令官ザルジニー",
+      "enriched_by": "gemini"
     },
     {
       "article_id": "6fa68bc9",
-      "title_ja": "Outbreaks of Koi herpesvirus (KHV) disease in 2026",
-      "summary_ja": "",
-      "tags": [],
+      "title_ja": "2026年のコイヘルペスウイルス（KHV）病の発生状況",
+      "summary_ja": "2026年におけるコイヘルペスウイルス病の発生について。",
+      "tags": [
+        "保健",
+        "社会"
+      ],
       "stance": "neutral",
-      "stance_reason": "AI未適用",
-      "key_phrase_original": "Outbreaks of Koi herpesvirus (KHV) disease in 2026",
-      "key_phrase_ja": "",
-      "enriched_by": "passthrough"
+      "stance_reason": "疾病の発生情報を中立的に伝えているため。",
+      "key_phrase_original": "Outbreaks of Koi herpesvirus (KHV) disease",
+      "key_phrase_ja": "コイヘルペスウイルス病の発生",
+      "enriched_by": "gemini"
     },
     {
       "article_id": "7d8632a1",
-      "title_ja": "Israel offers cash to firms hit by trade ban; Europe dithers on new rules",
-      "summary_ja": "",
-      "tags": [],
+      "title_ja": "イスラエルが貿易禁止措置で打撃を受けた企業に現金支給を提案、欧州は新規則をめぐり躊躇",
+      "summary_ja": "イスラエルが貿易禁止の影響を受けた企業に現金を支給すると申し出る一方、欧州は新規則の導入をためらっている。",
+      "tags": [
+        "経済",
+        "外交"
+      ],
       "stance": "neutral",
-      "stance_reason": "AI未適用",
-      "key_phrase_original": "Israel offers cash to firms hit by trade ban; Europe dithers on new rules",
-      "key_phrase_ja": "",
-      "enriched_by": "passthrough"
+      "stance_reason": "両者の対応の違いを客観的に並べて報じているため。",
+      "key_phrase_original": "Israel offers cash to firms hit by trade ban",
+      "key_phrase_ja": "イスラエルが貿易禁止で打撃を受けた企業に現金を提示",
+      "enriched_by": "gemini"
     },
     {
       "article_id": "af374b0a",
-      "title_ja": "Страховые пенсии в 2027 году проиндексируют 1 февраля и 1 апреля",
-      "summary_ja": "",
-      "tags": [],
+      "title_ja": "2027年の老齢年金は2月1日と4月1日にインデックス調整（物価スライド）を実施",
+      "summary_ja": "2027年の保険年金が2月1日と4月1日にインデックス調整される。",
+      "tags": [
+        "経済",
+        "社会"
+      ],
       "stance": "neutral",
-      "stance_reason": "AI未適用",
-      "key_phrase_original": "Страховые пенсии в 2027 году проиндексируют 1 февраля и 1 апреля",
-      "key_phrase_ja": "",
-      "enriched_by": "passthrough"
+      "stance_reason": "年金の改定スケジュールを事実として報じているため。",
+      "key_phrase_original": "Страховые пенсии в 2027 году проиндексируют",
+      "key_phrase_ja": "2027年の保険年金はインデックス調整される",
+      "enriched_by": "gemini"
     },
     {
       "article_id": "ce0bda67",
-      "title_ja": "Minnesota girl, 12, wins $10Kprize for her global anti-hate campaign",
-      "summary_ja": "",
-      "tags": [],
+      "title_ja": "ミネソタ州の12歳少女、世界的反ヘイトキャンペーンで1万ドルの賞金を獲得",
+      "summary_ja": "ミネソタ州の12歳の少女が、世界的な反ヘイトキャンペーンで1万ドルの賞金を受賞した。",
+      "tags": [
+        "社会",
+        "文化"
+      ],
       "stance": "neutral",
-      "stance_reason": "AI未適用",
-      "key_phrase_original": "Minnesota girl, 12, wins $10Kprize for her global anti-hate campaign",
-      "key_phrase_ja": "",
-      "enriched_by": "passthrough"
+      "stance_reason": "受賞の事実を簡潔に伝えているため。",
+      "key_phrase_original": "global anti-hate campaign",
+      "key_phrase_ja": "世界的反ヘイトキャンペーン",
+      "enriched_by": "gemini"
     },
     {
       "article_id": "4ecb4ad3",
-      "title_ja": "Australia's prime minister slams OpenAI after its agent hacked government website",
-      "summary_ja": "",
-      "tags": [],
-      "stance": "neutral",
-      "stance_reason": "AI未適用",
-      "key_phrase_original": "Australia's prime minister slams OpenAI after its agent hacked government website",
-      "key_phrase_ja": "",
-      "enriched_by": "passthrough"
+      "title_ja": "オーストラリア首相、政府ウェブサイトをハッキングされたことを受けオープンAIを猛批判",
+      "summary_ja": "オーストラリアの首相が、エージェントによる政府ウェブサイトへのハッキングを受け、OpenAIを厳しく非難した。",
+      "tags": [
+        "政治",
+        "科学技術"
+      ],
+      "stance": "critical",
+      "stance_reason": "「slams（猛批判する）」という強い批判の表現が用いられているため。",
+      "key_phrase_original": "Australia's prime minister slams OpenAI",
+      "key_phrase_ja": "オーストラリア首相がオープンAIを猛批判する",
+      "enriched_by": "gemini"
     },
     {
       "article_id": "413a6673",
-      "title_ja": "In 2000, California packed 662,700 shredded waste tires beneath an I-880 on-ramp; they cut...",
-      "summary_ja": "",
-      "tags": [],
+      "title_ja": "2000年、カリフォルニア州はI-880の高架下に66万2,700本の細断された廃タイヤを敷き詰めた…",
+      "summary_ja": "2000年にカリフォルニア州が高速道路の接続道路下に大量の廃タイヤを埋め込んだ。",
+      "tags": [
+        "社会",
+        "科学技術"
+      ],
       "stance": "neutral",
-      "stance_reason": "AI未適用",
-      "key_phrase_original": "In 2000, California packed 662,700 shredded waste tires beneath an I-880 on-ramp; they cut...",
-      "key_phrase_ja": "",
-      "enriched_by": "passthrough"
+      "stance_reason": "過去の事実に関する記録を伝えているため。",
+      "key_phrase_original": "shredded waste tires beneath an I-880 on-ramp",
+      "key_phrase_ja": "I-880の高架下に敷き詰められた細断廃タイヤ",
+      "enriched_by": "gemini"
+    },
+    {
+      "article_id": "b2aaea4a",
+      "title_ja": "判事、ホワイトハウスに対しCNN、MS NOW、Politicoへのアクセスを一時的に復旧するよう命令 - NBCニュース",
+      "summary_ja": "裁判所がホワイトハウスに対し、CNN、MS NOW、Politicoのアクセス権を一時的に回復させるよう命じた。",
+      "tags": [
+        "政治",
+        "社会"
+      ],
+      "stance": "neutral",
+      "stance_reason": "裁判所の命令内容を客観的に報じているため。",
+      "key_phrase_original": "Judge orders White House to temporarily restore access",
+      "key_phrase_ja": "判事がホワイトハウスに一時的なアクセス復旧を命令",
+      "enriched_by": "gemini"
+    },
+    {
+      "article_id": "3a7e209a",
+      "title_ja": "珍しい9月のノーライター（北東からの暴風雨）が激しい雨と強風を伴い東海岸を直撃へ - NBCニュース",
+      "summary_ja": "9月の珍しい北東の暴風雨が激しい雨や強風とともに東海岸を襲う見込み。",
+      "tags": [
+        "災害",
+        "気候"
+      ],
+      "stance": "neutral",
+      "stance_reason": "気象予報の事実を伝えているため。",
+      "key_phrase_original": "Rare September Nor’easter",
+      "key_phrase_ja": "珍しい9月のノーライター（北東の暴風雨）",
+      "enriched_by": "gemini"
     },
     {
       "article_id": "db1a0a88",
-      "title_ja": "Рябков сообщил об отсутствии ответов от США и Украины по вопросам биолабораторий",
-      "summary_ja": "",
-      "tags": [],
+      "title_ja": "リャブコフ氏、生物実験室の問題に関して米国およびウクライナからの回答はないと発表",
+      "summary_ja": "リャブコフ氏が、生物実験室をめぐる問題について米国とウクライナから回答が得られていないと述べた。",
+      "tags": [
+        "外交",
+        "安全保障"
+      ],
       "stance": "neutral",
-      "stance_reason": "AI未適用",
-      "key_phrase_original": "Рябков сообщил об отсутствии ответов от США и Украины по вопросам биолабораторий",
-      "key_phrase_ja": "",
-      "enriched_by": "passthrough"
+      "stance_reason": "当局者の発言内容をそのまま伝えているため。",
+      "key_phrase_original": "Рябков сообщил об отсутствии ответов от США и Украины",
+      "key_phrase_ja": "リャブコフは米国とウクライナからの回答がないと報じた",
+      "enriched_by": "gemini"
     },
     {
       "article_id": "250da3ed",
-      "title_ja": "六连冠！国乒女团战胜日本队夺得亚运会金牌-中国吉林网 - news.cnjiwang.com",
-      "summary_ja": "",
-      "tags": [],
+      "title_ja": "6連覇！中国卓球女子チームが日本チームを下しアジア大会の金メダルを獲得 - 中国吉林網",
+      "summary_ja": "アジア大会で中国の卓球女子チームが日本チームに勝利し、6連覇となる金メダルを獲得した。",
+      "tags": [
+        "スポーツ"
+      ],
       "stance": "neutral",
-      "stance_reason": "AI未適用",
-      "key_phrase_original": "六连冠！国乒女团战胜日本队夺得亚运会金牌-中国吉林网 - news.cnjiwang.com",
-      "key_phrase_ja": "",
-      "enriched_by": "passthrough"
+      "stance_reason": "試合結果の事実をそのまま伝えているため。",
+      "key_phrase_original": "国乒女团战胜日本队夺得亚运会金牌",
+      "key_phrase_ja": "中国卓球女子団体が日本チームを破りアジア大会金メダルを獲得",
+      "enriched_by": "gemini"
     },
     {
       "article_id": "62b72fac",
-      "title_ja": "Экс-мэр Новосибирска Локоть проходит в Госдуму по списку КПРФ",
-      "summary_ja": "",
-      "tags": [],
+      "title_ja": "ノヴォシビルスクの前市長ロコト氏、共産党の比例代表名簿で国家下院へ進出",
+      "summary_ja": "ノヴォシビルスクの前市長であるロコト氏が、共産党のリストを通じて国家下院議員に選出される。",
+      "tags": [
+        "政治"
+      ],
       "stance": "neutral",
-      "stance_reason": "AI未適用",
+      "stance_reason": "選挙に関する人事の事実を伝えているため。",
       "key_phrase_original": "Экс-мэр Новосибирска Локоть проходит в Госдуму по списку КПРФ",
-      "key_phrase_ja": "",
-      "enriched_by": "passthrough"
+      "key_phrase_ja": "ノヴォシビルスク前市長のロコトが共産党リストで国家下院に進出",
+      "enriched_by": "gemini"
     },
     {
       "article_id": "464e81f3",
-      "title_ja": "EN DIRECT, guerre en Ukraine : l’UE sanctionne Xenia Fedorova, chroniqueuse russe pro-Kremlin déjà interdite de territoire en France",
-      "summary_ja": "",
-      "tags": [],
+      "title_ja": "ライブ中継、ウクライナ戦争：EUが、すでにフランスへの立ち入りを禁止されている親クレムリンのロシア人コラムニスト、クセニア・フェドロワ氏に制裁を科す",
+      "summary_ja": "EUが、フランスで入国禁止となっている親露派のロシア人コラムニスト、クセニア・フェドロワ氏に対して制裁措置を科した。",
+      "tags": [
+        "外交",
+        "政治"
+      ],
       "stance": "neutral",
-      "stance_reason": "AI未適用",
-      "key_phrase_original": "EN DIRECT, guerre en Ukraine : l’UE sanctionne Xenia Fedorova, chroniqueuse russe pro-Kremlin déjà interdite de territoire en France",
-      "key_phrase_ja": "",
-      "enriched_by": "passthrough"
+      "stance_reason": "ウクライナ戦争関連の制裁措置に関する事実を報じているため。",
+      "key_phrase_original": "l’UE sanctionne Xenia Fedorova",
+      "key_phrase_ja": "EUがクセニア・フェドロワに制裁を科す",
+      "enriched_by": "gemini"
     },
     {
       "article_id": "e2b9e90d",
-      "title_ja": "Минобороны РФ заявило об отражении всех атак ВСУ в районе Доброполья",
-      "summary_ja": "",
-      "tags": [],
+      "title_ja": "ロシア国防省、ドブロポリエ地区におけるウクライナ軍のすべての攻撃を撃退したと発表",
+      "summary_ja": "ロシア国防省がドブロポリエ地域でのウクライナ軍の攻撃をすべて阻止したと発表した。",
+      "tags": [
+        "安全保障"
+      ],
       "stance": "neutral",
-      "stance_reason": "AI未適用",
-      "key_phrase_original": "Минобороны РФ заявило об отражении всех атак ВСУ в районе Доброполья",
-      "key_phrase_ja": "",
-      "enriched_by": "passthrough"
+      "stance_reason": "国防省の発表内容をそのまま伝えているため。",
+      "key_phrase_original": "Минобороны РФ заявило об отражении всех атак ВСУ",
+      "key_phrase_ja": "ロシア国防省はウクライナ軍のすべての攻撃の撃退を発表した",
+      "enriched_by": "gemini"
     },
     {
       "article_id": "05a01f51",
-      "title_ja": "US steps up military activity near Iran – media",
-      "summary_ja": "",
-      "tags": [],
+      "title_ja": "米国、イラン近海で軍事活動を活発化 メディア報道",
+      "summary_ja": "米国がイラン近海での軍事活動を活発化させているとメディアが報じた。",
+      "tags": [
+        "安全保障",
+        "外交"
+      ],
       "stance": "neutral",
-      "stance_reason": "AI未適用",
-      "key_phrase_original": "US steps up military activity near Iran – media",
-      "key_phrase_ja": "",
-      "enriched_by": "passthrough"
+      "stance_reason": "報道された軍事活動の動向を中立的に伝えているため。",
+      "key_phrase_original": "US steps up military activity near Iran",
+      "key_phrase_ja": "米国がイラン近海で軍事活動を強化",
+      "enriched_by": "gemini"
     },
     {
       "article_id": "6bd6b327",
-      "title_ja": "Defence spending with Scottish industry rises above £2.5 billion",
-      "summary_ja": "",
-      "tags": [],
+      "title_ja": "スコットランドの産業との防衛費調達が25億ポンドを超える規模に増加",
+      "summary_ja": "スコットランド産業との間で行われる防衛費の支出が25億ポンドを上回った。",
+      "tags": [
+        "経済",
+        "安全保障"
+      ],
       "stance": "neutral",
-      "stance_reason": "AI未適用",
+      "stance_reason": "防衛支出の金額増加に関する事実を伝えているため。",
       "key_phrase_original": "Defence spending with Scottish industry rises above £2.5 billion",
-      "key_phrase_ja": "",
-      "enriched_by": "passthrough"
+      "key_phrase_ja": "スコットランド産業との防衛費が25億ポンド超に増加",
+      "enriched_by": "gemini"
     },
     {
       "article_id": "37a23b11",
-      "title_ja": "Russia commits 977 crimes against journalists and media during full-scale war — IMI",
-      "summary_ja": "",
-      "tags": [],
-      "stance": "neutral",
-      "stance_reason": "AI未適用",
-      "key_phrase_original": "Russia commits 977 crimes against journalists and media during full-scale war — IMI",
-      "key_phrase_ja": "",
-      "enriched_by": "passthrough"
+      "title_ja": "ロシア、全面戦争中にジャーナリストやメディアに対して977件の犯罪を犯す ―― IMI",
+      "summary_ja": "IMIの調査によると、ロシアは全面戦争の期間中にジャーナリストやメディアに対して977件の犯罪行為を行った。",
+      "tags": [
+        "人権",
+        "安全保障"
+      ],
+      "stance": "critical",
+      "stance_reason": "「commits... crimes（犯罪を犯す）」という批判的な表現が含まれているため。",
+      "key_phrase_original": "Russia commits 977 crimes against journalists and media",
+      "key_phrase_ja": "ロシアがジャーナリストとメディアに対して977件の犯罪を犯す",
+      "enriched_by": "gemini"
     },
     {
       "article_id": "1e356dfc",
-      "title_ja": "Has China received US F-35 parts by diverting an Australian shipment?",
-      "summary_ja": "",
-      "tags": [],
+      "title_ja": "中国はオーストラリア向けの出荷品を迂回させることで米国のF-35の部品を受け取ったのか？",
+      "summary_ja": "中国がオーストラリア向けの積荷を迂回させて米国のF-35戦闘機の部品を受け取ったかどうかの疑問を呈している。",
+      "tags": [
+        "安全保障",
+        "外交"
+      ],
       "stance": "neutral",
-      "stance_reason": "AI未適用",
+      "stance_reason": "疑問の形で事実関係についての議論を伝えているため。",
       "key_phrase_original": "Has China received US F-35 parts by diverting an Australian shipment?",
-      "key_phrase_ja": "",
-      "enriched_by": "passthrough"
+      "key_phrase_ja": "中国はオーストラリアからの出荷を迂回して米国のF-35部品を受領したのか？",
+      "enriched_by": "gemini"
     },
     {
       "article_id": "c8a3dc84",
-      "title_ja": "Netanyahu at UNGA over the years",
-      "summary_ja": "",
-      "tags": [],
+      "title_ja": "国連総会におけるこれまでのネタニヤフ氏",
+      "summary_ja": "国連総会でのネタニヤフ氏のこれまでの動向について。",
+      "tags": [
+        "外交",
+        "政治"
+      ],
       "stance": "neutral",
-      "stance_reason": "AI未適用",
+      "stance_reason": "過去の国連総会における様子を振り返る主題を掲げているため。",
       "key_phrase_original": "Netanyahu at UNGA over the years",
-      "key_phrase_ja": "",
-      "enriched_by": "passthrough"
+      "key_phrase_ja": "国連総会におけるこれまでのネタニヤフ",
+      "enriched_by": "gemini"
     },
     {
       "article_id": "efea79d2",
-      "title_ja": "Москва выступает за скорейшее вступление ДВЗЯИ в силу",
-      "summary_ja": "",
-      "tags": [],
+      "title_ja": "モスクワ、包括的核実験禁止条約（CTBT）の早期発効を支持",
+      "summary_ja": "モスクワが包括的核実験禁止条約の早期発効を支持する立場を表明した。",
+      "tags": [
+        "外交",
+        "安全保障"
+      ],
       "stance": "neutral",
-      "stance_reason": "AI未適用",
+      "stance_reason": "政府の外交方針に関する公式の立場を伝えているため。",
       "key_phrase_original": "Москва выступает за скорейшее вступление ДВЗЯИ в силу",
-      "key_phrase_ja": "",
-      "enriched_by": "passthrough"
+      "key_phrase_ja": "モスクワはCTBTの早期発効を支持する",
+      "enriched_by": "gemini"
     },
     {
       "article_id": "a1118eab",
-      "title_ja": "Среднегодовой курс доллара будет расти с 79,5 рублей в 2026 году до 96 рублей в 2029 году",
-      "summary_ja": "",
-      "tags": [],
+      "title_ja": "ドルの年間平均為替レート、2026年の79.5ルーブルから2029年には96ルーブルへ上昇へ",
+      "summary_ja": "ドルの平均為替レートが2026年の79.5ルーブルから2029年にかけて96ルーブルへと上昇する予測。",
+      "tags": [
+        "経済"
+      ],
       "stance": "neutral",
-      "stance_reason": "AI未適用",
+      "stance_reason": "為替の予測値に関する経済データを伝えているため。",
       "key_phrase_original": "Среднегодовой курс доллара будет расти с 79,5 рублей в 2026 году до 96 рублей в 2029 году",
-      "key_phrase_ja": "",
-      "enriched_by": "passthrough"
+      "key_phrase_ja": "ドルの年平均レートは79.5ルーブルから96ルーブルへと上昇する",
+      "enriched_by": "gemini"
     },
     {
       "article_id": "6f12a149",
-      "title_ja": "GAD helps ORR turn climate data into practical insight",
-      "summary_ja": "",
-      "tags": [],
+      "title_ja": "GAD、ORRが気候データを実用的な洞察に変換するのを支援",
+      "summary_ja": "政府アクチュアリー局（GAD）が鉄道規制局（ORR）による気候データの活用を支援している。",
+      "tags": [
+        "科学技術",
+        "気候"
+      ],
       "stance": "neutral",
-      "stance_reason": "AI未適用",
-      "key_phrase_original": "GAD helps ORR turn climate data into practical insight",
-      "key_phrase_ja": "",
-      "enriched_by": "passthrough"
+      "stance_reason": "政府機関同士の支援業務に関する事実を伝えているため。",
+      "key_phrase_original": "turn climate data into practical insight",
+      "key_phrase_ja": "気候データを実用的な洞察に変換する",
+      "enriched_by": "gemini"
     },
     {
       "article_id": "ebf6b25f",
-      "title_ja": "Germany pledges to phase out fossil fuels",
-      "summary_ja": "",
-      "tags": [],
+      "title_ja": "ドイツ、化石燃料の段階的廃止を誓約",
+      "summary_ja": "ドイツが化石燃料の使用を段階的に廃止すると約束した。",
+      "tags": [
+        "気候",
+        "経済"
+      ],
       "stance": "neutral",
-      "stance_reason": "AI未適用",
+      "stance_reason": "政府の方針表明を客観的に伝えているため。",
       "key_phrase_original": "Germany pledges to phase out fossil fuels",
-      "key_phrase_ja": "",
-      "enriched_by": "passthrough"
+      "key_phrase_ja": "ドイツが化石燃料の段階的廃止を誓約",
+      "enriched_by": "gemini"
     },
     {
       "article_id": "a3b6baba",
-      "title_ja": "One blood test could screen you for 50 cancers. Here’s why it’s controversial. - The Washington Post",
-      "summary_ja": "",
-      "tags": [],
+      "title_ja": "1回の血液検査で50種類のがんをスクリーニングできる。議論を呼んでいる理由はこちら。 - washingtonpost.com",
+      "summary_ja": "1回の血液検査で多数のがんを検査できる技術が物議を醸している理由について解説している。",
+      "tags": [
+        "保健",
+        "科学技術"
+      ],
       "stance": "neutral",
-      "stance_reason": "AI未適用",
-      "key_phrase_original": "One blood test could screen you for 50 cancers. Here’s why it’s controversial. - The Washington Post",
-      "key_phrase_ja": "",
-      "enriched_by": "passthrough"
+      "stance_reason": "新しい医療技術に対する議論の存在を中立的に報じているため。",
+      "key_phrase_original": "One blood test could screen you for 50 cancers",
+      "key_phrase_ja": "1回の血液検査で50種類のがんをスクリーニングできる",
+      "enriched_by": "gemini"
     },
     {
       "article_id": "ddff885e",
-      "title_ja": "В армии РФ заявили, что ведут уничтожение окруженной группировки ВСУ в Доброполье",
-      "summary_ja": "",
-      "tags": [],
+      "title_ja": "ロシア軍、ドブロポリエで包囲されたウクライナ軍部隊の殲滅を進めていると発表",
+      "summary_ja": "ロシア軍がドブロポリエで包囲したウクライナ軍部隊の掃討作戦を行っていると発表した。",
+      "tags": [
+        "安全保障"
+      ],
       "stance": "neutral",
-      "stance_reason": "AI未適用",
-      "key_phrase_original": "В армии РФ заявили, что ведут уничтожение окруженной группировки ВСУ в Доброполье",
-      "key_phrase_ja": "",
-      "enriched_by": "passthrough"
+      "stance_reason": "軍の公式発表に基づく事実を伝えているため。",
+      "key_phrase_original": "В армии РФ заявили, что ведут уничтожение окруженной группировки ВСУ",
+      "key_phrase_ja": "ロシア軍は包囲されたウクライナ軍部隊の殲滅を進めていると発表した",
+      "enriched_by": "gemini"
+    },
+    {
+      "article_id": "9eed68de",
+      "title_ja": "世界的な債券売却が激化、30年物米国債利回りが20年ぶり高値を更新、米国株価指数は安値スタート、ブレント原油は100ドルを突破 - wallstreetcn.com",
+      "summary_ja": "世界的な債券安が進み、30年物米国債利回りが20年ぶりの高水準をつけ、原油価格が100ドルを超えた。",
+      "tags": [
+        "経済"
+      ],
+      "stance": "neutral",
+      "stance_reason": "市場の動向と数値の変動を客観的に報じているため。",
+      "key_phrase_original": "全球债市抛售加剧，30年期美债收益率创逾20年新高",
+      "key_phrase_ja": "世界的な債券売りが加速し、30年物米債利回りが20年ぶりの高値を更新",
+      "enriched_by": "gemini"
     },
     {
       "article_id": "745a3f60",
-      "title_ja": "Iran threatens to expand war to Indian Ocean if U.S. attacks again",
-      "summary_ja": "",
-      "tags": [],
+      "title_ja": "イラン、米国が再び攻撃すればインド洋へ戦争を拡大させると警告",
+      "summary_ja": "イランが、米国による再度の攻撃があればインド洋にまで戦域を拡大すると警告した。",
+      "tags": [
+        "安全保障",
+        "外交"
+      ],
       "stance": "neutral",
-      "stance_reason": "AI未適用",
-      "key_phrase_original": "Iran threatens to expand war to Indian Ocean if U.S. attacks again",
-      "key_phrase_ja": "",
-      "enriched_by": "passthrough"
+      "stance_reason": "イラン側の警告の声明をそのまま伝えているため。",
+      "key_phrase_original": "Iran threatens to expand war to Indian Ocean",
+      "key_phrase_ja": "イランがインド洋への戦争拡大を脅かす",
+      "enriched_by": "gemini"
     },
     {
       "article_id": "95966162",
-      "title_ja": "Wisconsin university campus closed after 60 years; its 76-acre site could become 670 homes",
-      "summary_ja": "",
-      "tags": [],
+      "title_ja": "ウィスコンシン州の大学キャンパスが60年の歴史に幕を閉じ閉鎖、76エーカーの敷地は670戸の住宅地に変わる可能性",
+      "summary_ja": "ウィスコンシン州にある大学キャンパスが60年の歴史を経て閉鎖され、その敷地が住宅地に変わる見込み。",
+      "tags": [
+        "社会"
+      ],
       "stance": "neutral",
-      "stance_reason": "AI未適用",
-      "key_phrase_original": "Wisconsin university campus closed after 60 years; its 76-acre site could become 670 homes",
-      "key_phrase_ja": "",
-      "enriched_by": "passthrough"
+      "stance_reason": "キャンパスの閉鎖と跡地利用の事実を伝えているため。",
+      "key_phrase_original": "Wisconsin university campus closed after 60 years",
+      "key_phrase_ja": "60年の歴史を経て閉鎖されたウィスコンシン大学のキャンパス",
+      "enriched_by": "gemini"
+    },
+    {
+      "article_id": "83cd17c8",
+      "title_ja": "トランプ氏と習氏のライブ速報：米中首脳がワシントンの重要な会談でAIと貿易について協議へ - ガーディアン紙",
+      "summary_ja": "アメリカと中国の首脳がワシントンでの重要な会談においてAIや貿易について協議する予定。",
+      "tags": [
+        "政治",
+        "外交",
+        "科学技術"
+      ],
+      "stance": "neutral",
+      "stance_reason": "首脳会談の予定事項を中立的に報じているため。",
+      "key_phrase_original": "Trump-Xi live updates",
+      "key_phrase_ja": "トランプ・習氏のライブ速報",
+      "enriched_by": "gemini"
     },
     {
       "article_id": "723c3d55",
-      "title_ja": "Прогноз роста розничной торговли в России в 2026 году повышен с 0,8% до 4,6%",
-      "summary_ja": "",
-      "tags": [],
+      "title_ja": "2026年のロシアにおける小売売上高の成長予測、0.8％から4.6％へ上方修正",
+      "summary_ja": "2026年のロシアの小売売上高の伸び率予測が従来の0.8％から4.",
+      "tags": [
+        "経済"
+      ],
       "stance": "neutral",
-      "stance_reason": "AI未適用",
-      "key_phrase_original": "Прогноз роста розничной торговли в России в 2026 году повышен с 0,8% до 4,6%",
-      "key_phrase_ja": "",
-      "enriched_by": "passthrough"
+      "stance_reason": "経済予測の数値修正に関する事実を伝えているため。",
+      "key_phrase_original": "Прогноз роста розничной торговли в России в 2026 году повышен",
+      "key_phrase_ja": "ロシアの2026年小売売上高成長予測が引き上げられた",
+      "enriched_by": "gemini"
     },
     {
       "article_id": "c3e2a00b",
-      "title_ja": "ЦБ планирует провести пилот с офлайн-платежами цифровыми рублями в 2027 году",
-      "summary_ja": "",
-      "tags": [],
+      "title_ja": "中央銀行、2027年にデジタルルーブルによるオフライン決済のパイロット運用実施を計画",
+      "summary_ja": "ロシア中央銀行が2027年にデジタルルーブルを用いたオフライン決済の実証実験を行う計画である。",
+      "tags": [
+        "経済",
+        "科学技術"
+      ],
       "stance": "neutral",
-      "stance_reason": "AI未適用",
-      "key_phrase_original": "ЦБ планирует провести пилот с офлайн-платежами цифровыми рублями в 2027 году",
-      "key_phrase_ja": "",
-      "enriched_by": "passthrough"
+      "stance_reason": "中央銀行の事業計画に関する事実を伝えているため。",
+      "key_phrase_original": "ЦБ планирует провести пилот с офлайн-платежами цифровыми рублями",
+      "key_phrase_ja": "中央銀行はデジタルルーブルによるオフライン決済のパイロット運用を計画している",
+      "enriched_by": "gemini"
     },
     {
       "article_id": "0756ec5d",
-      "title_ja": "The French Senate: Old, expensive and out of touch or necessary safeguard to democracy?",
-      "summary_ja": "",
-      "tags": [],
+      "title_ja": "フランス上院：高齢で費用がかかり時代遅れか、それとも民主主義にとって不可欠な防衛策か？",
+      "summary_ja": "フランス上院の存在意義や評価について問いかけている。",
+      "tags": [
+        "政治"
+      ],
       "stance": "neutral",
-      "stance_reason": "AI未適用",
+      "stance_reason": "上院に対する賛否両論の視点を問いの形で併記しているため。",
       "key_phrase_original": "The French Senate: Old, expensive and out of touch or necessary safeguard to democracy?",
-      "key_phrase_ja": "",
-      "enriched_by": "passthrough"
+      "key_phrase_ja": "フランス上院：高齢化し高価で時代遅れか、それとも民主主義の不可欠な防衛策か？",
+      "enriched_by": "gemini"
     },
     {
       "article_id": "7fc3e3fc",
-      "title_ja": "CNN, MS NOW, Politico still barred from White House despite court ruling",
-      "summary_ja": "",
-      "tags": [],
+      "title_ja": "CNN、MS NOW、Politico、裁判所の命令にもかかわらずホワイトハウスへの立ち入り禁止が継続",
+      "summary_ja": "裁判所の判決が出たにもかかわらず、CNNなどのメディアがホワイトハウスへの立ち入りを依然として拒否されている。",
+      "tags": [
+        "政治",
+        "社会"
+      ],
       "stance": "neutral",
-      "stance_reason": "AI未適用",
-      "key_phrase_original": "CNN, MS NOW, Politico still barred from White House despite court ruling",
-      "key_phrase_ja": "",
-      "enriched_by": "passthrough"
+      "stance_reason": "司法判断と実際の対応の食い違いという事実を報じているため。",
+      "key_phrase_original": "still barred from White House despite court ruling",
+      "key_phrase_ja": "裁判所の裁定にもかかわらずホワイトハウスへの立ち入りが依然として禁止されている",
+      "enriched_by": "gemini"
     },
     {
       "article_id": "2dbe0289",
-      "title_ja": "Ukrainian POWs reportedly transferred from Makiivka penal colony in occupied Donetsk Oblast to Russia",
-      "summary_ja": "",
-      "tags": [],
+      "title_ja": "ウクライナ人捕虜、占領下ドネツク州マキイフカの刑務所からロシアへ移送されたとの情報",
+      "summary_ja": "占領下にあるドネツク州マキイフカの刑務所から、ウクライナ人の捕虜がロシア国内に移送されたと報じられている。",
+      "tags": [
+        "安全保障",
+        "人権"
+      ],
       "stance": "neutral",
-      "stance_reason": "AI未適用",
-      "key_phrase_original": "Ukrainian POWs reportedly transferred from Makiivka penal colony in occupied Donetsk Oblast to Russia",
-      "key_phrase_ja": "",
-      "enriched_by": "passthrough"
+      "stance_reason": "捕虜の移送に関する情報を客観的に伝えているため。",
+      "key_phrase_original": "Ukrainian POWs reportedly transferred from Makiivka penal colony",
+      "key_phrase_ja": "ウクライナ人捕虜がマキイフカの刑務所から移送されたと報じられている",
+      "enriched_by": "gemini"
     },
     {
       "article_id": "e735eba8",
-      "title_ja": "« Il faut appeler une guerre une guerre, qu’elle soit informationnelle, cyber, hybride, de l’ombre ou “sous le seuil” »",
+      "title_ja": "「戦争は、それが情報戦、サイバー戦、ハイブリッド戦、影の戦争、あるいは『閾値の下』のものであろうと、戦争と呼ぶ必要がある」",
       "summary_ja": "",
-      "tags": [],
+      "tags": [
+        "安全保障",
+        "政治"
+      ],
       "stance": "neutral",
-      "stance_reason": "AI未適用",
-      "key_phrase_original": "« Il faut appeler une guerre une guerre, qu’elle soit informationnelle, cyber, hybride, de l’ombre ou “sous le seuil” »",
-      "key_phrase_ja": "",
-      "enriched_by": "passthrough"
+      "stance_reason": "識者や関係者の主張としての発言をそのまま引用しているため。",
+      "key_phrase_original": "Il faut appeler une guerre une guerre",
+      "key_phrase_ja": "戦争を戦争と呼ぶ必要がある",
+      "enriched_by": "gemini"
     },
     {
       "article_id": "9468ed6c",
-      "title_ja": "🔴 CNN, MS NOW, Politico still barred from White House despite court ruling",
-      "summary_ja": "",
-      "tags": [],
+      "title_ja": "🔴 CNN、MS NOW、Politico、裁判所の命令にもかかわらずホワイトハウスへの立ち入り禁止が継続",
+      "summary_ja": "裁判所の命令が出ているにもかかわらず、該当メディアのホワイトハウスへの立ち入り禁止措置が続いている。",
+      "tags": [
+        "政治",
+        "社会"
+      ],
       "stance": "neutral",
-      "stance_reason": "AI未適用",
-      "key_phrase_original": "🔴 CNN, MS NOW, Politico still barred from White House despite court ruling",
-      "key_phrase_ja": "",
-      "enriched_by": "passthrough"
+      "stance_reason": "メディアの取材制限をめぐる現状の事実を伝えているため。",
+      "key_phrase_original": "still barred from White House despite court ruling",
+      "key_phrase_ja": "裁判所の裁定にもかかわらずホワイトハウスへの立ち入りが依然として禁止されている",
+      "enriched_by": "gemini"
     },
     {
       "article_id": "b4550d3c",
-      "title_ja": "Минэкономразвития прогнозирует снижение промпроизводства в 2026 году на 0,2%",
-      "summary_ja": "",
-      "tags": [],
+      "title_ja": "経済発展省、2026年の工業生産が0.2％減少すると予測",
+      "summary_ja": "ロシア経済発展省が2026年の工業生産高が0.2％低下するという予測を発表した。",
+      "tags": [
+        "経済"
+      ],
       "stance": "neutral",
-      "stance_reason": "AI未適用",
+      "stance_reason": "政府機関の経済予測値を伝えているため。",
       "key_phrase_original": "Минэкономразвития прогнозирует снижение промпроизводства в 2026 году на 0,2%",
-      "key_phrase_ja": "",
-      "enriched_by": "passthrough"
+      "key_phrase_ja": "経済発展省は2026年の工業生産が0.2%減少すると予測している",
+      "enriched_by": "gemini"
     },
     {
       "article_id": "9a61e437",
-      "title_ja": "Man lost lamp in cave in 1953; became a NASA scientist, found it 68 years later",
-      "summary_ja": "",
-      "tags": [],
+      "title_ja": "1953年に洞窟でランプを紛失した男性、NASAの科学者となり68年後にそれを発見する",
+      "summary_ja": "1953年に洞窟でランプを失くした男性が後にNASAの科学者となり、68年越しにそのランプを発見した。",
+      "tags": [
+        "科学技術",
+        "文化"
+      ],
       "stance": "neutral",
-      "stance_reason": "AI未適用",
+      "stance_reason": "奇妙な実話を淡々と紹介しているため。",
       "key_phrase_original": "Man lost lamp in cave in 1953; became a NASA scientist, found it 68 years later",
-      "key_phrase_ja": "",
-      "enriched_by": "passthrough"
+      "key_phrase_ja": "1953年に洞窟でランプを失くした男性がNASAの科学者になり68年後に発見した",
+      "enriched_by": "gemini"
     },
     {
       "article_id": "c19b7b11",
-      "title_ja": "Injunction blocking publication of ex-SAS soldier’s book on counter-terror op extended",
-      "summary_ja": "",
-      "tags": [],
+      "title_ja": "元SAS兵士の対テロ作戦に関する書籍の出版を差し止める仮処分が延長",
+      "summary_ja": "元SAS兵士による対テロ作戦についての著作物の出版差し止めの法的処分が延長された。",
+      "tags": [
+        "安全保障",
+        "社会"
+      ],
       "stance": "neutral",
-      "stance_reason": "AI未適用",
-      "key_phrase_original": "Injunction blocking publication of ex-SAS soldier’s book on counter-terror op extended",
-      "key_phrase_ja": "",
-      "enriched_by": "passthrough"
+      "stance_reason": "司法手続きに関する差し止めの事実を伝えているため。",
+      "key_phrase_original": "Injunction blocking publication of ex-SAS soldier’s book",
+      "key_phrase_ja": "元SAS兵士の本の出版を阻止する仮処分",
+      "enriched_by": "gemini"
     },
     {
       "article_id": "5defac2e",
@@ -740,6 +1354,17 @@
       "stance": "neutral",
       "stance_reason": "AI未適用",
       "key_phrase_original": "亲海、悦海、乐海 串联南北海洋旅游带要来了 - 人民网",
+      "key_phrase_ja": "",
+      "enriched_by": "passthrough"
+    },
+    {
+      "article_id": "e7500082",
+      "title_ja": "Paramount to Raise $7.5 Billion More in Debt to Fund Warner Bros. Deal - Variety",
+      "summary_ja": "",
+      "tags": [],
+      "stance": "neutral",
+      "stance_reason": "AI未適用",
+      "key_phrase_original": "Paramount to Raise $7.5 Billion More in Debt to Fund Warner Bros. Deal - Variety",
       "key_phrase_ja": "",
       "enriched_by": "passthrough"
     },
@@ -866,12 +1491,12 @@
     },
     {
       "article_id": "6160c9e1",
-      "title_ja": "Stock futures slide again as Treasury yields push higher, Oracle leads Nasdaq names lower: Live updates - CNBC",
+      "title_ja": "Stocks slide again as Treasury yields push higher, Oracle leads Nasdaq lower: Live updates - cnbc.com",
       "summary_ja": "",
       "tags": [],
       "stance": "neutral",
       "stance_reason": "AI未適用",
-      "key_phrase_original": "Stock futures slide again as Treasury yields push higher, Oracle leads Nasdaq names lower: Live updates - CNBC",
+      "key_phrase_original": "Stocks slide again as Treasury yields push higher, Oracle leads Nasdaq lower: Live updates - cnbc.com",
       "key_phrase_ja": "",
       "enriched_by": "passthrough"
     },
@@ -905,17 +1530,6 @@
       "stance": "neutral",
       "stance_reason": "AI未適用",
       "key_phrase_original": "Оценка экспорта российского трубопроводного газа на 2026 год повышена до 117,5 млрд куб. м",
-      "key_phrase_ja": "",
-      "enriched_by": "passthrough"
-    },
-    {
-      "article_id": "4ba3b649",
-      "title_ja": "Chinese analysts say Trump should \"understand pressure doesn't work\" on Xi",
-      "summary_ja": "",
-      "tags": [],
-      "stance": "neutral",
-      "stance_reason": "AI未適用",
-      "key_phrase_original": "Chinese analysts say Trump should \"understand pressure doesn't work\" on Xi",
       "key_phrase_ja": "",
       "enriched_by": "passthrough"
     },
@@ -1158,6 +1772,17 @@
       "stance": "neutral",
       "stance_reason": "AI未適用",
       "key_phrase_original": "「現代AIの父」サカナAIアドバイザーに　再帰的自己改善など研究",
+      "key_phrase_ja": "",
+      "enriched_by": "passthrough"
+    },
+    {
+      "article_id": "5e215e1d",
+      "title_ja": "Aaron Judge Calls Out Yankees' Aaron Boone For Comments on Injury, Status for 2026 MLB Playoffs - Bleacher Report",
+      "summary_ja": "",
+      "tags": [],
+      "stance": "neutral",
+      "stance_reason": "AI未適用",
+      "key_phrase_original": "Aaron Judge Calls Out Yankees' Aaron Boone For Comments on Injury, Status for 2026 MLB Playoffs - Bleacher Report",
       "key_phrase_ja": "",
       "enriched_by": "passthrough"
     },
@@ -1459,6 +2084,17 @@
       "enriched_by": "passthrough"
     },
     {
+      "article_id": "c3977e6d",
+      "title_ja": "Netanyahu faces new depths of isolation ahead of address to U.N. — and Israeli voters - washingtonpost.com",
+      "summary_ja": "",
+      "tags": [],
+      "stance": "neutral",
+      "stance_reason": "AI未適用",
+      "key_phrase_original": "Netanyahu faces new depths of isolation ahead of address to U.N. — and Israeli voters - washingtonpost.com",
+      "key_phrase_ja": "",
+      "enriched_by": "passthrough"
+    },
+    {
       "article_id": "0a0a11f4",
       "title_ja": "L’Arabie saoudite dit avoir intercepté six missiles balistiques tirés depuis le Yémen",
       "summary_ja": "",
@@ -1477,6 +2113,17 @@
       "stance": "neutral",
       "stance_reason": "AI未適用",
       "key_phrase_original": "An English artist paid £2,090 for a painting listed only as ‘in the style of’ Helen McNicoll",
+      "key_phrase_ja": "",
+      "enriched_by": "passthrough"
+    },
+    {
+      "article_id": "93cc5341",
+      "title_ja": "赵乐际在吉林黑龙江调研时强调 自觉践行全过程人民民主 高质量做好地方人大工作 - 新华网",
+      "summary_ja": "",
+      "tags": [],
+      "stance": "neutral",
+      "stance_reason": "AI未適用",
+      "key_phrase_original": "赵乐际在吉林黑龙江调研时强调 自觉践行全过程人民民主 高质量做好地方人大工作 - 新华网",
       "key_phrase_ja": "",
       "enriched_by": "passthrough"
     },
@@ -2174,17 +2821,6 @@
       "enriched_by": "passthrough"
     },
     {
-      "article_id": "3feafe39",
-      "title_ja": "A Corruption Scandal Is Reshaping Brazil’s Presidential Election - The New York Times",
-      "summary_ja": "",
-      "tags": [],
-      "stance": "neutral",
-      "stance_reason": "AI未適用",
-      "key_phrase_original": "A Corruption Scandal Is Reshaping Brazil’s Presidential Election - The New York Times",
-      "key_phrase_ja": "",
-      "enriched_by": "passthrough"
-    },
-    {
       "article_id": "190f9517",
       "title_ja": "ホルムズ海峡で「追加費用は受け入れぬ」　茂木氏、外相会合を共催",
       "summary_ja": "",
@@ -2251,6 +2887,17 @@
       "enriched_by": "passthrough"
     },
     {
+      "article_id": "0d8111eb",
+      "title_ja": "Navy says 8 sailors attempted suicide aboard the USS Abraham Lincoln - USA Today",
+      "summary_ja": "",
+      "tags": [],
+      "stance": "neutral",
+      "stance_reason": "AI未適用",
+      "key_phrase_original": "Navy says 8 sailors attempted suicide aboard the USS Abraham Lincoln - USA Today",
+      "key_phrase_ja": "",
+      "enriched_by": "passthrough"
+    },
+    {
       "article_id": "25fae277",
       "title_ja": "乌克兰称基辅遭导弹袭击致2死6伤 - chinanews.com.cn",
       "summary_ja": "",
@@ -2258,6 +2905,17 @@
       "stance": "neutral",
       "stance_reason": "AI未適用",
       "key_phrase_original": "乌克兰称基辅遭导弹袭击致2死6伤 - chinanews.com.cn",
+      "key_phrase_ja": "",
+      "enriched_by": "passthrough"
+    },
+    {
+      "article_id": "55f007ee",
+      "title_ja": "乌克兰称基辅遭导弹袭击致2死6伤 - 搜狐网",
+      "summary_ja": "",
+      "tags": [],
+      "stance": "neutral",
+      "stance_reason": "AI未適用",
+      "key_phrase_original": "乌克兰称基辅遭导弹袭击致2死6伤 - 搜狐网",
       "key_phrase_ja": "",
       "enriched_by": "passthrough"
     },
@@ -2280,6 +2938,17 @@
       "stance": "neutral",
       "stance_reason": "AI未適用",
       "key_phrase_original": "As the EU advances free trade with Southeast Asia, why is there no ASEAN-wide deal?",
+      "key_phrase_ja": "",
+      "enriched_by": "passthrough"
+    },
+    {
+      "article_id": "42d30d94",
+      "title_ja": "1 killed, 4 injured in knife attack at Benedictine abbey in Poland - The Times of India",
+      "summary_ja": "",
+      "tags": [],
+      "stance": "neutral",
+      "stance_reason": "AI未適用",
+      "key_phrase_original": "1 killed, 4 injured in knife attack at Benedictine abbey in Poland - The Times of India",
       "key_phrase_ja": "",
       "enriched_by": "passthrough"
     },
@@ -2456,6 +3125,17 @@
       "stance": "neutral",
       "stance_reason": "AI未適用",
       "key_phrase_original": "800,000 bees stolen in Australia; thieves left honey and took colonies",
+      "key_phrase_ja": "",
+      "enriched_by": "passthrough"
+    },
+    {
+      "article_id": "bf3ae0c6",
+      "title_ja": "《越秀海丝古韵之商脉篇》入围“金红棉”（广州）·广州短视频（城市叙事类）优秀作品 - 广州日报新花城",
+      "summary_ja": "",
+      "tags": [],
+      "stance": "neutral",
+      "stance_reason": "AI未適用",
+      "key_phrase_original": "《越秀海丝古韵之商脉篇》入围“金红棉”（广州）·广州短视频（城市叙事类）优秀作品 - 广州日报新花城",
       "key_phrase_ja": "",
       "enriched_by": "passthrough"
     },
@@ -2757,6 +3437,17 @@
       "enriched_by": "passthrough"
     },
     {
+      "article_id": "768e34b9",
+      "title_ja": "انتصارا للجنائية الدولية.. 38 منظمة تتحدى عقوبات ترامب",
+      "summary_ja": "",
+      "tags": [],
+      "stance": "neutral",
+      "stance_reason": "AI未適用",
+      "key_phrase_original": "انتصارا للجنائية الدولية.. 38 منظمة تتحدى عقوبات ترامب",
+      "key_phrase_ja": "",
+      "enriched_by": "passthrough"
+    },
+    {
       "article_id": "a3d5e55f",
       "title_ja": "卫星互联网组网提速！机构紧盯多只商业航天概念股(名单) - 东方财富",
       "summary_ja": "",
@@ -2868,12 +3559,12 @@
     },
     {
       "article_id": "9250aca7",
-      "title_ja": "People are ditching their vapes only to pick up another surprising habit - foxnews.com",
+      "title_ja": "People are ditching their vapes only to pick up another surprising habit - Fox News",
       "summary_ja": "",
       "tags": [],
       "stance": "neutral",
       "stance_reason": "AI未適用",
-      "key_phrase_original": "People are ditching their vapes only to pick up another surprising habit - foxnews.com",
+      "key_phrase_original": "People are ditching their vapes only to pick up another surprising habit - Fox News",
       "key_phrase_ja": "",
       "enriched_by": "passthrough"
     },
@@ -3006,6 +3697,17 @@
       "stance": "neutral",
       "stance_reason": "AI未適用",
       "key_phrase_original": "Block the Merger Coalition Files Legal Request to Oppose Paramount-Warner Bros. Deal - variety.com",
+      "key_phrase_ja": "",
+      "enriched_by": "passthrough"
+    },
+    {
+      "article_id": "0e2210dc",
+      "title_ja": "美国威胁“关闭”伊朗航空公司后 多国取消往返伊朗航班 - 新浪财经",
+      "summary_ja": "",
+      "tags": [],
+      "stance": "neutral",
+      "stance_reason": "AI未適用",
+      "key_phrase_original": "美国威胁“关闭”伊朗航空公司后 多国取消往返伊朗航班 - 新浪财经",
       "key_phrase_ja": "",
       "enriched_by": "passthrough"
     },
@@ -3285,6 +3987,17 @@
       "enriched_by": "passthrough"
     },
     {
+      "article_id": "64ee2a90",
+      "title_ja": "Trump invites Putin to Miami for first visit to lower 48 since Obama era - Axios",
+      "summary_ja": "",
+      "tags": [],
+      "stance": "neutral",
+      "stance_reason": "AI未適用",
+      "key_phrase_original": "Trump invites Putin to Miami for first visit to lower 48 since Obama era - Axios",
+      "key_phrase_ja": "",
+      "enriched_by": "passthrough"
+    },
+    {
       "article_id": "ca02b979",
       "title_ja": "Kremlin slams EU over transfer of Russian profits to Ukraine",
       "summary_ja": "",
@@ -3439,6 +4152,17 @@
       "enriched_by": "passthrough"
     },
     {
+      "article_id": "2a8d85dc",
+      "title_ja": "人民领袖｜岁岁桂月寄深情 - 央视网",
+      "summary_ja": "",
+      "tags": [],
+      "stance": "neutral",
+      "stance_reason": "AI未適用",
+      "key_phrase_original": "人民领袖｜岁岁桂月寄深情 - 央视网",
+      "key_phrase_ja": "",
+      "enriched_by": "passthrough"
+    },
+    {
       "article_id": "56951daa",
       "title_ja": "ليس مشهدا من فيلم.. \"باتمان\" يتسلق جدارا ويطارد لصا في إنجلترا",
       "summary_ja": "",
@@ -3523,6 +4247,17 @@
       "stance": "neutral",
       "stance_reason": "AI未適用",
       "key_phrase_original": "\"الشؤون الاجتماعية والعمل\" تنضم إلى لجنة المحروقات في سوريا.. ما خلف الخطوة؟",
+      "key_phrase_ja": "",
+      "enriched_by": "passthrough"
+    },
+    {
+      "article_id": "1e079a0e",
+      "title_ja": "亚运会｜游泳——男子800米自由泳：张展硕夺冠 - 新华网",
+      "summary_ja": "",
+      "tags": [],
+      "stance": "neutral",
+      "stance_reason": "AI未適用",
+      "key_phrase_original": "亚运会｜游泳——男子800米自由泳：张展硕夺冠 - 新华网",
       "key_phrase_ja": "",
       "enriched_by": "passthrough"
     },
@@ -3945,6 +4680,17 @@
       "enriched_by": "passthrough"
     },
     {
+      "article_id": "846f54e8",
+      "title_ja": "闫剑波任厦门市委副书记 - thepaper.cn",
+      "summary_ja": "",
+      "tags": [],
+      "stance": "neutral",
+      "stance_reason": "AI未適用",
+      "key_phrase_original": "闫剑波任厦门市委副书记 - thepaper.cn",
+      "key_phrase_ja": "",
+      "enriched_by": "passthrough"
+    },
+    {
       "article_id": "3edb1863",
       "title_ja": "Poland scrambles military aircraft twice in morning over Russian strikes on Ukraine",
       "summary_ja": "",
@@ -4040,17 +4786,6 @@
       "stance": "neutral",
       "stance_reason": "AI未適用",
       "key_phrase_original": "截至8月底全国累计发电装机容量达41.03亿千瓦 - 中国科技网",
-      "key_phrase_ja": "",
-      "enriched_by": "passthrough"
-    },
-    {
-      "article_id": "bb97dafd",
-      "title_ja": "Ethiopia and Tigray accuse each of launching offensives, fuelling fears of new war - BBC",
-      "summary_ja": "",
-      "tags": [],
-      "stance": "neutral",
-      "stance_reason": "AI未適用",
-      "key_phrase_original": "Ethiopia and Tigray accuse each of launching offensives, fuelling fears of new war - BBC",
       "key_phrase_ja": "",
       "enriched_by": "passthrough"
     },
@@ -4176,6 +4911,17 @@
       "enriched_by": "passthrough"
     },
     {
+      "article_id": "171cc399",
+      "title_ja": "我国成功发射遥感四十号 04 组卫星 - IT之家",
+      "summary_ja": "",
+      "tags": [],
+      "stance": "neutral",
+      "stance_reason": "AI未適用",
+      "key_phrase_original": "我国成功发射遥感四十号 04 组卫星 - IT之家",
+      "key_phrase_ja": "",
+      "enriched_by": "passthrough"
+    },
+    {
       "article_id": "a8ac50de",
       "title_ja": "US, China agree two-month trade truce extension ahead of summit",
       "summary_ja": "",
@@ -4275,6 +5021,17 @@
       "enriched_by": "passthrough"
     },
     {
+      "article_id": "c465a8f7",
+      "title_ja": "月饼礼盒开始买一送一了 消费趋势提前显现 - 中华网",
+      "summary_ja": "",
+      "tags": [],
+      "stance": "neutral",
+      "stance_reason": "AI未適用",
+      "key_phrase_original": "月饼礼盒开始买一送一了 消费趋势提前显现 - 中华网",
+      "key_phrase_ja": "",
+      "enriched_by": "passthrough"
+    },
+    {
       "article_id": "74558320",
       "title_ja": "New UK support to help millions of women gain greater choice over pregnancy and access better maternal healthcare",
       "summary_ja": "",
@@ -4370,6 +5127,17 @@
       "stance": "neutral",
       "stance_reason": "AI未適用",
       "key_phrase_original": "Jeff Probst Made ‘Survivor’ His Life’s Work. He’s Not Done Yet. - The New York Times",
+      "key_phrase_ja": "",
+      "enriched_by": "passthrough"
+    },
+    {
+      "article_id": "3feafe39",
+      "title_ja": "The High-Stakes Corruption Scandal Shaking Up Brazil’s Election - The New York Times",
+      "summary_ja": "",
+      "tags": [],
+      "stance": "neutral",
+      "stance_reason": "AI未適用",
+      "key_phrase_original": "The High-Stakes Corruption Scandal Shaking Up Brazil’s Election - The New York Times",
       "key_phrase_ja": "",
       "enriched_by": "passthrough"
     },
@@ -4781,6 +5549,17 @@
       "enriched_by": "passthrough"
     },
     {
+      "article_id": "976f220d",
+      "title_ja": "宁夏回族自治区广播电视局原党组书记、局长，自治区党委宣传部原副部长（兼）高瑞莉接受纪律审查和监察调查 - 新华网",
+      "summary_ja": "",
+      "tags": [],
+      "stance": "neutral",
+      "stance_reason": "AI未適用",
+      "key_phrase_original": "宁夏回族自治区广播电视局原党组书记、局长，自治区党委宣传部原副部长（兼）高瑞莉接受纪律审查和监察调查 - 新华网",
+      "key_phrase_ja": "",
+      "enriched_by": "passthrough"
+    },
+    {
       "article_id": "a436a2ee",
       "title_ja": "獣医師のミスで飼い犬に障害、解決金300万円で和解　さいたま地裁",
       "summary_ja": "",
@@ -4887,6 +5666,17 @@
       "stance": "neutral",
       "stance_reason": "AI未適用",
       "key_phrase_original": "الأمناء الماليون في إيران.. وسطاء عوائد النفط تحت رقابة القضاء",
+      "key_phrase_ja": "",
+      "enriched_by": "passthrough"
+    },
+    {
+      "article_id": "45690fa1",
+      "title_ja": "现货黄金失守4270美元/盎司，日内跌0.42% - nbd.com.cn",
+      "summary_ja": "",
+      "tags": [],
+      "stance": "neutral",
+      "stance_reason": "AI未適用",
+      "key_phrase_original": "现货黄金失守4270美元/盎司，日内跌0.42% - nbd.com.cn",
       "key_phrase_ja": "",
       "enriched_by": "passthrough"
     },
@@ -5232,6 +6022,17 @@
       "enriched_by": "passthrough"
     },
     {
+      "article_id": "95b20bbd",
+      "title_ja": "第十三届丝绸之路国际电影节在西安闭幕 “金丝路奖”揭晓 - news.hsw.cn",
+      "summary_ja": "",
+      "tags": [],
+      "stance": "neutral",
+      "stance_reason": "AI未適用",
+      "key_phrase_original": "第十三届丝绸之路国际电影节在西安闭幕 “金丝路奖”揭晓 - news.hsw.cn",
+      "key_phrase_ja": "",
+      "enriched_by": "passthrough"
+    },
+    {
       "article_id": "d6ead45a",
       "title_ja": "ミラノ・ファッションウィークに目黒蓮さん、山下智久さんら登場",
       "summary_ja": "",
@@ -5261,6 +6062,17 @@
       "stance": "neutral",
       "stance_reason": "AI未適用",
       "key_phrase_original": "Russian attacks in Kyiv region damage eight sites, one person injured",
+      "key_phrase_ja": "",
+      "enriched_by": "passthrough"
+    },
+    {
+      "article_id": "1d8a2cd8",
+      "title_ja": "Congo is running short of health workers as Ebola remains out of control, WHO says - NBC News",
+      "summary_ja": "",
+      "tags": [],
+      "stance": "neutral",
+      "stance_reason": "AI未適用",
+      "key_phrase_original": "Congo is running short of health workers as Ebola remains out of control, WHO says - NBC News",
       "key_phrase_ja": "",
       "enriched_by": "passthrough"
     },
@@ -5518,6 +6330,17 @@
       "enriched_by": "passthrough"
     },
     {
+      "article_id": "0d16b9e2",
+      "title_ja": "中国选手杨洋夺得亚运会举重男子60公斤级金牌 - 广州日报新花城",
+      "summary_ja": "",
+      "tags": [],
+      "stance": "neutral",
+      "stance_reason": "AI未適用",
+      "key_phrase_original": "中国选手杨洋夺得亚运会举重男子60公斤级金牌 - 广州日报新花城",
+      "key_phrase_ja": "",
+      "enriched_by": "passthrough"
+    },
+    {
       "article_id": "5ffff12e",
       "title_ja": "'Death of the Soccer God' pays 'homage' to Haitian diaspora and 'those who go back & do their best'",
       "summary_ja": "",
@@ -5584,6 +6407,17 @@
       "enriched_by": "passthrough"
     },
     {
+      "article_id": "272f63ce",
+      "title_ja": "官网跟不上中国队夺金速度 于子迪三金封神 - 中华网",
+      "summary_ja": "",
+      "tags": [],
+      "stance": "neutral",
+      "stance_reason": "AI未適用",
+      "key_phrase_original": "官网跟不上中国队夺金速度 于子迪三金封神 - 中华网",
+      "key_phrase_ja": "",
+      "enriched_by": "passthrough"
+    },
+    {
       "article_id": "ca0163d6",
       "title_ja": "习近平访美首日看点：谁同行？第一夫人角色？高规格接待引反弹？ - BBC",
       "summary_ja": "",
@@ -5624,6 +6458,28 @@
       "stance": "neutral",
       "stance_reason": "AI未適用",
       "key_phrase_original": "Zelensky says G20 could provide venue for trilateral meeting between Ukraine, U.S. and Russia",
+      "key_phrase_ja": "",
+      "enriched_by": "passthrough"
+    },
+    {
+      "article_id": "49ef637c",
+      "title_ja": "SIGA: Trump e Xi Jinping se reúnem na Casa Branca",
+      "summary_ja": "",
+      "tags": [],
+      "stance": "neutral",
+      "stance_reason": "AI未適用",
+      "key_phrase_original": "SIGA: Trump e Xi Jinping se reúnem na Casa Branca",
+      "key_phrase_ja": "",
+      "enriched_by": "passthrough"
+    },
+    {
+      "article_id": "c17ddad0",
+      "title_ja": "Na ONU, Autoridade Palestina denuncia 'colonialismo' de Israel: 'Território palestino está sendo fragmentado'; Netanyahu discursa à tarde",
+      "summary_ja": "",
+      "tags": [],
+      "stance": "neutral",
+      "stance_reason": "AI未適用",
+      "key_phrase_original": "Na ONU, Autoridade Palestina denuncia 'colonialismo' de Israel: 'Território palestino está sendo fragmentado'; Netanyahu discursa à tarde",
       "key_phrase_ja": "",
       "enriched_by": "passthrough"
     },
@@ -5705,35 +6561,13 @@
       "enriched_by": "passthrough"
     },
     {
-      "article_id": "c17ddad0",
-      "title_ja": "SIGA: presidente da Autoridade Palestina discursa agora na ONU",
-      "summary_ja": "",
-      "tags": [],
-      "stance": "neutral",
-      "stance_reason": "AI未適用",
-      "key_phrase_original": "SIGA: presidente da Autoridade Palestina discursa agora na ONU",
-      "key_phrase_ja": "",
-      "enriched_by": "passthrough"
-    },
-    {
-      "article_id": "49ef637c",
-      "title_ja": "AO VIVO: Trump e Xi Jinping se reúnem na Casa Branca",
-      "summary_ja": "",
-      "tags": [],
-      "stance": "neutral",
-      "stance_reason": "AI未適用",
-      "key_phrase_original": "AO VIVO: Trump e Xi Jinping se reúnem na Casa Branca",
-      "key_phrase_ja": "",
-      "enriched_by": "passthrough"
-    },
-    {
       "article_id": "93a9b0f7",
-      "title_ja": "Na ONU, presidente da Autoridade Palestina critica governo Trump",
+      "title_ja": "Na ONU, Autoridade Palestina denuncia 'esquema colonialista' de Israel e faz apelo: 'Não deixem outros massacres acontecerem'",
       "summary_ja": "",
       "tags": [],
       "stance": "neutral",
       "stance_reason": "AI未適用",
-      "key_phrase_original": "Na ONU, presidente da Autoridade Palestina critica governo Trump",
+      "key_phrase_original": "Na ONU, Autoridade Palestina denuncia 'esquema colonialista' de Israel e faz apelo: 'Não deixem outros massacres acontecerem'",
       "key_phrase_ja": "",
       "enriched_by": "passthrough"
     },
@@ -5750,12 +6584,12 @@
     },
     {
       "article_id": "4e0a698b",
-      "title_ja": "Trump e Xi se encontam em Washington",
+      "title_ja": "Trump e Xi, maiores rivais geopolíticos, se reúnem em Washington",
       "summary_ja": "",
       "tags": [],
       "stance": "neutral",
       "stance_reason": "AI未適用",
-      "key_phrase_original": "Trump e Xi se encontam em Washington",
+      "key_phrase_original": "Trump e Xi, maiores rivais geopolíticos, se reúnem em Washington",
       "key_phrase_ja": "",
       "enriched_by": "passthrough"
     },
@@ -5848,6 +6682,17 @@
       "enriched_by": "passthrough"
     },
     {
+      "article_id": "bb97dafd",
+      "title_ja": "Ethiopia and Tigray accuse each of launching offensives, fuelling fears of new war - BBC",
+      "summary_ja": "",
+      "tags": [],
+      "stance": "neutral",
+      "stance_reason": "AI未適用",
+      "key_phrase_original": "Ethiopia and Tigray accuse each of launching offensives, fuelling fears of new war - BBC",
+      "key_phrase_ja": "",
+      "enriched_by": "passthrough"
+    },
+    {
       "article_id": "6c13175c",
       "title_ja": "韓国で「秋夕連休」始まる 帰省ラッシュ本格化",
       "summary_ja": "",
@@ -5899,6 +6744,17 @@
       "stance": "neutral",
       "stance_reason": "AI未適用",
       "key_phrase_original": "WATCH Catholic priests and nuns make Gaza ‘genocide’ march to Vatican",
+      "key_phrase_ja": "",
+      "enriched_by": "passthrough"
+    },
+    {
+      "article_id": "b8cdcb60",
+      "title_ja": "伊朗总统联大演讲誓言“永不低头屈膝投降”；台风“杜鹃”已致日本11人死亡4人失踪 - 上观新闻",
+      "summary_ja": "",
+      "tags": [],
+      "stance": "neutral",
+      "stance_reason": "AI未適用",
+      "key_phrase_original": "伊朗总统联大演讲誓言“永不低头屈膝投降”；台风“杜鹃”已致日本11人死亡4人失踪 - 上观新闻",
       "key_phrase_ja": "",
       "enriched_by": "passthrough"
     },
@@ -6299,6 +7155,17 @@
       "enriched_by": "passthrough"
     },
     {
+      "article_id": "a56dc27a",
+      "title_ja": "冯小刚首度回应“垃圾观众”争议 为《抓特务》亏损致歉 - 新浪财经",
+      "summary_ja": "",
+      "tags": [],
+      "stance": "neutral",
+      "stance_reason": "AI未適用",
+      "key_phrase_original": "冯小刚首度回应“垃圾观众”争议 为《抓特务》亏损致歉 - 新浪财经",
+      "key_phrase_ja": "",
+      "enriched_by": "passthrough"
+    },
+    {
       "article_id": "fa12c259",
       "title_ja": "How the Xi-Trump relationship will impact China-US talks",
       "summary_ja": "",
@@ -6421,12 +7288,12 @@
     },
     {
       "article_id": "41655962",
-      "title_ja": "Mark Zuckerberg debuts $1,299 Meta VR Glasses and Muse Charm pendant as part of AI agent push - CNBC",
+      "title_ja": "Mark Zuckerberg debuts $1,299 Meta VR Glasses and Muse Charm pendant as part of AI agent push - cnbc.com",
       "summary_ja": "",
       "tags": [],
       "stance": "neutral",
       "stance_reason": "AI未適用",
-      "key_phrase_original": "Mark Zuckerberg debuts $1,299 Meta VR Glasses and Muse Charm pendant as part of AI agent push - CNBC",
+      "key_phrase_original": "Mark Zuckerberg debuts $1,299 Meta VR Glasses and Muse Charm pendant as part of AI agent push - cnbc.com",
       "key_phrase_ja": "",
       "enriched_by": "passthrough"
     },
@@ -6564,12 +7431,12 @@
     },
     {
       "article_id": "08b29665",
-      "title_ja": "Just one small serving of ultra-processed food a day linked to higher disease risk, major study finds - foxnews.com",
+      "title_ja": "Just one small serving of ultra-processed food a day linked to higher disease risk, major study finds - Fox News",
       "summary_ja": "",
       "tags": [],
       "stance": "neutral",
       "stance_reason": "AI未適用",
-      "key_phrase_original": "Just one small serving of ultra-processed food a day linked to higher disease risk, major study finds - foxnews.com",
+      "key_phrase_original": "Just one small serving of ultra-processed food a day linked to higher disease risk, major study finds - Fox News",
       "key_phrase_ja": "",
       "enriched_by": "passthrough"
     },
@@ -7010,6 +7877,17 @@
       "stance": "neutral",
       "stance_reason": "AI未適用",
       "key_phrase_original": "Exploring Giants' quarterback options with Jaxson Dart sidelined for rest of regular season - SNY",
+      "key_phrase_ja": "",
+      "enriched_by": "passthrough"
+    },
+    {
+      "article_id": "4b72b9e7",
+      "title_ja": "Next man up: Ranking the NFL's backup quarterbacks for 6 teams that have had QB1 chaos - Yahoo Sports",
+      "summary_ja": "",
+      "tags": [],
+      "stance": "neutral",
+      "stance_reason": "AI未適用",
+      "key_phrase_original": "Next man up: Ranking the NFL's backup quarterbacks for 6 teams that have had QB1 chaos - Yahoo Sports",
       "key_phrase_ja": "",
       "enriched_by": "passthrough"
     },
@@ -7807,12 +8685,12 @@
     },
     {
       "article_id": "559e8dcd",
-      "title_ja": "SpaceX's next astronaut launch for NASA now set for Oct. 1 after delay - Space",
+      "title_ja": "SpaceX's next astronaut launch for NASA now set for Oct. 1 after delay - space.com",
       "summary_ja": "",
       "tags": [],
       "stance": "neutral",
       "stance_reason": "AI未適用",
-      "key_phrase_original": "SpaceX's next astronaut launch for NASA now set for Oct. 1 after delay - Space",
+      "key_phrase_original": "SpaceX's next astronaut launch for NASA now set for Oct. 1 after delay - space.com",
       "key_phrase_ja": "",
       "enriched_by": "passthrough"
     },
@@ -10084,13 +10962,12 @@
     }
   ],
   "notes": [
-    "バッチ1を素通しにしました: HTTP 429",
-    "バッチ2を素通しにしました: HTTP 429",
-    "バッチ3を素通しにしました: HTTP 429",
-    "バッチ4を素通しにしました: HTTP 429",
-    "バッチ5を素通しにしました: HTTP 429",
-    "バッチ6を素通しにしました: HTTP 429",
-    "バッチ7を素通しにしました: HTTP 429",
+    "バッチ1のうち1件は結果が不正のため素通しにしました",
+    "バッチ3を素通しにしました: HTTP 503",
+    "バッチ4を素通しにしました: HTTP 503",
+    "バッチ5を素通しにしました: HTTP 503",
+    "バッチ6を素通しにしました: HTTP 503",
+    "バッチ7を素通しにしました: HTTP 503",
     "バッチ8を素通しにしました: リクエスト上限 30 到達",
     "バッチ9を素通しにしました: リクエスト上限 30 到達",
     "バッチ10を素通しにしました: リクエスト上限 30 到達",
@@ -10104,6 +10981,6 @@
     "バッチ18を素通しにしました: リクエスト上限 30 到達",
     "バッチ19を素通しにしました: リクエスト上限 30 到達",
     "バッチ20を素通しにしました: リクエスト上限 30 到達",
-    "AIを適用できた記事が0件のため degraded にしました"
+    "18バッチが失敗し、その分だけ素通しになりました"
   ]
 }

@@ -4,13 +4,13 @@
   "days": {
     "2026-09-24": {
       "status": "ok",
-      "articles": 916,
+      "articles": 975,
       "countries": 12,
       "feeds_ok": 27,
       "feeds_total": 27,
-      "generated_at": "2026-09-24T14:27:29Z",
+      "generated_at": "2026-09-24T14:51:43Z",
       "alerts": []
     }
   },
-  "updated_at": "2026-09-24T14:28:13Z"
+  "updated_at": "2026-09-24T14:52:27Z"
 }
