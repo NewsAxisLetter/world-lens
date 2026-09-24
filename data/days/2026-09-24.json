@@ -1,7 +1,7 @@
 {
   "schema_version": 3,
   "date": "2026-09-24",
-  "generated_at": "2026-09-24T13:53:51Z",
+  "generated_at": "2026-09-24T14:27:29Z",
   "status": "ok",
   "feeds": [
     {
@@ -9,7 +9,7 @@
       "source": "NHK",
       "rss_url": "https://www.nhk.or.jp/rss/news/cat0.xml",
       "articles": 7,
-      "latest_published_at": "2026-09-24T13:49:12Z",
+      "latest_published_at": "2026-09-24T13:53:49Z",
       "stale_days": 0.0,
       "threshold_days": 2,
       "status": "ok",
@@ -21,10 +21,10 @@
       "rss_url": "https://www.asahi.com/rss/asahi/newsheadlines.rdf",
       "articles": 40,
       "latest_published_at": "2026-09-24T13:08:46Z",
-      "stale_days": 0.0,
+      "stale_days": 0.1,
       "threshold_days": 2,
       "status": "ok",
-      "note": "最新記事は0.0日前です"
+      "note": "最新記事は0.1日前です"
     },
     {
       "feed_id": "us-npr",
@@ -32,10 +32,10 @@
       "rss_url": "https://feeds.npr.org/1004/rss.xml",
       "articles": 10,
       "latest_published_at": "2026-09-24T12:43:15Z",
-      "stale_days": 0.0,
+      "stale_days": 0.1,
       "threshold_days": 2,
       "status": "ok",
-      "note": "最新記事は0.0日前です"
+      "note": "最新記事は0.1日前です"
     },
     {
       "feed_id": "us-cbs",
@@ -53,7 +53,7 @@
       "source": "Google News (US)",
       "rss_url": "https://news.google.com/rss?hl=en-US&gl=US&ceid=US:en",
       "articles": 38,
-      "latest_published_at": "2026-09-24T13:14:00Z",
+      "latest_published_at": "2026-09-24T14:00:36Z",
       "stale_days": 0.0,
       "threshold_days": 2,
       "status": "ok",
@@ -65,17 +65,17 @@
       "rss_url": "https://feeds.bbci.co.uk/news/world/rss.xml",
       "articles": 26,
       "latest_published_at": "2026-09-24T13:08:29Z",
-      "stale_days": 0.0,
+      "stale_days": 0.1,
       "threshold_days": 2,
       "status": "ok",
-      "note": "最新記事は0.0日前です"
+      "note": "最新記事は0.1日前です"
     },
     {
       "feed_id": "gb-guardian",
       "source": "The Guardian",
       "rss_url": "https://www.theguardian.com/world/rss",
       "articles": 40,
-      "latest_published_at": "2026-09-24T13:23:41Z",
+      "latest_published_at": "2026-09-24T14:15:03Z",
       "stale_days": 0.0,
       "threshold_days": 2,
       "status": "ok",
@@ -86,7 +86,7 @@
       "source": "GOV.UK",
       "rss_url": "https://www.gov.uk/search/news-and-communications.atom",
       "articles": 20,
-      "latest_published_at": "2026-09-24T13:45:21Z",
+      "latest_published_at": "2026-09-24T14:20:03Z",
       "stale_days": 0.0,
       "threshold_days": 4,
       "status": "ok",
@@ -97,7 +97,7 @@
       "source": "France 24",
       "rss_url": "https://www.france24.com/en/rss",
       "articles": 24,
-      "latest_published_at": "2026-09-24T13:45:30Z",
+      "latest_published_at": "2026-09-24T14:16:18Z",
       "stale_days": 0.0,
       "threshold_days": 2,
       "status": "ok",
@@ -108,7 +108,7 @@
       "source": "Le Monde",
       "rss_url": "https://www.lemonde.fr/international/rss_full.xml",
       "articles": 20,
-      "latest_published_at": "2026-09-24T13:38:11Z",
+      "latest_published_at": "2026-09-24T14:25:22Z",
       "stale_days": 0.0,
       "threshold_days": 2,
       "status": "ok",
@@ -131,10 +131,10 @@
       "rss_url": "https://www.spiegel.de/international/index.rss",
       "articles": 20,
       "latest_published_at": "2026-09-23T15:28:00Z",
-      "stale_days": 0.9,
+      "stale_days": 1.0,
       "threshold_days": 3,
       "status": "ok",
-      "note": "最新記事は0.9日前です"
+      "note": "最新記事は1.0日前です"
     },
     {
       "feed_id": "ru-rt",
@@ -152,7 +152,7 @@
       "source": "Interfax",
       "rss_url": "https://www.interfax.ru/rss.asp",
       "articles": 25,
-      "latest_published_at": "2026-09-24T13:45:00Z",
+      "latest_published_at": "2026-09-24T14:17:00Z",
       "stale_days": 0.0,
       "threshold_days": 2,
       "status": "ok",
@@ -163,7 +163,7 @@
       "source": "Ukrinform",
       "rss_url": "https://www.ukrinform.net/rss/block-lastnews",
       "articles": 30,
-      "latest_published_at": "2026-09-24T13:37:00Z",
+      "latest_published_at": "2026-09-24T13:58:00Z",
       "stale_days": 0.0,
       "threshold_days": 2,
       "status": "ok",
@@ -174,18 +174,18 @@
       "source": "Ukrainska Pravda",
       "rss_url": "https://www.pravda.com.ua/eng/rss/",
       "articles": 20,
-      "latest_published_at": "2026-09-24T12:29:00Z",
-      "stale_days": 0.1,
+      "latest_published_at": "2026-09-24T13:43:00Z",
+      "stale_days": 0.0,
       "threshold_days": 2,
       "status": "ok",
-      "note": "最新記事は0.1日前です"
+      "note": "最新記事は0.0日前です"
     },
     {
       "feed_id": "cn-gnews",
       "source": "Google News (中国版)",
       "rss_url": "https://news.google.com/rss?hl=zh-CN&gl=CN&ceid=CN:zh-Hans",
       "articles": 26,
-      "latest_published_at": "2026-09-24T13:22:26Z",
+      "latest_published_at": "2026-09-24T13:40:00Z",
       "stale_days": 0.0,
       "threshold_days": 2,
       "status": "ok",
@@ -219,10 +219,10 @@
       "rss_url": "http://world.kbs.co.kr/rss/rss_news.htm?lang=j",
       "articles": 30,
       "latest_published_at": "2026-09-24T05:30:50Z",
-      "stale_days": 0.3,
+      "stale_days": 0.4,
       "threshold_days": 2,
       "status": "ok",
-      "note": "最新記事は0.3日前です"
+      "note": "最新記事は0.4日前です"
     },
     {
       "feed_id": "kr-yonhapnews-ja",
@@ -230,10 +230,10 @@
       "rss_url": "https://jp.yna.co.kr/RSS/news.xml",
       "articles": 40,
       "latest_published_at": "2026-09-24T03:23:17Z",
-      "stale_days": 0.4,
+      "stale_days": 0.5,
       "threshold_days": 2,
       "status": "ok",
-      "note": "最新記事は0.4日前です"
+      "note": "最新記事は0.5日前です"
     },
     {
       "feed_id": "in-hindu",
@@ -251,7 +251,7 @@
       "source": "The Times of India",
       "rss_url": "https://timesofindia.indiatimes.com/rssfeeds/296589292.cms",
       "articles": 20,
-      "latest_published_at": "2026-09-24T13:30:00Z",
+      "latest_published_at": "2026-09-24T13:41:30Z",
       "stale_days": 0.0,
       "threshold_days": 2,
       "status": "ok",
@@ -263,17 +263,17 @@
       "rss_url": "https://agenciabrasil.ebc.com.br/rss/geral/feed.xml",
       "articles": 10,
       "latest_published_at": "2026-09-24T12:47:00Z",
-      "stale_days": 0.0,
+      "stale_days": 0.1,
       "threshold_days": 3,
       "status": "ok",
-      "note": "最新記事は0.0日前です"
+      "note": "最新記事は0.1日前です"
     },
     {
       "feed_id": "br-g1",
       "source": "G1",
       "rss_url": "https://g1.globo.com/rss/g1/mundo/",
       "articles": 40,
-      "latest_published_at": "2026-09-24T04:42:50Z",
+      "latest_published_at": "2026-09-24T05:23:42Z",
       "stale_days": 0.4,
       "threshold_days": 2,
       "status": "ok",
@@ -284,7 +284,7 @@
       "source": "Al Jazeera English",
       "rss_url": "https://www.aljazeera.com/xml/rss/all.xml",
       "articles": 25,
-      "latest_published_at": "2026-09-24T13:36:22Z",
+      "latest_published_at": "2026-09-24T14:15:35Z",
       "stale_days": 0.0,
       "threshold_days": 2,
       "status": "ok",
@@ -295,7 +295,7 @@
       "source": "الجزيرة (Al Jazeera Arabic)",
       "rss_url": "https://www.aljazeera.net/aljazeerarss/a7c186be-1baa-4bd4-9d80-a84db769f779/73d0e1b4-532f-45ef-b135-bfdff8b8cab9",
       "articles": 25,
-      "latest_published_at": "2026-09-24T10:24:46Z",
+      "latest_published_at": "2026-09-24T10:57:34Z",
       "stale_days": 0.1,
       "threshold_days": 2,
       "status": "ok",
@@ -304,17 +304,264 @@
   ],
   "articles": [
     {
+      "article_id": "87ab0ee5",
+      "feed_id": "fr-lemonde",
+      "source": "Le Monde",
+      "country": "FR",
+      "media_type": "private",
+      "lang": "fr",
+      "title_original": "EN DIRECT, ONU : Mahmoud Abbas s’exprimera à distance faute de visa, Benyamin Nétanyahou le fera plus tard dans la journée",
+      "url": "https://www.lemonde.fr/international/live/2026/09/24/en-direct-onu-mahmoud-abbas-s-exprimera-a-distance-faute-de-visa-benyamin-netanyahou-le-fera-plus-tard-dans-la-journee_6780906_3210.html",
+      "published_at": "2026-09-24T14:25:22Z",
+      "fetched_at": "2026-09-24T14:27:29Z",
+      "rank_in_feed": 1
+    },
+    {
+      "article_id": "c8661de0",
+      "feed_id": "gb-govuk",
+      "source": "GOV.UK",
+      "country": "GB",
+      "media_type": "state",
+      "lang": "en",
+      "title_original": "Outcome Statement by co-hosts of the UNGA Foreign Ministers Dialogue on Climate Change and Ecosystem Degradation as National Security Risks",
+      "url": "https://www.gov.uk/government/news/outcome-statement-by-co-hosts-of-the-unga-foreign-ministers-dialogue-on-climate-change-and-ecosystem-degradation-as-national-security-risks",
+      "published_at": "2026-09-24T14:20:03Z",
+      "fetched_at": "2026-09-24T14:27:29Z",
+      "rank_in_feed": 1
+    },
+    {
+      "article_id": "a7d3ff31",
+      "feed_id": "gb-govuk",
+      "source": "GOV.UK",
+      "country": "GB",
+      "media_type": "state",
+      "lang": "en",
+      "title_original": "The Spark September",
+      "url": "https://www.gov.uk/government/news/the-spark-september",
+      "published_at": "2026-09-24T14:17:31Z",
+      "fetched_at": "2026-09-24T14:27:29Z",
+      "rank_in_feed": 2
+    },
+    {
+      "article_id": "54aea076",
+      "feed_id": "ru-interfax",
+      "source": "Interfax",
+      "country": "RU",
+      "media_type": "private",
+      "lang": "ru",
+      "title_original": "Минфин РФ меняет условия семейной ипотеки с 1 октября",
+      "url": "https://www.interfax.ru/business/1118280",
+      "published_at": "2026-09-24T14:17:00Z",
+      "fetched_at": "2026-09-24T14:27:29Z",
+      "rank_in_feed": 1
+    },
+    {
+      "article_id": "4070c723",
+      "feed_id": "fr-france24",
+      "source": "France 24",
+      "country": "FR",
+      "media_type": "public",
+      "lang": "en",
+      "title_original": "Nigerian superstar Yemi Alade: From viral hit 'Johnny' to working with Beyoncé",
+      "url": "https://www.france24.com/en/tv-shows/arts24/20260924-nigerian-superstar-yemi-alade-from-viral-hit-johnny-to-working-with-beyonc%C3%A9",
+      "published_at": "2026-09-24T14:16:18Z",
+      "fetched_at": "2026-09-24T14:27:29Z",
+      "rank_in_feed": 1
+    },
+    {
+      "article_id": "72995d1e",
+      "feed_id": "qa-aljazeera-en",
+      "source": "Al Jazeera English",
+      "country": "QA",
+      "media_type": "state",
+      "lang": "en",
+      "title_original": "‘Unstoppable’ Rumesh revives Sri Lanka’s glory, one javelin throw at a time",
+      "url": "https://www.aljazeera.com/sports/2026/9/24/unstoppable-rumesh-revives-sri-lankas-glory-one-javelin-throw-at-a-time?traffic_source=rss",
+      "published_at": "2026-09-24T14:15:35Z",
+      "fetched_at": "2026-09-24T14:27:29Z",
+      "rank_in_feed": 1
+    },
+    {
+      "article_id": "341f6e1a",
+      "feed_id": "gb-guardian",
+      "source": "The Guardian",
+      "country": "GB",
+      "media_type": "private",
+      "lang": "en",
+      "title_original": "Badenoch says Tories could not form pact with Reform UK because they’re too ‘problematic’ – UK politics live",
+      "url": "https://www.theguardian.com/politics/live/2026/sep/24/labour-reform-conservatives-yougov-mrp-poll-burnham-badenoch-farage-blair-brexit-latest-news-updates",
+      "published_at": "2026-09-24T14:15:03Z",
+      "fetched_at": "2026-09-24T13:05:43Z",
+      "rank_in_feed": 37
+    },
+    {
+      "article_id": "78eb9be7",
+      "feed_id": "ru-interfax",
+      "source": "Interfax",
+      "country": "RU",
+      "media_type": "private",
+      "lang": "ru",
+      "title_original": "Стоимость чистых активов фондов денежного рынка на Мосбирже превысила 2 трлн руб.",
+      "url": "https://www.interfax.ru/business/1118279",
+      "published_at": "2026-09-24T14:12:00Z",
+      "fetched_at": "2026-09-24T14:27:29Z",
+      "rank_in_feed": 2
+    },
+    {
+      "article_id": "9891f438",
+      "feed_id": "ru-interfax",
+      "source": "Interfax",
+      "country": "RU",
+      "media_type": "private",
+      "lang": "ru",
+      "title_original": "ЦБ продлил ограничения на переводы за рубеж средств недружественных нерезидентов со счетов брокеров",
+      "url": "https://www.interfax.ru/business/1118277",
+      "published_at": "2026-09-24T14:11:00Z",
+      "fetched_at": "2026-09-24T14:27:29Z",
+      "rank_in_feed": 3
+    },
+    {
+      "article_id": "ea96c737",
+      "feed_id": "qa-aljazeera-en",
+      "source": "Al Jazeera English",
+      "country": "QA",
+      "media_type": "state",
+      "lang": "en",
+      "title_original": "Rubio warns of Iraq ‘Balkanisation’: Is that a real threat?",
+      "url": "https://www.aljazeera.com/news/2026/9/24/rubio-warns-of-iraq-balkanisation-is-that-a-real-threat?traffic_source=rss",
+      "published_at": "2026-09-24T14:04:43Z",
+      "fetched_at": "2026-09-24T14:27:29Z",
+      "rank_in_feed": 2
+    },
+    {
+      "article_id": "11f5a01c",
+      "feed_id": "ru-interfax",
+      "source": "Interfax",
+      "country": "RU",
+      "media_type": "private",
+      "lang": "ru",
+      "title_original": "Решетников рассказал о сценариях прогноза динамики ВВП",
+      "url": "https://www.interfax.ru/business/1118276",
+      "published_at": "2026-09-24T14:03:00Z",
+      "fetched_at": "2026-09-24T14:27:29Z",
+      "rank_in_feed": 4
+    },
+    {
+      "article_id": "39c7b92c",
+      "feed_id": "us-gnews",
+      "source": "Google News (US)",
+      "country": "US",
+      "media_type": "private",
+      "lang": "en",
+      "title_original": "Track where a potent nor’easter will bring heavy rain, winds and waves - The Washington Post",
+      "url": "https://news.google.com/rss/articles/CBMiswFBVV95cUxQV0FmWEdCa1hxajdlZk41THBjZ0RLcWpTa0ctNW9TSjdOU09FSDVJTlBxWHhvVUUxMEo0OUppaGRTdWUtbUZDVVdKLW5TVkluYm9ndXJKOGVmRHNrc1hQYUVoRnhfM2dGblZOVlk3WnJ2TF8tQmdKSlZVTjBZWEZLT0JVc3ZvSThDeHZrU0QyWUVLMS1aTy0ya3BPbFo5VVZBeDY3YUU2YndHWEE5U0VFa0tlMA?oc=5",
+      "published_at": "2026-09-24T14:00:36Z",
+      "fetched_at": "2026-09-24T14:27:29Z",
+      "rank_in_feed": 7
+    },
+    {
+      "article_id": "190fb9fb",
+      "feed_id": "fr-lemonde",
+      "source": "Le Monde",
+      "country": "FR",
+      "media_type": "private",
+      "lang": "fr",
+      "title_original": "Visite du pape en France : « En ces temps de bouleversements majeurs, l’Eglise montre que le monde a besoin de visionnaires courageux et engagés »",
+      "url": "https://www.lemonde.fr/le-monde-des-religions/article/2026/09/24/visite-du-pape-en-france-en-ces-temps-de-bouleversements-majeurs-l-eglise-montre-que-le-monde-a-besoin-de-visionnaires-courageux-et-engages_6781529_6038514.html",
+      "published_at": "2026-09-24T14:00:10Z",
+      "fetched_at": "2026-09-24T14:27:29Z",
+      "rank_in_feed": 2
+    },
+    {
+      "article_id": "79062471",
+      "feed_id": "fr-france24",
+      "source": "France 24",
+      "country": "FR",
+      "media_type": "public",
+      "lang": "en",
+      "title_original": "Kévi Donat, founder of Le Paris Noir: 'Paris is much more diverse than perhaps people expect'",
+      "url": "https://www.france24.com/en/tv-shows/perspective/20260924-kevi-donat-founder-of-le-paris-noir-paris-is-much-more-diverse-than-perhaps-people-expect",
+      "published_at": "2026-09-24T13:59:22Z",
+      "fetched_at": "2026-09-24T14:27:29Z",
+      "rank_in_feed": 2
+    },
+    {
+      "article_id": "5956d481",
+      "feed_id": "ru-interfax",
+      "source": "Interfax",
+      "country": "RU",
+      "media_type": "private",
+      "lang": "ru",
+      "title_original": "В Госдуме из 34 комитетов за \"Единой Россией\" останутся 20",
+      "url": "https://www.interfax.ru/russia/1118275",
+      "published_at": "2026-09-24T13:59:00Z",
+      "fetched_at": "2026-09-24T14:27:29Z",
+      "rank_in_feed": 5
+    },
+    {
+      "article_id": "3057f135",
+      "feed_id": "ua-ukrinform",
+      "source": "Ukrinform",
+      "country": "UA",
+      "media_type": "state",
+      "lang": "en",
+      "title_original": "Russian attack damages hospital in Odesa",
+      "url": "https://www.ukrinform.net/rubric-ato/4167646-russian-attack-damages-hospital-in-odesa.html",
+      "published_at": "2026-09-24T13:58:00Z",
+      "fetched_at": "2026-09-24T14:27:29Z",
+      "rank_in_feed": 1
+    },
+    {
+      "article_id": "8ca775b1",
+      "feed_id": "ru-interfax",
+      "source": "Interfax",
+      "country": "RU",
+      "media_type": "private",
+      "lang": "ru",
+      "title_original": "Силуанов прокомментировал планируемый дефицит бюджета в 2027 году",
+      "url": "https://www.interfax.ru/business/1118274",
+      "published_at": "2026-09-24T13:56:00Z",
+      "fetched_at": "2026-09-24T14:27:29Z",
+      "rank_in_feed": 6
+    },
+    {
+      "article_id": "029c5a23",
+      "feed_id": "jp-nhk",
+      "source": "NHK",
+      "country": "JP",
+      "media_type": "public",
+      "lang": "ja",
+      "title_original": "アジア大会卓球男子団体 日本が中国破り60年ぶり金メダル",
+      "url": "https://news.web.nhk/newsweb/na/nd-20260924de52255",
+      "published_at": "2026-09-24T13:53:49Z",
+      "fetched_at": "2026-09-24T13:05:43Z",
+      "rank_in_feed": 2
+    },
+    {
       "article_id": "d167fc4a",
       "feed_id": "cn-scmp",
       "source": "South China Morning Post",
       "country": "CN",
       "media_type": "private",
       "lang": "en",
-      "title_original": "Xi begins first full day of US visit to meet Trump with White House ceremony",
+      "title_original": "Trump and Xi shake hands as Chinese president arrives at White House with Peng Liyuan",
       "url": "https://www.scmp.com/news/china/diplomacy/article/3368706/xi-begins-first-full-day-us-visit-meet-trump-white-house-ceremony?utm_source=rss_feed",
       "published_at": "2026-09-24T13:53:20Z",
       "fetched_at": "2026-09-24T13:53:51Z",
       "rank_in_feed": 1
+    },
+    {
+      "article_id": "74e32ea3",
+      "feed_id": "ru-interfax",
+      "source": "Interfax",
+      "country": "RU",
+      "media_type": "private",
+      "lang": "ru",
+      "title_original": "\"Соллерс\" выпустил первые партии рамного внедорожника S9 на ульяновской площадке",
+      "url": "https://www.interfax.ru/russia/1118273",
+      "published_at": "2026-09-24T13:52:00Z",
+      "fetched_at": "2026-09-24T14:27:29Z",
+      "rank_in_feed": 7
     },
     {
       "article_id": "a2cd0904",
@@ -341,6 +588,19 @@
       "published_at": "2026-09-24T13:49:12Z",
       "fetched_at": "2026-09-24T13:05:43Z",
       "rank_in_feed": 3
+    },
+    {
+      "article_id": "3f331ca9",
+      "feed_id": "ru-interfax",
+      "source": "Interfax",
+      "country": "RU",
+      "media_type": "private",
+      "lang": "ru",
+      "title_original": "Рядовой из Северодвинска осужден за оправдание поджога полицейских машин",
+      "url": "https://www.interfax.ru/russia/1118272",
+      "published_at": "2026-09-24T13:49:00Z",
+      "fetched_at": "2026-09-24T14:27:29Z",
+      "rank_in_feed": 8
     },
     {
       "article_id": "5f82d1f0",
@@ -395,6 +655,32 @@
       "rank_in_feed": 1
     },
     {
+      "article_id": "61aa7ffb",
+      "feed_id": "gb-guardian",
+      "source": "The Guardian",
+      "country": "GB",
+      "media_type": "private",
+      "lang": "en",
+      "title_original": "Fears of return to war as Tigray rebels launch offensive against Ethiopian army",
+      "url": "https://www.theguardian.com/world/2026/sep/24/fears-return-to-war-tigray-rebels-launch-offensive-against-ethiopian-army",
+      "published_at": "2026-09-24T13:43:09Z",
+      "fetched_at": "2026-09-24T14:27:29Z",
+      "rank_in_feed": 1
+    },
+    {
+      "article_id": "4da39bf8",
+      "feed_id": "ua-pravda",
+      "source": "Ukrainska Pravda",
+      "country": "UA",
+      "media_type": "private",
+      "lang": "en",
+      "title_original": "Former commander-in-chief Zaluzhnyi: Russia continues to receive imported components, and could strike beyond Ukraine tomorrow",
+      "url": "https://www.pravda.com.ua/eng/news/2026/09/24/8054914/",
+      "published_at": "2026-09-24T13:43:00Z",
+      "fetched_at": "2026-09-24T14:27:29Z",
+      "rank_in_feed": 1
+    },
+    {
       "article_id": "6fa68bc9",
       "feed_id": "gb-govuk",
       "source": "GOV.UK",
@@ -406,6 +692,19 @@
       "published_at": "2026-09-24T13:42:32Z",
       "fetched_at": "2026-09-24T13:53:51Z",
       "rank_in_feed": 2
+    },
+    {
+      "article_id": "7d8632a1",
+      "feed_id": "qa-aljazeera-en",
+      "source": "Al Jazeera English",
+      "country": "QA",
+      "media_type": "state",
+      "lang": "en",
+      "title_original": "Israel offers cash to firms hit by trade ban; Europe dithers on new rules",
+      "url": "https://www.aljazeera.com/news/2026/9/24/israel-offers-cash-to-firms-hit-by-trade-ban-europe-dithers-on-new-rules?traffic_source=rss",
+      "published_at": "2026-09-24T13:42:05Z",
+      "fetched_at": "2026-09-24T14:27:29Z",
+      "rank_in_feed": 3
     },
     {
       "article_id": "af374b0a",
@@ -421,6 +720,19 @@
       "rank_in_feed": 2
     },
     {
+      "article_id": "ce0bda67",
+      "feed_id": "in-toi",
+      "source": "The Times of India",
+      "country": "IN",
+      "media_type": "private",
+      "lang": "en",
+      "title_original": "Minnesota girl, 12, wins $10Kprize for her global anti-hate campaign",
+      "url": "https://timesofindia.indiatimes.com/world/us/meet-natalie-flaherty-the-minnesota-girl-who-turned-a-2023-halloween-idea-into-an-anti-hate-campaign-distributing-100000-bracelets-across-50-countries-now-the-12-year-old-has-won-a-10000-national-young-hero-prize/articleshow/134464053.cms",
+      "published_at": "2026-09-24T13:41:30Z",
+      "fetched_at": "2026-09-24T14:27:29Z",
+      "rank_in_feed": 1
+    },
+    {
       "article_id": "4ecb4ad3",
       "feed_id": "us-cbs",
       "source": "CBS News",
@@ -434,6 +746,19 @@
       "rank_in_feed": 3
     },
     {
+      "article_id": "413a6673",
+      "feed_id": "in-toi",
+      "source": "The Times of India",
+      "country": "IN",
+      "media_type": "private",
+      "lang": "en",
+      "title_original": "In 2000, California packed 662,700 shredded waste tires beneath an I-880 on-ramp; they cut...",
+      "url": "https://timesofindia.indiatimes.com/world/us/in-2000-california-packed-662700-shredded-waste-tires-beneath-an-i-880-on-ramp-they-cut-foundation-stress-40-saved-477000-and-calrecycle-later-reported-22-years-without-repairs-or-issues/articleshow/134462701.cms",
+      "published_at": "2026-09-24T13:41:11Z",
+      "fetched_at": "2026-09-24T14:27:29Z",
+      "rank_in_feed": 2
+    },
+    {
       "article_id": "db1a0a88",
       "feed_id": "ru-interfax",
       "source": "Interfax",
@@ -445,6 +770,19 @@
       "published_at": "2026-09-24T13:40:00Z",
       "fetched_at": "2026-09-24T13:53:51Z",
       "rank_in_feed": 3
+    },
+    {
+      "article_id": "250da3ed",
+      "feed_id": "cn-gnews",
+      "source": "Google News (中国版)",
+      "country": "CN",
+      "media_type": "private",
+      "lang": "zh",
+      "title_original": "六连冠！国乒女团战胜日本队夺得亚运会金牌-中国吉林网 - news.cnjiwang.com",
+      "url": "https://news.google.com/rss/articles/CBMiXEFVX3lxTE9CUjhkNWxzOV9wTTk2aUFrQTAzemVmRTFGc1hfNWFtczM3M1p4N3hzZmpfMS1NWjRnT2pDUmd6QkNlSzZJWlhGS0g0bGk5LTlNS1ptbGp4RTR5SlhC?oc=5",
+      "published_at": "2026-09-24T13:40:00Z",
+      "fetched_at": "2026-09-24T14:27:29Z",
+      "rank_in_feed": 23
     },
     {
       "article_id": "62b72fac",
@@ -603,6 +941,19 @@
       "rank_in_feed": 1
     },
     {
+      "article_id": "a3b6baba",
+      "feed_id": "us-gnews",
+      "source": "Google News (US)",
+      "country": "US",
+      "media_type": "private",
+      "lang": "en",
+      "title_original": "One blood test could screen you for 50 cancers. Here’s why it’s controversial. - The Washington Post",
+      "url": "https://news.google.com/rss/articles/CBMivAFBVV95cUxOV3RFSlhqcUhIUzJadmVZU2lsYVcyekdqVnd0aGRrNjZBNXFscW1MN1EtZEk4WHhRdmJhRXI2M0tiRmx5RzJOME5XTG03aHVpdE1oZ242SjU0T2p2WHJ1Um04X05ZLWdiNW1wYmFKRE5QZnM4c2JWb3RWQWUzcFhXQzhYdDZXbjZxQ0YzWFZqc191SG5MaEt3TXNZQVZNWmxrbWZ0T2dPQWYtVHZTbEo4Sm0xbW9HYXN4anhxUQ?oc=5",
+      "published_at": "2026-09-24T13:33:10Z",
+      "fetched_at": "2026-09-24T14:27:29Z",
+      "rank_in_feed": 18
+    },
+    {
       "article_id": "ddff885e",
       "feed_id": "ru-interfax",
       "source": "Interfax",
@@ -694,16 +1045,16 @@
       "rank_in_feed": 3
     },
     {
-      "article_id": "029c5a23",
-      "feed_id": "jp-nhk",
-      "source": "NHK",
-      "country": "JP",
-      "media_type": "public",
-      "lang": "ja",
-      "title_original": "アジア大会卓球男子団体 日本が中国破り60年ぶり金メダル",
-      "url": "https://news.web.nhk/newsweb/na/nd-20260924de52255",
-      "published_at": "2026-09-24T13:26:52Z",
-      "fetched_at": "2026-09-24T13:05:43Z",
+      "article_id": "2dbe0289",
+      "feed_id": "ua-pravda",
+      "source": "Ukrainska Pravda",
+      "country": "UA",
+      "media_type": "private",
+      "lang": "en",
+      "title_original": "Ukrainian POWs reportedly transferred from Makiivka penal colony in occupied Donetsk Oblast to Russia",
+      "url": "https://www.pravda.com.ua/eng/news/2026/09/24/8054912/",
+      "published_at": "2026-09-24T13:27:00Z",
+      "fetched_at": "2026-09-24T14:27:29Z",
       "rank_in_feed": 2
     },
     {
@@ -783,19 +1134,6 @@
       "published_at": "2026-09-24T13:22:26Z",
       "fetched_at": "2026-09-24T13:53:51Z",
       "rank_in_feed": 24
-    },
-    {
-      "article_id": "341f6e1a",
-      "feed_id": "gb-guardian",
-      "source": "The Guardian",
-      "country": "GB",
-      "media_type": "private",
-      "lang": "en",
-      "title_original": "Badenoch says Tories could not form pact with Reform UK because they’re too ‘problematic’ – UK politics live",
-      "url": "https://www.theguardian.com/politics/live/2026/sep/24/labour-reform-conservatives-yougov-mrp-poll-burnham-badenoch-farage-blair-brexit-latest-news-updates",
-      "published_at": "2026-09-24T13:22:22Z",
-      "fetched_at": "2026-09-24T13:05:43Z",
-      "rank_in_feed": 37
     },
     {
       "article_id": "9ea632fc",
@@ -1097,6 +1435,19 @@
       "rank_in_feed": 16
     },
     {
+      "article_id": "7a224832",
+      "feed_id": "cn-gnews",
+      "source": "Google News (中国版)",
+      "country": "CN",
+      "media_type": "private",
+      "lang": "zh",
+      "title_original": "“考古中国”又有新进展：三项中外联合考古项目成果发布 - 光明网",
+      "url": "https://news.google.com/rss/articles/CBMiZkFVX3lxTFBoMGREX1FuaFNYcW5vbG5vSGVxUzRHcmJDLWJkNnp3NUZpQkd4b0tHNnBrcU5YbGtMdnVXRlFuNWNyclN2S0R2Z2kxTGVrWVFMbkRpbjRKTV95aGZQdDlSUlJaRUVRdw?oc=5",
+      "published_at": "2026-09-24T13:10:00Z",
+      "fetched_at": "2026-09-24T14:27:29Z",
+      "rank_in_feed": 4
+    },
+    {
       "article_id": "4312e1c3",
       "feed_id": "ru-interfax",
       "source": "Interfax",
@@ -1253,6 +1604,19 @@
       "rank_in_feed": 5
     },
     {
+      "article_id": "2a4894d6",
+      "feed_id": "us-gnews",
+      "source": "Google News (US)",
+      "country": "US",
+      "media_type": "private",
+      "lang": "en",
+      "title_original": "Man falls over 800 feet to his death 1 day after another hiker found dead on same mountain - CBS News",
+      "url": "https://news.google.com/rss/articles/CBMieEFVX3lxTE9EbVlJdERJdDBycmwtRUpteWR2SXRhZHQ0eWY4cGEycUJjTjZJVDBzaEZIMkZyb0tmTXItWG5ydmhqQTU4VkN1bHhhdkViWExfWlI5OV9wVlVTXy1tV0YyUG1RNW9VZ1FvQzJuSWhGbDBScVlMQklmdQ?oc=5",
+      "published_at": "2026-09-24T13:03:44Z",
+      "fetched_at": "2026-09-24T14:27:29Z",
+      "rank_in_feed": 10
+    },
+    {
       "article_id": "9c3bf818",
       "feed_id": "ru-interfax",
       "source": "Interfax",
@@ -1402,7 +1766,7 @@
       "country": "FR",
       "media_type": "private",
       "lang": "fr",
-      "title_original": "Emmanuel Macron bouscule la campagne présidentielle en introduisant la crise internationale dans le débat politique",
+      "title_original": "Emmanuel Macron bouscule la campagne présidentielle pour 2027 en introduisant les tensions géopolitiques au cœur du débat politique",
       "url": "https://www.lemonde.fr/politique/article/2026/09/24/emmanuel-macron-bouscule-la-campagne-presidentielle-en-introduisant-la-crise-internationale-dans-le-debat-politique_6781516_823448.html",
       "published_at": "2026-09-24T12:55:58Z",
       "fetched_at": "2026-09-24T13:05:43Z",
@@ -1510,6 +1874,19 @@
       "url": "https://www.aljazeera.com/sports/2026/9/24/tyson-fury-to-face-british-rival-anthony-joshua-in-cardiff-on-december-11?traffic_source=rss",
       "published_at": "2026-09-24T12:48:26Z",
       "fetched_at": "2026-09-24T13:11:52Z",
+      "rank_in_feed": 2
+    },
+    {
+      "article_id": "6f06c295",
+      "feed_id": "us-gnews",
+      "source": "Google News (US)",
+      "country": "US",
+      "media_type": "private",
+      "lang": "en",
+      "title_original": "Live: Trump-Xi summit to take place amid race for AI dominance; Netanyahu to deliver UN speech - reuters.com",
+      "url": "https://news.google.com/rss/articles/CBMitwFBVV95cUxOcmhmZ2tKWGNnbHEyMDlSMmVjWmRkSklUSi1OcXhHdkFCTVZ0OTR1NDdHXzVLSVRmNDZtNThDMnhlSGthM3FwZ1oyWmJhVDRDZVMyN1hUUlE4bEhMcElpWTMxdGpwYmwxUWNqaEFkQzhUMTBQWXViVlQxWm5LQkVYSkpZZEZ4eUc2TzdEaHloQjVKVXpLMnAtc3BQVkNmMHVDMlRaTGJiaDh0bFhzVHU2QXNXVG42d3c?oc=5",
+      "published_at": "2026-09-24T12:47:16Z",
+      "fetched_at": "2026-09-24T14:27:29Z",
       "rank_in_feed": 2
     },
     {
@@ -2020,6 +2397,19 @@
       "rank_in_feed": 1
     },
     {
+      "article_id": "f0ea8dce",
+      "feed_id": "cn-gnews",
+      "source": "Google News (中国版)",
+      "country": "CN",
+      "media_type": "private",
+      "lang": "zh",
+      "title_original": "新华时评｜心上一轮月，人间万种圆 - 新华网",
+      "url": "https://news.google.com/rss/articles/CBMigwFBVV95cUxQSVJ4SWo3V3QzMUl1VVNRZFktelZyb3RyZ1hxNW5IeDd5d0NQZ1dZU2JMbUQxY3V1LXl3WHJGRFVsanRjeHoyMVRZa2FvVkVadXFRX25tejh1N2dqWUM0TnhFSXVZdXBiNHRXbEdQNWJ0aWdYY3NET05BcF9WWWZtRWE5OA?oc=5",
+      "published_at": "2026-09-24T12:10:49Z",
+      "fetched_at": "2026-09-24T14:27:29Z",
+      "rank_in_feed": 2
+    },
+    {
       "article_id": "e76d6ddc",
       "feed_id": "ua-ukrinform",
       "source": "Ukrinform",
@@ -2208,9 +2598,9 @@
       "country": "FR",
       "media_type": "private",
       "lang": "fr",
-      "title_original": "L’Inde exporte de l’essence vers la Russie : du jamais-vu, et les conséquences sont lourdes",
+      "title_original": "L’Inde exporte de l’essence vers la Russie : du jamais-vu, et des conséquences qui seront lourdes",
       "url": "https://www.lemonde.fr/economie/article/2026/09/24/l-inde-exporte-de-l-essence-vers-la-russie-du-jamais-vu-et-les-consequences-sont-lourdes_6781507_3234.html",
-      "published_at": "2026-09-24T12:00:16Z",
+      "published_at": "2026-09-24T12:00:08Z",
       "fetched_at": "2026-09-24T13:05:43Z",
       "rank_in_feed": 8
     },
@@ -2722,6 +3112,19 @@
       "rank_in_feed": 6
     },
     {
+      "article_id": "5187753e",
+      "feed_id": "cn-gnews",
+      "source": "Google News (中国版)",
+      "country": "CN",
+      "media_type": "private",
+      "lang": "zh",
+      "title_original": "亚运会女子跳马决赛：杜思雨摘铜，丘索维金娜第五 - qzwb.com",
+      "url": "https://news.google.com/rss/articles/CBMib0FVX3lxTFBaTFd2cDVDa2ZGdVdZVHl4OTRNWGt5YkktZXNNTUNWcXpRZXEzZjlERDJpaDFZQlAzTzE1ZWk4cURPOEp5eWlCYmFHbzVJN3lEMGxudWJBbVp4dDhRX1lrSkY0LXpFT0ZIM3pEUXI5UQ?oc=5",
+      "published_at": "2026-09-24T11:32:00Z",
+      "fetched_at": "2026-09-24T14:27:29Z",
+      "rank_in_feed": 24
+    },
+    {
       "article_id": "a923f2c9",
       "feed_id": "in-toi",
       "source": "The Times of India",
@@ -2980,6 +3383,19 @@
       "published_at": "2026-09-24T11:17:48Z",
       "fetched_at": "2026-09-24T13:05:43Z",
       "rank_in_feed": 10
+    },
+    {
+      "article_id": "869ec16b",
+      "feed_id": "cn-gnews",
+      "source": "Google News (中国版)",
+      "country": "CN",
+      "media_type": "private",
+      "lang": "zh",
+      "title_original": "亚运会｜特写：11公斤，当中国无名小辈把名将逼到绝境 - 搜狐网",
+      "url": "https://news.google.com/rss/articles/CBMiiAFBVV95cUxONjgtMXVnTWpzODdNelNIVVVxUnduMWNHLXZLQU1pWDBIeDNmVUZvR2F2OXdPUkRFYXY1SWhZRE4ySGh0STA0Yk5Ca2ZkT2REOUd3cUdHcy1JQkJRY0luVmxfQjZwaGFRQU5JWDZiQXdGM1VMbllkR0dZR3FuMEFOUkNILTBGa183?oc=5",
+      "published_at": "2026-09-24T11:16:26Z",
+      "fetched_at": "2026-09-24T14:27:29Z",
+      "rank_in_feed": 26
     },
     {
       "article_id": "c7fe25a8",
@@ -3274,7 +3690,7 @@
       "country": "US",
       "media_type": "private",
       "lang": "en",
-      "title_original": "People are ditching their vapes only to pick up another surprising habit - Fox News",
+      "title_original": "People are ditching their vapes only to pick up another surprising habit - foxnews.com",
       "url": "https://news.google.com/rss/articles/CBMigwFBVV95cUxPWmZ4ajVqRzZXTXRLbFpjanEzdmx6V0JiV2JhV1FQZW00ZktJYlR2SzZRWHRmVTVBRkE0LTVuMDhtaHl4aDZhRHRyRUZKTERSWjlRd09yS0txUTRUcnFiekItZDJUMmltVzRzaWJHLXVWZnR5TVVuSkM1YWJyb3JLVUFCONIBiAFBVV95cUxNNUtsaHZzQ1I2UnByWUJ5QzJ0QTA1Nkl3aTZ1Vy1TYWtyQVd4VmFBRTJXUmZQZjlwUUZYRWJaNzdCalVIZmNGV3RmQk42c3pRZXpVQmY1VFd6VnpDWUR0di03NEVVUUtjS3BwUlpHdEFvUkFCdWtIUXlmNDZ6cC1rQi1ubjdmRzly?oc=5",
       "published_at": "2026-09-24T11:00:36Z",
       "fetched_at": "2026-09-24T13:05:43Z",
@@ -3346,6 +3762,19 @@
       "rank_in_feed": 10
     },
     {
+      "article_id": "8300f85f",
+      "feed_id": "qa-aljazeera-ar",
+      "source": "الجزيرة (Al Jazeera Arabic)",
+      "country": "QA",
+      "media_type": "state",
+      "lang": "ar",
+      "title_original": "حادث غريب.. غزال يتسبب في وفاة مأساوية للاعب بولندي",
+      "url": "https://www.aljazeera.net/sport/2026/9/24/%d9%88%d9%81%d8%a7%d8%a9-%d9%84%d8%a7%d8%b9%d8%a8-%d8%ad%d8%a7%d8%af%d8%ab-%d8%ba%d8%b2%d8%a7%d9%84-%d8%a8%d9%88%d9%84%d9%86%d8%af%d8%a7?traffic_source=rss",
+      "published_at": "2026-09-24T10:57:34Z",
+      "fetched_at": "2026-09-24T14:27:29Z",
+      "rank_in_feed": 1
+    },
+    {
       "article_id": "141dd2ff",
       "feed_id": "qa-aljazeera-en",
       "source": "Al Jazeera English",
@@ -3411,6 +3840,19 @@
       "rank_in_feed": 11
     },
     {
+      "article_id": "daf397f3",
+      "feed_id": "us-gnews",
+      "source": "Google News (US)",
+      "country": "US",
+      "media_type": "private",
+      "lang": "en",
+      "title_original": "Block the Merger Coalition Files Legal Request to Oppose Paramount-Warner Bros. Deal - variety.com",
+      "url": "https://news.google.com/rss/articles/CBMipwFBVV95cUxPMWp0ZjJjZ0pIZTBEakVVcW9jX2g0Y1BFVFNRNFZtRVQ1NG8tX1pINGsxbzVuaTJ2X1l6SmpyNkdyb0Nld1FGMmFST3JhdkowOFRFX0Nza29vdzZtMU41VXlzeG50am5lNFFnVzZsaHBsTHNuSU1wQ0t0dHFRYWNhWlZEaWlGVmx3T0hIekxoZk9NczdJb1c3TGd6WkgwQ0lVVFRsQ2ZjYw?oc=5",
+      "published_at": "2026-09-24T10:52:00Z",
+      "fetched_at": "2026-09-24T14:27:29Z",
+      "rank_in_feed": 25
+    },
+    {
       "article_id": "247c7587",
       "feed_id": "us-gnews",
       "source": "Google News (US)",
@@ -3461,6 +3903,19 @@
       "published_at": "2026-09-24T10:44:08Z",
       "fetched_at": "2026-09-24T13:05:43Z",
       "rank_in_feed": 14
+    },
+    {
+      "article_id": "2338f3af",
+      "feed_id": "us-gnews",
+      "source": "Google News (US)",
+      "country": "US",
+      "media_type": "private",
+      "lang": "en",
+      "title_original": "College football Week 4 best bets: Plays to make on Missouri, Indiana, Ole Miss and more - ESPN",
+      "url": "https://news.google.com/rss/articles/CBMisAFBVV95cUxPRWpPc1JOVG50dllkcWdNWDBzbFFuWkRqeW45Z1Vod0ZvbmxKejc3RVphMXRlT2swYTZQNHVwa2d0amVtcWxJcTBTVHpHNlkxWkJHTk5HSDhNNGRid1RibkNNM0h4M0dPMEN5anlWWVQ5cVFRUjRWLXVheHB5dWRWX3pUODNvY1JUWmt5c2RBR1k3ak5zcE9fU2FlY2IxNDBaU2Y5YkswZi11UlNDak52RA?oc=5",
+      "published_at": "2026-09-24T10:44:00Z",
+      "fetched_at": "2026-09-24T14:27:29Z",
+      "rank_in_feed": 27
     },
     {
       "article_id": "bae50ebb",
@@ -4189,6 +4644,19 @@
       "published_at": "2026-09-24T10:00:00Z",
       "fetched_at": "2026-09-24T13:05:43Z",
       "rank_in_feed": 17
+    },
+    {
+      "article_id": "b045b29f",
+      "feed_id": "us-gnews",
+      "source": "Google News (US)",
+      "country": "US",
+      "media_type": "private",
+      "lang": "en",
+      "title_original": "5 reasons I'm ready to ditch my Pixel 11 Pro for the Motorola Signature 27 - Android Authority",
+      "url": "https://news.google.com/rss/articles/CBMikgFBVV95cUxPTFQxU0wxbUkydnFWM0pfOVk5WUdwLWlRcjBzd3l4Qm1sT054cG1aRUludjBJMExtVFJIZFZqWE1uWlZLcWNGM0FfYTBKS2JHQ3pjcXY5cjNVd0F5QWtuclIzZWlpY3NKSTh2TkltUGZfUW4zdVRNekV2OWdMMEZoNjE3cHVhWHlfeE9LSUtoQi1sUQ?oc=5",
+      "published_at": "2026-09-24T10:00:00Z",
+      "fetched_at": "2026-09-24T14:27:29Z",
+      "rank_in_feed": 21
     },
     {
       "article_id": "0eae17eb",
@@ -4982,6 +5450,19 @@
       "published_at": "2026-09-24T09:04:00Z",
       "fetched_at": "2026-09-24T13:05:43Z",
       "rank_in_feed": 18
+    },
+    {
+      "article_id": "98973292",
+      "feed_id": "us-gnews",
+      "source": "Google News (US)",
+      "country": "US",
+      "media_type": "private",
+      "lang": "en",
+      "title_original": "Jeff Probst Made ‘Survivor’ His Life’s Work. He’s Not Done Yet. - The New York Times",
+      "url": "https://news.google.com/rss/articles/CBMimgFBVV95cUxQenhpd3dMZ2lYQkhhdUZkNElaTVhuMzlHaU81UWtmeFZCTTR1TFN6UHRiaVV3MlBia2I0b1VpZFE4Q2FGRG43Y25OeDB5ckVCZWhlb0VEa3JRMlcwV2VIUkVKTU5kbzNHckpjenlEZUdaRTdNVC0tdUM4MU9ZdmlEdEVxcGVrVnhFdVV6SERVeTVZdkFqS2F3dUZB?oc=5",
+      "published_at": "2026-09-24T09:01:54Z",
+      "fetched_at": "2026-09-24T14:27:29Z",
+      "rank_in_feed": 26
     },
     {
       "article_id": "6f956247",
@@ -5894,6 +6375,19 @@
       "rank_in_feed": 39
     },
     {
+      "article_id": "d754af1b",
+      "feed_id": "cn-gnews",
+      "source": "Google News (中国版)",
+      "country": "CN",
+      "media_type": "private",
+      "lang": "zh",
+      "title_original": "国防部：日本以所谓“存亡危机事态”为名加速“再军事化” - 京报网",
+      "url": "https://news.google.com/rss/articles/CBMiXkFVX3lxTFBabGFLRlNDdDBMSXZWblpDS0dMUXNXYUxkdHY3eUhKWmQxV0tCVTF4Y1pjMXFaS1FnOE4xX1Z2cHZ3cy1LYXlQQnNEU3VyOGFBaXdJT1hEVFZQREszOVE?oc=5",
+      "published_at": "2026-09-24T07:57:47Z",
+      "fetched_at": "2026-09-24T14:27:29Z",
+      "rank_in_feed": 9
+    },
+    {
       "article_id": "8f4ea96d",
       "feed_id": "fr-lemonde",
       "source": "Le Monde",
@@ -6212,7 +6706,7 @@
       "country": "CN",
       "media_type": "private",
       "lang": "zh",
-      "title_original": "越山海｜跨越太平洋的青春之桥 - 中安在线",
+      "title_original": "越山海｜跨越太平洋的青春之桥 - news.anhuinews.com",
       "url": "https://news.google.com/rss/articles/CBMibEFVX3lxTFBwX21nY1JQLWtrZzdHLXFvMUdyNkZleU9RVGFyaXZ6U0tvWXg1eVk5VnZiYXUxZVdsUlRudlpJSTc2amdId1NSNzViaHBwNk9uNmozQXo3N0FPR2h4cnNKVEcxeV9xeWJJeHplSQ?oc=5",
       "published_at": "2026-09-24T06:53:00Z",
       "fetched_at": "2026-09-24T13:11:52Z",
@@ -6544,6 +7038,45 @@
       "rank_in_feed": 29
     },
     {
+      "article_id": "c17ddad0",
+      "feed_id": "br-g1",
+      "source": "G1",
+      "country": "BR",
+      "media_type": "private",
+      "lang": "pt",
+      "title_original": "SIGA: presidente da Autoridade Palestina discursa agora na ONU",
+      "url": "https://g1.globo.com/mundo/ao-vivo/assembleia-geral-da-onu-2026.ghtml",
+      "published_at": "2026-09-24T05:23:42Z",
+      "fetched_at": "2026-09-24T13:05:43Z",
+      "rank_in_feed": 1
+    },
+    {
+      "article_id": "49ef637c",
+      "feed_id": "br-g1",
+      "source": "G1",
+      "country": "BR",
+      "media_type": "private",
+      "lang": "pt",
+      "title_original": "AO VIVO: Trump e Xi Jinping se reúnem na Casa Branca",
+      "url": "https://g1.globo.com/mundo/ao-vivo/trump-e-xi-jinping-se-reunem-nos-eua.ghtml",
+      "published_at": "2026-09-24T05:19:55Z",
+      "fetched_at": "2026-09-24T13:36:47Z",
+      "rank_in_feed": 1
+    },
+    {
+      "article_id": "93a9b0f7",
+      "feed_id": "br-g1",
+      "source": "G1",
+      "country": "BR",
+      "media_type": "private",
+      "lang": "pt",
+      "title_original": "Na ONU, presidente da Autoridade Palestina critica governo Trump",
+      "url": "https://g1.globo.com/mundo/noticia/2026/09/24/presidente-autoridade-palestina-discurso-assembleia-geral-da-onu-2026.ghtml",
+      "published_at": "2026-09-24T05:15:07Z",
+      "fetched_at": "2026-09-24T14:27:29Z",
+      "rank_in_feed": 3
+    },
+    {
       "article_id": "9ef38e05",
       "feed_id": "us-npr",
       "source": "NPR",
@@ -6555,6 +7088,19 @@
       "published_at": "2026-09-24T05:14:11Z",
       "fetched_at": "2026-09-24T13:05:43Z",
       "rank_in_feed": 7
+    },
+    {
+      "article_id": "4e0a698b",
+      "feed_id": "br-g1",
+      "source": "G1",
+      "country": "BR",
+      "media_type": "private",
+      "lang": "pt",
+      "title_original": "Trump e Xi se encontam em Washington",
+      "url": "https://g1.globo.com/mundo/noticia/2026/09/24/trump-e-xi-se-encontam-em-washington.ghtml",
+      "published_at": "2026-09-24T05:06:36Z",
+      "fetched_at": "2026-09-24T14:27:29Z",
+      "rank_in_feed": 4
     },
     {
       "article_id": "0c6cb1d2",
@@ -6648,19 +7194,6 @@
       "rank_in_feed": 30
     },
     {
-      "article_id": "c17ddad0",
-      "feed_id": "br-g1",
-      "source": "G1",
-      "country": "BR",
-      "media_type": "private",
-      "lang": "pt",
-      "title_original": "3º dia de Assembleia Geral da ONU terá discursos de autoridade palestina e do premiê de Israel; SIGA",
-      "url": "https://g1.globo.com/mundo/ao-vivo/assembleia-geral-da-onu-2026.ghtml",
-      "published_at": "2026-09-24T04:42:50Z",
-      "fetched_at": "2026-09-24T13:05:43Z",
-      "rank_in_feed": 1
-    },
-    {
       "article_id": "0f52fb43",
       "feed_id": "de-dw-en",
       "source": "Deutsche Welle",
@@ -6698,19 +7231,6 @@
       "published_at": "2026-09-24T04:33:30Z",
       "fetched_at": "2026-09-24T13:05:43Z",
       "rank_in_feed": 3
-    },
-    {
-      "article_id": "49ef637c",
-      "feed_id": "br-g1",
-      "source": "G1",
-      "country": "BR",
-      "media_type": "private",
-      "lang": "pt",
-      "title_original": "DAQUI A POUCO: Trump e Xi Jinping se reúnem na Casa Branca",
-      "url": "https://g1.globo.com/mundo/ao-vivo/trump-e-xi-jinping-se-reunem-nos-eua.ghtml",
-      "published_at": "2026-09-24T04:32:20Z",
-      "fetched_at": "2026-09-24T13:36:47Z",
-      "rank_in_feed": 1
     },
     {
       "article_id": "533d0d5a",
@@ -6828,6 +7348,19 @@
       "published_at": "2026-09-24T03:31:52Z",
       "fetched_at": "2026-09-24T13:05:43Z",
       "rank_in_feed": 10
+    },
+    {
+      "article_id": "21a23532",
+      "feed_id": "cn-gnews",
+      "source": "Google News (中国版)",
+      "country": "CN",
+      "media_type": "private",
+      "lang": "zh",
+      "title_original": "卫星互联网低轨26组卫星成功发射 任务圆满成功 - 中华网",
+      "url": "https://news.google.com/rss/articles/CBMicEFVX3lxTE1lMVZPLXp3bFJoT1Y0WHVTS1B6dXF4enJzVFdycWVXTDVxQ2NGeGxxU0hoaXRpSTd0RFNyYWRRLXFyTFJfekltclJGOVJCT2tTdVFETGFFSi1TV0tzWWhDZDE5MWcxNnRFN3ItbnVkTVc?oc=5",
+      "published_at": "2026-09-24T03:26:22Z",
+      "fetched_at": "2026-09-24T14:27:29Z",
+      "rank_in_feed": 3
     },
     {
       "article_id": "df4516ce",
@@ -7441,6 +7974,19 @@
       "rank_in_feed": 24
     },
     {
+      "article_id": "6f97f90d",
+      "feed_id": "cn-gnews",
+      "source": "Google News (中国版)",
+      "country": "CN",
+      "media_type": "private",
+      "lang": "zh",
+      "title_original": "冯小刚回应《抓特务》亏损：很痛心，很对不起投资方 - 观察者网",
+      "url": "https://news.google.com/rss/articles/CBMiYEFVX3lxTE9vSWkyWlFyOGJ1Z3c4REwxdndPVGRrdWNGQzJsS1JBMDlKc1dzSFFkdGllYjNiajlBaEVpTndVc2hHTmNxTHE5dHBxYkZKcUdoUmZKZlRTV3N4N0JhUEVtbQ?oc=5",
+      "published_at": "2026-09-24T00:23:00Z",
+      "fetched_at": "2026-09-24T14:27:29Z",
+      "rank_in_feed": 22
+    },
+    {
       "article_id": "49a44b98",
       "feed_id": "br-g1",
       "source": "G1",
@@ -7512,7 +8058,7 @@
       "country": "US",
       "media_type": "private",
       "lang": "en",
-      "title_original": "Just one small serving of ultra-processed food a day linked to higher disease risk, major study finds - Fox News",
+      "title_original": "Just one small serving of ultra-processed food a day linked to higher disease risk, major study finds - foxnews.com",
       "url": "https://news.google.com/rss/articles/CBMixgFBVV95cUxPY18tMGhudXFzakZRbVZYWWVPRnpCR2U5eGxvTHJBS0FNMXF2Z1UzQ2wxcmdUeFhUMVJEWnhnUTl2VUJQWS1LbHc3R2ZDNEhBOXBTOVM0TXh6SXpUdHhDX0ZLOXRHejM4Yi1aQnVHd3dPYmtfbjNSdHl6a1Axd0ZGTS1LRXZhNEJMUTVETHd2TzYtZl9hQnEyanF4NmdCWlRCN1lCcW05ZGt1cnRzenc0LV90T3d4QlJ0NE1qZHJKWlk3WkEyZWfSAcsBQVVfeXFMTS1uc3hUbk5KOGJRQ3QwXzVXWU9zakhKaEdBbHZRNUg3dWJ1TXk2ME90eFZORkdkUm5qVXBSbmVxWlVGMEV2Sy1NQU5IYXlNWDNKMkRmVVRDc1ZmSVVFMXRHV2pmVmR1T1I5Tlg4SVdQZExvLXlOWlRSN1U0NGVBdklfNnZnZGh0d0xxeTRqaVRxRWIwaU1jNHZPakdmcEZueXp1cTZfaUpnNTRJNDhrNU5jM1Bhb2s4VjBoMWtJV0tBdjgwOEtsRlNKT2M?oc=5",
       "published_at": "2026-09-23T23:55:27Z",
       "fetched_at": "2026-09-24T13:05:43Z",
@@ -8260,6 +8806,19 @@
       "rank_in_feed": 6
     },
     {
+      "article_id": "824be434",
+      "feed_id": "us-gnews",
+      "source": "Google News (US)",
+      "country": "US",
+      "media_type": "private",
+      "lang": "en",
+      "title_original": "A high school teacher stumbled across two giant footprints — and marked a first for science - CNN",
+      "url": "https://news.google.com/rss/articles/CBMiiAFBVV95cUxPTnlfV3JHOFlqTWd4Nko3U3dyV2padHFVc19GRElkUFBpSlpmcS1wdkRheE1KQTdtOXV0RjBZaF9fT1VzT1lZSV9WQVdVbVdfNF96WjM2Vm5OT05XOG9WTEczME54N3QxRmpSeE1WLXJRd25UejktZWw1VG1iZ1VhV3JCZGZwRmhJ?oc=5",
+      "published_at": "2026-09-23T18:42:58Z",
+      "fetched_at": "2026-09-24T14:27:29Z",
+      "rank_in_feed": 33
+    },
+    {
       "article_id": "586083b5",
       "feed_id": "us-gnews",
       "source": "Google News (US)",
@@ -8518,6 +9077,19 @@
       "published_at": "2026-09-23T15:46:28Z",
       "fetched_at": "2026-09-24T13:05:43Z",
       "rank_in_feed": 25
+    },
+    {
+      "article_id": "44281fbb",
+      "feed_id": "us-gnews",
+      "source": "Google News (US)",
+      "country": "US",
+      "media_type": "private",
+      "lang": "en",
+      "title_original": "Google unveils new Gemini 3.8 Flash TTS, Gemini 3.8 Flash-Lite TTS AI models (GOOG:NASDAQ) - Seeking Alpha",
+      "url": "https://news.google.com/rss/articles/CBMiswFBVV95cUxQZHRISG1vU0F4SF9zM255VjA4RkM5X2hEb21FUFZvVVdnMVh0QVQ4OGZOZThPajJaSTRQNHJkRWFQd013XzdBUnNvNTZwcEFIMjVWTFR4czhwUVh6eTJMSkhuMG5HU05KWGROZlFjNG93NWxXVmJ5UTJTb05ZTXpWckk3MS1FVVBZMTZoZVBac3RNeU9fdElHUG5lekp2cWNyWFJ6Q3FUbHhMY2xqWVFkWGwtYw?oc=5",
+      "published_at": "2026-09-23T15:44:21Z",
+      "fetched_at": "2026-09-24T14:27:29Z",
+      "rank_in_feed": 22
     },
     {
       "article_id": "5ff98c29",
@@ -9375,6 +9947,19 @@
       "url": "https://news.google.com/rss/articles/CBMi2AJBVV95cUxNcENrbWpnbXhqVGpQU1B2M1FycnNQMi1VYXZCZjQ4YzlUZ0JpMDdtZzg4M2E4a193dDlORk10c2JCcUpoOHJPMWNHdGdtNkhHemp2aHNjRG85WlE3WWo2NFZjdnpVRXp0cFZiWUZpRkFNQm9wSkFaZnNLdGMtMHFuenNhRDF5VFhVZ3FXZjZFejhWQk9taDV3UEVjZDczcmdVNzNNS192cDRhb2YyNFp3emRES2J0Qm56M28xdmtzQl9LT3U5d3dLRjhHcEJ1U3dKX2tVNU5YdzRSY3lBcGljWjVJQ3VCMU5wVTFBd1NTMWtLbjFqOHNXSXdOTnlSUEJkcjV2X2drWjlPZVNtSmg1V0hkS2dDMXBkYWRGdGNVS1lXZGkyYjM4UkJySnlRMTNheDZhbF9ITlVXd0trUVlmVUZXOUhueXF5S1N0NmJxLW55eHIwS3ZhUQ?oc=5",
       "published_at": "2026-09-23T10:03:46Z",
       "fetched_at": "2026-09-24T13:53:51Z",
+      "rank_in_feed": 10
+    },
+    {
+      "article_id": "74d315dd",
+      "feed_id": "cn-gnews",
+      "source": "Google News (中国版)",
+      "country": "CN",
+      "media_type": "private",
+      "lang": "zh",
+      "title_original": "体验中国现代化公交系统 安华从上海乘高铁前往杭州 - e南洋",
+      "url": "https://news.google.com/rss/articles/CBMiYkFVX3lxTE5mWjhaTF9heVdZdDlQUzVsVlFiN0FOb2N1N1BLcFZkVGlYU3hzY005TnNRVTFyTTBjaXVVaWllcENDZWxOSVV2N20yX2VjQzJrbUJIN3I4a2cyRDhDLVdSR2FB?oc=5",
+      "published_at": "2026-09-23T09:55:07Z",
+      "fetched_at": "2026-09-24T14:27:29Z",
       "rank_in_feed": 10
     },
     {
