@@ -1,7 +1,7 @@
 {
   "schema_version": 3,
   "date": "2026-09-24",
-  "generated_at": "2026-09-24T13:11:52Z",
+  "generated_at": "2026-09-24T13:36:47Z",
   "status": "ok",
   "feeds": [
     {
@@ -9,7 +9,7 @@
       "source": "NHK",
       "rss_url": "https://www.nhk.or.jp/rss/news/cat0.xml",
       "articles": 7,
-      "latest_published_at": "2026-09-24T13:06:48Z",
+      "latest_published_at": "2026-09-24T13:26:52Z",
       "stale_days": 0.0,
       "threshold_days": 2,
       "status": "ok",
@@ -20,7 +20,7 @@
       "source": "朝日新聞",
       "rss_url": "https://www.asahi.com/rss/asahi/newsheadlines.rdf",
       "articles": 40,
-      "latest_published_at": "2026-09-24T13:01:00Z",
+      "latest_published_at": "2026-09-24T13:08:46Z",
       "stale_days": 0.0,
       "threshold_days": 2,
       "status": "ok",
@@ -42,7 +42,7 @@
       "source": "CBS News",
       "rss_url": "https://www.cbsnews.com/latest/rss/world",
       "articles": 30,
-      "latest_published_at": "2026-09-24T12:29:39Z",
+      "latest_published_at": "2026-09-24T13:20:28Z",
       "stale_days": 0.0,
       "threshold_days": 2,
       "status": "ok",
@@ -53,7 +53,7 @@
       "source": "Google News (US)",
       "rss_url": "https://news.google.com/rss?hl=en-US&gl=US&ceid=US:en",
       "articles": 38,
-      "latest_published_at": "2026-09-24T12:11:00Z",
+      "latest_published_at": "2026-09-24T13:14:00Z",
       "stale_days": 0.0,
       "threshold_days": 2,
       "status": "ok",
@@ -75,7 +75,7 @@
       "source": "The Guardian",
       "rss_url": "https://www.theguardian.com/world/rss",
       "articles": 40,
-      "latest_published_at": "2026-09-24T12:31:42Z",
+      "latest_published_at": "2026-09-24T13:15:48Z",
       "stale_days": 0.0,
       "threshold_days": 2,
       "status": "ok",
@@ -86,7 +86,7 @@
       "source": "GOV.UK",
       "rss_url": "https://www.gov.uk/search/news-and-communications.atom",
       "articles": 20,
-      "latest_published_at": "2026-09-24T13:07:14Z",
+      "latest_published_at": "2026-09-24T13:34:09Z",
       "stale_days": 0.0,
       "threshold_days": 4,
       "status": "ok",
@@ -97,7 +97,7 @@
       "source": "France 24",
       "rss_url": "https://www.france24.com/en/rss",
       "articles": 24,
-      "latest_published_at": "2026-09-24T12:32:01Z",
+      "latest_published_at": "2026-09-24T13:17:00Z",
       "stale_days": 0.0,
       "threshold_days": 2,
       "status": "ok",
@@ -108,7 +108,7 @@
       "source": "Le Monde",
       "rss_url": "https://www.lemonde.fr/international/rss_full.xml",
       "articles": 20,
-      "latest_published_at": "2026-09-24T13:05:18Z",
+      "latest_published_at": "2026-09-24T13:25:16Z",
       "stale_days": 0.0,
       "threshold_days": 2,
       "status": "ok",
@@ -120,10 +120,10 @@
       "rss_url": "https://rss.dw.com/rdf/rss-en-world",
       "articles": 13,
       "latest_published_at": "2026-09-24T12:11:00Z",
-      "stale_days": 0.0,
+      "stale_days": 0.1,
       "threshold_days": 2,
       "status": "ok",
-      "note": "最新記事は0.0日前です"
+      "note": "最新記事は0.1日前です"
     },
     {
       "feed_id": "de-spiegel",
@@ -141,7 +141,7 @@
       "source": "RT",
       "rss_url": "https://www.rt.com/rss/news/",
       "articles": 40,
-      "latest_published_at": "2026-09-24T12:16:41Z",
+      "latest_published_at": "2026-09-24T13:33:22Z",
       "stale_days": 0.0,
       "threshold_days": 2,
       "status": "ok",
@@ -152,7 +152,7 @@
       "source": "Interfax",
       "rss_url": "https://www.interfax.ru/rss.asp",
       "articles": 25,
-      "latest_published_at": "2026-09-24T13:05:00Z",
+      "latest_published_at": "2026-09-24T13:29:00Z",
       "stale_days": 0.0,
       "threshold_days": 2,
       "status": "ok",
@@ -163,7 +163,7 @@
       "source": "Ukrinform",
       "rss_url": "https://www.ukrinform.net/rss/block-lastnews",
       "articles": 30,
-      "latest_published_at": "2026-09-24T12:59:00Z",
+      "latest_published_at": "2026-09-24T13:17:00Z",
       "stale_days": 0.0,
       "threshold_days": 2,
       "status": "ok",
@@ -185,7 +185,7 @@
       "source": "Google News (中国版)",
       "rss_url": "https://news.google.com/rss?hl=zh-CN&gl=CN&ceid=CN:zh-Hans",
       "articles": 26,
-      "latest_published_at": "2026-09-24T12:32:48Z",
+      "latest_published_at": "2026-09-24T13:16:32Z",
       "stale_days": 0.0,
       "threshold_days": 2,
       "status": "ok",
@@ -240,7 +240,7 @@
       "source": "The Hindu",
       "rss_url": "https://www.thehindu.com/news/international/feeder/default.rss",
       "articles": 40,
-      "latest_published_at": "2026-09-24T12:04:52Z",
+      "latest_published_at": "2026-09-24T13:30:40Z",
       "stale_days": 0.0,
       "threshold_days": 2,
       "status": "ok",
@@ -273,7 +273,7 @@
       "source": "G1",
       "rss_url": "https://g1.globo.com/rss/g1/mundo/",
       "articles": 40,
-      "latest_published_at": "2026-09-24T03:53:11Z",
+      "latest_published_at": "2026-09-24T04:32:20Z",
       "stale_days": 0.4,
       "threshold_days": 2,
       "status": "ok",
@@ -284,7 +284,7 @@
       "source": "Al Jazeera English",
       "rss_url": "https://www.aljazeera.com/xml/rss/all.xml",
       "articles": 25,
-      "latest_published_at": "2026-09-24T12:54:47Z",
+      "latest_published_at": "2026-09-24T13:02:43Z",
       "stale_days": 0.0,
       "threshold_days": 2,
       "status": "ok",
@@ -295,7 +295,7 @@
       "source": "الجزيرة (Al Jazeera Arabic)",
       "rss_url": "https://www.aljazeera.net/aljazeerarss/a7c186be-1baa-4bd4-9d80-a84db769f779/73d0e1b4-532f-45ef-b135-bfdff8b8cab9",
       "articles": 25,
-      "latest_published_at": "2026-09-24T10:08:28Z",
+      "latest_published_at": "2026-09-24T10:24:46Z",
       "stale_days": 0.1,
       "threshold_days": 2,
       "status": "ok",
@@ -303,6 +303,448 @@
     }
   ],
   "articles": [
+    {
+      "article_id": "6f12a149",
+      "feed_id": "gb-govuk",
+      "source": "GOV.UK",
+      "country": "GB",
+      "media_type": "state",
+      "lang": "en",
+      "title_original": "GAD helps ORR turn climate data into practical insight",
+      "url": "https://www.gov.uk/government/news/gad-helps-orr-turn-climate-data-into-practical-insight",
+      "published_at": "2026-09-24T13:34:09Z",
+      "fetched_at": "2026-09-24T13:36:47Z",
+      "rank_in_feed": 1
+    },
+    {
+      "article_id": "ebf6b25f",
+      "feed_id": "ru-rt",
+      "source": "RT",
+      "country": "RU",
+      "media_type": "state",
+      "lang": "en",
+      "title_original": "Germany pledges to phase out fossil fuels",
+      "url": "https://www.rt.com/news/646191-germany-pledges-to-phase-out/?utm_source=rss&utm_medium=rss&utm_campaign=RSS",
+      "published_at": "2026-09-24T13:33:22Z",
+      "fetched_at": "2026-09-24T13:36:47Z",
+      "rank_in_feed": 1
+    },
+    {
+      "article_id": "745a3f60",
+      "feed_id": "in-hindu",
+      "source": "The Hindu",
+      "country": "IN",
+      "media_type": "private",
+      "lang": "en",
+      "title_original": "Iran threatens to expand war to Indian Ocean if U.S. attacks again",
+      "url": "https://www.thehindu.com/news/international/iran-threatens-to-expand-war-to-indian-ocean-if-us-attacks-again/article71503625.ece",
+      "published_at": "2026-09-24T13:30:40Z",
+      "fetched_at": "2026-09-24T13:05:43Z",
+      "rank_in_feed": 1
+    },
+    {
+      "article_id": "723c3d55",
+      "feed_id": "ru-interfax",
+      "source": "Interfax",
+      "country": "RU",
+      "media_type": "private",
+      "lang": "ru",
+      "title_original": "Прогноз роста розничной торговли в России в 2026 году повышен с 0,8% до 4,6%",
+      "url": "https://www.interfax.ru/business/1118263",
+      "published_at": "2026-09-24T13:29:00Z",
+      "fetched_at": "2026-09-24T13:36:47Z",
+      "rank_in_feed": 1
+    },
+    {
+      "article_id": "c3e2a00b",
+      "feed_id": "ru-interfax",
+      "source": "Interfax",
+      "country": "RU",
+      "media_type": "private",
+      "lang": "ru",
+      "title_original": "ЦБ планирует провести пилот с офлайн-платежами цифровыми рублями в 2027 году",
+      "url": "https://www.interfax.ru/business/1118255",
+      "published_at": "2026-09-24T13:29:00Z",
+      "fetched_at": "2026-09-24T13:36:47Z",
+      "rank_in_feed": 2
+    },
+    {
+      "article_id": "7fc3e3fc",
+      "feed_id": "in-hindu",
+      "source": "The Hindu",
+      "country": "IN",
+      "media_type": "private",
+      "lang": "en",
+      "title_original": "CNN, MS NOW, Politico still barred from White House despite court ruling",
+      "url": "https://www.thehindu.com/news/international/judge-orders-white-house-to-restore-access-to-news-outlets-trump-banned/article71503009.ece",
+      "published_at": "2026-09-24T13:27:46Z",
+      "fetched_at": "2026-09-24T13:05:43Z",
+      "rank_in_feed": 3
+    },
+    {
+      "article_id": "029c5a23",
+      "feed_id": "jp-nhk",
+      "source": "NHK",
+      "country": "JP",
+      "media_type": "public",
+      "lang": "ja",
+      "title_original": "アジア大会卓球男子団体 日本が中国破り60年ぶり金メダル",
+      "url": "https://news.web.nhk/newsweb/na/nd-20260924de52255",
+      "published_at": "2026-09-24T13:26:52Z",
+      "fetched_at": "2026-09-24T13:05:43Z",
+      "rank_in_feed": 2
+    },
+    {
+      "article_id": "e735eba8",
+      "feed_id": "fr-lemonde",
+      "source": "Le Monde",
+      "country": "FR",
+      "media_type": "private",
+      "lang": "fr",
+      "title_original": "« Il faut appeler une guerre une guerre, qu’elle soit informationnelle, cyber, hybride, de l’ombre ou “sous le seuil” »",
+      "url": "https://www.lemonde.fr/idees/article/2026/09/24/il-faut-appeler-une-guerre-une-guerre-qu-elle-soit-informationnelle-cyber-hybride-de-l-ombre-ou-sous-le-seuil_6781522_3232.html",
+      "published_at": "2026-09-24T13:25:16Z",
+      "fetched_at": "2026-09-24T13:36:47Z",
+      "rank_in_feed": 1
+    },
+    {
+      "article_id": "b4550d3c",
+      "feed_id": "ru-interfax",
+      "source": "Interfax",
+      "country": "RU",
+      "media_type": "private",
+      "lang": "ru",
+      "title_original": "Минэкономразвития прогнозирует снижение промпроизводства в 2026г на 0,2%",
+      "url": "https://www.interfax.ru/business/1118261",
+      "published_at": "2026-09-24T13:24:00Z",
+      "fetched_at": "2026-09-24T13:36:47Z",
+      "rank_in_feed": 3
+    },
+    {
+      "article_id": "9ea632fc",
+      "feed_id": "ru-interfax",
+      "source": "Interfax",
+      "country": "RU",
+      "media_type": "private",
+      "lang": "ru",
+      "title_original": "Медведев анонсировал учреждение в Госдуме двух новых комитетов",
+      "url": "https://www.interfax.ru/russia/1118262",
+      "published_at": "2026-09-24T13:21:00Z",
+      "fetched_at": "2026-09-24T13:36:47Z",
+      "rank_in_feed": 4
+    },
+    {
+      "article_id": "4984bc89",
+      "feed_id": "us-cbs",
+      "source": "CBS News",
+      "country": "US",
+      "media_type": "private",
+      "lang": "en",
+      "title_original": "What to expect from Trump-Xi summit at White House",
+      "url": "https://www.cbsnews.com/video/what-to-expect-from-trump-xi-summit-at-white-house/",
+      "published_at": "2026-09-24T13:20:28Z",
+      "fetched_at": "2026-09-24T13:36:47Z",
+      "rank_in_feed": 1
+    },
+    {
+      "article_id": "4428fc2e",
+      "feed_id": "ru-interfax",
+      "source": "Interfax",
+      "country": "RU",
+      "media_type": "private",
+      "lang": "ru",
+      "title_original": "Петр Толстой выдвинут кандидатом в председатели комитета Думы по международным делам",
+      "url": "https://www.interfax.ru/russia/1118260",
+      "published_at": "2026-09-24T13:19:00Z",
+      "fetched_at": "2026-09-24T13:36:47Z",
+      "rank_in_feed": 5
+    },
+    {
+      "article_id": "8bfe0e80",
+      "feed_id": "ru-interfax",
+      "source": "Interfax",
+      "country": "RU",
+      "media_type": "private",
+      "lang": "ru",
+      "title_original": "Рябков заявил, что продолжение СВО не мешает поиску долгосрочного урегулирования",
+      "url": "https://www.interfax.ru/russia/1118259",
+      "published_at": "2026-09-24T13:18:00Z",
+      "fetched_at": "2026-09-24T13:36:47Z",
+      "rank_in_feed": 6
+    },
+    {
+      "article_id": "f4a0e175",
+      "feed_id": "fr-france24",
+      "source": "France 24",
+      "country": "FR",
+      "media_type": "public",
+      "lang": "en",
+      "title_original": "Taiwan: Home of semiconductor giants at the centre of AI race",
+      "url": "https://www.france24.com/en/tv-shows/focus/20260924-taiwan-home-of-semiconductor-giants-at-the-centre-of-ai-race",
+      "published_at": "2026-09-24T13:17:00Z",
+      "fetched_at": "2026-09-24T13:36:47Z",
+      "rank_in_feed": 1
+    },
+    {
+      "article_id": "f693fcbd",
+      "feed_id": "ru-interfax",
+      "source": "Interfax",
+      "country": "RU",
+      "media_type": "private",
+      "lang": "ru",
+      "title_original": "Минэкономразвития повысило прогноз по инфляции-2026 до 6,8% с 5,2%",
+      "url": "https://www.interfax.ru/business/1118258",
+      "published_at": "2026-09-24T13:17:00Z",
+      "fetched_at": "2026-09-24T13:36:47Z",
+      "rank_in_feed": 7
+    },
+    {
+      "article_id": "3effb647",
+      "feed_id": "ua-ukrinform",
+      "source": "Ukrinform",
+      "country": "UA",
+      "media_type": "state",
+      "lang": "en",
+      "title_original": "Polish Deputy PM on Starlink station fire: Russia tries to deprive Ukraine of internet access at front",
+      "url": "https://www.ukrinform.net/rubric-ato/4167614-polish-deputy-pm-on-starlink-station-fire-russia-tries-to-deprive-ukraine-of-internet-access-at-front.html",
+      "published_at": "2026-09-24T13:17:00Z",
+      "fetched_at": "2026-09-24T13:36:47Z",
+      "rank_in_feed": 1
+    },
+    {
+      "article_id": "1e77583d",
+      "feed_id": "cn-gnews",
+      "source": "Google News (中国版)",
+      "country": "CN",
+      "media_type": "private",
+      "lang": "zh",
+      "title_original": "首届FIFA东盟杯香港开赛 - chinanews.com.cn",
+      "url": "https://news.google.com/rss/articles/CBMiaEFVX3lxTE95VlFqTThyVEVyM3hyakhzNVZjZXIyTWZ4MU4yVXBmb0tIZFhaSGpPSGV4S1lXcm0wSGFROWRHeTJfYlZGOWd1TUVjYnIwa1Q2eDRLSHFiMnZLUm5tc0pCb2tiODJodWZU?oc=5",
+      "published_at": "2026-09-24T13:16:32Z",
+      "fetched_at": "2026-09-24T13:36:47Z",
+      "rank_in_feed": 26
+    },
+    {
+      "article_id": "4f4741fb",
+      "feed_id": "ru-interfax",
+      "source": "Interfax",
+      "country": "RU",
+      "media_type": "private",
+      "lang": "ru",
+      "title_original": "Минэкономразвития заложило в прогноз цену Urals в 2027 г. в $53 за баррель",
+      "url": "https://www.interfax.ru/business/1118257",
+      "published_at": "2026-09-24T13:16:00Z",
+      "fetched_at": "2026-09-24T13:36:47Z",
+      "rank_in_feed": 8
+    },
+    {
+      "article_id": "8a2ceb54",
+      "feed_id": "ru-interfax",
+      "source": "Interfax",
+      "country": "RU",
+      "media_type": "private",
+      "lang": "ru",
+      "title_original": "Международные резервы России с 11 по 18 сентября сократились на $10,0 млрд",
+      "url": "https://www.interfax.ru/business/1118256",
+      "published_at": "2026-09-24T13:16:00Z",
+      "fetched_at": "2026-09-24T13:36:47Z",
+      "rank_in_feed": 9
+    },
+    {
+      "article_id": "b63fb65a",
+      "feed_id": "gb-guardian",
+      "source": "The Guardian",
+      "country": "GB",
+      "media_type": "private",
+      "lang": "en",
+      "title_original": "Family of Iranian twins sentenced to death and decades in jail ask UN for help",
+      "url": "https://www.theguardian.com/world/2026/sep/24/twins-sentenced-to-death-and-jail-iran-un-appeal",
+      "published_at": "2026-09-24T13:15:48Z",
+      "fetched_at": "2026-09-24T13:36:47Z",
+      "rank_in_feed": 26
+    },
+    {
+      "article_id": "5f82d1f0",
+      "feed_id": "us-cbs",
+      "source": "CBS News",
+      "country": "US",
+      "media_type": "private",
+      "lang": "en",
+      "title_original": "Oil prices back up as U.S. and Iran trade threats to expand 7-month war",
+      "url": "https://www.cbsnews.com/live-updates/iran-war-trump-un-speech-annihilate-threat-talks-resume/",
+      "published_at": "2026-09-24T13:15:08Z",
+      "fetched_at": "2026-09-24T13:05:43Z",
+      "rank_in_feed": 2
+    },
+    {
+      "article_id": "cb5e6b9b",
+      "feed_id": "gb-govuk",
+      "source": "GOV.UK",
+      "country": "GB",
+      "media_type": "state",
+      "lang": "en",
+      "title_original": "Environment Agency submits Portreath flood defence plans",
+      "url": "https://www.gov.uk/government/news/environment-agency-submits-portreath-flood-defence-plans",
+      "published_at": "2026-09-24T13:15:01Z",
+      "fetched_at": "2026-09-24T13:36:47Z",
+      "rank_in_feed": 2
+    },
+    {
+      "article_id": "19b531c7",
+      "feed_id": "ru-interfax",
+      "source": "Interfax",
+      "country": "RU",
+      "media_type": "private",
+      "lang": "ru",
+      "title_original": "Оценка экспорта нефти из России в 2026 году повышена на 7,5 млн т - до 244,7 млн т",
+      "url": "https://www.interfax.ru/business/1118252",
+      "published_at": "2026-09-24T13:15:00Z",
+      "fetched_at": "2026-09-24T13:36:47Z",
+      "rank_in_feed": 10
+    },
+    {
+      "article_id": "6160c9e1",
+      "feed_id": "us-gnews",
+      "source": "Google News (US)",
+      "country": "US",
+      "media_type": "private",
+      "lang": "en",
+      "title_original": "Stock futures slide again as Treasury yields push higher, Oracle leads Nasdaq names lower: Live updates - CNBC",
+      "url": "https://news.google.com/rss/articles/CBMid0FVX3lxTE1kSThnZGdDMlpreHVoQ2NfOEs2blNBWnhLZWZyZjUzUVdhT0JwTjBQMDJ0b1F4cFRiaW1icDNTNHpSdEFLVmpKM2MxT3Voa25WSUxwY1RsYno3UU5qTG1Ec09mU3lveEFYUTk5VVFTbDdXQU9PT2xj0gF8QVVfeXFMT3hBNUw4aTh3Q1VGT1RZUXZ2RUtmamZLZXd6TGRkVExWQmVFVWw0RHJPNnBxMjJMcXREZF93enk1VFdkMGEwS21ZX21GbG54QWVqZ3hQZFgzZ3VockF0enVCdkhQYkhNbk1VNndtNFIxY2F2bnRNZHYxLVdCaA?oc=5",
+      "published_at": "2026-09-24T13:14:00Z",
+      "fetched_at": "2026-09-24T13:05:43Z",
+      "rank_in_feed": 15
+    },
+    {
+      "article_id": "307dea26",
+      "feed_id": "ru-interfax",
+      "source": "Interfax",
+      "country": "RU",
+      "media_type": "private",
+      "lang": "ru",
+      "title_original": "Принимать решение о поездке на \"Двадцатку\" будет лично президент РФ",
+      "url": "https://www.interfax.ru/russia/1118254",
+      "published_at": "2026-09-24T13:14:00Z",
+      "fetched_at": "2026-09-24T13:36:47Z",
+      "rank_in_feed": 11
+    },
+    {
+      "article_id": "6205a4ed",
+      "feed_id": "ru-interfax",
+      "source": "Interfax",
+      "country": "RU",
+      "media_type": "private",
+      "lang": "ru",
+      "title_original": "Дмитрий Кобылкин предложен на должность главы фракции \"Единой России\" в Госдуме",
+      "url": "https://www.interfax.ru/russia/1118253",
+      "published_at": "2026-09-24T13:14:00Z",
+      "fetched_at": "2026-09-24T13:36:47Z",
+      "rank_in_feed": 12
+    },
+    {
+      "article_id": "1b3747cc",
+      "feed_id": "ru-interfax",
+      "source": "Interfax",
+      "country": "RU",
+      "media_type": "private",
+      "lang": "ru",
+      "title_original": "Оценка экспорта российского трубопроводного газа на 2026 год повышена до 117,5 млрд куб. м",
+      "url": "https://www.interfax.ru/business/1118251",
+      "published_at": "2026-09-24T13:13:00Z",
+      "fetched_at": "2026-09-24T13:36:47Z",
+      "rank_in_feed": 13
+    },
+    {
+      "article_id": "4ba3b649",
+      "feed_id": "us-cbs",
+      "source": "CBS News",
+      "country": "US",
+      "media_type": "private",
+      "lang": "en",
+      "title_original": "Chinese analysts say Trump should \"understand pressure doesn't work\" on Xi",
+      "url": "https://www.cbsnews.com/news/trump-xi-china-pressure-doesnt-work-analysts-say/",
+      "published_at": "2026-09-24T13:12:11Z",
+      "fetched_at": "2026-09-24T13:36:47Z",
+      "rank_in_feed": 3
+    },
+    {
+      "article_id": "cd9f7762",
+      "feed_id": "ru-interfax",
+      "source": "Interfax",
+      "country": "RU",
+      "media_type": "private",
+      "lang": "ru",
+      "title_original": "Белгородцам и курянам на компенсации за разрушенное жилье выделят еще 2,5 млрд рублей",
+      "url": "https://www.interfax.ru/russia/1118249",
+      "published_at": "2026-09-24T13:12:00Z",
+      "fetched_at": "2026-09-24T13:36:47Z",
+      "rank_in_feed": 14
+    },
+    {
+      "article_id": "fef5f241",
+      "feed_id": "fr-france24",
+      "source": "France 24",
+      "country": "FR",
+      "media_type": "public",
+      "lang": "en",
+      "title_original": "Why is Trump rolling out the red carpet for China's Xi?",
+      "url": "https://www.france24.com/en/video/20260924-why-is-trump-rolling-out-the-red-carpet-for-china-s-xi",
+      "published_at": "2026-09-24T13:11:09Z",
+      "fetched_at": "2026-09-24T13:36:47Z",
+      "rank_in_feed": 2
+    },
+    {
+      "article_id": "72fd8350",
+      "feed_id": "ru-interfax",
+      "source": "Interfax",
+      "country": "RU",
+      "media_type": "private",
+      "lang": "ru",
+      "title_original": "Минэкономразвития понизило прогноз внешнеторгового сальдо РФ в 2026 г. до $120,8 млрд",
+      "url": "https://www.interfax.ru/business/1118250",
+      "published_at": "2026-09-24T13:10:00Z",
+      "fetched_at": "2026-09-24T13:36:47Z",
+      "rank_in_feed": 15
+    },
+    {
+      "article_id": "d738d43a",
+      "feed_id": "ru-interfax",
+      "source": "Interfax",
+      "country": "RU",
+      "media_type": "private",
+      "lang": "ru",
+      "title_original": "Минэкономразвития повысило прогноз роста реальных зарплат в РФ в 2026 г. до 4%",
+      "url": "https://www.interfax.ru/business/1118248",
+      "published_at": "2026-09-24T13:10:00Z",
+      "fetched_at": "2026-09-24T13:36:47Z",
+      "rank_in_feed": 16
+    },
+    {
+      "article_id": "4312e1c3",
+      "feed_id": "ru-interfax",
+      "source": "Interfax",
+      "country": "RU",
+      "media_type": "private",
+      "lang": "ru",
+      "title_original": "Макропрогноз правительства предполагает рост ВВП в 2027 году на 1,4%",
+      "url": "https://www.interfax.ru/business/1118246",
+      "published_at": "2026-09-24T13:09:00Z",
+      "fetched_at": "2026-09-24T13:36:47Z",
+      "rank_in_feed": 17
+    },
+    {
+      "article_id": "0b22e976",
+      "feed_id": "jp-asahi",
+      "source": "朝日新聞",
+      "country": "JP",
+      "media_type": "private",
+      "lang": "ja",
+      "title_original": "卓球男子、日本が中国を破り60年ぶりのアジア大会V　「長かった」",
+      "url": "http://www.asahi.com/articles/ASV9S44KRV9SUTQP01TM.html?ref=rss",
+      "published_at": "2026-09-24T13:08:46Z",
+      "fetched_at": "2026-09-24T13:36:47Z",
+      "rank_in_feed": 11
+    },
     {
       "article_id": "10042227",
       "feed_id": "gb-bbc",
@@ -314,6 +756,19 @@
       "url": "https://www.bbc.co.uk/news/articles/cqm2mg34x2v7o?at_medium=RSS&at_campaign=rss",
       "published_at": "2026-09-24T13:08:29Z",
       "fetched_at": "2026-09-24T13:05:43Z",
+      "rank_in_feed": 3
+    },
+    {
+      "article_id": "60ea6c42",
+      "feed_id": "fr-france24",
+      "source": "France 24",
+      "country": "FR",
+      "media_type": "public",
+      "lang": "en",
+      "title_original": "Judge orders White House to restore access to barred media companies",
+      "url": "https://www.france24.com/en/video/20260924-judge-orders-white-house-to-restore-access-to-barred-media-companies",
+      "published_at": "2026-09-24T13:08:10Z",
+      "fetched_at": "2026-09-24T13:36:47Z",
       "rank_in_feed": 3
     },
     {
@@ -330,17 +785,17 @@
       "rank_in_feed": 1
     },
     {
-      "article_id": "029c5a23",
-      "feed_id": "jp-nhk",
-      "source": "NHK",
-      "country": "JP",
-      "media_type": "public",
-      "lang": "ja",
-      "title_original": "アジア大会卓球男子団体 日本が中国破り60年ぶり金メダル",
-      "url": "https://news.web.nhk/newsweb/na/nd-20260924de52255",
-      "published_at": "2026-09-24T13:06:48Z",
-      "fetched_at": "2026-09-24T13:05:43Z",
-      "rank_in_feed": 2
+      "article_id": "60ee755a",
+      "feed_id": "ru-interfax",
+      "source": "Interfax",
+      "country": "RU",
+      "media_type": "private",
+      "lang": "ru",
+      "title_original": "Минэкономразвития ухудшило прогноз снижения инвестиций в РФ в 2026 г. до 5,4%",
+      "url": "https://www.interfax.ru/business/1118247",
+      "published_at": "2026-09-24T13:07:00Z",
+      "fetched_at": "2026-09-24T13:36:47Z",
+      "rank_in_feed": 18
     },
     {
       "article_id": "65539f3d",
@@ -354,6 +809,19 @@
       "published_at": "2026-09-24T13:06:34Z",
       "fetched_at": "2026-09-24T13:11:52Z",
       "rank_in_feed": 2
+    },
+    {
+      "article_id": "f3a85d0e",
+      "feed_id": "fr-france24",
+      "source": "France 24",
+      "country": "FR",
+      "media_type": "public",
+      "lang": "en",
+      "title_original": "Tigrayan leaders say new war with Ethiopian govt has begun",
+      "url": "https://www.france24.com/en/video/20260924-tigrayan-leaders-say-new-war-with-ethiopian-govt-has-begun",
+      "published_at": "2026-09-24T13:06:31Z",
+      "fetched_at": "2026-09-24T13:36:47Z",
+      "rank_in_feed": 4
     },
     {
       "article_id": "2e6f70be",
@@ -395,6 +863,19 @@
       "rank_in_feed": 1
     },
     {
+      "article_id": "a9f40202",
+      "feed_id": "fr-france24",
+      "source": "France 24",
+      "country": "FR",
+      "media_type": "public",
+      "lang": "en",
+      "title_original": "Who is paying for the pope’s visit to France?",
+      "url": "https://www.france24.com/en/video/20260924-who-is-paying-for-the-pope-s-visit-to-france",
+      "published_at": "2026-09-24T13:04:29Z",
+      "fetched_at": "2026-09-24T13:36:47Z",
+      "rank_in_feed": 5
+    },
+    {
       "article_id": "9c3bf818",
       "feed_id": "ru-interfax",
       "source": "Interfax",
@@ -406,6 +887,19 @@
       "published_at": "2026-09-24T13:03:00Z",
       "fetched_at": "2026-09-24T13:11:52Z",
       "rank_in_feed": 2
+    },
+    {
+      "article_id": "42c4d6ff",
+      "feed_id": "qa-aljazeera-en",
+      "source": "Al Jazeera English",
+      "country": "QA",
+      "media_type": "state",
+      "lang": "en",
+      "title_original": "Hurricane Polo brings fears of heavy rain and landslides in Mexico",
+      "url": "https://www.aljazeera.com/news/2026/9/24/hurricane-polo-hits-mexicos-coast-as-tropical-storm-nolo-approaches-hawaii?traffic_source=rss",
+      "published_at": "2026-09-24T13:02:43Z",
+      "fetched_at": "2026-09-24T13:36:47Z",
+      "rank_in_feed": 1
     },
     {
       "article_id": "e286149e",
@@ -458,6 +952,19 @@
       "published_at": "2026-09-24T13:00:10Z",
       "fetched_at": "2026-09-24T13:05:43Z",
       "rank_in_feed": 1
+    },
+    {
+      "article_id": "49da0af1",
+      "feed_id": "qa-aljazeera-en",
+      "source": "Al Jazeera English",
+      "country": "QA",
+      "media_type": "state",
+      "lang": "en",
+      "title_original": "Nine Kazakh soldiers die in Caspian Sea training incident",
+      "url": "https://www.aljazeera.com/news/2026/9/24/nine-kazakh-soldiers-die-in-caspian-sea-training-incident?traffic_source=rss",
+      "published_at": "2026-09-24T13:00:01Z",
+      "fetched_at": "2026-09-24T13:36:47Z",
+      "rank_in_feed": 2
     },
     {
       "article_id": "032bccd9",
@@ -525,6 +1032,19 @@
       "rank_in_feed": 2
     },
     {
+      "article_id": "a1333280",
+      "feed_id": "fr-france24",
+      "source": "France 24",
+      "country": "FR",
+      "media_type": "public",
+      "lang": "en",
+      "title_original": "Mass shooting at a house party in South Africa kills 11",
+      "url": "https://www.france24.com/en/video/20260924-mass-shooting-at-a-house-party-in-south-africa-kills-11",
+      "published_at": "2026-09-24T12:55:03Z",
+      "fetched_at": "2026-09-24T13:36:47Z",
+      "rank_in_feed": 6
+    },
+    {
       "article_id": "81761c8d",
       "feed_id": "qa-aljazeera-en",
       "source": "Al Jazeera English",
@@ -570,7 +1090,7 @@
       "country": "FR",
       "media_type": "private",
       "lang": "fr",
-      "title_original": "Des journalistes de « Politico » et de CNN empêchés d’entrer à la Maison Blanche, malgré la décision d’un juge de rétablir leur accès",
+      "title_original": "Des journalistes de « Politico », de CNN et de MS NOW empêchés d’entrer à la Maison Blanche, malgré la décision d’un juge de rétablir leur accès",
       "url": "https://www.lemonde.fr/actualite-medias/article/2026/09/24/des-journalistes-de-politico-et-cnn-empeches-d-entrer-a-la-maison-blanche-malgre-la-decision-d-un-juge-de-retablir-leur-acces_6781515_3236.html",
       "published_at": "2026-09-24T12:51:28Z",
       "fetched_at": "2026-09-24T13:05:43Z",
@@ -614,6 +1134,19 @@
       "published_at": "2026-09-24T12:47:00Z",
       "fetched_at": "2026-09-24T13:05:43Z",
       "rank_in_feed": 1
+    },
+    {
+      "article_id": "65830a7b",
+      "feed_id": "in-hindu",
+      "source": "The Hindu",
+      "country": "IN",
+      "media_type": "private",
+      "lang": "en",
+      "title_original": "Saudi Civil Defence issues brief warning of ‘potential danger’ for Mecca city",
+      "url": "https://www.thehindu.com/news/international/saudi-civil-defence-issues-brief-warning-of-potential-danger-for-mecca-city/article71503886.ece",
+      "published_at": "2026-09-24T12:44:56Z",
+      "fetched_at": "2026-09-24T13:05:43Z",
+      "rank_in_feed": 2
     },
     {
       "article_id": "50e8e00e",
@@ -687,7 +1220,7 @@
       "country": "QA",
       "media_type": "state",
       "lang": "en",
-      "title_original": "Morocco’s elections: Fragmentation, disengagement and PJD’s major return",
+      "title_original": "Morocco’s elections: Fragmentation, disengagement and PJD’s major comeback",
       "url": "https://www.aljazeera.com/news/2026/9/24/moroccos-elections-fragmentation-disengagement-and-pjds-major-return?traffic_source=rss",
       "published_at": "2026-09-24T12:41:15Z",
       "fetched_at": "2026-09-24T13:05:43Z",
@@ -728,7 +1261,7 @@
       "lang": "fr",
       "title_original": "L’Arabie saoudite dit avoir intercepté six missiles balistiques tirés depuis le Yémen",
       "url": "https://www.lemonde.fr/international/article/2026/09/24/l-arabie-saoudite-dit-avoir-intercepte-six-missiles-balistiques-tires-depuis-le-yemen_6781514_3210.html",
-      "published_at": "2026-09-24T12:36:39Z",
+      "published_at": "2026-09-24T12:36:37Z",
       "fetched_at": "2026-09-24T13:05:43Z",
       "rank_in_feed": 4
     },
@@ -861,6 +1394,19 @@
       "published_at": "2026-09-24T12:27:13Z",
       "fetched_at": "2026-09-24T13:05:43Z",
       "rank_in_feed": 11
+    },
+    {
+      "article_id": "0b6db907",
+      "feed_id": "us-gnews",
+      "source": "Google News (US)",
+      "country": "US",
+      "media_type": "private",
+      "lang": "en",
+      "title_original": "Oracle Cites ‘Force Majeure’ to Shield Itself on Controversial Data Center - Bloomberg",
+      "url": "https://news.google.com/rss/articles/CBMiwAFBVV95cUxOR3J4S0lNZEtDZ25YQWdUQkplRTFuVFlCTzFpOHc4MDVTQk1kZ3BUZkUwV3p5QmFwV2V3MEdBYmdRdU1xQTE4RzJYd0RhZTBoUmtXcFRzZlBINFN5LVBINXR4TEk1YlcxZ0RlOVE2YVYwZHE1WkdrVlN2WG5XcHVKcDJkdFhnVUk4ZkpHeEtrZ1NHM0VRZ21EZ3l0YXBBZUpnWG9BcG9vZG00NnNiNEppcnVwdkFRY0dkWnFzbFlhekU?oc=5",
+      "published_at": "2026-09-24T12:25:36Z",
+      "fetched_at": "2026-09-24T13:36:47Z",
+      "rank_in_feed": 18
     },
     {
       "article_id": "cb1d1afa",
@@ -1066,22 +1612,9 @@
       "lang": "fr",
       "title_original": "L’UE redoute une interdiction des exportations de diesel américain par l’administration Trump",
       "url": "https://www.lemonde.fr/international/article/2026/09/24/l-ue-redoute-une-interdiction-des-exportations-de-diesel-americain-par-l-administration-trump_6781511_3210.html",
-      "published_at": "2026-09-24T12:12:09Z",
+      "published_at": "2026-09-24T12:12:08Z",
       "fetched_at": "2026-09-24T13:05:43Z",
       "rank_in_feed": 5
-    },
-    {
-      "article_id": "5f82d1f0",
-      "feed_id": "us-cbs",
-      "source": "CBS News",
-      "country": "US",
-      "media_type": "private",
-      "lang": "en",
-      "title_original": "Oil prices back up as U.S. and Iran trade threats to expand 7-month war",
-      "url": "https://www.cbsnews.com/live-updates/iran-war-trump-un-speech-annihilate-threat-talks-resume/",
-      "published_at": "2026-09-24T12:12:07Z",
-      "fetched_at": "2026-09-24T13:05:43Z",
-      "rank_in_feed": 2
     },
     {
       "article_id": "ce6f4bf8",
@@ -1214,19 +1747,6 @@
       "rank_in_feed": 6
     },
     {
-      "article_id": "745a3f60",
-      "feed_id": "in-hindu",
-      "source": "The Hindu",
-      "country": "IN",
-      "media_type": "private",
-      "lang": "en",
-      "title_original": "Iran threatens to expand war to Indian Ocean if U.S. attacks again",
-      "url": "https://www.thehindu.com/news/international/iran-threatens-to-expand-war-to-indian-ocean-if-us-attacks-again/article71503625.ece",
-      "published_at": "2026-09-24T12:04:52Z",
-      "fetched_at": "2026-09-24T13:05:43Z",
-      "rank_in_feed": 1
-    },
-    {
       "article_id": "14aff9ce",
       "feed_id": "gb-govuk",
       "source": "GOV.UK",
@@ -1318,19 +1838,6 @@
       "rank_in_feed": 2
     },
     {
-      "article_id": "f1732a6d",
-      "feed_id": "fr-lemonde",
-      "source": "Le Monde",
-      "country": "FR",
-      "media_type": "private",
-      "lang": "fr",
-      "title_original": "Le lobbyiste, le député, le journaliste et l’avocat : les nouvelles révélations d’une affaire tentaculaire d’ingérences étrangères",
-      "url": "https://www.lemonde.fr/societe/article/2026/09/24/le-lobbyiste-le-depute-le-journaliste-et-l-avocat-les-nouvelles-revelations-d-une-affaire-tentaculaire-d-ingerences-etrangeres_6781508_3224.html",
-      "published_at": "2026-09-24T12:00:18Z",
-      "fetched_at": "2026-09-24T13:05:43Z",
-      "rank_in_feed": 7
-    },
-    {
       "article_id": "d1a0a98c",
       "feed_id": "fr-lemonde",
       "source": "Le Monde",
@@ -1342,6 +1849,19 @@
       "published_at": "2026-09-24T12:00:16Z",
       "fetched_at": "2026-09-24T13:05:43Z",
       "rank_in_feed": 8
+    },
+    {
+      "article_id": "f1732a6d",
+      "feed_id": "fr-lemonde",
+      "source": "Le Monde",
+      "country": "FR",
+      "media_type": "private",
+      "lang": "fr",
+      "title_original": "Le lobbyiste, le député, le journaliste et l’avocat : les nouvelles révélations d’une affaire tentaculaire d’ingérences étrangères",
+      "url": "https://www.lemonde.fr/societe/article/2026/09/24/le-lobbyiste-le-depute-le-journaliste-et-l-avocat-les-nouvelles-revelations-d-une-affaire-tentaculaire-d-ingerences-etrangeres_6781508_3224.html",
+      "published_at": "2026-09-24T12:00:08Z",
+      "fetched_at": "2026-09-24T13:05:43Z",
+      "rank_in_feed": 7
     },
     {
       "article_id": "4564427b",
@@ -1409,6 +1929,19 @@
       "rank_in_feed": 12
     },
     {
+      "article_id": "1e595862",
+      "feed_id": "us-gnews",
+      "source": "Google News (US)",
+      "country": "US",
+      "media_type": "private",
+      "lang": "en",
+      "title_original": "Fury vs Joshua: Cardiff to host heavyweight fight on 11 December - BBC",
+      "url": "https://news.google.com/rss/articles/CBMiZEFVX3lxTE92dWF6dnNNVFNvUTN3T1dqbnRWaWFiUVNEdV9ZdmN5cmZrQjh1Z1dxc2lnRFFLYTl5dnZvM1VrcFE0TVJQYndMbUNUR2x3dGF0VV82NEt3NGZRR0FDeDVyUHlIVGk?oc=5",
+      "published_at": "2026-09-24T11:57:33Z",
+      "fetched_at": "2026-09-24T13:36:47Z",
+      "rank_in_feed": 30
+    },
+    {
       "article_id": "ed198b00",
       "feed_id": "fr-france24",
       "source": "France 24",
@@ -1448,17 +1981,17 @@
       "rank_in_feed": 9
     },
     {
-      "article_id": "65830a7b",
-      "feed_id": "in-hindu",
-      "source": "The Hindu",
-      "country": "IN",
+      "article_id": "817429ca",
+      "feed_id": "cn-gnews",
+      "source": "Google News (中国版)",
+      "country": "CN",
       "media_type": "private",
-      "lang": "en",
-      "title_original": "Saudi Civil Defence issues brief warning of ‘potential danger’ for Mecca city",
-      "url": "https://www.thehindu.com/news/international/saudi-civil-defence-issues-brief-warning-of-potential-danger-for-mecca-city/article71503886.ece",
-      "published_at": "2026-09-24T11:54:27Z",
-      "fetched_at": "2026-09-24T13:05:43Z",
-      "rank_in_feed": 2
+      "lang": "zh",
+      "title_original": "我国成功发射遥感四十号04组卫星 - 中国网",
+      "url": "https://news.google.com/rss/articles/CBMib0FVX3lxTE9xZ3B6eDVybzloMlYyVXdZZXdDdEx2YVRXN2J6WWo3VGVaUjN1N0NnOWF2S3Rzc0VBblBpRVJMWVNJeDVfWVFaZ3pFSGx2UUY4c2ZPVWdhWHBtY3d1a3J2ZVBtWldjM2gzdmtqRFB1bw?oc=5",
+      "published_at": "2026-09-24T11:53:00Z",
+      "fetched_at": "2026-09-24T13:36:47Z",
+      "rank_in_feed": 7
     },
     {
       "article_id": "70c2d9bd",
@@ -1524,6 +2057,19 @@
       "published_at": "2026-09-24T11:50:00Z",
       "fetched_at": "2026-09-24T13:05:43Z",
       "rank_in_feed": 5
+    },
+    {
+      "article_id": "7a43444c",
+      "feed_id": "us-gnews",
+      "source": "Google News (US)",
+      "country": "US",
+      "media_type": "private",
+      "lang": "en",
+      "title_original": "OpenAI’s agents breached Australian government data. Its human response may do more damage. - Politico",
+      "url": "https://news.google.com/rss/articles/CBMikwFBVV95cUxQQzEwX09ETllOandOaE5Pa3JpMU1LVUlKcS02ZkdEQnhVVGs0QWVlSWpHMm5ibTdaajNhbVpaNE9EVDdxbW00blhHbjlHcE53cDNXbUc2ZjFjcUtUbXYtYXc2ejNKdVdLTGI1YU5UNDNTXzFiQjlTMmpRY00xVzBLRTY0NHJWbUIyYzdyS3NUQVRHN0U?oc=5",
+      "published_at": "2026-09-24T11:47:00Z",
+      "fetched_at": "2026-09-24T13:36:47Z",
+      "rank_in_feed": 3
     },
     {
       "article_id": "1361f0f3",
@@ -1994,6 +2540,19 @@
       "rank_in_feed": 5
     },
     {
+      "article_id": "b278b124",
+      "feed_id": "cn-gnews",
+      "source": "Google News (中国版)",
+      "country": "CN",
+      "media_type": "private",
+      "lang": "zh",
+      "title_original": "特写丨美国总统首次赴机场迎接中国国家主席 - 新华网",
+      "url": "https://news.google.com/rss/articles/CBMid0FVX3lxTE9HUEZ4cHpBX2FYX3V1Q0JRSHplYkUyWlFJWV9IeXVabDk2RHllanRRSUpab3VjanFKQzM3MXVyNEVvN2kwekU2TmozT2s1LW9ZSkVGa2RodXlvSTJjbzRPS25ZejJGbGFpcTNzRjRDSE5xODRWX1R3?oc=5",
+      "published_at": "2026-09-24T11:18:07Z",
+      "fetched_at": "2026-09-24T13:36:47Z",
+      "rank_in_feed": 1
+    },
+    {
       "article_id": "9da44a84",
       "feed_id": "ru-interfax",
       "source": "Interfax",
@@ -2182,7 +2741,7 @@
       "country": "US",
       "media_type": "private",
       "lang": "en",
-      "title_original": "As expected, media mocks Jaxson Dart injury because he dared to introduce Trump on stage - foxnews.com",
+      "title_original": "As expected, media mocks Jaxson Dart injury because he dared to introduce Trump on stage - Fox News",
       "url": "https://news.google.com/rss/articles/CBMiuAFBVV95cUxOOUJHd180cThFV0UxQnpVNDZDOU1jTGVfYXg1UGxFWi1uWE1MZlhMOU1hSWVjV2VpazNIR01BbVVJUWswSllTUVF6WGtuU0ZERFRfMjZJWHNtcnVyZkFfZWJ5Y1hnNzdSQmU2bmQ1cWp2U0hQV1JndW9Ibkpza1pXd1Q3TmRGbFZpTVRUaDZ3UVFaOWttMEdfNDc5QXhaMEFDNWhxRUpoZW9vSlRhaUx0cmVIcFVIUm1i?oc=5",
       "published_at": "2026-09-24T11:07:04Z",
       "fetched_at": "2026-09-24T13:05:43Z",
@@ -2800,6 +3359,32 @@
       "rank_in_feed": 8
     },
     {
+      "article_id": "c3578c0e",
+      "feed_id": "qa-aljazeera-ar",
+      "source": "الجزيرة (Al Jazeera Arabic)",
+      "country": "QA",
+      "media_type": "state",
+      "lang": "ar",
+      "title_original": "بعد تجدد القتال.. محطات بارزة في صراع جبهة تحرير تيغراي الإثيوبية",
+      "url": "https://www.aljazeera.net/video/2026/9/24/%d8%a8%d8%b9%d8%af-%d8%aa%d8%ac%d8%af%d8%af-%d8%a7%d9%84%d9%82%d8%aa%d8%a7%d9%84-%d9%85%d8%ad%d8%b7%d8%a7%d8%aa-%d8%a8%d8%a7%d8%b1%d8%b2%d8%a9-%d9%81%d9%8a-%d8%b5%d8%b1%d8%a7%d8%b9?traffic_source=rss",
+      "published_at": "2026-09-24T10:24:46Z",
+      "fetched_at": "2026-09-24T13:36:47Z",
+      "rank_in_feed": 1
+    },
+    {
+      "article_id": "a24dbf5d",
+      "feed_id": "qa-aljazeera-ar",
+      "source": "الجزيرة (Al Jazeera Arabic)",
+      "country": "QA",
+      "media_type": "state",
+      "lang": "ar",
+      "title_original": "استطلاع يشير لتراجع شعبية ترمب بسبب تداعيات حرب إيران",
+      "url": "https://www.aljazeera.net/video/2026/9/24/%d8%a7%d8%b3%d8%aa%d8%b7%d9%84%d8%a7%d8%b9-%d9%8a%d8%b4%d9%8a%d8%b1-%d9%84%d8%aa%d8%b1%d8%a7%d8%ac%d8%b9-%d8%b4%d8%b9%d8%a8%d9%8a%d8%a9-%d8%aa%d8%b1%d9%85%d8%a8-%d8%a8%d8%b3%d8%a8%d8%a8?traffic_source=rss",
+      "published_at": "2026-09-24T10:24:18Z",
+      "fetched_at": "2026-09-24T13:36:47Z",
+      "rank_in_feed": 2
+    },
+    {
       "article_id": "60b7d42a",
       "feed_id": "jp-asahi",
       "source": "朝日新聞",
@@ -2811,6 +3396,19 @@
       "published_at": "2026-09-24T10:23:57Z",
       "fetched_at": "2026-09-24T13:05:43Z",
       "rank_in_feed": 28
+    },
+    {
+      "article_id": "8c486f76",
+      "feed_id": "qa-aljazeera-ar",
+      "source": "الجزيرة (Al Jazeera Arabic)",
+      "country": "QA",
+      "media_type": "state",
+      "lang": "ar",
+      "title_original": "التغير المناخي يعيد رسم السواحل وارتفاع البحار يهدد المدن",
+      "url": "https://www.aljazeera.net/video/2026/9/24/%d8%a7%d9%84%d8%aa%d8%ba%d9%8a%d8%b1-%d8%a7%d9%84%d9%85%d9%86%d8%a7%d8%ae%d9%8a-%d9%8a%d8%b9%d9%8a%d8%af-%d8%b1%d8%b3%d9%85-%d8%a7%d9%84%d8%b3%d9%88%d8%a7%d8%ad%d9%84?traffic_source=rss",
+      "published_at": "2026-09-24T10:23:51Z",
+      "fetched_at": "2026-09-24T13:36:47Z",
+      "rank_in_feed": 3
     },
     {
       "article_id": "12039196",
@@ -2839,6 +3437,19 @@
       "rank_in_feed": 17
     },
     {
+      "article_id": "2d796555",
+      "feed_id": "qa-aljazeera-ar",
+      "source": "الجزيرة (Al Jazeera Arabic)",
+      "country": "QA",
+      "media_type": "state",
+      "lang": "ar",
+      "title_original": "بعد إخفاقات المونديال.. لوف يحدد شرط نجاح كلوب مع ألمانيا",
+      "url": "https://www.aljazeera.net/sport/2026/9/24/%d9%83%d9%84%d9%88%d8%a8-%d9%84%d9%88%d9%81-%d9%85%d9%86%d8%aa%d8%ae%d8%a8-%d8%a3%d9%84%d9%85%d8%a7%d9%86%d9%8a%d8%a7?traffic_source=rss",
+      "published_at": "2026-09-24T10:20:43Z",
+      "fetched_at": "2026-09-24T13:36:47Z",
+      "rank_in_feed": 4
+    },
+    {
       "article_id": "3e2d557c",
       "feed_id": "in-toi",
       "source": "The Times of India",
@@ -2863,6 +3474,19 @@
       "published_at": "2026-09-24T10:18:00Z",
       "fetched_at": "2026-09-24T13:05:43Z",
       "rank_in_feed": 10
+    },
+    {
+      "article_id": "56951daa",
+      "feed_id": "qa-aljazeera-ar",
+      "source": "الجزيرة (Al Jazeera Arabic)",
+      "country": "QA",
+      "media_type": "state",
+      "lang": "ar",
+      "title_original": "ليس مشهدا من فيلم.. \"باتمان\" يتسلق جدارا ويطارد لصا في إنجلترا",
+      "url": "https://www.aljazeera.net/misc/2026/9/24/%d8%a8%d8%a7%d8%aa%d9%85%d8%a7%d9%86-%d9%81%d9%8a-%d9%85%d8%b7%d8%a7%d8%b1%d8%af%d8%a9-%d8%ad%d9%82%d9%8a%d9%82%d9%8a%d8%a9-%d8%b4%d8%b1%d9%82-%d8%a5%d9%86%d8%ac%d9%84%d8%aa%d8%b1%d8%a7?traffic_source=rss",
+      "published_at": "2026-09-24T10:17:31Z",
+      "fetched_at": "2026-09-24T13:36:47Z",
+      "rank_in_feed": 5
     },
     {
       "article_id": "48088495",
@@ -2928,6 +3552,19 @@
       "published_at": "2026-09-24T10:11:15Z",
       "fetched_at": "2026-09-24T13:05:43Z",
       "rank_in_feed": 7
+    },
+    {
+      "article_id": "de0eb661",
+      "feed_id": "qa-aljazeera-ar",
+      "source": "الجزيرة (Al Jazeera Arabic)",
+      "country": "QA",
+      "media_type": "state",
+      "lang": "ar",
+      "title_original": "كيف تؤثر الشاشات في صحة الأطفال؟",
+      "url": "https://www.aljazeera.net/health/2026/9/24/%d9%83%d9%8a%d9%81-%d8%aa%d8%a4%d8%ab%d8%b1-%d8%a7%d9%84%d8%b4%d8%a7%d8%b4%d8%a7%d8%aa-%d9%81%d9%8a-%d8%b5%d8%ad%d8%a9-%d8%a7%d9%84%d8%a3%d8%b7%d9%81%d8%a7%d9%84?traffic_source=rss",
+      "published_at": "2026-09-24T10:11:00Z",
+      "fetched_at": "2026-09-24T13:36:47Z",
+      "rank_in_feed": 6
     },
     {
       "article_id": "34dceaee",
@@ -3534,7 +4171,7 @@
       "country": "CN",
       "media_type": "private",
       "lang": "zh",
-      "title_original": "截至8月底全国累计发电装机容量达41.03亿千瓦 - stdaily.com",
+      "title_original": "截至8月底全国累计发电装机容量达41.03亿千瓦 - 中国科技网",
       "url": "https://news.google.com/rss/articles/CBMicEFVX3lxTE1KeTdfMFp4OVE5emR5TkIydDN2ckNaSm5ra3dWMEg4QUNFNG5zdktBWnpLRXFqbjlXVlJqNDl6NmlacC1CNXp6eUJJSzNpbDNxdU5kdzVUaFU1NkpCU3dleEJGczlMYkFIZjRqMlB3ekc?oc=5",
       "published_at": "2026-09-24T09:28:34Z",
       "fetched_at": "2026-09-24T13:05:43Z",
@@ -3736,19 +4373,6 @@
       "rank_in_feed": 7
     },
     {
-      "article_id": "6160c9e1",
-      "feed_id": "us-gnews",
-      "source": "Google News (US)",
-      "country": "US",
-      "media_type": "private",
-      "lang": "en",
-      "title_original": "Stock futures fall as Treasury yields continue to push to multiyear highs: Live updates - CNBC",
-      "url": "https://news.google.com/rss/articles/CBMid0FVX3lxTE1kSThnZGdDMlpreHVoQ2NfOEs2blNBWnhLZWZyZjUzUVdhT0JwTjBQMDJ0b1F4cFRiaW1icDNTNHpSdEFLVmpKM2MxT3Voa25WSUxwY1RsYno3UU5qTG1Ec09mU3lveEFYUTk5VVFTbDdXQU9PT2xj0gF8QVVfeXFMT3hBNUw4aTh3Q1VGT1RZUXZ2RUtmamZLZXd6TGRkVExWQmVFVWw0RHJPNnBxMjJMcXREZF93enk1VFdkMGEwS21ZX21GbG54QWVqZ3hQZFgzZ3VockF0enVCdkhQYkhNbk1VNndtNFIxY2F2bnRNZHYxLVdCaA?oc=5",
-      "published_at": "2026-09-24T09:17:00Z",
-      "fetched_at": "2026-09-24T13:05:43Z",
-      "rank_in_feed": 15
-    },
-    {
       "article_id": "a173a21b",
       "feed_id": "cn-gnews",
       "source": "Google News (中国版)",
@@ -3892,13 +4516,26 @@
       "rank_in_feed": 10
     },
     {
+      "article_id": "688fe99f",
+      "feed_id": "cn-gnews",
+      "source": "Google News (中国版)",
+      "country": "CN",
+      "media_type": "private",
+      "lang": "zh",
+      "title_original": "李强签署国务院令 公布修订后的《中华人民共和国审计法实施条例》 - 东方财富",
+      "url": "https://news.google.com/rss/articles/CBMiYEFVX3lxTE4wV0tpTkpEenF6WERGZXJvcDFHTlJ0S09Ldlp4R29URWtlSWxsNldQbXdrMC1XTnp6SlBLZGtVeEdkN1k2TEJ4enJaMWRvYmFSenlJU08yV2Z6S2g1Qkh2LQ?oc=5",
+      "published_at": "2026-09-24T09:08:25Z",
+      "fetched_at": "2026-09-24T13:36:47Z",
+      "rank_in_feed": 8
+    },
+    {
       "article_id": "760ba75d",
       "feed_id": "us-gnews",
       "source": "Google News (US)",
       "country": "US",
       "media_type": "private",
       "lang": "en",
-      "title_original": "Netanyahu takes UN stage with one eye on Israel’s election - Al Jazeera",
+      "title_original": "Netanyahu takes UN stage with one eye on Israel’s election - aljazeera.com",
       "url": "https://news.google.com/rss/articles/CBMipAFBVV95cUxPVHp4Y3NJeUlhZmFHX0s1VFE1VUlHLXhab2FVZTMxTm9JUzFlOGpfMEp2bG1zSnFUaHQ0V2VLd0lLb2hrc0pYQnYwNEJETTB3ZEpFMUZBVm52aHdyWm4yeEJEblBUNlplYUVSQ1RBY2ZRejNzNEdKbDZtQ0RkaE5WQ2hPSXZaQ0dWZDBEUlBCMmN3ek9BbUpiQ1RCM0FVQWhsVmRiUtIBqgFBVV95cUxPeWx4WkZabkxpbUl2cEhoNkpscXJ0Znk4QVlVSjJ1ZEJSeGNkOXpYZTVlRlZrVVRVeHY3NDhLR0xPcXM1UC0ydmFLa2tOZUFscE1pRTRlbEtsSTVMYV9ONFoyMFdlTjZnR29aYzlESnloRzVDMEJxVmtjcGJ5OUw3UzFxc2RQZkZLMkREUVN3enZmWVRzcTY0UW4tR0pNdUxnQXJvaXNldDJ4UQ?oc=5",
       "published_at": "2026-09-24T09:07:54Z",
       "fetched_at": "2026-09-24T13:05:43Z",
@@ -4282,6 +4919,19 @@
       "rank_in_feed": 17
     },
     {
+      "article_id": "44328867",
+      "feed_id": "us-npr",
+      "source": "NPR",
+      "country": "US",
+      "media_type": "public",
+      "lang": "en",
+      "title_original": "Could the White House try its press ban again? A press freedom expert explains",
+      "url": "https://www.npr.org/2026/09/24/nx-s1-5978805/whats-next-white-house-press-access-fight",
+      "published_at": "2026-09-24T08:44:54Z",
+      "fetched_at": "2026-09-24T13:36:47Z",
+      "rank_in_feed": 4
+    },
+    {
       "article_id": "f42d14e3",
       "feed_id": "qa-aljazeera-ar",
       "source": "الجزيرة (Al Jazeera Arabic)",
@@ -4449,6 +5099,19 @@
       "published_at": "2026-09-24T08:30:04Z",
       "fetched_at": "2026-09-24T13:05:43Z",
       "rank_in_feed": 10
+    },
+    {
+      "article_id": "32edca93",
+      "feed_id": "fr-lemonde",
+      "source": "Le Monde",
+      "country": "FR",
+      "media_type": "private",
+      "lang": "fr",
+      "title_original": "Luke Lindberg, fervent défenseur de la ligne « America first », prend la tête du Programme alimentaire mondial",
+      "url": "https://www.lemonde.fr/planete/article/2026/09/24/luke-lindberg-fervent-defenseur-de-la-ligne-america-first-prend-la-tete-du-programme-alimentaire-mondial_6781489_3244.html",
+      "published_at": "2026-09-24T08:30:01Z",
+      "fetched_at": "2026-09-24T13:36:47Z",
+      "rank_in_feed": 17
     },
     {
       "article_id": "10afc4b8",
@@ -4633,6 +5296,19 @@
       "rank_in_feed": 17
     },
     {
+      "article_id": "8e76e928",
+      "feed_id": "cn-gnews",
+      "source": "Google News (中国版)",
+      "country": "CN",
+      "media_type": "private",
+      "lang": "zh",
+      "title_original": "日本以所谓“存亡危机事态”为名加速“再军事化” - 紫牛新闻",
+      "url": "https://news.google.com/rss/articles/CBMiakFVX3lxTE1vYzBZNkNCUGlJRi1hUnhLLXBBSE5Xb00wcWdPTnpCYkc3TEt6UWJlTHVQeWpDZTlNdllVZGZHRnNnanc1OC1nWU00ZnBJRFA1NmpmLXQ5NFFPcUE5a3FkRUZObVpWeTlWeGc?oc=5",
+      "published_at": "2026-09-24T08:07:00Z",
+      "fetched_at": "2026-09-24T13:36:47Z",
+      "rank_in_feed": 10
+    },
+    {
       "article_id": "3f04dd99",
       "feed_id": "fr-lemonde",
       "source": "Le Monde",
@@ -4644,6 +5320,19 @@
       "published_at": "2026-09-24T08:06:14Z",
       "fetched_at": "2026-09-24T13:05:43Z",
       "rank_in_feed": 17
+    },
+    {
+      "article_id": "9c8cfda7",
+      "feed_id": "cn-gnews",
+      "source": "Google News (中国版)",
+      "country": "CN",
+      "media_type": "private",
+      "lang": "zh",
+      "title_original": "2026年中国国际信息通信展览会卫星互联网论坛在京举办 - 东方财富",
+      "url": "https://news.google.com/rss/articles/CBMiZkFVX3lxTE5EM0wwLUFMRlhvUHExZlFDOFJsU3h5OGwybVdyZU1nRXpUS1NnenQyb2F0UHdWbmR2QWpiZnEzS1dSMmFKX2I5RFZEQ01HV0daWnFEdWh0UEIwUWh6bFRWaTlmbWRjZw?oc=5",
+      "published_at": "2026-09-24T08:04:41Z",
+      "fetched_at": "2026-09-24T13:36:47Z",
+      "rank_in_feed": 18
     },
     {
       "article_id": "c82b6235",
@@ -4906,19 +5595,6 @@
       "rank_in_feed": 20
     },
     {
-      "article_id": "7fc3e3fc",
-      "feed_id": "in-hindu",
-      "source": "The Hindu",
-      "country": "IN",
-      "media_type": "private",
-      "lang": "en",
-      "title_original": "Judge orders White House to restore access to news outlets Trump banned",
-      "url": "https://www.thehindu.com/news/international/judge-orders-white-house-to-restore-access-to-news-outlets-trump-banned/article71503009.ece",
-      "published_at": "2026-09-24T07:33:54Z",
-      "fetched_at": "2026-09-24T13:05:43Z",
-      "rank_in_feed": 3
-    },
-    {
       "article_id": "834f3dcb",
       "feed_id": "ua-pravda",
       "source": "Ukrainska Pravda",
@@ -5094,7 +5770,7 @@
       "country": "CN",
       "media_type": "private",
       "lang": "zh",
-      "title_original": "越山海｜跨越太平洋的青春之桥 - 中安在线",
+      "title_original": "越山海｜跨越太平洋的青春之桥 - news.anhuinews.com",
       "url": "https://news.google.com/rss/articles/CBMibEFVX3lxTFBwX21nY1JQLWtrZzdHLXFvMUdyNkZleU9RVGFyaXZ6U0tvWXg1eVk5VnZiYXUxZVdsUlRudlpJSTc2amdId1NSNzViaHBwNk9uNmozQXo3N0FPR2h4cnNKVEcxeV9xeWJJeHplSQ?oc=5",
       "published_at": "2026-09-24T06:53:00Z",
       "fetched_at": "2026-09-24T13:11:52Z",
@@ -5192,6 +5868,19 @@
       "rank_in_feed": 25
     },
     {
+      "article_id": "9f1fe28e",
+      "feed_id": "cn-gnews",
+      "source": "Google News (中国版)",
+      "country": "CN",
+      "media_type": "private",
+      "lang": "zh",
+      "title_original": "美伊代表纽约会晤约3小时 会谈“富有成效” - 中华网",
+      "url": "https://news.google.com/rss/articles/CBMicEFVX3lxTFBuV0xUZHpoNUN6UDNLc1RJUUhwN3lGaFNTME5ON09vWXpTTmRaNmdnbnBVdjMxdGtjUi15YzJrMkpUdWhUM19xZXRwQ05DZGlYbVNOXy1lVWdnUWpVT09kODd3azE4UlE5S3hyZzJXeFk?oc=5",
+      "published_at": "2026-09-24T06:34:42Z",
+      "fetched_at": "2026-09-24T13:36:47Z",
+      "rank_in_feed": 5
+    },
+    {
       "article_id": "5ffff12e",
       "feed_id": "fr-france24",
       "source": "France 24",
@@ -5237,7 +5926,7 @@
       "country": "US",
       "media_type": "private",
       "lang": "en",
-      "title_original": "Trump-Xi summit: Here’s what’s on the agenda, and why it matters - Al Jazeera",
+      "title_original": "Trump-Xi summit: Here’s what’s on the agenda, and why it matters - aljazeera.com",
       "url": "https://news.google.com/rss/articles/CBMilgFBVV95cUxOc1dTWnpEZlJJeURSRjFLaEk0RlRtSVJFLUtxb0RJUmJadTJlamdTT3h3WUJ4U0dRX240ZVdGZWZ0aUNPelZyNmxkUU43dVdrVF9Jem16b3A0WWtfNjlucUVBMkY2ZXVuMmRNaXI5QzE3VnB4TXBHaS1KUDVtTHZmV1dUaHNIWDFoX2V5Z2FjZWV1eXRfcFHSAZsBQVVfeXFMUEhTbktfVmd1dkJrN0V0bmI3bUZjT2p4YUUwaXVnSnBqNTF1TXRLOGl5Ql9OUE5PU25Dby1VMm5UWDZUU0puelY5TGdfZFNsaWhsSUlvQ1A1ejdVQ3g3dGljZ0dybnA3TW5GcmE3YVJkMVhkR3M5SFJEclQ4VmlNSEpHdGNuTXk0bkJVdjZOeDNwdzR2QklwVXJiTzA?oc=5",
       "published_at": "2026-09-24T06:14:54Z",
       "fetched_at": "2026-09-24T13:05:43Z",
@@ -5281,6 +5970,19 @@
       "published_at": "2026-09-24T06:02:33Z",
       "fetched_at": "2026-09-24T13:05:43Z",
       "rank_in_feed": 1
+    },
+    {
+      "article_id": "7bc3e6df",
+      "feed_id": "us-gnews",
+      "source": "Google News (US)",
+      "country": "US",
+      "media_type": "private",
+      "lang": "en",
+      "title_original": "College football picks ATS Week 4: Texas-Tennessee, Ole Miss-Florida and more - The Athletic - The New York Times",
+      "url": "https://news.google.com/rss/articles/CBMiqAFBVV95cUxOcUFNSkNzczd2b0w3UGE4OUhhcUYtdnBzWFRzajZSWjhlOVVLVUdPYnFEOXNUV2oySXNXOEVCemlaYWVkNHM2ajhxdnZlWnFoY25sUGlvbWkyOEI0cndNcXpJbzk1WFR5SWFreXFPSUNfUFlwVEVHbDJUMU5Db2FLdC1CS3pCdkhrekdFUUdrUmxIenk3RTg1NkNuUmRhU3A2OFp2c0ZLM1Y?oc=5",
+      "published_at": "2026-09-24T06:00:24Z",
+      "fetched_at": "2026-09-24T13:36:47Z",
+      "rank_in_feed": 28
     },
     {
       "article_id": "3df986ec",
@@ -5554,6 +6256,19 @@
       "published_at": "2026-09-24T04:33:30Z",
       "fetched_at": "2026-09-24T13:05:43Z",
       "rank_in_feed": 3
+    },
+    {
+      "article_id": "49ef637c",
+      "feed_id": "br-g1",
+      "source": "G1",
+      "country": "BR",
+      "media_type": "private",
+      "lang": "pt",
+      "title_original": "DAQUI A POUCO: Trump e Xi Jinping se reúnem na Casa Branca",
+      "url": "https://g1.globo.com/mundo/ao-vivo/trump-e-xi-jinping-se-reunem-nos-eua.ghtml",
+      "published_at": "2026-09-24T04:32:20Z",
+      "fetched_at": "2026-09-24T13:36:47Z",
+      "rank_in_feed": 1
     },
     {
       "article_id": "533d0d5a",
@@ -6154,6 +6869,19 @@
       "rank_in_feed": 22
     },
     {
+      "article_id": "06cbed90",
+      "feed_id": "us-gnews",
+      "source": "Google News (US)",
+      "country": "US",
+      "media_type": "private",
+      "lang": "en",
+      "title_original": "Eight USS Lincoln personnel have attempted suicide, US navy confirms - The Guardian",
+      "url": "https://news.google.com/rss/articles/CBMiggFBVV95cUxQeVRxcUdUS0cxUTAzcE1VU2pad2NQOEVlUDlHMkViXzRBWkNBbjloUXhGVkYxWUF2ekMtZFlGaS00ZldBVUtXeUU2U014cGkxYU1nR0NSYU45bE9GSjk0Wk0xZ05GTHA3RUxnTmZaOUJxLTNrbGhJdzFJcjVSUTRZUXdB?oc=5",
+      "published_at": "2026-09-24T00:53:00Z",
+      "fetched_at": "2026-09-24T13:36:47Z",
+      "rank_in_feed": 8
+    },
+    {
       "article_id": "a3fd8e78",
       "feed_id": "gb-bbc",
       "source": "BBC News",
@@ -6381,7 +7109,7 @@
       "country": "US",
       "media_type": "private",
       "lang": "en",
-      "title_original": "Sturm Und Drang At Warner Bros Amid Paramount Merger Has Insiders Wondering If The Brand Survives - Deadline",
+      "title_original": "Warner Bros Gloom Sets In At Studio Amid Paramount Merger - Deadline",
       "url": "https://news.google.com/rss/articles/CBMiigFBVV95cUxQUjVLMURfV2RTSGdHUmU1MndCcUdEZWwtLVhhMlhtWkc5dXhYMmdaX0REdmtFd2k3SllaTjVDcTd5VmJ1TGhHMGw0WXBrcG1OS3ZkV25ZbnQ4d3VpZmJ6QWRJY1N0LW9EYWpNelVrZk01TW4xWnVIYjRkcVhiX0sydHd2a0dpNUhneUE?oc=5",
       "published_at": "2026-09-23T23:34:00Z",
       "fetched_at": "2026-09-24T13:05:43Z",
@@ -6425,6 +7153,19 @@
       "published_at": "2026-09-23T23:29:57Z",
       "fetched_at": "2026-09-24T13:11:52Z",
       "rank_in_feed": 9
+    },
+    {
+      "article_id": "b25de58c",
+      "feed_id": "us-gnews",
+      "source": "Google News (US)",
+      "country": "US",
+      "media_type": "private",
+      "lang": "en",
+      "title_original": "What's really true in 'Brothers'? McConaughey, Harrelson set record straight - USA Today",
+      "url": "https://news.google.com/rss/articles/CBMi3wFBVV95cUxNY2hxTzFpODZNSWtZX0M2aW5hQ2FTdUpnWFU4ZWZWajBpdmNseUlnVHgyd0o2MTBmM2NoaEc5czRkaUJwbzB0aEdQb1U3TzV3QnN2aXdEcXQ0YTB2ZlFLN2k2Sm1XNEI0eExCeDBCS2tVM0lPNFRON0xSZWVDZF95MGZqeThObzRaQVZhWGVzZkRKa1RPUmxxcm1fSlo3S05WYWcwbVVRSEh0OEktY2NrWjh0Qy16N1V5dTRkUVozOVRnMFJGWG1jWS1VaHJXZ0tEcXZ1VzRwYTNWSm13QmdB?oc=5",
+      "published_at": "2026-09-23T23:26:00Z",
+      "fetched_at": "2026-09-24T13:36:47Z",
+      "rank_in_feed": 26
     },
     {
       "article_id": "3a61608e",
@@ -7103,6 +7844,19 @@
       "rank_in_feed": 7
     },
     {
+      "article_id": "58190662",
+      "feed_id": "us-gnews",
+      "source": "Google News (US)",
+      "country": "US",
+      "media_type": "private",
+      "lang": "en",
+      "title_original": "Venezuelan man shot by ICE officer needs surgery to remove the bullet, U.S. Rep. Greg Casar says - The Texas Tribune",
+      "url": "https://news.google.com/rss/articles/CBMimgFBVV95cUxPZ2dwbVZvN3lSN1NCbzRaQ25rRzBYSzEyQjZVY0NBQlFFWmdyV2lKMklvNWplV1dUTWkwVzFlOEdZN3BnRDA2TmVOa2FteHQ3cFhpQVJCXzlpXzdSTG9KT2dYcDVFYWlsT2dVaWUxRnE3YzE0VkJrd25mc05lSDBVUHdGc1J4NUVHOTc4Y2c3SjF3YWRZRjBkZGJB?oc=5",
+      "published_at": "2026-09-23T17:35:49Z",
+      "fetched_at": "2026-09-24T13:36:47Z",
+      "rank_in_feed": 10
+    },
+    {
       "article_id": "ba75d315",
       "feed_id": "in-hindu",
       "source": "The Hindu",
@@ -7389,6 +8143,19 @@
       "rank_in_feed": 11
     },
     {
+      "article_id": "c6a7e04a",
+      "feed_id": "us-gnews",
+      "source": "Google News (US)",
+      "country": "US",
+      "media_type": "private",
+      "lang": "en",
+      "title_original": "Genetic trove aims to unlock bats’ secrets to long life - Financial Times",
+      "url": "https://news.google.com/rss/articles/CBMihAFBVV95cUxPQTVxWkJqbl80ZXJpejJJYXY2TkZHWmpOTmFFNzM2UlVVR0JXSmdFa21KN2Q4Wlg0c2dOSGR4eDMxa1gyYUVxb1NSRno5dXdKN2otaE9mZDRpNFpGRWlPaVUxbW9abHo3a3FWUGlxeURvZzJkSUctc1l4cEgyNnlrYkcycjc?oc=5",
+      "published_at": "2026-09-23T15:00:05Z",
+      "fetched_at": "2026-09-24T13:36:47Z",
+      "rank_in_feed": 33
+    },
+    {
       "article_id": "e0f5f51e",
       "feed_id": "kr-yonhapnews-ja",
       "source": "聯合ニュース",
@@ -7465,6 +8232,19 @@
       "published_at": "2026-09-23T14:39:12Z",
       "fetched_at": "2026-09-24T13:05:43Z",
       "rank_in_feed": 23
+    },
+    {
+      "article_id": "333d2850",
+      "feed_id": "us-gnews",
+      "source": "Google News (US)",
+      "country": "US",
+      "media_type": "private",
+      "lang": "en",
+      "title_original": "Packers can make home opener history on Thursday night vs. Falcons - Packers Wire",
+      "url": "https://news.google.com/rss/articles/CBMi4AFBVV95cUxORTh3enRBQWc3VkRJaGZvUlJBUkRfdHVlVVBLNmRDRXdxN2ZqRVNXUHQxY0RpZHEyOWh4V0lqV2dkbmNlMnhVMmJKNVpfbHBROWhkV0dJVUJPd0xfeXRBSG9QVVhJM1NscE1iTGliWTdab2k4VGp2NUtlN0xOUnRraHVNSlAyOTNwRnR3Si1ldlBaZTdYX0thbUV6cTcwZVlya3dUcHNUYmRIcWcySUlXQXdtMGxlVlh2aW94RHlBcGhQbHh1ZktOdUU5ODQzVTlsUjZrMlgwOHBWdGRiM0o1eg?oc=5",
+      "published_at": "2026-09-23T14:37:00Z",
+      "fetched_at": "2026-09-24T13:36:47Z",
+      "rank_in_feed": 29
     },
     {
       "article_id": "c6bd3c83",

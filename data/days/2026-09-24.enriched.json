@@ -1,30 +1,74 @@
 {
   "schema_version": 3,
   "date": "2026-09-24",
-  "generated_at": "2026-09-24T13:14:26Z",
+  "generated_at": "2026-09-24T13:39:27Z",
   "engine": "passthrough",
   "api_calls": 20,
   "degraded": true,
   "articles": [
     {
-      "article_id": "10042227",
-      "title_ja": "Judge temporarily overturns Trump's White House media ban",
+      "article_id": "6f12a149",
+      "title_ja": "GAD helps ORR turn climate data into practical insight",
       "summary_ja": "",
       "tags": [],
       "stance": "neutral",
       "stance_reason": "AI未適用",
-      "key_phrase_original": "Judge temporarily overturns Trump's White House media ban",
+      "key_phrase_original": "GAD helps ORR turn climate data into practical insight",
       "key_phrase_ja": "",
       "enriched_by": "passthrough"
     },
     {
-      "article_id": "6924b709",
-      "title_ja": "Vacancy for Inspector of Marine Accidents (Naval Architect)",
+      "article_id": "ebf6b25f",
+      "title_ja": "Germany pledges to phase out fossil fuels",
       "summary_ja": "",
       "tags": [],
       "stance": "neutral",
       "stance_reason": "AI未適用",
-      "key_phrase_original": "Vacancy for Inspector of Marine Accidents (Naval Architect)",
+      "key_phrase_original": "Germany pledges to phase out fossil fuels",
+      "key_phrase_ja": "",
+      "enriched_by": "passthrough"
+    },
+    {
+      "article_id": "745a3f60",
+      "title_ja": "Iran threatens to expand war to Indian Ocean if U.S. attacks again",
+      "summary_ja": "",
+      "tags": [],
+      "stance": "neutral",
+      "stance_reason": "AI未適用",
+      "key_phrase_original": "Iran threatens to expand war to Indian Ocean if U.S. attacks again",
+      "key_phrase_ja": "",
+      "enriched_by": "passthrough"
+    },
+    {
+      "article_id": "723c3d55",
+      "title_ja": "Прогноз роста розничной торговли в России в 2026 году повышен с 0,8% до 4,6%",
+      "summary_ja": "",
+      "tags": [],
+      "stance": "neutral",
+      "stance_reason": "AI未適用",
+      "key_phrase_original": "Прогноз роста розничной торговли в России в 2026 году повышен с 0,8% до 4,6%",
+      "key_phrase_ja": "",
+      "enriched_by": "passthrough"
+    },
+    {
+      "article_id": "c3e2a00b",
+      "title_ja": "ЦБ планирует провести пилот с офлайн-платежами цифровыми рублями в 2027 году",
+      "summary_ja": "",
+      "tags": [],
+      "stance": "neutral",
+      "stance_reason": "AI未適用",
+      "key_phrase_original": "ЦБ планирует провести пилот с офлайн-платежами цифровыми рублями в 2027 году",
+      "key_phrase_ja": "",
+      "enriched_by": "passthrough"
+    },
+    {
+      "article_id": "7fc3e3fc",
+      "title_ja": "CNN, MS NOW, Politico still barred from White House despite court ruling",
+      "summary_ja": "",
+      "tags": [],
+      "stance": "neutral",
+      "stance_reason": "AI未適用",
+      "key_phrase_original": "CNN, MS NOW, Politico still barred from White House despite court ruling",
       "key_phrase_ja": "",
       "enriched_by": "passthrough"
     },
@@ -40,6 +84,347 @@
       "enriched_by": "passthrough"
     },
     {
+      "article_id": "e735eba8",
+      "title_ja": "« Il faut appeler une guerre une guerre, qu’elle soit informationnelle, cyber, hybride, de l’ombre ou “sous le seuil” »",
+      "summary_ja": "",
+      "tags": [],
+      "stance": "neutral",
+      "stance_reason": "AI未適用",
+      "key_phrase_original": "« Il faut appeler une guerre une guerre, qu’elle soit informationnelle, cyber, hybride, de l’ombre ou “sous le seuil” »",
+      "key_phrase_ja": "",
+      "enriched_by": "passthrough"
+    },
+    {
+      "article_id": "b4550d3c",
+      "title_ja": "Минэкономразвития прогнозирует снижение промпроизводства в 2026г на 0,2%",
+      "summary_ja": "",
+      "tags": [],
+      "stance": "neutral",
+      "stance_reason": "AI未適用",
+      "key_phrase_original": "Минэкономразвития прогнозирует снижение промпроизводства в 2026г на 0,2%",
+      "key_phrase_ja": "",
+      "enriched_by": "passthrough"
+    },
+    {
+      "article_id": "9ea632fc",
+      "title_ja": "Медведев анонсировал учреждение в Госдуме двух новых комитетов",
+      "summary_ja": "",
+      "tags": [],
+      "stance": "neutral",
+      "stance_reason": "AI未適用",
+      "key_phrase_original": "Медведев анонсировал учреждение в Госдуме двух новых комитетов",
+      "key_phrase_ja": "",
+      "enriched_by": "passthrough"
+    },
+    {
+      "article_id": "4984bc89",
+      "title_ja": "What to expect from Trump-Xi summit at White House",
+      "summary_ja": "",
+      "tags": [],
+      "stance": "neutral",
+      "stance_reason": "AI未適用",
+      "key_phrase_original": "What to expect from Trump-Xi summit at White House",
+      "key_phrase_ja": "",
+      "enriched_by": "passthrough"
+    },
+    {
+      "article_id": "4428fc2e",
+      "title_ja": "Петр Толстой выдвинут кандидатом в председатели комитета Думы по международным делам",
+      "summary_ja": "",
+      "tags": [],
+      "stance": "neutral",
+      "stance_reason": "AI未適用",
+      "key_phrase_original": "Петр Толстой выдвинут кандидатом в председатели комитета Думы по международным делам",
+      "key_phrase_ja": "",
+      "enriched_by": "passthrough"
+    },
+    {
+      "article_id": "8bfe0e80",
+      "title_ja": "Рябков заявил, что продолжение СВО не мешает поиску долгосрочного урегулирования",
+      "summary_ja": "",
+      "tags": [],
+      "stance": "neutral",
+      "stance_reason": "AI未適用",
+      "key_phrase_original": "Рябков заявил, что продолжение СВО не мешает поиску долгосрочного урегулирования",
+      "key_phrase_ja": "",
+      "enriched_by": "passthrough"
+    },
+    {
+      "article_id": "f4a0e175",
+      "title_ja": "Taiwan: Home of semiconductor giants at the centre of AI race",
+      "summary_ja": "",
+      "tags": [],
+      "stance": "neutral",
+      "stance_reason": "AI未適用",
+      "key_phrase_original": "Taiwan: Home of semiconductor giants at the centre of AI race",
+      "key_phrase_ja": "",
+      "enriched_by": "passthrough"
+    },
+    {
+      "article_id": "f693fcbd",
+      "title_ja": "Минэкономразвития повысило прогноз по инфляции-2026 до 6,8% с 5,2%",
+      "summary_ja": "",
+      "tags": [],
+      "stance": "neutral",
+      "stance_reason": "AI未適用",
+      "key_phrase_original": "Минэкономразвития повысило прогноз по инфляции-2026 до 6,8% с 5,2%",
+      "key_phrase_ja": "",
+      "enriched_by": "passthrough"
+    },
+    {
+      "article_id": "3effb647",
+      "title_ja": "Polish Deputy PM on Starlink station fire: Russia tries to deprive Ukraine of internet access at front",
+      "summary_ja": "",
+      "tags": [],
+      "stance": "neutral",
+      "stance_reason": "AI未適用",
+      "key_phrase_original": "Polish Deputy PM on Starlink station fire: Russia tries to deprive Ukraine of internet access at front",
+      "key_phrase_ja": "",
+      "enriched_by": "passthrough"
+    },
+    {
+      "article_id": "1e77583d",
+      "title_ja": "首届FIFA东盟杯香港开赛 - chinanews.com.cn",
+      "summary_ja": "",
+      "tags": [],
+      "stance": "neutral",
+      "stance_reason": "AI未適用",
+      "key_phrase_original": "首届FIFA东盟杯香港开赛 - chinanews.com.cn",
+      "key_phrase_ja": "",
+      "enriched_by": "passthrough"
+    },
+    {
+      "article_id": "4f4741fb",
+      "title_ja": "Минэкономразвития заложило в прогноз цену Urals в 2027 г. в $53 за баррель",
+      "summary_ja": "",
+      "tags": [],
+      "stance": "neutral",
+      "stance_reason": "AI未適用",
+      "key_phrase_original": "Минэкономразвития заложило в прогноз цену Urals в 2027 г. в $53 за баррель",
+      "key_phrase_ja": "",
+      "enriched_by": "passthrough"
+    },
+    {
+      "article_id": "8a2ceb54",
+      "title_ja": "Международные резервы России с 11 по 18 сентября сократились на $10,0 млрд",
+      "summary_ja": "",
+      "tags": [],
+      "stance": "neutral",
+      "stance_reason": "AI未適用",
+      "key_phrase_original": "Международные резервы России с 11 по 18 сентября сократились на $10,0 млрд",
+      "key_phrase_ja": "",
+      "enriched_by": "passthrough"
+    },
+    {
+      "article_id": "b63fb65a",
+      "title_ja": "Family of Iranian twins sentenced to death and decades in jail ask UN for help",
+      "summary_ja": "",
+      "tags": [],
+      "stance": "neutral",
+      "stance_reason": "AI未適用",
+      "key_phrase_original": "Family of Iranian twins sentenced to death and decades in jail ask UN for help",
+      "key_phrase_ja": "",
+      "enriched_by": "passthrough"
+    },
+    {
+      "article_id": "5f82d1f0",
+      "title_ja": "Oil prices back up as U.S. and Iran trade threats to expand 7-month war",
+      "summary_ja": "",
+      "tags": [],
+      "stance": "neutral",
+      "stance_reason": "AI未適用",
+      "key_phrase_original": "Oil prices back up as U.S. and Iran trade threats to expand 7-month war",
+      "key_phrase_ja": "",
+      "enriched_by": "passthrough"
+    },
+    {
+      "article_id": "cb5e6b9b",
+      "title_ja": "Environment Agency submits Portreath flood defence plans",
+      "summary_ja": "",
+      "tags": [],
+      "stance": "neutral",
+      "stance_reason": "AI未適用",
+      "key_phrase_original": "Environment Agency submits Portreath flood defence plans",
+      "key_phrase_ja": "",
+      "enriched_by": "passthrough"
+    },
+    {
+      "article_id": "19b531c7",
+      "title_ja": "Оценка экспорта нефти из России в 2026 году повышена на 7,5 млн т - до 244,7 млн т",
+      "summary_ja": "",
+      "tags": [],
+      "stance": "neutral",
+      "stance_reason": "AI未適用",
+      "key_phrase_original": "Оценка экспорта нефти из России в 2026 году повышена на 7,5 млн т - до 244,7 млн т",
+      "key_phrase_ja": "",
+      "enriched_by": "passthrough"
+    },
+    {
+      "article_id": "6160c9e1",
+      "title_ja": "Stock futures slide again as Treasury yields push higher, Oracle leads Nasdaq names lower: Live updates - CNBC",
+      "summary_ja": "",
+      "tags": [],
+      "stance": "neutral",
+      "stance_reason": "AI未適用",
+      "key_phrase_original": "Stock futures slide again as Treasury yields push higher, Oracle leads Nasdaq names lower: Live updates - CNBC",
+      "key_phrase_ja": "",
+      "enriched_by": "passthrough"
+    },
+    {
+      "article_id": "307dea26",
+      "title_ja": "Принимать решение о поездке на \"Двадцатку\" будет лично президент РФ",
+      "summary_ja": "",
+      "tags": [],
+      "stance": "neutral",
+      "stance_reason": "AI未適用",
+      "key_phrase_original": "Принимать решение о поездке на \"Двадцатку\" будет лично президент РФ",
+      "key_phrase_ja": "",
+      "enriched_by": "passthrough"
+    },
+    {
+      "article_id": "6205a4ed",
+      "title_ja": "Дмитрий Кобылкин предложен на должность главы фракции \"Единой России\" в Госдуме",
+      "summary_ja": "",
+      "tags": [],
+      "stance": "neutral",
+      "stance_reason": "AI未適用",
+      "key_phrase_original": "Дмитрий Кобылкин предложен на должность главы фракции \"Единой России\" в Госдуме",
+      "key_phrase_ja": "",
+      "enriched_by": "passthrough"
+    },
+    {
+      "article_id": "1b3747cc",
+      "title_ja": "Оценка экспорта российского трубопроводного газа на 2026 год повышена до 117,5 млрд куб. м",
+      "summary_ja": "",
+      "tags": [],
+      "stance": "neutral",
+      "stance_reason": "AI未適用",
+      "key_phrase_original": "Оценка экспорта российского трубопроводного газа на 2026 год повышена до 117,5 млрд куб. м",
+      "key_phrase_ja": "",
+      "enriched_by": "passthrough"
+    },
+    {
+      "article_id": "4ba3b649",
+      "title_ja": "Chinese analysts say Trump should \"understand pressure doesn't work\" on Xi",
+      "summary_ja": "",
+      "tags": [],
+      "stance": "neutral",
+      "stance_reason": "AI未適用",
+      "key_phrase_original": "Chinese analysts say Trump should \"understand pressure doesn't work\" on Xi",
+      "key_phrase_ja": "",
+      "enriched_by": "passthrough"
+    },
+    {
+      "article_id": "cd9f7762",
+      "title_ja": "Белгородцам и курянам на компенсации за разрушенное жилье выделят еще 2,5 млрд рублей",
+      "summary_ja": "",
+      "tags": [],
+      "stance": "neutral",
+      "stance_reason": "AI未適用",
+      "key_phrase_original": "Белгородцам и курянам на компенсации за разрушенное жилье выделят еще 2,5 млрд рублей",
+      "key_phrase_ja": "",
+      "enriched_by": "passthrough"
+    },
+    {
+      "article_id": "fef5f241",
+      "title_ja": "Why is Trump rolling out the red carpet for China's Xi?",
+      "summary_ja": "",
+      "tags": [],
+      "stance": "neutral",
+      "stance_reason": "AI未適用",
+      "key_phrase_original": "Why is Trump rolling out the red carpet for China's Xi?",
+      "key_phrase_ja": "",
+      "enriched_by": "passthrough"
+    },
+    {
+      "article_id": "72fd8350",
+      "title_ja": "Минэкономразвития понизило прогноз внешнеторгового сальдо РФ в 2026 г. до $120,8 млрд",
+      "summary_ja": "",
+      "tags": [],
+      "stance": "neutral",
+      "stance_reason": "AI未適用",
+      "key_phrase_original": "Минэкономразвития понизило прогноз внешнеторгового сальдо РФ в 2026 г. до $120,8 млрд",
+      "key_phrase_ja": "",
+      "enriched_by": "passthrough"
+    },
+    {
+      "article_id": "d738d43a",
+      "title_ja": "Минэкономразвития повысило прогноз роста реальных зарплат в РФ в 2026 г. до 4%",
+      "summary_ja": "",
+      "tags": [],
+      "stance": "neutral",
+      "stance_reason": "AI未適用",
+      "key_phrase_original": "Минэкономразвития повысило прогноз роста реальных зарплат в РФ в 2026 г. до 4%",
+      "key_phrase_ja": "",
+      "enriched_by": "passthrough"
+    },
+    {
+      "article_id": "4312e1c3",
+      "title_ja": "Макропрогноз правительства предполагает рост ВВП в 2027 году на 1,4%",
+      "summary_ja": "",
+      "tags": [],
+      "stance": "neutral",
+      "stance_reason": "AI未適用",
+      "key_phrase_original": "Макропрогноз правительства предполагает рост ВВП в 2027 году на 1,4%",
+      "key_phrase_ja": "",
+      "enriched_by": "passthrough"
+    },
+    {
+      "article_id": "0b22e976",
+      "title_ja": "卓球男子、日本が中国を破り60年ぶりのアジア大会V　「長かった」",
+      "summary_ja": "",
+      "tags": [],
+      "stance": "neutral",
+      "stance_reason": "AI未適用",
+      "key_phrase_original": "卓球男子、日本が中国を破り60年ぶりのアジア大会V　「長かった」",
+      "key_phrase_ja": "",
+      "enriched_by": "passthrough"
+    },
+    {
+      "article_id": "10042227",
+      "title_ja": "Judge temporarily overturns Trump's White House media ban",
+      "summary_ja": "",
+      "tags": [],
+      "stance": "neutral",
+      "stance_reason": "AI未適用",
+      "key_phrase_original": "Judge temporarily overturns Trump's White House media ban",
+      "key_phrase_ja": "",
+      "enriched_by": "passthrough"
+    },
+    {
+      "article_id": "60ea6c42",
+      "title_ja": "Judge orders White House to restore access to barred media companies",
+      "summary_ja": "",
+      "tags": [],
+      "stance": "neutral",
+      "stance_reason": "AI未適用",
+      "key_phrase_original": "Judge orders White House to restore access to barred media companies",
+      "key_phrase_ja": "",
+      "enriched_by": "passthrough"
+    },
+    {
+      "article_id": "6924b709",
+      "title_ja": "Vacancy for Inspector of Marine Accidents (Naval Architect)",
+      "summary_ja": "",
+      "tags": [],
+      "stance": "neutral",
+      "stance_reason": "AI未適用",
+      "key_phrase_original": "Vacancy for Inspector of Marine Accidents (Naval Architect)",
+      "key_phrase_ja": "",
+      "enriched_by": "passthrough"
+    },
+    {
+      "article_id": "60ee755a",
+      "title_ja": "Минэкономразвития ухудшило прогноз снижения инвестиций в РФ в 2026 г. до 5,4%",
+      "summary_ja": "",
+      "tags": [],
+      "stance": "neutral",
+      "stance_reason": "AI未適用",
+      "key_phrase_original": "Минэкономразвития ухудшило прогноз снижения инвестиций в РФ в 2026 г. до 5,4%",
+      "key_phrase_ja": "",
+      "enriched_by": "passthrough"
+    },
+    {
       "article_id": "65539f3d",
       "title_ja": "Vacancy for Inspector of Marine Accidents (Engineering/Nautical)",
       "summary_ja": "",
@@ -47,6 +432,17 @@
       "stance": "neutral",
       "stance_reason": "AI未適用",
       "key_phrase_original": "Vacancy for Inspector of Marine Accidents (Engineering/Nautical)",
+      "key_phrase_ja": "",
+      "enriched_by": "passthrough"
+    },
+    {
+      "article_id": "f3a85d0e",
+      "title_ja": "Tigrayan leaders say new war with Ethiopian govt has begun",
+      "summary_ja": "",
+      "tags": [],
+      "stance": "neutral",
+      "stance_reason": "AI未適用",
+      "key_phrase_original": "Tigrayan leaders say new war with Ethiopian govt has begun",
       "key_phrase_ja": "",
       "enriched_by": "passthrough"
     },
@@ -84,6 +480,17 @@
       "enriched_by": "passthrough"
     },
     {
+      "article_id": "a9f40202",
+      "title_ja": "Who is paying for the pope’s visit to France?",
+      "summary_ja": "",
+      "tags": [],
+      "stance": "neutral",
+      "stance_reason": "AI未適用",
+      "key_phrase_original": "Who is paying for the pope’s visit to France?",
+      "key_phrase_ja": "",
+      "enriched_by": "passthrough"
+    },
+    {
       "article_id": "9c3bf818",
       "title_ja": "Володин выдвинут на должность председателя Госдумы девятого созыва",
       "summary_ja": "",
@@ -91,6 +498,17 @@
       "stance": "neutral",
       "stance_reason": "AI未適用",
       "key_phrase_original": "Володин выдвинут на должность председателя Госдумы девятого созыва",
+      "key_phrase_ja": "",
+      "enriched_by": "passthrough"
+    },
+    {
+      "article_id": "42c4d6ff",
+      "title_ja": "Hurricane Polo brings fears of heavy rain and landslides in Mexico",
+      "summary_ja": "",
+      "tags": [],
+      "stance": "neutral",
+      "stance_reason": "AI未適用",
+      "key_phrase_original": "Hurricane Polo brings fears of heavy rain and landslides in Mexico",
       "key_phrase_ja": "",
       "enriched_by": "passthrough"
     },
@@ -135,6 +553,17 @@
       "stance": "neutral",
       "stance_reason": "AI未適用",
       "key_phrase_original": "A l’ONU, la carte du monde se redessine à travers le jeu des puissances",
+      "key_phrase_ja": "",
+      "enriched_by": "passthrough"
+    },
+    {
+      "article_id": "49da0af1",
+      "title_ja": "Nine Kazakh soldiers die in Caspian Sea training incident",
+      "summary_ja": "",
+      "tags": [],
+      "stance": "neutral",
+      "stance_reason": "AI未適用",
+      "key_phrase_original": "Nine Kazakh soldiers die in Caspian Sea training incident",
       "key_phrase_ja": "",
       "enriched_by": "passthrough"
     },
@@ -194,6 +623,17 @@
       "enriched_by": "passthrough"
     },
     {
+      "article_id": "a1333280",
+      "title_ja": "Mass shooting at a house party in South Africa kills 11",
+      "summary_ja": "",
+      "tags": [],
+      "stance": "neutral",
+      "stance_reason": "AI未適用",
+      "key_phrase_original": "Mass shooting at a house party in South Africa kills 11",
+      "key_phrase_ja": "",
+      "enriched_by": "passthrough"
+    },
+    {
       "article_id": "81761c8d",
       "title_ja": "Tunisia fuel strike highlights growing economic and political anger",
       "summary_ja": "",
@@ -228,12 +668,12 @@
     },
     {
       "article_id": "b0742de2",
-      "title_ja": "Des journalistes de « Politico » et de CNN empêchés d’entrer à la Maison Blanche, malgré la décision d’un juge de rétablir leur accès",
+      "title_ja": "Des journalistes de « Politico », de CNN et de MS NOW empêchés d’entrer à la Maison Blanche, malgré la décision d’un juge de rétablir leur accès",
       "summary_ja": "",
       "tags": [],
       "stance": "neutral",
       "stance_reason": "AI未適用",
-      "key_phrase_original": "Des journalistes de « Politico » et de CNN empêchés d’entrer à la Maison Blanche, malgré la décision d’un juge de rétablir leur accès",
+      "key_phrase_original": "Des journalistes de « Politico », de CNN et de MS NOW empêchés d’entrer à la Maison Blanche, malgré la décision d’un juge de rétablir leur accès",
       "key_phrase_ja": "",
       "enriched_by": "passthrough"
     },
@@ -267,6 +707,17 @@
       "stance": "neutral",
       "stance_reason": "AI未適用",
       "key_phrase_original": "Polícia e MP deflagram nova fase da Operação Carbono Oculto em SP",
+      "key_phrase_ja": "",
+      "enriched_by": "passthrough"
+    },
+    {
+      "article_id": "65830a7b",
+      "title_ja": "Saudi Civil Defence issues brief warning of ‘potential danger’ for Mecca city",
+      "summary_ja": "",
+      "tags": [],
+      "stance": "neutral",
+      "stance_reason": "AI未適用",
+      "key_phrase_original": "Saudi Civil Defence issues brief warning of ‘potential danger’ for Mecca city",
       "key_phrase_ja": "",
       "enriched_by": "passthrough"
     },
@@ -327,12 +778,12 @@
     },
     {
       "article_id": "00054adf",
-      "title_ja": "Morocco’s elections: Fragmentation, disengagement and PJD’s major return",
+      "title_ja": "Morocco’s elections: Fragmentation, disengagement and PJD’s major comeback",
       "summary_ja": "",
       "tags": [],
       "stance": "neutral",
       "stance_reason": "AI未適用",
-      "key_phrase_original": "Morocco’s elections: Fragmentation, disengagement and PJD’s major return",
+      "key_phrase_original": "Morocco’s elections: Fragmentation, disengagement and PJD’s major comeback",
       "key_phrase_ja": "",
       "enriched_by": "passthrough"
     },
@@ -476,6 +927,17 @@
       "stance": "neutral",
       "stance_reason": "AI未適用",
       "key_phrase_original": "松木、塩貝、上田のゴールでウルグアイに勝利　サッカー国際親善試合",
+      "key_phrase_ja": "",
+      "enriched_by": "passthrough"
+    },
+    {
+      "article_id": "0b6db907",
+      "title_ja": "Oracle Cites ‘Force Majeure’ to Shield Itself on Controversial Data Center - Bloomberg",
+      "summary_ja": "",
+      "tags": [],
+      "stance": "neutral",
+      "stance_reason": "AI未適用",
+      "key_phrase_original": "Oracle Cites ‘Force Majeure’ to Shield Itself on Controversial Data Center - Bloomberg",
       "key_phrase_ja": "",
       "enriched_by": "passthrough"
     },
@@ -656,17 +1118,6 @@
       "enriched_by": "passthrough"
     },
     {
-      "article_id": "5f82d1f0",
-      "title_ja": "Oil prices back up as U.S. and Iran trade threats to expand 7-month war",
-      "summary_ja": "",
-      "tags": [],
-      "stance": "neutral",
-      "stance_reason": "AI未適用",
-      "key_phrase_original": "Oil prices back up as U.S. and Iran trade threats to expand 7-month war",
-      "key_phrase_ja": "",
-      "enriched_by": "passthrough"
-    },
-    {
       "article_id": "ce6f4bf8",
       "title_ja": "Australia's Medicare AI hack: Its seriousness 'cannot be overstated'",
       "summary_ja": "",
@@ -777,17 +1228,6 @@
       "enriched_by": "passthrough"
     },
     {
-      "article_id": "745a3f60",
-      "title_ja": "Iran threatens to expand war to Indian Ocean if U.S. attacks again",
-      "summary_ja": "",
-      "tags": [],
-      "stance": "neutral",
-      "stance_reason": "AI未適用",
-      "key_phrase_original": "Iran threatens to expand war to Indian Ocean if U.S. attacks again",
-      "key_phrase_ja": "",
-      "enriched_by": "passthrough"
-    },
-    {
       "article_id": "14aff9ce",
       "title_ja": "Call for Evidence: An inspection of the treatment of children within the migration and borders system",
       "summary_ja": "",
@@ -865,17 +1305,6 @@
       "enriched_by": "passthrough"
     },
     {
-      "article_id": "f1732a6d",
-      "title_ja": "Le lobbyiste, le député, le journaliste et l’avocat : les nouvelles révélations d’une affaire tentaculaire d’ingérences étrangères",
-      "summary_ja": "",
-      "tags": [],
-      "stance": "neutral",
-      "stance_reason": "AI未適用",
-      "key_phrase_original": "Le lobbyiste, le député, le journaliste et l’avocat : les nouvelles révélations d’une affaire tentaculaire d’ingérences étrangères",
-      "key_phrase_ja": "",
-      "enriched_by": "passthrough"
-    },
-    {
       "article_id": "d1a0a98c",
       "title_ja": "L’Inde exporte de l’essence vers la Russie : du jamais-vu, et les conséquences sont lourdes",
       "summary_ja": "",
@@ -883,6 +1312,17 @@
       "stance": "neutral",
       "stance_reason": "AI未適用",
       "key_phrase_original": "L’Inde exporte de l’essence vers la Russie : du jamais-vu, et les conséquences sont lourdes",
+      "key_phrase_ja": "",
+      "enriched_by": "passthrough"
+    },
+    {
+      "article_id": "f1732a6d",
+      "title_ja": "Le lobbyiste, le député, le journaliste et l’avocat : les nouvelles révélations d’une affaire tentaculaire d’ingérences étrangères",
+      "summary_ja": "",
+      "tags": [],
+      "stance": "neutral",
+      "stance_reason": "AI未適用",
+      "key_phrase_original": "Le lobbyiste, le député, le journaliste et l’avocat : les nouvelles révélations d’une affaire tentaculaire d’ingérences étrangères",
       "key_phrase_ja": "",
       "enriched_by": "passthrough"
     },
@@ -942,6 +1382,17 @@
       "enriched_by": "passthrough"
     },
     {
+      "article_id": "1e595862",
+      "title_ja": "Fury vs Joshua: Cardiff to host heavyweight fight on 11 December - BBC",
+      "summary_ja": "",
+      "tags": [],
+      "stance": "neutral",
+      "stance_reason": "AI未適用",
+      "key_phrase_original": "Fury vs Joshua: Cardiff to host heavyweight fight on 11 December - BBC",
+      "key_phrase_ja": "",
+      "enriched_by": "passthrough"
+    },
+    {
       "article_id": "ed198b00",
       "title_ja": "US says China trade truce extended as Trump welcomes Xi",
       "summary_ja": "",
@@ -975,13 +1426,13 @@
       "enriched_by": "passthrough"
     },
     {
-      "article_id": "65830a7b",
-      "title_ja": "Saudi Civil Defence issues brief warning of ‘potential danger’ for Mecca city",
+      "article_id": "817429ca",
+      "title_ja": "我国成功发射遥感四十号04组卫星 - 中国网",
       "summary_ja": "",
       "tags": [],
       "stance": "neutral",
       "stance_reason": "AI未適用",
-      "key_phrase_original": "Saudi Civil Defence issues brief warning of ‘potential danger’ for Mecca city",
+      "key_phrase_original": "我国成功发射遥感四十号04组卫星 - 中国网",
       "key_phrase_ja": "",
       "enriched_by": "passthrough"
     },
@@ -1037,6 +1488,17 @@
       "stance": "neutral",
       "stance_reason": "AI未適用",
       "key_phrase_original": "'Needs a miracle': Son of Israeli ambassador to US injured in West Bank ramming attack",
+      "key_phrase_ja": "",
+      "enriched_by": "passthrough"
+    },
+    {
+      "article_id": "7a43444c",
+      "title_ja": "OpenAI’s agents breached Australian government data. Its human response may do more damage. - Politico",
+      "summary_ja": "",
+      "tags": [],
+      "stance": "neutral",
+      "stance_reason": "AI未適用",
+      "key_phrase_original": "OpenAI’s agents breached Australian government data. Its human response may do more damage. - Politico",
       "key_phrase_ja": "",
       "enriched_by": "passthrough"
     },
@@ -1437,6 +1899,17 @@
       "enriched_by": "passthrough"
     },
     {
+      "article_id": "b278b124",
+      "title_ja": "特写丨美国总统首次赴机场迎接中国国家主席 - 新华网",
+      "summary_ja": "",
+      "tags": [],
+      "stance": "neutral",
+      "stance_reason": "AI未適用",
+      "key_phrase_original": "特写丨美国总统首次赴机场迎接中国国家主席 - 新华网",
+      "key_phrase_ja": "",
+      "enriched_by": "passthrough"
+    },
+    {
       "article_id": "9da44a84",
       "title_ja": "Ветер с порывами до 17 м/с ожидается в Москве и области в четверг",
       "summary_ja": "",
@@ -1592,12 +2065,12 @@
     },
     {
       "article_id": "ded0c12c",
-      "title_ja": "As expected, media mocks Jaxson Dart injury because he dared to introduce Trump on stage - foxnews.com",
+      "title_ja": "As expected, media mocks Jaxson Dart injury because he dared to introduce Trump on stage - Fox News",
       "summary_ja": "",
       "tags": [],
       "stance": "neutral",
       "stance_reason": "AI未適用",
-      "key_phrase_original": "As expected, media mocks Jaxson Dart injury because he dared to introduce Trump on stage - foxnews.com",
+      "key_phrase_original": "As expected, media mocks Jaxson Dart injury because he dared to introduce Trump on stage - Fox News",
       "key_phrase_ja": "",
       "enriched_by": "passthrough"
     },
@@ -2119,6 +2592,28 @@
       "enriched_by": "passthrough"
     },
     {
+      "article_id": "c3578c0e",
+      "title_ja": "بعد تجدد القتال.. محطات بارزة في صراع جبهة تحرير تيغراي الإثيوبية",
+      "summary_ja": "",
+      "tags": [],
+      "stance": "neutral",
+      "stance_reason": "AI未適用",
+      "key_phrase_original": "بعد تجدد القتال.. محطات بارزة في صراع جبهة تحرير تيغراي الإثيوبية",
+      "key_phrase_ja": "",
+      "enriched_by": "passthrough"
+    },
+    {
+      "article_id": "a24dbf5d",
+      "title_ja": "استطلاع يشير لتراجع شعبية ترمب بسبب تداعيات حرب إيران",
+      "summary_ja": "",
+      "tags": [],
+      "stance": "neutral",
+      "stance_reason": "AI未適用",
+      "key_phrase_original": "استطلاع يشير لتراجع شعبية ترمب بسبب تداعيات حرب إيران",
+      "key_phrase_ja": "",
+      "enriched_by": "passthrough"
+    },
+    {
       "article_id": "60b7d42a",
       "title_ja": "ポーランドのスターリンク通信局で火災　副首相、ロシア関与疑い指摘",
       "summary_ja": "",
@@ -2126,6 +2621,17 @@
       "stance": "neutral",
       "stance_reason": "AI未適用",
       "key_phrase_original": "ポーランドのスターリンク通信局で火災　副首相、ロシア関与疑い指摘",
+      "key_phrase_ja": "",
+      "enriched_by": "passthrough"
+    },
+    {
+      "article_id": "8c486f76",
+      "title_ja": "التغير المناخي يعيد رسم السواحل وارتفاع البحار يهدد المدن",
+      "summary_ja": "",
+      "tags": [],
+      "stance": "neutral",
+      "stance_reason": "AI未適用",
+      "key_phrase_original": "التغير المناخي يعيد رسم السواحل وارتفاع البحار يهدد المدن",
       "key_phrase_ja": "",
       "enriched_by": "passthrough"
     },
@@ -2152,6 +2658,17 @@
       "enriched_by": "passthrough"
     },
     {
+      "article_id": "2d796555",
+      "title_ja": "بعد إخفاقات المونديال.. لوف يحدد شرط نجاح كلوب مع ألمانيا",
+      "summary_ja": "",
+      "tags": [],
+      "stance": "neutral",
+      "stance_reason": "AI未適用",
+      "key_phrase_original": "بعد إخفاقات المونديال.. لوف يحدد شرط نجاح كلوب مع ألمانيا",
+      "key_phrase_ja": "",
+      "enriched_by": "passthrough"
+    },
+    {
       "article_id": "3e2d557c",
       "title_ja": "Florida crew found a python guarding a huge egg clutch; both were removed",
       "summary_ja": "",
@@ -2170,6 +2687,17 @@
       "stance": "neutral",
       "stance_reason": "AI未適用",
       "key_phrase_original": "Zelensky announces new U.S. investments in Ukraine’s defense and energy sectors",
+      "key_phrase_ja": "",
+      "enriched_by": "passthrough"
+    },
+    {
+      "article_id": "56951daa",
+      "title_ja": "ليس مشهدا من فيلم.. \"باتمان\" يتسلق جدارا ويطارد لصا في إنجلترا",
+      "summary_ja": "",
+      "tags": [],
+      "stance": "neutral",
+      "stance_reason": "AI未適用",
+      "key_phrase_original": "ليس مشهدا من فيلم.. \"باتمان\" يتسلق جدارا ويطارد لصا في إنجلترا",
       "key_phrase_ja": "",
       "enriched_by": "passthrough"
     },
@@ -2225,6 +2753,17 @@
       "stance": "neutral",
       "stance_reason": "AI未適用",
       "key_phrase_original": "Trump's Board of Peace unveils $2.45bn Gaza recovery plan",
+      "key_phrase_ja": "",
+      "enriched_by": "passthrough"
+    },
+    {
+      "article_id": "de0eb661",
+      "title_ja": "كيف تؤثر الشاشات في صحة الأطفال؟",
+      "summary_ja": "",
+      "tags": [],
+      "stance": "neutral",
+      "stance_reason": "AI未適用",
+      "key_phrase_original": "كيف تؤثر الشاشات في صحة الأطفال؟",
       "key_phrase_ja": "",
       "enriched_by": "passthrough"
     },
@@ -2736,12 +3275,12 @@
     },
     {
       "article_id": "01d35bf8",
-      "title_ja": "截至8月底全国累计发电装机容量达41.03亿千瓦 - stdaily.com",
+      "title_ja": "截至8月底全国累计发电装机容量达41.03亿千瓦 - 中国科技网",
       "summary_ja": "",
       "tags": [],
       "stance": "neutral",
       "stance_reason": "AI未適用",
-      "key_phrase_original": "截至8月底全国累计发电装机容量达41.03亿千瓦 - stdaily.com",
+      "key_phrase_original": "截至8月底全国累计发电装机容量达41.03亿千瓦 - 中国科技网",
       "key_phrase_ja": "",
       "enriched_by": "passthrough"
     },
@@ -2911,17 +3450,6 @@
       "enriched_by": "passthrough"
     },
     {
-      "article_id": "6160c9e1",
-      "title_ja": "Stock futures fall as Treasury yields continue to push to multiyear highs: Live updates - CNBC",
-      "summary_ja": "",
-      "tags": [],
-      "stance": "neutral",
-      "stance_reason": "AI未適用",
-      "key_phrase_original": "Stock futures fall as Treasury yields continue to push to multiyear highs: Live updates - CNBC",
-      "key_phrase_ja": "",
-      "enriched_by": "passthrough"
-    },
-    {
       "article_id": "a173a21b",
       "title_ja": "尚德守法 共享食安——深化全链条监管 2026年全国食品安全宣传周启动 - ccn.com.cn",
       "summary_ja": "",
@@ -3043,13 +3571,24 @@
       "enriched_by": "passthrough"
     },
     {
-      "article_id": "760ba75d",
-      "title_ja": "Netanyahu takes UN stage with one eye on Israel’s election - Al Jazeera",
+      "article_id": "688fe99f",
+      "title_ja": "李强签署国务院令 公布修订后的《中华人民共和国审计法实施条例》 - 东方财富",
       "summary_ja": "",
       "tags": [],
       "stance": "neutral",
       "stance_reason": "AI未適用",
-      "key_phrase_original": "Netanyahu takes UN stage with one eye on Israel’s election - Al Jazeera",
+      "key_phrase_original": "李强签署国务院令 公布修订后的《中华人民共和国审计法实施条例》 - 东方财富",
+      "key_phrase_ja": "",
+      "enriched_by": "passthrough"
+    },
+    {
+      "article_id": "760ba75d",
+      "title_ja": "Netanyahu takes UN stage with one eye on Israel’s election - aljazeera.com",
+      "summary_ja": "",
+      "tags": [],
+      "stance": "neutral",
+      "stance_reason": "AI未適用",
+      "key_phrase_original": "Netanyahu takes UN stage with one eye on Israel’s election - aljazeera.com",
       "key_phrase_ja": "",
       "enriched_by": "passthrough"
     },
@@ -3373,6 +3912,17 @@
       "enriched_by": "passthrough"
     },
     {
+      "article_id": "44328867",
+      "title_ja": "Could the White House try its press ban again? A press freedom expert explains",
+      "summary_ja": "",
+      "tags": [],
+      "stance": "neutral",
+      "stance_reason": "AI未適用",
+      "key_phrase_original": "Could the White House try its press ban again? A press freedom expert explains",
+      "key_phrase_ja": "",
+      "enriched_by": "passthrough"
+    },
+    {
       "article_id": "f42d14e3",
       "title_ja": "في طريقه إلى الأمم المتحدة.. نتنياهو يعبر أجواء 3 دول أوروبية أعضاء بالجنائية الدولية",
       "summary_ja": "",
@@ -3512,6 +4062,17 @@
       "stance": "neutral",
       "stance_reason": "AI未適用",
       "key_phrase_original": "Who has the upper hand in financial markets, the US or China?",
+      "key_phrase_ja": "",
+      "enriched_by": "passthrough"
+    },
+    {
+      "article_id": "32edca93",
+      "title_ja": "Luke Lindberg, fervent défenseur de la ligne « America first », prend la tête du Programme alimentaire mondial",
+      "summary_ja": "",
+      "tags": [],
+      "stance": "neutral",
+      "stance_reason": "AI未適用",
+      "key_phrase_original": "Luke Lindberg, fervent défenseur de la ligne « America first », prend la tête du Programme alimentaire mondial",
       "key_phrase_ja": "",
       "enriched_by": "passthrough"
     },
@@ -3670,6 +4231,17 @@
       "enriched_by": "passthrough"
     },
     {
+      "article_id": "8e76e928",
+      "title_ja": "日本以所谓“存亡危机事态”为名加速“再军事化” - 紫牛新闻",
+      "summary_ja": "",
+      "tags": [],
+      "stance": "neutral",
+      "stance_reason": "AI未適用",
+      "key_phrase_original": "日本以所谓“存亡危机事态”为名加速“再军事化” - 紫牛新闻",
+      "key_phrase_ja": "",
+      "enriched_by": "passthrough"
+    },
+    {
       "article_id": "3f04dd99",
       "title_ja": "En Ethiopie, après le déclenchement d’offensives par plusieurs groupes rebelles, le pays au bord de la « guerre totale »",
       "summary_ja": "",
@@ -3677,6 +4249,17 @@
       "stance": "neutral",
       "stance_reason": "AI未適用",
       "key_phrase_original": "En Ethiopie, après le déclenchement d’offensives par plusieurs groupes rebelles, le pays au bord de la « guerre totale »",
+      "key_phrase_ja": "",
+      "enriched_by": "passthrough"
+    },
+    {
+      "article_id": "9c8cfda7",
+      "title_ja": "2026年中国国际信息通信展览会卫星互联网论坛在京举办 - 东方财富",
+      "summary_ja": "",
+      "tags": [],
+      "stance": "neutral",
+      "stance_reason": "AI未適用",
+      "key_phrase_original": "2026年中国国际信息通信展览会卫星互联网论坛在京举办 - 东方财富",
       "key_phrase_ja": "",
       "enriched_by": "passthrough"
     },
@@ -3901,17 +4484,6 @@
       "enriched_by": "passthrough"
     },
     {
-      "article_id": "7fc3e3fc",
-      "title_ja": "Judge orders White House to restore access to news outlets Trump banned",
-      "summary_ja": "",
-      "tags": [],
-      "stance": "neutral",
-      "stance_reason": "AI未適用",
-      "key_phrase_original": "Judge orders White House to restore access to news outlets Trump banned",
-      "key_phrase_ja": "",
-      "enriched_by": "passthrough"
-    },
-    {
       "article_id": "834f3dcb",
       "title_ja": "Large-scale Russian attack cuts power to some consumers in eight oblasts",
       "summary_ja": "",
@@ -4056,12 +4628,12 @@
     },
     {
       "article_id": "acb9c539",
-      "title_ja": "越山海｜跨越太平洋的青春之桥 - 中安在线",
+      "title_ja": "越山海｜跨越太平洋的青春之桥 - news.anhuinews.com",
       "summary_ja": "",
       "tags": [],
       "stance": "neutral",
       "stance_reason": "AI未適用",
-      "key_phrase_original": "越山海｜跨越太平洋的青春之桥 - 中安在线",
+      "key_phrase_original": "越山海｜跨越太平洋的青春之桥 - news.anhuinews.com",
       "key_phrase_ja": "",
       "enriched_by": "passthrough"
     },
@@ -4143,6 +4715,17 @@
       "enriched_by": "passthrough"
     },
     {
+      "article_id": "9f1fe28e",
+      "title_ja": "美伊代表纽约会晤约3小时 会谈“富有成效” - 中华网",
+      "summary_ja": "",
+      "tags": [],
+      "stance": "neutral",
+      "stance_reason": "AI未適用",
+      "key_phrase_original": "美伊代表纽约会晤约3小时 会谈“富有成效” - 中华网",
+      "key_phrase_ja": "",
+      "enriched_by": "passthrough"
+    },
+    {
       "article_id": "5ffff12e",
       "title_ja": "'Death of the Soccer God' pays 'homage' to Haitian diaspora and 'those who go back & do their best'",
       "summary_ja": "",
@@ -4177,12 +4760,12 @@
     },
     {
       "article_id": "28f574f4",
-      "title_ja": "Trump-Xi summit: Here’s what’s on the agenda, and why it matters - Al Jazeera",
+      "title_ja": "Trump-Xi summit: Here’s what’s on the agenda, and why it matters - aljazeera.com",
       "summary_ja": "",
       "tags": [],
       "stance": "neutral",
       "stance_reason": "AI未適用",
-      "key_phrase_original": "Trump-Xi summit: Here’s what’s on the agenda, and why it matters - Al Jazeera",
+      "key_phrase_original": "Trump-Xi summit: Here’s what’s on the agenda, and why it matters - aljazeera.com",
       "key_phrase_ja": "",
       "enriched_by": "passthrough"
     },
@@ -4216,6 +4799,17 @@
       "stance": "neutral",
       "stance_reason": "AI未適用",
       "key_phrase_original": "习近平访美首日看点：谁同行？第一夫人角色？高规格接待引反弹？ - bbc.com",
+      "key_phrase_ja": "",
+      "enriched_by": "passthrough"
+    },
+    {
+      "article_id": "7bc3e6df",
+      "title_ja": "College football picks ATS Week 4: Texas-Tennessee, Ole Miss-Florida and more - The Athletic - The New York Times",
+      "summary_ja": "",
+      "tags": [],
+      "stance": "neutral",
+      "stance_reason": "AI未適用",
+      "key_phrase_original": "College football picks ATS Week 4: Texas-Tennessee, Ole Miss-Florida and more - The Athletic - The New York Times",
       "key_phrase_ja": "",
       "enriched_by": "passthrough"
     },
@@ -4447,6 +5041,17 @@
       "stance": "neutral",
       "stance_reason": "AI未適用",
       "key_phrase_original": "アジア大会 フェンシング男子サーブル個人 オ・サンウクが２連覇",
+      "key_phrase_ja": "",
+      "enriched_by": "passthrough"
+    },
+    {
+      "article_id": "49ef637c",
+      "title_ja": "DAQUI A POUCO: Trump e Xi Jinping se reúnem na Casa Branca",
+      "summary_ja": "",
+      "tags": [],
+      "stance": "neutral",
+      "stance_reason": "AI未適用",
+      "key_phrase_original": "DAQUI A POUCO: Trump e Xi Jinping se reúnem na Casa Branca",
       "key_phrase_ja": "",
       "enriched_by": "passthrough"
     },
@@ -4957,6 +5562,17 @@
       "enriched_by": "passthrough"
     },
     {
+      "article_id": "06cbed90",
+      "title_ja": "Eight USS Lincoln personnel have attempted suicide, US navy confirms - The Guardian",
+      "summary_ja": "",
+      "tags": [],
+      "stance": "neutral",
+      "stance_reason": "AI未適用",
+      "key_phrase_original": "Eight USS Lincoln personnel have attempted suicide, US navy confirms - The Guardian",
+      "key_phrase_ja": "",
+      "enriched_by": "passthrough"
+    },
+    {
       "article_id": "a3fd8e78",
       "title_ja": "They were labelled 'pervert glasses'. Will a camera-free version transform their image?",
       "summary_ja": "",
@@ -5145,12 +5761,12 @@
     },
     {
       "article_id": "9d51d961",
-      "title_ja": "Sturm Und Drang At Warner Bros Amid Paramount Merger Has Insiders Wondering If The Brand Survives - Deadline",
+      "title_ja": "Warner Bros Gloom Sets In At Studio Amid Paramount Merger - Deadline",
       "summary_ja": "",
       "tags": [],
       "stance": "neutral",
       "stance_reason": "AI未適用",
-      "key_phrase_original": "Sturm Und Drang At Warner Bros Amid Paramount Merger Has Insiders Wondering If The Brand Survives - Deadline",
+      "key_phrase_original": "Warner Bros Gloom Sets In At Studio Amid Paramount Merger - Deadline",
       "key_phrase_ja": "",
       "enriched_by": "passthrough"
     },
@@ -5184,6 +5800,17 @@
       "stance": "neutral",
       "stance_reason": "AI未適用",
       "key_phrase_original": "New Details Emerge About ICE Officer Who Shot Man in Austin - The New York Times",
+      "key_phrase_ja": "",
+      "enriched_by": "passthrough"
+    },
+    {
+      "article_id": "b25de58c",
+      "title_ja": "What's really true in 'Brothers'? McConaughey, Harrelson set record straight - USA Today",
+      "summary_ja": "",
+      "tags": [],
+      "stance": "neutral",
+      "stance_reason": "AI未適用",
+      "key_phrase_original": "What's really true in 'Brothers'? McConaughey, Harrelson set record straight - USA Today",
       "key_phrase_ja": "",
       "enriched_by": "passthrough"
     },
@@ -5760,6 +6387,17 @@
       "enriched_by": "passthrough"
     },
     {
+      "article_id": "58190662",
+      "title_ja": "Venezuelan man shot by ICE officer needs surgery to remove the bullet, U.S. Rep. Greg Casar says - The Texas Tribune",
+      "summary_ja": "",
+      "tags": [],
+      "stance": "neutral",
+      "stance_reason": "AI未適用",
+      "key_phrase_original": "Venezuelan man shot by ICE officer needs surgery to remove the bullet, U.S. Rep. Greg Casar says - The Texas Tribune",
+      "key_phrase_ja": "",
+      "enriched_by": "passthrough"
+    },
+    {
       "article_id": "ba75d315",
       "title_ja": "Iran communicated conditions for revival of diplomacy to U.S.: Esmail Baqaei",
       "summary_ja": "",
@@ -6002,6 +6640,17 @@
       "enriched_by": "passthrough"
     },
     {
+      "article_id": "c6a7e04a",
+      "title_ja": "Genetic trove aims to unlock bats’ secrets to long life - Financial Times",
+      "summary_ja": "",
+      "tags": [],
+      "stance": "neutral",
+      "stance_reason": "AI未適用",
+      "key_phrase_original": "Genetic trove aims to unlock bats’ secrets to long life - Financial Times",
+      "key_phrase_ja": "",
+      "enriched_by": "passthrough"
+    },
+    {
       "article_id": "e0f5f51e",
       "title_ja": "今日の歴史（9月24日）",
       "summary_ja": "",
@@ -6064,6 +6713,17 @@
       "stance": "neutral",
       "stance_reason": "AI未適用",
       "key_phrase_original": "Trans agenda is ‘normalization of sadism’ – US author (VIDEO)",
+      "key_phrase_ja": "",
+      "enriched_by": "passthrough"
+    },
+    {
+      "article_id": "333d2850",
+      "title_ja": "Packers can make home opener history on Thursday night vs. Falcons - Packers Wire",
+      "summary_ja": "",
+      "tags": [],
+      "stance": "neutral",
+      "stance_reason": "AI未適用",
+      "key_phrase_original": "Packers can make home opener history on Thursday night vs. Falcons - Packers Wire",
       "key_phrase_ja": "",
       "enriched_by": "passthrough"
     },
