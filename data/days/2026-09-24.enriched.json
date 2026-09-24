@@ -1,11 +1,242 @@
 {
   "schema_version": 3,
   "date": "2026-09-24",
-  "generated_at": "2026-09-24T13:39:27Z",
+  "generated_at": "2026-09-24T13:58:16Z",
   "engine": "passthrough",
-  "api_calls": 20,
+  "api_calls": 30,
   "degraded": true,
   "articles": [
+    {
+      "article_id": "d167fc4a",
+      "title_ja": "Xi begins first full day of US visit to meet Trump with White House ceremony",
+      "summary_ja": "",
+      "tags": [],
+      "stance": "neutral",
+      "stance_reason": "AI未適用",
+      "key_phrase_original": "Xi begins first full day of US visit to meet Trump with White House ceremony",
+      "key_phrase_ja": "",
+      "enriched_by": "passthrough"
+    },
+    {
+      "article_id": "a2cd0904",
+      "title_ja": "Australia says rogue OpenAI model hacked into its healthcare system",
+      "summary_ja": "",
+      "tags": [],
+      "stance": "neutral",
+      "stance_reason": "AI未適用",
+      "key_phrase_original": "Australia says rogue OpenAI model hacked into its healthcare system",
+      "key_phrase_ja": "",
+      "enriched_by": "passthrough"
+    },
+    {
+      "article_id": "a6d43500",
+      "title_ja": "サッカー日本代表 W杯後初戦でウルグアイに勝利 若手が活躍",
+      "summary_ja": "",
+      "tags": [],
+      "stance": "neutral",
+      "stance_reason": "AI未適用",
+      "key_phrase_original": "サッカー日本代表 W杯後初戦でウルグアイに勝利 若手が活躍",
+      "key_phrase_ja": "",
+      "enriched_by": "passthrough"
+    },
+    {
+      "article_id": "5f82d1f0",
+      "title_ja": "Oil prices back up as U.S. and Iran trade threats to expand 7-month war",
+      "summary_ja": "",
+      "tags": [],
+      "stance": "neutral",
+      "stance_reason": "AI未適用",
+      "key_phrase_original": "Oil prices back up as U.S. and Iran trade threats to expand 7-month war",
+      "key_phrase_ja": "",
+      "enriched_by": "passthrough"
+    },
+    {
+      "article_id": "257744e3",
+      "title_ja": "EU sanctions Russian pundit Xenia Fedorova after expulsion from France",
+      "summary_ja": "",
+      "tags": [],
+      "stance": "neutral",
+      "stance_reason": "AI未適用",
+      "key_phrase_original": "EU sanctions Russian pundit Xenia Fedorova after expulsion from France",
+      "key_phrase_ja": "",
+      "enriched_by": "passthrough"
+    },
+    {
+      "article_id": "3df01408",
+      "title_ja": "Professor Dame Anna Dominiczak, Professor Alison Strath, and Fiona Cohrane: Catalysing the medicines ecosystem in Scotland",
+      "summary_ja": "",
+      "tags": [],
+      "stance": "neutral",
+      "stance_reason": "AI未適用",
+      "key_phrase_original": "Professor Dame Anna Dominiczak, Professor Alison Strath, and Fiona Cohrane: Catalysing the medicines ecosystem in Scotland",
+      "key_phrase_ja": "",
+      "enriched_by": "passthrough"
+    },
+    {
+      "article_id": "7fa3d0fc",
+      "title_ja": "ФРП в 2027-2029 году докапитализируют более чем на 200 млрд рублей",
+      "summary_ja": "",
+      "tags": [],
+      "stance": "neutral",
+      "stance_reason": "AI未適用",
+      "key_phrase_original": "ФРП в 2027-2029 году докапитализируют более чем на 200 млрд рублей",
+      "key_phrase_ja": "",
+      "enriched_by": "passthrough"
+    },
+    {
+      "article_id": "6fa68bc9",
+      "title_ja": "Outbreaks of Koi herpesvirus (KHV) disease in 2026",
+      "summary_ja": "",
+      "tags": [],
+      "stance": "neutral",
+      "stance_reason": "AI未適用",
+      "key_phrase_original": "Outbreaks of Koi herpesvirus (KHV) disease in 2026",
+      "key_phrase_ja": "",
+      "enriched_by": "passthrough"
+    },
+    {
+      "article_id": "af374b0a",
+      "title_ja": "Страховые пенсии в 2027 году проиндексируют 1 февраля и 1 апреля",
+      "summary_ja": "",
+      "tags": [],
+      "stance": "neutral",
+      "stance_reason": "AI未適用",
+      "key_phrase_original": "Страховые пенсии в 2027 году проиндексируют 1 февраля и 1 апреля",
+      "key_phrase_ja": "",
+      "enriched_by": "passthrough"
+    },
+    {
+      "article_id": "4ecb4ad3",
+      "title_ja": "Australia's prime minister slams OpenAI after its agent hacked government website",
+      "summary_ja": "",
+      "tags": [],
+      "stance": "neutral",
+      "stance_reason": "AI未適用",
+      "key_phrase_original": "Australia's prime minister slams OpenAI after its agent hacked government website",
+      "key_phrase_ja": "",
+      "enriched_by": "passthrough"
+    },
+    {
+      "article_id": "db1a0a88",
+      "title_ja": "Рябков сообщил об отсутствии ответов от США и Украины по вопросам биолабораторий",
+      "summary_ja": "",
+      "tags": [],
+      "stance": "neutral",
+      "stance_reason": "AI未適用",
+      "key_phrase_original": "Рябков сообщил об отсутствии ответов от США и Украины по вопросам биолабораторий",
+      "key_phrase_ja": "",
+      "enriched_by": "passthrough"
+    },
+    {
+      "article_id": "62b72fac",
+      "title_ja": "Экс-мэр Новосибирска Локоть проходит в Госдуму по списку КПРФ",
+      "summary_ja": "",
+      "tags": [],
+      "stance": "neutral",
+      "stance_reason": "AI未適用",
+      "key_phrase_original": "Экс-мэр Новосибирска Локоть проходит в Госдуму по списку КПРФ",
+      "key_phrase_ja": "",
+      "enriched_by": "passthrough"
+    },
+    {
+      "article_id": "464e81f3",
+      "title_ja": "EN DIRECT, guerre en Ukraine : l’UE sanctionne Xenia Fedorova, chroniqueuse russe pro-Kremlin déjà interdite de territoire en France",
+      "summary_ja": "",
+      "tags": [],
+      "stance": "neutral",
+      "stance_reason": "AI未適用",
+      "key_phrase_original": "EN DIRECT, guerre en Ukraine : l’UE sanctionne Xenia Fedorova, chroniqueuse russe pro-Kremlin déjà interdite de territoire en France",
+      "key_phrase_ja": "",
+      "enriched_by": "passthrough"
+    },
+    {
+      "article_id": "e2b9e90d",
+      "title_ja": "Минобороны РФ заявило об отражении всех атак ВСУ в районе Доброполья",
+      "summary_ja": "",
+      "tags": [],
+      "stance": "neutral",
+      "stance_reason": "AI未適用",
+      "key_phrase_original": "Минобороны РФ заявило об отражении всех атак ВСУ в районе Доброполья",
+      "key_phrase_ja": "",
+      "enriched_by": "passthrough"
+    },
+    {
+      "article_id": "05a01f51",
+      "title_ja": "US steps up military activity near Iran – media",
+      "summary_ja": "",
+      "tags": [],
+      "stance": "neutral",
+      "stance_reason": "AI未適用",
+      "key_phrase_original": "US steps up military activity near Iran – media",
+      "key_phrase_ja": "",
+      "enriched_by": "passthrough"
+    },
+    {
+      "article_id": "6bd6b327",
+      "title_ja": "Defence spending with Scottish industry rises above £2.5 billion",
+      "summary_ja": "",
+      "tags": [],
+      "stance": "neutral",
+      "stance_reason": "AI未適用",
+      "key_phrase_original": "Defence spending with Scottish industry rises above £2.5 billion",
+      "key_phrase_ja": "",
+      "enriched_by": "passthrough"
+    },
+    {
+      "article_id": "37a23b11",
+      "title_ja": "Russia commits 977 crimes against journalists and media during full-scale war — IMI",
+      "summary_ja": "",
+      "tags": [],
+      "stance": "neutral",
+      "stance_reason": "AI未適用",
+      "key_phrase_original": "Russia commits 977 crimes against journalists and media during full-scale war — IMI",
+      "key_phrase_ja": "",
+      "enriched_by": "passthrough"
+    },
+    {
+      "article_id": "1e356dfc",
+      "title_ja": "Has China received US F-35 parts by diverting an Australian shipment?",
+      "summary_ja": "",
+      "tags": [],
+      "stance": "neutral",
+      "stance_reason": "AI未適用",
+      "key_phrase_original": "Has China received US F-35 parts by diverting an Australian shipment?",
+      "key_phrase_ja": "",
+      "enriched_by": "passthrough"
+    },
+    {
+      "article_id": "c8a3dc84",
+      "title_ja": "Netanyahu at UNGA over the years",
+      "summary_ja": "",
+      "tags": [],
+      "stance": "neutral",
+      "stance_reason": "AI未適用",
+      "key_phrase_original": "Netanyahu at UNGA over the years",
+      "key_phrase_ja": "",
+      "enriched_by": "passthrough"
+    },
+    {
+      "article_id": "efea79d2",
+      "title_ja": "Москва выступает за скорейшее вступление ДВЗЯИ в силу",
+      "summary_ja": "",
+      "tags": [],
+      "stance": "neutral",
+      "stance_reason": "AI未適用",
+      "key_phrase_original": "Москва выступает за скорейшее вступление ДВЗЯИ в силу",
+      "key_phrase_ja": "",
+      "enriched_by": "passthrough"
+    },
+    {
+      "article_id": "a1118eab",
+      "title_ja": "Среднегодовой курс доллара будет расти с 79,5 рублей в 2026 году до 96 рублей в 2029 году",
+      "summary_ja": "",
+      "tags": [],
+      "stance": "neutral",
+      "stance_reason": "AI未適用",
+      "key_phrase_original": "Среднегодовой курс доллара будет расти с 79,5 рублей в 2026 году до 96 рублей в 2029 году",
+      "key_phrase_ja": "",
+      "enriched_by": "passthrough"
+    },
     {
       "article_id": "6f12a149",
       "title_ja": "GAD helps ORR turn climate data into practical insight",
@@ -29,6 +260,17 @@
       "enriched_by": "passthrough"
     },
     {
+      "article_id": "ddff885e",
+      "title_ja": "В армии РФ заявили, что ведут уничтожение окруженной группировки ВСУ в Доброполье",
+      "summary_ja": "",
+      "tags": [],
+      "stance": "neutral",
+      "stance_reason": "AI未適用",
+      "key_phrase_original": "В армии РФ заявили, что ведут уничтожение окруженной группировки ВСУ в Доброполье",
+      "key_phrase_ja": "",
+      "enriched_by": "passthrough"
+    },
+    {
       "article_id": "745a3f60",
       "title_ja": "Iran threatens to expand war to Indian Ocean if U.S. attacks again",
       "summary_ja": "",
@@ -36,6 +278,17 @@
       "stance": "neutral",
       "stance_reason": "AI未適用",
       "key_phrase_original": "Iran threatens to expand war to Indian Ocean if U.S. attacks again",
+      "key_phrase_ja": "",
+      "enriched_by": "passthrough"
+    },
+    {
+      "article_id": "95966162",
+      "title_ja": "Wisconsin university campus closed after 60 years; its 76-acre site could become 670 homes",
+      "summary_ja": "",
+      "tags": [],
+      "stance": "neutral",
+      "stance_reason": "AI未適用",
+      "key_phrase_original": "Wisconsin university campus closed after 60 years; its 76-acre site could become 670 homes",
       "key_phrase_ja": "",
       "enriched_by": "passthrough"
     },
@@ -58,6 +311,17 @@
       "stance": "neutral",
       "stance_reason": "AI未適用",
       "key_phrase_original": "ЦБ планирует провести пилот с офлайн-платежами цифровыми рублями в 2027 году",
+      "key_phrase_ja": "",
+      "enriched_by": "passthrough"
+    },
+    {
+      "article_id": "0756ec5d",
+      "title_ja": "The French Senate: Old, expensive and out of touch or necessary safeguard to democracy?",
+      "summary_ja": "",
+      "tags": [],
+      "stance": "neutral",
+      "stance_reason": "AI未適用",
+      "key_phrase_original": "The French Senate: Old, expensive and out of touch or necessary safeguard to democracy?",
       "key_phrase_ja": "",
       "enriched_by": "passthrough"
     },
@@ -95,13 +359,68 @@
       "enriched_by": "passthrough"
     },
     {
-      "article_id": "b4550d3c",
-      "title_ja": "Минэкономразвития прогнозирует снижение промпроизводства в 2026г на 0,2%",
+      "article_id": "9468ed6c",
+      "title_ja": "🔴 CNN, MS NOW, Politico still barred from White House despite court ruling",
       "summary_ja": "",
       "tags": [],
       "stance": "neutral",
       "stance_reason": "AI未適用",
-      "key_phrase_original": "Минэкономразвития прогнозирует снижение промпроизводства в 2026г на 0,2%",
+      "key_phrase_original": "🔴 CNN, MS NOW, Politico still barred from White House despite court ruling",
+      "key_phrase_ja": "",
+      "enriched_by": "passthrough"
+    },
+    {
+      "article_id": "b4550d3c",
+      "title_ja": "Минэкономразвития прогнозирует снижение промпроизводства в 2026 году на 0,2%",
+      "summary_ja": "",
+      "tags": [],
+      "stance": "neutral",
+      "stance_reason": "AI未適用",
+      "key_phrase_original": "Минэкономразвития прогнозирует снижение промпроизводства в 2026 году на 0,2%",
+      "key_phrase_ja": "",
+      "enriched_by": "passthrough"
+    },
+    {
+      "article_id": "9a61e437",
+      "title_ja": "Man lost lamp in cave in 1953; became a NASA scientist, found it 68 years later",
+      "summary_ja": "",
+      "tags": [],
+      "stance": "neutral",
+      "stance_reason": "AI未適用",
+      "key_phrase_original": "Man lost lamp in cave in 1953; became a NASA scientist, found it 68 years later",
+      "key_phrase_ja": "",
+      "enriched_by": "passthrough"
+    },
+    {
+      "article_id": "c19b7b11",
+      "title_ja": "Injunction blocking publication of ex-SAS soldier’s book on counter-terror op extended",
+      "summary_ja": "",
+      "tags": [],
+      "stance": "neutral",
+      "stance_reason": "AI未適用",
+      "key_phrase_original": "Injunction blocking publication of ex-SAS soldier’s book on counter-terror op extended",
+      "key_phrase_ja": "",
+      "enriched_by": "passthrough"
+    },
+    {
+      "article_id": "5defac2e",
+      "title_ja": "亚运会丨国乒女团成就亚运六连冠 - 新华网",
+      "summary_ja": "",
+      "tags": [],
+      "stance": "neutral",
+      "stance_reason": "AI未適用",
+      "key_phrase_original": "亚运会丨国乒女团成就亚运六连冠 - 新华网",
+      "key_phrase_ja": "",
+      "enriched_by": "passthrough"
+    },
+    {
+      "article_id": "341f6e1a",
+      "title_ja": "Badenoch says Tories could not form pact with Reform UK because they’re too ‘problematic’ – UK politics live",
+      "summary_ja": "",
+      "tags": [],
+      "stance": "neutral",
+      "stance_reason": "AI未適用",
+      "key_phrase_original": "Badenoch says Tories could not form pact with Reform UK because they’re too ‘problematic’ – UK politics live",
       "key_phrase_ja": "",
       "enriched_by": "passthrough"
     },
@@ -124,6 +443,17 @@
       "stance": "neutral",
       "stance_reason": "AI未適用",
       "key_phrase_original": "What to expect from Trump-Xi summit at White House",
+      "key_phrase_ja": "",
+      "enriched_by": "passthrough"
+    },
+    {
+      "article_id": "c002ca67",
+      "title_ja": "亲海、悦海、乐海 串联南北海洋旅游带要来了 - 人民网",
+      "summary_ja": "",
+      "tags": [],
+      "stance": "neutral",
+      "stance_reason": "AI未適用",
+      "key_phrase_original": "亲海、悦海、乐海 串联南北海洋旅游带要来了 - 人民网",
       "key_phrase_ja": "",
       "enriched_by": "passthrough"
     },
@@ -223,17 +553,6 @@
       "stance": "neutral",
       "stance_reason": "AI未適用",
       "key_phrase_original": "Family of Iranian twins sentenced to death and decades in jail ask UN for help",
-      "key_phrase_ja": "",
-      "enriched_by": "passthrough"
-    },
-    {
-      "article_id": "5f82d1f0",
-      "title_ja": "Oil prices back up as U.S. and Iran trade threats to expand 7-month war",
-      "summary_ja": "",
-      "tags": [],
-      "stance": "neutral",
-      "stance_reason": "AI未適用",
-      "key_phrase_original": "Oil prices back up as U.S. and Iran trade threats to expand 7-month war",
       "key_phrase_ja": "",
       "enriched_by": "passthrough"
     },
@@ -601,17 +920,6 @@
       "enriched_by": "passthrough"
     },
     {
-      "article_id": "f2370b0b",
-      "title_ja": "Emmanuel Macron bouscule la campagne présidentielle en introduisant la crise internationale dans le débat politique",
-      "summary_ja": "",
-      "tags": [],
-      "stance": "neutral",
-      "stance_reason": "AI未適用",
-      "key_phrase_original": "Emmanuel Macron bouscule la campagne présidentielle en introduisant la crise internationale dans le débat politique",
-      "key_phrase_ja": "",
-      "enriched_by": "passthrough"
-    },
-    {
       "article_id": "3b69c0e2",
       "title_ja": "Галузин обсудил с послом Армении взаимодействие в рамках евразийских интеграционных объединений",
       "summary_ja": "",
@@ -619,6 +927,17 @@
       "stance": "neutral",
       "stance_reason": "AI未適用",
       "key_phrase_original": "Галузин обсудил с послом Армении взаимодействие в рамках евразийских интеграционных объединений",
+      "key_phrase_ja": "",
+      "enriched_by": "passthrough"
+    },
+    {
+      "article_id": "f2370b0b",
+      "title_ja": "Emmanuel Macron bouscule la campagne présidentielle en introduisant la crise internationale dans le débat politique",
+      "summary_ja": "",
+      "tags": [],
+      "stance": "neutral",
+      "stance_reason": "AI未適用",
+      "key_phrase_original": "Emmanuel Macron bouscule la campagne présidentielle en introduisant la crise internationale dans le débat politique",
       "key_phrase_ja": "",
       "enriched_by": "passthrough"
     },
@@ -685,6 +1004,17 @@
       "stance": "neutral",
       "stance_reason": "AI未適用",
       "key_phrase_original": "В Шебекинском округе в результате атак БПЛА ранены мужчина и подросток",
+      "key_phrase_ja": "",
+      "enriched_by": "passthrough"
+    },
+    {
+      "article_id": "01e07f48",
+      "title_ja": "Ethiopia's army says it has repelled attacks in first comment on fresh fighting",
+      "summary_ja": "",
+      "tags": [],
+      "stance": "neutral",
+      "stance_reason": "AI未適用",
+      "key_phrase_original": "Ethiopia's army says it has repelled attacks in first comment on fresh fighting",
       "key_phrase_ja": "",
       "enriched_by": "passthrough"
     },
@@ -932,12 +1262,12 @@
     },
     {
       "article_id": "0b6db907",
-      "title_ja": "Oracle Cites ‘Force Majeure’ to Shield Itself on Controversial Data Center - Bloomberg",
+      "title_ja": "Oracle Cites ‘Force Majeure’ to Shield Itself on Controversial Data Center - Bloomberg.com",
       "summary_ja": "",
       "tags": [],
       "stance": "neutral",
       "stance_reason": "AI未適用",
-      "key_phrase_original": "Oracle Cites ‘Force Majeure’ to Shield Itself on Controversial Data Center - Bloomberg",
+      "key_phrase_original": "Oracle Cites ‘Force Majeure’ to Shield Itself on Controversial Data Center - Bloomberg.com",
       "key_phrase_ja": "",
       "enriched_by": "passthrough"
     },
@@ -1008,17 +1338,6 @@
       "enriched_by": "passthrough"
     },
     {
-      "article_id": "341f6e1a",
-      "title_ja": "Badenoch says Tories could not form pact with Reform UK because they’re too ‘problematic’ – UK politics live",
-      "summary_ja": "",
-      "tags": [],
-      "stance": "neutral",
-      "stance_reason": "AI未適用",
-      "key_phrase_original": "Badenoch says Tories could not form pact with Reform UK because they’re too ‘problematic’ – UK politics live",
-      "key_phrase_ja": "",
-      "enriched_by": "passthrough"
-    },
-    {
       "article_id": "80c7cbe7",
       "title_ja": "‘Massive, maximum destruction’: Putin seeks to bring Ukrainian civilians ‘to their knees’",
       "summary_ja": "",
@@ -1037,17 +1356,6 @@
       "stance": "neutral",
       "stance_reason": "AI未適用",
       "key_phrase_original": "В Хакасии ввели режим повышенной готовности из-за медведей",
-      "key_phrase_ja": "",
-      "enriched_by": "passthrough"
-    },
-    {
-      "article_id": "a6d43500",
-      "title_ja": "サッカー日本代表 W杯後初の強化試合でウルグアイに勝利",
-      "summary_ja": "",
-      "tags": [],
-      "stance": "neutral",
-      "stance_reason": "AI未適用",
-      "key_phrase_original": "サッカー日本代表 W杯後初の強化試合でウルグアイに勝利",
       "key_phrase_ja": "",
       "enriched_by": "passthrough"
     },
@@ -1389,6 +1697,17 @@
       "stance": "neutral",
       "stance_reason": "AI未適用",
       "key_phrase_original": "Fury vs Joshua: Cardiff to host heavyweight fight on 11 December - BBC",
+      "key_phrase_ja": "",
+      "enriched_by": "passthrough"
+    },
+    {
+      "article_id": "8210cbea",
+      "title_ja": "Taylor Swift to debut \"Patient Zero\" music video at Sunday's VMAs. Watch an exclusive preview. - CBS News",
+      "summary_ja": "",
+      "tags": [],
+      "stance": "neutral",
+      "stance_reason": "AI未適用",
+      "key_phrase_original": "Taylor Swift to debut \"Patient Zero\" music video at Sunday's VMAs. Watch an exclusive preview. - CBS News",
       "key_phrase_ja": "",
       "enriched_by": "passthrough"
     },
@@ -2086,13 +2405,13 @@
       "enriched_by": "passthrough"
     },
     {
-      "article_id": "ae11e987",
-      "title_ja": "UK invests £331 million to tackle climate-driven instability and protect vulnerable communities",
+      "article_id": "a3d5e55f",
+      "title_ja": "卫星互联网组网提速！机构紧盯多只商业航天概念股(名单) - 东方财富",
       "summary_ja": "",
       "tags": [],
       "stance": "neutral",
       "stance_reason": "AI未適用",
-      "key_phrase_original": "UK invests £331 million to tackle climate-driven instability and protect vulnerable communities",
+      "key_phrase_original": "卫星互联网组网提速！机构紧盯多只商业航天概念股(名单) - 东方财富",
       "key_phrase_ja": "",
       "enriched_by": "passthrough"
     },
@@ -2126,6 +2445,17 @@
       "stance": "neutral",
       "stance_reason": "AI未適用",
       "key_phrase_original": "Battle of Hospital A.I. vs. Insurer A.I. Is Pushing Medical Costs Higher - The New York Times",
+      "key_phrase_ja": "",
+      "enriched_by": "passthrough"
+    },
+    {
+      "article_id": "ae11e987",
+      "title_ja": "UK invests £331 million to tackle climate-driven instability and protect vulnerable communities",
+      "summary_ja": "",
+      "tags": [],
+      "stance": "neutral",
+      "stance_reason": "AI未適用",
+      "key_phrase_original": "UK invests £331 million to tackle climate-driven instability and protect vulnerable communities",
       "key_phrase_ja": "",
       "enriched_by": "passthrough"
     },
@@ -2456,6 +2786,39 @@
       "stance": "neutral",
       "stance_reason": "AI未適用",
       "key_phrase_original": "United Kingdom and Cambodia join forces to crackdown on online scam centres",
+      "key_phrase_ja": "",
+      "enriched_by": "passthrough"
+    },
+    {
+      "article_id": "18d5b60d",
+      "title_ja": "Accused 105-year-old Nazi POW camp guard under investigation in Germany - CBS News",
+      "summary_ja": "",
+      "tags": [],
+      "stance": "neutral",
+      "stance_reason": "AI未適用",
+      "key_phrase_original": "Accused 105-year-old Nazi POW camp guard under investigation in Germany - CBS News",
+      "key_phrase_ja": "",
+      "enriched_by": "passthrough"
+    },
+    {
+      "article_id": "b2ff1a17",
+      "title_ja": "亚运会女子跳马决赛：杜思雨摘铜，丘索维金娜第五 - chinanews.com.cn",
+      "summary_ja": "",
+      "tags": [],
+      "stance": "neutral",
+      "stance_reason": "AI未適用",
+      "key_phrase_original": "亚运会女子跳马决赛：杜思雨摘铜，丘索维金娜第五 - chinanews.com.cn",
+      "key_phrase_ja": "",
+      "enriched_by": "passthrough"
+    },
+    {
+      "article_id": "f2d6ffdf",
+      "title_ja": "Netanyahu expected to attack Mamdani in UN general assembly speech – latest updates - The Guardian",
+      "summary_ja": "",
+      "tags": [],
+      "stance": "neutral",
+      "stance_reason": "AI未適用",
+      "key_phrase_original": "Netanyahu expected to attack Mamdani in UN general assembly speech – latest updates - The Guardian",
       "key_phrase_ja": "",
       "enriched_by": "passthrough"
     },
@@ -3395,17 +3758,6 @@
       "enriched_by": "passthrough"
     },
     {
-      "article_id": "a2cd0904",
-      "title_ja": "Australia says rogue OpenAI model hacked into its healthcare system",
-      "summary_ja": "",
-      "tags": [],
-      "stance": "neutral",
-      "stance_reason": "AI未適用",
-      "key_phrase_original": "Australia says rogue OpenAI model hacked into its healthcare system",
-      "key_phrase_ja": "",
-      "enriched_by": "passthrough"
-    },
-    {
       "article_id": "f967c851",
       "title_ja": "Russian strikes damage Nova Poshta sorting depot in Kyiv",
       "summary_ja": "",
@@ -3622,6 +3974,17 @@
       "stance": "neutral",
       "stance_reason": "AI未適用",
       "key_phrase_original": "AAIB Report: Boeing 737-800, 9H-QBD",
+      "key_phrase_ja": "",
+      "enriched_by": "passthrough"
+    },
+    {
+      "article_id": "fb57e7e6",
+      "title_ja": "国防部：日本以所谓“存亡危机事态”为名加速“再军事化” - 中国日报网",
+      "summary_ja": "",
+      "tags": [],
+      "stance": "neutral",
+      "stance_reason": "AI未適用",
+      "key_phrase_original": "国防部：日本以所谓“存亡危机事态”为名加速“再军事化” - 中国日报网",
       "key_phrase_ja": "",
       "enriched_by": "passthrough"
     },
@@ -4550,6 +4913,17 @@
       "enriched_by": "passthrough"
     },
     {
+      "article_id": "232f17bc",
+      "title_ja": "日媒：台风“杜鹃”导致日本水坝决堤，被淹太阳能发电厂发生火灾 - 欧洲头条",
+      "summary_ja": "",
+      "tags": [],
+      "stance": "neutral",
+      "stance_reason": "AI未適用",
+      "key_phrase_original": "日媒：台风“杜鹃”导致日本水坝决堤，被淹太阳能发电厂发生火灾 - 欧洲头条",
+      "key_phrase_ja": "",
+      "enriched_by": "passthrough"
+    },
+    {
       "article_id": "5a2e1741",
       "title_ja": "Pakistan struck sites in Afghanistan in response to recent drone intrusion: Minister",
       "summary_ja": "",
@@ -4628,12 +5002,12 @@
     },
     {
       "article_id": "acb9c539",
-      "title_ja": "越山海｜跨越太平洋的青春之桥 - news.anhuinews.com",
+      "title_ja": "越山海｜跨越太平洋的青春之桥 - 中安在线",
       "summary_ja": "",
       "tags": [],
       "stance": "neutral",
       "stance_reason": "AI未適用",
-      "key_phrase_original": "越山海｜跨越太平洋的青春之桥 - news.anhuinews.com",
+      "key_phrase_original": "越山海｜跨越太平洋的青春之桥 - 中安在线",
       "key_phrase_ja": "",
       "enriched_by": "passthrough"
     },
@@ -4760,12 +5134,12 @@
     },
     {
       "article_id": "28f574f4",
-      "title_ja": "Trump-Xi summit: Here’s what’s on the agenda, and why it matters - aljazeera.com",
+      "title_ja": "Trump-Xi summit: Here’s what’s on the agenda, and why it matters - Al Jazeera",
       "summary_ja": "",
       "tags": [],
       "stance": "neutral",
       "stance_reason": "AI未適用",
-      "key_phrase_original": "Trump-Xi summit: Here’s what’s on the agenda, and why it matters - aljazeera.com",
+      "key_phrase_original": "Trump-Xi summit: Here’s what’s on the agenda, and why it matters - Al Jazeera",
       "key_phrase_ja": "",
       "enriched_by": "passthrough"
     },
@@ -4793,12 +5167,12 @@
     },
     {
       "article_id": "ca0163d6",
-      "title_ja": "习近平访美首日看点：谁同行？第一夫人角色？高规格接待引反弹？ - bbc.com",
+      "title_ja": "习近平访美首日看点：谁同行？第一夫人角色？高规格接待引反弹？ - BBC",
       "summary_ja": "",
       "tags": [],
       "stance": "neutral",
       "stance_reason": "AI未適用",
-      "key_phrase_original": "习近平访美首日看点：谁同行？第一夫人角色？高规格接待引反弹？ - bbc.com",
+      "key_phrase_original": "习近平访美首日看点：谁同行？第一夫人角色？高规格接待引反弹？ - BBC",
       "key_phrase_ja": "",
       "enriched_by": "passthrough"
     },
@@ -4876,17 +5250,6 @@
       "stance": "neutral",
       "stance_reason": "AI未適用",
       "key_phrase_original": "「災害のラスボス」大噴火　人類は備えることができるのか",
-      "key_phrase_ja": "",
-      "enriched_by": "passthrough"
-    },
-    {
-      "article_id": "9468ed6c",
-      "title_ja": "🔴 US judge lifts Trump's White House ban on CNN, MS NOW, Politico",
-      "summary_ja": "",
-      "tags": [],
-      "stance": "neutral",
-      "stance_reason": "AI未適用",
-      "key_phrase_original": "🔴 US judge lifts Trump's White House ban on CNN, MS NOW, Politico",
       "key_phrase_ja": "",
       "enriched_by": "passthrough"
     },
@@ -5012,6 +5375,17 @@
       "enriched_by": "passthrough"
     },
     {
+      "article_id": "c17ddad0",
+      "title_ja": "3º dia de Assembleia Geral da ONU terá discursos de autoridade palestina e do premiê de Israel; SIGA",
+      "summary_ja": "",
+      "tags": [],
+      "stance": "neutral",
+      "stance_reason": "AI未適用",
+      "key_phrase_original": "3º dia de Assembleia Geral da ONU terá discursos de autoridade palestina e do premiê de Israel; SIGA",
+      "key_phrase_ja": "",
+      "enriched_by": "passthrough"
+    },
+    {
       "article_id": "0f52fb43",
       "title_ja": "OpenAI agent hacked Australia government portal: PM Albanese",
       "summary_ja": "",
@@ -5107,17 +5481,6 @@
       "stance": "neutral",
       "stance_reason": "AI未適用",
       "key_phrase_original": "Iranian official: Iran, US far apart in peace talks, diplomacy ongoing",
-      "key_phrase_ja": "",
-      "enriched_by": "passthrough"
-    },
-    {
-      "article_id": "c17ddad0",
-      "title_ja": "3º dia de Assembleia Geral da ONU terá discursos de autoridade palestina e do premiê de Israel; SIGA",
-      "summary_ja": "",
-      "tags": [],
-      "stance": "neutral",
-      "stance_reason": "AI未適用",
-      "key_phrase_original": "3º dia de Assembleia Geral da ONU terá discursos de autoridade palestina e do premiê de Israel; SIGA",
       "key_phrase_ja": "",
       "enriched_by": "passthrough"
     },
@@ -5250,6 +5613,17 @@
       "stance": "neutral",
       "stance_reason": "AI未適用",
       "key_phrase_original": "Trump diz que IA será grande tema de reunião com Xi Jinping",
+      "key_phrase_ja": "",
+      "enriched_by": "passthrough"
+    },
+    {
+      "article_id": "d8e95be4",
+      "title_ja": "工业和信息化部：加快信息通信网络和行业智能化升级 - 求是",
+      "summary_ja": "",
+      "tags": [],
+      "stance": "neutral",
+      "stance_reason": "AI未適用",
+      "key_phrase_original": "工业和信息化部：加快信息通信网络和行业智能化升级 - 求是",
       "key_phrase_ja": "",
       "enriched_by": "passthrough"
     },
@@ -5657,6 +6031,17 @@
       "stance": "neutral",
       "stance_reason": "AI未適用",
       "key_phrase_original": "Rússia deseja um acordo de paz com a Ucrânia, não um cessar-fogo temporário, diz Kremlin",
+      "key_phrase_ja": "",
+      "enriched_by": "passthrough"
+    },
+    {
+      "article_id": "13811a6c",
+      "title_ja": "Dolly Parton's Estate Secures Restraining Order Against Nephew Over 'Demands for Payment' - Rolling Stone",
+      "summary_ja": "",
+      "tags": [],
+      "stance": "neutral",
+      "stance_reason": "AI未適用",
+      "key_phrase_original": "Dolly Parton's Estate Secures Restraining Order Against Nephew Over 'Demands for Payment' - Rolling Stone",
       "key_phrase_ja": "",
       "enriched_by": "passthrough"
     },
@@ -6350,6 +6735,17 @@
       "stance": "neutral",
       "stance_reason": "AI未適用",
       "key_phrase_original": "Milei threatens at UN that Argentina will take ‘matters into our own hands’ on Falklands",
+      "key_phrase_ja": "",
+      "enriched_by": "passthrough"
+    },
+    {
+      "article_id": "586083b5",
+      "title_ja": "Qualcomm announces Snapdragon Sound Elite Gen 2 for AI 'hearables,' even ones with cameras - 9to5Google",
+      "summary_ja": "",
+      "tags": [],
+      "stance": "neutral",
+      "stance_reason": "AI未適用",
+      "key_phrase_original": "Qualcomm announces Snapdragon Sound Elite Gen 2 for AI 'hearables,' even ones with cameras - 9to5Google",
       "key_phrase_ja": "",
       "enriched_by": "passthrough"
     },
@@ -7157,6 +7553,17 @@
       "enriched_by": "passthrough"
     },
     {
+      "article_id": "2aa19461",
+      "title_ja": "Bone density and the \"silent disease\": 4 things women should know about bone health - CBS News",
+      "summary_ja": "",
+      "tags": [],
+      "stance": "neutral",
+      "stance_reason": "AI未適用",
+      "key_phrase_original": "Bone density and the \"silent disease\": 4 things women should know about bone health - CBS News",
+      "key_phrase_ja": "",
+      "enriched_by": "passthrough"
+    },
+    {
       "article_id": "cf8655c6",
       "title_ja": "Líderes de IA discutem riscos da tecnologia em reunião do Conselho de Segurança da ONU",
       "summary_ja": "",
@@ -7263,6 +7670,17 @@
       "stance": "neutral",
       "stance_reason": "AI未適用",
       "key_phrase_original": "Russian attacks injure 7 across Ukraine and damage structures",
+      "key_phrase_ja": "",
+      "enriched_by": "passthrough"
+    },
+    {
+      "article_id": "91cb2463",
+      "title_ja": "安华从上海乘高铁前往杭州 体验中国现代化公交系统 - 光华日报",
+      "summary_ja": "",
+      "tags": [],
+      "stance": "neutral",
+      "stance_reason": "AI未適用",
+      "key_phrase_original": "安华从上海乘高铁前往杭州 体验中国现代化公交系统 - 光华日报",
       "key_phrase_ja": "",
       "enriched_by": "passthrough"
     },
@@ -9171,26 +9589,26 @@
     }
   ],
   "notes": [
-    "バッチ1を素通しにしました: HTTP 404",
-    "バッチ2を素通しにしました: HTTP 404",
-    "バッチ3を素通しにしました: HTTP 404",
-    "バッチ4を素通しにしました: HTTP 404",
-    "バッチ5を素通しにしました: HTTP 404",
-    "バッチ6を素通しにしました: HTTP 404",
-    "バッチ7を素通しにしました: HTTP 404",
-    "バッチ8を素通しにしました: HTTP 404",
-    "バッチ9を素通しにしました: HTTP 404",
-    "バッチ10を素通しにしました: HTTP 404",
-    "バッチ11を素通しにしました: HTTP 404",
-    "バッチ12を素通しにしました: HTTP 404",
-    "バッチ13を素通しにしました: HTTP 404",
-    "バッチ14を素通しにしました: HTTP 404",
-    "バッチ15を素通しにしました: HTTP 404",
-    "バッチ16を素通しにしました: HTTP 404",
-    "バッチ17を素通しにしました: HTTP 404",
-    "バッチ18を素通しにしました: HTTP 404",
-    "バッチ19を素通しにしました: HTTP 404",
-    "バッチ20を素通しにしました: HTTP 404",
+    "バッチ1を素通しにしました: HTTP 503",
+    "バッチ2を素通しにしました: HTTP 503",
+    "バッチ3を素通しにしました: HTTP 503",
+    "バッチ4を素通しにしました: HTTP 429",
+    "バッチ5を素通しにしました: HTTP 503",
+    "バッチ6を素通しにしました: HTTP 503",
+    "バッチ7を素通しにしました: HTTP 429",
+    "バッチ8を素通しにしました: リクエスト上限 30 到達",
+    "バッチ9を素通しにしました: リクエスト上限 30 到達",
+    "バッチ10を素通しにしました: リクエスト上限 30 到達",
+    "バッチ11を素通しにしました: リクエスト上限 30 到達",
+    "バッチ12を素通しにしました: リクエスト上限 30 到達",
+    "バッチ13を素通しにしました: リクエスト上限 30 到達",
+    "バッチ14を素通しにしました: リクエスト上限 30 到達",
+    "バッチ15を素通しにしました: リクエスト上限 30 到達",
+    "バッチ16を素通しにしました: リクエスト上限 30 到達",
+    "バッチ17を素通しにしました: リクエスト上限 30 到達",
+    "バッチ18を素通しにしました: リクエスト上限 30 到達",
+    "バッチ19を素通しにしました: リクエスト上限 30 到達",
+    "バッチ20を素通しにしました: リクエスト上限 30 到達",
     "AIを適用できた記事が0件のため degraded にしました"
   ]
 }
