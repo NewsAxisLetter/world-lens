@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  回帰テスト用の固定XML（RSS 2.0・名前空間なし）。NHK の構造を模した最小形。
+  この形式は findall(".//item") でも取れるので「壊れていない側」の対照になる。
+  RDF/Atom と同じコードパスで同じ結果になることを確認するために置いている。
+  ★ <description> に本文相当のテキストを入れてある（C1検査用）。
+  ★ 3件目は <pubDate> が欠落。日付が読めない記事も捨てずに published_at:null で
+    取り込むこと（見出しとURLはあるので使える）をテストで縛る。
+-->
+<rss version="2.0" xmlns:media="http://search.yahoo.com/mrss/">
+  <channel>
+    <title>NHKニュース 主要</title>
+    <link>https://www3.nhk.or.jp/news/</link>
+    <description>NHKの主要ニュース</description>
+    <language>ja</language>
+    <pubDate>Mon, 14 Sep 2026 12:00:00 +0900</pubDate>
+
+    <item>
+      <title>政府、物価対策の新パッケージを決定</title>
+      <link>https://www3.nhk.or.jp/news/html/20260914/k10014000001000.html</link>
+      <description>政府は14日、物価対策の新たなパッケージを決定しました。これは本文相当のテキストであり保存してはならない。</description>
+      <pubDate>Mon, 14 Sep 2026 11:42:00 +0900</pubDate>
+    </item>
+
+    <item>
+      <title>黒海で貨物船が攻撃を受け乗組員2人が負傷</title>
+      <link>https://www3.nhk.or.jp/news/html/20260914/k10014000002000.html</link>
+      <description>本文相当。保存してはならない。</description>
+      <pubDate>Mon, 14 Sep 2026 09:05:00 +0900</pubDate>
+    </item>
+
+    <item>
+      <!-- pubDate が無い記事。published_at は null になるが取り込む -->
+      <title>台風18号 週明けに本州へ接近の見込み</title>
+      <link>https://www3.nhk.or.jp/news/html/20260913/k10014000003000.html</link>
+      <description>本文相当。保存してはならない。</description>
+    </item>
+
+    <item>
+      <!-- link が空。見出しだけでは記事にならないので捨てられること -->
+      <title>リンクのない項目（捨てられるべき）</title>
+      <link></link>
+      <pubDate>Mon, 14 Sep 2026 08:00:00 +0900</pubDate>
+    </item>
+  </channel>
+</rss>

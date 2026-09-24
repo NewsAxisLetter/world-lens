@@ -1,0 +1,20 @@
+{
+  "schema_version": 3,
+  "date": "2026-09-16",
+  "generated_at": "2026-09-16T00:31:02Z",
+  "status": "empty",
+  "feeds": [
+    {
+      "feed_id": "jp-nhk",
+      "source": "NHK",
+      "rss_url": "https://www.nhk.or.jp/rss/news/cat0.xml",
+      "articles": 0,
+      "latest_published_at": null,
+      "stale_days": null,
+      "threshold_days": 7,
+      "status": "empty",
+      "note": "記事が0件でした"
+    }
+  ],
+  "articles": []
+}

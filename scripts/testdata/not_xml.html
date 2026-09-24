@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<!--
+  回帰テスト用。HTTP 200 を返すが中身がXMLではないケース（同意ページ・エラーページ）。
+  実測でも Le Monde が Cookie 同意ページを 200 で返し、
+  Folha が HTML のエラーページを 200 で返した。
+  この1本で例外が飛んでも残りの収集が続くこと（A8）をテストで縛る。
+-->
+<html lang="fr">
+<head><meta charset="utf-8"><title>Gestion du consentement</title></head>
+<body>
+  <h1>Avant de continuer</h1>
+  <p>Nous et nos partenaires utilisons des cookies.</p>
+  <button>Accepter &amp; fermer</button>
+</body>
+</html>

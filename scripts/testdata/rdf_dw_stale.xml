@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  回帰テスト用の固定XML（RDF・名前空間あり／中身が古い）。
+  「HTTP 200 で件数もあるのに1年以上更新が止まっている」フィードを再現する。
+  VOA World（最新 2025-03-15）・人民網（最新 2025-06-05）・JPost旧URL（最新 2025-06-16）
+  の実測パターンそのもの。件数監視では絶対に検出できないので、
+  鮮度監視が「最新記事の日付」で動いていることをこの固定XMLで縛る（要件7）。
+-->
+<rdf:RDF
+  xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+  xmlns="http://purl.org/rss/1.0/"
+  xmlns:dc="http://purl.org/dc/elements/1.1/">
+  <channel rdf:about="https://www.dw.com/">
+    <title>Deutsche Welle</title>
+    <link>https://www.dw.com/</link>
+    <description>DW News</description>
+    <dc:date>2025-03-15T08:00:00Z</dc:date>
+  </channel>
+
+  <item rdf:about="https://www.dw.com/en/frozen-article-1/a-70000001">
+    <title>Frozen feed article one</title>
+    <link>https://www.dw.com/en/frozen-article-1/a-70000001</link>
+    <description>Body text. Must not be stored.</description>
+    <dc:date>2025-03-15T08:00:00Z</dc:date>
+  </item>
+
+  <item rdf:about="https://www.dw.com/en/frozen-article-2/a-70000002">
+    <title>Frozen feed article two</title>
+    <link>https://www.dw.com/en/frozen-article-2/a-70000002</link>
+    <description>Body text. Must not be stored.</description>
+    <dc:date>2025-03-14T19:30:00Z</dc:date>
+  </item>
+
+  <item rdf:about="https://www.dw.com/en/frozen-article-3/a-70000003">
+    <title>Frozen feed article three</title>
+    <link>https://www.dw.com/en/frozen-article-3/a-70000003</link>
+    <description>Body text. Must not be stored.</description>
+    <dc:date>2025-03-13T11:00:00Z</dc:date>
+  </item>
+</rdf:RDF>

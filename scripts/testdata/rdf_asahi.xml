@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  回帰テスト用の固定XML（RSS 1.0 / RDF・名前空間あり）。
+  朝日新聞の実フィード構造を模した最小形。ネット接続なしで A7 を検証する。
+  ★ findall(".//item") はここに1件もマッチしない（タグ実体は
+    "{http://purl.org/rss/1.0/}item" になるため）。この固定XMLで3件取れることを
+    テストで縛り、phase0 で朝日・DW・GOV.UK を0件にしたバグの再発を防ぐ。
+  ★ <description> に本文相当のテキストを意図的に入れてある。
+    出力に漏れないことを同じテストで検査する（C1）。
+-->
+<rdf:RDF
+  xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+  xmlns="http://purl.org/rss/1.0/"
+  xmlns:dc="http://purl.org/dc/elements/1.1/"
+  xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel rdf:about="https://www.asahi.com/">
+    <title>朝日新聞デジタル</title>
+    <link>https://www.asahi.com/</link>
+    <description>朝日新聞社のニュースサイト</description>
+    <dc:date>2026-09-14T10:09:17+09:00</dc:date>
+    <items>
+      <rdf:Seq>
+        <rdf:li rdf:resource="https://www.asahi.com/articles/ASX1000001.html"/>
+        <rdf:li rdf:resource="https://www.asahi.com/articles/ASX1000002.html"/>
+        <rdf:li rdf:resource="https://www.asahi.com/articles/ASX1000003.html"/>
+      </rdf:Seq>
+    </items>
+  </channel>
+
+  <item rdf:about="https://www.asahi.com/articles/ASX1000001.html">
+    <title>東京都大田区の工場で爆発か、3人けがの情報</title>
+    <link>https://www.asahi.com/articles/ASX1000001.html</link>
+    <description>14日午前、東京都大田区の工場で爆発があったとの情報が寄せられ、消防が出動した。これは本文相当のテキストであり保存してはならない。</description>
+    <content:encoded>&lt;p&gt;これは content:encoded に入った本文であり、絶対に保存してはならない。&lt;/p&gt;</content:encoded>
+    <dc:date>2026-09-14T10:09:17+09:00</dc:date>
+    <dc:subject>社会</dc:subject>
+  </item>
+
+  <item rdf:about="https://www.asahi.com/articles/ASX1000002.html">
+    <title>消費税減税の大綱、閣議決定へ</title>
+    <link>https://www.asahi.com/articles/ASX1000002.html</link>
+    <description>政府は消費税減税の大綱を閣議決定する方針を固めた。これも本文相当。</description>
+    <dc:date>2026-09-14T08:30:00+09:00</dc:date>
+  </item>
+
+  <item rdf:about="https://www.asahi.com/articles/ASX1000003.html">
+    <title>黒海の穀物輸送船が攻撃を受ける</title>
+    <link>https://www.asahi.com/articles/ASX1000003.html</link>
+    <description>黒海を航行していた穀物輸送船が攻撃を受けた。これも本文相当。</description>
+    <dc:date>2026-09-13T22:05:00+09:00</dc:date>
+  </item>
+</rdf:RDF>

@@ -1,0 +1,759 @@
+{
+ "schema_version": 3,
+ "date": "2026-09-21",
+ "generated_at": "2026-09-21T15:00:00Z",
+ "degraded": true,
+ "score_formula": "報道した国の数 × 3 ＋ 掲載媒体の数 × 1",
+ "stats": {
+  "articles": 23,
+  "topics": 5,
+  "countries_covered": 7,
+  "feeds_ok": 27,
+  "feeds_stale": 0,
+  "feeds_empty": 0,
+  "feeds_failed": 0,
+  "jp_none_count": 2
+ },
+ "alerts": [
+  {
+   "level": "warn",
+   "code": "ai_unavailable",
+   "message": "GEMINI_API_KEY が未設定のため、翻訳・要約・立場ラベルを付与できませんでした。見出しは原語のまま表示しています。"
+  }
+ ],
+ "topics": [
+  {
+   "topic_id": "T001",
+   "title_ja": "Central banks signal coordinated pause on rate hikes",
+   "countries": [
+    "US",
+    "GB",
+    "FR",
+    "DE",
+    "JP",
+    "CN",
+    "SA"
+   ],
+   "media_count": 7,
+   "score": 28,
+   "score_parts": {
+    "countries": 7,
+    "countries_weight": 3,
+    "media": 7
+   },
+   "jp_reported": true,
+   "jp_media_count": 1,
+   "silent_countries": [
+    "RU",
+    "KR",
+    "IN",
+    "BR",
+    "IL"
+   ],
+   "stance_counts": {
+    "support": 0,
+    "critical": 0,
+    "neutral": 0,
+    "none": 7
+   },
+   "tags": [],
+   "facts_ja": [],
+   "phrases": [
+    {
+     "country": "US",
+     "media": "Reuters",
+     "media_type": "private",
+     "lang": "en",
+     "dir": "ltr",
+     "original": "Central banks signal coordinated pause on rate hikes",
+     "ja": "Central banks signal coordinated pause on rate hikes",
+     "stance": "none",
+     "stance_reason": "",
+     "url": "https://example.com/reuters/cb-pause"
+    },
+    {
+     "country": "GB",
+     "media": "BBC News",
+     "media_type": "public",
+     "lang": "en",
+     "dir": "ltr",
+     "original": "Rate pause agreed as inflation cools across major economies",
+     "ja": "Rate pause agreed as inflation cools across major economies",
+     "stance": "none",
+     "stance_reason": "",
+     "url": "https://example.com/bbc/rate-pause"
+    },
+    {
+     "country": "FR",
+     "media": "Le Monde",
+     "media_type": "private",
+     "lang": "fr",
+     "dir": "ltr",
+     "original": "Les banques centrales suspendent la hausse des taux",
+     "ja": "Les banques centrales suspendent la hausse des taux",
+     "stance": "none",
+     "stance_reason": "",
+     "url": "https://example.com/lemonde/taux"
+    },
+    {
+     "country": "DE",
+     "media": "Deutsche Welle",
+     "media_type": "public",
+     "lang": "de",
+     "dir": "ltr",
+     "original": "Notenbanken pausieren die Zinserhöhungen",
+     "ja": "Notenbanken pausieren die Zinserhöhungen",
+     "stance": "none",
+     "stance_reason": "",
+     "url": "https://example.com/dw/zinsen"
+    },
+    {
+     "country": "JP",
+     "media": "NHK",
+     "media_type": "public",
+     "lang": "ja",
+     "dir": "ltr",
+     "original": "主要中銀 利上げ停止で協調姿勢",
+     "ja": "主要中銀 利上げ停止で協調姿勢",
+     "stance": "none",
+     "stance_reason": "",
+     "url": "https://example.com/nhk/kinri"
+    },
+    {
+     "country": "CN",
+     "media": "Xinhua",
+     "media_type": "state",
+     "lang": "zh",
+     "dir": "ltr",
+     "original": "主要央行暂停加息 释放协调信号",
+     "ja": "主要央行暂停加息 释放协调信号",
+     "stance": "none",
+     "stance_reason": "",
+     "url": "https://example.com/xinhua/jiaxi"
+    },
+    {
+     "country": "SA",
+     "media": "Al Arabiya",
+     "media_type": "private",
+     "lang": "ar",
+     "dir": "rtl",
+     "original": "البنوك المركزية توقف رفع أسعار الفائدة",
+     "ja": "البنوك المركزية توقف رفع أسعار الفائدة",
+     "stance": "none",
+     "stance_reason": "",
+     "url": "https://example.com/alarabiya/faida"
+    }
+   ],
+   "articles": [
+    {
+     "article_id": "ca1de0c7",
+     "country": "US",
+     "source": "Reuters",
+     "media_type": "private",
+     "lang": "en",
+     "dir": "ltr",
+     "title_original": "Central banks signal coordinated pause on rate hikes",
+     "title_ja": "Central banks signal coordinated pause on rate hikes",
+     "url": "https://example.com/reuters/cb-pause",
+     "published_at": "2026-09-20T01:10:00Z"
+    },
+    {
+     "article_id": "a63d53a5",
+     "country": "GB",
+     "source": "BBC News",
+     "media_type": "public",
+     "lang": "en",
+     "dir": "ltr",
+     "title_original": "Rate pause agreed as inflation cools across major economies",
+     "title_ja": "Rate pause agreed as inflation cools across major economies",
+     "url": "https://example.com/bbc/rate-pause",
+     "published_at": "2026-09-20T02:00:00Z"
+    },
+    {
+     "article_id": "def0918c",
+     "country": "FR",
+     "source": "Le Monde",
+     "media_type": "private",
+     "lang": "fr",
+     "dir": "ltr",
+     "title_original": "Les banques centrales suspendent la hausse des taux",
+     "title_ja": "Les banques centrales suspendent la hausse des taux",
+     "url": "https://example.com/lemonde/taux",
+     "published_at": "2026-09-20T03:25:00Z"
+    },
+    {
+     "article_id": "694fda8f",
+     "country": "DE",
+     "source": "Deutsche Welle",
+     "media_type": "public",
+     "lang": "de",
+     "dir": "ltr",
+     "title_original": "Notenbanken pausieren die Zinserhöhungen",
+     "title_ja": "Notenbanken pausieren die Zinserhöhungen",
+     "url": "https://example.com/dw/zinsen",
+     "published_at": "2026-09-20T04:05:00Z"
+    },
+    {
+     "article_id": "d2909c31",
+     "country": "JP",
+     "source": "NHK",
+     "media_type": "public",
+     "lang": "ja",
+     "dir": "ltr",
+     "title_original": "主要中銀 利上げ停止で協調姿勢",
+     "title_ja": "主要中銀 利上げ停止で協調姿勢",
+     "url": "https://example.com/nhk/kinri",
+     "published_at": "2026-09-20T05:30:00Z"
+    },
+    {
+     "article_id": "c60d015f",
+     "country": "CN",
+     "source": "Xinhua",
+     "media_type": "state",
+     "lang": "zh",
+     "dir": "ltr",
+     "title_original": "主要央行暂停加息 释放协调信号",
+     "title_ja": "主要央行暂停加息 释放协调信号",
+     "url": "https://example.com/xinhua/jiaxi",
+     "published_at": "2026-09-20T06:00:00Z"
+    },
+    {
+     "article_id": "2f74cd38",
+     "country": "SA",
+     "source": "Al Arabiya",
+     "media_type": "private",
+     "lang": "ar",
+     "dir": "rtl",
+     "title_original": "البنوك المركزية توقف رفع أسعار الفائدة",
+     "title_ja": "البنوك المركزية توقف رفع أسعار الفائدة",
+     "url": "https://example.com/alarabiya/faida",
+     "published_at": "2026-09-20T06:40:00Z"
+    }
+   ]
+  },
+  {
+   "topic_id": "T003",
+   "title_ja": "הושג הסכם חדש על סיוע הומניטרי",
+   "countries": [
+    "IL",
+    "SA",
+    "US",
+    "JP",
+    "FR"
+   ],
+   "media_count": 6,
+   "score": 21,
+   "score_parts": {
+    "countries": 5,
+    "countries_weight": 3,
+    "media": 6
+   },
+   "jp_reported": true,
+   "jp_media_count": 2,
+   "silent_countries": [
+    "GB",
+    "DE",
+    "RU",
+    "CN",
+    "KR",
+    "IN",
+    "BR"
+   ],
+   "stance_counts": {
+    "support": 0,
+    "critical": 0,
+    "neutral": 0,
+    "none": 6
+   },
+   "tags": [],
+   "facts_ja": [],
+   "phrases": [
+    {
+     "country": "IL",
+     "media": "The Times of Israel",
+     "media_type": "private",
+     "lang": "he",
+     "dir": "rtl",
+     "original": "הושג הסכם חדש על סיוע הומניטרי",
+     "ja": "הושג הסכם חדש על סיוע הומניטרי",
+     "stance": "none",
+     "stance_reason": "",
+     "url": "https://example.com/toi/aid"
+    },
+    {
+     "country": "SA",
+     "media": "Arab News",
+     "media_type": "private",
+     "lang": "ar",
+     "dir": "rtl",
+     "original": "اتفاق جديد على إيصال المساعدات الإنسانية",
+     "ja": "اتفاق جديد على إيصال المساعدات الإنسانية",
+     "stance": "none",
+     "stance_reason": "",
+     "url": "https://example.com/arabnews/aid"
+    },
+    {
+     "country": "US",
+     "media": "AP News",
+     "media_type": "private",
+     "lang": "en",
+     "dir": "ltr",
+     "original": "Sides reach new humanitarian aid agreement",
+     "ja": "Sides reach new humanitarian aid agreement",
+     "stance": "none",
+     "stance_reason": "",
+     "url": "https://example.com/ap/aid"
+    },
+    {
+     "country": "JP",
+     "media": "朝日新聞",
+     "media_type": "private",
+     "lang": "ja",
+     "dir": "ltr",
+     "original": "人道支援の搬入で新たな合意",
+     "ja": "人道支援の搬入で新たな合意",
+     "stance": "none",
+     "stance_reason": "",
+     "url": "https://example.com/asahi/aid"
+    },
+    {
+     "country": "JP",
+     "media": "読売新聞",
+     "media_type": "private",
+     "lang": "ja",
+     "dir": "ltr",
+     "original": "支援物資の搬入拡大で合意",
+     "ja": "支援物資の搬入拡大で合意",
+     "stance": "none",
+     "stance_reason": "",
+     "url": "https://example.com/yomiuri/aid"
+    },
+    {
+     "country": "FR",
+     "media": "France 24",
+     "media_type": "public",
+     "lang": "fr",
+     "dir": "ltr",
+     "original": "Nouvel accord sur l'aide humanitaire",
+     "ja": "Nouvel accord sur l'aide humanitaire",
+     "stance": "none",
+     "stance_reason": "",
+     "url": "https://example.com/france24/aide"
+    }
+   ],
+   "articles": [
+    {
+     "article_id": "43987323",
+     "country": "IL",
+     "source": "The Times of Israel",
+     "media_type": "private",
+     "lang": "he",
+     "dir": "rtl",
+     "title_original": "הושג הסכם חדש על סיוע הומניטרי",
+     "title_ja": "הושג הסכם חדש על סיוע הומניטרי",
+     "url": "https://example.com/toi/aid",
+     "published_at": "2026-09-20T09:00:00Z"
+    },
+    {
+     "article_id": "580d2939",
+     "country": "SA",
+     "source": "Arab News",
+     "media_type": "private",
+     "lang": "ar",
+     "dir": "rtl",
+     "title_original": "اتفاق جديد على إيصال المساعدات الإنسانية",
+     "title_ja": "اتفاق جديد على إيصال المساعدات الإنسانية",
+     "url": "https://example.com/arabnews/aid",
+     "published_at": "2026-09-20T09:20:00Z"
+    },
+    {
+     "article_id": "4528260f",
+     "country": "US",
+     "source": "AP News",
+     "media_type": "private",
+     "lang": "en",
+     "dir": "ltr",
+     "title_original": "Sides reach new humanitarian aid agreement",
+     "title_ja": "Sides reach new humanitarian aid agreement",
+     "url": "https://example.com/ap/aid",
+     "published_at": "2026-09-20T09:50:00Z"
+    },
+    {
+     "article_id": "3cb618e4",
+     "country": "JP",
+     "source": "朝日新聞",
+     "media_type": "private",
+     "lang": "ja",
+     "dir": "ltr",
+     "title_original": "人道支援の搬入で新たな合意",
+     "title_ja": "人道支援の搬入で新たな合意",
+     "url": "https://example.com/asahi/aid",
+     "published_at": "2026-09-20T10:30:00Z"
+    },
+    {
+     "article_id": "3a35972d",
+     "country": "JP",
+     "source": "読売新聞",
+     "media_type": "private",
+     "lang": "ja",
+     "dir": "ltr",
+     "title_original": "支援物資の搬入拡大で合意",
+     "title_ja": "支援物資の搬入拡大で合意",
+     "url": "https://example.com/yomiuri/aid",
+     "published_at": "2026-09-20T10:40:00Z"
+    },
+    {
+     "article_id": "3c1fc821",
+     "country": "FR",
+     "source": "France 24",
+     "media_type": "public",
+     "lang": "fr",
+     "dir": "ltr",
+     "title_original": "Nouvel accord sur l'aide humanitaire",
+     "title_ja": "Nouvel accord sur l'aide humanitaire",
+     "url": "https://example.com/france24/aide",
+     "published_at": "2026-09-20T11:00:00Z"
+    }
+   ]
+  },
+  {
+   "topic_id": "T002",
+   "title_ja": "Запущен новый газопровод в восточном направлении",
+   "countries": [
+    "RU",
+    "CN",
+    "IN",
+    "DE"
+   ],
+   "media_count": 4,
+   "score": 16,
+   "score_parts": {
+    "countries": 4,
+    "countries_weight": 3,
+    "media": 4
+   },
+   "jp_reported": false,
+   "jp_media_count": 0,
+   "silent_countries": [
+    "JP",
+    "US",
+    "GB",
+    "FR",
+    "KR",
+    "BR",
+    "SA",
+    "IL"
+   ],
+   "stance_counts": {
+    "support": 0,
+    "critical": 0,
+    "neutral": 0,
+    "none": 4
+   },
+   "tags": [],
+   "facts_ja": [],
+   "phrases": [
+    {
+     "country": "RU",
+     "media": "TASS",
+     "media_type": "state",
+     "lang": "ru",
+     "dir": "ltr",
+     "original": "Запущен новый газопровод в восточном направлении",
+     "ja": "Запущен новый газопровод в восточном направлении",
+     "stance": "none",
+     "stance_reason": "",
+     "url": "https://example.com/tass/gaz"
+    },
+    {
+     "country": "CN",
+     "media": "Global Times",
+     "media_type": "state",
+     "lang": "zh",
+     "dir": "ltr",
+     "original": "东线天然气管道投入运营 合作深化",
+     "ja": "东线天然气管道投入运营 合作深化",
+     "stance": "none",
+     "stance_reason": "",
+     "url": "https://example.com/gt/pipeline"
+    },
+    {
+     "country": "IN",
+     "media": "The Hindu",
+     "media_type": "private",
+     "lang": "en",
+     "dir": "ltr",
+     "original": "New eastern gas pipeline begins operations",
+     "ja": "New eastern gas pipeline begins operations",
+     "stance": "none",
+     "stance_reason": "",
+     "url": "https://example.com/thehindu/pipeline"
+    },
+    {
+     "country": "DE",
+     "media": "Der Spiegel",
+     "media_type": "private",
+     "lang": "de",
+     "dir": "ltr",
+     "original": "Neue Gaspipeline nach Osten in Betrieb genommen",
+     "ja": "Neue Gaspipeline nach Osten in Betrieb genommen",
+     "stance": "none",
+     "stance_reason": "",
+     "url": "https://example.com/spiegel/pipeline"
+    }
+   ],
+   "articles": [
+    {
+     "article_id": "1ff93cd5",
+     "country": "RU",
+     "source": "TASS",
+     "media_type": "state",
+     "lang": "ru",
+     "dir": "ltr",
+     "title_original": "Запущен новый газопровод в восточном направлении",
+     "title_ja": "Запущен новый газопровод в восточном направлении",
+     "url": "https://example.com/tass/gaz",
+     "published_at": "2026-09-20T07:00:00Z"
+    },
+    {
+     "article_id": "2578a823",
+     "country": "CN",
+     "source": "Global Times",
+     "media_type": "state",
+     "lang": "zh",
+     "dir": "ltr",
+     "title_original": "东线天然气管道投入运营 合作深化",
+     "title_ja": "东线天然气管道投入运营 合作深化",
+     "url": "https://example.com/gt/pipeline",
+     "published_at": "2026-09-20T07:30:00Z"
+    },
+    {
+     "article_id": "646f6556",
+     "country": "IN",
+     "source": "The Hindu",
+     "media_type": "private",
+     "lang": "en",
+     "dir": "ltr",
+     "title_original": "New eastern gas pipeline begins operations",
+     "title_ja": "New eastern gas pipeline begins operations",
+     "url": "https://example.com/thehindu/pipeline",
+     "published_at": "2026-09-20T08:10:00Z"
+    },
+    {
+     "article_id": "16c4e094",
+     "country": "DE",
+     "source": "Der Spiegel",
+     "media_type": "private",
+     "lang": "de",
+     "dir": "ltr",
+     "title_original": "Neue Gaspipeline nach Osten in Betrieb genommen",
+     "title_ja": "Neue Gaspipeline nach Osten in Betrieb genommen",
+     "url": "https://example.com/spiegel/pipeline",
+     "published_at": "2026-09-20T08:45:00Z"
+    }
+   ]
+  },
+  {
+   "topic_id": "T004",
+   "title_ja": "반도체 수출 규제 완화 합의",
+   "countries": [
+    "KR",
+    "US",
+    "JP"
+   ],
+   "media_count": 3,
+   "score": 12,
+   "score_parts": {
+    "countries": 3,
+    "countries_weight": 3,
+    "media": 3
+   },
+   "jp_reported": true,
+   "jp_media_count": 1,
+   "silent_countries": [
+    "GB",
+    "FR",
+    "DE",
+    "RU",
+    "CN",
+    "IN",
+    "BR",
+    "SA",
+    "IL"
+   ],
+   "stance_counts": {
+    "support": 0,
+    "critical": 0,
+    "neutral": 0,
+    "none": 3
+   },
+   "tags": [],
+   "facts_ja": [],
+   "phrases": [
+    {
+     "country": "KR",
+     "media": "Yonhap News",
+     "media_type": "private",
+     "lang": "ko",
+     "dir": "ltr",
+     "original": "반도체 수출 규제 완화 합의",
+     "ja": "반도체 수출 규제 완화 합의",
+     "stance": "none",
+     "stance_reason": "",
+     "url": "https://example.com/yonhap/semi"
+    },
+    {
+     "country": "US",
+     "media": "Bloomberg",
+     "media_type": "private",
+     "lang": "en",
+     "dir": "ltr",
+     "original": "Chip export curbs eased in narrow deal",
+     "ja": "Chip export curbs eased in narrow deal",
+     "stance": "none",
+     "stance_reason": "",
+     "url": "https://example.com/bloomberg/chips"
+    },
+    {
+     "country": "JP",
+     "media": "日経新聞",
+     "media_type": "private",
+     "lang": "ja",
+     "dir": "ltr",
+     "original": "半導体規制、一部緩和で合意",
+     "ja": "半導体規制、一部緩和で合意",
+     "stance": "none",
+     "stance_reason": "",
+     "url": "https://example.com/nikkei/semi"
+    }
+   ],
+   "articles": [
+    {
+     "article_id": "41a22245",
+     "country": "KR",
+     "source": "Yonhap News",
+     "media_type": "private",
+     "lang": "ko",
+     "dir": "ltr",
+     "title_original": "반도체 수출 규제 완화 합의",
+     "title_ja": "반도체 수출 규제 완화 합의",
+     "url": "https://example.com/yonhap/semi",
+     "published_at": "2026-09-20T12:00:00Z"
+    },
+    {
+     "article_id": "551be296",
+     "country": "US",
+     "source": "Bloomberg",
+     "media_type": "private",
+     "lang": "en",
+     "dir": "ltr",
+     "title_original": "Chip export curbs eased in narrow deal",
+     "title_ja": "Chip export curbs eased in narrow deal",
+     "url": "https://example.com/bloomberg/chips",
+     "published_at": "2026-09-20T12:20:00Z"
+    },
+    {
+     "article_id": "f145f166",
+     "country": "JP",
+     "source": "日経新聞",
+     "media_type": "private",
+     "lang": "ja",
+     "dir": "ltr",
+     "title_original": "半導体規制、一部緩和で合意",
+     "title_ja": "半導体規制、一部緩和で合意",
+     "url": "https://example.com/nikkei/semi",
+     "published_at": "2026-09-20T12:50:00Z"
+    }
+   ]
+  },
+  {
+   "topic_id": "T005",
+   "title_ja": "Recorde de desmatamento evitado na Amazônia",
+   "countries": [
+    "BR",
+    "GB"
+   ],
+   "media_count": 2,
+   "score": 8,
+   "score_parts": {
+    "countries": 2,
+    "countries_weight": 3,
+    "media": 2
+   },
+   "jp_reported": false,
+   "jp_media_count": 0,
+   "silent_countries": [
+    "JP",
+    "US",
+    "FR",
+    "DE",
+    "RU",
+    "CN",
+    "KR",
+    "IN",
+    "SA",
+    "IL"
+   ],
+   "stance_counts": {
+    "support": 0,
+    "critical": 0,
+    "neutral": 0,
+    "none": 2
+   },
+   "tags": [],
+   "facts_ja": [],
+   "phrases": [
+    {
+     "country": "BR",
+     "media": "Folha de S.Paulo",
+     "media_type": "private",
+     "lang": "pt",
+     "dir": "ltr",
+     "original": "Recorde de desmatamento evitado na Amazônia",
+     "ja": "Recorde de desmatamento evitado na Amazônia",
+     "stance": "none",
+     "stance_reason": "",
+     "url": "https://example.com/folha/amazonia"
+    },
+    {
+     "country": "GB",
+     "media": "The Guardian",
+     "media_type": "private",
+     "lang": "en",
+     "dir": "ltr",
+     "original": "Amazon deforestation falls to record low",
+     "ja": "Amazon deforestation falls to record low",
+     "stance": "none",
+     "stance_reason": "",
+     "url": "https://example.com/guardian/amazon"
+    }
+   ],
+   "articles": [
+    {
+     "article_id": "2ae27ee2",
+     "country": "BR",
+     "source": "Folha de S.Paulo",
+     "media_type": "private",
+     "lang": "pt",
+     "dir": "ltr",
+     "title_original": "Recorde de desmatamento evitado na Amazônia",
+     "title_ja": "Recorde de desmatamento evitado na Amazônia",
+     "url": "https://example.com/folha/amazonia",
+     "published_at": "2026-09-20T13:00:00Z"
+    },
+    {
+     "article_id": "516435f4",
+     "country": "GB",
+     "source": "The Guardian",
+     "media_type": "private",
+     "lang": "en",
+     "dir": "ltr",
+     "title_original": "Amazon deforestation falls to record low",
+     "title_ja": "Amazon deforestation falls to record low",
+     "url": "https://example.com/guardian/amazon",
+     "published_at": "2026-09-20T13:30:00Z"
+    }
+   ]
+  }
+ ]
+}

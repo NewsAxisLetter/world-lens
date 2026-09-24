@@ -1,0 +1,71 @@
+{
+  "schema_version": 3,
+  "date": "2026-09-17",
+  "generated_at": "2026-09-17T00:30:00Z",
+  "status": "stale",
+  "feeds": [
+    {
+      "feed_id": "xx-wire",
+      "source": "Wire",
+      "rss_url": "https://example.invalid/rss",
+      "articles": 3,
+      "latest_published_at": "2026-09-16T10:00:00Z",
+      "stale_days": 0.6,
+      "threshold_days": 7,
+      "status": "ok",
+      "note": "最新記事は0.6日前です"
+    }
+  ],
+  "articles": [
+    {
+      "article_id": "0a0a0a0a",
+      "feed_id": "xx-wire",
+      "source": "Wire",
+      "country": "XX",
+      "media_type": "indep",
+      "lang": "en",
+      "title_original": "Parliament passes emergency budget after all-night session",
+      "url": "https://example.invalid/news/1",
+      "published_at": "2026-09-16T10:00:00Z",
+      "fetched_at": "2026-09-17T00:29:58Z",
+      "rank_in_feed": 1
+    },
+    {
+      "feed_id": "xx-wire",
+      "source": "Wire",
+      "country": "XX",
+      "media_type": "indep",
+      "lang": "en",
+      "title_original": "article_id が欠けている記事（url から作り直せることの確認用）",
+      "url": "https://example.invalid/news/2",
+      "published_at": "2026-09-16T09:00:00Z",
+      "fetched_at": "2026-09-17T00:29:58Z",
+      "rank_in_feed": 2
+    },
+    {
+      "article_id": "0c0c0c0c",
+      "feed_id": "xx-wire",
+      "source": "Wire",
+      "country": "XX",
+      "media_type": "indep",
+      "lang": "en",
+      "title_original": "url が無いので C4 により捨てられる記事",
+      "published_at": "2026-09-16T08:00:00Z",
+      "fetched_at": "2026-09-17T00:29:58Z",
+      "rank_in_feed": 3
+    },
+    {
+      "article_id": "0d0d0d0d",
+      "feed_id": "xx-wire",
+      "source": "Wire",
+      "country": "XX",
+      "media_type": "indep",
+      "lang": "en",
+      "title_original": "url が重複している記事（1件目と同じURL・冪等の確認用）",
+      "url": "https://example.invalid/news/1",
+      "published_at": "2026-09-16T07:00:00Z",
+      "fetched_at": "2026-09-17T00:29:58Z",
+      "rank_in_feed": 4
+    }
+  ]
+}

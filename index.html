@@ -1,0 +1,1396 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>世界の視点 / World Lens ── 各国報道の共通話題と立場の差</title>
+<meta name="description" content="各国の公式RSSと政府発表から毎日収集し、多くの国が共通して取り上げた話題と、国ごとの立場の差を並置して表示する非営利サイト（モックアップ）">
+<style>
+/* ============================================================
+   世界の視点 / World Lens ── UIモックアップ
+   外部依存ゼロ（CDN/外部フォント/画像なし）
+   設計書 `実現方式と考慮漏れ指摘.md` §2 法務制約 / §3-1 スコア定義 /
+   §6-C 論評しない / §6-D 媒体属性 / §6-E 言及なしの明示 に準拠
+   ============================================================ */
+:root{
+  --bg:#f2f3f6;
+  --panel:#ffffff;
+  --ink:#23272e;
+  --ink-2:#4a5260;
+  --ink-3:#727a87;
+  --line:#dce0e7;
+  --line-2:#eaecf1;
+  --accent:#2b3a80;
+  --accent-2:#3d4f9e;
+  --accent-soft:#eef0fa;
+  --warn:#9e322b;
+  --warn-soft:#fbeeec;
+  --warn-line:#e3c4c0;
+  --st-sup:#39704f;
+  --st-crit:#9e322b;
+  --st-neu:#5b6472;
+  --st-none:#b8bec9;
+  --mt-state:#8a4522;
+  --mt-public:#245f79;
+  --mt-private:#414b5a;
+  --mt-indep:#6a437c;
+  --serif:"Hiragino Mincho ProN","Yu Mincho","YuMincho","Noto Serif JP","Times New Roman",serif;
+  --sans:system-ui,-apple-system,"Hiragino Kaku Gothic ProN","Noto Sans JP","Meiryo","Yu Gothic",sans-serif;
+  --shadow:0 1px 2px rgba(30,35,45,.06);
+}
+*{box-sizing:border-box}
+html,body{margin:0;padding:0}
+body{
+  background:var(--bg);
+  color:var(--ink);
+  font-family:var(--sans);
+  font-size:14px;
+  line-height:1.7;
+  -webkit-text-size-adjust:100%;
+}
+a{color:var(--accent);text-decoration:none}
+a:hover{text-decoration:underline}
+button{font-family:inherit;font-size:inherit;color:inherit;cursor:pointer}
+h1,h2,h3,h4{margin:0;font-weight:600;line-height:1.4}
+.wrap{max-width:1280px;margin:0 auto;padding:0 20px}
+.serif{font-family:var(--serif)}
+
+/* ---------- ヘッダー ---------- */
+.site-header{
+  background:var(--panel);
+  border-bottom:2px solid var(--accent);
+  padding:16px 0 14px;
+}
+.hdr-grid{display:flex;gap:20px;align-items:flex-start;justify-content:space-between;flex-wrap:wrap}
+.brand-title{
+  font-family:var(--serif);
+  font-size:27px;
+  letter-spacing:.04em;
+  display:flex;align-items:baseline;gap:10px;flex-wrap:wrap;
+}
+.brand-title .en{
+  font-family:var(--sans);
+  font-size:12px;letter-spacing:.22em;color:var(--ink-3);
+  border-left:1px solid var(--line);padding-left:10px;text-transform:uppercase;
+}
+.brand-sub{margin-top:4px;color:var(--ink-2);font-size:13px}
+.badges{display:flex;gap:6px;flex-wrap:wrap;margin-top:10px}
+.badge{
+  display:inline-flex;align-items:center;gap:5px;
+  border:1px solid var(--line);border-radius:2px;
+  padding:3px 8px;font-size:11px;line-height:1.5;color:var(--ink-2);
+  background:#fafbfc;white-space:nowrap;
+}
+.badge.b-mt{border-color:#cfd6e4;background:var(--accent-soft);color:var(--accent)}
+.badge.b-warn{border-color:var(--warn-line);background:var(--warn-soft);color:var(--warn)}
+.hdr-right{text-align:right;min-width:210px;border-left:1px solid var(--line-2);padding-left:18px}
+.hdr-right .label{font-size:11px;color:var(--ink-3);letter-spacing:.08em}
+.hdr-date{font-family:var(--serif);font-size:20px;margin-top:2px}
+.hdr-updated{font-size:11px;color:var(--ink-3);margin-top:6px;font-variant-numeric:tabular-nums}
+.hdr-updated b{color:var(--ink-2);font-weight:600}
+
+/* ---------- 汎用パネル ---------- */
+.panel{
+  background:var(--panel);border:1px solid var(--line);border-radius:3px;
+  box-shadow:var(--shadow);margin-top:18px;
+}
+.panel-head{
+  display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap;
+  padding:11px 16px;border-bottom:1px solid var(--line-2);background:#fbfbfd;
+}
+.panel-head h2{font-family:var(--serif);font-size:16px;letter-spacing:.02em}
+.panel-head .hint{font-size:11px;color:var(--ink-3)}
+.panel-body{padding:16px}
+.section-note{font-size:11.5px;color:var(--ink-3);margin-top:8px;line-height:1.65}
+
+/* ---------- フィルタ ---------- */
+.filters{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px 22px}
+.filter-block{min-width:0}
+.filter-label{
+  font-size:11px;letter-spacing:.1em;color:var(--ink-3);
+  display:flex;align-items:center;gap:8px;margin-bottom:6px;
+}
+.filter-label .reset{
+  border:1px solid var(--line);background:#fff;border-radius:2px;
+  font-size:10px;padding:1px 6px;color:var(--ink-3);
+}
+.chips{display:flex;gap:5px;flex-wrap:wrap}
+.chip{
+  border:1px solid var(--line);background:#fff;border-radius:2px;
+  padding:3px 8px;font-size:12px;color:var(--ink-2);
+  display:inline-flex;align-items:center;gap:4px;
+}
+.chip:hover{border-color:var(--accent-2);color:var(--accent)}
+.chip[aria-pressed="true"]{background:var(--accent);border-color:var(--accent);color:#fff}
+.chip.mt[aria-pressed="true"]{background:var(--ink);border-color:var(--ink)}
+.sort-group{display:flex;gap:0;border:1px solid var(--line);border-radius:2px;overflow:hidden;flex-wrap:wrap}
+.sort-group button{
+  background:#fff;border:0;border-right:1px solid var(--line);
+  padding:5px 11px;font-size:12px;color:var(--ink-2);
+}
+.sort-group button:last-child{border-right:0}
+.sort-group button[aria-pressed="true"]{background:var(--accent-soft);color:var(--accent);font-weight:600}
+.mt-caution{
+  margin-top:8px;border:1px solid var(--warn-line);background:var(--warn-soft);
+  color:#7d2a24;font-size:11.5px;padding:7px 10px;border-radius:2px;line-height:1.6;
+}
+.filter-status{
+  margin-top:12px;border-top:1px dashed var(--line);padding-top:9px;
+  font-size:11.5px;color:var(--ink-3);
+}
+
+/* ---------- カレンダー ---------- */
+.cal-nav{display:flex;align-items:center;gap:8px}
+.cal-nav button{
+  border:1px solid var(--line);background:#fff;border-radius:2px;
+  width:28px;height:26px;line-height:1;color:var(--ink-2);
+}
+.cal-nav button:disabled{opacity:.35;cursor:not-allowed}
+.cal-nav .ym{font-family:var(--serif);font-size:15px;min-width:118px;text-align:center}
+.cal-grid{display:grid;grid-template-columns:repeat(7,1fr);gap:4px}
+.cal-dow{
+  text-align:center;font-size:11px;color:var(--ink-3);padding-bottom:2px;letter-spacing:.06em;
+}
+.cal-dow.sat{color:#3f6d92}.cal-dow.sun{color:#9a4a48}
+.cal-cell{
+  position:relative;min-height:62px;border:1px solid var(--line-2);border-radius:2px;
+  background:#fff;padding:5px 6px;text-align:left;display:flex;flex-direction:column;
+  gap:2px;color:var(--ink);
+}
+.cal-cell .d{font-size:13px;font-variant-numeric:tabular-nums;line-height:1.2}
+.cal-cell.empty{border:0;background:transparent}
+.cal-cell.has{cursor:pointer}
+.cal-cell.has:hover{border-color:var(--accent-2);background:var(--accent-soft)}
+.cal-cell.nodata{background:#f7f8fa;color:var(--ink-3);cursor:not-allowed}
+.cal-cell.nodata .nd{font-size:16px;color:#b6bcc6;margin-top:auto;text-align:center;line-height:1}
+.cal-cell.future{background:repeating-linear-gradient(45deg,#fafbfc,#fafbfc 5px,#f4f5f8 5px,#f4f5f8 10px);color:#b6bcc6;cursor:not-allowed}
+.cal-cell.selected{border:2px solid var(--accent);background:var(--accent-soft);padding:4px 5px}
+.cal-cell.selected .d{font-weight:700;color:var(--accent)}
+.cnt{
+  margin-top:auto;font-size:10px;color:var(--ink-3);
+  background:#f1f3f7;border-radius:2px;padding:0 4px;align-self:flex-start;
+  font-variant-numeric:tabular-nums;
+}
+.cal-cell.selected .cnt{background:#fff;color:var(--accent)}
+.warnflag{
+  font-size:9.5px;color:var(--warn);background:var(--warn-soft);
+  border:1px solid var(--warn-line);border-radius:2px;padding:0 3px;align-self:flex-start;
+}
+.cal-legend{display:flex;gap:14px;flex-wrap:wrap;margin-top:12px;font-size:11px;color:var(--ink-3)}
+.cal-legend span{display:inline-flex;align-items:center;gap:5px}
+.lg-box{width:12px;height:12px;border:1px solid var(--line);border-radius:2px;display:inline-block}
+.lg-box.has{background:#fff}
+.lg-box.nodata{background:#f7f8fa}
+.lg-box.sel{border:2px solid var(--accent);background:var(--accent-soft)}
+.lg-box.fut{background:repeating-linear-gradient(45deg,#fafbfc,#fafbfc 4px,#f4f5f8 4px,#f4f5f8 8px)}
+.day-warning{
+  margin-top:12px;border:1px solid var(--warn-line);background:var(--warn-soft);
+  border-radius:2px;padding:9px 11px;font-size:12px;color:#7d2a24;line-height:1.65;
+}
+.day-warning b{font-weight:700}
+
+/* ---------- サマリーバー ---------- */
+.summary{
+  display:grid;grid-template-columns:repeat(5,minmax(0,1fr));
+  background:var(--panel);border:1px solid var(--line);border-radius:3px;
+  box-shadow:var(--shadow);margin-top:18px;overflow:hidden;
+}
+.sm-cell{padding:12px 14px;border-right:1px solid var(--line-2);min-width:0}
+.sm-cell:last-child{border-right:0}
+.sm-cell .k{font-size:11px;color:var(--ink-3);letter-spacing:.04em;display:block}
+.sm-cell .v{font-family:var(--serif);font-size:26px;line-height:1.25;font-variant-numeric:tabular-nums}
+.sm-cell .v small{font-family:var(--sans);font-size:11px;color:var(--ink-3);margin-left:3px}
+.sm-cell.hl{background:var(--warn-soft);border-left:3px solid var(--warn)}
+.sm-cell.hl .k{color:#7d2a24}
+.sm-cell.hl .v{color:var(--warn);font-weight:700}
+
+/* ---------- メイン2カラム ---------- */
+.main-grid{display:grid;grid-template-columns:1fr 1fr;gap:18px;margin-top:18px;align-items:start}
+.col-panel{background:var(--panel);border:1px solid var(--line);border-radius:3px;box-shadow:var(--shadow);display:flex;flex-direction:column;min-width:0}
+.col-head{padding:11px 14px;border-bottom:1px solid var(--line-2);background:#fbfbfd}
+.col-head h2{font-family:var(--serif);font-size:16px;display:flex;align-items:center;gap:8px;flex-wrap:wrap}
+.col-head .sub{font-size:11px;color:var(--ink-3);margin-top:3px;line-height:1.6}
+.col-head .formula{
+  font-size:10.5px;color:var(--ink-3);margin-top:5px;font-variant-numeric:tabular-nums;
+  background:#f6f7fa;border:1px solid var(--line-2);border-radius:2px;padding:3px 6px;display:inline-block;
+}
+.col-left .col-head{border-top:3px solid var(--accent)}
+.col-right .col-head{border-top:3px solid #7a8296}
+.topic-list{max-height:760px;overflow-y:auto;padding:10px 12px;display:flex;flex-direction:column;gap:9px}
+.more-row{padding:10px 14px;border-top:1px solid var(--line-2);text-align:center}
+.more-btn{
+  border:1px solid var(--line);background:#fff;border-radius:2px;
+  padding:6px 16px;font-size:12px;color:var(--accent);
+}
+.more-btn:hover{background:var(--accent-soft)}
+.empty-list{padding:26px 14px;text-align:center;color:var(--ink-3);font-size:12.5px}
+
+/* ---------- 話題カード ---------- */
+.tcard{
+  border:1px solid var(--line);border-radius:3px;background:#fff;
+  padding:10px 11px 9px;display:grid;grid-template-columns:34px 1fr;gap:0 11px;
+  text-align:left;color:inherit;width:100%;position:relative;
+}
+.tcard:hover{border-color:var(--accent-2);box-shadow:0 0 0 2px var(--accent-soft)}
+.tcard.linked{border-color:var(--accent);box-shadow:0 0 0 2px #dfe4f7;background:#fcfdff}
+.tcard.jp-missing{border-left:3px solid var(--warn)}
+.tcard .rank{
+  font-family:var(--serif);font-size:23px;line-height:1;color:var(--ink-3);
+  text-align:right;padding-top:2px;font-variant-numeric:tabular-nums;
+}
+.tcard.jp-missing .rank{color:var(--warn)}
+.tcard .body{min-width:0}
+.tcard h3{font-size:14.5px;line-height:1.5;letter-spacing:.01em}
+.tc-top{display:flex;gap:6px;align-items:center;flex-wrap:wrap;margin-bottom:4px}
+.idchip{
+  font-size:10px;font-family:var(--sans);letter-spacing:.06em;
+  border:1px solid currentColor;border-radius:2px;padding:0 5px;
+  background:#fff;white-space:nowrap;
+}
+.b-jpnone{
+  font-size:10.5px;background:var(--warn);color:#fff;border-radius:2px;
+  padding:1px 6px;white-space:nowrap;font-weight:600;
+}
+.b-jponly{
+  font-size:10.5px;background:#eef2f7;color:#3f5771;border:1px solid #cfd9e5;
+  border-radius:2px;padding:0 5px;white-space:nowrap;
+}
+.score-row{
+  margin-top:6px;font-size:10.5px;color:var(--ink-3);
+  font-variant-numeric:tabular-nums;display:flex;gap:5px;align-items:baseline;flex-wrap:wrap;
+}
+.score-row .eq{color:var(--ink-2)}
+.score-row .tot{font-family:var(--serif);font-size:14px;color:var(--accent);font-weight:600}
+.score-bar{display:flex;height:6px;border-radius:2px;overflow:hidden;margin-top:4px;background:#f0f2f6}
+.sb-c{background:var(--accent)}
+.sb-m{background:#7f8cbf}
+.flags{margin-top:6px;font-size:15px;line-height:1.5;letter-spacing:.02em;word-break:break-all}
+.flags .jp-off{
+  font-size:13px;position:relative;display:inline-block;filter:grayscale(1);opacity:.55;
+  margin-left:3px;
+}
+.flags .jp-off::after{
+  content:"";position:absolute;left:-1px;right:-1px;top:48%;height:1.5px;background:var(--warn);
+  transform:rotate(-14deg);
+}
+.flags .more-c{font-size:10.5px;color:var(--ink-3);font-family:var(--sans);margin-left:3px}
+.stance-mini{display:flex;height:7px;border-radius:2px;overflow:hidden;margin-top:7px;background:#f0f2f6}
+.stance-mini i{display:block;height:100%}
+.st-sup{background:var(--st-sup)}.st-crit{background:var(--st-crit)}
+.st-neu{background:var(--st-neu)}.st-none{background:var(--st-none)}
+.stance-legend{display:flex;gap:9px;flex-wrap:wrap;margin-top:4px;font-size:10px;color:var(--ink-3);font-variant-numeric:tabular-nums}
+.stance-legend span{display:inline-flex;align-items:center;gap:3px}
+.dot{width:8px;height:8px;border-radius:1px;display:inline-block}
+.tags{display:flex;gap:4px;flex-wrap:wrap;margin-top:7px}
+.tag{font-size:10.5px;color:var(--accent);background:var(--accent-soft);border:1px solid #d8dcef;border-radius:2px;padding:0 6px}
+.tcard .opencue{position:absolute;right:9px;bottom:8px;font-size:10px;color:var(--ink-3)}
+
+/* ---------- 日本が報じていない話題 セクション ---------- */
+.jpnone-panel{border-top:3px solid var(--warn)}
+.jpnone-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(268px,1fr));gap:12px}
+.jn-card{
+  border:1px solid var(--warn-line);border-left:3px solid var(--warn);border-radius:3px;
+  background:#fffdfd;padding:11px 12px;text-align:left;color:inherit;
+}
+.jn-card:hover{box-shadow:0 0 0 2px var(--warn-soft)}
+.jn-card h3{font-size:14px;line-height:1.5;margin-top:5px}
+.jn-meta{margin-top:7px;font-size:11px;color:var(--ink-2);line-height:1.7}
+.jn-meta .num{font-variant-numeric:tabular-nums;font-weight:600}
+.jn-flags{margin-top:6px;font-size:14px;word-break:break-all}
+.jn-note{font-size:10.5px;color:var(--ink-3);margin-top:7px;border-top:1px dashed var(--warn-line);padding-top:6px}
+
+/* ---------- モーダル ---------- */
+.overlay{
+  position:fixed;inset:0;background:rgba(28,32,40,.55);z-index:50;
+  display:none;padding:24px 16px;overflow:hidden;
+}
+.overlay.open{display:flex;align-items:flex-start;justify-content:center}
+.modal{
+  width:100%;max-width:1020px;background:var(--panel);border-radius:3px;
+  border:1px solid #c9cedb;box-shadow:0 12px 40px rgba(20,24,32,.28);
+  max-height:100%;display:flex;flex-direction:column;overflow:hidden;
+}
+.modal-head{
+  flex:0 0 auto;background:var(--panel);border-bottom:1px solid var(--line);
+  padding:14px 18px 12px;border-top:3px solid var(--accent);border-radius:3px 3px 0 0;
+}
+.modal-head.jp-missing{border-top-color:var(--warn)}
+.modal-head h2{font-family:var(--serif);font-size:21px;line-height:1.45;padding-right:40px}
+.modal-close{
+  position:absolute;top:12px;right:12px;border:1px solid var(--line);background:#fff;
+  border-radius:2px;width:30px;height:28px;line-height:1;font-size:15px;color:var(--ink-2);
+}
+.modal-close:hover{background:var(--accent-soft);color:var(--accent)}
+.modal-body{padding:0 18px 20px;flex:1 1 auto;overflow-y:auto;-webkit-overflow-scrolling:touch}
+.msec{border-top:1px solid var(--line-2);padding:15px 0 3px}
+.msec:first-child{border-top:0}
+.msec-h{display:flex;align-items:center;gap:9px;flex-wrap:wrap;margin-bottom:9px}
+.msec-h h3{font-family:var(--serif);font-size:15.5px;letter-spacing:.02em}
+.msec-h .kicker{
+  font-size:10px;letter-spacing:.1em;color:#fff;background:var(--accent);
+  border-radius:2px;padding:1px 6px;font-family:var(--sans);
+}
+.msec-h .kicker.gray{background:#8a919e}
+.msec-h .kicker.warn{background:var(--warn)}
+.msec-note{font-size:11.5px;color:var(--ink-3);line-height:1.7;margin-bottom:9px}
+.score-detail{
+  display:flex;gap:8px;flex-wrap:wrap;align-items:center;
+  background:#f7f8fb;border:1px solid var(--line-2);border-radius:2px;
+  padding:8px 10px;font-size:12px;font-variant-numeric:tabular-nums;margin-top:9px;
+}
+.score-detail .piece{background:#fff;border:1px solid var(--line);border-radius:2px;padding:1px 7px}
+.score-detail .tot{font-family:var(--serif);font-size:18px;color:var(--accent);font-weight:600}
+.facts{margin:0;padding-left:0;list-style:none}
+.facts li{
+  position:relative;padding:5px 0 5px 20px;font-size:13.5px;line-height:1.75;
+  border-bottom:1px dotted var(--line);
+}
+.facts li:last-child{border-bottom:0}
+.facts li::before{
+  content:"";position:absolute;left:4px;top:14px;width:6px;height:6px;
+  background:var(--accent);border-radius:1px;
+}
+.facts li .src{font-size:11px;color:var(--ink-3);margin-left:5px}
+
+/* ---------- (c) 原語並置表 ---------- */
+.tbl-scroll{overflow-x:auto;border:1px solid var(--line);border-radius:2px}
+table.phrase{border-collapse:collapse;width:100%;min-width:760px;background:#fff}
+table.phrase th{
+  background:#f5f6fa;font-size:11px;letter-spacing:.06em;color:var(--ink-2);font-weight:600;
+  text-align:left;padding:7px 10px;border-bottom:1px solid var(--line);white-space:nowrap;
+}
+table.phrase td{padding:9px 10px;border-bottom:1px solid var(--line-2);vertical-align:top;font-size:12.5px}
+table.phrase tr:last-child td{border-bottom:0}
+table.phrase tr:hover td{background:#fafbfd}
+.c-country{white-space:nowrap;font-size:12px}
+.c-country .fl{font-size:16px;margin-right:4px}
+.c-media{min-width:132px}
+.c-media .nm{font-size:12.5px}
+.orig{
+  font-size:17px;line-height:1.55;font-family:var(--serif);color:var(--ink);
+  display:block;word-break:break-word;
+}
+.orig.rtl{direction:rtl;text-align:right;font-family:var(--sans)}
+.orig-tr{display:block;font-size:11.5px;color:var(--ink-3);margin-top:2px}
+.c-trans{font-size:12.5px;color:var(--ink-2);min-width:110px}
+.c-link a{font-size:11.5px;white-space:nowrap}
+.mt-badge{
+  font-size:10px;border-radius:2px;padding:0 5px;color:#fff;white-space:nowrap;
+  display:inline-block;margin-top:3px;
+}
+.mt-state{background:var(--mt-state)}
+.mt-public{background:var(--mt-public)}
+.mt-private{background:var(--mt-private)}
+.mt-indep{background:var(--mt-indep)}
+.mt-gov{background:#3a6b4f}
+.st-label{
+  font-size:11px;border-radius:2px;padding:1px 7px;white-space:nowrap;display:inline-block;
+  border:1px solid;
+}
+.stl-sup{color:var(--st-sup);border-color:#b9d3c2;background:#eff6f1}
+.stl-crit{color:var(--st-crit);border-color:var(--warn-line);background:var(--warn-soft)}
+.stl-neu{color:var(--st-neu);border-color:#ccd2da;background:#f4f6f8}
+.stl-none{color:#79808c;border-color:#dfe2e8;background:#f7f8fa}
+.rtl-note{font-size:10.5px;color:var(--ink-3);margin-top:6px}
+
+/* ---------- (d) 言及なしの国 ---------- */
+.silence{
+  border:1px solid var(--line);border-left:3px solid var(--st-none);
+  background:#fafbfc;border-radius:2px;padding:11px 12px;
+}
+.silence .cchips{display:flex;gap:6px;flex-wrap:wrap;margin-bottom:8px}
+.cchip-off{
+  border:1px dashed #ccd1da;background:#f1f2f5;color:#7b828e;border-radius:2px;
+  padding:2px 8px;font-size:12px;white-space:nowrap;
+}
+.cchip-off .fl{filter:grayscale(1);opacity:.75;margin-right:3px}
+.cchip-off.jp{border-color:var(--warn-line);background:var(--warn-soft);color:#8c3730;border-style:solid}
+.silence-note{font-size:11.5px;color:var(--ink-2);line-height:1.75;border-top:1px dashed var(--line);padding-top:7px}
+.silence-note b{color:var(--warn)}
+
+/* ---------- (e) 政府発表 ---------- */
+.gov-list{display:flex;flex-direction:column;gap:9px}
+.gov-item{border:1px solid #cddcd3;background:#f8fbf9;border-radius:2px;padding:10px 12px}
+.gov-top{display:flex;gap:7px;align-items:center;flex-wrap:wrap;font-size:12px}
+.gov-org{font-weight:600}
+.gov-title{font-family:var(--serif);font-size:14px;margin-top:5px;line-height:1.55}
+.gov-title .oline{display:block;font-family:var(--sans);font-size:11.5px;color:var(--ink-3);margin-top:2px}
+.gov-sum{font-size:12.5px;color:var(--ink-2);margin-top:5px;line-height:1.75}
+.gov-foot{display:flex;gap:10px;flex-wrap:wrap;margin-top:6px;font-size:11px;color:var(--ink-3)}
+
+/* ---------- (f) 全記事リスト ---------- */
+.arts{display:flex;flex-direction:column;border:1px solid var(--line);border-radius:2px;overflow:hidden}
+.art-row{
+  display:grid;grid-template-columns:150px 1fr 122px;gap:0 12px;
+  padding:10px 12px;border-bottom:1px solid var(--line-2);background:#fff;
+}
+.art-row:last-child{border-bottom:0}
+.art-row:nth-child(even){background:#fcfcfd}
+.art-src{font-size:12px;min-width:0}
+.art-src .nm{display:block;line-height:1.5}
+.art-mid{min-width:0}
+.art-orig{font-family:var(--serif);font-size:14px;line-height:1.55;word-break:break-word}
+.art-orig.rtl{direction:rtl;text-align:right;font-family:var(--sans)}
+.art-ja{font-size:12.5px;color:var(--accent);margin-top:2px;line-height:1.6}
+.art-sum{font-size:12px;color:var(--ink-2);margin-top:4px;line-height:1.75}
+.art-sum .len{font-size:10px;color:var(--ink-3);margin-left:4px}
+.art-right{text-align:right;font-size:11px;color:var(--ink-3);font-variant-numeric:tabular-nums;white-space:nowrap}
+.art-right a{display:inline-block;margin-top:5px;font-size:11.5px}
+.arts-note{font-size:11px;color:var(--ink-3);margin-top:7px;line-height:1.7}
+
+/* ---------- フッター ---------- */
+.site-footer{
+  margin-top:26px;border-top:2px solid var(--accent);background:#fff;
+  padding:20px 0 30px;font-size:12px;color:var(--ink-2);
+}
+.ft-grid{display:grid;grid-template-columns:1.5fr 1fr;gap:20px 28px}
+.ft-h{font-family:var(--serif);font-size:14px;color:var(--ink);margin-bottom:7px}
+.ft-list{margin:0;padding-left:18px;line-height:1.9}
+.ft-list li{margin-bottom:2px}
+.ft-box{border:1px solid var(--line);border-radius:2px;padding:10px 12px;background:#fbfbfd;margin-bottom:10px}
+.ft-box .mail{font-family:var(--serif);font-size:14px}
+.ft-links{display:flex;gap:12px;flex-wrap:wrap;margin-top:6px;font-size:12px}
+.ft-bottom{margin-top:16px;border-top:1px solid var(--line-2);padding-top:10px;font-size:11px;color:var(--ink-3);display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap}
+.mocknote{
+  background:#fff8e6;border:1px solid #e6d5a8;color:#6f5а21;color:#6f5a21;
+  border-radius:2px;padding:8px 11px;font-size:11.5px;margin-top:14px;line-height:1.7;
+}
+
+/* ---------- レスポンシブ ---------- */
+@media (max-width:1080px){
+  .summary{grid-template-columns:repeat(3,minmax(0,1fr))}
+  .sm-cell:nth-child(3){border-right:0}
+  .art-row{grid-template-columns:130px 1fr 108px}
+}
+@media (max-width:768px){
+  .wrap{padding:0 12px}
+  body{font-size:13.5px}
+  .hdr-grid{flex-direction:column;gap:10px}
+  .hdr-right{text-align:left;border-left:0;padding-left:0;border-top:1px solid var(--line-2);padding-top:8px;width:100%}
+  .brand-title{font-size:22px}
+  .filters{grid-template-columns:1fr;gap:12px}
+  .summary{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .sm-cell{border-right:1px solid var(--line-2);border-bottom:1px solid var(--line-2)}
+  .sm-cell:nth-child(2n){border-right:0}
+  .sm-cell:last-child{grid-column:1 / -1;border-bottom:0}
+  .sm-cell .v{font-size:22px}
+  .main-grid{grid-template-columns:1fr}
+  .topic-list{max-height:none}
+  .cal-cell{min-height:52px;padding:4px}
+  .cal-cell .d{font-size:12px}
+  .cnt{font-size:9px}
+  .warnflag{font-size:8.5px}
+  .modal-head h2{font-size:18px}
+  .overlay{padding:10px 8px}
+  .modal-body{padding:0 12px 16px}
+  .art-row{grid-template-columns:1fr;gap:6px}
+  .art-right{text-align:left}
+  .ft-grid{grid-template-columns:1fr}
+  .jpnone-grid{grid-template-columns:1fr}
+}
+@media (max-width:420px){
+  .cal-grid{gap:2px}
+  .cal-cell{min-height:46px}
+}
+</style>
+</head>
+<body>
+
+<!-- ============ 1. ヘッダー ============ -->
+<header class="site-header">
+  <div class="wrap hdr-grid">
+    <div>
+      <h1 class="brand-title"><span>世界の視点</span><span class="en">World Lens</span></h1>
+      <p class="brand-sub">各国の公式RSSと政府発表を毎日収集し、<b>多くの国が共通して取り上げた話題</b>と<b>国ごとの立場の差</b>を並べて見せる非営利アーカイブ。</p>
+      <div class="badges">
+        <span class="badge b-mt">🌐 機械翻訳を含みます</span>
+        <span class="badge">📊 当サイト独自の集計指標</span>
+        <span class="badge">🕊 非営利・広告なし</span>
+      </div>
+    </div>
+    <div class="hdr-right">
+      <span class="label">表示中の日付</span>
+      <div class="hdr-date" id="hdrDate">2026年9月10日(木)</div>
+      <div class="hdr-updated">データ最終更新 <b id="hdrUpdated">2026-09-10 21:14 JST</b><br>
+        日付はUTCで正規化・表示はJST統一</div>
+    </div>
+  </div>
+</header>
+
+<main class="wrap">
+
+  <!-- 読み込み失敗の明示（file:// 直開き等。白画面にしない） -->
+  <div id="loadError"></div>
+  <!-- 契約§5-8：degraded:true のとき「AI処理が適用されていません」を画面上部に明示 -->
+  <div id="degradedBanner"></div>
+
+  <!-- ============ 7. フィルタ・操作系 ============ -->
+  <section class="panel" aria-label="絞り込みと並び替え">
+    <div class="panel-head">
+      <h2>絞り込み / 並び替え</h2>
+      <span class="hint">絞り込みは左右両カラムと下部セクションに同時に適用されます</span>
+    </div>
+    <div class="panel-body">
+      <div class="filters">
+        <div class="filter-block">
+          <div class="filter-label">国で絞り込む<button class="reset" data-reset="country">解除</button></div>
+          <div class="chips" id="fCountry"></div>
+        </div>
+        <div class="filter-block">
+          <div class="filter-label">タグで絞り込む<button class="reset" data-reset="tag">解除</button></div>
+          <div class="chips" id="fTag"></div>
+        </div>
+        <div class="filter-block">
+          <div class="filter-label">媒体属性で絞り込む<button class="reset" data-reset="mt">解除</button></div>
+          <div class="chips" id="fMedia"></div>
+          <p class="mt-caution">⚠ 国営メディアの主張をそのまま掲載しています。<b>媒体属性ラベルを必ずご確認ください。</b>本サイトは各媒体の主張の当否を判断していません。</p>
+        </div>
+        <div class="filter-block">
+          <div class="filter-label">並び替え（当サイト独自指標）</div>
+          <div class="sort-group" id="fSort">
+            <button data-sort="countries" aria-pressed="true">報道国数順</button>
+            <button data-sort="media" aria-pressed="false">媒体数順</button>
+          </div>
+          <p class="section-note">スコア式：<b>報道した国の数 × 3 ＋ 掲載媒体の数 × 1</b>。媒体のアクセス数順位ではありません。</p>
+        </div>
+      </div>
+      <div class="filter-status" id="filterStatus">絞り込みなし（全話題を表示中）</div>
+    </div>
+  </section>
+
+  <!-- ============ 2. カレンダー ============ -->
+  <section class="panel" aria-label="日付選択カレンダー">
+    <div class="panel-head">
+      <h2>日付を選ぶ</h2>
+      <div class="cal-nav">
+        <button id="calPrev" title="前の月">‹</button>
+        <span class="ym" id="calYM">2026年9月</span>
+        <button id="calNext" title="次の月">›</button>
+      </div>
+    </div>
+    <div class="panel-body">
+      <div class="cal-grid" id="calGrid"></div>
+      <div class="cal-legend">
+        <span><i class="lg-box has"></i>データあり（記事数を表示・クリック可）</span>
+        <span><i class="lg-box nodata"></i>データなし（「—」表示・クリック不可）</span>
+        <span><i class="lg-box sel"></i>選択中</span>
+        <span><i class="lg-box fut"></i>未来日（無効）</span>
+        <span><i class="warnflag">!</i> 一部媒体の取得に失敗</span>
+      </div>
+      <div id="dayWarning"></div>
+      <p class="section-note">クリック可能な日付は <code>data/index.json</code>（データが存在する日付一覧）を参照して判定する想定です。収集が行われなかった日・取得に失敗した日は空白にせず「—」または警告バッジで明示します（欠損を隠さない設計）。</p>
+    </div>
+  </section>
+
+  <!-- ============ 3. サマリーバー ============ -->
+  <section class="summary" id="summaryBar" aria-label="その日の集計"></section>
+
+  <!-- ============ 4. メインビュー 2カラム ============ -->
+  <div class="main-grid">
+    <section class="col-panel col-left" aria-label="世界の注目話題">
+      <div class="col-head">
+        <h2>🌍 世界の注目話題 TOP30</h2>
+        <div class="sub">報道した国の数が多い順。日本の媒体に該当記事がなかった話題には <span class="b-jpnone">🇯🇵 日本での報道なし</span> を付与。</div>
+        <div class="formula">スコア = 報道国数×3 ＋ 媒体数</div>
+      </div>
+      <div class="topic-list" id="listWorld"></div>
+      <div class="more-row"><button class="more-btn" data-more="world">読み込み中…</button></div>
+    </section>
+
+    <section class="col-panel col-right" aria-label="日本の注目話題">
+      <div class="col-head">
+        <h2>🇯🇵 日本の注目話題 TOP30</h2>
+        <div class="sub">日本の媒体が報じた話題を、<b>日本の媒体の掲載件数の多い順</b>で並べています（同数のときは合計スコアの降順）。そのため左側とは並び順が違います。世界側に対応がない話題には <span class="b-jponly">日本固有</span> を付与。</div>
+        <div class="formula">同一話題は左右で同じ話題IDチップ（ホバーで対応カードを強調）</div>
+      </div>
+      <div class="topic-list" id="listJapan"></div>
+      <div class="more-row"><button class="more-btn" data-more="japan">読み込み中…</button></div>
+    </section>
+  </div>
+
+  <!-- ============ 8. 日本が報じていない話題 ============ -->
+  <section class="panel jpnone-panel" aria-label="日本が報じていない話題">
+    <div class="panel-head">
+      <h2>🇯🇵 日本が報じていない話題</h2>
+      <span class="hint">複数国で報じられたが、収集対象の日本の媒体に該当記事がなかった話題</span>
+    </div>
+    <div class="panel-body">
+      <div class="jpnone-grid" id="jpNoneGrid"></div>
+      <p class="section-note">この一覧は「収集対象としているRSS・政府発表の範囲において、当日該当記事が確認できなかった」という<b>事実のみ</b>を示します。報じられなかった理由の推測・評価は行いません。日本の媒体が別の日に報じている場合や、収集対象外の媒体が報じている場合があります。</p>
+    </div>
+  </section>
+
+</main>
+
+<!-- ============ 6. 話題詳細モーダル ============ -->
+<div class="overlay" id="overlay" role="dialog" aria-modal="true" aria-labelledby="mdTitle">
+  <div class="modal" id="modal">
+    <div class="modal-head" id="modalHead">
+      <div class="tc-top" id="mdChips"></div>
+      <h2 id="mdTitle">話題名</h2>
+      <button class="modal-close" id="modalClose" title="閉じる（Esc）">✕</button>
+    </div>
+    <div class="modal-body" id="modalBody"></div>
+  </div>
+</div>
+
+<!-- ============ 9. フッター（免責） ============ -->
+<footer class="site-footer">
+  <div class="wrap">
+    <div class="ft-grid">
+      <div>
+        <div class="ft-h">免責事項・掲載方針</div>
+        <ul class="ft-list">
+          <li>見出しおよび要約の日本語訳には<b>機械翻訳を含み</b>、正確性・完全性を保証しません。重要な判断は必ず原文をご確認ください。</li>
+          <li>ランキングおよびスコアは<b>当サイト独自の計算式</b>（報道国数×3＋媒体数）による集計であり、各媒体のアクセス数順位・注目度の公式指標ではありません。</li>
+          <li>各記事の著作権は各媒体に帰属します。本サイトは<b>見出し・見出しの訳・80〜120字の事実要約・原文へのリンク</b>のみを掲載し、記事本文の複製・保存・表示は行いません。サムネイル画像も一切扱いません。</li>
+          <li>立場ラベル（支持／批判／中立／言及なし）は見出し語の分類結果であり、媒体や国に対する評価・論評ではありません。<b>本サイトはAIによる論評文を掲載しません。</b></li>
+          <li>本サイトは<b>非営利・広告なし</b>で運営しています。アフィリエイト等の収益化も行いません。</li>
+          <li>日付は<b>UTCで正規化</b>して集計し、表示は<b>JST（日本標準時）に統一</b>しています。</li>
+        </ul>
+      </div>
+      <div>
+        <div class="ft-box">
+          <div class="ft-h">削除要請・お問い合わせ</div>
+          掲載の停止・訂正のご要請は下記までご連絡ください。原則3営業日以内に対応します。<br>
+          <span class="mail">contact@world-lens.example.jp</span>
+        </div>
+        <div class="ft-box">
+          <div class="ft-h">データについて</div>
+          収集元・媒体属性の判定基準・スコア計算の詳細は下記に公開しています。
+          <div class="ft-links">
+            <a href="#">データソース一覧 →</a>
+            <a href="#">スコア計算の定義 →</a>
+            <a href="#">媒体属性の判定基準 →</a>
+            <a href="#">収集ログ / 取得失敗履歴 →</a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="ft-bottom">
+      <span>世界の視点 / World Lens ── 非営利のニュース比較アーカイブ</span>
+      <span>collected via public RSS &amp; government releases / normalized in UTC, displayed in JST</span>
+    </div>
+  </div>
+</footer>
+
+
+<script>
+/* ============================================================
+   ④表示 ── データ源は同一オリジンの静的JSONのみ（CDN・npm・外部通信なし）
+     data/index.json  → 月シャード data/months/YYYY-MM.json → data/topics/YYYY-MM-DD.json
+   CSS・DOM構造・配色・レイアウトは mockup/index.html をそのまま流用し、
+   差し替えたのはデータ源だけ。
+   ============================================================ */
+/* データ源。既定は実データ data/。
+   ?src=sample で sample-data/（正常日・degraded日・取得失敗日・データ無し日の確認用）に切替。
+   ?date=YYYY-MM-DD で初期表示日を指定。外部通信は一切しない（同一オリジンの静的JSONのみ）。 */
+const QS = new URLSearchParams(location.search);
+const DATA_DIR = QS.get("src") === "sample" ? "sample-data" : "data";
+
+/* ---- 表示用マスタ（mockupと同一） ---- */
+const COUNTRIES = {
+  JP:{name:"日本",flag:"🇯🇵"}, US:{name:"米国",flag:"🇺🇸"}, GB:{name:"英国",flag:"🇬🇧"},
+  FR:{name:"フランス",flag:"🇫🇷"}, DE:{name:"ドイツ",flag:"🇩🇪"}, CN:{name:"中国",flag:"🇨🇳"},
+  RU:{name:"ロシア",flag:"🇷🇺"}, KR:{name:"韓国",flag:"🇰🇷"}, IN:{name:"インド",flag:"🇮🇳"},
+  QA:{name:"カタール",flag:"🇶🇦"}, BR:{name:"ブラジル",flag:"🇧🇷"}, AU:{name:"豪州",flag:"🇦🇺"},
+  ZA:{name:"南アフリカ",flag:"🇿🇦"}, TR:{name:"トルコ",flag:"🇹🇷"}, ID:{name:"インドネシア",flag:"🇮🇩"},
+  MX:{name:"メキシコ",flag:"🇲🇽"}, EG:{name:"エジプト",flag:"🇪🇬"}, UA:{name:"ウクライナ",flag:"🇺🇦"},
+  IL:{name:"イスラエル",flag:"🇮🇱"}, SE:{name:"スウェーデン",flag:"🇸🇪"}, NG:{name:"ナイジェリア",flag:"🇳🇬"},
+  TH:{name:"タイ",flag:"🇹🇭"}, CA:{name:"カナダ",flag:"🇨🇦"}, IT:{name:"イタリア",flag:"🇮🇹"}
+};
+const MEDIA_TYPES = {
+  state:{label:"国営",cls:"mt-state"}, public:{label:"公共",cls:"mt-public"},
+  private:{label:"民間",cls:"mt-private"}, indep:{label:"独立系",cls:"mt-indep"},
+  gov:{label:"政府",cls:"mt-gov"}
+};
+const STANCES = {
+  support:{label:"支持",cls:"stl-sup",bar:"st-sup"}, critical:{label:"批判",cls:"stl-crit",bar:"st-crit"},
+  neutral:{label:"中立",cls:"stl-neu",bar:"st-neu"}, none:{label:"言及なし",cls:"stl-none",bar:"st-none"}
+};
+const DOW = ["日","月","火","水","木","金","土"];
+const TOP_N = 30;          // 契約§4：世界TOP30 / 日本TOP30
+const COLLAPSED_N = 10;    // 折りたたみ時の表示件数（mockupと同じ）
+const JPNONE_CARDS = 12;   // 「日本が報じていない話題」グリッドの表示枚数
+
+const $ = s=>document.querySelector(s);
+const esc = s=>String(s==null?"":s).replace(/&/g,"&amp;").replace(/</g,"&lt;").replace(/>/g,"&gt;").replace(/"/g,"&quot;");
+
+/* ---- 状態 ---- */
+const state = {
+  date: null,
+  calYear: null, calMonth: null,
+  sort: "countries",
+  fCountry: new Set(), fTag: new Set(), fMedia: new Set(),
+  expand: { world:false, japan:false },
+  index: null,        // data/index.json
+  days: {},           // 全月シャードをマージした { "YYYY-MM-DD": {status,articles,...} }
+  months: {},         // 読み込み済み月シャード
+  day: null,          // 選択日の data/topics/D.json
+  pool: {},           // topic_id -> topic（選択日のみ）
+  world: [],          // 世界TOP30の topic_id
+  japan: [],          // 日本TOP30の topic_id
+  jpNone: []          // 日本での報道なしの topic_id（スコア降順）
+};
+let LATEST = null;    // index.latest_date（これより後ろは未来日）
+
+/* ============================================================
+   共通ヘルパ
+   ============================================================ */
+function fmtDateJa(iso){
+  const [y,m,d]=iso.split("-").map(Number);
+  const dt=new Date(y,m-1,d);
+  return `${y}年${m}月${d}日(${DOW[dt.getDay()]})`;
+}
+/* UTCのISO文字列 → JST表記。日付はUTCで正規化・表示はJST統一（契約の方針） */
+function toJst(iso){
+  if(!iso) return "";
+  const t=Date.parse(iso);
+  if(isNaN(t)) return String(iso);
+  const d=new Date(t+9*3600*1000);
+  const p=n=>String(n).padStart(2,"0");
+  return `${d.getUTCFullYear()}-${p(d.getUTCMonth()+1)}-${p(d.getUTCDate())} ${p(d.getUTCHours())}:${p(d.getUTCMinutes())} JST`;
+}
+function idHue(id){ let h=0; for(const ch of id) h=(h*31+ch.charCodeAt(0))%360; return (h*47)%360; }
+function idChipStyle(id){
+  const h=idHue(id);
+  return `color:hsl(${h},42%,34%);background:hsl(${h},62%,96%);border-color:hsl(${h},38%,68%)`;
+}
+function cname(c){ return COUNTRIES[c]? COUNTRIES[c].name : c; }
+function cflag(c){ return COUNTRIES[c]? COUNTRIES[c].flag : "🏳"; }
+function mtBadge(mt){ const m=MEDIA_TYPES[mt]||MEDIA_TYPES.private; return `<span class="mt-badge ${m.cls}">${m.label}</span>`; }
+function stLabel(st){ const s=STANCES[st]||STANCES.none; return `<span class="st-label ${s.cls}">${s.label}</span>`; }
+function dayInfo(iso){ return state.days[iso]||null; }
+/* その日の「対象媒体数」= 月シャードの feeds_total（=収集対象フィード本数） */
+function mediaOf(info){ return info? (info.feeds_total!=null?info.feeds_total:(info.feeds_ok||0)) : 0; }
+function isDegraded(){ return !!(state.day && state.day.degraded); }
+
+/* ============================================================
+   スコア（契約§4：score = countries.length*3 + media_count。この式以外を使わない）
+   score_parts をそのまま画面の計算過程に出す。
+   ============================================================ */
+function scoreCountries(t){
+  const sp=t.score_parts||{};
+  if(sp.countries!=null && sp.countries_weight!=null) return sp.countries*sp.countries_weight;
+  return (t.countries||[]).length*3;
+}
+function scoreMedia(t){
+  const sp=t.score_parts||{};
+  return sp.media!=null? sp.media : (t.media_count||0);
+}
+function scoreTotal(t){ return t.score!=null? t.score : scoreCountries(t)+scoreMedia(t); }
+function countriesWeight(t){ return (t.score_parts&&t.score_parts.countries_weight!=null)? t.score_parts.countries_weight : 3; }
+function jpMediaCount(t){ return t.jp_media_count!=null? t.jp_media_count : 0; }
+
+function scoreOf(t){
+  if(state.sort==="media") return scoreMedia(t);
+  return scoreTotal(t);   // 報道国数順：カードに出る合計スコアと一致させる
+}
+/* 同値は合計スコア降順 → 媒体数降順 → topic_id昇順（契約§4のタイブレーク） */
+function sortFn(a,b){
+  const ta=state.pool[a], tb=state.pool[b];
+  return (scoreOf(tb)-scoreOf(ta))
+      || (scoreTotal(tb)-scoreTotal(ta))
+      || (scoreMedia(tb)-scoreMedia(ta))
+      || (ta.topic_id<tb.topic_id?-1:ta.topic_id>tb.topic_id?1:0);
+}
+function passFilter(t){
+  if(state.fCountry.size && !(t.countries||[]).some(c=>state.fCountry.has(c))) return false;
+  if(state.fTag.size && !(t.tags||[]).some(g=>state.fTag.has(g))) return false;
+  if(state.fMedia.size){
+    const types=new Set([...(t.phrases||[]).map(p=>p.media_type), ...(t.articles||[]).map(a=>a.media_type)]);
+    if(![...state.fMedia].some(m=>types.has(m))) return false;
+  }
+  return true;
+}
+
+/* ============================================================
+   データ読み込み（同一オリジンの静的JSONのみ）
+   ============================================================ */
+async function getJson(path){
+  const res = await fetch(path, {cache:"no-cache"});
+  if(!res.ok) throw new Error(`${path} の取得に失敗しました（HTTP ${res.status}）`);
+  return res.json();
+}
+async function loadIndex(){
+  state.index = await getJson(`${DATA_DIR}/index.json`);
+  LATEST = state.index.latest_date || null;
+  const months = state.index.months || [];
+  // 月シャードをまとめて読み、days をマージ（カレンダーの可否判定に使う）
+  const shards = await Promise.all(months.map(async m=>{
+    try { return [m, await getJson(`${DATA_DIR}/months/${m}.json`)]; }
+    catch(e){ console.warn(e.message); return [m, null]; }
+  }));
+  for(const [m,sh] of shards){
+    if(!sh) continue;
+    state.months[m]=sh;
+    for(const [d,info] of Object.entries(sh.days||{})) state.days[d]=info;
+  }
+}
+/* 選択日の話題ファイルを読み、世界／日本／報道なしの3リストを組み立てる */
+async function loadDay(iso){
+  state.day=null; state.pool={}; state.world=[]; state.japan=[]; state.jpNone=[];
+  const info=dayInfo(iso);
+  // 契約§4：status が ok 以外（failed/empty）は topics ファイルが無い場合がある
+  if(!info) return;
+  let day=null;
+  try { day = await getJson(`${DATA_DIR}/topics/${iso}.json`); }
+  catch(e){ console.warn(e.message); state.day=null; return; }
+  state.day=day;
+  const topics=day.topics||[];
+  for(const t of topics) state.pool[t.topic_id]=t;
+
+  const ids=topics.map(t=>t.topic_id);
+  // 世界側：全話題をスコア降順でTOP30
+  state.world = ids.slice().sort(sortFn).slice(0,TOP_N);
+  // 日本側：jp_reported の話題のみ。日本の掲載媒体数 → スコアの降順
+  state.japan = ids.filter(id=>state.pool[id].jp_reported)
+    .sort((a,b)=>(jpMediaCount(state.pool[b])-jpMediaCount(state.pool[a])) || sortFn(a,b))
+    .slice(0,TOP_N);
+  // 日本での報道なし：jp_reported=false をスコア降順（一覧と同一の並び規則）
+  state.jpNone = ids.filter(id=>!state.pool[id].jp_reported).sort(sortFn);
+}
+
+/* ============================================================
+   2. カレンダー（data/index.json＋月シャードで可否判定。欠損を隠さない）
+   ============================================================ */
+function statusOf(info){ return info? (info.status||"ok") : null; }
+/* 一部失敗日の判定。
+   注：alerts には「AI付与ができなかった」等の収集以外の警告も入るため、
+   alerts があるだけで「一部取得失敗」とは言わない（status / feeds の実数で判定する）。
+   収集系の alert（status が stale/failed/empty）がある場合は一部失敗とみなす。 */
+function isPartial(info){
+  if(!info) return false;
+  if(info.status==="stale" || info.status==="partial") return true;
+  if(info.feeds_total!=null && info.feeds_ok!=null && info.feeds_ok<info.feeds_total) return true;
+  return (info.alerts||[]).some(a=>a && typeof a==="object" && a.feed_id && a.feed_id!=="-"
+    && ["stale","failed","empty"].includes(a.status));
+}
+/* 契約§4 の status は ok|stale|empty|failed の4種。
+   failed＝取得自体が失敗、empty＝取得は成功したが記事0件。この2つは区別して文言を変える。 */
+function isFailedDay(info){ return statusOf(info)==="failed"; }
+function isEmptyDay(info){
+  if(!info) return false;
+  return statusOf(info)==="empty" || info.articles===0;
+}
+function isBadDay(info){ return isFailedDay(info) || isEmptyDay(info); }
+function warningText(info){
+  if(isFailedDay(info)){
+    return `この日は収集に失敗しました（状態：failed / 取得成功 ${info.feeds_ok||0} / ${info.feeds_total||0} フィード）`;
+  }
+  if(isEmptyDay(info)){
+    return `この日は記事が0件でした（状態：${statusOf(info)} / 取得成功 ${info.feeds_ok||0} / ${info.feeds_total||0} フィード）`;
+  }
+  return `一部媒体の取得に失敗（取得成功 ${info.feeds_ok||0} / ${info.feeds_total||0} フィード）`;
+}
+function warningDetail(info){
+  /* alerts[] の実形は {feed_id, source, status, note}（契約§4・①の実出力）。
+     古い message/msg 形式も一応拾うが、JSON の生文字列は画面に出さない。 */
+  const al=(info.alerts||[]).map(a=>{
+    if(typeof a==="string") return a;
+    if(!a) return "";
+    const who=[a.source,a.feed_id&&a.feed_id!=="-"&&a.feed_id!=="*"?`(${a.feed_id})`:""].filter(Boolean).join("");
+    const body=a.note||a.message||a.msg||"";
+    const st=a.status?`[${a.status}]`:"";
+    return [who,st,body].filter(Boolean).join(" ");
+  }).filter(Boolean);
+  const base = isFailedDay(info)
+    ? `当日の話題一覧は生成されていません。欠損を隠さないため、この日を空白にせず「取得失敗」として表示しています。`
+    : isEmptyDay(info)
+    ? `取得自体は成功しましたが対象記事が0件でした。推測で埋めず、話題なしとしてそのまま表示しています。`
+    : `当日の集計は取得できたフィードのみを対象としており、話題の順位・スコアを他の日と単純比較できません。`;
+  return al.length? `${base}\n${al.join("\n")}` : base;
+}
+function renderCalendar(){
+  $("#calYM").textContent = `${state.calYear}年${state.calMonth}月`;
+  const grid=$("#calGrid");
+  let html = DOW.map((d,i)=>`<div class="cal-dow ${i===0?'sun':i===6?'sat':''}">${d}</div>`).join("");
+  const first=new Date(state.calYear,state.calMonth-1,1);
+  const days=new Date(state.calYear,state.calMonth,0).getDate();
+  for(let i=0;i<first.getDay();i++) html+=`<div class="cal-cell empty"></div>`;
+  for(let d=1;d<=days;d++){
+    const iso=`${state.calYear}-${String(state.calMonth).padStart(2,"0")}-${String(d).padStart(2,"0")}`;
+    const info=dayInfo(iso);
+    const future = LATEST? iso>LATEST : false;
+    const sel = iso===state.date;
+    if(!info && future){
+      html+=`<div class="cal-cell future" data-date="${iso}" aria-disabled="true" title="未来日（データなし）"><span class="d">${d}</span></div>`;
+    }else if(!info){
+      html+=`<div class="cal-cell nodata" data-date="${iso}" aria-disabled="true" title="${iso}：この日のデータはありません（収集が行われませんでした）">
+        <span class="d">${d}</span><span class="nd">—</span></div>`;
+    }else if(isBadDay(info)){
+      /* 取得失敗日/記事0件日：空白にせず「!」バッジで明示。クリックはできる（警告を読ませる） */
+      html+=`<button class="cal-cell has${sel?' selected':''}" data-date="${iso}"
+        title="${iso}：${esc(warningText(info))}">
+        <span class="d">${d}</span>
+        <span class="warnflag" title="${esc(warningText(info))}">${isFailedDay(info)?"! 取得失敗":"! 記事0件"}</span>
+        <span class="cnt">${info.articles||0}件</span></button>`;
+    }else{
+      html+=`<button class="cal-cell has${sel?' selected':''}" data-date="${iso}"
+        title="${iso}：記事${info.articles}件 / ${info.countries}か国 / ${mediaOf(info)}フィード${isPartial(info)?'（一部取得失敗）':''}">
+        <span class="d">${d}</span>
+        ${isPartial(info)?`<span class="warnflag" title="${esc(warningText(info))}">! 一部失敗</span>`:""}
+        <span class="cnt">${info.articles}件</span></button>`;
+    }
+  }
+  grid.innerHTML=html;
+  grid.querySelectorAll(".cal-cell.has").forEach(b=>b.addEventListener("click",()=>selectDate(b.dataset.date)));
+  const allDates=Object.keys(state.days).sort();
+  const minYM = allDates.length? allDates[0].slice(0,7) : `${state.calYear}-${String(state.calMonth).padStart(2,"0")}`;
+  const maxYM = LATEST? LATEST.slice(0,7) : minYM;
+  const curYM = `${state.calYear}-${String(state.calMonth).padStart(2,"0")}`;
+  $("#calPrev").disabled = curYM<=minYM;
+  $("#calNext").disabled = curYM>=maxYM;
+}
+function renderDayWarning(){
+  const info=dayInfo(state.date);
+  const box=$("#dayWarning");
+  /* 月シャードにこの日付自体が存在しない＝その日は収集を行っていない。
+     無記の空画面にしないで「データなし」と明記する。 */
+  if(!info){
+    box.innerHTML=`<div class="day-warning">⚠ <b>${esc(fmtDateJa(state.date))}のデータはありません</b><br>`
+      +`この日は収集が行われていません（月別一覧に記録がありません）。公開前の日付もここに該当します。</div>`;
+    return;
+  }
+  if(info && (isPartial(info)||isBadDay(info))){
+    box.innerHTML=`<div class="day-warning">⚠ <b>${esc(warningText(info))}</b><br>${esc(warningDetail(info)).replace(/\n/g,"<br>")}</div>`;
+  }else{
+    box.innerHTML="";
+  }
+}
+/* 契約§5-8：degraded:true のとき「AI処理が適用されていません」を画面上部に明示 */
+function renderDegraded(){
+  const box=$("#degradedBanner");
+  if(isDegraded()){
+    box.innerHTML=`<div class="day-warning">⚠ <b>この日のデータにはAI処理が適用されていません（degraded）。</b><br>
+      見出しは<b>原語のまま</b>表示しており、日本語訳・事実要約・立場ラベルは付いていません。
+      立場ラベルはすべて「言及なし」、タグは空、事実要約欄は空欄になります。欠損を隠さないためそのまま掲示しています。</div>`;
+  }else{
+    box.innerHTML="";
+  }
+}
+function renderLoadError(msg){
+  $("#loadError").innerHTML = msg
+    ? `<div class="day-warning">⚠ <b>データの読み込みに失敗しました。</b><br>${esc(msg)}<br>
+       このページは <code>data/</code> 配下のJSONを <code>fetch</code> で読みます。ファイルを直接開く（file://）のではなく、
+       <code>python3 -m http.server</code> などのHTTP配信経由で開いてください。</div>`
+    : "";
+}
+async function selectDate(iso){
+  state.date=iso;
+  state.expand={world:false,japan:false};
+  await loadDay(iso);
+  renderCalendar(); renderDayWarning(); renderDegraded(); renderHeader(); renderSummary(); renderLists(); renderJpNone();
+  window.scrollTo({top:$("#summaryBar").offsetTop-70,behavior:"smooth"});
+}
+
+/* ============================================================
+   1. ヘッダー / 3. サマリーバー
+   ============================================================ */
+function renderHeader(){
+  $("#hdrDate").textContent=fmtDateJa(state.date);
+  const info=dayInfo(state.date);
+  const gen = (state.day&&state.day.generated_at) || (info&&info.generated_at) || (state.index&&state.index.generated_at);
+  $("#hdrUpdated").textContent = gen? toJst(gen) : "―";
+}
+function renderSummary(){
+  const info=dayInfo(state.date)||{};
+  const st=(state.day&&state.day.stats)||{};
+  const articles = st.articles!=null? st.articles : (info.articles||0);
+  const countries = st.countries_covered!=null? st.countries_covered : (info.countries||0);
+  const media = st.feeds_ok!=null? st.feeds_ok : mediaOf(info);
+  const topicCount = st.topics!=null? st.topics : Object.keys(state.pool).length;
+  const jpNone = st.jp_none_count!=null? st.jp_none_count : state.jpNone.length;
+  const cells=[
+    ["収集記事数",articles,"件"],["対象国数",countries,"か国"],
+    ["対象媒体数",media,"媒体"],["抽出された話題数",topicCount,"件"]
+  ];
+  $("#summaryBar").innerHTML =
+    cells.map(c=>`<div class="sm-cell"><span class="k">${c[0]}</span><span class="v">${c[1]}<small>${c[2]}</small></span></div>`).join("")
+    + `<div class="sm-cell hl"><span class="k">🇯🇵 日本が報じていない話題</span><span class="v">${jpNone}<small>件</small></span></div>`;
+}
+
+/* ============================================================
+   4-5. 2カラムの話題リスト＋話題カード
+   ============================================================ */
+function stanceMini(sc){
+  const s=sc||{support:0,critical:0,neutral:0,none:0};
+  const keys=["support","critical","neutral","none"];
+  const total=keys.reduce((a,k)=>a+(s[k]||0),0)||1;
+  return `<div class="stance-mini" title="立場ラベルの内訳（見出し語の分類結果）">${
+    keys.map(k=>`<i class="${STANCES[k].bar}" style="width:${((s[k]||0)/total*100).toFixed(1)}%" title="${STANCES[k].label} ${s[k]||0}"></i>`).join("")
+  }</div>
+  <div class="stance-legend">${keys.map(k=>`<span><i class="dot ${STANCES[k].bar}"></i>${STANCES[k].label} ${s[k]||0}</span>`).join("")}</div>`;
+}
+function flagRow(t){
+  const cs=t.countries||[];
+  const shown=cs.slice(0,14);
+  const rest=cs.length-shown.length;
+  let html=shown.map(c=>`<span title="${esc(cname(c))}">${cflag(c)}</span>`).join("");
+  if(rest>0) html+=`<span class="more-c">＋${rest}か国</span>`;
+  if(!cs.includes("JP")) html+=`<span class="jp-off" title="日本の媒体に該当記事なし">🇯🇵</span>`;
+  return `<div class="flags">${html}</div>`;
+}
+function scoreRow(t){
+  const sc=scoreCountries(t), sm=scoreMedia(t), tot=scoreTotal(t);
+  const w=tot||1;
+  return `<div class="score-row" title="当サイト独自の集計指標：報道国数×${countriesWeight(t)} ＋ 媒体数">
+      <span>報道国数 ${(t.countries||[]).length} × ${countriesWeight(t)} = ${sc}</span><span class="eq">＋</span>
+      <span>媒体数 ${sm}</span><span class="eq">＝</span>
+      <span class="tot">${tot}点</span>
+    </div>
+    <div class="score-bar" aria-hidden="true">
+      <i class="sb-c" style="width:${sc/w*100}%"></i>
+      <i class="sb-m" style="width:${sm/w*100}%"></i>
+    </div>`;
+}
+function topicCard(t, rank, side, jpMissing, jpOnly){
+  return `<button class="tcard${jpMissing?' jp-missing':''}" data-topic="${esc(t.topic_id)}" data-side="${side}">
+    <span class="rank">${rank}</span>
+    <span class="body">
+      <span class="tc-top">
+        <span class="idchip" style="${idChipStyle(t.topic_id)}">${esc(t.topic_id)}</span>
+        ${jpMissing?'<span class="b-jpnone">🇯🇵 日本での報道なし</span>':''}
+        ${jpOnly?'<span class="b-jponly">日本固有</span>':''}
+      </span>
+      <h3${isDegraded()?' lang="" dir="auto"':''}>${esc(t.title_ja)}</h3>
+      ${scoreRow(t)}
+      ${side==="japan"?`<div class="score-row" title="この列の並び順の根拠"><span>日本の媒体の掲載件数</span><span class="eq">：</span><span class="tot">${jpMediaCount(t)}件</span></div>`:""}
+      ${flagRow(t)}
+      ${stanceMini(t.stance_counts)}
+      <span class="tags">${(t.tags||[]).map(g=>`<span class="tag">${esc(g)}</span>`).join("")}</span>
+      <span class="opencue">詳細 →</span>
+    </span>
+  </button>`;
+}
+function renderLists(){
+  const worldSet=new Set(state.world), jpSet=new Set(state.japan);
+  const wIds=state.world.filter(id=>passFilter(state.pool[id])).sort(sortFn);
+  const jIds=state.japan.filter(id=>passFilter(state.pool[id])).sort((a,b)=>
+    (jpMediaCount(state.pool[b])-jpMediaCount(state.pool[a])) || sortFn(a,b));
+
+  const emptyMsg = Object.keys(state.pool).length===0
+    ? `この日は話題データがありません。<br>収集が行われなかった日、または取得に失敗した日です（上の警告をご確認ください）。`
+    : `現在の絞り込み条件に該当する話題はありません。<br>上の「解除」で条件をリセットできます。`;
+
+  const draw=(el,ids,side)=>{
+    const limit = state.expand[side] ? ids.length : COLLAPSED_N;
+    const use=ids.slice(0,limit);
+    if(!use.length){ el.innerHTML=`<div class="empty-list">${emptyMsg}</div>`; return; }
+    el.innerHTML=use.map((id,i)=>{
+      const t=state.pool[id];
+      const jpMissing = side==="world" && !t.jp_reported;
+      const jpOnly = side==="japan" && !worldSet.has(id);
+      return topicCard(t,i+1,side,jpMissing,jpOnly);
+    }).join("");
+  };
+  draw($("#listWorld"),wIds,"world");
+  draw($("#listJapan"),jIds,"japan");
+
+  document.querySelectorAll("[data-more]").forEach(b=>{
+    const side=b.dataset.more;
+    const n = side==="world"? wIds.length : jIds.length;
+    if(n<=COLLAPSED_N){
+      b.disabled = true;
+      b.textContent = n===0? "表示できる話題がありません" : `全${n}件を表示中`;
+      b.title = "";
+    }else{
+      b.disabled = false;
+      b.title = "";
+      b.textContent = state.expand[side]
+        ? `上位${COLLAPSED_N}件だけ表示に戻す（全${n}件中）`
+        : `もっと見る（上位${COLLAPSED_N}件 / 全${n}件中）`;
+    }
+  });
+  bindCards();
+  renderFilterStatus(wIds.length,jIds.length);
+}
+function bindCards(){
+  document.querySelectorAll(".tcard").forEach(card=>{
+    card.addEventListener("click",()=>openModal(card.dataset.topic));
+    const hl=on=>{
+      document.querySelectorAll(`.tcard[data-topic="${card.dataset.topic}"]`).forEach(c=>c.classList.toggle("linked",on));
+    };
+    card.addEventListener("mouseenter",()=>hl(true));
+    card.addEventListener("mouseleave",()=>hl(false));
+    card.addEventListener("focus",()=>hl(true));
+    card.addEventListener("blur",()=>hl(false));
+  });
+}
+
+/* ============================================================
+   8. 日本が報じていない話題セクション
+   ============================================================ */
+function renderJpNone(){
+  /* 一覧と同じ並び順規則（スコア降順）を適用 */
+  const ids=state.jpNone.filter(id=>passFilter(state.pool[id])).sort(sortFn).slice(0,JPNONE_CARDS);
+  const el=$("#jpNoneGrid");
+  if(!ids.length){ el.innerHTML=`<div class="empty-list">この日は、該当する話題がありません（または絞り込み条件に一致しません）。</div>`; return; }
+  const info=dayInfo(state.date)||{};
+  const feeds=mediaOf(info);
+  el.innerHTML=ids.map(id=>{
+    const t=state.pool[id];
+    return `<button class="jn-card" data-topic="${esc(id)}">
+      <span class="tc-top">
+        <span class="idchip" style="${idChipStyle(id)}">${esc(id)}</span>
+        <span class="b-jpnone">🇯🇵 日本での報道なし</span>
+      </span>
+      <h3${isDegraded()?' dir="auto"':''}>${esc(t.title_ja)}</h3>
+      <div class="jn-meta">
+        報道した国：<span class="num">${(t.countries||[]).length}</span> か国 ／
+        掲載媒体：<span class="num">${t.media_count}</span> 媒体 ／
+        スコア <span class="num">${scoreTotal(t)}</span> 点
+      </div>
+      ${flagRow(t)}
+      <span class="tags">${(t.tags||[]).map(g=>`<span class="tag">${esc(g)}</span>`).join("")}</span>
+      <div class="jn-note">${fmtDateJa(state.date)}の収集範囲（${feeds}フィード）において、日本の媒体の該当記事は確認できませんでした。</div>
+    </button>`;
+  }).join("");
+  el.querySelectorAll(".jn-card").forEach(c=>c.addEventListener("click",()=>openModal(c.dataset.topic)));
+}
+
+/* ============================================================
+   6. 話題詳細モーダル
+   ── 法務制約：記事本文は保存・表示しない。見出し（原語）＋訳＋原文リンクのみ。
+      契約§4の topics には要約フィールドが無いため、要約欄そのものを作らない。
+   ============================================================ */
+function phraseTable(t){
+  const rows=(t.phrases||[]).map(p=>{
+    const rtl = p.dir==="rtl";
+    const orig=p.original||"";
+    const ja=p.ja||"";
+    /* degraded時は ja が原語のコピー。訳として見せず「未適用」と明示する（嘘をつかない） */
+    const sameAsOrig = !ja || ja===orig;
+    return `<tr>
+      <td class="c-country"><span class="fl">${cflag(p.country)}</span>${esc(cname(p.country))}</td>
+      <td class="c-media"><span class="nm">${esc(p.media)}</span><br>${mtBadge(p.media_type)}</td>
+      <td><span class="orig${rtl?' rtl':''}"${rtl?` dir="rtl" lang="${esc(p.lang||'')}"`:` lang="${esc(p.lang||'')}"`}>${esc(orig)}</span>
+          <span class="orig-tr">${esc(p.lang||"?")} ／ 見出し（原語）</span></td>
+      <td class="c-trans">${sameAsOrig? '<span class="orig-tr">訳は未適用（原語のまま）</span>' : esc(ja)}</td>
+      <td>${stLabel(p.stance)}${p.stance_reason?`<span class="orig-tr">${esc(p.stance_reason)}</span>`:""}</td>
+      <td class="c-link">${p.url?`<a href="${esc(p.url)}" target="_blank" rel="noopener">原文 →</a>`:"―"}</td>
+    </tr>`;
+  }).join("");
+  return `<div class="tbl-scroll"><table class="phrase">
+    <thead><tr><th>国</th><th>媒体（属性）</th><th>見出し（原語）</th><th>訳</th><th>立場ラベル</th><th>原文</th></tr></thead>
+    <tbody>${rows}</tbody></table></div>
+    <p class="rtl-note">※ 掲載しているのは<b>見出しと原文リンクのみ</b>で、記事本文は保存・表示していません。アラビア語・ヘブライ語の行は <code>dir="rtl"</code> で右横書き表示。訳は機械翻訳を含みます。</p>`;
+}
+function silenceSection(t){
+  const list=t.silent_countries||[];
+  const info=dayInfo(state.date)||{};
+  const feeds=mediaOf(info);
+  const md=state.date.slice(5).replace("-","/");
+  if(!list.length){
+    return `<div class="silence"><div class="silence-note">この話題では、収集対象国のうち「言及なし」に該当する国はありませんでした。</div></div>`;
+  }
+  return `<div class="silence">
+    <div class="cchips">${list.map(c=>`<span class="cchip-off${c==="JP"?' jp':''}"><span class="fl">${cflag(c)}</span>${esc(cname(c))}</span>`).join("")}</div>
+    <div class="silence-note">
+      上記の国は、<b>${md} のRSS取得範囲（${feeds}フィード）では該当記事なし</b>です。<br>
+      これは「報じなかった」という事実の記録であり、理由の推測・評価は行いません。収集対象外の媒体、当日以外の日付、または本文中でのみ言及された場合はここに反映されません。<b>沈黙も一つの情報</b>としてそのまま掲示しています。
+    </div>
+  </div>`;
+}
+function factsSection(t){
+  const facts=t.facts_ja||[];
+  if(!facts.length){
+    return `<p class="msec-note">この日のデータには事実要約が付与されていません${isDegraded()?'（AI処理が未適用のため）':''}。
+      欠損を隠さないため、空欄であることをそのまま表示しています。</p>`;
+  }
+  return `<ul class="facts">${facts.map(f=>{
+    const txt = typeof f==="string"? f : (f.t||f.text||"");
+    const src = (f&&f.src)||"";
+    return `<li>${esc(txt)}${src?`<span class="src">出典：${esc(src)}</span>`:""}</li>`;
+  }).join("")}</ul>`;
+}
+/* 契約§4の articles は見出し・媒体・公開日時・URLのみ。要約は存在しないので出さない。 */
+function articleList(t){
+  const rows=(t.articles||[]).map(a=>{
+    const rtl=a.dir==="rtl";
+    const orig=a.title_original||"";
+    const ja=a.title_ja||"";
+    const sameAsOrig = !ja || ja===orig;
+    return `<div class="art-row">
+      <div class="art-src">
+        <span>${cflag(a.country)} ${esc(cname(a.country))}</span>
+        <span class="nm">${esc(a.source)}</span>
+        ${mtBadge(a.media_type)}
+      </div>
+      <div class="art-mid">
+        <div class="art-orig${rtl?' rtl':''}"${rtl?' dir="rtl"':''}${a.lang?` lang="${esc(a.lang)}"`:''}>${esc(orig)}</div>
+        <div class="art-ja">${sameAsOrig? "訳：未適用（原語見出しのみ）" : "訳："+esc(ja)}</div>
+      </div>
+      <div class="art-right">
+        ${esc(toJst(a.published_at))}
+        <br>${a.url?`<a href="${esc(a.url)}" target="_blank" rel="noopener">原文を読む →</a>`:"リンクなし"}
+      </div>
+    </div>`;
+  }).join("");
+  return `<div class="arts">${rows}</div>
+    <p class="arts-note">※ <b>同一媒体からの掲載は話題ごとに代表1件に絞っています。</b>掲載しているのは<b>原文見出し・訳・公開日時・原文リンク</b>のみで、<b>記事本文およびサムネイル画像は保存・表示していません</b>。</p>`;
+}
+function openModal(id){
+  const t=state.pool[id]; if(!t) return;
+  const worldSet=new Set(state.world), jpSet=new Set(state.japan);
+  const jpMissing = !t.jp_reported;
+  const jpOnly = t.jp_reported && !worldSet.has(id) && jpSet.has(id);
+
+  $("#modalHead").classList.toggle("jp-missing",jpMissing);
+  $("#mdChips").innerHTML =
+    `<span class="idchip" style="${idChipStyle(id)}">${esc(id)}</span>`
+    + (jpMissing?'<span class="b-jpnone">🇯🇵 日本での報道なし</span>':'')
+    + (jpOnly?'<span class="b-jponly">日本固有</span>':'')
+    + (t.tags||[]).map(g=>`<span class="tag">${esc(g)}</span>`).join("")
+    + (isDegraded()
+        ? `<span class="badge b-mt">⚠ AI処理未適用（原語見出しのまま）</span>`
+        : `<span class="badge b-mt">🌐 訳は機械翻訳を含みます</span>`);
+  $("#mdTitle").textContent=t.title_ja;
+
+  const sc=scoreCountries(t), sm=scoreMedia(t), tot=scoreTotal(t), jmc=jpMediaCount(t);
+  $("#modalBody").innerHTML=`
+    <div class="msec">
+      <div class="score-detail">
+        <span>報道国数 <b>${(t.countries||[]).length}</b> × ${countriesWeight(t)} = <b>${sc}</b></span><span>＋</span>
+        <span class="piece">媒体数 ${sm}</span><span>＝</span>
+        <span class="tot">${tot}点</span>
+        <span class="badge">当サイト独自の集計指標</span>
+      </div>
+      <div style="margin-top:9px">${flagRow(t)}${stanceMini(t.stance_counts)}</div>
+      <p class="msec-note">${fmtDateJa(state.date)}時点。日本の媒体の掲載件数：<b>${jmc}件</b>${jmc===0?'（該当なし）':''}</p>
+    </div>
+
+    <div class="msec">
+      <div class="msec-h"><h3>各国が一致して報じた事実</h3><span class="kicker">事実情報</span></div>
+      <p class="msec-note">日時・場所・数値・発表主体のみを記載しています。事実そのものには著作権が及ばないため、この欄は各媒体の表現を借りずに記述できます。</p>
+      ${factsSection(t)}
+    </div>
+
+    <div class="msec">
+      <div class="msec-h"><h3>表現の差 ── 各国の見出しの並置</h3><span class="kicker">この画面の主役</span></div>
+      <p class="msec-note">同じ出来事に対して、各国の媒体が<b>見出しでどう書いたか</b>を原語のまま並べています。訳は参考です。語の選択そのものが立場の差を示すため、本サイトは説明文を加えません。</p>
+      ${phraseTable(t)}
+    </div>
+
+    <div class="msec">
+      <div class="msec-h"><h3>「言及なし」の国</h3><span class="kicker gray">沈黙も情報</span></div>
+      ${silenceSection(t)}
+    </div>
+
+    <div class="msec">
+      <div class="msec-h"><h3>収集した全記事リスト（根拠）</h3><span class="kicker gray">${(t.articles||[]).length}件</span></div>
+      <p class="msec-note">掲載しているのは<b>原文見出し・訳・公開日時・原文リンク</b>のみです。記事本文は保存・表示していません。</p>
+      ${articleList(t)}
+    </div>
+  `;
+  $("#overlay").classList.add("open");
+  document.body.style.overflow="hidden";
+  $("#modalClose").focus();
+}
+function closeModal(){
+  $("#overlay").classList.remove("open");
+  document.body.style.overflow="";
+}
+
+/* ============================================================
+   7. フィルタ・ソート（選択日の実データから選択肢を生成）
+   ============================================================ */
+function renderFilters(){
+  const pool=Object.values(state.pool);
+  const usedCountries=[...new Set(pool.flatMap(t=>t.countries||[]))]
+    .sort((a,b)=>a==="JP"?-1:b==="JP"?1:(cname(a)<cname(b)?-1:1));
+  $("#fCountry").innerHTML = usedCountries.length
+    ? usedCountries.map(c=>`<button class="chip" data-f="country" data-v="${esc(c)}" aria-pressed="${state.fCountry.has(c)}">${cflag(c)} ${esc(cname(c))}</button>`).join("")
+    : `<span class="hint">この日は絞り込みできる国がありません</span>`;
+
+  const usedTags=[...new Set(pool.flatMap(t=>t.tags||[]))].sort();
+  $("#fTag").innerHTML = usedTags.length
+    ? usedTags.map(g=>`<button class="chip" data-f="tag" data-v="${esc(g)}" aria-pressed="${state.fTag.has(g)}">${esc(g)}</button>`).join("")
+    : `<span class="hint">${isDegraded()?"この日はタグが付与されていません（AI処理が未適用のため）":"この日はタグが付与されていません"}</span>`;
+
+  const usedMt=[...new Set(pool.flatMap(t=>[...(t.phrases||[]).map(p=>p.media_type),...(t.articles||[]).map(a=>a.media_type)]))]
+    .filter(m=>MEDIA_TYPES[m]);
+  const mtOrder=["state","public","private","indep","gov"].filter(m=>usedMt.includes(m));
+  $("#fMedia").innerHTML = mtOrder.length
+    ? mtOrder.map(m=>`<button class="chip mt" data-f="mt" data-v="${m}" aria-pressed="${state.fMedia.has(m)}">${MEDIA_TYPES[m].label}</button>`).join("")
+    : `<span class="hint">この日は絞り込みできる媒体属性がありません</span>`;
+
+  document.querySelectorAll("[data-f]").forEach(b=>{
+    b.addEventListener("click",()=>{
+      const set = b.dataset.f==="country"?state.fCountry : b.dataset.f==="tag"?state.fTag : state.fMedia;
+      const v=b.dataset.v;
+      if(set.has(v)) set.delete(v); else set.add(v);
+      b.setAttribute("aria-pressed", set.has(v)?"true":"false");
+      renderLists(); renderJpNone();
+    });
+  });
+}
+function bindStaticControls(){
+  document.querySelectorAll("[data-reset]").forEach(b=>{
+    b.addEventListener("click",e=>{
+      e.preventDefault();
+      const k=b.dataset.reset;
+      (k==="country"?state.fCountry:k==="tag"?state.fTag:state.fMedia).clear();
+      document.querySelectorAll(`[data-f="${k}"]`).forEach(c=>c.setAttribute("aria-pressed","false"));
+      renderLists(); renderJpNone();
+    });
+  });
+  $("#fSort").querySelectorAll("button").forEach(b=>{
+    b.addEventListener("click",()=>{
+      state.sort=b.dataset.sort;
+      $("#fSort").querySelectorAll("button").forEach(x=>x.setAttribute("aria-pressed", x===b?"true":"false"));
+      renderLists(); renderJpNone();
+    });
+  });
+  document.querySelectorAll("[data-more]").forEach(b=>{
+    b.addEventListener("click",()=>{ const s=b.dataset.more; state.expand[s]=!state.expand[s]; renderLists(); });
+  });
+  $("#calPrev").addEventListener("click",()=>{ state.calMonth--; if(state.calMonth<1){state.calMonth=12;state.calYear--;} renderCalendar(); });
+  $("#calNext").addEventListener("click",()=>{ state.calMonth++; if(state.calMonth>12){state.calMonth=1;state.calYear++;} renderCalendar(); });
+  $("#modalClose").addEventListener("click",closeModal);
+  $("#overlay").addEventListener("click",e=>{ if(e.target===$("#overlay")) closeModal(); });
+  document.addEventListener("keydown",e=>{ if(e.key==="Escape" && $("#overlay").classList.contains("open")) closeModal(); });
+}
+function renderFilterStatus(nw,nj){
+  const parts=[];
+  if(state.fCountry.size) parts.push(`国：${[...state.fCountry].map(cname).join("・")}`);
+  if(state.fTag.size) parts.push(`タグ：${[...state.fTag].join("・")}`);
+  if(state.fMedia.size) parts.push(`媒体属性：${[...state.fMedia].map(m=>MEDIA_TYPES[m].label).join("・")}`);
+  const sortLabel={countries:"報道国数順",media:"媒体数順"}[state.sort];
+  $("#filterStatus").innerHTML = (parts.length? `絞り込み中 ── ${parts.map(esc).join(" ／ ")}` : "絞り込みなし（全話題を表示中）")
+    + ` ／ 並び：<b>${sortLabel}</b> ／ 該当：世界 ${nw}件・日本 ${nj}件`;
+}
+
+/* ============================================================
+   初期化
+   ============================================================ */
+async function boot(){
+  bindStaticControls();
+  try{
+    await loadIndex();
+  }catch(e){
+    renderLoadError(e.message);
+    return;
+  }
+  const dates=Object.keys(state.days).sort();
+  // ?date= が指定されていればその日を初期表示する（取得失敗日・データ無し日の目視確認用）
+  const wanted = QS.get("date");
+  const initial = (wanted && /^\d{4}-\d{2}-\d{2}$/.test(wanted))
+    ? wanted
+    : (state.index.latest_date || dates[dates.length-1]);
+  if(!initial){
+    renderLoadError(`${DATA_DIR}/index.json に日付が1件もありません。`);
+    return;
+  }
+  state.date=initial;
+  state.calYear=Number(initial.slice(0,4));
+  state.calMonth=Number(initial.slice(5,7));
+  await loadDay(initial);
+  renderLoadError("");
+  renderCalendar(); renderDayWarning(); renderDegraded();
+  renderHeader(); renderSummary(); renderFilters(); renderLists(); renderJpNone();
+}
+boot();
+</script>
+</body>
+</html>

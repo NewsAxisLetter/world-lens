@@ -1,0 +1,21 @@
+{
+  "candidates": [
+    {
+      "content": {
+        "role": "model",
+        "parts": [
+          {
+            "text": "{\"results\":[{\"id\":\"c3d4e5f6\",\"title_ja\":\"黒海海域での事案、船舶が損傷\",\"summary_ja\":\"黒海の海域で船舶が損傷を受けた。ロシア側は事案として報じている。\",\"tags\":[\"安全保障\"],\"stance\":\"neutral\",\"stance_reason\":\"「инцидент」という中立的な語を用い、加害者を特定していない\",\"key_phrase_original\":\"Инцидент в акватории\",\"key_phrase_ja\":\"海域での事案\"},{\"id\":\"e5f6a7b8\",\"title_ja\":\"黒海の民間船舶へのロシアによる攻撃\",\"summary_ja\":\"黒海で民間船舶が攻撃を受けた。ウクライナ側はロシアによる攻撃と報じている。\",\"tags\":[\"安全保障\",\"外交\"],\"stance\":\"critical\",\"stance_reason\":\"「Російський удар」と加害主体を明示し批判的に報じている\",\"key_phrase_original\":\"Російський удар\",\"key_phrase_ja\":\"ロシアによる攻撃\"}]}"
+          }
+        ]
+      },
+      "finishReason": "STOP"
+    }
+  ],
+  "usageMetadata": {
+    "promptTokenCount": 742,
+    "candidatesTokenCount": 318,
+    "totalTokenCount": 1060
+  },
+  "modelVersion": "gemini-2.5-flash"
+}

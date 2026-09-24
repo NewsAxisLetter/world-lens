@@ -1,0 +1,180 @@
+{
+  "schema_version": 3,
+  "date": "2026-09-15",
+  "generated_at": "2026-09-15T00:37:09Z",
+  "status": "ok",
+  "feeds": [
+    {
+      "feed_id": "jp-nhk",
+      "source": "NHK",
+      "rss_url": "https://www.nhk.or.jp/rss/news/cat0.xml",
+      "articles": 2,
+      "latest_published_at": "2026-09-14T23:52:33Z",
+      "stale_days": 0.0,
+      "threshold_days": 7,
+      "status": "ok",
+      "note": "最新記事は0.0日前です"
+    },
+    {
+      "feed_id": "ru-tass",
+      "source": "TASS",
+      "rss_url": "https://tass.com/rss/v2.xml",
+      "articles": 2,
+      "latest_published_at": "2026-09-14T21:10:00Z",
+      "stale_days": 0.1,
+      "threshold_days": 7,
+      "status": "ok",
+      "note": "最新記事は0.1日前です"
+    },
+    {
+      "feed_id": "ua-pravda",
+      "source": "Ukrainska Pravda",
+      "rss_url": "https://www.pravda.com.ua/rss/",
+      "articles": 1,
+      "latest_published_at": "2026-09-14T20:05:00Z",
+      "stale_days": 0.2,
+      "threshold_days": 7,
+      "status": "ok",
+      "note": "最新記事は0.2日前です"
+    },
+    {
+      "feed_id": "gb-guardian",
+      "source": "The Guardian",
+      "rss_url": "https://www.theguardian.com/world/rss",
+      "articles": 1,
+      "latest_published_at": "2026-09-14T18:40:00Z",
+      "stale_days": 0.2,
+      "threshold_days": 7,
+      "status": "ok",
+      "note": "最新記事は0.2日前です"
+    },
+    {
+      "feed_id": "cn-cgtn",
+      "source": "CGTN",
+      "rss_url": "https://www.cgtn.com/subscribe/rss.xml",
+      "articles": 1,
+      "latest_published_at": "2026-09-14T15:00:00Z",
+      "stale_days": 0.4,
+      "threshold_days": 7,
+      "status": "ok",
+      "note": "最新記事は0.4日前です"
+    },
+    {
+      "feed_id": "de-tagesschau",
+      "source": "tagesschau",
+      "rss_url": "https://www.tagesschau.de/xml/rss2",
+      "articles": 1,
+      "latest_published_at": "2026-09-14T14:20:00Z",
+      "stale_days": 0.4,
+      "threshold_days": 7,
+      "status": "ok",
+      "note": "最新記事は0.4日前です"
+    }
+  ],
+  "articles": [
+    {
+      "article_id": "a1b2c3d4",
+      "feed_id": "jp-nhk",
+      "source": "NHK",
+      "country": "JP",
+      "media_type": "public",
+      "lang": "ja",
+      "title_original": "政府 消費税減税の大綱 閣議決定へ",
+      "url": "https://www3.nhk.or.jp/news/html/20260914/k10014001.html",
+      "published_at": "2026-09-14T19:59:00Z",
+      "fetched_at": "2026-09-15T00:37:08Z",
+      "rank_in_feed": 1
+    },
+    {
+      "article_id": "b2c3d4e5",
+      "feed_id": "jp-nhk",
+      "source": "NHK",
+      "country": "JP",
+      "media_type": "public",
+      "lang": "ja",
+      "title_original": "黒海で貨物船が攻撃 乗組員2人けが",
+      "url": "https://www3.nhk.or.jp/news/html/20260914/k10014002.html",
+      "published_at": "2026-09-14T23:52:33Z",
+      "fetched_at": "2026-09-15T00:37:08Z",
+      "rank_in_feed": 2
+    },
+    {
+      "article_id": "c3d4e5f6",
+      "feed_id": "ru-tass",
+      "source": "TASS",
+      "country": "RU",
+      "media_type": "state",
+      "lang": "ru",
+      "title_original": "Инцидент в акватории Черного моря: судно получило повреждения",
+      "url": "https://tass.com/politics/2026091401",
+      "published_at": "2026-09-14T21:10:00Z",
+      "fetched_at": "2026-09-15T00:37:08Z",
+      "rank_in_feed": 1
+    },
+    {
+      "article_id": "d4e5f6a7",
+      "feed_id": "ru-tass",
+      "source": "TASS",
+      "country": "RU",
+      "media_type": "state",
+      "lang": "ru",
+      "title_original": "МИД назвал обвинения Запада необоснованными",
+      "url": "https://tass.com/politics/2026091402",
+      "published_at": "2026-09-14T19:30:00Z",
+      "fetched_at": "2026-09-15T00:37:08Z",
+      "rank_in_feed": 2
+    },
+    {
+      "article_id": "e5f6a7b8",
+      "feed_id": "ua-pravda",
+      "source": "Ukrainska Pravda",
+      "country": "UA",
+      "media_type": "private",
+      "lang": "uk",
+      "title_original": "Російський удар по цивільному судну в Чорному морі",
+      "url": "https://www.pravda.com.ua/news/2026/09/14/7412345/",
+      "published_at": "2026-09-14T20:05:00Z",
+      "fetched_at": "2026-09-15T00:37:08Z",
+      "rank_in_feed": 1
+    },
+    {
+      "article_id": "f6a7b8c9",
+      "feed_id": "gb-guardian",
+      "source": "The Guardian",
+      "country": "GB",
+      "media_type": "private",
+      "lang": "en",
+      "title_original": "Grain ship hit in Black Sea as export corridor talks stall",
+      "url": "https://www.theguardian.com/world/2026/sep/14/grain-ship-black-sea",
+      "published_at": "2026-09-14T18:40:00Z",
+      "fetched_at": "2026-09-15T00:37:08Z",
+      "rank_in_feed": 1
+    },
+    {
+      "article_id": "a7b8c9d0",
+      "feed_id": "cn-cgtn",
+      "source": "CGTN",
+      "country": "CN",
+      "media_type": "state",
+      "lang": "zh",
+      "title_original": "中方呼吁有关各方保持冷静 推动黑海局势降温",
+      "url": "https://www.cgtn.com/news/2026-09-14/black-sea-china-call",
+      "published_at": "2026-09-14T15:00:00Z",
+      "fetched_at": "2026-09-15T00:37:08Z",
+      "rank_in_feed": 1
+    },
+    {
+      "article_id": "b8c9d0e1",
+      "feed_id": "de-tagesschau",
+      "source": "tagesschau",
+      "country": "DE",
+      "media_type": "public",
+      "lang": "de",
+      "title_original": "Frachter im Schwarzen Meer beschädigt – EU berät über Reaktion",
+      "url": "https://www.tagesschau.de/ausland/schwarzes-meer-frachter-100.html",
+      "published_at": "2026-09-14T14:20:00Z",
+      "fetched_at": "2026-09-15T00:37:08Z",
+      "rank_in_feed": 1
+    }
+  ]
+}

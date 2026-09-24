@@ -1,0 +1,25 @@
+{
+ "schema_version": 3,
+ "date": "2026-09-23",
+ "generated_at": "2026-09-23T15:00:00Z",
+ "degraded": false,
+ "score_formula": "報道した国の数 × 3 ＋ 掲載媒体の数 × 1",
+ "stats": {
+  "articles": 0,
+  "topics": 0,
+  "countries_covered": 0,
+  "feeds_ok": 27,
+  "feeds_stale": 0,
+  "feeds_empty": 0,
+  "feeds_failed": 0,
+  "jp_none_count": 0
+ },
+ "alerts": [
+  {
+   "level": "info",
+   "code": "no_topics",
+   "message": "RSS取得は成功しましたが、2か国以上で共通して報じられた話題が見つかりませんでした。"
+  }
+ ],
+ "topics": []
+}

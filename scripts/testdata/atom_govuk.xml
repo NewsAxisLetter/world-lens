@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  回帰テスト用の固定XML（Atom・既定名前空間あり）。GOV.UK の構造を模した最小形。
+  ★ 記事要素は <entry>（"{http://www.w3.org/2005/Atom}entry"）なので
+    findall(".//item") では0件になる。ローカル名判定であることをここで縛る。
+  ★ リンクは <link href="..."/> 属性形式。しかも rel="self" / rel="replies" が混在し、
+    先頭の <link> を素朴に拾うと「フィード自身のURL」を記事URLにしてしまう。
+    rel="alternate"（既定）を選べているかを検査する。
+  ★ <summary> と <content> に本文相当のテキストを入れてある（C1検査用）。
+-->
+<feed xmlns="http://www.w3.org/2005/Atom" xml:lang="en-GB">
+  <id>https://www.gov.uk/search/news-and-communications</id>
+  <title>News and communications</title>
+  <link rel="self" type="application/atom+xml" href="https://www.gov.uk/search/news-and-communications.atom"/>
+  <link rel="alternate" type="text/html" href="https://www.gov.uk/search/news-and-communications"/>
+  <updated>2026-09-14T16:30:02+01:00</updated>
+
+  <entry>
+    <id>https://www.gov.uk/government/news/uk-announces-new-sanctions</id>
+    <link rel="replies" type="text/html" href="https://www.gov.uk/comments/12345"/>
+    <link rel="alternate" type="text/html" href="https://www.gov.uk/government/news/uk-announces-new-sanctions"/>
+    <title>UK announces new sanctions package</title>
+    <summary>The UK government today announced a new package of sanctions. This is body-equivalent text and must never be stored.</summary>
+    <content type="html">&lt;p&gt;Full press release body. Must never be stored.&lt;/p&gt;</content>
+    <updated>2026-09-14T16:30:02+01:00</updated>
+    <published>2026-09-14T16:00:00+01:00</published>
+  </entry>
+
+  <entry>
+    <id>https://www.gov.uk/government/news/black-sea-shipping-statement</id>
+    <link rel="alternate" type="text/html" href="https://www.gov.uk/government/news/black-sea-shipping-statement"/>
+    <title>Foreign Secretary statement on Black Sea shipping</title>
+    <summary>Body-equivalent text. Must not be stored.</summary>
+    <updated>2026-09-14T09:12:00+01:00</updated>
+  </entry>
+
+  <entry>
+    <!-- published が無く updated のみ。日付が取れることを確認する -->
+    <id>https://www.gov.uk/government/news/energy-bill-second-reading</id>
+    <link rel="alternate" type="text/html" href="https://www.gov.uk/government/news/energy-bill-second-reading"/>
+    <title>Energy Bill: second reading</title>
+    <updated>2026-09-12T11:00:00+01:00</updated>
+  </entry>
+</feed>

@@ -1,0 +1,441 @@
+{
+  "api_calls": 3,
+  "articles": [
+    {
+      "article_id": "fc5232c5",
+      "enriched_by": "gemini",
+      "key_phrase_ja": "黒海で攻撃を受けた",
+      "key_phrase_original": "attacked in Black Sea",
+      "stance": "neutral",
+      "stance_reason": "攻撃の事実と被害を報じ、評価語を含まない",
+      "summary_ja": "オデーサ沖で穀物輸送船が攻撃を受け、乗組員2人が負傷した。船は自力で港に戻った。",
+      "tags": [
+        "安全保障",
+        "経済"
+      ],
+      "title_ja": "黒海のオデーサ沖で穀物輸送船が攻撃を受ける"
+    },
+    {
+      "article_id": "befb7315",
+      "enriched_by": "gemini",
+      "key_phrase_ja": "黒海穀物回廊への攻撃",
+      "key_phrase_original": "Black Sea grain corridor attack",
+      "stance": "critical",
+      "stance_reason": "攻撃を食料危機の要因として批判的に位置づけている",
+      "summary_ja": "黒海の穀物回廊で輸送船が攻撃された。小麦の先物価格は一時3%上昇した。",
+      "tags": [
+        "経済",
+        "安全保障"
+      ],
+      "title_ja": "黒海の穀物回廊への攻撃で食料価格への懸念が高まる"
+    },
+    {
+      "article_id": "8faa1601",
+      "enriched_by": "gemini",
+      "key_phrase_ja": "穀物船が被弾",
+      "key_phrase_original": "grain vessel hit",
+      "stance": "neutral",
+      "stance_reason": "当事国の発表を引用し、判断を加えていない",
+      "summary_ja": "ウクライナ政府は黒海で穀物船が被弾したと発表した。輸出再開の時期は未定としている。",
+      "tags": [
+        "安全保障",
+        "外交"
+      ],
+      "title_ja": "ウクライナ、黒海での攻撃で穀物船が被弾と発表"
+    },
+    {
+      "article_id": "26497d0b",
+      "enriched_by": "gemini",
+      "key_phrase_ja": "西側の姿勢を試す",
+      "key_phrase_original": "tests Western resolve",
+      "stance": "support",
+      "stance_reason": "西側の追加支援を必要なものとして論じている",
+      "summary_ja": "黒海での穀物船攻撃を受け、米議会では追加支援の是非をめぐる議論が始まった。",
+      "tags": [
+        "安全保障",
+        "政治"
+      ],
+      "title_ja": "黒海の穀物船攻撃が西側の対ウクライナ姿勢を試す"
+    },
+    {
+      "article_id": "f9535481",
+      "enriched_by": "gemini",
+      "key_phrase_ja": "黒海で攻撃された穀物船",
+      "key_phrase_original": "navire céréalier attaqué en mer Noire",
+      "stance": "critical",
+      "stance_reason": "航行の自由の侵害という評価を明示している",
+      "summary_ja": "フランス政府は黒海の航行の自由が損なわれていると表明した。国連は調査を求めている。",
+      "tags": [
+        "安全保障",
+        "外交"
+      ],
+      "title_ja": "オデッサ沖の黒海で穀物船が攻撃される"
+    },
+    {
+      "article_id": "843c2675",
+      "enriched_by": "gemini",
+      "key_phrase_ja": "穀物貨物船への攻撃",
+      "key_phrase_original": "attaque contre un cargo de grain",
+      "stance": "neutral",
+      "stance_reason": "国連の反応を伝えるにとどめている",
+      "summary_ja": "国連事務総長は黒海での攻撃を強く懸念すると述べ、関係国に自制を求めた。",
+      "tags": [
+        "外交",
+        "安全保障"
+      ],
+      "title_ja": "黒海：穀物貨物船への攻撃、国連が反応"
+    },
+    {
+      "article_id": "780531f4",
+      "enriched_by": "gemini",
+      "key_phrase_ja": "穀物貨物船が攻撃された",
+      "key_phrase_original": "Frachter mit Getreide angegriffen",
+      "stance": "neutral",
+      "stance_reason": "政府見解を事実として伝えている",
+      "summary_ja": "ドイツ政府は黒海の輸送路の安全確保が必要だとの立場を示した。EUは緊急協議を行う。",
+      "tags": [
+        "安全保障",
+        "経済"
+      ],
+      "title_ja": "黒海で穀物を積んだ貨物船が攻撃される"
+    },
+    {
+      "article_id": "944ae311",
+      "enriched_by": "gemini",
+      "key_phrase_ja": "海域での事案",
+      "key_phrase_original": "Инцидент в акватории",
+      "stance": "support",
+      "stance_reason": "自国の立場を擁護する説明を中心に据えている",
+      "summary_ja": "ロシア国防省は黒海での事案について、自国は関与していないと述べた。",
+      "tags": [
+        "安全保障"
+      ],
+      "title_ja": "黒海海域での事案：穀物を積んだ船舶が損傷"
+    },
+    {
+      "article_id": "41126917",
+      "enriched_by": "gemini",
+      "key_phrase_ja": "穀物船が損傷した",
+      "key_phrase_original": "Судно с зерном повреждено",
+      "stance": "critical",
+      "stance_reason": "当局の説明の矛盾を指摘している",
+      "summary_ja": "独立系メディアは、黒海での攻撃について当局の説明に矛盾があると指摘した。",
+      "tags": [
+        "安全保障",
+        "人権"
+      ],
+      "title_ja": "オデッサ近海の黒海で穀物船が損傷"
+    },
+    {
+      "article_id": "0a77e3c0",
+      "enriched_by": "gemini",
+      "key_phrase_ja": "穀物輸送船が攻撃された",
+      "key_phrase_original": "Зерновоз атакований",
+      "stance": "critical",
+      "stance_reason": "攻撃をテロと呼び強い非難を示している",
+      "summary_ja": "ウクライナ当局は穀物輸送船への攻撃を確認し、輸出回廊の防衛を強化すると述べた。",
+      "tags": [
+        "安全保障",
+        "経済"
+      ],
+      "title_ja": "オデーサ近郊の黒海で穀物輸送船が攻撃される"
+    },
+    {
+      "article_id": "78b48221",
+      "enriched_by": "gemini",
+      "key_phrase_ja": "穀物輸送船が襲撃された",
+      "key_phrase_original": "谷物运输船遭袭",
+      "stance": "neutral",
+      "stance_reason": "対話を呼びかける立場を事実として伝えている",
+      "summary_ja": "中国外務省は黒海での事案に関し、対話による解決を呼びかけた。",
+      "tags": [
+        "外交",
+        "安全保障"
+      ],
+      "title_ja": "黒海海域で穀物輸送船が襲撃され損傷"
+    },
+    {
+      "article_id": "62bfa153",
+      "enriched_by": "gemini",
+      "key_phrase_ja": "アジアの小麦輸入に影を落とす",
+      "key_phrase_original": "clouds Asian wheat imports",
+      "stance": "neutral",
+      "stance_reason": "市場の影響を数値とともに伝えている",
+      "summary_ja": "アジアの小麦輸入国は代替調達先の確保を急いでいる。運賃の上昇も見込まれる。",
+      "tags": [
+        "経済"
+      ],
+      "title_ja": "黒海の穀物船攻撃がアジアの小麦輸入に影を落とす"
+    },
+    {
+      "article_id": "a6f4bcc8",
+      "enriched_by": "gemini",
+      "key_phrase_ja": "（同義）",
+      "key_phrase_original": "黒海で穀物輸送船が攻撃",
+      "stance": "neutral",
+      "stance_reason": "事実関係の報道にとどめている",
+      "summary_ja": "オデーサ沖で穀物輸送船が攻撃を受けた。日本政府は情報収集を進めている。",
+      "tags": [
+        "安全保障"
+      ],
+      "title_ja": "黒海で穀物輸送船が攻撃 オデーサ沖"
+    },
+    {
+      "article_id": "b26762b2",
+      "enriched_by": "gemini",
+      "key_phrase_ja": "政策金利を引き上げ",
+      "key_phrase_original": "raises interest rates",
+      "stance": "neutral",
+      "stance_reason": "決定内容と背景を事実として伝えている",
+      "summary_ja": "FRBは政策金利を0.25%引き上げた。インフレ率は目標を上回って推移している。",
+      "tags": [
+        "経済"
+      ],
+      "title_ja": "FRBがインフレ抑制のため政策金利を引き上げ"
+    },
+    {
+      "article_id": "4f34fc04",
+      "enriched_by": "gemini",
+      "key_phrase_ja": "再びの利上げ",
+      "key_phrase_original": "raises interest rates again",
+      "stance": "neutral",
+      "stance_reason": "決定と影響を並べて伝えている",
+      "summary_ja": "中央銀行は利上げを決定した。住宅ローン負担の増加が懸念されている。",
+      "tags": [
+        "経済"
+      ],
+      "title_ja": "インフレ継続で中央銀行が再び政策金利を引き上げ"
+    },
+    {
+      "article_id": "4183f167",
+      "enriched_by": "gemini",
+      "key_phrase_ja": "金利を引き上げ",
+      "key_phrase_original": "erhöht Zinsen",
+      "stance": "critical",
+      "stance_reason": "景気への悪影響を強調している",
+      "summary_ja": "ユーロ圏の中央銀行は金利を引き上げた。景気の下振れリスクも指摘された。",
+      "tags": [
+        "経済"
+      ],
+      "title_ja": "インフレ継続により中央銀行が金利を引き上げ"
+    },
+    {
+      "article_id": "af8bee44",
+      "enriched_by": "gemini",
+      "key_phrase_ja": "政策金利を引き上げ",
+      "key_phrase_original": "raises interest rates",
+      "stance": "neutral",
+      "stance_reason": "統計を引用して事実を伝えている",
+      "summary_ja": "インドの中央銀行も金利を引き上げた。食品価格の上昇が続いている。",
+      "tags": [
+        "経済"
+      ],
+      "title_ja": "中央銀行が政策金利を引き上げ、インフレは依然高水準"
+    },
+    {
+      "article_id": "8741a5b8",
+      "enriched_by": "gemini",
+      "key_phrase_ja": "合同軍事演習",
+      "key_phrase_original": "联合军事演习",
+      "stance": "support",
+      "stance_reason": "自国の訓練を正当な行為として説明している",
+      "summary_ja": "台湾海峡付近で合同軍事演習が行われた。主権を守る通常の訓練と説明された。",
+      "tags": [
+        "安全保障"
+      ],
+      "title_ja": "台湾海峡付近で合同軍事演習を実施"
+    },
+    {
+      "article_id": "a534aba0",
+      "enriched_by": "gemini",
+      "key_phrase_ja": "台湾海峡付近の合同軍事演習",
+      "key_phrase_original": "Joint military drills near Taiwan Strait",
+      "stance": "neutral",
+      "stance_reason": "実施の事実と周辺の反応を伝えている",
+      "summary_ja": "台湾海峡付近で軍事演習が実施された。周辺国は動向を注視している。",
+      "tags": [
+        "安全保障"
+      ],
+      "title_ja": "台湾海峡付近で合同軍事演習"
+    },
+    {
+      "article_id": "8aa5cb8c",
+      "enriched_by": "gemini",
+      "key_phrase_ja": "合同軍事訓練",
+      "key_phrase_original": "합동 군사훈련",
+      "stance": "neutral",
+      "stance_reason": "政府の立場を引用している",
+      "summary_ja": "韓国政府は台湾海峡周辺の軍事訓練について、地域の安定を求める立場を示した。",
+      "tags": [
+        "安全保障",
+        "外交"
+      ],
+      "title_ja": "台湾海峡付近で合同軍事訓練を実施"
+    },
+    {
+      "article_id": "3db20c49",
+      "enriched_by": "gemini",
+      "key_phrase_ja": "（同義）",
+      "key_phrase_original": "消費税減税の大綱",
+      "stance": "neutral",
+      "stance_reason": "方針を事実として報じ、評価語を含まない",
+      "summary_ja": "政府は消費税減税の大綱を閣議決定する方針。臨時国会での法案成立を目指す。",
+      "tags": [
+        "政治",
+        "経済"
+      ],
+      "title_ja": "政府、消費税減税の大綱を閣議決定へ"
+    },
+    {
+      "article_id": "0d8ac442",
+      "enriched_by": "gemini",
+      "key_phrase_ja": "（同義）",
+      "key_phrase_original": "記録的な大雨",
+      "stance": "neutral",
+      "stance_reason": "気象情報と警戒呼びかけを伝えている",
+      "summary_ja": "首都圏で記録的な大雨となり、複数の河川で氾濫の危険が高まっている。",
+      "tags": [
+        "災害"
+      ],
+      "title_ja": "首都圏で記録的な大雨 河川の氾濫に警戒"
+    },
+    {
+      "article_id": "c7c96e07",
+      "enriched_by": "gemini",
+      "key_phrase_ja": "（同義）",
+      "key_phrase_original": "記録的大雨で河川氾濫のおそれ",
+      "stance": "neutral",
+      "stance_reason": "被害状況を事実として列挙している",
+      "summary_ja": "記録的大雨の影響で鉄道の運休が相次いだ。自治体は避難所を開設した。",
+      "tags": [
+        "災害",
+        "社会"
+      ],
+      "title_ja": "首都圏、記録的大雨で河川氾濫のおそれ 交通も乱れ"
+    },
+    {
+      "article_id": "d0e102b2",
+      "enriched_by": "gemini",
+      "key_phrase_ja": "アマゾンの気候サミット",
+      "key_phrase_original": "Cúpula do clima na Amazônia",
+      "stance": "support",
+      "stance_reason": "国際協調の成果を前向きに評価している",
+      "summary_ja": "アマゾンで開かれた気候サミットで、各国が排出削減目標を協議した。",
+      "tags": [
+        "気候",
+        "外交"
+      ],
+      "title_ja": "アマゾンの気候サミットが排出目標を協議"
+    },
+    {
+      "article_id": "b73b0e19",
+      "enriched_by": "gemini",
+      "key_phrase_ja": "アマゾン気候サミット",
+      "key_phrase_original": "Sommet climat en Amazonie",
+      "stance": "neutral",
+      "stance_reason": "対立の構図を中立に整理している",
+      "summary_ja": "気候サミットでは目標の引き上げをめぐり先進国と途上国の意見が分かれた。",
+      "tags": [
+        "気候"
+      ],
+      "title_ja": "アマゾンでの気候サミット：排出目標をめぐる議論"
+    },
+    {
+      "article_id": "2b3c1ac9",
+      "enriched_by": "gemini",
+      "key_phrase_ja": "気候サミットが排出目標を議論",
+      "key_phrase_original": "climate summit debates emissions targets",
+      "stance": "critical",
+      "stance_reason": "資金支援の不足を問題として提起している",
+      "summary_ja": "途上国は資金支援の拡充を求めた。合意文書の採択は最終日に持ち越された。",
+      "tags": [
+        "気候",
+        "経済"
+      ],
+      "title_ja": "アマゾン気候サミットが排出目標を議論"
+    },
+    {
+      "article_id": "845b6b76",
+      "enriched_by": "gemini",
+      "key_phrase_ja": "歳出法案を前進させる",
+      "key_phrase_original": "advances spending bill",
+      "stance": "neutral",
+      "stance_reason": "審議の経過を事実として伝えている",
+      "summary_ja": "上院の委員会が歳出法案を可決した。本会議での採決は来週となる見通し。",
+      "tags": [
+        "政治"
+      ],
+      "title_ja": "上院委員会が歳出法案を前進させる"
+    },
+    {
+      "article_id": "6b304541",
+      "enriched_by": "gemini",
+      "key_phrase_ja": "系外惑星の水蒸気",
+      "key_phrase_original": "water vapour on distant exoplanet",
+      "stance": "neutral",
+      "stance_reason": "研究発表を事実として伝えている",
+      "summary_ja": "観測チームは系外惑星の大気に水蒸気を検出したと発表した。査読中の論文による。",
+      "tags": [
+        "科学技術"
+      ],
+      "title_ja": "望遠鏡が遠方の系外惑星に水蒸気を検出"
+    },
+    {
+      "article_id": "eae6368e",
+      "enriched_by": "gemini",
+      "key_phrase_ja": "黒海の観光シーズン",
+      "key_phrase_original": "Black Sea tourism season",
+      "stance": "neutral",
+      "stance_reason": "統計を淡々と伝えている",
+      "summary_ja": "黒海沿岸の観光シーズンが終わり、来訪者数は過去最多となった。",
+      "tags": [
+        "経済"
+      ],
+      "title_ja": "黒海の観光シーズンが過去最多の来訪者数で終了"
+    },
+    {
+      "article_id": "f122d778",
+      "enriched_by": "gemini",
+      "key_phrase_ja": "記録的な穀物収穫",
+      "key_phrase_original": "Record grain harvest",
+      "stance": "neutral",
+      "stance_reason": "収穫統計の報告",
+      "summary_ja": "フランスの農地で穀物の収穫量が記録的な水準に達したと報告された。",
+      "tags": [
+        "経済"
+      ],
+      "title_ja": "フランスの農地で記録的な穀物収穫量"
+    },
+    {
+      "article_id": "ff8a5143",
+      "enriched_by": "gemini",
+      "key_phrase_ja": "オデーサ港の拡張",
+      "key_phrase_original": "Odesa port expansion",
+      "stance": "neutral",
+      "stance_reason": "投資動向を伝えている",
+      "summary_ja": "オデーサ港の拡張計画に対し、民間からの投資が集まっている。",
+      "tags": [
+        "経済"
+      ],
+      "title_ja": "オデーサ港の拡張計画に民間投資が集まる"
+    },
+    {
+      "article_id": "affd84e8",
+      "enriched_by": "gemini",
+      "key_phrase_ja": "首都圏の鉄道ダイヤ改正",
+      "key_phrase_original": "首都圏の鉄道ダイヤ改正",
+      "stance": "neutral",
+      "stance_reason": "発表内容を伝えている",
+      "summary_ja": "首都圏の鉄道各社が来春からダイヤ改正を実施すると発表した。",
+      "tags": [
+        "社会"
+      ],
+      "title_ja": "首都圏の鉄道ダイヤ改正 来春から実施へ"
+    }
+  ],
+  "date": "2026-09-15",
+  "degraded": false,
+  "engine": "gemini-2.5-flash",
+  "generated_at": "2026-09-15T03:10:00Z",
+  "schema_version": 3
+}

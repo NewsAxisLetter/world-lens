@@ -1,0 +1,64 @@
+{
+ "schema_version": 3,
+ "month": "2026-09",
+ "days": {
+  "2026-09-20": {
+   "status": "ok",
+   "articles": 23,
+   "countries": 7,
+   "feeds_ok": 27,
+   "feeds_total": 27,
+   "generated_at": "2026-09-20T15:00:00Z",
+   "alerts": []
+  },
+  "2026-09-21": {
+   "status": "ok",
+   "articles": 23,
+   "countries": 7,
+   "feeds_ok": 27,
+   "feeds_total": 27,
+   "generated_at": "2026-09-21T15:00:00Z",
+   "alerts": [
+    {
+     "feed_id": "-",
+     "source": "AI付与",
+     "status": "failed",
+     "note": "GEMINI_API_KEY が未設定のため翻訳・要約・立場ラベルを付与できませんでした。"
+    }
+   ]
+  },
+  "2026-09-22": {
+   "status": "failed",
+   "articles": 0,
+   "countries": 0,
+   "feeds_ok": 0,
+   "feeds_total": 27,
+   "generated_at": "2026-09-22T15:00:00Z",
+   "alerts": [
+    {
+     "feed_id": "*",
+     "source": "全フィード",
+     "status": "failed",
+     "note": "27フィードすべてが取得に失敗しました（ネットワーク到達不能）。"
+    }
+   ]
+  },
+  "2026-09-23": {
+   "status": "empty",
+   "articles": 0,
+   "countries": 0,
+   "feeds_ok": 0,
+   "feeds_total": 27,
+   "generated_at": "2026-09-23T15:00:00Z",
+   "alerts": [
+    {
+     "feed_id": "*",
+     "source": "全フィード",
+     "status": "empty",
+     "note": "取得は成功しましたが記事が0件でした。"
+    }
+   ]
+  }
+ },
+ "updated_at": "2026-09-23T15:05:00Z"
+}
