@@ -1,0 +1,16 @@
+{
+  "schema_version": 3,
+  "month": "2026-09",
+  "days": {
+    "2026-09-24": {
+      "status": "ok",
+      "articles": 739,
+      "countries": 12,
+      "feeds_ok": 27,
+      "feeds_total": 27,
+      "generated_at": "2026-09-24T13:05:43Z",
+      "alerts": []
+    }
+  },
+  "updated_at": "2026-09-24T13:06:28Z"
+}
