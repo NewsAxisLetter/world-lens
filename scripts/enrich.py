@@ -62,7 +62,7 @@ from datetime import datetime, timedelta, timezone
 # ==================================================================
 
 SCHEMA_VERSION = 3          # 契約§3
-MODEL = "gemini-2.5-flash"  # 契約§3 で指定。他モデルに変えると無料枠の実測値が変わる
+MODEL = "gemini-3.6-flash"  # 契約§3 で指定。他モデルに変えると無料枠の実測値が変わる
 API_BASE = "https://generativelanguage.googleapis.com/v1beta/models"
 
 # 1リクエストにまとめる記事数。
