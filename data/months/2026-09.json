@@ -22,13 +22,13 @@
     },
     "2026-09-26": {
       "status": "ok",
-      "articles": 745,
+      "articles": 857,
       "countries": 12,
       "feeds_ok": 27,
       "feeds_total": 27,
-      "generated_at": "2026-09-25T22:23:12Z",
+      "generated_at": "2026-09-26T01:19:58Z",
       "alerts": []
     }
   },
-  "updated_at": "2026-09-25T22:23:53Z"
+  "updated_at": "2026-09-26T01:20:42Z"
 }
