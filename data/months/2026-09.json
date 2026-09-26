@@ -28,7 +28,26 @@
       "feeds_total": 27,
       "generated_at": "2026-09-26T01:19:58Z",
       "alerts": []
+    },
+    "2026-09-27": {
+      "status": "ok",
+      "articles": 737,
+      "countries": 12,
+      "feeds_ok": 26,
+      "feeds_total": 27,
+      "generated_at": "2026-09-26T22:22:10Z",
+      "alerts": [
+        {
+          "feed_id": "de-spiegel",
+          "source": "Der Spiegel",
+          "status": "stale",
+          "latest_published_at": "2026-09-23T15:28:00Z",
+          "stale_days": 3.3,
+          "threshold_days": 3,
+          "note": "最新記事が3.3日前で、閾値3日を超えています（件数は20件あるため接続自体は成功しています）"
+        }
+      ]
     }
   },
-  "updated_at": "2026-09-26T01:20:42Z"
+  "updated_at": "2026-09-26T22:22:57Z"
 }
