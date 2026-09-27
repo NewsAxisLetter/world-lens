@@ -47,7 +47,35 @@
           "note": "最新記事が3.4日前で、閾値3日を超えています（件数は20件あるため接続自体は成功しています）"
         }
       ]
+    },
+    "2026-09-28": {
+      "status": "ok",
+      "articles": 737,
+      "countries": 12,
+      "feeds_ok": 25,
+      "feeds_total": 27,
+      "generated_at": "2026-09-27T22:23:21Z",
+      "alerts": [
+        {
+          "feed_id": "de-spiegel",
+          "source": "Der Spiegel",
+          "status": "stale",
+          "latest_published_at": "2026-09-23T15:28:00Z",
+          "stale_days": 4.3,
+          "threshold_days": 3,
+          "note": "最新記事が4.3日前で、閾値3日を超えています（件数は20件あるため接続自体は成功しています）"
+        },
+        {
+          "feed_id": "kr-kbs-world",
+          "source": "KBS World",
+          "status": "stale",
+          "latest_published_at": "2026-09-25T04:26:08Z",
+          "stale_days": 2.7,
+          "threshold_days": 2,
+          "note": "最新記事が2.7日前で、閾値2日を超えています（件数は30件あるため接続自体は成功しています）"
+        }
+      ]
     }
   },
-  "updated_at": "2026-09-27T01:21:02Z"
+  "updated_at": "2026-09-27T22:24:05Z"
 }
