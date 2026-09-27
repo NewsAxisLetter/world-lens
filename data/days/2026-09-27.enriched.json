@@ -1,11 +1,675 @@
 {
   "schema_version": 3,
   "date": "2026-09-27",
-  "generated_at": "2026-09-26T22:31:38Z",
+  "generated_at": "2026-09-27T01:22:41Z",
   "engine": "gemini-3.5-flash-lite",
-  "api_calls": 29,
+  "api_calls": 10,
   "degraded": false,
   "articles": [
+    {
+      "article_id": "7749248b",
+      "title_ja": "アジア大会8日目 韓国が金3個＝フェンシング・バスケ・eスポーツで",
+      "summary_ja": "アジア大会8日目に韓国がフェンシング、バスケットボール、eスポーツで金メダルを3個獲得した。",
+      "tags": [
+        "スポーツ"
+      ],
+      "stance": "neutral",
+      "stance_reason": "「韓国が金3個」という事実を客観的に伝えているため。",
+      "key_phrase_original": "アジア大会8日目",
+      "key_phrase_ja": "アジア大会8日目",
+      "enriched_by": "gemini"
+    },
+    {
+      "article_id": "5a338f23",
+      "title_ja": "ジャイアントパンダ「平平」「福双」が米アトランタ動物園に向けて出発 - xinhuanet.com",
+      "summary_ja": "ジャイアントパンダの「平平」と「福双」がアメリカのアトランタ動物園に向けて出発した。",
+      "tags": [
+        "社会"
+      ],
+      "stance": "neutral",
+      "stance_reason": "パンダの移動という事実を伝えているため。",
+      "key_phrase_original": "大熊猫“平平”“福双”",
+      "key_phrase_ja": "ジャイアントパンダ「平平」「福双」",
+      "enriched_by": "gemini"
+    },
+    {
+      "article_id": "7e672452",
+      "title_ja": "トランプ氏、イランの「受け入れられない」要求を拒絶（動画）",
+      "summary_ja": "トランプ氏がイランの要求を「受け入れられない」として拒絶した。",
+      "tags": [
+        "外交"
+      ],
+      "stance": "neutral",
+      "stance_reason": "トランプ氏の発言という事実を報じているため。",
+      "key_phrase_original": "Trump rejects Iran’s ‘unacceptable’ demands",
+      "key_phrase_ja": "トランプ氏がイランの「受け入れられない」要求を拒絶",
+      "enriched_by": "gemini"
+    },
+    {
+      "article_id": "3b9f8b13",
+      "title_ja": "オーストラリアニュース速報：ヒューム氏、OpenAIの違反に対する法的措置に懐疑的；AFLファンにとってのフライトキャンセルという悲しみ",
+      "summary_ja": "ヒューム氏がOpenAIの違反に対する法的措置に懐疑的な見方を示し、AFLファンがフライトキャンセルに見舞われた。",
+      "tags": [
+        "科学技術",
+        "社会"
+      ],
+      "stance": "neutral",
+      "stance_reason": "複数の出来事を中立的に伝えているため。",
+      "key_phrase_original": "OpenAI breach",
+      "key_phrase_ja": "OpenAIの違反",
+      "enriched_by": "gemini"
+    },
+    {
+      "article_id": "3b87113f",
+      "title_ja": "政治とカネに厳しい政治家の後援会が花開く どぶ板が導いた政権交代",
+      "summary_ja": "政治とカネに厳しい政治家の後援会が広がり、どぶ板活動が政権交代を導いた。",
+      "tags": [
+        "政治"
+      ],
+      "stance": "neutral",
+      "stance_reason": "後援会の状況や政権交代に至った経緯を述べているため。",
+      "key_phrase_original": "政権交代",
+      "key_phrase_ja": "政権交代",
+      "enriched_by": "gemini"
+    },
+    {
+      "article_id": "21e996c7",
+      "title_ja": "アラクチ氏、トランプ氏を無視し、ホルムズに関する仲介者の返答を待つ",
+      "summary_ja": "アラクチ氏がトランプ氏を無視して仲介者からのホルムズに関する返答を待っている。",
+      "tags": [
+        "外交",
+        "安全保障"
+      ],
+      "stance": "neutral",
+      "stance_reason": "アラクチ氏の行動を事実として伝えているため。",
+      "key_phrase_original": "Araghchi ignores Trump",
+      "key_phrase_ja": "アラクチ氏がトランプ氏を無視",
+      "enriched_by": "gemini"
+    },
+    {
+      "article_id": "a7a4fda7",
+      "title_ja": "「金のむしり取り」：ワン・ネイション、ビクトリア州選挙の候補者に最大63万ドルを要求",
+      "summary_ja": "ワン・ネイションがビクトリア州選挙の候補者に対して最大63万ドルの支払いを要求した。",
+      "tags": [
+        "政治"
+      ],
+      "stance": "neutral",
+      "stance_reason": "政党の要求についての事実を伝えているため。",
+      "key_phrase_original": "‘Cash grab’",
+      "key_phrase_ja": "「金のむしり取り」",
+      "enriched_by": "gemini"
+    },
+    {
+      "article_id": "d6b4ab01",
+      "title_ja": "ドジャース大谷翔平 2試合ぶり安打 チームは100勝に王手",
+      "summary_ja": "ドジャースの大谷翔平が2試合ぶりとなる安打を放ち、チームは100勝に王手をかけた。",
+      "tags": [
+        "スポーツ"
+      ],
+      "stance": "neutral",
+      "stance_reason": "試合結果と選手の成績を客観的に報じているため。",
+      "key_phrase_original": "大谷翔平",
+      "key_phrase_ja": "大谷翔平",
+      "enriched_by": "gemini"
+    },
+    {
+      "article_id": "16ba7e01",
+      "title_ja": "中国人民解放軍南部戦区、黄岩島周辺の海空域で海空連合演習を実施 - 新華網クライアント",
+      "summary_ja": "中国人民解放軍南部戦区が黄岩島周辺の海空域で海空連合演習を行った。",
+      "tags": [
+        "安全保障"
+      ],
+      "stance": "neutral",
+      "stance_reason": "軍の演習実施という事実を報じているため。",
+      "key_phrase_original": "中国人民解放军南部战区",
+      "key_phrase_ja": "中国人民解放軍南部戦区",
+      "enriched_by": "gemini"
+    },
+    {
+      "article_id": "cebdcf54",
+      "title_ja": "ホルムズ海峡の船舶交通量、戦前の水準より75%低い状態が続く",
+      "summary_ja": "ホルムズ海峡における船舶交通量が戦前の水準と比較して75%低い状態を維持している。",
+      "tags": [
+        "経済",
+        "安全保障"
+      ],
+      "stance": "neutral",
+      "stance_reason": "交通量の状況に関するデータを事実として伝えているため。",
+      "key_phrase_original": "Ормузе",
+      "key_phrase_ja": "ホルムズ",
+      "enriched_by": "gemini"
+    },
+    {
+      "article_id": "d645258b",
+      "title_ja": "福岡 筑後地方と熊本 熊本地方に線状降水帯直前予測",
+      "summary_ja": "福岡県の筑後地方と熊本県の熊本地方に線状降水帯直前予測が出された。",
+      "tags": [
+        "災害"
+      ],
+      "stance": "neutral",
+      "stance_reason": "見出しは事実をそのまま伝えている。",
+      "key_phrase_original": "線状降水帯直前予測",
+      "key_phrase_ja": "線状降水帯直前予測",
+      "enriched_by": "gemini"
+    },
+    {
+      "article_id": "c2b5b99c",
+      "title_ja": "トランプ氏、戦争終結とホルムズ海峡再開に向けたイランの7日間のロードマップを拒否",
+      "summary_ja": "トランプ氏がイランの7日間のロードマップを拒否した。",
+      "tags": [
+        "外交",
+        "安全保障"
+      ],
+      "stance": "neutral",
+      "stance_reason": "見出しの言葉を根拠に事実を伝えている。",
+      "key_phrase_original": "seven-day roadmap",
+      "key_phrase_ja": "7日間のロードマップ",
+      "enriched_by": "gemini"
+    },
+    {
+      "article_id": "747098c0",
+      "title_ja": "イラン外相：ホルムズ海峡の開放はイラン側の条件が満たされるかどうかに依存する",
+      "summary_ja": "イラン外相がホルムズ海峡の開放は条件が満たされることによる旨を述べた。",
+      "tags": [
+        "外交",
+        "安全保障"
+      ],
+      "stance": "neutral",
+      "stance_reason": "見出しの発言内容を中立的に伝えている。",
+      "key_phrase_original": "霍尔木兹海峡开放",
+      "key_phrase_ja": "ホルムズ海峡の開放",
+      "enriched_by": "gemini"
+    },
+    {
+      "article_id": "ae75fa64",
+      "title_ja": "リキャップ：アイオワ州立大、土壇場のタッチダウンパスでミシガン大に金星",
+      "summary_ja": "アイオワ州立大がタッチダウンパスでミシガン大に勝利した。",
+      "tags": [
+        "スポーツ"
+      ],
+      "stance": "neutral",
+      "stance_reason": "スポーツの試合結果を報じている。",
+      "key_phrase_original": "touchdown pass",
+      "key_phrase_ja": "タッチダウンパス",
+      "enriched_by": "gemini"
+    },
+    {
+      "article_id": "2df34fb5",
+      "title_ja": "ポーランド、「フォート・トランプ」に最大44億ドルの支出を検討",
+      "summary_ja": "ポーランドが「フォート・トランプ」に最大44億ドルの支出を検討している。",
+      "tags": [
+        "安全保障",
+        "経済"
+      ],
+      "stance": "neutral",
+      "stance_reason": "見出しの計画を事実として報じている。",
+      "key_phrase_original": "Fort Trump",
+      "key_phrase_ja": "フォート・トランプ",
+      "enriched_by": "gemini"
+    },
+    {
+      "article_id": "7f8b7207",
+      "title_ja": "佳子さま、鳥取のローカル線でSL体験 福祉施設で105歳と交流も",
+      "summary_ja": "佳子さまが鳥取のローカル線でSLを体験し、福祉施設で105歳と交流した。",
+      "tags": [
+        "社会",
+        "文化"
+      ],
+      "stance": "neutral",
+      "stance_reason": "行動の事実をそのまま伝えている。",
+      "key_phrase_original": "SL体験",
+      "key_phrase_ja": "SL体験",
+      "enriched_by": "gemini"
+    },
+    {
+      "article_id": "8fbfee5f",
+      "title_ja": "世界に放つAI革新、支える若者のモーレツ勤務 新入社員に贈るのは",
+      "summary_ja": "世界向けのAI革新と若者の勤務について報じている。",
+      "tags": [
+        "科学技術",
+        "経済"
+      ],
+      "stance": "neutral",
+      "stance_reason": "見出しの状況を中立的に記述している。",
+      "key_phrase_original": "AI革新",
+      "key_phrase_ja": "AI革新",
+      "enriched_by": "gemini"
+    },
+    {
+      "article_id": "d6dbda38",
+      "title_ja": "車両保険は必要か？ 千葉豪雨や台風25号で注目、愛車の水没に備え",
+      "summary_ja": "千葉豪雨や台風25号を契機に車両保険が注目されている。",
+      "tags": [
+        "経済",
+        "災害"
+      ],
+      "stance": "neutral",
+      "stance_reason": "災害に伴う保険の話題を中立に扱っている。",
+      "key_phrase_original": "車両保険",
+      "key_phrase_ja": "車両保険",
+      "enriched_by": "gemini"
+    },
+    {
+      "article_id": "d8ed62d8",
+      "title_ja": "車2台が浸水も730万円の補償 月2万円の保険料が家計を救った",
+      "summary_ja": "車2台の浸水に対して730万円の補償がなされた。",
+      "tags": [
+        "経済",
+        "災害"
+      ],
+      "stance": "neutral",
+      "stance_reason": "保険金による補償の事例を紹介している。",
+      "key_phrase_original": "730万円の補償",
+      "key_phrase_ja": "730万円の補償",
+      "enriched_by": "gemini"
+    },
+    {
+      "article_id": "5c204450",
+      "title_ja": "正教徒が十字架称賛祭を祝う",
+      "summary_ja": "正教徒が十字架称賛祭を祝っている。",
+      "tags": [
+        "文化"
+      ],
+      "stance": "neutral",
+      "stance_reason": "宗教行事の事実を報じている。",
+      "key_phrase_original": "Воздвижение Креста Господня",
+      "key_phrase_ja": "十字架称賛祭",
+      "enriched_by": "gemini"
+    },
+    {
+      "article_id": "ca122142",
+      "title_ja": "イラン戦争ライブ：トランプ氏がホルムズ計画を拒否する中、テヘランは公式回答を待つ",
+      "summary_ja": "トランプ氏がホルムズ計画を拒否し、テヘランは公式回答を待っている。",
+      "tags": [
+        "安全保障",
+        "外交"
+      ],
+      "stance": "neutral",
+      "stance_reason": "見出しの事実をそのまま伝えている。",
+      "key_phrase_original": "Trump rejects Hormuz plan",
+      "key_phrase_ja": "トランプ氏がホルムズ計画を拒否",
+      "enriched_by": "gemini"
+    },
+    {
+      "article_id": "4f58c510",
+      "title_ja": "ハリケーン・ポロ、メキシコ沖の強いカテゴリー4の嵐に。進路を確認。",
+      "summary_ja": "ハリケーン・ポロはメキシコ沖にある強力なカテゴリー4の嵐である。",
+      "tags": [
+        "災害"
+      ],
+      "stance": "neutral",
+      "stance_reason": "ハリケーンの状態に関する事実を伝えているため。",
+      "key_phrase_original": "Hurricane Polo",
+      "key_phrase_ja": "ハリケーン・ポロ",
+      "enriched_by": "gemini"
+    },
+    {
+      "article_id": "eb2638db",
+      "title_ja": "ペゼシュキアン氏、イランは「もはやワシントンとの協議を信用していない」と述べる",
+      "summary_ja": "ペゼシュキアン氏は、イランがワシントンとの協議をもはや信用していないと述べた。",
+      "tags": [
+        "政治",
+        "外交"
+      ],
+      "stance": "neutral",
+      "stance_reason": "発言内容を事実として伝えている。",
+      "key_phrase_original": "no longer trusts talks with Washington",
+      "key_phrase_ja": "ワシントンとの協議をもはや信用していない",
+      "enriched_by": "gemini"
+    },
+    {
+      "article_id": "c291c252",
+      "title_ja": "28年ぶりにベスト4へ復帰、アジア大会で輝いた浙江のサッカー少年たち - hznews.hangzhou.com.cn",
+      "summary_ja": "28年ぶりにベスト4へ復帰し、アジア大会で浙江のサッカー少年たちが輝いた。",
+      "tags": [
+        "スポーツ"
+      ],
+      "stance": "neutral",
+      "stance_reason": "大会の結果と選手の様子を伝えている。",
+      "key_phrase_original": "重回四强",
+      "key_phrase_ja": "ベスト4へ復帰",
+      "enriched_by": "gemini"
+    },
+    {
+      "article_id": "082251a0",
+      "title_ja": "北アイルランドのロイヤリストのパレード、禁止令覆り開催が許可される",
+      "summary_ja": "禁止令が覆され、北アイルランドのロイヤリストのパレードの開催が許可された。",
+      "tags": [
+        "社会"
+      ],
+      "stance": "neutral",
+      "stance_reason": "決定の事実をそのまま報じている。",
+      "key_phrase_original": "given go-ahead after ban overturned",
+      "key_phrase_ja": "禁止令が覆され開催が許可された",
+      "enriched_by": "gemini"
+    },
+    {
+      "article_id": "9ed6a902",
+      "title_ja": "第二次世界大戦時代の不和がウクライナにとって極めて重要な同盟を脅かしている - WSJ",
+      "summary_ja": "第二次世界大戦時代の不和がウクライナの重要な同盟を脅かしている。",
+      "tags": [
+        "安全保障",
+        "外交"
+      ],
+      "stance": "neutral",
+      "stance_reason": "状況を客観的に伝えている。",
+      "key_phrase_original": "A World War II-Era Feud",
+      "key_phrase_ja": "第二次世界大戦時代の不和",
+      "enriched_by": "gemini"
+    },
+    {
+      "article_id": "5285db36",
+      "title_ja": "「ロシア自由」レジスタンス運動が敵陣の裏で大規模作戦を実行し、1,000万米ドル超の損害を与える",
+      "summary_ja": "「ロシア自由」レジスタンス運動が敵陣の裏で大規模作戦を実行し、1,000万米ドルを超える損害を与えた。",
+      "tags": [
+        "安全保障"
+      ],
+      "stance": "neutral",
+      "stance_reason": "発表された作戦結果の事実を報じている。",
+      "key_phrase_original": "Freedom of Russia",
+      "key_phrase_ja": "ロシア自由",
+      "enriched_by": "gemini"
+    },
+    {
+      "article_id": "da2e7aec",
+      "title_ja": "トランプ氏：キューバと合意に達するだろう、軍隊を動かす必要はない - 観察者网",
+      "summary_ja": "トランプ氏はキューバと合意に達し、軍隊を動かす必要はないと述べた。",
+      "tags": [
+        "政治",
+        "外交"
+      ],
+      "stance": "neutral",
+      "stance_reason": "トランプ氏の発言を事実として伝えている。",
+      "key_phrase_original": "会和古巴达成协议",
+      "key_phrase_ja": "キューバと合意に達する",
+      "enriched_by": "gemini"
+    },
+    {
+      "article_id": "c8cc9c2a",
+      "title_ja": "アテネでのガス漏れ爆発の疑い、6人の死亡者の中にアメリカ人観光客4人が含まれる",
+      "summary_ja": "アテネでのガス漏れ爆発の疑いで6人が死亡し、その中にアメリカ人観光客4人が含まれている。",
+      "tags": [
+        "社会"
+      ],
+      "stance": "neutral",
+      "stance_reason": "事故の被害状況を伝えている。",
+      "key_phrase_original": "suspected gas leak blast in Athens",
+      "key_phrase_ja": "アテネでのガス漏れ爆発の疑い",
+      "enriched_by": "gemini"
+    },
+    {
+      "article_id": "47abdbea",
+      "title_ja": "前線停滞で九州北部大雨に 土砂災害など厳重警戒を 台風26号も",
+      "summary_ja": "前線の停滞により九州北部で大雨となり、土砂災害などの厳重警戒が呼びかけられている。台風26号にも触れている。",
+      "tags": [
+        "災害",
+        "気候"
+      ],
+      "stance": "neutral",
+      "stance_reason": "見出しの厳重警戒に基づく事実報道。",
+      "key_phrase_original": "九州北部大雨",
+      "key_phrase_ja": "九州北部大雨",
+      "enriched_by": "gemini"
+    },
+    {
+      "article_id": "3c25ef3b",
+      "title_ja": "ソチ空港が再び閉鎖された",
+      "summary_ja": "ソチ空港が再び閉鎖された。",
+      "tags": [
+        "社会"
+      ],
+      "stance": "neutral",
+      "stance_reason": "空港の閉鎖という事実を伝えている。",
+      "key_phrase_original": "Сочинский аэропорт",
+      "key_phrase_ja": "ソチ空港",
+      "enriched_by": "gemini"
+    },
+    {
+      "article_id": "8499c45a",
+      "title_ja": "群馬女性殺害事件 DVめぐり警察が元夫に事件前に2回口頭指導",
+      "summary_ja": "群馬女性殺害事件をめぐり、警察が事件前に元夫へDVに関する口頭指導を2回行っていた。",
+      "tags": [
+        "社会"
+      ],
+      "stance": "neutral",
+      "stance_reason": "警察の対応に関する事実を報じている。",
+      "key_phrase_original": "DVめぐり警察が元夫に事件前に2回口頭指導",
+      "key_phrase_ja": "DVめぐり警察が元夫に事件前に2回口頭指導",
+      "enriched_by": "gemini"
+    },
+    {
+      "article_id": "9ebcca53",
+      "title_ja": "ハリケーン・ノロがハワイのビッグアイランド付近で停滞する中、深刻な洪水のおそれ - ワシントン・ポスト",
+      "summary_ja": "ハリケーン・ノロがハワイのビッグアイランド付近で停滞している。",
+      "tags": [
+        "災害",
+        "気候"
+      ],
+      "stance": "neutral",
+      "stance_reason": "見出しのstallsに基づく事実報道。",
+      "key_phrase_original": "Hurricane Nolo",
+      "key_phrase_ja": "ハリケーン・ノロ",
+      "enriched_by": "gemini"
+    },
+    {
+      "article_id": "9d658757",
+      "title_ja": "【気象予報士解説】九州北部に線状降水帯のおそれ 台風26号は",
+      "summary_ja": "九州北部に線状降水帯のおそれがあり、台風26号に関する解説がある。",
+      "tags": [
+        "気候",
+        "災害"
+      ],
+      "stance": "neutral",
+      "stance_reason": "「解説」という語を用いて気象状況を伝えているため。",
+      "key_phrase_original": "線状降水帯",
+      "key_phrase_ja": "線状降水帯",
+      "enriched_by": "gemini"
+    },
+    {
+      "article_id": "a41eba3b",
+      "title_ja": "Swift観測所は降下を続け、10月中旬に運用を停止する",
+      "summary_ja": "Swift観測所が降下を続け、10月中旬に運用を停止する。",
+      "tags": [
+        "科学技術"
+      ],
+      "stance": "neutral",
+      "stance_reason": "観測所の状況と今後の予定を事実として伝えているため。",
+      "key_phrase_original": "Обсерватория Swift",
+      "key_phrase_ja": "Swift観測所",
+      "enriched_by": "gemini"
+    },
+    {
+      "article_id": "a94b82da",
+      "title_ja": "トランプ氏、イランによるホルムズ海峡再開の提案を拒否したと表明 中間選挙後の軍事行動再開を計画と暴露",
+      "summary_ja": "トランプ氏がイランによるホルムズ海峡再開の提案を拒否したと述べ、中期選挙後の軍事行動再開を計画していると暴露した。",
+      "tags": [
+        "安全保障",
+        "外交"
+      ],
+      "stance": "neutral",
+      "stance_reason": "発言内容をそのまま報道しているため。",
+      "key_phrase_original": "霍尔木兹海峡",
+      "key_phrase_ja": "ホルムズ海峡",
+      "enriched_by": "gemini"
+    },
+    {
+      "article_id": "8a2870ec",
+      "title_ja": "習近平氏がトランプ氏との首脳会談後に国連を欠席した理由",
+      "summary_ja": "習近平氏がトランプ氏との首脳会談後に国連を欠席した。",
+      "tags": [
+        "外交",
+        "政治"
+      ],
+      "stance": "neutral",
+      "stance_reason": "首脳会談後の国連欠席について事実を伝えているため。",
+      "key_phrase_original": "Xi Jinping",
+      "key_phrase_ja": "習近平",
+      "enriched_by": "gemini"
+    },
+    {
+      "article_id": "cb3a23f3",
+      "title_ja": "東京・高尾駅に念願の南北通路計画 60年越しの不便解消へ前進",
+      "summary_ja": "東京の高尾駅に南北通路計画があり、不便解消へ前進した。",
+      "tags": [
+        "社会"
+      ],
+      "stance": "neutral",
+      "stance_reason": "駅の通路計画と進展について事実を報じているため。",
+      "key_phrase_original": "高尾駅",
+      "key_phrase_ja": "高尾駅",
+      "enriched_by": "gemini"
+    },
+    {
+      "article_id": "3418faf2",
+      "title_ja": "もし自分の判断能力が下がったら… 「任意後見」という備えの選択肢",
+      "summary_ja": "判断能力低下への備えとして「任意後見」という選択肢がある。",
+      "tags": [
+        "社会"
+      ],
+      "stance": "neutral",
+      "stance_reason": "判断能力低下に対する備えの選択肢を紹介しているため。",
+      "key_phrase_original": "任意後見",
+      "key_phrase_ja": "任意後見",
+      "enriched_by": "gemini"
+    },
+    {
+      "article_id": "24744353",
+      "title_ja": "トランプ政権、クリーン自動車規制の骨抜きを計画",
+      "summary_ja": "トランプ政権がクリーン自動車規制の骨抜きを計画している。",
+      "tags": [
+        "政治",
+        "気候"
+      ],
+      "stance": "neutral",
+      "stance_reason": "政権の計画を事実として伝えているため。",
+      "key_phrase_original": "Clean Car Rules",
+      "key_phrase_ja": "クリーン自動車規制",
+      "enriched_by": "gemini"
+    },
+    {
+      "article_id": "6335c876",
+      "title_ja": "熊本市全域に避難指示 31万5456世帯 74万822人",
+      "summary_ja": "熊本市全域に避難指示が出された。",
+      "tags": [
+        "災害",
+        "社会"
+      ],
+      "stance": "neutral",
+      "stance_reason": "避難指示の発令と対象世帯・人数を事実として伝えているため。",
+      "key_phrase_original": "避難指示",
+      "key_phrase_ja": "避難指示",
+      "enriched_by": "gemini"
+    },
+    {
+      "article_id": "0a242fa6",
+      "title_ja": "強力な嵐によりアメリカ北東部で洪水や停電が発生",
+      "summary_ja": "強力な嵐によりアメリカ北東部で洪水や停電が発生した。",
+      "tags": [
+        "気候",
+        "災害"
+      ],
+      "stance": "neutral",
+      "stance_reason": "嵐による被害の事実を伝えているため。",
+      "key_phrase_original": "Powerful storm",
+      "key_phrase_ja": "強力な嵐",
+      "enriched_by": "gemini"
+    },
+    {
+      "article_id": "8c04882b",
+      "title_ja": "米国と中国、「AIインシデント」ホットラインを設置",
+      "summary_ja": "米国と中国が「AIインシデント」ホットラインを設置した。",
+      "tags": [
+        "科学技術",
+        "外交",
+        "安全保障"
+      ],
+      "stance": "neutral",
+      "stance_reason": "両国によるホットライン設置の事実を伝えているため。",
+      "key_phrase_original": "AI incidents",
+      "key_phrase_ja": "AIインシデント",
+      "enriched_by": "gemini"
+    },
+    {
+      "article_id": "1f182d3e",
+      "title_ja": "中秋節シーズンの映画の総興行収入が2億元を突破",
+      "summary_ja": "中秋節シーズンの映画の総興行収入が2億元を突破した。",
+      "tags": [
+        "経済",
+        "文化"
+      ],
+      "stance": "neutral",
+      "stance_reason": "見出しの語「中秋档电影总票房破两亿元」に基づき中立的に事実を伝えている。",
+      "key_phrase_original": "中秋档电影总票房破两亿元",
+      "key_phrase_ja": "中秋節映画総興行収入2億元突破",
+      "enriched_by": "gemini"
+    },
+    {
+      "article_id": "703f39ac",
+      "title_ja": "アフリカ、パレスチナ、ウクライナ…EU、危機の複数地域に7億1000万ユーロの援助を発表",
+      "summary_ja": "EUが世界各地の危機の地域に向けて7億1000万ユーロの援助を発表した。",
+      "tags": [
+        "経済",
+        "外交"
+      ],
+      "stance": "neutral",
+      "stance_reason": "見出しの語「L’UE annonce 710 millions d’euros d’aide」に基づき中立的に事実を伝えている。",
+      "key_phrase_original": "Afrique, Palestine, Ukraine… L’UE annonce 710 millions d’euros d’aide dans plusieurs régions du monde en crise",
+      "key_phrase_ja": "7億1000万ユーロの援助",
+      "enriched_by": "gemini"
+    },
+    {
+      "article_id": "37592fbb",
+      "title_ja": "カリブ海の島国セントビンセント・グレナディーンで致命的な銃撃事件が発生",
+      "summary_ja": "カリブ海の島国セントビンセントおよびグレナディーンで致命的な銃撃事件が発生した。",
+      "tags": [
+        "社会"
+      ],
+      "stance": "neutral",
+      "stance_reason": "見出しの語「Deadly shooting hits」に基づき中立的に事実を伝えている。",
+      "key_phrase_original": "Deadly shooting",
+      "key_phrase_ja": "致命的な銃撃事件",
+      "enriched_by": "gemini"
+    },
+    {
+      "article_id": "5db504b6",
+      "title_ja": "デール・アーンハート・ジュニア、75台以上の大破したレーシングカーがある私設墓地を所有",
+      "summary_ja": "デール・アーンハート・ジュニアが75台を超える大破したレーシングカーを収めた私設墓地を所有している。",
+      "tags": [
+        "文化",
+        "スポーツ"
+      ],
+      "stance": "neutral",
+      "stance_reason": "見出しの語「private graveyard with more than 75 wrecked race cars」に基づき中立的に事実を伝えている。",
+      "key_phrase_original": "private graveyard",
+      "key_phrase_ja": "私設墓地",
+      "enriched_by": "gemini"
+    },
+    {
+      "article_id": "bceaff0d",
+      "title_ja": "強力なノーライスター（北東の暴風雨）が沿岸部の洪水を引き起こし、北東部の一部で停電が発生 - NBC News",
+      "summary_ja": "強力なノーライスターにより沿岸部の洪水が発生し、北東部の一部で停電が起きた。",
+      "tags": [
+        "災害"
+      ],
+      "stance": "neutral",
+      "stance_reason": "見出しの語「Powerful nor’easter causes coastal flooding」に基づき中立的に事実を伝えている。",
+      "key_phrase_original": "Powerful nor’easter",
+      "key_phrase_ja": "強力なノーライスター",
+      "enriched_by": "gemini"
+    },
+    {
+      "article_id": "e585e6e5",
+      "title_ja": "ロシアのキーウ攻撃で戦略コミュニケーションセンターの元従業員マリア・イヴジェンコさんが死亡",
+      "summary_ja": "ロシアによるキーウ攻撃で、戦略コミュニケーションセンターの元従業員であるマリア・イヴジェンコさんが死亡した。",
+      "tags": [
+        "安全保障"
+      ],
+      "stance": "neutral",
+      "stance_reason": "見出しの語「killed in Russian attack on Kyiv」に基づき中立的に事実を伝えている。",
+      "key_phrase_original": "killed in Russian attack on Kyiv",
+      "key_phrase_ja": "ロシアのキーウ攻撃で死亡",
+      "enriched_by": "gemini"
+    },
     {
       "article_id": "6096d6a1",
       "title_ja": "トランプ氏、ホルムズ海峡を7日間で再開するイランとの合意を拒否",
@@ -79,6 +743,21 @@
       "enriched_by": "gemini"
     },
     {
+      "article_id": "9ef11ec5",
+      "title_ja": "外交部報道官が人工知能に関する記者からの質問に回答 - 国際 - 人民網",
+      "summary_ja": "外交部の報道官が人工知能についての記者からの質問に答えた。",
+      "tags": [
+        "政治",
+        "外交",
+        "科学技術"
+      ],
+      "stance": "neutral",
+      "stance_reason": "見出しの語「外交部发言人就人工智能问题答记者问」に基づき中立的に事実を伝えている。",
+      "key_phrase_original": "外交部发言人就人工智能问题答记者问",
+      "key_phrase_ja": "外交部報道官が人工知能問題について記者問答を行う",
+      "enriched_by": "gemini"
+    },
+    {
       "article_id": "5fd44385",
       "title_ja": "カナダの都市モントリオール近郊でのヘリコプター墜落事故で4人死亡、警察発表",
       "summary_ja": "モントリオール近郊でヘリコプターが墜落し4人が死亡したと警察が発表した。",
@@ -106,17 +785,16 @@
       "enriched_by": "gemini"
     },
     {
-      "article_id": "47abdbea",
-      "title_ja": "前線停滞で九州北部大雨に 土砂災害など厳重警戒を 台風26号も",
-      "summary_ja": "前線の停滞により九州北部で大雨となり、土砂災害などの厳重警戒が呼びかけられている。台風26号にも触れている。",
+      "article_id": "9f8fc835",
+      "title_ja": "「平安」という国家のネームカードを磨き続けよう",
+      "summary_ja": "「平安」という国家のネームカードを磨き続ける。",
       "tags": [
-        "災害",
-        "気候"
+        "政治"
       ],
-      "stance": "neutral",
-      "stance_reason": "見出しの厳重警戒に基づく事実報道。",
-      "key_phrase_original": "九州北部大雨",
-      "key_phrase_ja": "九州北部大雨",
+      "stance": "support",
+      "stance_reason": "見出しの語「持续擦亮“平安”的国家名片」に基づき政策や国家の取り組みを肯定的に支持する表現であるため。",
+      "key_phrase_original": "持续擦亮“平安”的国家名片",
+      "key_phrase_ja": "「平安」の国家ネームカードを磨き続ける",
       "enriched_by": "gemini"
     },
     {
@@ -131,20 +809,6 @@
       "stance_reason": "見出しのdeclare emergencyに基づく事実報道。",
       "key_phrase_original": "declare emergency",
       "key_phrase_ja": "非常事態を宣言",
-      "enriched_by": "gemini"
-    },
-    {
-      "article_id": "9ebcca53",
-      "title_ja": "ハリケーン・ノロがハワイのビッグアイランド付近で停滞する中、深刻な洪水のおそれ - ワシントン・ポスト",
-      "summary_ja": "ハリケーン・ノロがハワイのビッグアイランド付近で停滞している。",
-      "tags": [
-        "災害",
-        "気候"
-      ],
-      "stance": "neutral",
-      "stance_reason": "見出しのstallsに基づく事実報道。",
-      "key_phrase_original": "Hurricane Nolo",
-      "key_phrase_ja": "ハリケーン・ノロ",
       "enriched_by": "gemini"
     },
     {
@@ -177,6 +841,19 @@
       "enriched_by": "gemini"
     },
     {
+      "article_id": "a73e4db7",
+      "title_ja": "フル12ラウンド - ニューヨーク・タイムズ",
+      "summary_ja": "フル12ラウンドについて。",
+      "tags": [
+        "スポーツ"
+      ],
+      "stance": "neutral",
+      "stance_reason": "見出しの語「The Full 12 Rounds」に基づき中立的に事実を伝えている。",
+      "key_phrase_original": "The Full 12 Rounds",
+      "key_phrase_ja": "フル12ラウンド",
+      "enriched_by": "gemini"
+    },
+    {
       "article_id": "c5ca163a",
       "title_ja": "プリキュア出演声優の加藤英美里 勇気くれた「ファン第1号」の言葉",
       "summary_ja": "プリキュア出演声優の加藤英美里が勇気くれた「ファン第1号」の言葉について語る。",
@@ -188,6 +865,19 @@
       "stance_reason": "見出しの記載に基づく事実報道。",
       "key_phrase_original": "加藤英美里",
       "key_phrase_ja": "加藤英美里",
+      "enriched_by": "gemini"
+    },
+    {
+      "article_id": "3b87fc9f",
+      "title_ja": "BKFC 94 試合結果：ティル対ロメロ - MMA Fighting",
+      "summary_ja": "BKFC 94のティル対ロメロの試合結果。",
+      "tags": [
+        "スポーツ"
+      ],
+      "stance": "neutral",
+      "stance_reason": "見出しの語「BKFC 94 Results」に基づき中立的に事実を伝えている。",
+      "key_phrase_original": "BKFC 94 Results",
+      "key_phrase_ja": "BKFC 94 結果",
       "enriched_by": "gemini"
     },
     {
@@ -220,6 +910,19 @@
       "enriched_by": "gemini"
     },
     {
+      "article_id": "5fb5c819",
+      "title_ja": "ケナガマンモスがAIの助けを借りて復活へ：科学者",
+      "summary_ja": "科学者がAIの助けを借りてケナガマンモスを復活させる。",
+      "tags": [
+        "科学技術"
+      ],
+      "stance": "neutral",
+      "stance_reason": "見出しの語「Woolly mammoth to be resurrected」を事実として伝えている。",
+      "key_phrase_original": "Woolly mammoth",
+      "key_phrase_ja": "ケナガマンモス",
+      "enriched_by": "gemini"
+    },
+    {
       "article_id": "ddfa859c",
       "title_ja": "欧州最大の自動車メーカー、安全上の懸念から400万台の車をリコール",
       "summary_ja": "欧州最大の自動車メーカーが安全上の懸念から400万台をリコールした。",
@@ -231,6 +934,20 @@
       "stance_reason": "見出しのrecallsに基づく事実報道。",
       "key_phrase_original": "recalls 4 million cars",
       "key_phrase_ja": "400万台の車をリコール",
+      "enriched_by": "gemini"
+    },
+    {
+      "article_id": "8f7b92ce",
+      "title_ja": "不気味な類似性.. ファイバーはアル・ビールーニーの知的な成果を盗んだのか？",
+      "summary_ja": "ファイバーがアル・ビールーニーの知的成果を盗んだのかという類似性について問うている。",
+      "tags": [
+        "科学技術",
+        "文化"
+      ],
+      "stance": "neutral",
+      "stance_reason": "見出しの語「هل سرق فيبر إنجازات البيروني」に基づき疑問を呈している。",
+      "key_phrase_original": "إنجازات البيروني",
+      "key_phrase_ja": "アル・ビールーニーの成果",
       "enriched_by": "gemini"
     },
     {
@@ -259,6 +976,19 @@
       "stance_reason": "見出しの避難指示に基づく事実報道。",
       "key_phrase_original": "避難指示",
       "key_phrase_ja": "避難指示",
+      "enriched_by": "gemini"
+    },
+    {
+      "article_id": "c311378a",
+      "title_ja": "イスラエル野党、ネタニヤフ打倒へ結束",
+      "summary_ja": "イスラエル野党がネタニヤフを打倒するために صفوفها を統一する。",
+      "tags": [
+        "政治"
+      ],
+      "stance": "neutral",
+      "stance_reason": "見出しの語「المعارضة الإسرائيلية توحّد صفوفها」を事実として報じている。",
+      "key_phrase_original": "المعارضة الإسرائيلية",
+      "key_phrase_ja": "イスラエル野党",
       "enriched_by": "gemini"
     },
     {
@@ -342,6 +1072,19 @@
       "stance_reason": "見出しのpolice sayに基づく事実報道。",
       "key_phrase_original": "body was staged",
       "key_phrase_ja": "遺体が偽装された",
+      "enriched_by": "gemini"
+    },
+    {
+      "article_id": "f744bee5",
+      "title_ja": "木に吊るされた状態で発見された女性の母親、警察が遺体は偽装されたと発表し衝撃を受ける",
+      "summary_ja": "警察が遺体は偽装されたと発表し、木に吊るされた女性の母親が衝撃を受けている。",
+      "tags": [
+        "社会"
+      ],
+      "stance": "neutral",
+      "stance_reason": "見出しの語「police say body was staged」を客観的に伝えている。",
+      "key_phrase_original": "body was staged",
+      "key_phrase_ja": "遺体は偽装された",
       "enriched_by": "gemini"
     },
     {
@@ -860,6 +1603,19 @@
       "enriched_by": "gemini"
     },
     {
+      "article_id": "add5f572",
+      "title_ja": "ラブロフ氏、ホルムズ危機解決に向けたイニシアチブを発足させ、断絶を経てドイツの同僚と会談",
+      "summary_ja": "ラブロフ氏がホルムズ危機解決のイニシアチブを発足させ、ドイツ外相と会談した。",
+      "tags": [
+        "外交"
+      ],
+      "stance": "neutral",
+      "stance_reason": "見出しの語「لافروف يطلق مبادرة」をそのまま伝えている。",
+      "key_phrase_original": "أزمة هرمز",
+      "key_phrase_ja": "ホルムズ危機",
+      "enriched_by": "gemini"
+    },
+    {
       "article_id": "0d047071",
       "title_ja": "全米1位のテキサス大がテネシー大戦で薄氷の勝利、トランプ大統領がニーランド・スタジアムから観戦 - Fox News",
       "summary_ja": "テキサス大がテネシー大戦に勝利し、トランプ大統領が競技場から試合を観戦した。",
@@ -916,6 +1672,20 @@
       "enriched_by": "gemini"
     },
     {
+      "article_id": "83f1188b",
+      "title_ja": "ネタニヤフ氏の演説前に各国代表団が退場…ダノン氏は現場に疑問を呈し、フィダン氏はイスラエルの孤立を強調",
+      "summary_ja": "ネタニヤフの演説前に代表団が退場し、ダノンが疑問視しフィダンが孤立を強調した。",
+      "tags": [
+        "外交",
+        "政治"
+      ],
+      "stance": "neutral",
+      "stance_reason": "見出しの語「انسحاب الوفود قبل كلمة نتنياهو」に基づき事実を報じている。",
+      "key_phrase_original": "انسحاب الوفود",
+      "key_phrase_ja": "代表団の退場",
+      "enriched_by": "gemini"
+    },
+    {
       "article_id": "1d707836",
       "title_ja": "法王、パリの大規模な野外ミサで若者たちの「エネルギーと献身」を称賛",
       "summary_ja": "パリの野外ミサにおいて法王が若者たちの姿勢を称賛した。",
@@ -952,6 +1722,19 @@
       "stance_reason": "ボクサーの発言内容を客観的に報じている。",
       "key_phrase_original": "Боксер Кузьмин",
       "key_phrase_ja": "ボクサーのクズミン",
+      "enriched_by": "gemini"
+    },
+    {
+      "article_id": "eb2e26e3",
+      "title_ja": "Wi-Fiを使用してあらゆるデバイスをゲーム機に変換する外部GPU",
+      "summary_ja": "Wi-Fiを使用してあらゆるデバイスをゲーム機に変える外部GPUが存在する。",
+      "tags": [
+        "科学技術"
+      ],
+      "stance": "neutral",
+      "stance_reason": "見出しの語「This External GPU Uses Wi-Fi」に基づいている。",
+      "key_phrase_original": "External GPU",
+      "key_phrase_ja": "外部GPU",
       "enriched_by": "gemini"
     },
     {
@@ -1200,6 +1983,19 @@
       "enriched_by": "gemini"
     },
     {
+      "article_id": "27eb8b78",
+      "title_ja": "ガルフカップ「27」におけるオマーン対クウェート戦の日程と放送チャンネル",
+      "summary_ja": "ガルフカップ「27」のオマーン対クウェート戦の日程と放送チャンネルが示されている。",
+      "tags": [
+        "スポーツ"
+      ],
+      "stance": "neutral",
+      "stance_reason": "見出しの語「موعد مباراة عُمان والكويت」に基づき情報を伝えている。",
+      "key_phrase_original": "عُمان والكويت",
+      "key_phrase_ja": "オマーンとクウェート",
+      "enriched_by": "gemini"
+    },
+    {
       "article_id": "b5ae5752",
       "title_ja": "北京、米中が軍事危機管理協定を追求すると発表",
       "summary_ja": "北京当局が、米国と中国が軍事危機管理協定の締結に向けて取り組む方針を示した。",
@@ -1237,6 +2033,19 @@
       "stance_reason": "見出しの事実を中立的に伝えている。",
       "key_phrase_original": "Russian attack in Kyiv region",
       "key_phrase_ja": "キエフ地域でのロシアの攻撃",
+      "enriched_by": "gemini"
+    },
+    {
+      "article_id": "d4aa55d3",
+      "title_ja": "ドイツとロシアの外相が4年以上ぶりに対面会談",
+      "summary_ja": "ドイツとロシアの外相が4年余りぶりに会談した。",
+      "tags": [
+        "外交"
+      ],
+      "stance": "neutral",
+      "stance_reason": "見出しの語「German and Russian foreign ministers meet」を事実として伝えている。",
+      "key_phrase_original": "foreign ministers meet",
+      "key_phrase_ja": "外相会談",
       "enriched_by": "gemini"
     },
     {
@@ -1430,6 +2239,19 @@
       "enriched_by": "gemini"
     },
     {
+      "article_id": "f91528c3",
+      "title_ja": "テキサス大学のコリン・シモンズ、フィールドで放尿のまねをしたことを謝罪",
+      "summary_ja": "テキサスのコリン・シモンズがフィールドで放尿のまねをしたことで謝罪した。",
+      "tags": [
+        "スポーツ"
+      ],
+      "stance": "neutral",
+      "stance_reason": "見出しの語「Colin Simmons apologizes」に基づいている。",
+      "key_phrase_original": "Colin Simmons",
+      "key_phrase_ja": "コリン・シモンズ",
+      "enriched_by": "gemini"
+    },
+    {
       "article_id": "389fd049",
       "title_ja": "南アフリカ警察が連続殺害事件を捜査する中、10人目の女性の遺体を発見",
       "summary_ja": "南アフリカ警察による連続殺人事件の捜査の過程で、10人目の女性の遺体が見つかった。",
@@ -1592,14 +2414,16 @@
     },
     {
       "article_id": "a31ac5b5",
-      "title_ja": "South African police discover body of 10th woman near Johannesburg",
-      "summary_ja": "",
-      "tags": [],
+      "title_ja": "南アフリカ警察、ヨハネスブルグ近郊で10人目の女性の遺体を発見",
+      "summary_ja": "南アフリカ警察がヨハネスブルグ近郊で10人目の女性の遺体を発見した。",
+      "tags": [
+        "社会"
+      ],
       "stance": "neutral",
-      "stance_reason": "AI未適用",
-      "key_phrase_original": "South African police discover body of 10th woman near Johannesburg",
-      "key_phrase_ja": "",
-      "enriched_by": "passthrough"
+      "stance_reason": "見出しにある事実をそのまま伝えている。",
+      "key_phrase_original": "body of 10th woman",
+      "key_phrase_ja": "10人目の女性の遺体",
+      "enriched_by": "gemini"
     },
     {
       "article_id": "9a16877c",
@@ -1694,6 +2518,19 @@
       "enriched_by": "gemini"
     },
     {
+      "article_id": "95fcf9f0",
+      "title_ja": "マインクラフト ダンジョンズ IIの新ディメンションがマインクラフト Java & Bedrock エディションに登場",
+      "summary_ja": "マインクラフト ダンジョンズ IIの新ディメンションがマインクラフト Java & Bedrock エディションに登場する。",
+      "tags": [
+        "科学技術"
+      ],
+      "stance": "neutral",
+      "stance_reason": "見出しにある事実をそのまま伝えている。",
+      "key_phrase_original": "New Dimension",
+      "key_phrase_ja": "新ディメンション",
+      "enriched_by": "gemini"
+    },
+    {
       "article_id": "a5529d77",
       "title_ja": "イエメンライブ：戦闘激化のなか、イエメン軍の体制強化に向けた協議がリヤドで開催",
       "summary_ja": "戦闘が激化する中、リヤドでイエメン軍の即応態勢を高めるための協議が行われている。",
@@ -1743,6 +2580,20 @@
       "stance_reason": "現状の事実関係を並べて伝えているため。",
       "key_phrase_original": "ترمب",
       "key_phrase_ja": "トランプ",
+      "enriched_by": "gemini"
+    },
+    {
+      "article_id": "eaf7b87f",
+      "title_ja": "「チャーミングで警戒心を解かせる」…メタの技術満載のMuseが可愛らしさの力を活用する方法",
+      "summary_ja": "メタの技術満載のMuseが可愛らしさの力を活用する方法について報じている。",
+      "tags": [
+        "科学技術",
+        "文化"
+      ],
+      "stance": "neutral",
+      "stance_reason": "見出しにある内容を中立的に伝えている。",
+      "key_phrase_original": "Muse",
+      "key_phrase_ja": "Muse",
       "enriched_by": "gemini"
     },
     {
@@ -1823,32 +2674,6 @@
       "stance_reason": "無人機の落下と火災の事実を伝えているため。",
       "key_phrase_original": "Геленджиком",
       "key_phrase_ja": "ゲレンジク",
-      "enriched_by": "gemini"
-    },
-    {
-      "article_id": "4f58c510",
-      "title_ja": "ハリケーン・ポロ、メキシコ沖の強いカテゴリー4の嵐に。進路を確認。",
-      "summary_ja": "ハリケーン・ポロはメキシコ沖にある強力なカテゴリー4の嵐である。",
-      "tags": [
-        "災害"
-      ],
-      "stance": "neutral",
-      "stance_reason": "ハリケーンの状態に関する事実を伝えているため。",
-      "key_phrase_original": "Hurricane Polo",
-      "key_phrase_ja": "ハリケーン・ポロ",
-      "enriched_by": "gemini"
-    },
-    {
-      "article_id": "082251a0",
-      "title_ja": "ベルファストの裁判所、オレンジオーダーのガルバギー・ロードでの行進を許可する決定に差し止め命令",
-      "summary_ja": "ベルファストの裁判所が、オレンジオーダーによるガルバギー・ロードでの行進許可の決定に対して差し止め命令を出した。",
-      "tags": [
-        "社会"
-      ],
-      "stance": "neutral",
-      "stance_reason": "裁判所の差し止め命令の事実を伝えているため。",
-      "key_phrase_original": "Orange Order",
-      "key_phrase_ja": "オレンジオーダー",
       "enriched_by": "gemini"
     },
     {
@@ -2078,6 +2903,19 @@
       "stance_reason": "スポーツの記録達成の事実を伝えているため。",
       "key_phrase_original": "رقما تاريخيا",
       "key_phrase_ja": "歴史的な記録",
+      "enriched_by": "gemini"
+    },
+    {
+      "article_id": "c7174d24",
+      "title_ja": "「ゴジラ マイナス ゼロ」は期待通りの素晴らしさのようだ",
+      "summary_ja": "「ゴジラ マイナス ゼロ」が期待通りの素晴らしさであると述べられている。",
+      "tags": [
+        "文化"
+      ],
+      "stance": "support",
+      "stance_reason": "見出しで作品の素晴らしさを肯定的に評価している。",
+      "key_phrase_original": "Godzilla Minus Zero",
+      "key_phrase_ja": "ゴジラ マイナス ゼロ",
       "enriched_by": "gemini"
     },
     {
@@ -2392,6 +3230,19 @@
       "enriched_by": "gemini"
     },
     {
+      "article_id": "79337b03",
+      "title_ja": "F1ア塞拜疆大奖赛：ラッセルがシーズン3勝目を獲得",
+      "summary_ja": "F1アゼルバイジャンGPでラッセルがシーズン3勝目を獲得した。",
+      "tags": [
+        "スポーツ"
+      ],
+      "stance": "neutral",
+      "stance_reason": "見出しにあるレースの結果を伝えている。",
+      "key_phrase_original": "拉塞尔赢得赛季第三冠",
+      "key_phrase_ja": "ラッセルがシーズン3勝目を獲得",
+      "enriched_by": "gemini"
+    },
+    {
       "article_id": "7cbe9891",
       "title_ja": "ベネズエラ政府と野党、最高裁判所改革に向けた取り組みで合意",
       "summary_ja": "ベネズエラ政府と野党が最高裁改革に向けて取り組むことで合意した。",
@@ -2472,6 +3323,20 @@
       "stance_reason": "外交上の決定に関する理由を中立的に報じているため。",
       "key_phrase_original": "لماذا قال ترمب \"لا\" للعرض الإيراني بشأن هرمز؟",
       "key_phrase_ja": "イランの提案",
+      "enriched_by": "gemini"
+    },
+    {
+      "article_id": "7d63848c",
+      "title_ja": "ホワイトハウスがエアフォース・ワンからCNNを排除、ネットワーク各社が再びプール取材を一時停止",
+      "summary_ja": "ホワイトハウスがエアフォース・ワンからCNNを排除し、ネットワーク各社がプール取材を再び一時停止した。",
+      "tags": [
+        "政治",
+        "社会"
+      ],
+      "stance": "neutral",
+      "stance_reason": "見出しにある出来事の事実を伝えている。",
+      "key_phrase_original": "White House Blocks CNN",
+      "key_phrase_ja": "ホワイトハウスがCNNを排除",
       "enriched_by": "gemini"
     },
     {
@@ -2609,6 +3474,19 @@
       "stance_reason": "ミサへの人々の集まりを報じているため。",
       "key_phrase_original": "Pope Leo XIV's Mass",
       "key_phrase_ja": "教皇レオ14世のミサ",
+      "enriched_by": "gemini"
+    },
+    {
+      "article_id": "b9dcfb1f",
+      "title_ja": "成都メディアグループが共同制作した重大革命テーマのテレビドラマ「征途」、初回放送の視聴率がトップに！",
+      "summary_ja": "成都メディアグループが共同制作した重大革命テーマのテレビドラマ「征途」が、初回放送で視聴率トップを記録した。",
+      "tags": [
+        "文化"
+      ],
+      "stance": "support",
+      "stance_reason": "見出しで視聴率がトップになったことを肯定的に伝えている。",
+      "key_phrase_original": "首播收视登顶",
+      "key_phrase_ja": "初回放送の視聴率がトップ",
       "enriched_by": "gemini"
     },
     {
@@ -3200,6 +4078,20 @@
       "enriched_by": "gemini"
     },
     {
+      "article_id": "6556478a",
+      "title_ja": "スペースX、カリフォルニアから米宇宙軍のために機密のミステリーミッションを打ち上げ",
+      "summary_ja": "スペースXがカリフォルニアから米宇宙軍のために機密のミッションを打ち上げた。",
+      "tags": [
+        "安全保障",
+        "科学技術"
+      ],
+      "stance": "neutral",
+      "stance_reason": "見出しにある打ち上げの事実を伝えている。",
+      "key_phrase_original": "classified mystery mission",
+      "key_phrase_ja": "機密のミステリーミッション",
+      "enriched_by": "gemini"
+    },
+    {
       "article_id": "aa0c9a5b",
       "title_ja": "スペイン軍兵士、セウタで移民を暴行（動画）",
       "summary_ja": "セウタでスペイン軍兵士が移民を暴行した。",
@@ -3576,6 +4468,20 @@
       "enriched_by": "gemini"
     },
     {
+      "article_id": "c95704dd",
+      "title_ja": "2部門が共同でオレンジ色地質災害気象リスク警報を発表",
+      "summary_ja": "2部門が共同でオレンジ色の地質災害気象リスク警報を発表した。",
+      "tags": [
+        "災害",
+        "社会"
+      ],
+      "stance": "neutral",
+      "stance_reason": "見出しにある警報発表の事実を伝えている。",
+      "key_phrase_original": "橙色地质灾害气象风险预警",
+      "key_phrase_ja": "オレンジ色地質災害気象リスク警報",
+      "enriched_by": "gemini"
+    },
+    {
       "article_id": "4cda96f8",
       "title_ja": "ロシア軍がドニプロペトロウシク州で女性と17歳の少女を殺害、負傷者には子供も",
       "summary_ja": "ドニプロペトロウシク州で女性と17歳の少女が死亡した。負傷者には子供が含まれている。",
@@ -3721,6 +4627,19 @@
       "stance_reason": "AIの活動内容を報道しているため。",
       "key_phrase_original": "Self-learning AI",
       "key_phrase_ja": "自己学習型AI",
+      "enriched_by": "gemini"
+    },
+    {
+      "article_id": "93de18bf",
+      "title_ja": "太陽系外惑星からの初めての電波信号が数十年の探索の末に検出される",
+      "summary_ja": "太陽系外惑星からの初めての電波信号が数十年の探索の末に検出された。",
+      "tags": [
+        "科学技術"
+      ],
+      "stance": "neutral",
+      "stance_reason": "見出しにある検出の事実を伝えている。",
+      "key_phrase_original": "Primeiro sinal de rádio de planeta fora do Sistema Solar",
+      "key_phrase_ja": "太陽系外惑星からの最初の電波信号",
       "enriched_by": "gemini"
     },
     {
@@ -3922,6 +4841,20 @@
       "stance_reason": "教皇の予定を客観的に報じているため。",
       "key_phrase_original": "sexual abuse survivors",
       "key_phrase_ja": "性的虐待の生存者",
+      "enriched_by": "gemini"
+    },
+    {
+      "article_id": "fca9ac19",
+      "title_ja": "中央気象台が警報！天津の一部地域で豪雨または大豪雨！10級以上の雷雨と強風",
+      "summary_ja": "中央気象台が天津の一部地域に対して豪雨または大豪雨および10級以上の雷雨と強風の警報を出した。",
+      "tags": [
+        "災害",
+        "気候"
+      ],
+      "stance": "neutral",
+      "stance_reason": "「中央气象台预警」という見出しの事実をそのまま伝えているため。",
+      "key_phrase_original": "中央气象台预警",
+      "key_phrase_ja": "中央気象台警報",
       "enriched_by": "gemini"
     },
     {
@@ -4195,6 +5128,20 @@
       "enriched_by": "gemini"
     },
     {
+      "article_id": "f58dadf1",
+      "title_ja": "十代の若者の頭痛が家族の重大な健康リスクを明らかに：「人々の命を救う」",
+      "summary_ja": "十代の若者の頭痛から家族の健康リスクが判明した。",
+      "tags": [
+        "保健",
+        "社会"
+      ],
+      "stance": "neutral",
+      "stance_reason": "「Teen's headache reveals alarming health risk」という見出しの事実を伝えているため。",
+      "key_phrase_original": "alarming health risk",
+      "key_phrase_ja": "深刻な健康リスク",
+      "enriched_by": "gemini"
+    },
+    {
       "article_id": "2d0da101",
       "title_ja": "スムイへのロシアのKAB攻撃により死者が発生し、子どもが負傷",
       "summary_ja": "ロシアのKABによるスムイへの攻撃で死者が発生し、子どもが負傷した。",
@@ -4366,6 +5313,20 @@
       "stance_reason": "ウクライナ大統領による制裁措置の事実を伝えているため。",
       "key_phrase_original": "sham elections",
       "key_phrase_ja": "偽りの選挙",
+      "enriched_by": "gemini"
+    },
+    {
+      "article_id": "de2afeaa",
+      "title_ja": "教皇レオ14世、パリで大群衆を引き付ける 60万人がミサを待つ",
+      "summary_ja": "パリで60万人がミサを待つ中、教皇レオ14世が多くの群衆を集めた。",
+      "tags": [
+        "社会",
+        "文化"
+      ],
+      "stance": "neutral",
+      "stance_reason": "「Pope Leo XIV draws huge crowds in Paris」という事実を伝えているため。",
+      "key_phrase_original": "Pope Leo XIV",
+      "key_phrase_ja": "教皇レオ14世",
       "enriched_by": "gemini"
     },
     {
@@ -4668,6 +5629,20 @@
       "enriched_by": "gemini"
     },
     {
+      "article_id": "47b34e71",
+      "title_ja": "数智が寧夏をエンパワーし算力のオアシスを匠造、寧夏テーマ展示ブースが第48回世界技能大会に登場",
+      "summary_ja": "寧夏テーマ展示ブースが第48回世界技能大会に登場した。",
+      "tags": [
+        "科学技術",
+        "文化"
+      ],
+      "stance": "neutral",
+      "stance_reason": "「宁夏主题展位亮相第48届世界技能大赛」という事実を伝えているため。",
+      "key_phrase_original": "第48届世界技能大赛",
+      "key_phrase_ja": "第48回世界技能大会",
+      "enriched_by": "gemini"
+    },
+    {
       "article_id": "a778dd85",
       "title_ja": "中東：占領下にあるヨルダン川西岸地区の子どものためのアートセンター",
       "summary_ja": "占領下にあるヨルダン川西岸地区に子どものためのアートセンターがある。",
@@ -4873,6 +5848,20 @@
       "enriched_by": "gemini"
     },
     {
+      "article_id": "c70c8cc4",
+      "title_ja": "トランプとメディアについて多くを語った7日間の睨み合い",
+      "summary_ja": "トランプとメディアに関する7日間の睨み合いがあった。",
+      "tags": [
+        "政治",
+        "社会"
+      ],
+      "stance": "neutral",
+      "stance_reason": "「A 7-Day Standoff That Said So Much About Trump and the Media」という事実を伝えているため。",
+      "key_phrase_original": "7-Day Standoff",
+      "key_phrase_ja": "7日間の睨み合い",
+      "enriched_by": "gemini"
+    },
+    {
       "article_id": "40ba0bdf",
       "title_ja": "イムラン・ハン氏のPTI、イスラマバードへの行進計画を10月4日に延期",
       "summary_ja": "イムラン・ハン氏の政党PTIがイスラマバードへの行進を10月4日に延期した。",
@@ -4910,6 +5899,20 @@
       "stance_reason": "調査の同行取材の事実を伝えているため。",
       "key_phrase_original": "台風25号",
       "key_phrase_ja": "台風25号",
+      "enriched_by": "gemini"
+    },
+    {
+      "article_id": "0d5b8ec7",
+      "title_ja": "MuseをヒットさせるためのMetaの数ヶ月に及ぶ過酷な取り組みの裏側",
+      "summary_ja": "MetaがMuseをヒットさせるために数ヶ月に及ぶ取り組みを行った。",
+      "tags": [
+        "科学技術",
+        "経済"
+      ],
+      "stance": "neutral",
+      "stance_reason": "「Inside Meta's months-long grind to turn Muse into a hit」という事実を伝えているため。",
+      "key_phrase_original": "Meta",
+      "key_phrase_ja": "Meta",
       "enriched_by": "gemini"
     },
     {
@@ -5218,6 +6221,20 @@
       "enriched_by": "gemini"
     },
     {
+      "article_id": "633521ae",
+      "title_ja": "劉歓と妻の盧璐は初対面の握手の時にうつむいて言葉を発さず、知り合って9日間で電撃結婚し、現在まで支え合っている",
+      "summary_ja": "劉歓と盧璐は知り合って9日間で結婚し現在に至る。",
+      "tags": [
+        "文化",
+        "社会"
+      ],
+      "stance": "neutral",
+      "stance_reason": "「相识 9 天便闪婚」という事実を伝えているため。",
+      "key_phrase_original": "闪婚",
+      "key_phrase_ja": "電撃結婚",
+      "enriched_by": "gemini"
+    },
+    {
       "article_id": "54c68c8a",
       "title_ja": "Bus overturns in central Iran, killing 11 and injuring 24",
       "summary_ja": "イラン中央部でバスが横転し、11人が死亡、24人が負傷した。",
@@ -5455,6 +6472,20 @@
       "enriched_by": "gemini"
     },
     {
+      "article_id": "13f1fa9f",
+      "title_ja": "天安門広場の「祝福祖国」の巨大な花かごおよび長安街の10組の立体花壇がお目見え",
+      "summary_ja": "天安門広場に「祝福祖国」の巨大な花かごと長安街の立体花壇が登場した。",
+      "tags": [
+        "社会",
+        "文化"
+      ],
+      "stance": "neutral",
+      "stance_reason": "「“祝福祖国”巨型花篮及长安街10组立体花坛亮相」という事実を伝えているため。",
+      "key_phrase_original": "祝福祖国",
+      "key_phrase_ja": "祝福祖国",
+      "enriched_by": "gemini"
+    },
+    {
       "article_id": "cde1d69d",
       "title_ja": "Watch: P.M. Modi in U.S. | Is Trump or Harris better for India?",
       "summary_ja": "米国を訪問中のモディ首相に関連し、インドにとってトランプ氏とハリス氏のどちらが望ましいかについて取り上げている。",
@@ -5564,6 +6595,19 @@
       "stance_reason": "見出しの語「O acordo de paz」に基づき中立的に事実を伝えている。",
       "key_phrase_original": "estreito de Ormuz",
       "key_phrase_ja": "ホルムズ海峡",
+      "enriched_by": "gemini"
+    },
+    {
+      "article_id": "4a49e0df",
+      "title_ja": "世界市場：米国株の主要3指数がそろって上昇、メモリー半導体株が全般的に上昇し、国際原油価格は2％超下落",
+      "summary_ja": "米国株の主要3指数が上昇し、国際原油価格が2％超下落した。",
+      "tags": [
+        "経済"
+      ],
+      "stance": "neutral",
+      "stance_reason": "「全球市场：美股三大指数集体收涨...国际油价跌超2%」という市場の事実を伝えているため。",
+      "key_phrase_original": "美股三大指数",
+      "key_phrase_ja": "米国株の主要3指数",
       "enriched_by": "gemini"
     },
     {
@@ -5759,6 +6803,19 @@
       "stance_reason": "見出しの語「declare emergency」に基づき非常事態宣言の事実を伝えている。",
       "key_phrase_original": "dengue outbreak",
       "key_phrase_ja": "デング熱の流行",
+      "enriched_by": "gemini"
+    },
+    {
+      "article_id": "a83f18c4",
+      "title_ja": "原油価格が下落したにもかかわらず、30年物米債利回りは依然として5.5％を突破した",
+      "summary_ja": "原油価格の下落にもかかわらず、30年物米債利回りが5.5％を突破した。",
+      "tags": [
+        "経済"
+      ],
+      "stance": "neutral",
+      "stance_reason": "「30年期美债收益率依旧突破了5.5%」という市場の事実を伝えているため。",
+      "key_phrase_original": "30年期美债收益率",
+      "key_phrase_ja": "30年物米債利回り",
       "enriched_by": "gemini"
     },
     {
@@ -10059,7 +11116,6 @@
     }
   ],
   "notes": [
-    "1件はAIの結果が不正だったため素通しにしました",
-    "使ったモデル: gemini-3.1-flash-lite×1, gemini-3.5-flash-lite×19"
+    "前回の実行でAI適用済みの 735件 を再利用しました"
   ]
 }
