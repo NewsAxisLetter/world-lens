@@ -50,11 +50,11 @@
     },
     "2026-09-28": {
       "status": "ok",
-      "articles": 4747,
+      "articles": 5230,
       "countries": 56,
-      "feeds_ok": 158,
+      "feeds_ok": 160,
       "feeds_total": 172,
-      "generated_at": "2026-09-28T13:48:14Z",
+      "generated_at": "2026-09-28T14:28:38Z",
       "alerts": [
         {
           "feed_id": "cl-elsiglo",
@@ -70,9 +70,9 @@
           "source": "Der Spiegel",
           "status": "stale",
           "latest_published_at": "2026-09-23T15:28:00Z",
-          "stale_days": 4.9,
+          "stale_days": 5.0,
           "threshold_days": 3,
-          "note": "最新記事が4.9日前で、閾値3日を超えています（件数は20件あるため接続自体は成功しています）"
+          "note": "最新記事が5.0日前で、閾値3日を超えています（件数は20件あるため接続自体は成功しています）"
         },
         {
           "feed_id": "et-ethiopiainsight",
@@ -138,24 +138,6 @@
           "note": "取得に失敗しました: HTTPError: HTTP Error 403: Forbidden"
         },
         {
-          "feed_id": "ng-nan-b",
-          "source": "News Agency of Nigeria (NAN)",
-          "status": "failed",
-          "latest_published_at": null,
-          "stale_days": null,
-          "threshold_days": 3,
-          "note": "取得に失敗しました: URLError: <urlopen error [Errno 101] Network is unreachable>"
-        },
-        {
-          "feed_id": "ve-efectococuyo",
-          "source": "Efecto Cocuyo",
-          "status": "failed",
-          "latest_published_at": null,
-          "stale_days": null,
-          "threshold_days": 3,
-          "note": "取得に失敗しました: HTTPError: HTTP Error 403: Forbidden"
-        },
-        {
           "feed_id": "za-amabhungane",
           "source": "amaBhungane",
           "status": "stale",
@@ -180,10 +162,10 @@
           "latest_published_at": null,
           "stale_days": null,
           "threshold_days": 3,
-          "note": "取得に失敗しました: XMLとして読めませんでした: not well-formed (invalid token): line 139, column 71"
+          "note": "取得に失敗しました: XMLとして読めませんでした: not well-formed (invalid token): line 223, column 71"
         }
       ]
     }
   },
-  "updated_at": "2026-09-28T13:59:32Z"
+  "updated_at": "2026-09-28T14:38:40Z"
 }
