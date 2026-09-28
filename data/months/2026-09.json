@@ -50,23 +50,140 @@
     },
     "2026-09-28": {
       "status": "ok",
-      "articles": 833,
-      "countries": 12,
-      "feeds_ok": 26,
-      "feeds_total": 27,
-      "generated_at": "2026-09-28T01:21:45Z",
+      "articles": 4747,
+      "countries": 56,
+      "feeds_ok": 158,
+      "feeds_total": 172,
+      "generated_at": "2026-09-28T13:48:14Z",
       "alerts": [
+        {
+          "feed_id": "cl-elsiglo",
+          "source": "El Siglo",
+          "status": "failed",
+          "latest_published_at": null,
+          "stale_days": null,
+          "threshold_days": 3,
+          "note": "取得に失敗しました: URLError: <urlopen error timed out>"
+        },
         {
           "feed_id": "de-spiegel",
           "source": "Der Spiegel",
           "status": "stale",
           "latest_published_at": "2026-09-23T15:28:00Z",
-          "stale_days": 4.4,
+          "stale_days": 4.9,
           "threshold_days": 3,
-          "note": "最新記事が4.4日前で、閾値3日を超えています（件数は20件あるため接続自体は成功しています）"
+          "note": "最新記事が4.9日前で、閾値3日を超えています（件数は20件あるため接続自体は成功しています）"
+        },
+        {
+          "feed_id": "et-ethiopiainsight",
+          "source": "Ethiopia Insight",
+          "status": "stale",
+          "latest_published_at": "2026-09-17T11:10:21Z",
+          "stale_days": 11.1,
+          "threshold_days": 10,
+          "note": "最新記事が11.1日前で、閾値10日を超えています（件数は9件あるため接続自体は成功しています）"
+        },
+        {
+          "feed_id": "et-reporter",
+          "source": "The Reporter Ethiopia",
+          "status": "failed",
+          "latest_published_at": null,
+          "stale_days": null,
+          "threshold_days": 3,
+          "note": "取得に失敗しました: HTTPError: HTTP Error 304: Not Modified"
+        },
+        {
+          "feed_id": "id-cnnindonesia",
+          "source": "CNN Indonesia",
+          "status": "failed",
+          "latest_published_at": null,
+          "stale_days": null,
+          "threshold_days": 2,
+          "note": "取得に失敗しました: HTTPError: HTTP Error 403: Forbidden"
+        },
+        {
+          "feed_id": "in-express",
+          "source": "The Indian Express",
+          "status": "failed",
+          "latest_published_at": null,
+          "stale_days": null,
+          "threshold_days": 2,
+          "note": "取得に失敗しました: HTTPError: HTTP Error 403: Forbidden"
+        },
+        {
+          "feed_id": "ke-nation",
+          "source": "Daily Nation",
+          "status": "failed",
+          "latest_published_at": null,
+          "stale_days": null,
+          "threshold_days": 3,
+          "note": "取得に失敗しました: HTTPError: HTTP Error 404: Not Found"
+        },
+        {
+          "feed_id": "ke-peopledaily",
+          "source": "People Daily (Mediamax)",
+          "status": "failed",
+          "latest_published_at": null,
+          "stale_days": null,
+          "threshold_days": 3,
+          "note": "取得に失敗しました: HTTPError: HTTP Error 403: Forbidden"
+        },
+        {
+          "feed_id": "mm-irrawaddy",
+          "source": "The Irrawaddy",
+          "status": "failed",
+          "latest_published_at": null,
+          "stale_days": null,
+          "threshold_days": 3,
+          "note": "取得に失敗しました: HTTPError: HTTP Error 403: Forbidden"
+        },
+        {
+          "feed_id": "ng-nan-b",
+          "source": "News Agency of Nigeria (NAN)",
+          "status": "failed",
+          "latest_published_at": null,
+          "stale_days": null,
+          "threshold_days": 3,
+          "note": "取得に失敗しました: URLError: <urlopen error [Errno 101] Network is unreachable>"
+        },
+        {
+          "feed_id": "ve-efectococuyo",
+          "source": "Efecto Cocuyo",
+          "status": "failed",
+          "latest_published_at": null,
+          "stale_days": null,
+          "threshold_days": 3,
+          "note": "取得に失敗しました: HTTPError: HTTP Error 403: Forbidden"
+        },
+        {
+          "feed_id": "za-amabhungane",
+          "source": "amaBhungane",
+          "status": "stale",
+          "latest_published_at": "2026-09-20T09:21:59Z",
+          "stale_days": 8.2,
+          "threshold_days": 7,
+          "note": "最新記事が8.2日前で、閾値7日を超えています（件数は12件あるため接続自体は成功しています）"
+        },
+        {
+          "feed_id": "ua-espreso",
+          "source": "Espreso TV",
+          "status": "failed",
+          "latest_published_at": null,
+          "stale_days": null,
+          "threshold_days": 3,
+          "note": "取得に失敗しました: HTTPError: HTTP Error 403: Forbidden"
+        },
+        {
+          "feed_id": "hu-nepszava",
+          "source": "Népszava",
+          "status": "failed",
+          "latest_published_at": null,
+          "stale_days": null,
+          "threshold_days": 3,
+          "note": "取得に失敗しました: XMLとして読めませんでした: not well-formed (invalid token): line 139, column 71"
         }
       ]
     }
   },
-  "updated_at": "2026-09-28T01:22:28Z"
+  "updated_at": "2026-09-28T13:59:32Z"
 }
