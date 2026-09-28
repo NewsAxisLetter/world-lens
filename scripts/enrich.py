@@ -51,8 +51,11 @@ import argparse
 import hashlib
 import json
 import os
+import re
 import sys
+import threading
 import time
+from collections import deque
 import urllib.error
 import urllib.request
 from datetime import datetime, timedelta, timezone
@@ -74,20 +77,28 @@ API_BASE = "https://generativelanguage.googleapis.com/v1beta/models"
 #   - 2.5 系は「過去に積極的に使用したユーザーに制限」＝新規キーでは拒否されうる（使わない）。
 #   - 2.0 Flash は 2026-06-01 に提供終了（使えない）。
 #   - 見出しの翻訳・分類は軽い処理なので、枠が大きく空きやすい Flash-Lite を先にする。
-DEFAULT_MODELS = ("gemini-3.5-flash-lite", "gemini-3.8-flash", "gemini-3.1-flash-lite")
+# 5つを同時に使う（無料枠の毎分上限はモデルごとに別）。存在しない・使えないモデルは404/403で自動的に外れる。
+DEFAULT_MODELS = ("gemini-3.5-flash-lite", "gemini-3.8-flash", "gemini-3.1-flash-lite",
+                  "gemini-3.7-flash", "gemini-3.6-flash")
 MODEL = DEFAULT_MODELS[0]   # 後方互換（ログ表示・テスト用）。実際は configured_models() を使う
 
 # 1リクエストにまとめる記事数。
 #   大きくするとリクエスト数は減るが、1件の壊れたレスポンスで巻き込む記事が増える。
-BATCH_SIZE = 10
+#   36カ国化で1日 700〜2,000件になるため 25件にした（740件→30本、2,000件→60本で頭打ち）。
+BATCH_SIZE = 25
 
 # 1日に出してよいHTTPリクエストの上限（リトライ・モデル切替も含めて数える）。
-#   通常は20本前後で終わる。503が多い日に再送・切替・後回しの再挑戦を行う余裕を持たせる。
-#   無料枠は1モデルあたり1日数百回あるので、60本でも十分安全側。
-REQUEST_BUDGET = 60
+#   通常は30〜60本で終わる。503が多い日に再送・切替・後回しの再挑戦を行う余裕を持たせる。
+#   無料枠は1モデルあたり1日数百回あり、モデル3つに分散するので150本でも安全側。
+#   3モデル並列で全件（実績 2,734件＝約110バッチ）を処理するため 400 にした。
+#   1モデルあたりに直すと最大約130回/実行。日次上限に当たったモデルは自動で外れる。
+REQUEST_BUDGET = 600
 
-# 通常バッチ（リトライを除く）の本数の上限。
-MAX_BATCHES = 20
+# 通常バッチ（リトライを除く）の本数の上限。超える件数の日は1バッチの件数を増やす。
+#   60本 × PACE_SEC 6秒 = 6分。締切25分の内側に収まる。
+#   2,734件 ÷ 25件 = 110バッチ。上限が小さいと1バッチが膨らみ、出力が途中で切れて
+#   全件パース失敗になるので、並列化に合わせて 150 にした（3,750件まで25件/バッチを維持）。
+MAX_BATCHES = 220
 
 # --- 503（混雑）対策 ---
 OVERLOAD_TRIES = 2              # 同じモデルで503が何回続いたら次のモデルに替えるか
@@ -107,6 +118,39 @@ DEFER_AFTER_CONSECUTIVE_FAILS = 2   # 連続2バッチ全滅したら残りは�
 MAX_RETRY = OVERLOAD_TRIES - 1  # 後方互換
 BACKOFF_BASE_SEC = 2.0      # パース失敗時の再送待ち
 TIMEOUT_SEC = 90            # 思考OFFで応答は速くなる。詰まった接続を長く待たない
+
+# --- 35分タイムアウト対策（2026-09-27 の実ログで判明） ---
+# 記事 2,793件 を 60バッチ×47件 に詰めて投げていたため、1リクエストの応答が長く、
+# さらに締切チェックが「リクエストを出す前」だけだったので、締切直前に始まった
+# バッチが再送・待機を重ねて GitHub Actions の35分を突き抜けていた。
+# 1回の実行でAIに回す記事数に上限を設け、国・媒体が偏らないように均等に選ぶ。
+# 残りは素通し（原文のまま）で保存し、次の実行（1日2回）で続きを処理する。
+#   環境変数 AI_MAX_ARTICLES で変更可能。0 以下なら上限なし。
+#   既定は 0（上限なし）。複数モデルを並列に使って締切までにできるだけ処理し、
+#   締切に間に合わなかった分だけを次回に回す。上限を使うときも国・媒体は均等に選ぶ。
+MAX_AI_ARTICLES = 0
+# 同時に使うモデルの数（1モデル＝1本の作業列）。無料枠の毎分上限はモデルごとに別なので、
+# 3モデルを同時に使うと処理量が約3倍になる（各モデルは6秒間隔＝毎分10回以内）。
+#   環境変数 AI_PARALLEL で変更可能。1 にすると従来どおり1本ずつ順番に処理する。
+MAX_PARALLEL = 5
+# 何バッチ成功するごとに途中結果をファイルに書くか（強制終了されても成果を残す）
+CHECKPOINT_EVERY = 5
+# 締切の残りがこれより少なければ、新しいバッチを始めない
+#   （1バッチは 再送・モデル切替を含めて数分かかりうるため）
+MIN_SEC_FOR_NEW_BATCH = 120
+# 1リクエストの応答待ちの最短値（残り時間で切り詰めてもこれ以下にはしない）
+MIN_REQUEST_TIMEOUT_SEC = 15
+
+
+def _env_int(name, default):
+    """整数の環境変数を読む。空・不正なら既定値（Actions の vars 未設定は空文字になる）。"""
+    raw = (os.environ.get(name) or "").strip()
+    if not raw:
+        return default
+    try:
+        return int(raw)
+    except ValueError:
+        return default
 
 # RPM（毎分の上限）に当てないための、バッチ間の間隔。
 PACE_SEC = 6.0
@@ -136,10 +180,19 @@ def configured_models(models=None):
 ALLOWED_TAGS = (
     "政治", "経済", "安全保障", "外交", "気候", "人権",
     "科学技術", "保健", "社会", "文化", "スポーツ", "災害",
+    # 話題タグ（36カ国化で追加）
+    "エネルギー", "資源・鉱物", "貿易・関税", "紛争・軍事", "選挙", "移民・難民",
 )
 MAX_TAGS = 3                # 契約§3「1〜3個」
 
 ALLOWED_STANCES = ("support", "critical", "neutral")
+
+# レアメタル専用欄（minerals）の語彙。tags の「資源・鉱物」より細かい粒度で比較するためのもの。
+ALLOWED_MINERALS = (
+    "リチウム", "コバルト", "ニッケル", "レアアース", "グラファイト", "ガリウム",
+    "ゲルマニウム", "タングステン", "マンガン", "白金族", "ニオブ", "アンチモン",
+)
+MAX_MINERALS = 4
 
 # 出力する記事1件のキー。契約§3 のとおり。ここに無いキーは出さない（C1の担保）。
 ARTICLE_FIELDS = (
@@ -152,6 +205,7 @@ ARTICLE_FIELDS = (
     "key_phrase_original",
     "key_phrase_ja",
     "enriched_by",
+    "minerals",       # 契約§3 への追加欄。全記事に必ず入る（無ければ []）
 )
 
 # 本文が入りうるキー。1つでも出力に現れたら設計違反なので実行時に止める（C1・A1）。
@@ -375,6 +429,8 @@ def passthrough_article(article):
         "key_phrase_original": title,
         "key_phrase_ja": "",
         "enriched_by": BY_PASSTHROUGH,
+        # AIが無くても語句辞書で拾える分は付ける（見出しに明示された鉱物名だけなので捏造にはならない）。
+        "minerals": detect_minerals(title),
     }
 
 
@@ -439,7 +495,7 @@ def looks_speculative(text):
 
 
 def normalize_tags(value):
-    """tags を固定12タグ集合の中だけに絞る（契約§3・要件6）。
+    """tags を固定18タグ集合の中だけに絞る（契約§3・要件6）。
 
     集合外の語（"Politics"、"IT" など）は**捨てる**。近い意味に寄せる変換はしない。
     勝手な対応表を作ると、画面のフィルタが契約と食い違う原因になる。
@@ -463,6 +519,73 @@ def normalize_stance(value):
     if isinstance(value, str) and value.strip().lower() in ALLOWED_STANCES:
         return value.strip().lower()
     return "neutral"
+
+
+def normalize_minerals(value):
+    """minerals を語彙（ALLOWED_MINERALS）内だけに絞る。重複除去・最大 MAX_MINERALS 個。
+
+    normalize_tags と同じく、語彙外は寄せずに捨てる（"lithium" → リチウム の変換もしない）。
+    """
+    if not isinstance(value, list):
+        return []
+    out = []
+    for item in value:
+        if not isinstance(item, str):
+            continue
+        item = item.strip()
+        if item in ALLOWED_MINERALS and item not in out:
+            out.append(item)
+        if len(out) >= MAX_MINERALS:
+            break
+    return out
+
+
+# 語句辞書（AIなしでも minerals を付けるため）。鉱物ごとに (ラテン文字, キリル語幹, CJK・かな)。
+#   ラテン文字: 前後とも語境界（(?<!\w) と (?!\w)、Unicode の \w なので í/ê なども語の一部）。
+#     → undermining / illumine / Nickelodeon は拾わない。複数形・言語差は個別に書く。
+#   キリル: 格変化が多いので語頭境界＋語幹の前方一致。語頭を見るので политика の лити は拾わない。
+#   CJK・かな: 語境界が無いので部分一致。
+#   "mining" "metals" のような広い語は入れない（どの鉱物か分からない）。
+_MINERAL_TERMS = (
+    ("リチウム", r"lithium|litio|lítio", r"лити", r"锂|鋰|リチウム"),
+    # "Cobalt Strike" は攻撃ツール名でサイバー記事に頻出するので除外。
+    ("コバルト", r"cobalt(?!\s+strike)|cobalto", r"кобальт", r"钴|鈷|コバルト"),
+    # "nickel-and-dime"（けちくさい、の慣用句）は除外。単独の "a nickel"（硬貨）は見分けられないので拾う。
+    ("ニッケル", r"nickels?(?![-\s]+and[-\s]+dim)|níquel|niquel", r"никел", r"镍|鎳|ニッケル"),
+    ("レアアース", r"rare[-\s]earths?|terres?\s+rares?|tierras?\s+raras?|terras?\s+raras?",
+     r"редкоземельн", r"稀土|レアアース"),
+    ("グラファイト", r"graphite|grafito|grafite", r"графит", r"石墨|グラファイト|黒鉛"),
+    ("ガリウム", r"gallium|galio|gálio", r"галли", r"镓|ガリウム"),
+    # Германия（ドイツ）は германий の属格 германия と同形なので、衝突しない形（-й, -ем, -ев…）だけ拾う。
+    ("ゲルマニウム", r"germanium|germanio|germânio", r"германи(?:й|ем|ев)", r"锗|ゲルマニウム"),
+    ("タングステン", r"tungsten|wolfram|wolframio|tungsteno|tungstênio|tungstène|volfr\w*",
+     r"вольфрам", r"钨|タングステン"),
+    ("マンガン", r"manganese|manganeso|manganês|manganèse", r"марган", r"锰|マンガン"),
+    ("白金族", r"platinum|palladium|rhodium|pgms?|platino|paladio|paládio|platine",
+     r"платин|паллади", r"铂|钯|白金|プラチナ|パラジウム"),
+    ("ニオブ", r"niobium|niobio|nióbio", r"ниоби", r"铌|ニオブ"),
+    ("アンチモン", r"antimony|antimonio|antimônio|antimoine", r"сурьм", r"锑|アンチモン"),
+)
+
+_MINERAL_PATTERNS = tuple(
+    (name, re.compile(r"(?<!\w)(?:%s)(?!\w)|(?<!\w)(?:%s)|%s" % (latin, cyr, cjk),
+                      re.IGNORECASE | re.UNICODE))
+    for name, latin, cyr, cjk in _MINERAL_TERMS
+)
+
+
+def detect_minerals(*texts):
+    """見出し（原文・訳文）に明示された鉱物名を辞書で拾う。ALLOWED_MINERALS の順で返す。"""
+    text = " ".join(t for t in texts if isinstance(t, str))
+    if not text:
+        return []
+    found = [name for name, pat in _MINERAL_PATTERNS if pat.search(text)]
+    return found[:MAX_MINERALS]
+
+
+def merge_minerals(ai_value, *texts):
+    """AIの minerals（語彙内だけ）を先に、辞書で拾った分を後ろに足す（union、最大 MAX_MINERALS）。"""
+    return normalize_minerals(normalize_minerals(ai_value) + detect_minerals(*texts))
 
 
 def normalize_one(article, raw):
@@ -510,6 +633,7 @@ def normalize_one(article, raw):
         "key_phrase_original": key_original,
         "key_phrase_ja": key_ja,
         "enriched_by": BY_GEMINI,
+        "minerals": merge_minerals(raw.get("minerals"), title_original, title_ja),
     }
 
 
@@ -534,8 +658,15 @@ SYSTEM_RULES = """あなたは報道見出しの翻訳・分類を行う。入�
      「可能性が高い」「予想される」「期待される」など断定できない言い方。
    - 見出しが短く事実を2文にできない場合は1文でよい。事実が読み取れなければ空文字 "" にする。
      推測で埋めてはならない。
-3. tags: 次の12語からのみ1〜3個選ぶ。この12語以外は絶対に出力しない。
-   政治, 経済, 安全保障, 外交, 気候, 人権, 科学技術, 保健, 社会, 文化, スポーツ, 災害
+3. tags: 次の18語からのみ1〜3個選ぶ。この18語以外は絶対に出力しない。表記も一字一句このとおりにする。
+   政治=政権・議会・政党・法案 / 経済=景気・金融・企業・市場 /
+   安全保障=防衛政策・同盟・テロ対策（戦闘そのものは 紛争・軍事） / 外交=首脳会談・国家間交渉・制裁 /
+   気候=気候変動・環境 / 人権=人権・報道の自由・差別 / 科学技術=研究・IT・宇宙 /
+   保健=医療・感染症 / 社会=事件・教育・生活 / 文化=芸術・宗教・娯楽 / スポーツ /
+   災害=地震・洪水・事故 / エネルギー=石油・ガス・電力・原子力 /
+   資源・鉱物=鉱山・金属資源・レアメタル / 貿易・関税=輸出入・関税・輸出規制 /
+   紛争・軍事=戦闘・軍事行動・兵器・停戦 / 選挙=投票・選挙戦・開票 /
+   移民・難民=移民政策・難民・国境管理
 4. stance: この媒体が扱う対象に対する立場。support（支持・擁護） / critical（批判・非難） /
    neutral（中立・事実報道）のいずれか1語。判断できない場合は必ず neutral。
 5. stance_reason: stance の根拠を日本語1文で書く。見出しの語を根拠に挙げる。
@@ -544,10 +675,15 @@ SYSTEM_RULES = """あなたは報道見出しの翻訳・分類を行う。入�
    同じ出来事を国ごとにどう呼んでいるかを並べて比較するために使うので、
    ここを日本語にすると比較ができなくなる。
 7. key_phrase_ja: key_phrase_original の日本語訳。
+8. minerals: 見出し・要約にその鉱物が明示的に関係する場合のみ、次の語彙から最大4個。
+   無ければ空配列 []。「鉱業」「電池」だけで鉱物名が出てこない場合は推測して付けない。
+   リチウム, コバルト, ニッケル, レアアース, グラファイト, ガリウム, ゲルマニウム, タングステン,
+   マンガン, 白金族（プラチナ・パラジウム等）, ニオブ, アンチモン
 
 出力は JSON オブジェクトのみ。前後に説明文やコードフェンスを付けない。形式:
 {"results":[{"id":"<入力のid>","title_ja":"...","summary_ja":"...","tags":["..."],
-"stance":"neutral","stance_reason":"...","key_phrase_original":"...","key_phrase_ja":"..."}]}
+"stance":"neutral","stance_reason":"...","key_phrase_original":"...","key_phrase_ja":"...",
+"minerals":[]}]}
 入力の記事すべてについて、入力と同じ id を付けて1件ずつ返す。"""
 
 
@@ -584,7 +720,8 @@ def build_request_body(batch, model=None):
     model = model or MODEL
     config = {
         "responseMimeType": "application/json",
-        "maxOutputTokens": 8192,
+        # 25件×（訳・要約・根拠・語句）で約8千〜1万2千トークン。途中で切れると全件パース失敗になるので余裕を持たせる。
+        "maxOutputTokens": 16384,
     }
     if not is_gemini3(model):
         config["temperature"] = 0
@@ -915,18 +1052,49 @@ class Budget(object):
     def __init__(self, limit, deadline_sec=None, clock=None):
         self.limit = int(limit)
         self.used = 0
+        self._lock = threading.Lock()   # 複数モデルを並列に使うときに数え違えないように
         self._clock = clock or time.monotonic
         self._deadline = (self._clock() + deadline_sec) if deadline_sec else None
 
     def out_of_time(self):
         return self._deadline is not None and self._clock() >= self._deadline
 
+    def remaining(self):
+        """締切までの残り秒数。締切なしなら None。"""
+        if self._deadline is None:
+            return None
+        return max(0.0, self._deadline - self._clock())
+
+    def cap_wait(self, seconds):
+        """待ち時間を残り時間で切り詰める（締切を越えて寝ない）。"""
+        rem = self.remaining()
+        if rem is None:
+            return seconds
+        return max(0.0, min(seconds, rem - 1.0))
+
+    def request_timeout(self, default=None):
+        """1リクエストの応答待ち時間。残り時間を越えないようにする。"""
+        default = TIMEOUT_SEC if default is None else default
+        rem = self.remaining()
+        if rem is None:
+            return default
+        return max(MIN_REQUEST_TIMEOUT_SEC, min(default, rem))
+
     def can_spend(self):
         return self.used < self.limit and not self.out_of_time()
 
     def spend(self):
-        self.used += 1
-        return self.used
+        with self._lock:
+            self.used += 1
+            return self.used
+
+    def try_spend(self):
+        """残りがあれば1回分使って True。確認と消費を同時に行う（並列時の使い過ぎ防止）。"""
+        with self._lock:
+            if self.used >= self.limit or self.out_of_time():
+                return False
+            self.used += 1
+            return True
 
 
 class ModelPool(object):
@@ -1012,11 +1180,13 @@ def call_batch(batch, api_key, budget, poster=None, sleeper=None, pace=PACE_SEC,
         parse_tries = 0
 
         while True:
-            if not budget.can_spend():
+            if not budget.try_spend():
+                if budget.out_of_time():
+                    return None, "実行時間の上限に到達", None
                 return None, "リクエスト上限 %d 到達" % budget.limit, None
-            budget.spend()
             try:
-                response = poster(url, body, api_key)
+                # 応答待ちも締切を越えないように切り詰める
+                response = poster(url, body, api_key, timeout=budget.request_timeout())
             except ApiError as e:
                 kind = classify_error(e)
                 parse_only = False
@@ -1048,6 +1218,9 @@ def call_batch(batch, api_key, budget, poster=None, sleeper=None, pace=PACE_SEC,
                         break
                     wait = e.retry_after if e.retry_after is not None else RATE_DEFAULT_WAIT_SEC
                     wait = min(RATE_WAIT_MAX_SEC, max(1.0, wait + 1.0))
+                    if budget.cap_wait(wait) < wait:
+                        print("      %s: 429 だが締切が近いので待たずに打ち切り" % model)
+                        return None, "実行時間の上限に到達", None
                     print("      %s: 429 分単位の上限。%.0f秒待って再送" % (model, wait))
                     sleeper(wait)
                     continue
@@ -1059,6 +1232,9 @@ def call_batch(batch, api_key, budget, poster=None, sleeper=None, pace=PACE_SEC,
                     break
                 wait = e.retry_after if e.retry_after is not None else _wait_for_overload(overload_tries)
                 wait = min(OVERLOAD_BACKOFF_MAX_SEC, wait)
+                if budget.cap_wait(wait) < wait:
+                    print("      %s: 混雑だが締切が近いので待たずに打ち切り" % model)
+                    return None, "実行時間の上限に到達", None
                 print("      %s: %s → %.0f秒待って再送 (%d/%d)"
                       % (model, e, wait, overload_tries, OVERLOAD_TRIES))
                 sleeper(wait)
@@ -1080,7 +1256,7 @@ def call_batch(batch, api_key, budget, poster=None, sleeper=None, pace=PACE_SEC,
             print("      %s (%d/2)" % (last_reason, parse_tries))
             if parse_tries >= 2:
                 break                # 同じモデルで2回壊れたら次のモデルへ
-            sleeper(BACKOFF_BASE_SEC)
+            sleeper(budget.cap_wait(BACKOFF_BASE_SEC))
 
     if pool.fatal_reason:
         return None, "中止: %s" % pool.fatal_reason, None
@@ -1109,7 +1285,8 @@ def reusable_previous(previous, articles):
             continue
         if art.get("enriched_by") != BY_GEMINI:
             continue
-        if not all(k in art for k in ARTICLE_FIELDS):
+        # minerals は後から足した欄。足す前に書かれたファイルも再利用できるよう必須にしない。
+        if not all(k in art for k in ARTICLE_FIELDS if k != "minerals"):
             continue
         by_id[art.get("article_id")] = art
     out = {}
@@ -1121,7 +1298,10 @@ def reusable_previous(previous, articles):
         title = a.get("title_original") or ""
         if phrase and phrase not in title:
             continue
-        out[a["article_id"]] = dict((k, old[k]) for k in ARTICLE_FIELDS)
+        reused = dict((k, old[k]) for k in ARTICLE_FIELDS if k != "minerals")
+        # 辞書は改良されうるので毎回かけ直して union（前回のAI結果は残す）。
+        reused["minerals"] = merge_minerals(old.get("minerals"), title, old.get("title_ja"))
+        out[a["article_id"]] = reused
     return out
 
 
@@ -1140,10 +1320,222 @@ def _apply_batch_result(batch, by_id, done):
     return missing
 
 
+def select_for_ai(todo, limit):
+    """AIに回す記事を最大 limit 件選ぶ。国 → 媒体 の順に均等に順番で拾う。
+
+    先頭から単純に切ると、feeds.json の並び順（AE, AR, AU…）で前の国だけが
+    翻訳され、後ろの国（US, ZA など）が毎日素通しになる。比較サイトとして致命的なので、
+    国ごと・媒体ごとに1件ずつ順番に取る（各媒体の中では元の並び＝フィードの新しい順）。
+    返り値は元の並び順を保ったリスト（出力の順序を変えないため）。
+    """
+    if not limit or limit <= 0 or len(todo) <= limit:
+        return list(todo)
+    by_country = {}
+    order = []
+    for idx, a in enumerate(todo):
+        c = a.get("country") or ""
+        s = a.get("source") or ""
+        if c not in by_country:
+            by_country[c] = {}
+            order.append(c)
+        by_country[c].setdefault(s, []).append(idx)
+    # 国ごとに「媒体を順番に1件ずつ」並べた列を作る
+    queues = {}
+    for c in order:
+        lists = list(by_country[c].values())
+        q = []
+        i = 0
+        while any(i < len(l) for l in lists):
+            for l in lists:
+                if i < len(l):
+                    q.append(l[i])
+            i += 1
+        queues[c] = q
+    picked = []
+    depth = 0
+    while len(picked) < limit:
+        progressed = False
+        for c in order:
+            q = queues[c]
+            if depth < len(q):
+                picked.append(q[depth])
+                progressed = True
+                if len(picked) >= limit:
+                    break
+        if not progressed:
+            break
+        depth += 1
+    keep = set(picked)
+    return [a for idx, a in enumerate(todo) if idx in keep]
+
+
+def run_parallel(batches, api_key, budget, pool, models, poster=None, sleeper=None,
+                 pace=PACE_SEC, done=None, on_success=None, defer_rounds=DEFER_ROUNDS,
+                 defer_wait=DEFER_WAIT_SEC, deadline_sec=DEADLINE_SEC, clock=None,
+                 parallel=MAX_PARALLEL):
+    """複数のモデルを同時に使ってバッチを処理する。
+
+    * モデル1つにつき作業列1本。共有の待ち行列からバッチを取り合う。
+      無料枠の毎分上限はモデルごとに別なので、毎分の処理量がモデル数倍になる。
+    * 各作業列は「前回の送信開始から pace 秒」空ける（1モデルあたり毎分10回以内）。
+    * あるモデルで混雑・解析失敗したバッチは待ち行列に戻し、別のモデルが拾う。
+      生きている全モデルで混雑したら「後回し」、全モデルで中身が壊れたら素通し。
+    * 日次上限・404 のモデルはその作業列だけ止め、残りのモデルで続ける。
+    * キー不正（fatal）や締切間近では、全作業列が新しいバッチを取らなくなる。
+    返り値: (処理できなかったバッチ, 素通しにしたバッチ, 不正件数, 打ち切り理由)
+    """
+    sleep = sleeper or _sleep
+    now = clock or time.monotonic
+    done = {} if done is None else done
+    lock = threading.RLock()
+    cond = threading.Condition(lock)
+    state = {"invalid": 0, "stop": ""}
+    given_up = []
+    pending = [{"batch": b, "tried": set(), "overloaded": False} for b in batches]
+
+    def _worker(home, queue, deferred, inflight):
+        wpool = ModelPool([home])
+        last_start = None
+        while True:
+            with cond:
+                item = None
+                while True:
+                    if state["stop"] or pool.fatal_reason or home in pool.dead:
+                        break
+                    rem = budget.remaining()
+                    if rem is not None and rem < MIN_SEC_FOR_NEW_BATCH:
+                        if not state["stop"]:
+                            state["stop"] = "実行時間の上限 %d分 に近づいたため打ち切り" % (deadline_sec // 60)
+                            print("    残り %.0f秒。新しいバッチは始めずに保存へ進みます" % rem)
+                        cond.notify_all()
+                        break
+                    for i, cand in enumerate(queue):
+                        if home not in cand["tried"]:
+                            item = cand
+                            del queue[i]
+                            break
+                    if item is not None:
+                        break
+                    if inflight[0] == 0:
+                        break          # 自分が拾えるものはもう出てこない
+                    cond.wait(0.5)     # 他のモデルが失敗して戻すかもしれない
+                if item is None:
+                    cond.notify_all()
+                    return
+                inflight[0] += 1
+            try:
+                if last_start is not None:
+                    gap = pace - (now() - last_start)
+                    if gap > 0:
+                        sleep(budget.cap_wait(gap))
+                last_start = now()
+                batch = item["batch"]
+                print("    [%s] バッチ (%d件)" % (home, len(batch)))
+                try:
+                    by_id, reason, model = call_batch(batch, api_key, budget, poster, sleeper, 0, wpool)
+                except Exception as e:
+                    by_id, reason, model = None, "想定外の例外: %s" % type(e).__name__, None
+                kind = wpool.last_kind
+                with cond:
+                    if wpool.fatal_reason and not pool.fatal_reason:
+                        pool.fatal_reason = wpool.fatal_reason
+                        state["stop"] = "中止: %s" % wpool.fatal_reason
+                    if home in wpool.dead:
+                        pool.kill(home)
+                    if by_id is not None:
+                        pool.record_success(home)
+                        missing = _apply_batch_result(batch, by_id, done)
+                        state["invalid"] += missing
+                        if missing:
+                            print("      [%s] %d件成功 / %d件は結果が不正（累計 %d件）"
+                                  % (home, len(batch) - missing, missing, len(done)))
+                        else:
+                            print("      [%s] %d件成功（累計 %d件）" % (home, len(batch), len(done)))
+                        if on_success:
+                            on_success()
+                    else:
+                        # キー不正・リクエスト上限・締切は他モデルに回しても無駄
+                        if not pool.fatal_reason and not state["stop"] and \
+                                (budget.out_of_time() or budget.used >= budget.limit):
+                            state["stop"] = ("実行時間の上限 %d分 到達" % (deadline_sec // 60)
+                                             if budget.out_of_time() else
+                                             "リクエスト上限 %d 到達" % budget.limit)
+                        item["tried"].add(home)
+                        if kind == ERR_BAD_REQUEST and "パース" not in (reason or "") \
+                                and "有効な結果" not in (reason or ""):
+                            given_up.append(batch)        # 400：どのモデルでも直らない
+                            print("      [%s] → このバッチは素通し（%s）" % (home, reason))
+                        else:
+                            if kind != ERR_BAD_REQUEST:
+                                item["overloaded"] = True
+                            alive = [m for m in pool.alive()]
+                            untried = [m for m in alive if m not in item["tried"]]
+                            if untried and not state["stop"] and not pool.fatal_reason:
+                                queue.append(item)
+                                print("      [%s] → 別のモデルに回します（%s）" % (home, reason))
+                            elif item["overloaded"]:
+                                deferred.append(item)
+                                print("      [%s] → 後回し（%s）" % (home, reason))
+                            else:
+                                given_up.append(batch)    # 全モデルで中身が壊れた
+                                print("      [%s] → このバッチは素通し（%s）" % (home, reason))
+                    inflight[0] -= 1
+                    cond.notify_all()
+            except Exception as e:      # 作業列の想定外エラーでも全体は止めない
+                with cond:
+                    inflight[0] = max(0, inflight[0] - 1)
+                    deferred.append(item)
+                    print("      [%s] 作業列で想定外のエラー: %s" % (home, type(e).__name__))
+                    cond.notify_all()
+                return
+
+    for rnd in range(0, defer_rounds + 1):
+        if not pending or state["stop"] or pool.fatal_reason:
+            break
+        if rnd > 0:
+            wait = defer_wait * rnd
+            rem = budget.remaining()
+            if budget.out_of_time() or budget.used >= budget.limit:
+                state["stop"] = "リクエスト上限または実行時間の上限に到達"
+                break
+            if rem is not None and rem < wait + MIN_SEC_FOR_NEW_BATCH:
+                state["stop"] = "実行時間の残りが少ないため再挑戦しませんでした"
+                break
+            print("  後回しにした %d バッチを %.0f秒 待ってから再挑戦します（%d/%d回目）"
+                  % (len(pending), wait, rnd, defer_rounds))
+            sleep(wait)
+            for it in pending:
+                it["tried"] = set()
+                it["overloaded"] = False
+        homes = [m for m in pool.alive()][:max(1, int(parallel))]
+        if not homes:
+            state["stop"] = "使えるモデルが残っていません"
+            break
+        print("  %sモデル %d本を同時に使って %d バッチを処理します: %s"
+              % ("再挑戦 " if rnd else "", len(homes), len(pending), ", ".join(homes)))
+        queue = list(pending)
+        deferred = []
+        inflight = [0]
+        threads = [threading.Thread(target=_worker, args=(h, queue, deferred, inflight),
+                                    name="enrich-%s" % h, daemon=True) for h in homes]
+        for t in threads:
+            t.start()
+        for t in threads:
+            t.join()
+        # どの作業列も拾わなかったもの（止めた・モデルが消えた）は後回し
+        pending = deferred + queue
+        if pending and rnd == defer_rounds and not state["stop"]:
+            state["stop"] = "後回しの再挑戦 %d回 でも混雑が解消しませんでした" % defer_rounds
+    if pool.fatal_reason and not state["stop"]:
+        state["stop"] = "中止: %s" % pool.fatal_reason
+    return [it["batch"] for it in pending], given_up, state["invalid"], state["stop"]
+
+
 def enrich(day_payload, date_key=None, api_key=None, batch_size=BATCH_SIZE,
            max_requests=REQUEST_BUDGET, max_batches=MAX_BATCHES,
            poster=None, sleeper=None, pace=PACE_SEC, models=None, previous=None,
-           defer_rounds=None, defer_wait=None, deadline_sec=DEADLINE_SEC):
+           defer_rounds=None, defer_wait=None, deadline_sec=DEADLINE_SEC,
+           max_ai_articles=None, checkpoint=None, clock=None, parallel=1):
     """①の出力（dict）から②の出力（dict）を作る。**例外を投げない**（C9・A3・A9）。
 
     503 対策の流れ:
@@ -1192,8 +1584,34 @@ def enrich(day_payload, date_key=None, api_key=None, batch_size=BATCH_SIZE,
         print("  前回の出力から %d件 を再利用（APIに投げません）" % len(reused))
         notes.append("前回の実行でAI適用済みの %d件 を再利用しました" % len(reused))
 
+    if max_ai_articles is None:
+        max_ai_articles = MAX_AI_ARTICLES
+    if max_ai_articles and max_ai_articles > 0 and len(todo) > max_ai_articles:
+        selected = select_for_ai(todo, max_ai_articles)
+        skipped = len(todo) - len(selected)
+        print("  未処理 %d件 のうち %d件 を国・媒体が偏らないように選んでAIに回します"
+              "（残り %d件 は今回は素通し。次回の実行で続きを処理）"
+              % (len(todo), len(selected), skipped))
+        notes.append("1回の上限 %d件 を超えた %d件 は今回は素通しにしました（次回の実行で続きを処理）"
+                     % (max_ai_articles, skipped))
+        todo = selected
+
     pool = ModelPool(configured_models(models))
-    budget = Budget(max_requests, deadline_sec)
+    budget = Budget(max_requests, deadline_sec, clock)
+    successes = [0]
+
+    def _checkpoint():
+        # 強制終了されてもそこまでの翻訳を残す。失敗しても本処理は止めない。
+        if checkpoint is None:
+            return
+        try:
+            partial = [done.get(a["article_id"]) or passthrough_article(a) for a in articles]
+            ok_now = sum(1 for a in articles if a["article_id"] in done)
+            checkpoint(build_payload(date_key, partial, budget.used, ok_now == 0,
+                                     pool.top_model() or configured_models(models)[0],
+                                     notes + ["途中保存（処理中）"]))
+        except Exception as e:
+            print("      途中保存に失敗（処理は続行）: %s" % type(e).__name__)
     sleep = sleeper or _sleep
     batches = plan_batches(todo, batch_size, max_batches)
     if batches:
@@ -1206,9 +1624,22 @@ def enrich(day_payload, date_key=None, api_key=None, batch_size=BATCH_SIZE,
     given_up = []               # 待っても直らない失敗（400・中身が壊れている）
     pending = list(batches)
     first_call = True
+    rounds_seq = range(0, defer_rounds + 1)
+
+    if parallel and parallel > 1 and len(pool.alive()) > 1 and batches:
+        # 複数モデルを同時に使う（無料枠はモデルごとに別枠）。
+        def _on_success():
+            successes[0] += 1
+            if CHECKPOINT_EVERY and successes[0] % CHECKPOINT_EVERY == 0:
+                _checkpoint()
+        pending, given_up, invalid_items, stop_reason = run_parallel(
+            batches, api_key, budget, pool, models, poster=poster, sleeper=sleeper,
+            pace=pace, done=done, on_success=_on_success, defer_rounds=defer_rounds,
+            defer_wait=defer_wait, deadline_sec=deadline_sec, clock=clock, parallel=parallel)
+        rounds_seq = ()          # 逐次処理のループは通らない
 
     # round 0 = 通常の1周目、round 1.. = 後回しにしたバッチの再挑戦
-    for rnd in range(0, defer_rounds + 1):
+    for rnd in rounds_seq:
         if not pending or stop_reason:
             break
         if rnd > 0:
@@ -1216,6 +1647,10 @@ def enrich(day_payload, date_key=None, api_key=None, batch_size=BATCH_SIZE,
                 stop_reason = "リクエスト上限または実行時間の上限に到達"
                 break
             wait = defer_wait * rnd
+            rem = budget.remaining()
+            if rem is not None and rem < wait + MIN_SEC_FOR_NEW_BATCH:
+                stop_reason = "実行時間の残りが少ないため再挑戦しませんでした"
+                break
             print("  後回しにした %d バッチを %.0f秒 待ってから再挑戦します（%d/%d回目）"
                   % (len(pending), wait, rnd, defer_rounds))
             sleep(wait)
@@ -1232,8 +1667,15 @@ def enrich(day_payload, date_key=None, api_key=None, batch_size=BATCH_SIZE,
                 # 残りは投げずに後回しにする（枠と時間を無駄にしない）。
                 deferred.append(batch)
                 continue
+            rem = budget.remaining()
+            if rem is not None and rem < MIN_SEC_FOR_NEW_BATCH:
+                # 新しいバッチを始めると締切を越える恐れがある。ここで止めて確実に保存する。
+                stop_reason = "実行時間の上限 %d分 に近づいたため打ち切り" % (deadline_sec // 60)
+                print("    残り %.0f秒。新しいバッチは始めずに保存へ進みます" % rem)
+                deferred.append(batch)
+                continue
             if not first_call:
-                sleep(pace)
+                sleep(budget.cap_wait(pace))
             first_call = False
             print("    %sバッチ %d/%d (%d件)" % ("再挑戦 " if rnd else "", index, len(pending), len(batch)))
             try:
@@ -1264,6 +1706,11 @@ def enrich(day_payload, date_key=None, api_key=None, batch_size=BATCH_SIZE,
             if missing:
                 invalid_items += missing
                 print("      %s: %d件成功 / %d件は結果が不正" % (model, len(batch) - missing, missing))
+            else:
+                print("      %s: %d件成功（累計 %d件）" % (model, len(batch), len(done)))
+            successes[0] += 1
+            if CHECKPOINT_EVERY and successes[0] % CHECKPOINT_EVERY == 0:
+                _checkpoint()
         pending = deferred
         if pending and rnd == defer_rounds and not stop_reason:
             stop_reason = "後回しの再挑戦 %d回 でも混雑が解消しませんでした" % defer_rounds
@@ -1313,8 +1760,32 @@ def main(argv=None):
                         % ",".join(DEFAULT_MODELS))
     parser.add_argument("--fresh", action="store_true",
                         help="前回の翻訳結果を再利用せず、全記事をAPIに投げ直す")
+    parser.add_argument("--max-ai-articles", type=int, default=None,
+                        help="1回の実行でAIに回す記事数の上限（既定 %d。環境変数 AI_MAX_ARTICLES でも可。0以下で上限なし）"
+                        % MAX_AI_ARTICLES)
+    parser.add_argument("--deadline-min", type=int, default=None,
+                        help="AI処理に使う最大の分数（既定 %d。環境変数 ENRICH_DEADLINE_MIN でも可）"
+                        % (DEADLINE_SEC // 60))
+    parser.add_argument("--parallel", type=int, default=None,
+                        help="同時に使うモデルの数（既定 %d。環境変数 AI_PARALLEL でも可。1 で逐次処理）"
+                        % MAX_PARALLEL)
     args = parser.parse_args(argv)
+    # GitHub Actions では標準出力がバッファされ、強制終了時にログが1行も残らなかった。
+    # 1行ごとに出す（どこで止まったか追えるようにする）。
+    for stream in (sys.stdout, sys.stderr):
+        try:
+            stream.reconfigure(line_buffering=True)
+        except Exception:
+            pass
     models = configured_models(args.models.split(",") if args.models else None)
+    max_ai = args.max_ai_articles if args.max_ai_articles is not None \
+        else _env_int("AI_MAX_ARTICLES", MAX_AI_ARTICLES)
+    deadline_min = args.deadline_min if args.deadline_min is not None \
+        else _env_int("ENRICH_DEADLINE_MIN", DEADLINE_SEC // 60)
+    deadline_sec = max(1, deadline_min) * 60
+    parallel = args.parallel if args.parallel is not None \
+        else _env_int("AI_PARALLEL", MAX_PARALLEL)
+    parallel = max(1, min(parallel, len(models)))
 
     date_key = args.date or jst_today()
     in_path = args.input or day_path_for(date_key)
@@ -1330,6 +1801,9 @@ def main(argv=None):
     # キーそのものは絶対に出さない。「あるか無いか」だけを出す。
     print("  GEMINI_API_KEY: %s" % ("設定あり" if api_key else "未設定 → 素通しモード"))
     print("  リクエスト上限: %d回/回（リトライ・モデル切替・再挑戦を含む）" % args.max_requests)
+    print("  AI対象の上限: %s" % ("%d件/回（国・媒体を均等に選択）" % max_ai if max_ai > 0 else "なし"))
+    print("  実行時間の上限: %d分（超えそうなら途中までの結果を保存して終了）" % (deadline_sec // 60))
+    print("  同時に使うモデル: %d本%s" % (parallel, "（無料枠はモデルごとに別枠なので処理量が増えます）" if parallel > 1 else "（順番に処理）"))
     print("=" * 66)
 
     day_payload = load_json(in_path)
@@ -1339,8 +1813,25 @@ def main(argv=None):
         print("結果: 失敗（入力 %s が読めません。①収集を先に実行してください）" % in_path)
         return 1
 
+    # 前回結果の再利用前の全件で見積もる（再利用があれば実際はこれより少ない）。
+    n_articles = len(valid_articles(day_payload))
+    print("  推定リクエスト数: %d本（記事 %d件、1バッチ%d件・最大%dバッチ。再送・再挑戦は別）"
+          % (estimate_requests(n_articles, args.batch_size, MAX_BATCHES),
+             n_articles, args.batch_size, MAX_BATCHES))
+
     # 同じ日の前回出力（1日2回走るうちの1回目など）。AI適用済みの記事は再送しない。
     previous = None if args.fresh else load_json(out_path)
+
+    def _write_checkpoint(partial):
+        # 途中結果。前回の出力よりAI適用が少ないうちは書かない（成果を減らさない）。
+        new_ok = sum(1 for a in partial.get("articles") or [] if a.get("enriched_by") == BY_GEMINI)
+        prev_ok = sum(1 for a in (previous or {}).get("articles") or []
+                      if isinstance(a, dict) and a.get("enriched_by") == BY_GEMINI)
+        if new_ok <= prev_ok:
+            return
+        assert_no_body_fields(partial, "enriched")
+        save_json(out_path, partial)
+        print("      途中保存しました（AI適用 %d件）" % new_ok)
 
     payload = enrich(
         day_payload,
@@ -1350,6 +1841,10 @@ def main(argv=None):
         max_requests=args.max_requests,
         models=models,
         previous=previous,
+        deadline_sec=deadline_sec,
+        max_ai_articles=max_ai,
+        checkpoint=None if args.dry_run else _write_checkpoint,
+        parallel=parallel,
     )
 
     # 今回が全滅（degraded）でも、前回のほうがAI適用件数が多ければ前回を残す。

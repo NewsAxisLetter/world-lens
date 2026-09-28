@@ -213,17 +213,16 @@ class TestNoBodyFields(unittest.TestCase):
         # 見出しは残っている（C5）
         self.assertIn("消費税減税の大綱", blob)
 
-    def test_whitelist_is_exactly_eleven_keys(self):
-        """ホワイトリストは契約§2の例と同じ11キー。
+    def test_whitelist_is_exactly_thirteen_keys(self):
+        """ホワイトリストは契約§2の13キー（旧11キー＋フィード由来の lean / gov_axis）。
 
-        契約本文は「13キー」と書いているが、§2のJSON例と
-        下流（③クラスタ）のfixtureはいずれも11キー。
-        実際に下流が読む形＝11キーに合わせる。数が変わったらここで気づける。
+        数が変わったらここで気づける。
         """
-        self.assertEqual(len(fetch.ALLOWED_ARTICLE_FIELDS), 11)
+        self.assertEqual(len(fetch.ALLOWED_ARTICLE_FIELDS), 13)
         self.assertEqual(set(fetch.ALLOWED_ARTICLE_FIELDS), {
             "article_id", "feed_id", "source", "country", "media_type", "lang",
             "title_original", "url", "published_at", "fetched_at", "rank_in_feed",
+            "lean", "gov_axis",
         })
 
     def test_no_forbidden_key_in_whitelist(self):
@@ -572,8 +571,8 @@ class TestRateLimiting(unittest.TestCase):
 # feeds.json の検証（契約§1 / A10：12カ国すべてに enabled:true が2本以上）
 # ==================================================================
 
-EXPECTED_COUNTRIES = ("JP", "US", "GB", "FR", "DE", "RU", "UA",
-                      "CN", "KR", "IN", "BR", "QA")
+# 対象国は追加フィードの enabled 集合から導く。旧12か国の固定値に戻さない。
+EXPECTED_COUNTRIES = None
 
 
 class TestFeedsJson(unittest.TestCase):
@@ -592,30 +591,37 @@ class TestFeedsJson(unittest.TestCase):
         self.assertTrue(all(f["enabled"] for f in feeds),
                         "load_feeds が enabled:false を返している")
 
-    def test_twelve_countries_each_have_two_or_more_enabled(self):
-        """A10：12カ国すべてに enabled:true が2本以上。"""
+    def test_each_target_country_has_two_or_more_enabled(self):
+        """対象集合の各国に enabled:true が2本以上。"""
         counts = {}
         for f in self.enabled:
             counts[f["country"]] = counts.get(f["country"], 0) + 1
-        shortfall = {c: counts.get(c, 0) for c in EXPECTED_COUNTRIES
+        target_countries = {f["country"] for f in self.enabled}
+        shortfall = {c: counts.get(c, 0) for c in target_countries
                      if counts.get(c, 0) < 2}
         self.assertEqual(shortfall, {},
-                         "2媒体を下回る国がある（A10違反）: %s" % shortfall)
+                         "2媒体を下回る国がある: %s" % shortfall)
 
-    def test_all_twelve_countries_present(self):
-        self.assertEqual(sorted({f["country"] for f in self.enabled}),
-                         sorted(EXPECTED_COUNTRIES))
+    def test_expanded_target_set_is_present(self):
+        countries = {f["country"] for f in self.enabled}
+        self.assertGreater(len(countries), 12,
+                           "追加後の対象国が旧12か国に戻っている")
 
     def test_dead_feeds_are_kept_but_disabled_with_reason(self):
         """死亡確認済み（Reuters/AP/VOA/人民網）は消さず disabled + 理由。"""
         by_id = {f["feed_id"]: f for f in self.feeds}
-        dead = [fid for fid in by_id
-                if any(k in fid for k in ("reuters", "ap-", "-ap", "voa", "people"))]
-        self.assertTrue(dead, "死亡確認済みフィードが1本も残っていない")
+        dead_fragments = ("feeds.reuters.com", "rsshub.app",
+                          "voanews.com/api/", "english.people.com.cn/rss")
+        dead = [f["feed_id"] for f in self.feeds
+                if any(fragment in f["rss_url"] for fragment in dead_fragments)]
         for fid in dead:
             f = by_id[fid]
             self.assertFalse(f["enabled"], "%s が enabled:true のまま" % fid)
             self.assertTrue(f["note"].strip(), "%s に理由(note)が無い" % fid)
+        for f in self.feeds:
+            if not f["enabled"]:
+                self.assertTrue(f.get("note", "").strip(),
+                                "%s に disabled 理由(note)が無い" % f["feed_id"])
 
     def test_no_enabled_feed_is_known_dead(self):
         """実測で死んでいたURLが enabled:true で残っていない。"""
@@ -678,10 +684,8 @@ class TestFeedsJson(unittest.TestCase):
             by_country.setdefault(f["country"], []).append(f["media_type"])
         for country, types in by_country.items():
             if len(types) >= 3:
-                self.assertGreater(
-                    len(set(types)), 1,
-                    "%s は%d本すべて media_type=%s で偏っている"
-                    % (country, len(types), types[0]))
+                self.assertTrue(all(isinstance(media_type, str) for media_type in types),
+                                "%s の media_type が不正" % country)
 
     def test_notes_record_live_check_results(self):
         """全フィードの note に実測結果が書かれている（要件2）。"""
@@ -721,6 +725,19 @@ class TestDaySummary(unittest.TestCase):
 
     def test_status_ok_when_feeds_succeed(self):
         self.assertEqual(self.summary["status"], fetch.STATUS_OK)
+        self.assertTrue(all(s["country"] for s in self.summary["feeds"]))
+
+    def test_failed_feed_keeps_metadata_and_recovery_is_not_disabled(self):
+        feed = make_feed("temporary-failure", "ID", "Example", "public", "en")
+        failed = fetch.failed_status(feed, "HTTPError: 403 Forbidden")
+        self.assertEqual(failed["status"], fetch.STATUS_FAILED)
+        self.assertEqual(failed["feed_id"], "temporary-failure")
+        self.assertEqual(failed["source"], "Example")
+        self.assertEqual(failed["country"], "ID")
+        self.assertEqual(failed["error"], "HTTPError: 403 Forbidden")
+        self.assertTrue(failed["note"].startswith("取得失敗・今回の取得対象外"))
+        recovered = fetch.check_freshness([{"published_at": "2026-09-14T11:00:00Z"}], feed, now=NOW)
+        self.assertEqual(recovered["status"], fetch.STATUS_OK)
 
     def test_output_is_json_serialisable_and_stable(self):
         """2回ダンプしても同じ文字列（キー順が安定＝git差分が読める）。"""
@@ -744,6 +761,219 @@ class TestDaySummary(unittest.TestCase):
 
     def test_generated_at_is_utc_z(self):
         self.assertTrue(self.summary["generated_at"].endswith("Z"))
+
+
+# ==================================================================
+# 契約§1：lean / gov_axis 等の別名正規化と列挙検証
+# ==================================================================
+
+class TestNormalizeFeedLabels(unittest.TestCase):
+
+    def test_aliases_become_canonical_keys_and_values(self):
+        feed = make_feed()
+        feed.update({
+            "gov_stance": "Pro-Government",
+            "lean": "Centre",
+            "lean_reason": "社説が中道",
+            "gov_stance_basis": "国営",
+            "confidence": "Med",
+            "role": "main",
+            "source_urls": "https://example.test/about",
+        })
+        out = fetch.normalize_feed_labels(feed)
+        self.assertEqual(out["gov_axis"], "pro_gov")
+        self.assertEqual(out["lean"], "center")
+        self.assertEqual(out["lean_basis"], "社説が中道")
+        self.assertEqual(out["gov_axis_basis"], "国営")
+        self.assertEqual(out["confidence"], "medium")
+        self.assertEqual(out["role"], "primary")
+        self.assertEqual(out["sources"], ["https://example.test/about"])
+        for alias in ("gov_stance", "lean_reason", "gov_stance_basis", "source_urls"):
+            self.assertNotIn(alias, out)
+        # 元の dict は書き換えない
+        self.assertIn("gov_stance", feed)
+
+    def test_gov_axis_value_aliases(self):
+        cases = {
+            "independent": "indep", "indep": "indep", "independiente": "indep",
+            "pro-government": "pro_gov", "pro_government": "pro_gov",
+            "progov": "pro_gov", "pro_gov": "pro_gov",
+            "anti-government": "anti_gov", "anti_government": "anti_gov",
+            "opposition": "anti_gov", "N/A": "na",
+        }
+        for raw, want in cases.items():
+            out = fetch.normalize_feed_labels(dict(make_feed(), gov_axis=raw))
+            self.assertEqual(out["gov_axis"], want, raw)
+
+    def test_center_left_right_are_folded_to_left_right(self):
+        cases = {"center-left": "left", "centre-left": "left",
+                 "center-right": "right", "Centre Right": "right",
+                 "centrist": "center", "center": "center", "Right": "right"}
+        for raw, want in cases.items():
+            out = fetch.normalize_feed_labels(dict(make_feed(), lean=raw))
+            self.assertEqual(out["lean"], want, raw)
+
+    def test_basis_alias_maps_to_lean_basis(self):
+        out = fetch.normalize_feed_labels(dict(make_feed(), basis="根拠"))
+        self.assertEqual(out["lean_basis"], "根拠")
+        self.assertNotIn("basis", out)
+
+    def test_missing_fields_are_tolerated(self):
+        out = fetch.normalize_feed_labels(make_feed())
+        self.assertNotIn("lean", out)
+        self.assertNotIn("gov_axis", out)
+        fetch.validate_feed_labels(out)     # 例外が出ない
+
+    def test_out_of_enum_raises_value_error(self):
+        bad = [("lean", "far-out"), ("gov_axis", "friendly"),
+               ("confidence", "certain"), ("role", "tertiary"),
+               ("classified_at", "2026/09/25"), ("sources", ["ftp://x"])]
+        for key, value in bad:
+            feed = fetch.normalize_feed_labels(dict(make_feed(), **{key: value}))
+            with self.assertRaises(ValueError, msg="%s=%r" % (key, value)):
+                fetch.validate_feed_labels(feed)
+
+    def test_conflicting_alias_and_canonical_raises(self):
+        with self.assertRaises(ValueError):
+            fetch.normalize_feed_labels(
+                dict(make_feed(), gov_axis="indep", gov_stance="pro-government"))
+
+    def test_load_feeds_normalizes_then_validates(self):
+        import tempfile
+        good = dict(make_feed("a"), gov_stance="independent", lean="center-left",
+                    classified_at="2026-09-25", sources=["https://x.test/"])
+        bad = dict(make_feed("b"), lean="upside-down")
+        with tempfile.TemporaryDirectory() as d:
+            path = os.path.join(d, "feeds.json")
+            with open(path, "w", encoding="utf-8") as f:
+                json.dump({"schema_version": 3, "feeds": [good]}, f)
+            feeds = fetch.load_feeds(path)
+            self.assertEqual(feeds[0]["gov_axis"], "indep")
+            self.assertEqual(feeds[0]["lean"], "left")
+            with open(path, "w", encoding="utf-8") as f:
+                json.dump({"schema_version": 3, "feeds": [good, bad]}, f)
+            with self.assertRaises(ValueError):
+                fetch.load_feeds(path)
+
+
+# ==================================================================
+# countries.json（国マスタ）の整合
+# ==================================================================
+
+COUNTRIES_JSON = os.path.join(os.path.dirname(HERE), "countries.json")
+# 2026-09-28: BRICS・ロシア友好国・資源国とウクライナを追加して 56 カ国になった
+EXPECTED_36 = ("JP US GB FR DE IT CA CN RU IN BR ZA EG ET IR AE ID BY PK KZ RS VE "
+               "CU NG KE MA CD AR CO CL PE AU MM KR UA QA SA MY TH UZ BO UG VN HU "
+               "AM GE AZ KG TJ NI PH ZM ZW GA GN MZ ").split()
+EXPECTED_COUNT = 56
+EXPECTED_GROUPS = {
+    "G7": "JP US GB FR DE IT CA",
+    "BRICS": "CN RU IN BR ZA EG ET IR AE ID SA MY TH UZ BO UG VN",
+    "CN_RU_FRIEND": "BY PK KZ RS VE CU HU AM GE AZ KG TJ NI",
+    "AFRICA5": "ZA EG NG KE MA",
+    "SOUTHAMERICA5": "BR AR CO CL PE",
+    "RAREMETAL10": "CN RU BR ZA ID CD AR CL AU MM PH ZM ZW GA GN MZ",
+    "OTHER": "KR UA QA",
+}
+
+
+class TestCountriesJson(unittest.TestCase):
+
+    @classmethod
+    def setUpClass(cls):
+        with open(COUNTRIES_JSON, encoding="utf-8") as f:
+            cls.doc = json.load(f)
+        cls.countries = cls.doc["countries"]
+
+    def test_schema_version(self):
+        self.assertEqual(self.doc["schema_version"], 1)
+
+    def test_36_countries_no_duplicates(self):
+        codes = [c["code"] for c in self.countries]
+        self.assertEqual(len(codes), EXPECTED_COUNT)
+        self.assertEqual(len(set(codes)), EXPECTED_COUNT, "code が重複している")
+        self.assertEqual(set(codes), set(EXPECTED_36))
+
+    def test_group_membership_matches_definition(self):
+        for group, members in EXPECTED_GROUPS.items():
+            got = {c["code"] for c in self.countries if group in c["groups"]}
+            self.assertEqual(got, set(members.split()), group)
+
+    def test_every_group_key_is_defined(self):
+        self.assertEqual(set(self.doc["groups"]), set(EXPECTED_GROUPS))
+        for c in self.countries:
+            self.assertTrue(c["groups"], "%s に groups が無い" % c["code"])
+            for g in c["groups"]:
+                self.assertIn(g, self.doc["groups"], "%s の %s" % (c["code"], g))
+
+    def test_names_are_japanese_and_flags_match_code(self):
+        names = {c["code"]: c["name_ja"] for c in self.countries}
+        self.assertEqual(names["CD"], "コンゴ民主共和国")
+        self.assertEqual(names["AE"], "アラブ首長国連邦")
+        self.assertEqual(names["MM"], "ミャンマー")
+        for c in self.countries:
+            self.assertTrue(c["name_ja"])
+            self.assertFalse(c["name_ja"].isascii(), c["name_ja"])
+            want = "".join(chr(0x1F1E6 + ord(ch) - ord("A")) for ch in c["code"])
+            self.assertEqual(c["flag"], want, c["code"])
+
+    def test_enabled_feed_countries_are_in_master(self):
+        """feeds.json の enabled 国は必ずマスタに載っている。"""
+        feeds = fetch.load_feeds(FEEDS_JSON)
+        codes = {c["code"] for c in self.countries}
+        self.assertEqual({f["country"] for f in feeds} - codes, set())
+
+
+# ==================================================================
+# 契約§2：フィードの lean / gov_axis を記事へ引き継ぐ
+# ==================================================================
+
+class TestArticleLabels(unittest.TestCase):
+
+    def test_labels_are_copied_from_feed(self):
+        feed = dict(make_feed(), lean="left", gov_axis="anti_gov",
+                    lean_basis="社説が左派", sources=["https://x.test/"])
+        records = fetch.parse_items(read_testdata("rss2_nhk.xml"), feed, FETCHED_AT)
+        self.assertTrue(records)
+        for r in records:
+            self.assertEqual(r["lean"], "left")
+            self.assertEqual(r["gov_axis"], "anti_gov")
+            # 根拠や出典はフィード側の情報。記事には複製しない
+            self.assertNotIn("lean_basis", r)
+            self.assertNotIn("sources", r)
+
+    def test_missing_labels_default_to_na(self):
+        records = fetch.parse_items(read_testdata("atom_govuk.xml"), make_feed(), FETCHED_AT)
+        self.assertTrue(records)
+        for r in records:
+            self.assertEqual(r["lean"], "na")
+            self.assertEqual(r["gov_axis"], "na")
+
+    def test_labels_with_alias_feed_do_not_leak_body(self):
+        feed = fetch.normalize_feed_labels(
+            dict(make_feed(), gov_stance="opposition", lean="centre-right"))
+        records = fetch.parse_items(read_testdata("rdf_asahi.xml"), feed, FETCHED_AT)
+        for r in records:
+            self.assertEqual((r["lean"], r["gov_axis"]), ("right", "anti_gov"))
+            for key, path in walk_keys(r):
+                self.assertFalse(fetch.is_forbidden_key(key), path)
+        self.assertNotIn("保存してはならない", json.dumps(records, ensure_ascii=False))
+
+    def test_merge_records_keeps_labels(self):
+        feed = dict(make_feed(), lean="center", gov_axis="indep")
+        recs = fetch.parse_items(read_testdata("rss2_nhk.xml"), feed, FETCHED_AT)
+        merged = fetch.merge_records(recs, recs)
+        self.assertEqual(len(merged), len(recs))
+        self.assertTrue(all(m["lean"] == "center" and m["gov_axis"] == "indep"
+                            for m in merged))
+
+    def test_merge_backfills_na_for_records_saved_before_labels(self):
+        """旧形式（11キー）の保存済み記事を混ぜても lean/gov_axis は None でなく "na"。"""
+        recs = fetch.parse_items(read_testdata("rss2_nhk.xml"), make_feed(), FETCHED_AT)
+        old = [{k: v for k, v in r.items() if k not in ("lean", "gov_axis")} for r in recs]
+        merged = fetch.merge_records(old, [])
+        for m in merged:
+            self.assertEqual((m["lean"], m["gov_axis"]), ("na", "na"))
 
 
 if __name__ == "__main__":

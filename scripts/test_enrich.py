@@ -59,6 +59,31 @@ def good_result(article_id, **over):
     return out
 
 
+class GoogleError(object):
+    """本物の Gemini API が返すエラー本文の形。enrich 自身のパーサで ApiError にする。"""
+
+    def __init__(self, status, api_status, reason="", quota_id="", retry_delay=None,
+                 headers=None):
+        details = []
+        if reason:
+            details.append({"@type": "type.googleapis.com/google.rpc.ErrorInfo",
+                            "reason": reason, "domain": "googleapis.com"})
+        if quota_id:
+            details.append({"@type": "type.googleapis.com/google.rpc.QuotaFailure",
+                            "violations": [{"quotaId": quota_id}]})
+        if retry_delay:
+            details.append({"@type": "type.googleapis.com/google.rpc.RetryInfo",
+                            "retryDelay": retry_delay})
+        self.status = status
+        self.headers = headers or {}
+        self.body = json.dumps({"error": {"code": status, "message": "The model is overloaded.",
+                                          "status": api_status, "details": details}})
+
+
+OVERLOADED = GoogleError(503, "UNAVAILABLE")
+BAD_KEY = GoogleError(400, "INVALID_ARGUMENT", reason="API_KEY_INVALID")
+
+
 class FakeHTTP(object):
     """http_post_json の差し替え。呼ばれた回数と、都度返す応答を制御する。
 
@@ -80,6 +105,9 @@ class FakeHTTP(object):
         item = self.responses.pop(0)
         if isinstance(item, Exception):
             raise item
+        if isinstance(item, GoogleError):
+            raise enrich._api_error_from_http(item.status, item.body.encode("utf-8"),
+                                              item.headers)
         if isinstance(item, tuple):
             status, _body = item
             # 本物の http_post_json と同じ判定で retryable を立てる。
@@ -127,7 +155,7 @@ class TestHappyPath(EnrichTestCase):
                             batch_size=20)
 
         self.assertFalse(out["degraded"], "正常系で degraded が立ってはいけない")
-        self.assertEqual(out["engine"], "gemini-2.5-flash")
+        self.assertEqual(out["engine"], enrich.DEFAULT_MODELS[0])
         self.assertEqual(out["api_calls"], 1, "8記事は1リクエストで済むはず")
         self.assertEqual(len(fake.calls), 1)
         for art in out["articles"]:
@@ -151,14 +179,14 @@ class TestHappyPath(EnrichTestCase):
         self.assertEqual(out["date"], "2026-09-15")
         self.assertTrue(out["generated_at"].endswith("Z"))
 
-        # 記事ごとの必須キーは契約§3 の9項目。§2の項目（url・country など）は
+        # 記事ごとの必須キーは契約§3 の9項目＋minerals（レアメタル欄）。§2の項目（url・country など）は
         # ここには入れない。③が article_id で D.json と突き合わせて復元する。
         need = ("article_id", "title_ja", "summary_ja", "tags", "stance",
                 "stance_reason", "key_phrase_original", "key_phrase_ja",
-                "enriched_by")
+                "enriched_by", "minerals")
         for art in out["articles"]:
             self.assertEqual(sorted(art.keys()), sorted(need),
-                             "契約§3 の9項目ちょうどであること（過不足なし）")
+                             "契約§3 の9項目＋minerals ちょうどであること（過不足なし）")
 
     def test_article_ids_match_the_input_so_phase3_can_join(self):
         """契約§4 は article_id で D.json と突き合わせる。IDの集合が一致すること。"""
@@ -187,7 +215,8 @@ class TestHappyPath(EnrichTestCase):
         enrich.enrich(day, date_key="2026-09-15", api_key="secret-value")
 
         call = fake.calls[0]
-        self.assertIn("gemini-2.5-flash", call["url"])
+        # 既定の先頭モデル（公式料金ページで無料枠ありの 3.5 Flash-Lite）を使う
+        self.assertIn("/gemini-3.5-flash-lite:generateContent", call["url"])
         # キーはURLクエリではなくヘッダで送る（URLはログに残りやすい）
         self.assertNotIn("secret-value", call["url"])
         self.assertEqual(call["api_key"], "secret-value")
@@ -214,17 +243,21 @@ class TestRetryAndRateLimit(EnrichTestCase):
         self.assertFalse(out["degraded"], "最終的に成功したので degraded は立たない")
         self.assertEqual(out["api_calls"], 3, "リトライも api_calls に数える")
         self.assertEqual(len(self.slept), 2, "リトライ前に2回待つはず")
-        self.assertLess(self.slept[0], self.slept[1], "指数バックオフで待ち時間が伸びること")
+        for w in self.slept:
+            self.assertGreaterEqual(w, enrich.RATE_DEFAULT_WAIT_SEC,
+                                    "429 は分単位の上限なので数秒では足りない")
         for art in out["articles"]:
             self.assertEqual(art["enriched_by"], "gemini")
 
     def test_429_exhausted_falls_back_to_passthrough(self):
         day = load_fixture("day-multilang.json")
-        fake = self.install([(429, "rate limit")] * 4)
+        fake = self.install([(429, "rate limit")] * 3)
 
-        out = enrich.enrich(day, date_key="2026-09-15", api_key="k")
+        out = enrich.enrich(day, date_key="2026-09-15", api_key="k",
+                            models=["gemini-2.5-flash"], defer_rounds=0)
 
-        self.assertEqual(len(fake.calls), 4, "初回1回 + リトライ最大3回 = 4回で打ち切る")
+        self.assertEqual(len(fake.calls), 1 + enrich.RATE_TRIES,
+                         "初回1回 + 429再送 RATE_TRIES 回で打ち切る")
         self.assertTrue(out["degraded"], "全滅したので degraded:true（A3・C9）")
         self.assertEqual(out["engine"], "passthrough")
         for art in out["articles"]:
@@ -245,9 +278,12 @@ class TestRetryAndRateLimit(EnrichTestCase):
     def test_400_is_not_retried(self):
         """400（プロンプト不正など）はリトライしても直らないので即諦める。"""
         day = load_fixture("day-multilang.json")
-        fake = self.install([(400, '{"error":{"message":"bad request"}}')])
+        fake = self.install([(400, '{"error":{"message":"bad request"}}')] * 2)
         out = enrich.enrich(day, date_key="2026-09-15", api_key="k")
-        self.assertEqual(len(fake.calls), 1, "400 はリトライしない")
+        # 思考設定を外した再送を1回だけ許す（それでも400なら諦める）。無限に投げない。
+        self.assertEqual(len(fake.calls), 2, "400 は思考設定を外して1回だけ再送")
+        self.assertNotIn("thinkingConfig", fake.calls[1]["payload"]["generationConfig"])
+        self.assertIn("thinkingConfig", fake.calls[0]["payload"]["generationConfig"])
         self.assertTrue(out["degraded"])
         self.assertEqual(out["engine"], "passthrough")
 
@@ -268,14 +304,14 @@ class TestRetryAndRateLimit(EnrichTestCase):
         ids = [a["article_id"] for a in day["articles"]]
         # batch_size=4 → 2バッチ。1バッチ目は4連敗、2バッチ目は成功。
         fake = self.install(
-            [(500, "err")] * 4
+            [(500, "err")] * enrich.OVERLOAD_TRIES
             + [gemini_envelope([good_result(i) for i in ids[4:]])]
         )
 
         out = enrich.enrich(day, date_key="2026-09-15", api_key="k",
-                            batch_size=4)
+                            batch_size=4, models=["gemini-2.5-flash"], defer_rounds=0)
 
-        self.assertEqual(len(fake.calls), 5)
+        self.assertEqual(len(fake.calls), enrich.OVERLOAD_TRIES + 1)
         self.assertFalse(out["degraded"],
                          "半分はAIが効いているので全体 degraded にはしない")
         got = self.by_id(out)
@@ -290,7 +326,7 @@ class TestRetryAndRateLimit(EnrichTestCase):
     def test_network_error_falls_back_without_raising(self):
         import urllib.error
         day = load_fixture("day-multilang.json")
-        self.install([urllib.error.URLError("dns failure")] * 4)
+        self.install([urllib.error.URLError("dns failure")] * 50)
         out = enrich.enrich(day, date_key="2026-09-15", api_key="k")
         self.assertTrue(out["degraded"])
         self.assertEqual(len(out["articles"]), len(day["articles"]))
@@ -513,9 +549,13 @@ class TestContractRules(EnrichTestCase):
             for tag in art["tags"]:
                 self.assertIn(tag, enrich.ALLOWED_TAGS)
 
-    def test_allowed_tag_set_is_exactly_twelve(self):
-        self.assertEqual(len(enrich.ALLOWED_TAGS), 12,
-                         "契約§3の固定12タグであること")
+    def test_allowed_tag_set_is_exactly_eighteen(self):
+        self.assertEqual(len(enrich.ALLOWED_TAGS), 18,
+                         "固定18タグ（既存12＋話題6）であること")
+        self.assertEqual(len(set(enrich.ALLOWED_TAGS)), 18, "重複なし")
+        for old in ("政治", "経済", "安全保障", "外交", "気候", "人権",
+                    "科学技術", "保健", "社会", "文化", "スポーツ", "災害"):
+            self.assertIn(old, enrich.ALLOWED_TAGS, "既存12タグは残す")
 
     def test_tags_are_capped_and_deduped(self):
         day = load_fixture("day-multilang.json")
@@ -760,6 +800,484 @@ class TestCli(EnrichTestCase):
                        "import requests", "import httpx", "import feedparser",
                        "from google import"):
             self.assertNotIn(banned, source, "%s は使えない（C8）" % banned)
+
+
+# ==================================================================
+# 系統6: 503（混雑）対策 — 「先日1件も日本語化されなかった」の再発防止
+# ==================================================================
+
+class TestOverload503(EnrichTestCase):
+
+    def ids(self, day):
+        return [a["article_id"] for a in day["articles"]]
+
+    def test_real_google_503_body_is_classified_as_overload(self):
+        e = enrich._api_error_from_http(503, OVERLOADED.body.encode("utf-8"), {})
+        self.assertEqual(e.api_status, "UNAVAILABLE")
+        self.assertEqual(enrich.classify_error(e), enrich.ERR_OVERLOAD)
+        self.assertNotIn("overloaded", str(e), "エラー本文の文章は保持しない")
+
+    def test_503_switches_to_next_model(self):
+        """先頭モデルが混雑していたら、同じバッチを次のモデルで投げ直す。"""
+        day = load_fixture("day-multilang.json")
+        fake = self.install([OVERLOADED] * enrich.OVERLOAD_TRIES
+                            + [gemini_envelope([good_result(i) for i in self.ids(day)])])
+        out = enrich.enrich(day, date_key="2026-09-15", api_key="k",
+                            models=["model-a", "model-b"])
+        self.assertIn("model-a", fake.calls[0]["url"])
+        self.assertIn("model-b", fake.calls[-1]["url"])
+        self.assertFalse(out["degraded"])
+        self.assertEqual(out["engine"], "model-b", "実際に答えたモデルを engine に書く")
+        self.assertTrue(all(a["enriched_by"] == "gemini" for a in out["articles"]))
+        self.assertTrue(any("model-b" in n for n in out["notes"]), "使ったモデルを notes に残す")
+
+    def test_503_waits_are_long_enough(self):
+        """503 は数十秒続く。旧実装の 2/4/8 秒ではなく 5 秒以上待つ。"""
+        day = load_fixture("day-multilang.json")
+        self.install([OVERLOADED, gemini_envelope([good_result(i) for i in self.ids(day)])])
+        enrich.enrich(day, date_key="2026-09-15", api_key="k", models=["m"])
+        self.assertGreaterEqual(self.slept[0], enrich.OVERLOAD_BACKOFF_BASE_SEC)
+
+    def test_retry_delay_from_google_is_honoured(self):
+        day = load_fixture("day-multilang.json")
+        self.install([GoogleError(429, "RESOURCE_EXHAUSTED",
+                                  quota_id="GenerateRequestsPerMinutePerProjectPerModel-FreeTier",
+                                  retry_delay="42s"),
+                      gemini_envelope([good_result(i) for i in self.ids(day)])])
+        out = enrich.enrich(day, date_key="2026-09-15", api_key="k", models=["m"])
+        self.assertFalse(out["degraded"])
+        self.assertEqual(self.slept[0], 43.0, "Google が指定した 42 秒 + 余裕1秒")
+
+    def test_daily_quota_skips_model_without_waiting(self):
+        """日次上限（PerDay）は待っても戻らないので、待たずに次のモデルへ。"""
+        day = load_fixture("day-multilang.json")
+        fake = self.install([GoogleError(429, "RESOURCE_EXHAUSTED",
+                                         quota_id="GenerateRequestsPerDayPerProjectPerModel-FreeTier",
+                                         retry_delay="30s"),
+                             gemini_envelope([good_result(i) for i in self.ids(day)])])
+        out = enrich.enrich(day, date_key="2026-09-15", api_key="k", models=["a", "b"])
+        self.assertEqual(len(fake.calls), 2)
+        self.assertEqual(self.slept, [], "日次上限では待たない")
+        self.assertEqual(out["engine"], "b")
+
+    def test_all_models_busy_then_deferred_round_succeeds(self):
+        """全モデルが混雑 → 後回し → 待ってから再挑戦で成功（503の日でも0件にしない）。"""
+        day = load_fixture("day-multilang.json")
+        busy = [OVERLOADED] * (enrich.OVERLOAD_TRIES * 2)
+        fake = self.install(busy + [gemini_envelope([good_result(i) for i in self.ids(day)])])
+        out = enrich.enrich(day, date_key="2026-09-15", api_key="k",
+                            models=["a", "b"], defer_wait=90)
+        self.assertEqual(len(fake.calls), len(busy) + 1)
+        self.assertIn(90, self.slept, "後回しの再挑戦の前にまとまった時間待つ")
+        self.assertFalse(out["degraded"])
+        self.assertTrue(all(a["enriched_by"] == "gemini" for a in out["articles"]))
+
+    def test_consecutive_failures_defer_rest_without_calling(self):
+        """2バッチ続けて全滅したら、残りバッチは1周目では投げず後回し（枠を浪費しない）。"""
+        day = load_fixture("day-multilang.json")
+        per_batch = enrich.OVERLOAD_TRIES
+        fake = self.install([OVERLOADED] * (per_batch * 2))
+        out = enrich.enrich(day, date_key="2026-09-15", api_key="k", batch_size=2,
+                            models=["m"], defer_rounds=0)
+        self.assertEqual(len(fake.calls), per_batch * 2, "3・4バッチ目は投げない")
+        self.assertTrue(out["degraded"])
+        self.assertEqual(len(out["articles"]), len(day["articles"]), "記事は落とさない")
+
+    def test_invalid_key_stops_everything_after_one_call(self):
+        """キー不正（本物は 400 API_KEY_INVALID）は全バッチ中止。旧実装は20本すべて投げていた。"""
+        day = load_fixture("day-multilang.json")
+        fake = self.install([BAD_KEY])
+        out = enrich.enrich(day, date_key="2026-09-15", api_key="wrong", batch_size=2)
+        self.assertEqual(len(fake.calls), 1)
+        self.assertEqual(self.slept, [], "キー不正では待たない")
+        self.assertTrue(out["degraded"])
+        self.assertTrue(any("API_KEY_INVALID" in n for n in out["notes"]),
+                        "原因がわかる記号を notes に残す")
+
+    def test_model_not_found_moves_on(self):
+        day = load_fixture("day-multilang.json")
+        fake = self.install([GoogleError(404, "NOT_FOUND"),
+                             gemini_envelope([good_result(i) for i in self.ids(day)])])
+        out = enrich.enrich(day, date_key="2026-09-15", api_key="k",
+                            models=["retired-model", "gemini-2.5-flash"])
+        self.assertEqual(len(fake.calls), 2)
+        self.assertEqual(out["engine"], "gemini-2.5-flash")
+
+    def test_default_models_are_free_tier_3x(self):
+        """既定は料金ページで「無料枠: 無料」の 3.x。提供終了の 2.0 と、新規利用制限の 2.5 は使わない。"""
+        self.assertEqual(list(enrich.DEFAULT_MODELS),
+                         ["gemini-3.5-flash-lite", "gemini-3.8-flash", "gemini-3.1-flash-lite",
+                          "gemini-3.7-flash", "gemini-3.6-flash"])
+        # 5本同時に使えるよう、同時数の既定とモデル数を揃える
+        self.assertEqual(len(enrich.DEFAULT_MODELS), enrich.MAX_PARALLEL)
+        # 3.7 Flash も minimal 非対応なので low を送る
+        self.assertEqual(enrich.thinking_config("gemini-3.7-flash"), {"thinkingLevel": "low"})
+        self.assertEqual(enrich.thinking_config("gemini-3.6-flash"), {"thinkingLevel": "minimal"})
+        for m in enrich.DEFAULT_MODELS:
+            self.assertNotIn("2.0", m)
+            self.assertNotIn("2.5", m)
+
+    def test_gemini3_uses_minimal_thinking_and_default_temperature(self):
+        cfg = enrich.build_request_body([], "gemini-3.5-flash-lite")["generationConfig"]
+        self.assertEqual(cfg["thinkingConfig"], {"thinkingLevel": "minimal"})
+        self.assertNotIn("thinkingBudget", cfg["thinkingConfig"], "両方指定すると400")
+        self.assertNotIn("temperature", cfg, "Gemini 3 は既定1.0推奨（下げるとループ）")
+        # 3.8 Flash は minimal 非対応（公式表: 低・中・高のみ）。実際に 400 が返った
+        low = enrich.build_request_body([], "gemini-3.8-flash")["generationConfig"]
+        self.assertEqual(low["thinkingConfig"], {"thinkingLevel": "low"})
+        self.assertEqual(enrich.thinking_config("gemini-3.7-flash"), {"thinkingLevel": "low"})
+        self.assertEqual(enrich.thinking_config("gemini-3.1-flash-lite"), {"thinkingLevel": "minimal"})
+        pro = enrich.build_request_body([], "gemini-3.1-pro")["generationConfig"]
+        self.assertEqual(pro["thinkingConfig"], {"thinkingLevel": "low"}, "Pro は minimal 非対応")
+        self.assertTrue(enrich.is_gemini3("models/gemini-3.5-flash"))
+        self.assertFalse(enrich.is_gemini3("gemini-2.5-flash"))
+
+    def test_403_model_restriction_moves_to_next_model(self):
+        """2.5系の「新規利用制限」型の 403 はキー不正ではない → 全中止せず次のモデルへ。"""
+        day = load_fixture("day-multilang.json")
+        fake = self.install([GoogleError(403, "PERMISSION_DENIED"),
+                             gemini_envelope([good_result(i) for i in self.ids(day)])])
+        out = enrich.enrich(day, date_key="2026-09-15", api_key="k",
+                            models=["gemini-2.5-flash", "gemini-3.5-flash-lite"])
+        self.assertEqual(len(fake.calls), 2)
+        self.assertEqual(out["engine"], "gemini-3.5-flash-lite")
+        self.assertFalse(out["degraded"])
+
+    def test_thinking_is_turned_off_only_where_supported(self):
+        self.assertEqual(enrich.build_request_body([], "gemini-2.5-flash")
+                         ["generationConfig"]["thinkingConfig"], {"thinkingBudget": 0})
+        self.assertEqual(enrich.build_request_body([], "gemini-2.5-flash-lite")
+                         ["generationConfig"]["thinkingConfig"], {"thinkingBudget": 0})
+        self.assertNotIn("thinkingConfig",
+                         enrich.build_request_body([], "gemini-2.0-flash")["generationConfig"])
+        self.assertNotIn("thinkingConfig",
+                         enrich.build_request_body([], "gemini-2.5-pro")["generationConfig"])
+
+    def test_models_can_be_overridden_by_env(self):
+        os.environ["GEMINI_MODELS"] = " gemini-2.0-flash , models/gemini-2.5-flash,gemini-2.0-flash"
+        try:
+            self.assertEqual(enrich.configured_models(), ["gemini-2.0-flash", "gemini-2.5-flash"])
+        finally:
+            os.environ.pop("GEMINI_MODELS", None)
+        self.assertEqual(enrich.configured_models(), list(enrich.DEFAULT_MODELS))
+
+    def test_deadline_stops_requests(self):
+        clock = [0.0]
+        b = enrich.Budget(100, deadline_sec=10, clock=lambda: clock[0])
+        self.assertTrue(b.can_spend())
+        clock[0] = 11
+        self.assertFalse(b.can_spend(), "実行時間の上限を過ぎたら新しいリクエストを出さない")
+
+
+class TestReusePrevious(EnrichTestCase):
+
+    def test_previous_success_is_reused_without_calling(self):
+        """1日2回実行の2回目は、1回目に翻訳できた記事をAPIに投げない。"""
+        day = load_fixture("day-multilang.json")
+        ids = [a["article_id"] for a in day["articles"]]
+        self.install([gemini_envelope([good_result(i) for i in ids])])
+        first = enrich.enrich(day, date_key="2026-09-15", api_key="k")
+        fake = self.install([])          # 呼ばれたら失敗
+        second = enrich.enrich(day, date_key="2026-09-15", api_key="k", previous=first)
+        self.assertEqual(len(fake.calls), 0)
+        self.assertFalse(second["degraded"])
+        self.assertEqual(second["articles"], first["articles"])
+
+    def test_only_new_articles_are_sent(self):
+        day = load_fixture("day-multilang.json")
+        ids = [a["article_id"] for a in day["articles"]]
+        self.install([gemini_envelope([good_result(i) for i in ids[:4]])])
+        half = dict(day, articles=day["articles"][:4])
+        first = enrich.enrich(half, date_key="2026-09-15", api_key="k")
+        fake = self.install([gemini_envelope([good_result(i) for i in ids[4:]])])
+        out = enrich.enrich(day, date_key="2026-09-15", api_key="k", previous=first)
+        self.assertEqual(len(fake.calls), 1)
+        sent = json.dumps(fake.calls[0]["payload"], ensure_ascii=False)
+        for aid in ids[:4]:
+            self.assertNotIn(aid, sent, "翻訳済みの記事は送らない")
+        self.assertTrue(all(a["enriched_by"] == "gemini" for a in out["articles"]))
+
+    def test_main_keeps_previous_file_when_this_run_is_all_503(self):
+        """朝は成功・夜は503全滅 → 朝の結果を素通しで上書きしない。"""
+        day = load_fixture("day-multilang.json")
+        ids = [a["article_id"] for a in day["articles"]]
+        os.environ["GEMINI_API_KEY"] = "k"
+        try:
+            with tempfile.TemporaryDirectory() as tmp:
+                in_path = os.path.join(tmp, "in.json")
+                out_path = os.path.join(tmp, "out.json")
+                with open(in_path, "w", encoding="utf-8") as f:
+                    json.dump(day, f, ensure_ascii=False)
+                self.install([gemini_envelope([good_result(i) for i in ids])])
+                self.assertEqual(enrich.main(["--input", in_path, "--output", out_path]), 0)
+                before = open(out_path, "rb").read()
+                # 2回目: 再利用で API を呼ばないので、--fresh で強制的に全件投げ直して全滅させる
+                self.install([OVERLOADED] * 200)
+                code = enrich.main(["--input", in_path, "--output", out_path, "--fresh"])
+                self.assertEqual(code, 0)
+                # --fresh は明示指定なので上書きされる（手動でやり直すときの逃げ道）
+                self.assertTrue(json.load(open(out_path, encoding="utf-8"))["degraded"])
+                # 通常実行（再利用あり）なら、既存の翻訳は保たれ API も呼ばない
+                with open(out_path, "wb") as f:
+                    f.write(before)
+                fake = self.install([])
+                enrich.main(["--input", in_path, "--output", out_path])
+                self.assertEqual(len(fake.calls), 0)
+                self.assertFalse(json.load(open(out_path, encoding="utf-8"))["degraded"])
+        finally:
+            os.environ.pop("GEMINI_API_KEY", None)
+
+    def test_reuse_survives_missing_key(self):
+        day = load_fixture("day-multilang.json")
+        ids = [a["article_id"] for a in day["articles"]]
+        self.install([gemini_envelope([good_result(i) for i in ids])])
+        first = enrich.enrich(day, date_key="2026-09-15", api_key="k")
+        self.install([])
+        out = enrich.enrich(day, date_key="2026-09-15", api_key="", previous=first)
+        self.assertFalse(out["degraded"])
+        self.assertTrue(all(a["enriched_by"] == "gemini" for a in out["articles"]))
+
+
+# ==================================================================
+# 話題タグ18種・レアメタル欄（minerals）・処理量
+# ==================================================================
+
+NEW_TAGS = ("エネルギー", "資源・鉱物", "貿易・関税", "紛争・軍事", "選挙", "移民・難民")
+
+
+class TestTopicTags(EnrichTestCase):
+
+    def test_new_six_tags_pass_normalization(self):
+        for tag in NEW_TAGS:
+            self.assertIn(tag, enrich.ALLOWED_TAGS)
+            self.assertEqual(enrich.normalize_tags([tag]), [tag])
+        self.assertEqual(enrich.normalize_tags(["紛争・軍事", "紛争", "資源", "Energy", "選挙"]),
+                         ["紛争・軍事", "選挙"], "表記が一致しない語は捨てる")
+        self.assertEqual(enrich.MAX_TAGS, 3)
+        self.assertEqual(len(enrich.normalize_tags(list(NEW_TAGS))), 3, "最大3個は据え置き")
+
+    def test_prompt_lists_eighteen_tags_with_descriptions(self):
+        prompt = enrich.build_prompt([])
+        self.assertIn("18語", prompt)
+        self.assertNotIn("12語", prompt)
+        for tag in enrich.ALLOWED_TAGS:
+            self.assertIn(tag, prompt)
+        # 紛争・軍事 と 安全保障 の区別を説明していること
+        self.assertIn("戦闘", prompt)
+        self.assertIn("防衛政策", prompt)
+
+    def test_prompt_explains_minerals(self):
+        prompt = enrich.build_prompt([])
+        self.assertIn("minerals", prompt)
+        for m in enrich.ALLOWED_MINERALS:
+            self.assertIn(m, prompt)
+        self.assertIn("明示的", prompt)
+        self.assertIn("空配列", prompt)
+
+
+class TestMinerals(EnrichTestCase):
+
+    def test_allowed_minerals(self):
+        self.assertEqual(enrich.ALLOWED_MINERALS, (
+            "リチウム", "コバルト", "ニッケル", "レアアース", "グラファイト", "ガリウム",
+            "ゲルマニウム", "タングステン", "マンガン", "白金族", "ニオブ", "アンチモン"))
+        self.assertEqual(enrich.MAX_MINERALS, 4)
+
+    def test_normalize_minerals(self):
+        n = enrich.normalize_minerals
+        self.assertEqual(n(None), [])
+        self.assertEqual(n("リチウム"), [], "配列以外は空")
+        self.assertEqual(n(["リチウム", " リチウム ", "金", "lithium", 3, "コバルト"]),
+                         ["リチウム", "コバルト"], "語彙外・重複を捨てる")
+        self.assertEqual(n(list(enrich.ALLOWED_MINERALS)), list(enrich.ALLOWED_MINERALS[:4]),
+                         "最大4個")
+
+    def test_detect_hits_in_many_languages(self):
+        d = enrich.detect_minerals
+        cases = [
+            # en
+            ("China curbs exports of gallium and germanium", ["ガリウム", "ゲルマニウム"]),
+            ("Rare earths deal signed; lithium-ion plant opens", ["リチウム", "レアアース"]),
+            ("Platinum and palladium prices jump", ["白金族"]),
+            ("PGM miners cut output", ["白金族"]),
+            # es
+            ("Chile nacionaliza el litio y las tierras raras", ["リチウム", "レアアース"]),
+            ("Exportaciones de cobalto y grafito", ["コバルト", "グラファイト"]),
+            # pt
+            ("Brasil amplia produção de níquel e lítio", ["リチウム", "ニッケル"]),
+            ("Nióbio brasileiro e tungstênio", ["ニオブ", "タングステン"]),
+            ("Terras raras e manganês no Pará", ["レアアース", "マンガン"]),
+            # ru
+            ("Россия наращивает добычу лития и никеля", ["リチウム", "ニッケル"]),
+            ("Редкоземельные металлы и вольфрам", ["レアアース", "タングステン"]),
+            ("Экспорт палладия и сурьмы", ["白金族", "アンチモン"]),
+            # zh
+            ("中国对镓、锗实施出口管制", ["ガリウム", "ゲルマニウム"]),
+            ("稀土与锂价格下跌", ["リチウム", "レアアース"]),
+            ("鋰電池工廠", ["リチウム"]),
+            # ja
+            ("レアアースとアンチモンの輸出規制", ["レアアース", "アンチモン"]),
+            ("黒鉛とニオブの供給網", ["グラファイト", "ニオブ"]),
+        ]
+        for text, expect in cases:
+            self.assertEqual(sorted(d(text)), sorted(expect), text)
+
+    def test_detect_no_false_positives(self):
+        d = enrich.detect_minerals
+        # 仕様：英字は語境界で切るので undermining / illumine / Nickelodeon は拾わない。
+        # "nickel-and-dime"（「けちくさい」の慣用句）と "Cobalt Strike"（攻撃ツール名）は鉱物の話ではないので除外。
+        # 単独の "a nickel"（硬貨）は見分けられないので拾う（見出しではまず出ない）。
+        # ロシア語は語頭境界を見るので политика（政治）の中の лити は拾わない。
+        # Германия（ドイツ）は германий（ゲルマニウム）と格変化が衝突するので、衝突しない形だけ拾う。
+        for text in ("Opposition accuses government of undermining courts",
+                     "Lanterns illumine the old city",
+                     "Nickelodeon announces new series",
+                     "Voters tired of being nickel-and-dimed",
+                     "a nickel and dime store closes",
+                     "Hackers used Cobalt Strike in bank attack",
+                     "Mining stocks fall",
+                     "Политика Германии и Германия в ЕС",
+                     "政府 消費税減税の大綱 閣議決定へ",
+                     ""):
+            self.assertEqual(d(text), [], text)
+        self.assertEqual(d(None), [])
+
+    def test_passthrough_gets_dictionary_minerals(self):
+        day = {"date": "2026-09-15", "articles": [
+            {"url": "https://example.invalid/a", "title_original": "Congo halts cobalt exports",
+             "lang": "en"},
+            {"url": "https://example.invalid/b", "title_original": "Election day in Peru",
+             "lang": "en"},
+        ]}
+        self.install([])
+        out = enrich.enrich(day, date_key="2026-09-15", api_key="")
+        arts = out["articles"]
+        self.assertEqual(arts[0]["enriched_by"], "passthrough")
+        self.assertEqual(arts[0]["minerals"], ["コバルト"])
+        self.assertEqual(arts[1]["minerals"], [], "無ければ空配列（キーは必ずある）")
+
+    def test_minerals_key_always_present(self):
+        day = load_fixture("day-multilang.json")
+        ids = [a["article_id"] for a in day["articles"]]
+        results = [good_result(i) for i in ids[:4]]   # 残り4件は結果なし→passthrough
+        self.install([gemini_envelope(results)])
+        out = enrich.enrich(day, date_key="2026-09-15", api_key="k")
+        for art in out["articles"]:
+            self.assertIn("minerals", art)
+            self.assertIsInstance(art["minerals"], list)
+
+    def test_ai_and_dictionary_are_unioned(self):
+        day = {"date": "2026-09-15", "articles": [
+            {"url": "https://example.invalid/a", "article_id": "aaaa0001",
+             "title_original": "Indonesia nickel ban hits battery makers", "lang": "en"},
+            {"url": "https://example.invalid/b", "article_id": "aaaa0002",
+             "title_original": "Battery metals rally", "lang": "en"},
+        ]}
+        self.install([gemini_envelope([
+            good_result("aaaa0001", minerals=["コバルト", "金", "コバルト"],
+                        key_phrase_original="nickel ban"),
+            # AI は空、訳文側（title_ja）に鉱物名があれば辞書が拾う
+            good_result("aaaa0002", minerals=[], title_ja="リチウムなど電池金属が上昇",
+                        key_phrase_original="Battery metals"),
+        ])])
+        out = enrich.enrich(day, date_key="2026-09-15", api_key="k")
+        got = self.by_id(out)
+        self.assertEqual(got["aaaa0001"]["minerals"], ["コバルト", "ニッケル"],
+                         "AIの結果（語彙内）→辞書の順で重複なし")
+        self.assertEqual(got["aaaa0002"]["minerals"], ["リチウム"])
+        self.assertEqual(got["aaaa0001"]["enriched_by"], "gemini")
+
+    def test_previous_file_without_minerals_is_still_reused(self):
+        """minerals 欄を足す前に書かれた .enriched.json も再利用でき、辞書で補完される。"""
+        day = {"date": "2026-09-15", "articles": [
+            {"url": "https://example.invalid/a", "article_id": "aaaa0001",
+             "title_original": "Chile lithium plan", "lang": "en"}]}
+        old = {"articles": [{
+            "article_id": "aaaa0001", "title_ja": "チリのリチウム計画", "summary_ja": "",
+            "tags": ["経済"], "stance": "neutral", "stance_reason": "x",
+            "key_phrase_original": "lithium plan", "key_phrase_ja": "", "enriched_by": "gemini"}]}
+        fake = self.install([])
+        out = enrich.enrich(day, date_key="2026-09-15", api_key="k", previous=old)
+        self.assertEqual(len(fake.calls), 0)
+        self.assertEqual(out["articles"][0]["minerals"], ["リチウム"])
+        self.assertEqual(out["articles"][0]["enriched_by"], "gemini")
+
+
+class TestThroughput(EnrichTestCase):
+
+    def test_new_limits(self):
+        self.assertEqual(enrich.BATCH_SIZE, 25)
+        # 3モデル並列で全件（実績 2,734件＝110バッチ）を処理できる値
+        self.assertEqual(enrich.MAX_BATCHES, 220)
+        self.assertEqual(enrich.REQUEST_BUDGET, 600)
+        self.assertEqual(enrich.MAX_AI_ARTICLES, 0, "既定は上限なし（締切まで最大限処理）")
+        self.assertEqual(enrich.MAX_PARALLEL, 5)
+        self.assertEqual(enrich.DEADLINE_SEC, 25 * 60, "締切は維持")
+        self.assertEqual(enrich.PACE_SEC, 6.0, "PACE_SEC は維持")
+
+    def test_batch_plan_uses_25(self):
+        plan = enrich.plan_batches(list(range(740)))
+        self.assertEqual(len(plan), 30)
+        self.assertEqual([len(b) for b in plan[:-1]], [25] * 29)
+        self.assertEqual(len(plan[-1]), 15)
+        self.assertEqual(enrich.estimate_requests(740), 30)
+
+    def test_2000_articles_stay_within_80_requests(self):
+        n = enrich.estimate_requests(2000)
+        self.assertLessEqual(n, 80)
+        self.assertLessEqual(n, enrich.MAX_BATCHES)
+        # 間隔だけで締切を食い潰さないこと（6秒×80本=8分 < 25分）
+        self.assertLess(80 * enrich.PACE_SEC, enrich.DEADLINE_SEC)
+        self.assertLess(n, enrich.REQUEST_BUDGET, "再送・切替の余裕が残ること")
+
+    def test_output_token_limit_fits_25_articles(self):
+        body = enrich.build_request_body([], "gemini-3.5-flash-lite")
+        self.assertGreaterEqual(body["generationConfig"]["maxOutputTokens"], 16384)
+
+    def test_main_logs_estimated_requests(self):
+        import contextlib
+        import io
+        day = load_fixture("day-multilang.json")
+        with tempfile.TemporaryDirectory() as tmp:
+            in_path = os.path.join(tmp, "in.json")
+            with open(in_path, "w", encoding="utf-8") as f:
+                json.dump(day, f, ensure_ascii=False)
+            buf = io.StringIO()
+            with contextlib.redirect_stdout(buf):
+                code = enrich.main(["--input", in_path, "--output",
+                                    os.path.join(tmp, "o.json"), "--dry-run"])
+        self.assertEqual(code, 0)
+        self.assertIn("推定リクエスト数", buf.getvalue())
+
+
+class TestCheckGemini(EnrichTestCase):
+
+    def test_probe_uses_enrich_settings(self):
+        import check_gemini
+        seen = []
+
+        def poster(url, body, key, timeout=None):
+            seen.append((url, body))
+            return {}
+        r = check_gemini.probe("gemini-3.5-flash-lite", "k", poster=poster)
+        self.assertTrue(r["ok"])
+        self.assertIn("/gemini-3.5-flash-lite:generateContent", seen[0][0])
+        self.assertEqual(seen[0][1]["generationConfig"]["thinkingConfig"],
+                         {"thinkingLevel": "minimal"})
+        r = check_gemini.probe("gemini-3.8-flash", "k",
+                               poster=lambda *a, **k: (_ for _ in ()).throw(
+                                   enrich._api_error_from_http(503, OVERLOADED.body.encode(), {})))
+        self.assertFalse(r["ok"])
+        self.assertEqual(r["kind"], enrich.ERR_OVERLOAD)
+
+    def test_main_without_key_returns_1(self):
+        import check_gemini
+        saved = os.environ.pop("GEMINI_API_KEY", None)
+        try:
+            self.assertEqual(check_gemini.main([]), 1)
+        finally:
+            if saved is not None:
+                os.environ["GEMINI_API_KEY"] = saved
 
 
 if __name__ == "__main__":
