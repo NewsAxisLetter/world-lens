@@ -101,6 +101,12 @@ jobs:
         continue-on-error: true
         run: python3 scripts/fetch.py
 
+      # If fetch could not create a day document, preserve an explicit failed
+      # day with every enabled feed represented before continuing the pipeline.
+      - name: ①収集失敗をデータに記録
+        if: steps.fetch.outcome == 'failure'
+        run: python3 scripts/record_failure.py --date "$(TZ=Asia/Tokyo date +%F)"
+
       # ----------------------------------------------------------------------
       # 4. ②AI付与：日本語訳・要約・タグ・論調をつける
       #
@@ -117,12 +123,36 @@ jobs:
       #    ★このステップにだけキーを渡しています（①③には渡していません）。
       #      漏えい面を最小にするためです。
       # ----------------------------------------------------------------------
+      #
+      #    【503（混雑）対策】混雑したモデルは自動で次のモデルに切り替え、
+      #    全滅したバッチは最大約90秒〜3分待って再挑戦します（既定20分で打ち切り）。
+      #    5つのモデルを同時に使い、締切までにできるだけ多くの記事を翻訳します（件数の上限なし）。
+      #    間に合わなかった分は次の実行で続きを処理します。
+      #    Variables に AI_MAX_ARTICLES / AI_PARALLEL / ENRICH_DEADLINE_MIN を作れば変更できます。
+      #    モデルの順番を変えたいときは Settings > Secrets and variables >
+      #    Actions > Variables に GEMINI_MODELS（例: gemini-3.5-flash-lite,gemini-3.8-flash）
+      #    を作れば、このファイルを触らずに変えられます。
       - name: ②AI付与（日本語訳・要約・タグ・論調）
         id: enrich
         continue-on-error: true
+        timeout-minutes: 35
         env:
           GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
-        run: python3 scripts/enrich.py
+          GEMINI_MODELS: ${{ vars.GEMINI_MODELS }}
+          # ログを1行ずつすぐ出す（以前は強制終了時に1行も残らなかった）
+          PYTHONUNBUFFERED: "1"
+          # AI処理に使う最大の分数。超えそうなら途中までを保存して正常終了する。
+          # step の timeout-minutes: 35 より十分短くして、強制終了されないようにしています。
+          ENRICH_DEADLINE_MIN: ${{ vars.ENRICH_DEADLINE_MIN || '20' }}
+          # 1回に翻訳する記事数の上限。0 = 上限なし（締切までにできるだけ多く処理）。
+          # 上限を付けた場合も国・媒体は均等に選び、残りは次回の実行で処理。
+          AI_MAX_ARTICLES: ${{ vars.AI_MAX_ARTICLES || '0' }}
+          # 同時に使うモデルの数。無料枠はモデルごとに別枠なので、5本同時で処理量が約5倍（使えないモデルは自動で外れる）。
+          AI_PARALLEL: ${{ vars.AI_PARALLEL || '5' }}
+        # 万一 Python 側の締切が効かなくても、30分で止めて後続（クラスタ・コミット）へ進む。
+        # 途中保存された翻訳は残る。
+        run: timeout --signal=TERM --kill-after=30s 30m python3 scripts/enrich.py
+
 
       # ----------------------------------------------------------------------
       # 5. ③クラスタ：同じ話題を束ねて採点する
