@@ -1,0 +1,472 @@
+{
+  "schema_version": 1,
+  "groups": {
+    "G7": "G7",
+    "BRICS": "BRICS",
+    "CN_RU_FRIEND": "中国・ロシアの友好国",
+    "AFRICA5": "アフリカ主要5か国",
+    "SOUTHAMERICA5": "南米主要5か国",
+    "RAREMETAL10": "レアメタル資源国",
+    "OTHER": "その他"
+  },
+  "countries": [
+    {
+      "code": "JP",
+      "name_ja": "日本",
+      "flag": "🇯🇵",
+      "groups": [
+        "G7"
+      ]
+    },
+    {
+      "code": "US",
+      "name_ja": "アメリカ",
+      "flag": "🇺🇸",
+      "groups": [
+        "G7"
+      ]
+    },
+    {
+      "code": "GB",
+      "name_ja": "イギリス",
+      "flag": "🇬🇧",
+      "groups": [
+        "G7"
+      ]
+    },
+    {
+      "code": "FR",
+      "name_ja": "フランス",
+      "flag": "🇫🇷",
+      "groups": [
+        "G7"
+      ]
+    },
+    {
+      "code": "DE",
+      "name_ja": "ドイツ",
+      "flag": "🇩🇪",
+      "groups": [
+        "G7"
+      ]
+    },
+    {
+      "code": "IT",
+      "name_ja": "イタリア",
+      "flag": "🇮🇹",
+      "groups": [
+        "G7"
+      ]
+    },
+    {
+      "code": "CA",
+      "name_ja": "カナダ",
+      "flag": "🇨🇦",
+      "groups": [
+        "G7"
+      ]
+    },
+    {
+      "code": "CN",
+      "name_ja": "中国",
+      "flag": "🇨🇳",
+      "groups": [
+        "BRICS",
+        "RAREMETAL10"
+      ]
+    },
+    {
+      "code": "RU",
+      "name_ja": "ロシア",
+      "flag": "🇷🇺",
+      "groups": [
+        "BRICS",
+        "RAREMETAL10"
+      ]
+    },
+    {
+      "code": "IN",
+      "name_ja": "インド",
+      "flag": "🇮🇳",
+      "groups": [
+        "BRICS"
+      ]
+    },
+    {
+      "code": "BR",
+      "name_ja": "ブラジル",
+      "flag": "🇧🇷",
+      "groups": [
+        "BRICS",
+        "SOUTHAMERICA5",
+        "RAREMETAL10"
+      ]
+    },
+    {
+      "code": "ZA",
+      "name_ja": "南アフリカ",
+      "flag": "🇿🇦",
+      "groups": [
+        "BRICS",
+        "AFRICA5",
+        "RAREMETAL10"
+      ]
+    },
+    {
+      "code": "EG",
+      "name_ja": "エジプト",
+      "flag": "🇪🇬",
+      "groups": [
+        "BRICS",
+        "AFRICA5"
+      ]
+    },
+    {
+      "code": "ET",
+      "name_ja": "エチオピア",
+      "flag": "🇪🇹",
+      "groups": [
+        "BRICS"
+      ]
+    },
+    {
+      "code": "IR",
+      "name_ja": "イラン",
+      "flag": "🇮🇷",
+      "groups": [
+        "BRICS"
+      ]
+    },
+    {
+      "code": "AE",
+      "name_ja": "アラブ首長国連邦",
+      "flag": "🇦🇪",
+      "groups": [
+        "BRICS"
+      ]
+    },
+    {
+      "code": "ID",
+      "name_ja": "インドネシア",
+      "flag": "🇮🇩",
+      "groups": [
+        "BRICS",
+        "RAREMETAL10"
+      ]
+    },
+    {
+      "code": "BY",
+      "name_ja": "ベラルーシ",
+      "flag": "🇧🇾",
+      "groups": [
+        "CN_RU_FRIEND"
+      ]
+    },
+    {
+      "code": "PK",
+      "name_ja": "パキスタン",
+      "flag": "🇵🇰",
+      "groups": [
+        "CN_RU_FRIEND"
+      ]
+    },
+    {
+      "code": "KZ",
+      "name_ja": "カザフスタン",
+      "flag": "🇰🇿",
+      "groups": [
+        "CN_RU_FRIEND"
+      ]
+    },
+    {
+      "code": "RS",
+      "name_ja": "セルビア",
+      "flag": "🇷🇸",
+      "groups": [
+        "CN_RU_FRIEND"
+      ]
+    },
+    {
+      "code": "VE",
+      "name_ja": "ベネズエラ",
+      "flag": "🇻🇪",
+      "groups": [
+        "CN_RU_FRIEND"
+      ]
+    },
+    {
+      "code": "CU",
+      "name_ja": "キューバ",
+      "flag": "🇨🇺",
+      "groups": [
+        "CN_RU_FRIEND"
+      ]
+    },
+    {
+      "code": "NG",
+      "name_ja": "ナイジェリア",
+      "flag": "🇳🇬",
+      "groups": [
+        "AFRICA5"
+      ]
+    },
+    {
+      "code": "KE",
+      "name_ja": "ケニア",
+      "flag": "🇰🇪",
+      "groups": [
+        "AFRICA5"
+      ]
+    },
+    {
+      "code": "MA",
+      "name_ja": "モロッコ",
+      "flag": "🇲🇦",
+      "groups": [
+        "AFRICA5"
+      ]
+    },
+    {
+      "code": "CD",
+      "name_ja": "コンゴ民主共和国",
+      "flag": "🇨🇩",
+      "groups": [
+        "RAREMETAL10"
+      ]
+    },
+    {
+      "code": "AR",
+      "name_ja": "アルゼンチン",
+      "flag": "🇦🇷",
+      "groups": [
+        "SOUTHAMERICA5",
+        "RAREMETAL10"
+      ]
+    },
+    {
+      "code": "CO",
+      "name_ja": "コロンビア",
+      "flag": "🇨🇴",
+      "groups": [
+        "SOUTHAMERICA5"
+      ]
+    },
+    {
+      "code": "CL",
+      "name_ja": "チリ",
+      "flag": "🇨🇱",
+      "groups": [
+        "SOUTHAMERICA5",
+        "RAREMETAL10"
+      ]
+    },
+    {
+      "code": "PE",
+      "name_ja": "ペルー",
+      "flag": "🇵🇪",
+      "groups": [
+        "SOUTHAMERICA5"
+      ]
+    },
+    {
+      "code": "AU",
+      "name_ja": "オーストラリア",
+      "flag": "🇦🇺",
+      "groups": [
+        "RAREMETAL10"
+      ]
+    },
+    {
+      "code": "MM",
+      "name_ja": "ミャンマー",
+      "flag": "🇲🇲",
+      "groups": [
+        "RAREMETAL10"
+      ]
+    },
+    {
+      "code": "KR",
+      "name_ja": "韓国",
+      "flag": "🇰🇷",
+      "groups": [
+        "OTHER"
+      ]
+    },
+    {
+      "code": "UA",
+      "name_ja": "ウクライナ",
+      "flag": "🇺🇦",
+      "groups": [
+        "OTHER"
+      ]
+    },
+    {
+      "code": "QA",
+      "name_ja": "カタール",
+      "flag": "🇶🇦",
+      "groups": [
+        "OTHER"
+      ]
+    },
+    {
+      "code": "SA",
+      "name_ja": "サウジアラビア",
+      "flag": "🇸🇦",
+      "groups": [
+        "BRICS"
+      ]
+    },
+    {
+      "code": "MY",
+      "name_ja": "マレーシア",
+      "flag": "🇲🇾",
+      "groups": [
+        "BRICS"
+      ]
+    },
+    {
+      "code": "TH",
+      "name_ja": "タイ",
+      "flag": "🇹🇭",
+      "groups": [
+        "BRICS"
+      ]
+    },
+    {
+      "code": "UZ",
+      "name_ja": "ウズベキスタン",
+      "flag": "🇺🇿",
+      "groups": [
+        "BRICS"
+      ]
+    },
+    {
+      "code": "BO",
+      "name_ja": "ボリビア",
+      "flag": "🇧🇴",
+      "groups": [
+        "BRICS"
+      ]
+    },
+    {
+      "code": "UG",
+      "name_ja": "ウガンダ",
+      "flag": "🇺🇬",
+      "groups": [
+        "BRICS"
+      ]
+    },
+    {
+      "code": "VN",
+      "name_ja": "ベトナム",
+      "flag": "🇻🇳",
+      "groups": [
+        "BRICS"
+      ]
+    },
+    {
+      "code": "HU",
+      "name_ja": "ハンガリー",
+      "flag": "🇭🇺",
+      "groups": [
+        "CN_RU_FRIEND"
+      ]
+    },
+    {
+      "code": "AM",
+      "name_ja": "アルメニア",
+      "flag": "🇦🇲",
+      "groups": [
+        "CN_RU_FRIEND"
+      ]
+    },
+    {
+      "code": "GE",
+      "name_ja": "ジョージア",
+      "flag": "🇬🇪",
+      "groups": [
+        "CN_RU_FRIEND"
+      ]
+    },
+    {
+      "code": "AZ",
+      "name_ja": "アゼルバイジャン",
+      "flag": "🇦🇿",
+      "groups": [
+        "CN_RU_FRIEND"
+      ]
+    },
+    {
+      "code": "KG",
+      "name_ja": "キルギス",
+      "flag": "🇰🇬",
+      "groups": [
+        "CN_RU_FRIEND"
+      ]
+    },
+    {
+      "code": "TJ",
+      "name_ja": "タジキスタン",
+      "flag": "🇹🇯",
+      "groups": [
+        "CN_RU_FRIEND"
+      ]
+    },
+    {
+      "code": "NI",
+      "name_ja": "ニカラグア",
+      "flag": "🇳🇮",
+      "groups": [
+        "CN_RU_FRIEND"
+      ]
+    },
+    {
+      "code": "PH",
+      "name_ja": "フィリピン",
+      "flag": "🇵🇭",
+      "groups": [
+        "RAREMETAL10"
+      ]
+    },
+    {
+      "code": "ZM",
+      "name_ja": "ザンビア",
+      "flag": "🇿🇲",
+      "groups": [
+        "RAREMETAL10"
+      ]
+    },
+    {
+      "code": "ZW",
+      "name_ja": "ジンバブエ",
+      "flag": "🇿🇼",
+      "groups": [
+        "RAREMETAL10"
+      ]
+    },
+    {
+      "code": "GA",
+      "name_ja": "ガボン",
+      "flag": "🇬🇦",
+      "groups": [
+        "RAREMETAL10"
+      ]
+    },
+    {
+      "code": "GN",
+      "name_ja": "ギニア",
+      "flag": "🇬🇳",
+      "groups": [
+        "RAREMETAL10"
+      ]
+    },
+    {
+      "code": "MZ",
+      "name_ja": "モザンビーク",
+      "flag": "🇲🇿",
+      "groups": [
+        "RAREMETAL10"
+      ]
+    }
+  ]
+}

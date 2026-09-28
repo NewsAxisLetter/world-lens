@@ -546,6 +546,14 @@ table.phrase tr:hover td{background:#fafbfd}
           <p class="mt-caution">⚠ 国営メディアの主張をそのまま掲載しています。<b>媒体属性ラベルを必ずご確認ください。</b>本サイトは各媒体の主張の当否を判断していません。</p>
         </div>
         <div class="filter-block">
+          <div class="filter-label">政治的傾向<button class="reset" data-reset="lean">解除</button></div>
+          <div class="chips" id="fLean"></div>
+        </div>
+        <div class="filter-block">
+          <div class="filter-label">政府との関係<button class="reset" data-reset="gov">解除</button></div>
+          <div class="chips" id="fGov"></div>
+        </div>
+        <div class="filter-block">
           <div class="filter-label">並び替え（当サイト独自指標）</div>
           <div class="sort-group" id="fSort">
             <button data-sort="countries" aria-pressed="true">報道国数順</button>
@@ -697,8 +705,41 @@ const COUNTRIES = {
   ZA:{name:"南アフリカ",flag:"🇿🇦"}, TR:{name:"トルコ",flag:"🇹🇷"}, ID:{name:"インドネシア",flag:"🇮🇩"},
   MX:{name:"メキシコ",flag:"🇲🇽"}, EG:{name:"エジプト",flag:"🇪🇬"}, UA:{name:"ウクライナ",flag:"🇺🇦"},
   IL:{name:"イスラエル",flag:"🇮🇱"}, SE:{name:"スウェーデン",flag:"🇸🇪"}, NG:{name:"ナイジェリア",flag:"🇳🇬"},
-  TH:{name:"タイ",flag:"🇹🇭"}, CA:{name:"カナダ",flag:"🇨🇦"}, IT:{name:"イタリア",flag:"🇮🇹"}
+  TH:{name:"タイ",flag:"🇹🇭"}, CA:{name:"カナダ",flag:"🇨🇦"}, IT:{name:"イタリア",flag:"🇮🇹"},
+  /* 以下は収録国の追加分。countries.json が読めない場合も日本語名で表示する */
+  AE:{name:"アラブ首長国連邦",flag:"🇦🇪"}, AR:{name:"アルゼンチン",flag:"🇦🇷"}, BY:{name:"ベラルーシ",flag:"🇧🇾"},
+  CD:{name:"コンゴ民主共和国",flag:"🇨🇩"}, CL:{name:"チリ",flag:"🇨🇱"}, CO:{name:"コロンビア",flag:"🇨🇴"},
+  ET:{name:"エチオピア",flag:"🇪🇹"}, IR:{name:"イラン",flag:"🇮🇷"}, KE:{name:"ケニア",flag:"🇰🇪"},
+  KZ:{name:"カザフスタン",flag:"🇰🇿"}, MA:{name:"モロッコ",flag:"🇲🇦"}, MM:{name:"ミャンマー",flag:"🇲🇲"},
+  PE:{name:"ペルー",flag:"🇵🇪"}, PK:{name:"パキスタン",flag:"🇵🇰"}, RS:{name:"セルビア",flag:"🇷🇸"},
+  VE:{name:"ベネズエラ",flag:"🇻🇪"}, CU:{name:"キューバ",flag:"🇨🇺"},
+  /* 今回追加候補の国（BRICS・ロシア友好国・資源国） */
+  SA:{name:"サウジアラビア",flag:"🇸🇦"}, GE:{name:"ジョージア",flag:"🇬🇪"}, AM:{name:"アルメニア",flag:"🇦🇲"},
+  AZ:{name:"アゼルバイジャン",flag:"🇦🇿"}, UZ:{name:"ウズベキスタン",flag:"🇺🇿"}, KG:{name:"キルギス",flag:"🇰🇬"},
+  TJ:{name:"タジキスタン",flag:"🇹🇯"}, KP:{name:"北朝鮮",flag:"🇰🇵"}, SY:{name:"シリア",flag:"🇸🇾"},
+  NI:{name:"ニカラグア",flag:"🇳🇮"}, ML:{name:"マリ",flag:"🇲🇱"}, BF:{name:"ブルキナファソ",flag:"🇧🇫"},
+  NE:{name:"ニジェール",flag:"🇳🇪"}, CF:{name:"中央アフリカ",flag:"🇨🇫"}, HU:{name:"ハンガリー",flag:"🇭🇺"},
+  VN:{name:"ベトナム",flag:"🇻🇳"}, LA:{name:"ラオス",flag:"🇱🇦"}, MN:{name:"モンゴル",flag:"🇲🇳"},
+  DZ:{name:"アルジェリア",flag:"🇩🇿"}, BO:{name:"ボリビア",flag:"🇧🇴"}, PH:{name:"フィリピン",flag:"🇵🇭"},
+  GA:{name:"ガボン",flag:"🇬🇦"}, GN:{name:"ギニア",flag:"🇬🇳"}, ZM:{name:"ザンビア",flag:"🇿🇲"},
+  ZW:{name:"ジンバブエ",flag:"🇿🇼"}, NC:{name:"ニューカレドニア",flag:"🇳🇨"}, NO:{name:"ノルウェー",flag:"🇳🇴"},
+  MG:{name:"マダガスカル",flag:"🇲🇬"}, MZ:{name:"モザンビーク",flag:"🇲🇿"}, GH:{name:"ガーナ",flag:"🇬🇭"},
+  TZ:{name:"タンザニア",flag:"🇹🇿"}, RW:{name:"ルワンダ",flag:"🇷🇼"}, TN:{name:"チュニジア",flag:"🇹🇳"},
+  MY:{name:"マレーシア",flag:"🇲🇾"}, UG:{name:"ウガンダ",flag:"🇺🇬"}, QA:{name:"カタール",flag:"🇶🇦"}
 };
+/* countries.json にある国はその日本語名で上書き・追加する（国を増やしたら countries.json だけ直せばよい）。
+   読めなくても上の辞書で表示するので、失敗しても画面は止めない。 */
+async function loadCountryNames(){
+  try{
+    const res = await fetch("countries.json", {cache:"no-cache"});
+    if(!res.ok) return;
+    const doc = await res.json();
+    for(const c of (doc && doc.countries) || []){
+      if(!c || !c.code || !c.name_ja) continue;
+      COUNTRIES[c.code] = { name: c.name_ja, flag: c.flag || (COUNTRIES[c.code] && COUNTRIES[c.code].flag) || "" };
+    }
+  }catch(e){ /* 辞書のまま表示 */ }
+}
 const MEDIA_TYPES = {
   state:{label:"国営",cls:"mt-state"}, public:{label:"公共",cls:"mt-public"},
   private:{label:"民間",cls:"mt-private"}, indep:{label:"独立系",cls:"mt-indep"},
@@ -721,7 +762,7 @@ const state = {
   date: null,
   calYear: null, calMonth: null,
   sort: "countries",
-  fCountry: new Set(), fTag: new Set(), fMedia: new Set(),
+  fCountry: new Set(), fTag: new Set(), fMedia: new Set(), fLean: new Set(), fGov: new Set(),
   expand: { world:false, japan:false },
   index: null,        // data/index.json
   days: {},           // 全月シャードをマージした { "YYYY-MM-DD": {status,articles,...} }
@@ -801,6 +842,8 @@ function passFilter(t){
     const types=new Set([...(t.phrases||[]).map(p=>p.media_type), ...(t.articles||[]).map(a=>a.media_type)]);
     if(![...state.fMedia].some(m=>types.has(m))) return false;
   }
+  if(state.fLean.size && !(t.articles||[]).some(a=>state.fLean.has(a.lean))) return false;
+  if(state.fGov.size && !(t.articles||[]).some(a=>state.fGov.has(a.gov_axis))) return false;
   return true;
 }
 
@@ -884,13 +927,14 @@ function warningText(info){
   return `一部媒体の取得に失敗（取得成功 ${info.feeds_ok||0} / ${info.feeds_total||0} フィード）`;
 }
 function warningDetail(info){
-  /* alerts[] の実形は {feed_id, source, status, note}（契約§4・①の実出力）。
-     古い message/msg 形式も一応拾うが、JSON の生文字列は画面に出さない。 */
+  /* alerts[] の実形は {feed_id, source, country, status, error, note}。
+     失敗フィードは「取得失敗・今回の取得対象外」と明示し、代替媒体で補完しない。 */
   const al=(info.alerts||[]).map(a=>{
     if(typeof a==="string") return a;
     if(!a) return "";
-    const who=[a.source,a.feed_id&&a.feed_id!=="-"&&a.feed_id!=="*"?`(${a.feed_id})`:""].filter(Boolean).join("");
-    const body=a.note||a.message||a.msg||"";
+    const who=[a.source,a.country?`[${a.country}]`:"",a.feed_id&&a.feed_id!=="-"&&a.feed_id!=="*"?`(${a.feed_id})`:""].filter(Boolean).join(" ");
+    const failed = a.status === "failed";
+    const body=failed ? `取得失敗・今回の取得対象外${a.error?`（${a.error}）`:""}` : (a.note||a.message||a.msg||"");
     const st=a.status?`[${a.status}]`:"";
     return [who,st,body].filter(Boolean).join(" ");
   }).filter(Boolean);
@@ -1308,6 +1352,12 @@ function renderFilters(){
     ? usedTags.map(g=>`<button class="chip" data-f="tag" data-v="${esc(g)}" aria-pressed="${state.fTag.has(g)}">${esc(g)}</button>`).join("")
     : `<span class="hint">${isDegraded()?"この日はタグが付与されていません（AI処理が未適用のため）":"この日はタグが付与されていません"}</span>`;
 
+  const usedLeans=[...new Set(pool.flatMap(t=>(t.articles||[]).map(a=>a.lean).filter(Boolean)))].sort();
+  const usedGov=[...new Set(pool.flatMap(t=>(t.articles||[]).map(a=>a.gov_axis).filter(Boolean)))].sort();
+  const extraFilter=(id,key,values,labels)=>{ const el=$(id); if(!el) return; const set=key==='lean'?state.fLean:state.fGov; el.innerHTML=values.map(v=>`<button class="chip" data-f="${key}" data-v="${esc(v)}" aria-pressed="${set.has(v)}">${esc(labels[v]||v)}</button>`).join("")||`<span class="hint">なし</span>`; };
+  extraFilter("#fLean","lean",usedLeans,{left:"左派",center:"中道",right:"右派",na:"未分類"});
+  extraFilter("#fGov","gov",usedGov,{pro_gov:"親政府",indep:"独立",anti_gov:"反政府",na:"未分類"});
+
   const usedMt=[...new Set(pool.flatMap(t=>[...(t.phrases||[]).map(p=>p.media_type),...(t.articles||[]).map(a=>a.media_type)]))]
     .filter(m=>MEDIA_TYPES[m]);
   const mtOrder=["state","public","private","indep","gov"].filter(m=>usedMt.includes(m));
@@ -1317,7 +1367,7 @@ function renderFilters(){
 
   document.querySelectorAll("[data-f]").forEach(b=>{
     b.addEventListener("click",()=>{
-      const set = b.dataset.f==="country"?state.fCountry : b.dataset.f==="tag"?state.fTag : state.fMedia;
+      const set = b.dataset.f==="country"?state.fCountry : b.dataset.f==="tag"?state.fTag : b.dataset.f==="lean"?state.fLean : b.dataset.f==="gov"?state.fGov : state.fMedia;
       const v=b.dataset.v;
       if(set.has(v)) set.delete(v); else set.add(v);
       b.setAttribute("aria-pressed", set.has(v)?"true":"false");
@@ -1330,7 +1380,7 @@ function bindStaticControls(){
     b.addEventListener("click",e=>{
       e.preventDefault();
       const k=b.dataset.reset;
-      (k==="country"?state.fCountry:k==="tag"?state.fTag:state.fMedia).clear();
+      (k==="country"?state.fCountry:k==="tag"?state.fTag:k==="lean"?state.fLean:k==="gov"?state.fGov:state.fMedia).clear();
       document.querySelectorAll(`[data-f="${k}"]`).forEach(c=>c.setAttribute("aria-pressed","false"));
       renderLists(); renderJpNone();
     });
@@ -1366,6 +1416,7 @@ function renderFilterStatus(nw,nj){
    ============================================================ */
 async function boot(){
   bindStaticControls();
+  await loadCountryNames();
   try{
     await loadIndex();
   }catch(e){
