@@ -1,0 +1,18 @@
+{
+  "schema_version": 1,
+  "source_policy": "USGS Mineral Commodity Summaries 2025; ranking is not inferred when the source does not publish a comparable top-10.",
+  "elements": [
+    {"id":"lithium","label_ja":"リチウム","keywords":["lithium","リチウム"],"status":"confirmed"},
+    {"id":"cobalt","label_ja":"コバルト","keywords":["cobalt","コバルト"],"status":"confirmed"},
+    {"id":"nickel","label_ja":"ニッケル","keywords":["nickel","ニッケル"],"status":"confirmed"},
+    {"id":"rare-earths","label_ja":"レアアース","keywords":["rare earth","rare-earth","レアアース"],"status":"confirmed"},
+    {"id":"graphite","label_ja":"グラファイト","keywords":["graphite","グラファイト"],"status":"confirmed"},
+    {"id":"gallium","label_ja":"ガリウム","keywords":["gallium","ガリウム"],"status":"confirmed"},
+    {"id":"germanium","label_ja":"ゲルマニウム","keywords":["germanium","ゲルマニウム"],"status":"confirmed"},
+    {"id":"tungsten","label_ja":"タングステン","keywords":["tungsten","wolfram","タングステン"],"status":"confirmed"},
+    {"id":"manganese","label_ja":"マンガン","keywords":["manganese","マンガン"],"status":"confirmed"},
+    {"id":"pgm","label_ja":"白金族","keywords":["platinum group","PGM","白金族"],"status":"confirmed"},
+    {"id":"niobium","label_ja":"ニオブ","keywords":["niobium","ニオブ"],"status":"unconfirmed"},
+    {"id":"antimony","label_ja":"アンチモン","keywords":["antimony","アンチモン"],"status":"unconfirmed"}
+  ]
+}
