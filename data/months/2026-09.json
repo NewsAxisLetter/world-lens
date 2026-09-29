@@ -168,20 +168,29 @@
     },
     "2026-09-29": {
       "status": "ok",
-      "articles": 3979,
+      "articles": 4686,
       "countries": 54,
-      "feeds_ok": 160,
+      "feeds_ok": 155,
       "feeds_total": 172,
-      "generated_at": "2026-09-28T22:23:32Z",
+      "generated_at": "2026-09-29T01:21:32Z",
       "alerts": [
+        {
+          "feed_id": "ae-khaleejtimes",
+          "source": "Khaleej Times",
+          "status": "empty",
+          "latest_published_at": null,
+          "stale_days": null,
+          "threshold_days": 2,
+          "note": "接続はできましたが記事が0件でした（配信形式の変更が疑われます）"
+        },
         {
           "feed_id": "cd-afrikarabia",
           "source": "Afrikarabia",
           "status": "stale",
           "latest_published_at": "2026-09-21T17:12:15Z",
-          "stale_days": 7.2,
+          "stale_days": 7.3,
           "threshold_days": 7,
-          "note": "最新記事が7.2日前で、閾値7日を超えています（件数は10件あるため接続自体は成功しています）"
+          "note": "最新記事が7.3日前で、閾値7日を超えています（件数は10件あるため接続自体は成功しています）"
         },
         {
           "feed_id": "cl-elsiglo",
@@ -197,18 +206,27 @@
           "source": "Der Spiegel",
           "status": "stale",
           "latest_published_at": "2026-09-23T15:28:00Z",
-          "stale_days": 5.3,
+          "stale_days": 5.4,
           "threshold_days": 3,
-          "note": "最新記事が5.3日前で、閾値3日を超えています（件数は20件あるため接続自体は成功しています）"
+          "note": "最新記事が5.4日前で、閾値3日を超えています（件数は20件あるため接続自体は成功しています）"
         },
         {
           "feed_id": "et-ethiopiainsight",
           "source": "Ethiopia Insight",
           "status": "stale",
           "latest_published_at": "2026-09-17T11:10:21Z",
-          "stale_days": 11.5,
+          "stale_days": 11.6,
           "threshold_days": 10,
-          "note": "最新記事が11.5日前で、閾値10日を超えています（件数は9件あるため接続自体は成功しています）"
+          "note": "最新記事が11.6日前で、閾値10日を超えています（件数は9件あるため接続自体は成功しています）"
+        },
+        {
+          "feed_id": "et-reporter",
+          "source": "The Reporter Ethiopia",
+          "status": "failed",
+          "latest_published_at": null,
+          "stale_days": null,
+          "threshold_days": 3,
+          "note": "取得に失敗しました: HTTPError: HTTP Error 202: unexpected status"
         },
         {
           "feed_id": "id-cnnindonesia",
@@ -247,13 +265,22 @@
           "note": "取得に失敗しました: HTTPError: HTTP Error 403: Forbidden"
         },
         {
+          "feed_id": "ve-ultimasnoticias",
+          "source": "Últimas Noticias",
+          "status": "failed",
+          "latest_published_at": null,
+          "stale_days": null,
+          "threshold_days": 3,
+          "note": "取得に失敗しました: HTTPError: HTTP Error 202: unexpected status"
+        },
+        {
           "feed_id": "za-amabhungane",
           "source": "amaBhungane",
           "status": "stale",
           "latest_published_at": "2026-09-20T09:21:59Z",
-          "stale_days": 8.5,
+          "stale_days": 8.7,
           "threshold_days": 7,
-          "note": "最新記事が8.5日前で、閾値7日を超えています（件数は12件あるため接続自体は成功しています）"
+          "note": "最新記事が8.7日前で、閾値7日を超えています（件数は12件あるため接続自体は成功しています）"
         },
         {
           "feed_id": "ua-espreso",
@@ -274,6 +301,24 @@
           "note": "取得に失敗しました: HTTPError: HTTP Error 403: Forbidden"
         },
         {
+          "feed_id": "zm-timesofzambia",
+          "source": "Times of Zambia",
+          "status": "failed",
+          "latest_published_at": null,
+          "stale_days": null,
+          "threshold_days": 3,
+          "note": "取得に失敗しました: HTTPError: HTTP Error 202: unexpected status"
+        },
+        {
+          "feed_id": "zw-newzimbabwe",
+          "source": "NewZimbabwe.com",
+          "status": "failed",
+          "latest_published_at": null,
+          "stale_days": null,
+          "threshold_days": 3,
+          "note": "取得に失敗しました: HTTPError: HTTP Error 202: unexpected status"
+        },
+        {
           "feed_id": "mz-noticias",
           "source": "Jornal Notícias",
           "status": "failed",
@@ -285,5 +330,5 @@
       ]
     }
   },
-  "updated_at": "2026-09-28T22:33:10Z"
+  "updated_at": "2026-09-29T01:32:00Z"
 }
