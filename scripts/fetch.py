@@ -95,6 +95,8 @@ ALLOWED_ARTICLE_FIELDS = (
     "published_at",     # 媒体が示した公開時刻（UTC正規化。読めなければ None）
     "fetched_at",       # こちらが取得した時刻（UTC）
     "rank_in_feed",     # フィード内の並び順（1始まり）
+    "lean",             # フィード由来の論調（right/center/left/na）。無ければ "na"
+    "gov_axis",         # フィード由来の対政権軸（pro_gov/indep/anti_gov/na）。無ければ "na"
 )
 
 # 記事本文が入りうるキー名。1つでも出力に現れたら設計違反として実行時に止める。
@@ -175,10 +177,163 @@ STATUS_FAILED = "failed"    # 取得できなかった / XMLとして読めな�
 # 不正値として弾いていた（load_feeds が ValueError）。正は契約側の "indep"。
 VALID_MEDIA_TYPES = ("state", "public", "private", "indep")
 
+# 契約§1 の任意フィールド（論調2軸と、その根拠）。欠落は許容し、あれば列挙を検証する。
+VALID_LEANS = ("right", "center", "left", "na")
+VALID_GOV_AXES = ("pro_gov", "indep", "anti_gov", "na")
+VALID_CONFIDENCES = ("high", "medium", "low")
+VALID_ROLES = ("primary", "backup")
+LABEL_NA = "na"
+
+# キー名の別名 → 正規形。分類作業を複数人・複数AIでやると表記が揺れるため、
+# 読み込み時に1か所で寄せる（下流は正規形だけを見ればよい）。
+FEED_KEY_ALIASES = {
+    "gov_stance": "gov_axis",
+    "gov_position": "gov_axis",
+    "government_axis": "gov_axis",
+    "political_lean": "lean",
+    "leaning": "lean",
+    "lean_reason": "lean_basis",
+    "lean_rationale": "lean_basis",
+    "basis": "lean_basis",
+    "gov_stance_basis": "gov_axis_basis",
+    "gov_stance_reason": "gov_axis_basis",
+    "gov_axis_reason": "gov_axis_basis",
+    "gov_reason": "gov_axis_basis",
+    "classified_on": "classified_at",
+    "classification_date": "classified_at",
+    "source_urls": "sources",
+    "evidence": "sources",
+    "references": "sources",
+    "feed_role": "role",
+}
+
+# 値の別名。比較は小文字化し、空白・ハイフンを "_" に寄せてから行う。
+# center-left / center-right は「中道」ではなく左右どちらかに寄せる（3値に落とすとき
+# 中道に吸わせると center が肥大化し、左右の並置比較が痩せるため）。
+# "liberal" "conservative" "neutral" のように国や文脈で意味が変わる語はあえて載せない
+# （黙って誤分類するより ValueError で止めて人に決めさせる）。
+LEAN_VALUE_ALIASES = {
+    "right": "right", "right_wing": "right", "center_right": "right",
+    "centre_right": "right",
+    "center": "center", "centre": "center", "centrist": "center",
+    "left": "left", "left_wing": "left", "center_left": "left",
+    "centre_left": "left",
+    "na": "na", "n/a": "na", "none": "na", "unknown": "na",
+}
+GOV_AXIS_VALUE_ALIASES = {
+    "pro_gov": "pro_gov", "pro_government": "pro_gov", "progov": "pro_gov",
+    "progovernment": "pro_gov",
+    "indep": "indep", "independent": "indep", "independiente": "indep",
+    "independant": "indep",
+    "anti_gov": "anti_gov", "anti_government": "anti_gov", "antigov": "anti_gov",
+    "antigovernment": "anti_gov", "opposition": "anti_gov",
+    "na": "na", "n/a": "na", "none": "na", "unknown": "na",
+}
+CONFIDENCE_VALUE_ALIASES = {
+    "high": "high", "medium": "medium", "med": "medium", "mid": "medium",
+    "moderate": "medium", "low": "low",
+}
+ROLE_VALUE_ALIASES = {
+    "primary": "primary", "main": "primary", "backup": "backup",
+    "secondary": "backup", "fallback": "backup", "reserve": "backup",
+}
+_VALUE_ALIASES = {
+    "lean": LEAN_VALUE_ALIASES,
+    "gov_axis": GOV_AXIS_VALUE_ALIASES,
+    "confidence": CONFIDENCE_VALUE_ALIASES,
+    "role": ROLE_VALUE_ALIASES,
+}
+
 
 # ==================================================================
 # feeds.json の読み込みと検証（契約§1）
 # ==================================================================
+
+def _label_token(value):
+    """'Pro-Government' -> 'pro_government'。値の別名照合用。"""
+    return "_".join(str(value).strip().lower().replace("-", " ").split())
+
+
+def normalize_feed_labels(feed):
+    """feeds.json の1エントリの論調ラベルを正規形に寄せた**新しい dict**を返す。
+
+    - キーの別名（FEED_KEY_ALIASES）を正規キーへ改名する。
+      正規キーと別名が両方あって値が食い違う場合は ValueError（どちらが正か決められない）。
+    - lean / gov_axis / confidence / role の値の別名を正規値へ寄せる。
+      辞書に無い値はそのまま残す（判定は validate_feed_labels が行う）。
+    - sources が文字列1本なら配列に包む。
+    - フィールド欠落はそのまま（既定値を書き足さない。記事側で "na" を補う）。
+    """
+    out = dict(feed)
+
+    # 初期の分類投入では basis を「論調・政権軸・根拠URL」の入れ子で
+    # 保存したフィードがある。正規形では各根拠を別キーにするため、
+    # alias 処理の前に展開する（sources は後段で配列を検証する）。
+    basis = out.pop("basis", None)
+    if isinstance(basis, dict):
+        for source_key, target_key in (("lean", "lean_basis"),
+                                       ("gov_stance", "gov_axis_basis"),
+                                       ("gov_axis", "gov_axis_basis"),
+                                       ("sources", "sources")):
+            if source_key not in basis:
+                continue
+            value = basis[source_key]
+            if target_key in out and out[target_key] != value:
+                raise ValueError("feeds.json: %s の %s と basis.%s が食い違っています"
+                                 % (feed.get("feed_id"), target_key, source_key))
+            out[target_key] = value
+    elif basis is not None:
+        # basis が文字列だった旧形式は論調根拠として扱う。
+        if "lean_basis" in out and out["lean_basis"] != basis:
+            raise ValueError("feeds.json: %s の lean_basis と basis が食い違っています"
+                             % feed.get("feed_id"))
+        out.setdefault("lean_basis", basis)
+
+    for alias, canon in FEED_KEY_ALIASES.items():
+        if alias not in out:
+            continue
+        value = out.pop(alias)
+        if canon in out and out[canon] != value:
+            raise ValueError("feeds.json: %s の %s と %s が食い違っています（%r / %r）"
+                             % (feed.get("feed_id"), canon, alias, out[canon], value))
+        out[canon] = value
+    for key, table in _VALUE_ALIASES.items():
+        if isinstance(out.get(key), str):
+            token = _label_token(out[key])
+            out[key] = table.get(token, table.get(token.replace("_", ""), out[key]))
+    if isinstance(out.get("sources"), str):
+        out["sources"] = [out["sources"]]
+    # 根拠は表示用の短い説明として文字列に統一する。配列を許容する
+    # ことで、複数根拠を持つ追加フィードも読み込み時に落とさない。
+    for key in ("lean_basis", "gov_axis_basis"):
+        if isinstance(out.get(key), list):
+            out[key] = "；".join(str(value) for value in out[key])
+    return out
+
+
+def validate_feed_labels(feed):
+    """正規化済みエントリの任意フィールドを契約§1の列挙で検証する。列挙外は ValueError。"""
+    fid = feed.get("feed_id")
+    for key, allowed in (("lean", VALID_LEANS), ("gov_axis", VALID_GOV_AXES),
+                         ("confidence", VALID_CONFIDENCES), ("role", VALID_ROLES)):
+        if key in feed and feed[key] not in allowed:
+            raise ValueError("feeds.json: %s の %s %r は契約§1の列挙外です"
+                             % (fid, key, feed[key]))
+    for key in ("lean_basis", "gov_axis_basis"):
+        if key in feed and not isinstance(feed[key], str):
+            raise ValueError("feeds.json: %s の %s は文字列にしてください" % (fid, key))
+    if "classified_at" in feed:
+        try:
+            datetime.strptime(str(feed["classified_at"]), "%Y-%m-%d")
+        except ValueError:
+            raise ValueError("feeds.json: %s の classified_at %r は YYYY-MM-DD ではありません"
+                             % (fid, feed["classified_at"]))
+    if "sources" in feed:
+        srcs = feed["sources"]
+        if not isinstance(srcs, list) or not all(
+                isinstance(u, str) and u.startswith(("http://", "https://")) for u in srcs):
+            raise ValueError("feeds.json: %s の sources はURL配列にしてください" % fid)
+
 
 def load_feeds(path=None):
     """feeds.json を読んで「有効なフィード定義のリスト」を返す。
@@ -194,8 +349,11 @@ def load_feeds(path=None):
     if not isinstance(feeds, list) or not feeds:
         raise ValueError("%s に feeds 配列がありません" % path)
 
+    # 別名を正規形へ寄せてから検証する（検証は正規形に対してだけ書けばよい）。
+    feeds = [normalize_feed_labels(f) for f in feeds]
     seen_ids = set()
     for feed in feeds:
+        validate_feed_labels(feed)
         for key in ("feed_id", "source", "country", "media_type", "lang", "rss_url"):
             if not feed.get(key):
                 raise ValueError("feeds.json: %r に必須キー %s がありません"
@@ -573,6 +731,9 @@ def parse_items(xml_bytes, feed, fetched_at, max_items=MAX_ITEMS_PER_FEED):
             "published_at": extract_published(item),
             "fetched_at": fetched_at,
             "rank_in_feed": rank,
+            # 論調はフィード単位の分類。未分類フィードも同じキー集合にするため "na" で埋める
+            "lean": feed.get("lean") or LABEL_NA,
+            "gov_axis": feed.get("gov_axis") or LABEL_NA,
         }
         # ホワイトリストで絞り直す。上で作った dict にキーを足す改造が入っても
         # ここで落ちるので、本文キーが出力に混ざらない（C1）。
@@ -607,12 +768,14 @@ def check_freshness(records, feed, now=None):
     result = {
         "feed_id": feed["feed_id"],
         "source": feed["source"],
+        "country": feed["country"],
         "rss_url": feed["rss_url"],
         "articles": len(records),
         "latest_published_at": None,
         "stale_days": None,
         "threshold_days": threshold,
         "status": STATUS_OK,
+        "error": None,
         "note": "",
     }
 
@@ -647,17 +810,19 @@ def check_freshness(records, feed, now=None):
 
 
 def failed_status(feed, error):
-    """取得そのものが失敗したときの状態レコード。check_freshness と同じ形に揃える。"""
+    """取得失敗を日次メタデータへ残す。次回成功時は通常のok状態へ戻る。"""
     return {
         "feed_id": feed["feed_id"],
         "source": feed["source"],
+        "country": feed["country"],
         "rss_url": feed["rss_url"],
         "articles": 0,
         "latest_published_at": None,
         "stale_days": None,
         "threshold_days": int(feed.get("stale_after_days", DEFAULT_STALE_AFTER_DAYS)),
         "status": STATUS_FAILED,
-        "note": "取得に失敗しました: %s" % error,
+        "error": str(error),
+        "note": "取得失敗・今回の取得対象外: %s" % error,
     }
 
 
@@ -803,6 +968,10 @@ def merge_records(existing, incoming):
             if merged[url].get("rank_in_feed") is not None:
                 record["rank_in_feed"] = merged[url]["rank_in_feed"]
         merged[url] = {k: record.get(k) for k in ALLOWED_ARTICLE_FIELDS}
+        # lean/gov_axis 導入前に保存された記事にはキーが無い。None ではなく "na" で埋める
+        for label in ("lean", "gov_axis"):
+            if not merged[url][label]:
+                merged[url][label] = LABEL_NA
 
     # 新しい記事が上に来るように公開時刻の降順。日付不明は末尾へ。
     def sort_key(url):
@@ -970,7 +1139,9 @@ def build_day_meta(day_document):
             {
                 "feed_id": s["feed_id"],
                 "source": s["source"],
+                "country": s.get("country"),
                 "status": s["status"],
+                "error": s.get("error"),
                 "latest_published_at": s["latest_published_at"],
                 "stale_days": s["stale_days"],
                 "threshold_days": s["threshold_days"],

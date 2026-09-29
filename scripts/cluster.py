@@ -71,6 +71,8 @@ from datetime import datetime, timedelta, timezone
 
 # 日付キーはJST基準で決める（fetch.py / enrich.py と同じ規則）
 JST = timezone(timedelta(hours=9))
+ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+DEFAULT_DATA_DIR = os.path.join(ROOT, "data")
 
 
 def jst_today():
@@ -703,12 +705,21 @@ def verify_scores(doc):
     return lines, bad
 
 
+def _topic_order_key(topic):
+    """A5の比較キー。topic_id は T001形式だが、桁数を越えても数値順にする。"""
+    topic_id = topic["topic_id"]
+    match = re.fullmatch(r"T(\d+)", topic_id)
+    if not match:
+        raise ValueError("invalid topic_id: %s" % topic_id)
+    return (-topic["score"], -topic["media_count"], int(match.group(1)))
+
+
 def verify_order(doc):
-    """A5：score 降順 → media_count 降順 → topic_id 昇順 になっているか。"""
+    """A5：score 降順 → media_count 降順 → topic_id 数値昇順 になっているか。"""
     lines, bad = [], 0
     prev = None
     for t in doc.get("topics", []):
-        cur = (-t["score"], -t["media_count"], t["topic_id"])
+        cur = _topic_order_key(t)
         flag = ""
         if prev is not None and cur < prev:
             flag = "  <<< ORDER VIOLATION"
@@ -892,8 +903,8 @@ def main(argv=None):
     #   本番1回目で exit 2 になってパイプラインが止まる）
     ap.add_argument("--date", default=None,
                     help="対象日 YYYY-MM-DD。既定はJSTの今日")
-    ap.add_argument("--data-dir", default="data",
-                    help="days/ を含む入力フォルダ（既定 data）")
+    ap.add_argument("--data-dir", default=DEFAULT_DATA_DIR,
+                    help="days/ を含む入力フォルダ（既定 リポジトリ/data）")
     ap.add_argument("--out-dir", default=None,
                     help="topics/ を書く出力フォルダ（既定 --data-dir と同じ）")
     ap.add_argument("--threshold", type=float, default=JACCARD_THRESHOLD,

@@ -47,8 +47,17 @@ def probe(model, api_key, poster=None):
         return {"model": model, "ok": True, "status": 200, "kind": "",
                 "label": "OK", "sec": time.monotonic() - t0}
     except enrich.ApiError as e:
+        # ApiError is sanitized in enrich.py; print only a short classification,
+        # never provider text or request details.
+        kind = enrich.classify_error(e)
+        label = "HTTP %s / %s" % (e.status or "?", kind or "error")
         return {"model": model, "ok": False, "status": e.status,
-                "kind": enrich.classify_error(e), "label": str(e),
+                "kind": kind, "label": label,
+                "sec": time.monotonic() - t0}
+    except Exception as e:
+        # Diagnostics must continue to the next model on network/runtime faults.
+        return {"model": model, "ok": False, "status": None,
+                "kind": "unexpected", "label": type(e).__name__,
                 "sec": time.monotonic() - t0}
 
 
