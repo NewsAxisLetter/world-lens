@@ -1,0 +1,138 @@
+{
+  "schema_version": 3,
+  "month": "2026-10",
+  "days": {
+    "2026-10-01": {
+      "status": "ok",
+      "articles": 3964,
+      "countries": 54,
+      "feeds_ok": 161,
+      "feeds_total": 172,
+      "generated_at": "2026-09-30T22:26:05Z",
+      "alerts": [
+        {
+          "feed_id": "cd-afrikarabia",
+          "source": "Afrikarabia",
+          "country": "CD",
+          "status": "stale",
+          "error": null,
+          "latest_published_at": "2026-09-21T17:12:15Z",
+          "stale_days": 9.2,
+          "threshold_days": 7,
+          "note": "最新記事が9.2日前で、閾値7日を超えています（件数は10件あるため接続自体は成功しています）"
+        },
+        {
+          "feed_id": "cl-elsiglo",
+          "source": "El Siglo",
+          "country": "CL",
+          "status": "failed",
+          "error": "URLError: <urlopen error timed out>",
+          "latest_published_at": null,
+          "stale_days": null,
+          "threshold_days": 3,
+          "note": "取得失敗・今回の取得対象外: URLError: <urlopen error timed out>"
+        },
+        {
+          "feed_id": "de-spiegel",
+          "source": "Der Spiegel",
+          "country": "DE",
+          "status": "stale",
+          "error": null,
+          "latest_published_at": "2026-09-23T15:28:00Z",
+          "stale_days": 7.3,
+          "threshold_days": 3,
+          "note": "最新記事が7.3日前で、閾値3日を超えています（件数は20件あるため接続自体は成功しています）"
+        },
+        {
+          "feed_id": "id-cnnindonesia",
+          "source": "CNN Indonesia",
+          "country": "ID",
+          "status": "failed",
+          "error": "HTTPError: HTTP Error 403: Forbidden",
+          "latest_published_at": null,
+          "stale_days": null,
+          "threshold_days": 2,
+          "note": "取得失敗・今回の取得対象外: HTTPError: HTTP Error 403: Forbidden"
+        },
+        {
+          "feed_id": "in-express",
+          "source": "The Indian Express",
+          "country": "IN",
+          "status": "failed",
+          "error": "HTTPError: HTTP Error 403: Forbidden",
+          "latest_published_at": null,
+          "stale_days": null,
+          "threshold_days": 2,
+          "note": "取得失敗・今回の取得対象外: HTTPError: HTTP Error 403: Forbidden"
+        },
+        {
+          "feed_id": "ke-nation",
+          "source": "Daily Nation",
+          "country": "KE",
+          "status": "failed",
+          "error": "HTTPError: HTTP Error 404: Not Found",
+          "latest_published_at": null,
+          "stale_days": null,
+          "threshold_days": 3,
+          "note": "取得失敗・今回の取得対象外: HTTPError: HTTP Error 404: Not Found"
+        },
+        {
+          "feed_id": "mm-irrawaddy",
+          "source": "The Irrawaddy",
+          "country": "MM",
+          "status": "failed",
+          "error": "HTTPError: HTTP Error 403: Forbidden",
+          "latest_published_at": null,
+          "stale_days": null,
+          "threshold_days": 3,
+          "note": "取得失敗・今回の取得対象外: HTTPError: HTTP Error 403: Forbidden"
+        },
+        {
+          "feed_id": "ve-efectococuyo",
+          "source": "Efecto Cocuyo",
+          "country": "VE",
+          "status": "failed",
+          "error": "HTTPError: HTTP Error 403: Forbidden",
+          "latest_published_at": null,
+          "stale_days": null,
+          "threshold_days": 3,
+          "note": "取得失敗・今回の取得対象外: HTTPError: HTTP Error 403: Forbidden"
+        },
+        {
+          "feed_id": "ug-softpower",
+          "source": "SoftPower News",
+          "country": "UG",
+          "status": "failed",
+          "error": "TimeoutError: The read operation timed out",
+          "latest_published_at": null,
+          "stale_days": null,
+          "threshold_days": 3,
+          "note": "取得失敗・今回の取得対象外: TimeoutError: The read operation timed out"
+        },
+        {
+          "feed_id": "ua-espreso",
+          "source": "Espreso TV",
+          "country": "UA",
+          "status": "failed",
+          "error": "HTTPError: HTTP Error 403: Forbidden",
+          "latest_published_at": null,
+          "stale_days": null,
+          "threshold_days": 3,
+          "note": "取得失敗・今回の取得対象外: HTTPError: HTTP Error 403: Forbidden"
+        },
+        {
+          "feed_id": "hu-telex",
+          "source": "Telex",
+          "country": "HU",
+          "status": "failed",
+          "error": "HTTPError: HTTP Error 403: Forbidden",
+          "latest_published_at": null,
+          "stale_days": null,
+          "threshold_days": 3,
+          "note": "取得失敗・今回の取得対象外: HTTPError: HTTP Error 403: Forbidden"
+        }
+      ]
+    }
+  },
+  "updated_at": "2026-09-30T22:36:37Z"
+}
