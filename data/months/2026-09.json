@@ -331,11 +331,11 @@
     },
     "2026-09-30": {
       "status": "ok",
-      "articles": 5673,
+      "articles": 6379,
       "countries": 54,
-      "feeds_ok": 152,
+      "feeds_ok": 159,
       "feeds_total": 172,
-      "generated_at": "2026-09-29T22:24:48Z",
+      "generated_at": "2026-09-30T01:23:54Z",
       "alerts": [
         {
           "feed_id": "cd-afrikarabia",
@@ -344,9 +344,9 @@
           "status": "stale",
           "error": null,
           "latest_published_at": "2026-09-21T17:12:15Z",
-          "stale_days": 8.2,
+          "stale_days": 8.3,
           "threshold_days": 7,
-          "note": "最新記事が8.2日前で、閾値7日を超えています（件数は10件あるため接続自体は成功しています）"
+          "note": "最新記事が8.3日前で、閾値7日を超えています（件数は10件あるため接続自体は成功しています）"
         },
         {
           "feed_id": "cl-elsiglo",
@@ -366,9 +366,9 @@
           "status": "stale",
           "error": null,
           "latest_published_at": "2026-09-23T15:28:00Z",
-          "stale_days": 6.3,
+          "stale_days": 6.4,
           "threshold_days": 3,
-          "note": "最新記事が6.3日前で、閾値3日を超えています（件数は20件あるため接続自体は成功しています）"
+          "note": "最新記事が6.4日前で、閾値3日を超えています（件数は20件あるため接続自体は成功しています）"
         },
         {
           "feed_id": "et-ethiopiainsight",
@@ -377,20 +377,9 @@
           "status": "stale",
           "error": null,
           "latest_published_at": "2026-09-17T11:10:21Z",
-          "stale_days": 12.5,
+          "stale_days": 12.6,
           "threshold_days": 10,
-          "note": "最新記事が12.5日前で、閾値10日を超えています（件数は9件あるため接続自体は成功しています）"
-        },
-        {
-          "feed_id": "et-reporter",
-          "source": "The Reporter Ethiopia",
-          "country": "ET",
-          "status": "failed",
-          "error": "HTTPError: HTTP Error 304: Not Modified",
-          "latest_published_at": null,
-          "stale_days": null,
-          "threshold_days": 3,
-          "note": "取得失敗・今回の取得対象外: HTTPError: HTTP Error 304: Not Modified"
+          "note": "最新記事が12.6日前で、閾値10日を超えています（件数は9件あるため接続自体は成功しています）"
         },
         {
           "feed_id": "id-cnnindonesia",
@@ -415,17 +404,6 @@
           "note": "取得失敗・今回の取得対象外: HTTPError: HTTP Error 403: Forbidden"
         },
         {
-          "feed_id": "ke-elephant",
-          "source": "The Elephant",
-          "country": "KE",
-          "status": "failed",
-          "error": "XMLとして読めませんでした: not well-formed (invalid token): line 1, column 638",
-          "latest_published_at": null,
-          "stale_days": null,
-          "threshold_days": 3,
-          "note": "取得失敗・今回の取得対象外: XMLとして読めませんでした: not well-formed (invalid token): line 1, column 638"
-        },
-        {
           "feed_id": "ke-peopledaily",
           "source": "People Daily (Mediamax)",
           "country": "KE",
@@ -448,48 +426,15 @@
           "note": "取得失敗・今回の取得対象外: HTTPError: HTTP Error 403: Forbidden"
         },
         {
-          "feed_id": "mm-myanmarnow",
-          "source": "Myanmar Now",
-          "country": "MM",
-          "status": "failed",
-          "error": "XMLとして読めませんでした: syntax error: line 1, column 0",
-          "latest_published_at": null,
-          "stale_days": null,
-          "threshold_days": 3,
-          "note": "取得失敗・今回の取得対象外: XMLとして読めませんでした: syntax error: line 1, column 0"
-        },
-        {
-          "feed_id": "ng-premiumtimes",
-          "source": "Premium Times",
-          "country": "NG",
-          "status": "failed",
-          "error": "XMLとして読めませんでした: not well-formed (invalid token): line 1, column 639",
-          "latest_published_at": null,
-          "stale_days": null,
-          "threshold_days": 3,
-          "note": "取得失敗・今回の取得対象外: XMLとして読めませんでした: not well-formed (invalid token): line 1, column 639"
-        },
-        {
-          "feed_id": "ve-efectococuyo",
-          "source": "Efecto Cocuyo",
-          "country": "VE",
-          "status": "failed",
-          "error": "HTTPError: HTTP Error 403: Forbidden",
-          "latest_published_at": null,
-          "stale_days": null,
-          "threshold_days": 3,
-          "note": "取得失敗・今回の取得対象外: HTTPError: HTTP Error 403: Forbidden"
-        },
-        {
           "feed_id": "za-amabhungane",
           "source": "amaBhungane",
           "country": "ZA",
           "status": "stale",
           "error": null,
           "latest_published_at": "2026-09-20T09:21:59Z",
-          "stale_days": 9.5,
+          "stale_days": 9.7,
           "threshold_days": 7,
-          "note": "最新記事が9.5日前で、閾値7日を超えています（件数は12件あるため接続自体は成功しています）"
+          "note": "最新記事が9.7日前で、閾値7日を超えています（件数は12件あるため接続自体は成功しています）"
         },
         {
           "feed_id": "bo-abi",
@@ -525,28 +470,6 @@
           "note": "取得失敗・今回の取得対象外: HTTPError: HTTP Error 403: Forbidden"
         },
         {
-          "feed_id": "ge-netgazeti",
-          "source": "Netgazeti",
-          "country": "GE",
-          "status": "failed",
-          "error": "XMLとして読めませんでした: not well-formed (invalid token): line 1, column 630",
-          "latest_published_at": null,
-          "stale_days": null,
-          "threshold_days": 3,
-          "note": "取得失敗・今回の取得対象外: XMLとして読めませんでした: not well-formed (invalid token): line 1, column 630"
-        },
-        {
-          "feed_id": "az-meydantv",
-          "source": "Meydan TV",
-          "country": "AZ",
-          "status": "failed",
-          "error": "XMLとして読めませんでした: syntax error: line 1, column 0",
-          "latest_published_at": null,
-          "stale_days": null,
-          "threshold_days": 3,
-          "note": "取得失敗・今回の取得対象外: XMLとして読めませんでした: syntax error: line 1, column 0"
-        },
-        {
           "feed_id": "zw-nehanda",
           "source": "Nehanda Radio",
           "country": "ZW",
@@ -560,5 +483,5 @@
       ]
     }
   },
-  "updated_at": "2026-09-29T22:36:22Z"
+  "updated_at": "2026-09-30T01:33:51Z"
 }
