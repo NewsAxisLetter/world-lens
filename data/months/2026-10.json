@@ -146,12 +146,23 @@
     },
     "2026-10-02": {
       "status": "ok",
-      "articles": 3984,
+      "articles": 4771,
       "countries": 54,
-      "feeds_ok": 160,
+      "feeds_ok": 161,
       "feeds_total": 172,
-      "generated_at": "2026-10-01T22:23:35Z",
+      "generated_at": "2026-10-02T01:23:46Z",
       "alerts": [
+        {
+          "feed_id": "ae-khaleejtimes",
+          "source": "Khaleej Times",
+          "country": "AE",
+          "status": "empty",
+          "error": null,
+          "latest_published_at": null,
+          "stale_days": null,
+          "threshold_days": 2,
+          "note": "接続はできましたが記事が0件でした（配信形式の変更が疑われます）"
+        },
         {
           "feed_id": "cd-afrikarabia",
           "source": "Afrikarabia",
@@ -159,9 +170,9 @@
           "status": "stale",
           "error": null,
           "latest_published_at": "2026-09-21T17:12:15Z",
-          "stale_days": 10.2,
+          "stale_days": 10.3,
           "threshold_days": 7,
-          "note": "最新記事が10.2日前で、閾値7日を超えています（件数は10件あるため接続自体は成功しています）"
+          "note": "最新記事が10.3日前で、閾値7日を超えています（件数は10件あるため接続自体は成功しています）"
         },
         {
           "feed_id": "cl-elsiglo",
@@ -181,20 +192,9 @@
           "status": "stale",
           "error": null,
           "latest_published_at": "2026-09-23T15:28:00Z",
-          "stale_days": 8.3,
+          "stale_days": 8.4,
           "threshold_days": 3,
-          "note": "最新記事が8.3日前で、閾値3日を超えています（件数は20件あるため接続自体は成功しています）"
-        },
-        {
-          "feed_id": "eg-almasry",
-          "source": "Al-Masry Al-Youm",
-          "country": "EG",
-          "status": "stale",
-          "error": null,
-          "latest_published_at": "2019-07-20T10:21:07Z",
-          "stale_days": 2630.5,
-          "threshold_days": 3,
-          "note": "最新記事が2630.5日前で、閾値3日を超えています（件数は40件あるため接続自体は成功しています）"
+          "note": "最新記事が8.4日前で、閾値3日を超えています（件数は20件あるため接続自体は成功しています）"
         },
         {
           "feed_id": "id-cnnindonesia",
@@ -217,6 +217,17 @@
           "stale_days": null,
           "threshold_days": 2,
           "note": "取得失敗・今回の取得対象外: HTTPError: HTTP Error 403: Forbidden"
+        },
+        {
+          "feed_id": "ke-nation",
+          "source": "Daily Nation",
+          "country": "KE",
+          "status": "failed",
+          "error": "HTTPError: HTTP Error 404: Not Found",
+          "latest_published_at": null,
+          "stale_days": null,
+          "threshold_days": 3,
+          "note": "取得失敗・今回の取得対象外: HTTPError: HTTP Error 404: Not Found"
         },
         {
           "feed_id": "ke-peopledaily",
@@ -252,31 +263,9 @@
           "note": "取得失敗・今回の取得対象外: HTTPError: HTTP Error 403: Forbidden"
         },
         {
-          "feed_id": "th-thaipost",
-          "source": "Thai Post",
-          "country": "TH",
-          "status": "failed",
-          "error": "HTTPError: HTTP Error 403: Forbidden",
-          "latest_published_at": null,
-          "stale_days": null,
-          "threshold_days": 3,
-          "note": "取得失敗・今回の取得対象外: HTTPError: HTTP Error 403: Forbidden"
-        },
-        {
           "feed_id": "ua-espreso",
           "source": "Espreso TV",
           "country": "UA",
-          "status": "failed",
-          "error": "HTTPError: HTTP Error 403: Forbidden",
-          "latest_published_at": null,
-          "stale_days": null,
-          "threshold_days": 3,
-          "note": "取得失敗・今回の取得対象外: HTTPError: HTTP Error 403: Forbidden"
-        },
-        {
-          "feed_id": "hu-telex",
-          "source": "Telex",
-          "country": "HU",
           "status": "failed",
           "error": "HTTPError: HTTP Error 403: Forbidden",
           "latest_published_at": null,
@@ -287,5 +276,5 @@
       ]
     }
   },
-  "updated_at": "2026-10-01T22:32:09Z"
+  "updated_at": "2026-10-02T01:32:51Z"
 }
