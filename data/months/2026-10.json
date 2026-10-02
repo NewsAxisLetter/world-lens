@@ -274,7 +274,138 @@
           "note": "取得失敗・今回の取得対象外: HTTPError: HTTP Error 403: Forbidden"
         }
       ]
+    },
+    "2026-10-03": {
+      "status": "ok",
+      "articles": 4041,
+      "countries": 54,
+      "feeds_ok": 161,
+      "feeds_total": 172,
+      "generated_at": "2026-10-02T16:11:20Z",
+      "alerts": [
+        {
+          "feed_id": "cd-afrikarabia",
+          "source": "Afrikarabia",
+          "country": "CD",
+          "status": "stale",
+          "error": null,
+          "latest_published_at": "2026-09-21T17:12:15Z",
+          "stale_days": 11.0,
+          "threshold_days": 7,
+          "note": "最新記事が11.0日前で、閾値7日を超えています（件数は10件あるため接続自体は成功しています）"
+        },
+        {
+          "feed_id": "cl-elsiglo",
+          "source": "El Siglo",
+          "country": "CL",
+          "status": "failed",
+          "error": "URLError: <urlopen error timed out>",
+          "latest_published_at": null,
+          "stale_days": null,
+          "threshold_days": 3,
+          "note": "取得失敗・今回の取得対象外: URLError: <urlopen error timed out>"
+        },
+        {
+          "feed_id": "de-spiegel",
+          "source": "Der Spiegel",
+          "country": "DE",
+          "status": "stale",
+          "error": null,
+          "latest_published_at": "2026-09-23T15:28:00Z",
+          "stale_days": 9.0,
+          "threshold_days": 3,
+          "note": "最新記事が9.0日前で、閾値3日を超えています（件数は20件あるため接続自体は成功しています）"
+        },
+        {
+          "feed_id": "et-reporter",
+          "source": "The Reporter Ethiopia",
+          "country": "ET",
+          "status": "failed",
+          "error": "HTTPError: HTTP Error 304: Not Modified",
+          "latest_published_at": null,
+          "stale_days": null,
+          "threshold_days": 3,
+          "note": "取得失敗・今回の取得対象外: HTTPError: HTTP Error 304: Not Modified"
+        },
+        {
+          "feed_id": "id-cnnindonesia",
+          "source": "CNN Indonesia",
+          "country": "ID",
+          "status": "failed",
+          "error": "HTTPError: HTTP Error 403: Forbidden",
+          "latest_published_at": null,
+          "stale_days": null,
+          "threshold_days": 2,
+          "note": "取得失敗・今回の取得対象外: HTTPError: HTTP Error 403: Forbidden"
+        },
+        {
+          "feed_id": "in-express",
+          "source": "The Indian Express",
+          "country": "IN",
+          "status": "failed",
+          "error": "HTTPError: HTTP Error 403: Forbidden",
+          "latest_published_at": null,
+          "stale_days": null,
+          "threshold_days": 2,
+          "note": "取得失敗・今回の取得対象外: HTTPError: HTTP Error 403: Forbidden"
+        },
+        {
+          "feed_id": "mm-irrawaddy",
+          "source": "The Irrawaddy",
+          "country": "MM",
+          "status": "failed",
+          "error": "HTTPError: HTTP Error 403: Forbidden",
+          "latest_published_at": null,
+          "stale_days": null,
+          "threshold_days": 3,
+          "note": "取得失敗・今回の取得対象外: HTTPError: HTTP Error 403: Forbidden"
+        },
+        {
+          "feed_id": "ve-efectococuyo",
+          "source": "Efecto Cocuyo",
+          "country": "VE",
+          "status": "failed",
+          "error": "HTTPError: HTTP Error 403: Forbidden",
+          "latest_published_at": null,
+          "stale_days": null,
+          "threshold_days": 3,
+          "note": "取得失敗・今回の取得対象外: HTTPError: HTTP Error 403: Forbidden"
+        },
+        {
+          "feed_id": "bo-abi",
+          "source": "ABI (Agencia Boliviana de Información)",
+          "country": "BO",
+          "status": "failed",
+          "error": "URLError: <urlopen error [Errno -3] Temporary failure in name resolution>",
+          "latest_published_at": null,
+          "stale_days": null,
+          "threshold_days": 3,
+          "note": "取得失敗・今回の取得対象外: URLError: <urlopen error [Errno -3] Temporary failure in name resolution>"
+        },
+        {
+          "feed_id": "ua-espreso",
+          "source": "Espreso TV",
+          "country": "UA",
+          "status": "failed",
+          "error": "HTTPError: HTTP Error 403: Forbidden",
+          "latest_published_at": null,
+          "stale_days": null,
+          "threshold_days": 3,
+          "note": "取得失敗・今回の取得対象外: HTTPError: HTTP Error 403: Forbidden"
+        },
+        {
+          "feed_id": "hu-telex",
+          "source": "Telex",
+          "country": "HU",
+          "status": "failed",
+          "error": "HTTPError: HTTP Error 403: Forbidden",
+          "latest_published_at": null,
+          "stale_days": null,
+          "threshold_days": 3,
+          "note": "取得失敗・今回の取得対象外: HTTPError: HTTP Error 403: Forbidden"
+        }
+      ]
     }
   },
-  "updated_at": "2026-10-02T01:32:51Z"
+  "updated_at": "2026-10-02T16:21:23Z"
 }
