@@ -277,12 +277,23 @@
     },
     "2026-10-03": {
       "status": "ok",
-      "articles": 4041,
+      "articles": 5585,
       "countries": 54,
-      "feeds_ok": 161,
+      "feeds_ok": 155,
       "feeds_total": 172,
-      "generated_at": "2026-10-02T16:11:20Z",
+      "generated_at": "2026-10-02T22:24:38Z",
       "alerts": [
+        {
+          "feed_id": "ae-khaleejtimes",
+          "source": "Khaleej Times",
+          "country": "AE",
+          "status": "failed",
+          "error": "XMLとして読めませんでした: no element found: line 2, column 19408",
+          "latest_published_at": null,
+          "stale_days": null,
+          "threshold_days": 2,
+          "note": "取得失敗・今回の取得対象外: XMLとして読めませんでした: no element found: line 2, column 19408"
+        },
         {
           "feed_id": "cd-afrikarabia",
           "source": "Afrikarabia",
@@ -290,14 +301,25 @@
           "status": "stale",
           "error": null,
           "latest_published_at": "2026-09-21T17:12:15Z",
-          "stale_days": 11.0,
+          "stale_days": 11.2,
           "threshold_days": 7,
-          "note": "最新記事が11.0日前で、閾値7日を超えています（件数は10件あるため接続自体は成功しています）"
+          "note": "最新記事が11.2日前で、閾値7日を超えています（件数は10件あるため接続自体は成功しています）"
         },
         {
           "feed_id": "cl-elsiglo",
           "source": "El Siglo",
           "country": "CL",
+          "status": "failed",
+          "error": "URLError: <urlopen error timed out>",
+          "latest_published_at": null,
+          "stale_days": null,
+          "threshold_days": 3,
+          "note": "取得失敗・今回の取得対象外: URLError: <urlopen error timed out>"
+        },
+        {
+          "feed_id": "cu-granma",
+          "source": "Granma",
+          "country": "CU",
           "status": "failed",
           "error": "URLError: <urlopen error timed out>",
           "latest_published_at": null,
@@ -312,20 +334,31 @@
           "status": "stale",
           "error": null,
           "latest_published_at": "2026-09-23T15:28:00Z",
-          "stale_days": 9.0,
+          "stale_days": 9.3,
           "threshold_days": 3,
-          "note": "最新記事が9.0日前で、閾値3日を超えています（件数は20件あるため接続自体は成功しています）"
+          "note": "最新記事が9.3日前で、閾値3日を超えています（件数は20件あるため接続自体は成功しています）"
+        },
+        {
+          "feed_id": "eg-almasry",
+          "source": "Al-Masry Al-Youm",
+          "country": "EG",
+          "status": "stale",
+          "error": null,
+          "latest_published_at": "2026-02-08T12:54:35Z",
+          "stale_days": 236.4,
+          "threshold_days": 3,
+          "note": "最新記事が236.4日前で、閾値3日を超えています（件数は40件あるため接続自体は成功しています）"
         },
         {
           "feed_id": "et-reporter",
           "source": "The Reporter Ethiopia",
           "country": "ET",
           "status": "failed",
-          "error": "HTTPError: HTTP Error 304: Not Modified",
+          "error": "HTTPError: HTTP Error 202: unexpected status",
           "latest_published_at": null,
           "stale_days": null,
           "threshold_days": 3,
-          "note": "取得失敗・今回の取得対象外: HTTPError: HTTP Error 304: Not Modified"
+          "note": "取得失敗・今回の取得対象外: HTTPError: HTTP Error 202: unexpected status"
         },
         {
           "feed_id": "id-cnnindonesia",
@@ -372,6 +405,17 @@
           "note": "取得失敗・今回の取得対象外: HTTPError: HTTP Error 403: Forbidden"
         },
         {
+          "feed_id": "ve-ultimasnoticias",
+          "source": "Últimas Noticias",
+          "country": "VE",
+          "status": "failed",
+          "error": "HTTPError: HTTP Error 202: unexpected status",
+          "latest_published_at": null,
+          "stale_days": null,
+          "threshold_days": 3,
+          "note": "取得失敗・今回の取得対象外: HTTPError: HTTP Error 202: unexpected status"
+        },
+        {
           "feed_id": "bo-abi",
           "source": "ABI (Agencia Boliviana de Información)",
           "country": "BO",
@@ -403,9 +447,31 @@
           "stale_days": null,
           "threshold_days": 3,
           "note": "取得失敗・今回の取得対象外: HTTPError: HTTP Error 403: Forbidden"
+        },
+        {
+          "feed_id": "zm-timesofzambia",
+          "source": "Times of Zambia",
+          "country": "ZM",
+          "status": "failed",
+          "error": "HTTPError: HTTP Error 202: unexpected status",
+          "latest_published_at": null,
+          "stale_days": null,
+          "threshold_days": 3,
+          "note": "取得失敗・今回の取得対象外: HTTPError: HTTP Error 202: unexpected status"
+        },
+        {
+          "feed_id": "zw-newzimbabwe",
+          "source": "NewZimbabwe.com",
+          "country": "ZW",
+          "status": "failed",
+          "error": "HTTPError: HTTP Error 202: unexpected status",
+          "latest_published_at": null,
+          "stale_days": null,
+          "threshold_days": 3,
+          "note": "取得失敗・今回の取得対象外: HTTPError: HTTP Error 202: unexpected status"
         }
       ]
     }
   },
-  "updated_at": "2026-10-02T16:21:23Z"
+  "updated_at": "2026-10-02T22:36:35Z"
 }
