@@ -10233,6 +10233,40 @@
       },
       "added_at": "2026-09-28",
       "added_group": "RAREMETAL10"
+    },
+    {
+      "feed_id": "kyivindependent",
+      "source": "Kyiv Independent",
+      "country": "UA",
+      "media_type": "private",
+      "lang": "eng",
+      "rss_url": "https://kyivindependent.com/news-archive/rss/",
+      "site_url": "https://kyivindependent.com/",
+      "kind": "news",
+      "stale_after_days": 2,
+      "max_items": 30,
+      "enabled": true,
+      "lean": "center_left",
+      "gov_axis": "pro_gov",
+      "lean_basis": "独立ニュースとして中立〜左寄りの視点を取り、ウクライナの民主化と国際支持を強調する。",
+      "gov_axis_basis": "政府公式見解は公開するが、独立記者の立場を明確に保持する。"
+    },
+    {
+      "feed_id": "awesomekyiv",
+      "source": "Awesome Kyiv",
+      "country": "UA",
+      "media_type": "private",
+      "lang": "eng",
+      "rss_url": "https://awesomekyiv.com/feed/",
+      "site_url": "https://awesomekyiv.com/",
+      "kind": "news",
+      "stale_after_days": 2,
+      "max_items": 30,
+      "enabled": true,
+      "lean": "center",
+      "gov_axis": "pro_gov",
+      "lean_basis": "事実ベースのニュースで、政治的バイアスが最小限に抑えられた中立な報道を重視。",
+      "gov_axis_basis": "政府との関係は公的であり、公式見解を伝える立場ではない。"
     }
   ]
 }
