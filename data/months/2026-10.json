@@ -295,7 +295,39 @@
           "note": "取得失敗・今回の取得対象外: HTTPError: HTTP Error 304: Not Modified"
         }
       ]
+    },
+    "2026-10-04": {
+      "status": "ok",
+      "articles": 3875,
+      "countries": 54,
+      "feeds_ok": 156,
+      "feeds_total": 158,
+      "generated_at": "2026-10-03T15:08:05Z",
+      "alerts": [
+        {
+          "feed_id": "it-repubblica",
+          "source": "la Repubblica",
+          "country": "IT",
+          "status": "failed",
+          "error": "HTTPError: HTTP Error 403: Forbidden",
+          "latest_published_at": null,
+          "stale_days": null,
+          "threshold_days": 3,
+          "note": "取得失敗・今回の取得対象外: HTTPError: HTTP Error 403: Forbidden"
+        },
+        {
+          "feed_id": "am-armradio",
+          "source": "Public Radio of Armenia",
+          "country": "AM",
+          "status": "failed",
+          "error": "HTTPError: HTTP Error 415: Unsupported Media Type",
+          "latest_published_at": null,
+          "stale_days": null,
+          "threshold_days": 3,
+          "note": "取得失敗・今回の取得対象外: HTTPError: HTTP Error 415: Unsupported Media Type"
+        }
+      ]
     }
   },
-  "updated_at": "2026-10-03T02:58:48Z"
+  "updated_at": "2026-10-03T15:15:15Z"
 }
