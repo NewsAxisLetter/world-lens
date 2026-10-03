@@ -277,168 +277,25 @@
     },
     "2026-10-03": {
       "status": "ok",
-      "articles": 6206,
+      "articles": 6529,
       "countries": 54,
-      "feeds_ok": 158,
-      "feeds_total": 172,
-      "generated_at": "2026-10-03T01:22:00Z",
+      "feeds_ok": 157,
+      "feeds_total": 158,
+      "generated_at": "2026-10-03T02:53:40Z",
       "alerts": [
         {
-          "feed_id": "ae-gulfnews",
-          "source": "Gulf News",
-          "country": "AE",
-          "status": "empty",
-          "error": null,
-          "latest_published_at": null,
-          "stale_days": null,
-          "threshold_days": 2,
-          "note": "接続はできましたが記事が0件でした（配信形式の変更が疑われます）"
-        },
-        {
-          "feed_id": "ae-khaleejtimes",
-          "source": "Khaleej Times",
-          "country": "AE",
-          "status": "empty",
-          "error": null,
-          "latest_published_at": null,
-          "stale_days": null,
-          "threshold_days": 2,
-          "note": "接続はできましたが記事が0件でした（配信形式の変更が疑われます）"
-        },
-        {
-          "feed_id": "cd-afrikarabia",
-          "source": "Afrikarabia",
-          "country": "CD",
-          "status": "stale",
-          "error": null,
-          "latest_published_at": "2026-09-21T17:12:15Z",
-          "stale_days": 11.3,
-          "threshold_days": 7,
-          "note": "最新記事が11.3日前で、閾値7日を超えています（件数は10件あるため接続自体は成功しています）"
-        },
-        {
-          "feed_id": "cl-elsiglo",
-          "source": "El Siglo",
-          "country": "CL",
+          "feed_id": "et-reporter",
+          "source": "The Reporter Ethiopia",
+          "country": "ET",
           "status": "failed",
-          "error": "URLError: <urlopen error timed out>",
+          "error": "HTTPError: HTTP Error 304: Not Modified",
           "latest_published_at": null,
           "stale_days": null,
           "threshold_days": 3,
-          "note": "取得失敗・今回の取得対象外: URLError: <urlopen error timed out>"
-        },
-        {
-          "feed_id": "de-spiegel",
-          "source": "Der Spiegel",
-          "country": "DE",
-          "status": "stale",
-          "error": null,
-          "latest_published_at": "2026-09-23T15:28:00Z",
-          "stale_days": 9.4,
-          "threshold_days": 3,
-          "note": "最新記事が9.4日前で、閾値3日を超えています（件数は20件あるため接続自体は成功しています）"
-        },
-        {
-          "feed_id": "id-cnnindonesia",
-          "source": "CNN Indonesia",
-          "country": "ID",
-          "status": "failed",
-          "error": "HTTPError: HTTP Error 403: Forbidden",
-          "latest_published_at": null,
-          "stale_days": null,
-          "threshold_days": 2,
-          "note": "取得失敗・今回の取得対象外: HTTPError: HTTP Error 403: Forbidden"
-        },
-        {
-          "feed_id": "in-express",
-          "source": "The Indian Express",
-          "country": "IN",
-          "status": "failed",
-          "error": "HTTPError: HTTP Error 403: Forbidden",
-          "latest_published_at": null,
-          "stale_days": null,
-          "threshold_days": 2,
-          "note": "取得失敗・今回の取得対象外: HTTPError: HTTP Error 403: Forbidden"
-        },
-        {
-          "feed_id": "mm-irrawaddy",
-          "source": "The Irrawaddy",
-          "country": "MM",
-          "status": "failed",
-          "error": "HTTPError: HTTP Error 403: Forbidden",
-          "latest_published_at": null,
-          "stale_days": null,
-          "threshold_days": 3,
-          "note": "取得失敗・今回の取得対象外: HTTPError: HTTP Error 403: Forbidden"
-        },
-        {
-          "feed_id": "mm-myanmarnow",
-          "source": "Myanmar Now",
-          "country": "MM",
-          "status": "failed",
-          "error": "HTTPError: HTTP Error 403: Forbidden",
-          "latest_published_at": null,
-          "stale_days": null,
-          "threshold_days": 3,
-          "note": "取得失敗・今回の取得対象外: HTTPError: HTTP Error 403: Forbidden"
-        },
-        {
-          "feed_id": "bo-abi",
-          "source": "ABI (Agencia Boliviana de Información)",
-          "country": "BO",
-          "status": "failed",
-          "error": "URLError: <urlopen error [Errno -3] Temporary failure in name resolution>",
-          "latest_published_at": null,
-          "stale_days": null,
-          "threshold_days": 3,
-          "note": "取得失敗・今回の取得対象外: URLError: <urlopen error [Errno -3] Temporary failure in name resolution>"
-        },
-        {
-          "feed_id": "ua-ukrinform",
-          "source": "Ukrinform",
-          "country": "UA",
-          "status": "failed",
-          "error": "HTTPError: HTTP Error 403: Forbidden",
-          "latest_published_at": null,
-          "stale_days": null,
-          "threshold_days": 3,
-          "note": "取得失敗・今回の取得対象外: HTTPError: HTTP Error 403: Forbidden"
-        },
-        {
-          "feed_id": "ua-espreso",
-          "source": "Espreso TV",
-          "country": "UA",
-          "status": "failed",
-          "error": "HTTPError: HTTP Error 403: Forbidden",
-          "latest_published_at": null,
-          "stale_days": null,
-          "threshold_days": 3,
-          "note": "取得失敗・今回の取得対象外: HTTPError: HTTP Error 403: Forbidden"
-        },
-        {
-          "feed_id": "hu-telex",
-          "source": "Telex",
-          "country": "HU",
-          "status": "failed",
-          "error": "HTTPError: HTTP Error 403: Forbidden",
-          "latest_published_at": null,
-          "stale_days": null,
-          "threshold_days": 3,
-          "note": "取得失敗・今回の取得対象外: HTTPError: HTTP Error 403: Forbidden"
-        },
-        {
-          "feed_id": "az-meydantv",
-          "source": "Meydan TV",
-          "country": "AZ",
-          "status": "failed",
-          "error": "HTTPError: HTTP Error 403: Forbidden",
-          "latest_published_at": null,
-          "stale_days": null,
-          "threshold_days": 3,
-          "note": "取得失敗・今回の取得対象外: HTTPError: HTTP Error 403: Forbidden"
+          "note": "取得失敗・今回の取得対象外: HTTPError: HTTP Error 304: Not Modified"
         }
       ]
     }
   },
-  "updated_at": "2026-10-03T01:31:48Z"
+  "updated_at": "2026-10-03T02:58:48Z"
 }
