@@ -298,12 +298,56 @@
     },
     "2026-10-04": {
       "status": "ok",
-      "articles": 5584,
+      "articles": 5882,
       "countries": 54,
-      "feeds_ok": 159,
+      "feeds_ok": 155,
       "feeds_total": 160,
-      "generated_at": "2026-10-04T02:55:55Z",
+      "generated_at": "2026-10-04T04:01:27Z",
       "alerts": [
+        {
+          "feed_id": "eg-almasry",
+          "source": "Al-Masry Al-Youm",
+          "country": "EG",
+          "status": "stale",
+          "error": null,
+          "latest_published_at": "2025-09-11T19:46:38Z",
+          "stale_days": 387.3,
+          "threshold_days": 3,
+          "note": "最新記事が387.3日前で、閾値3日を超えています（件数は40件あるため接続自体は成功しています）"
+        },
+        {
+          "feed_id": "ve-ultimasnoticias",
+          "source": "Últimas Noticias",
+          "country": "VE",
+          "status": "failed",
+          "error": "URLError: <urlopen error _ssl.c:993: The handshake operation timed out>",
+          "latest_published_at": null,
+          "stale_days": null,
+          "threshold_days": 3,
+          "note": "取得失敗・今回の取得対象外: URLError: <urlopen error _ssl.c:993: The handshake operation timed out>"
+        },
+        {
+          "feed_id": "zm-timesofzambia",
+          "source": "Times of Zambia",
+          "country": "ZM",
+          "status": "failed",
+          "error": "URLError: <urlopen error timed out>",
+          "latest_published_at": null,
+          "stale_days": null,
+          "threshold_days": 3,
+          "note": "取得失敗・今回の取得対象外: URLError: <urlopen error timed out>"
+        },
+        {
+          "feed_id": "zw-newzimbabwe",
+          "source": "NewZimbabwe.com",
+          "country": "ZW",
+          "status": "failed",
+          "error": "URLError: <urlopen error timed out>",
+          "latest_published_at": null,
+          "stale_days": null,
+          "threshold_days": 3,
+          "note": "取得失敗・今回の取得対象外: URLError: <urlopen error timed out>"
+        },
         {
           "feed_id": "awesomekyiv",
           "source": "Awesome Kyiv",
@@ -318,5 +362,5 @@
       ]
     }
   },
-  "updated_at": "2026-10-04T03:01:33Z"
+  "updated_at": "2026-10-04T04:10:28Z"
 }
