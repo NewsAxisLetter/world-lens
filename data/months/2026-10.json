@@ -298,36 +298,25 @@
     },
     "2026-10-04": {
       "status": "ok",
-      "articles": 3875,
+      "articles": 5584,
       "countries": 54,
-      "feeds_ok": 156,
-      "feeds_total": 158,
-      "generated_at": "2026-10-03T15:08:05Z",
+      "feeds_ok": 159,
+      "feeds_total": 160,
+      "generated_at": "2026-10-04T02:55:55Z",
       "alerts": [
         {
-          "feed_id": "it-repubblica",
-          "source": "la Repubblica",
-          "country": "IT",
-          "status": "failed",
-          "error": "HTTPError: HTTP Error 403: Forbidden",
-          "latest_published_at": null,
-          "stale_days": null,
-          "threshold_days": 3,
-          "note": "取得失敗・今回の取得対象外: HTTPError: HTTP Error 403: Forbidden"
-        },
-        {
-          "feed_id": "am-armradio",
-          "source": "Public Radio of Armenia",
-          "country": "AM",
-          "status": "failed",
-          "error": "HTTPError: HTTP Error 415: Unsupported Media Type",
-          "latest_published_at": null,
-          "stale_days": null,
-          "threshold_days": 3,
-          "note": "取得失敗・今回の取得対象外: HTTPError: HTTP Error 415: Unsupported Media Type"
+          "feed_id": "awesomekyiv",
+          "source": "Awesome Kyiv",
+          "country": "UA",
+          "status": "stale",
+          "error": null,
+          "latest_published_at": "2026-07-02T01:30:25Z",
+          "stale_days": 94.1,
+          "threshold_days": 2,
+          "note": "最新記事が94.1日前で、閾値2日を超えています（件数は10件あるため接続自体は成功しています）"
         }
       ]
     }
   },
-  "updated_at": "2026-10-03T15:15:15Z"
+  "updated_at": "2026-10-04T03:01:33Z"
 }
