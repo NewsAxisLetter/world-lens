@@ -371,7 +371,61 @@
           "note": "最新記事が94.4日前で、閾値2日を超えています（件数は10件あるため接続自体は成功しています）"
         }
       ]
+    },
+    "2026-10-05": {
+      "status": "ok",
+      "articles": 3813,
+      "countries": 54,
+      "feeds_ok": 156,
+      "feeds_total": 160,
+      "generated_at": "2026-10-04T22:24:58Z",
+      "alerts": [
+        {
+          "feed_id": "by-belta",
+          "source": "BelTA",
+          "country": "BY",
+          "status": "failed",
+          "error": "HTTPError: HTTP Error 503: Service Unavailable",
+          "latest_published_at": null,
+          "stale_days": null,
+          "threshold_days": 2,
+          "note": "取得失敗・今回の取得対象外: HTTPError: HTTP Error 503: Service Unavailable"
+        },
+        {
+          "feed_id": "rs-novosti",
+          "source": "Večernje novosti",
+          "country": "RS",
+          "status": "failed",
+          "error": "URLError: <urlopen error timed out>",
+          "latest_published_at": null,
+          "stale_days": null,
+          "threshold_days": 2,
+          "note": "取得失敗・今回の取得対象外: URLError: <urlopen error timed out>"
+        },
+        {
+          "feed_id": "ru-novayagazeta-eu",
+          "source": "Novaya Gazeta Europe",
+          "country": "RU",
+          "status": "stale",
+          "error": null,
+          "latest_published_at": "2026-10-01T12:04:32Z",
+          "stale_days": 3.4,
+          "threshold_days": 3,
+          "note": "最新記事が3.4日前で、閾値3日を超えています（件数は11件あるため接続自体は成功しています）"
+        },
+        {
+          "feed_id": "awesomekyiv",
+          "source": "Awesome Kyiv",
+          "country": "UA",
+          "status": "stale",
+          "error": null,
+          "latest_published_at": "2026-07-02T01:30:25Z",
+          "stale_days": 94.9,
+          "threshold_days": 2,
+          "note": "最新記事が94.9日前で、閾値2日を超えています（件数は10件あるため接続自体は成功しています）"
+        }
+      ]
     }
   },
-  "updated_at": "2026-10-04T12:10:40Z"
+  "updated_at": "2026-10-04T22:34:33Z"
 }
