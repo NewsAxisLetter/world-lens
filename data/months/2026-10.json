@@ -374,33 +374,33 @@
     },
     "2026-10-05": {
       "status": "ok",
-      "articles": 3813,
+      "articles": 4543,
       "countries": 54,
-      "feeds_ok": 156,
+      "feeds_ok": 154,
       "feeds_total": 160,
-      "generated_at": "2026-10-04T22:24:58Z",
+      "generated_at": "2026-10-05T01:24:22Z",
       "alerts": [
         {
-          "feed_id": "by-belta",
-          "source": "BelTA",
-          "country": "BY",
+          "feed_id": "ar-derechadiario-gn",
+          "source": "La Derecha Diario (via Google News)",
+          "country": "AR",
           "status": "failed",
           "error": "HTTPError: HTTP Error 503: Service Unavailable",
           "latest_published_at": null,
           "stale_days": null,
-          "threshold_days": 2,
+          "threshold_days": 3,
           "note": "取得失敗・今回の取得対象外: HTTPError: HTTP Error 503: Service Unavailable"
         },
         {
-          "feed_id": "rs-novosti",
-          "source": "Večernje novosti",
-          "country": "RS",
-          "status": "failed",
-          "error": "URLError: <urlopen error timed out>",
-          "latest_published_at": null,
-          "stale_days": null,
-          "threshold_days": 2,
-          "note": "取得失敗・今回の取得対象外: URLError: <urlopen error timed out>"
+          "feed_id": "eg-almasry",
+          "source": "Al-Masry Al-Youm",
+          "country": "EG",
+          "status": "stale",
+          "error": null,
+          "latest_published_at": "2025-09-11T19:46:38Z",
+          "stale_days": 388.2,
+          "threshold_days": 3,
+          "note": "最新記事が388.2日前で、閾値3日を超えています（件数は40件あるため接続自体は成功しています）"
         },
         {
           "feed_id": "ru-novayagazeta-eu",
@@ -409,9 +409,31 @@
           "status": "stale",
           "error": null,
           "latest_published_at": "2026-10-01T12:04:32Z",
-          "stale_days": 3.4,
+          "stale_days": 3.6,
           "threshold_days": 3,
-          "note": "最新記事が3.4日前で、閾値3日を超えています（件数は11件あるため接続自体は成功しています）"
+          "note": "最新記事が3.6日前で、閾値3日を超えています（件数は11件あるため接続自体は成功しています）"
+        },
+        {
+          "feed_id": "ve-ultimasnoticias",
+          "source": "Últimas Noticias",
+          "country": "VE",
+          "status": "failed",
+          "error": "HTTPError: HTTP Error 202: unexpected status",
+          "latest_published_at": null,
+          "stale_days": null,
+          "threshold_days": 3,
+          "note": "取得失敗・今回の取得対象外: HTTPError: HTTP Error 202: unexpected status"
+        },
+        {
+          "feed_id": "zm-timesofzambia",
+          "source": "Times of Zambia",
+          "country": "ZM",
+          "status": "failed",
+          "error": "HTTPError: HTTP Error 202: unexpected status",
+          "latest_published_at": null,
+          "stale_days": null,
+          "threshold_days": 3,
+          "note": "取得失敗・今回の取得対象外: HTTPError: HTTP Error 202: unexpected status"
         },
         {
           "feed_id": "awesomekyiv",
@@ -420,12 +442,12 @@
           "status": "stale",
           "error": null,
           "latest_published_at": "2026-07-02T01:30:25Z",
-          "stale_days": 94.9,
+          "stale_days": 95.0,
           "threshold_days": 2,
-          "note": "最新記事が94.9日前で、閾値2日を超えています（件数は10件あるため接続自体は成功しています）"
+          "note": "最新記事が95.0日前で、閾値2日を超えています（件数は10件あるため接続自体は成功しています）"
         }
       ]
     }
   },
-  "updated_at": "2026-10-04T22:34:33Z"
+  "updated_at": "2026-10-05T01:32:13Z"
 }
