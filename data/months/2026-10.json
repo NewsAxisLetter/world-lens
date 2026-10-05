@@ -447,7 +447,105 @@
           "note": "最新記事が95.0日前で、閾値2日を超えています（件数は10件あるため接続自体は成功しています）"
         }
       ]
+    },
+    "2026-10-06": {
+      "status": "ok",
+      "articles": 3805,
+      "countries": 54,
+      "feeds_ok": 152,
+      "feeds_total": 160,
+      "generated_at": "2026-10-05T22:25:06Z",
+      "alerts": [
+        {
+          "feed_id": "cn-cdt",
+          "source": "China Digital Times",
+          "country": "CN",
+          "status": "stale",
+          "error": null,
+          "latest_published_at": "2026-10-02T19:55:12Z",
+          "stale_days": 3.1,
+          "threshold_days": 3,
+          "note": "最新記事が3.1日前で、閾値3日を超えています（件数は15件あるため接続自体は成功しています）"
+        },
+        {
+          "feed_id": "cu-granma",
+          "source": "Granma",
+          "country": "CU",
+          "status": "failed",
+          "error": "URLError: <urlopen error [Errno -3] Temporary failure in name resolution>",
+          "latest_published_at": null,
+          "stale_days": null,
+          "threshold_days": 3,
+          "note": "取得失敗・今回の取得対象外: URLError: <urlopen error [Errno -3] Temporary failure in name resolution>"
+        },
+        {
+          "feed_id": "ir-shargh",
+          "source": "Shargh Daily",
+          "country": "IR",
+          "status": "failed",
+          "error": "URLError: <urlopen error [Errno -3] Temporary failure in name resolution>",
+          "latest_published_at": null,
+          "stale_days": null,
+          "threshold_days": 2,
+          "note": "取得失敗・今回の取得対象外: URLError: <urlopen error [Errno -3] Temporary failure in name resolution>"
+        },
+        {
+          "feed_id": "ke-elephant",
+          "source": "The Elephant",
+          "country": "KE",
+          "status": "stale",
+          "error": null,
+          "latest_published_at": "2026-10-02T08:00:00Z",
+          "stale_days": 3.6,
+          "threshold_days": 3,
+          "note": "最新記事が3.6日前で、閾値3日を超えています（件数は12件あるため接続自体は成功しています）"
+        },
+        {
+          "feed_id": "ke-nation",
+          "source": "Daily Nation",
+          "country": "KE",
+          "status": "failed",
+          "error": "HTTPError: HTTP Error 404: Not Found",
+          "latest_published_at": null,
+          "stale_days": null,
+          "threshold_days": 3,
+          "note": "取得失敗・今回の取得対象外: HTTPError: HTTP Error 404: Not Found"
+        },
+        {
+          "feed_id": "ve-efectococuyo",
+          "source": "Efecto Cocuyo",
+          "country": "VE",
+          "status": "failed",
+          "error": "HTTPError: HTTP Error 403: Forbidden",
+          "latest_published_at": null,
+          "stale_days": null,
+          "threshold_days": 3,
+          "note": "取得失敗・今回の取得対象外: HTTPError: HTTP Error 403: Forbidden"
+        },
+        {
+          "feed_id": "mz-clubofmoz",
+          "source": "Club of Mozambique",
+          "country": "MZ",
+          "status": "stale",
+          "error": null,
+          "latest_published_at": "2026-10-02T14:41:58Z",
+          "stale_days": 3.3,
+          "threshold_days": 3,
+          "note": "最新記事が3.3日前で、閾値3日を超えています（件数は10件あるため接続自体は成功しています）"
+        },
+        {
+          "feed_id": "awesomekyiv",
+          "source": "Awesome Kyiv",
+          "country": "UA",
+          "status": "stale",
+          "error": null,
+          "latest_published_at": "2026-07-02T01:30:25Z",
+          "stale_days": 95.9,
+          "threshold_days": 2,
+          "note": "最新記事が95.9日前で、閾値2日を超えています（件数は10件あるため接続自体は成功しています）"
+        }
+      ]
     }
   },
-  "updated_at": "2026-10-05T01:32:13Z"
+  "updated_at": "2026-10-05T22:32:22Z"
 }
