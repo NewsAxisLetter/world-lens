@@ -675,7 +675,116 @@
           "note": "最新記事が98.0日前で、閾値2日を超えています（件数は10件あるため接続自体は成功しています）"
         }
       ]
+    },
+    "2026-10-09": {
+      "status": "ok",
+      "articles": 3842,
+      "countries": 54,
+      "feeds_ok": 151,
+      "feeds_total": 160,
+      "generated_at": "2026-10-08T22:27:35Z",
+      "alerts": [
+        {
+          "feed_id": "et-reporter",
+          "source": "The Reporter Ethiopia",
+          "country": "ET",
+          "status": "failed",
+          "error": "HTTPError: HTTP Error 202: unexpected status",
+          "latest_published_at": null,
+          "stale_days": null,
+          "threshold_days": 3,
+          "note": "取得失敗・今回の取得対象外: HTTPError: HTTP Error 202: unexpected status"
+        },
+        {
+          "feed_id": "ve-efectococuyo",
+          "source": "Efecto Cocuyo",
+          "country": "VE",
+          "status": "failed",
+          "error": "HTTPError: HTTP Error 403: Forbidden",
+          "latest_published_at": null,
+          "stale_days": null,
+          "threshold_days": 3,
+          "note": "取得失敗・今回の取得対象外: HTTPError: HTTP Error 403: Forbidden"
+        },
+        {
+          "feed_id": "ve-ultimasnoticias",
+          "source": "Últimas Noticias",
+          "country": "VE",
+          "status": "failed",
+          "error": "HTTPError: HTTP Error 202: unexpected status",
+          "latest_published_at": null,
+          "stale_days": null,
+          "threshold_days": 3,
+          "note": "取得失敗・今回の取得対象外: HTTPError: HTTP Error 202: unexpected status"
+        },
+        {
+          "feed_id": "ug-independent",
+          "source": "The Independent (Uganda)",
+          "country": "UG",
+          "status": "failed",
+          "error": "URLError: <urlopen error [Errno -2] Name or service not known>",
+          "latest_published_at": null,
+          "stale_days": null,
+          "threshold_days": 3,
+          "note": "取得失敗・今回の取得対象外: URLError: <urlopen error [Errno -2] Name or service not known>"
+        },
+        {
+          "feed_id": "kg-24kg",
+          "source": "24.kg",
+          "country": "KG",
+          "status": "stale",
+          "error": null,
+          "latest_published_at": "2026-10-04T09:00:00Z",
+          "stale_days": 4.6,
+          "threshold_days": 3,
+          "note": "最新記事が4.6日前で、閾値3日を超えています（件数は40件あるため接続自体は成功しています）"
+        },
+        {
+          "feed_id": "zm-timesofzambia",
+          "source": "Times of Zambia",
+          "country": "ZM",
+          "status": "failed",
+          "error": "HTTPError: HTTP Error 202: unexpected status",
+          "latest_published_at": null,
+          "stale_days": null,
+          "threshold_days": 3,
+          "note": "取得失敗・今回の取得対象外: HTTPError: HTTP Error 202: unexpected status"
+        },
+        {
+          "feed_id": "zw-newsday",
+          "source": "NewsDay",
+          "country": "ZW",
+          "status": "failed",
+          "error": "HTTPError: HTTP Error 403: Forbidden",
+          "latest_published_at": null,
+          "stale_days": null,
+          "threshold_days": 3,
+          "note": "取得失敗・今回の取得対象外: HTTPError: HTTP Error 403: Forbidden"
+        },
+        {
+          "feed_id": "zw-newzimbabwe",
+          "source": "NewZimbabwe.com",
+          "country": "ZW",
+          "status": "failed",
+          "error": "HTTPError: HTTP Error 202: unexpected status",
+          "latest_published_at": null,
+          "stale_days": null,
+          "threshold_days": 3,
+          "note": "取得失敗・今回の取得対象外: HTTPError: HTTP Error 202: unexpected status"
+        },
+        {
+          "feed_id": "awesomekyiv",
+          "source": "Awesome Kyiv",
+          "country": "UA",
+          "status": "stale",
+          "error": null,
+          "latest_published_at": "2026-07-02T01:30:25Z",
+          "stale_days": 98.9,
+          "threshold_days": 2,
+          "note": "最新記事が98.9日前で、閾値2日を超えています（件数は10件あるため接続自体は成功しています）"
+        }
+      ]
     }
   },
-  "updated_at": "2026-10-08T01:30:58Z"
+  "updated_at": "2026-10-08T22:35:11Z"
 }
