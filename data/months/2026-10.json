@@ -817,7 +817,127 @@
           "note": "最新記事が99.0日前で、閾値2日を超えています（件数は10件あるため接続自体は成功しています）"
         }
       ]
+    },
+    "2026-10-10": {
+      "status": "ok",
+      "articles": 3835,
+      "countries": 54,
+      "feeds_ok": 150,
+      "feeds_total": 160,
+      "generated_at": "2026-10-09T22:26:59Z",
+      "alerts": [
+        {
+          "feed_id": "cn-cdt",
+          "source": "China Digital Times",
+          "country": "CN",
+          "status": "stale",
+          "error": null,
+          "latest_published_at": "2026-10-06T07:49:34Z",
+          "stale_days": 3.6,
+          "threshold_days": 3,
+          "note": "最新記事が3.6日前で、閾値3日を超えています（件数は15件あるため接続自体は成功しています）"
+        },
+        {
+          "feed_id": "eg-almasry",
+          "source": "Al-Masry Al-Youm",
+          "country": "EG",
+          "status": "failed",
+          "error": "XMLとして読めませんでした: undefined entity: line 25, column 95",
+          "latest_published_at": null,
+          "stale_days": null,
+          "threshold_days": 3,
+          "note": "取得失敗・今回の取得対象外: XMLとして読めませんでした: undefined entity: line 25, column 95"
+        },
+        {
+          "feed_id": "et-reporter",
+          "source": "The Reporter Ethiopia",
+          "country": "ET",
+          "status": "failed",
+          "error": "HTTPError: HTTP Error 202: unexpected status",
+          "latest_published_at": null,
+          "stale_days": null,
+          "threshold_days": 3,
+          "note": "取得失敗・今回の取得対象外: HTTPError: HTTP Error 202: unexpected status"
+        },
+        {
+          "feed_id": "ve-efectococuyo",
+          "source": "Efecto Cocuyo",
+          "country": "VE",
+          "status": "failed",
+          "error": "HTTPError: HTTP Error 403: Forbidden",
+          "latest_published_at": null,
+          "stale_days": null,
+          "threshold_days": 3,
+          "note": "取得失敗・今回の取得対象外: HTTPError: HTTP Error 403: Forbidden"
+        },
+        {
+          "feed_id": "ve-ultimasnoticias",
+          "source": "Últimas Noticias",
+          "country": "VE",
+          "status": "failed",
+          "error": "HTTPError: HTTP Error 202: unexpected status",
+          "latest_published_at": null,
+          "stale_days": null,
+          "threshold_days": 3,
+          "note": "取得失敗・今回の取得対象外: HTTPError: HTTP Error 202: unexpected status"
+        },
+        {
+          "feed_id": "kg-24kg",
+          "source": "24.kg",
+          "country": "KG",
+          "status": "stale",
+          "error": null,
+          "latest_published_at": "2026-10-04T09:00:00Z",
+          "stale_days": 5.6,
+          "threshold_days": 3,
+          "note": "最新記事が5.6日前で、閾値3日を超えています（件数は40件あるため接続自体は成功しています）"
+        },
+        {
+          "feed_id": "zm-timesofzambia",
+          "source": "Times of Zambia",
+          "country": "ZM",
+          "status": "failed",
+          "error": "HTTPError: HTTP Error 202: unexpected status",
+          "latest_published_at": null,
+          "stale_days": null,
+          "threshold_days": 3,
+          "note": "取得失敗・今回の取得対象外: HTTPError: HTTP Error 202: unexpected status"
+        },
+        {
+          "feed_id": "zw-newsday",
+          "source": "NewsDay",
+          "country": "ZW",
+          "status": "failed",
+          "error": "HTTPError: HTTP Error 403: Forbidden",
+          "latest_published_at": null,
+          "stale_days": null,
+          "threshold_days": 3,
+          "note": "取得失敗・今回の取得対象外: HTTPError: HTTP Error 403: Forbidden"
+        },
+        {
+          "feed_id": "zw-newzimbabwe",
+          "source": "NewZimbabwe.com",
+          "country": "ZW",
+          "status": "failed",
+          "error": "HTTPError: HTTP Error 202: unexpected status",
+          "latest_published_at": null,
+          "stale_days": null,
+          "threshold_days": 3,
+          "note": "取得失敗・今回の取得対象外: HTTPError: HTTP Error 202: unexpected status"
+        },
+        {
+          "feed_id": "awesomekyiv",
+          "source": "Awesome Kyiv",
+          "country": "UA",
+          "status": "stale",
+          "error": null,
+          "latest_published_at": "2026-07-02T01:30:25Z",
+          "stale_days": 99.9,
+          "threshold_days": 2,
+          "note": "最新記事が99.9日前で、閾値2日を超えています（件数は10件あるため接続自体は成功しています）"
+        }
+      ]
     }
   },
-  "updated_at": "2026-10-09T01:33:39Z"
+  "updated_at": "2026-10-09T22:34:45Z"
 }
