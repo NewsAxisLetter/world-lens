@@ -678,12 +678,23 @@
     },
     "2026-10-09": {
       "status": "ok",
-      "articles": 3842,
+      "articles": 4496,
       "countries": 54,
-      "feeds_ok": 151,
+      "feeds_ok": 148,
       "feeds_total": 160,
-      "generated_at": "2026-10-08T22:27:35Z",
+      "generated_at": "2026-10-09T01:25:59Z",
       "alerts": [
+        {
+          "feed_id": "eg-almasry",
+          "source": "Al-Masry Al-Youm",
+          "country": "EG",
+          "status": "stale",
+          "error": null,
+          "latest_published_at": "2025-09-30T16:51:04Z",
+          "stale_days": 373.4,
+          "threshold_days": 3,
+          "note": "最新記事が373.4日前で、閾値3日を超えています（件数は40件あるため接続自体は成功しています）"
+        },
         {
           "feed_id": "et-reporter",
           "source": "The Reporter Ethiopia",
@@ -694,6 +705,17 @@
           "stale_days": null,
           "threshold_days": 3,
           "note": "取得失敗・今回の取得対象外: HTTPError: HTTP Error 202: unexpected status"
+        },
+        {
+          "feed_id": "ke-nation",
+          "source": "Daily Nation",
+          "country": "KE",
+          "status": "failed",
+          "error": "HTTPError: HTTP Error 404: Not Found",
+          "latest_published_at": null,
+          "stale_days": null,
+          "threshold_days": 3,
+          "note": "取得失敗・今回の取得対象外: HTTPError: HTTP Error 404: Not Found"
         },
         {
           "feed_id": "ve-efectococuyo",
@@ -735,9 +757,9 @@
           "status": "stale",
           "error": null,
           "latest_published_at": "2026-10-04T09:00:00Z",
-          "stale_days": 4.6,
+          "stale_days": 4.7,
           "threshold_days": 3,
-          "note": "最新記事が4.6日前で、閾値3日を超えています（件数は40件あるため接続自体は成功しています）"
+          "note": "最新記事が4.7日前で、閾値3日を超えています（件数は40件あるため接続自体は成功しています）"
         },
         {
           "feed_id": "zm-timesofzambia",
@@ -773,18 +795,29 @@
           "note": "取得失敗・今回の取得対象外: HTTPError: HTTP Error 202: unexpected status"
         },
         {
+          "feed_id": "zw-nehanda",
+          "source": "Nehanda Radio",
+          "country": "ZW",
+          "status": "failed",
+          "error": "HTTPError: HTTP Error 403: Forbidden",
+          "latest_published_at": null,
+          "stale_days": null,
+          "threshold_days": 3,
+          "note": "取得失敗・今回の取得対象外: HTTPError: HTTP Error 403: Forbidden"
+        },
+        {
           "feed_id": "awesomekyiv",
           "source": "Awesome Kyiv",
           "country": "UA",
           "status": "stale",
           "error": null,
           "latest_published_at": "2026-07-02T01:30:25Z",
-          "stale_days": 98.9,
+          "stale_days": 99.0,
           "threshold_days": 2,
-          "note": "最新記事が98.9日前で、閾値2日を超えています（件数は10件あるため接続自体は成功しています）"
+          "note": "最新記事が99.0日前で、閾値2日を超えています（件数は10件あるため接続自体は成功しています）"
         }
       ]
     }
   },
-  "updated_at": "2026-10-08T22:35:11Z"
+  "updated_at": "2026-10-09T01:33:39Z"
 }
