@@ -1155,7 +1155,83 @@
           "note": "最新記事が102.0日前で、閾値2日を超えています（件数は10件あるため接続自体は成功しています）"
         }
       ]
+    },
+    "2026-10-13": {
+      "status": "ok",
+      "articles": 3898,
+      "countries": 54,
+      "feeds_ok": 154,
+      "feeds_total": 160,
+      "generated_at": "2026-10-12T22:27:09Z",
+      "alerts": [
+        {
+          "feed_id": "cn-cdt",
+          "source": "China Digital Times",
+          "country": "CN",
+          "status": "stale",
+          "error": null,
+          "latest_published_at": "2026-10-06T07:49:34Z",
+          "stale_days": 6.6,
+          "threshold_days": 3,
+          "note": "最新記事が6.6日前で、閾値3日を超えています（件数は15件あるため接続自体は成功しています）"
+        },
+        {
+          "feed_id": "et-ethiopiainsight",
+          "source": "Ethiopia Insight",
+          "country": "ET",
+          "status": "stale",
+          "error": null,
+          "latest_published_at": "2026-09-30T13:35:55Z",
+          "stale_days": 12.4,
+          "threshold_days": 10,
+          "note": "最新記事が12.4日前で、閾値10日を超えています（件数は9件あるため接続自体は成功しています）"
+        },
+        {
+          "feed_id": "hu-nepszava",
+          "source": "Népszava",
+          "country": "HU",
+          "status": "stale",
+          "error": null,
+          "latest_published_at": "2026-10-07T16:30:00Z",
+          "stale_days": 5.3,
+          "threshold_days": 3,
+          "note": "最新記事が5.3日前で、閾値3日を超えています（件数は20件あるため接続自体は成功しています）"
+        },
+        {
+          "feed_id": "kg-24kg",
+          "source": "24.kg",
+          "country": "KG",
+          "status": "stale",
+          "error": null,
+          "latest_published_at": "2026-10-04T09:00:00Z",
+          "stale_days": 8.6,
+          "threshold_days": 3,
+          "note": "最新記事が8.6日前で、閾値3日を超えています（件数は40件あるため接続自体は成功しています）"
+        },
+        {
+          "feed_id": "zw-newsday",
+          "source": "NewsDay",
+          "country": "ZW",
+          "status": "failed",
+          "error": "HTTPError: HTTP Error 403: Forbidden",
+          "latest_published_at": null,
+          "stale_days": null,
+          "threshold_days": 3,
+          "note": "取得失敗・今回の取得対象外: HTTPError: HTTP Error 403: Forbidden"
+        },
+        {
+          "feed_id": "awesomekyiv",
+          "source": "Awesome Kyiv",
+          "country": "UA",
+          "status": "stale",
+          "error": null,
+          "latest_published_at": "2026-07-02T01:30:25Z",
+          "stale_days": 102.9,
+          "threshold_days": 2,
+          "note": "最新記事が102.9日前で、閾値2日を超えています（件数は10件あるため接続自体は成功しています）"
+        }
+      ]
     }
   },
-  "updated_at": "2026-10-12T01:33:36Z"
+  "updated_at": "2026-10-12T22:33:24Z"
 }
