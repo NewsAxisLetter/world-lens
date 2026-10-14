@@ -620,7 +620,7 @@ table.phrase tr:hover td{background:#fafbfd}
   <section class="panel jpnone-panel" aria-label="日本が報じていない話題">
     <div class="panel-head">
       <h2>🇯🇵 日本が報じていない話題</h2>
-      <span class="hint">複数国で報じられたが、収集対象の日本の媒体に該当記事がなかった話題</span>
+      <span class="hint">収集対象の日本の媒体に該当記事がなかった話題のうち、上の世界ランキング（TOP30）に入らなかったもの</span>
     </div>
     <div class="panel-body">
       <div class="jpnone-grid" id="jpNoneGrid"></div>
@@ -771,7 +771,8 @@ const state = {
   pool: {},           // topic_id -> topic（選択日のみ）
   world: [],          // 世界TOP30の topic_id
   japan: [],          // 日本TOP30の topic_id
-  jpNone: []          // 日本での報道なしの topic_id（スコア降順）
+  jpNone: [],         // 日本での報道なしのうち、世界TOP30に入らなかった topic_id（スコア降順）
+  jpNoneAll: []       // 日本での報道なしの topic_id 全件（上部の件数表示用）
 };
 let LATEST = null;    // index.latest_date（これより後ろは未来日）
 
@@ -872,7 +873,7 @@ async function loadIndex(){
 }
 /* 選択日の話題ファイルを読み、世界／日本／報道なしの3リストを組み立てる */
 async function loadDay(iso){
-  state.day=null; state.pool={}; state.world=[]; state.japan=[]; state.jpNone=[];
+  state.day=null; state.pool={}; state.world=[]; state.japan=[]; state.jpNone=[]; state.jpNoneAll=[];
   const info=dayInfo(iso);
   // 契約§4：status が ok 以外（failed/empty）は topics ファイルが無い場合がある
   if(!info) return;
@@ -891,7 +892,11 @@ async function loadDay(iso){
     .sort((a,b)=>(jpMediaCount(state.pool[b])-jpMediaCount(state.pool[a])) || sortFn(a,b))
     .slice(0,TOP_N);
   // 日本での報道なし：jp_reported=false をスコア降順（一覧と同一の並び規則）
-  state.jpNone = ids.filter(id=>!state.pool[id].jp_reported).sort(sortFn);
+  //   世界TOP30（ランキング）に入った話題は上の一覧で「🇯🇵 日本での報道なし」が付いて表示済みなので除外し、
+  //   ランキングに載らなかった話題だけを出す（重複表示をなくす）。
+  const rankedWorld = new Set(state.world);
+  state.jpNoneAll = ids.filter(id=>!state.pool[id].jp_reported);
+  state.jpNone = state.jpNoneAll.filter(id=>!rankedWorld.has(id)).sort(sortFn);
 }
 
 /* ============================================================
@@ -1044,7 +1049,7 @@ function renderSummary(){
   const countries = st.countries_covered!=null? st.countries_covered : (info.countries||0);
   const media = st.feeds_ok!=null? st.feeds_ok : mediaOf(info);
   const topicCount = st.topics!=null? st.topics : Object.keys(state.pool).length;
-  const jpNone = st.jp_none_count!=null? st.jp_none_count : state.jpNone.length;
+  const jpNone = st.jp_none_count!=null? st.jp_none_count : state.jpNoneAll.length;
   const cells=[
     ["収集記事数",articles,"件"],["対象国数",countries,"か国"],
     ["対象媒体数",media,"媒体"],["抽出された話題数",topicCount,"件"]
