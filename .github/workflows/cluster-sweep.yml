@@ -1,0 +1,102 @@
+# 話題統合の閾値テスト（手動実行専用・書き込みなし）
+#
+# Actions タブ → 左の「話題統合の閾値テスト」→ 右の「Run workflow」
+#   → 日付と閾値を入れて（空欄でもOK）→ 緑の「Run workflow」。
+# 1〜2分で終わります。リポジトリのファイルは一切変更しません（コミットもしません）。
+# AI（Gemini）も使わないので、無料枠のリクエストも消費しません。
+#
+# ログの見方:
+#   ①「閾値ごとのクラスタ数」表 … 閾値を上げると topics（話題数）が増え、
+#      最大クラスタ（一番大きい話題の記事数）が小さくなります。
+#   ②「大きい話題の中身」 … 各閾値で記事数の多い話題の見出しを並べます。
+#      別の話題の見出しが混ざっていなければ、その閾値で誤結合は起きていません。
+name: 話題統合の閾値テスト
+
+on:
+  workflow_dispatch:
+    inputs:
+      date:
+        description: "対象日 YYYY-MM-DD（空欄なら data/days にある最新日）"
+        required: false
+        default: ""
+      thresholds:
+        description: "試す閾値（カンマ区切り）"
+        required: false
+        default: "0.20,0.22,0.25,0.28,0.30"
+      top:
+        description: "見出しを表示する大きい話題の数（閾値ごと）"
+        required: false
+        default: "5"
+
+permissions:
+  contents: read
+
+jobs:
+  sweep:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: 対象日を決める
+        id: day
+        env:
+          IN_DATE: ${{ github.event.inputs.date }}
+        run: |
+          d="$(echo "$IN_DATE" | tr -d ' ')"
+          if [ -z "$d" ]; then
+            d="$(ls data/days/ 2>/dev/null | grep -E '^[0-9]{4}-[0-9]{2}-[0-9]{2}\.json$' | sort | tail -1 | sed 's/\.json$//')"
+          fi
+          if [ -z "$d" ] || [ ! -f "data/days/$d.json" ]; then
+            echo "::error::data/days/$d.json がありません。日付を確認してください。"
+            ls data/days/ 2>/dev/null | tail -10
+            exit 1
+          fi
+          if [ ! -f "data/days/$d.enriched.json" ]; then
+            echo "::warning::$d.enriched.json が無いので degraded（原語同士しか寄らない）で比較します。"
+          fi
+          echo "対象日: $d"
+          echo "date=$d" >> "$GITHUB_OUTPUT"
+
+      - name: ① 閾値ごとのクラスタ数
+        env:
+          D: ${{ steps.day.outputs.date }}
+          TH: ${{ github.event.inputs.thresholds }}
+        run: python3 scripts/cluster.py --date "$D" --sweep "${TH:-0.20,0.22,0.25,0.28,0.30}"
+
+      - name: ② 大きい話題の中身（誤結合の目視チェック）
+        env:
+          D: ${{ steps.day.outputs.date }}
+          TH: ${{ github.event.inputs.thresholds }}
+          TOP: ${{ github.event.inputs.top }}
+        run: |
+          python3 - <<'PY'
+          import os, sys
+          sys.path.insert(0, "scripts")
+          import cluster as c
+
+          d = os.environ["D"]
+          ths = [float(x) for x in (os.environ.get("TH") or "0.20,0.22,0.25,0.28,0.30").split(",") if x.strip()]
+          top = int(os.environ.get("TOP") or 5)
+          day = c.load_json("data/days/%s.json" % d)
+          ep = "data/days/%s.enriched.json" % d
+          enr = c.load_json(ep) if os.path.exists(ep) else None
+
+          for th in ths:
+              doc = c.build_document(day, enr, d, threshold=th, generated_at="1970-01-01T00:00:00Z")
+              ts = sorted(doc["topics"], key=lambda t: -len(t["articles"]))[:top]
+              print("=" * 70)
+              print("閾値 %.2f ： 話題数 %d" % (th, len(doc["topics"])))
+              for i, t in enumerate(ts, 1):
+                  arts = t["articles"]
+                  print("-" * 70)
+                  print("[%d] %s （%d記事）" % (i, t.get("title_ja", ""), len(arts)))
+                  for a in arts[:15]:
+                      print("    %s %-18s %s" % (a.get("country", ""), (a.get("source") or "")[:18],
+                                                 a.get("title_ja") or a.get("title_original", "")))
+                  if len(arts) > 15:
+                      print("    …ほか %d 記事" % (len(arts) - 15))
+          PY
