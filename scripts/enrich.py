@@ -21,7 +21,9 @@ data/days/D.enriched.json（契約§3）を書き出す。
 
 * **1リクエストに複数記事**（契約§3・A12）。1記事1リクエストは禁止。
   既定10件/リクエスト。240記事なら24リクエストで、目標30以内・上限250/日に収まる。
-  実測上限の根拠：`最終検証レポート.md` §1-1（2.5 Flash = RPD 250 / RPM 10 / TPM 250,000）。
+  無料枠の上限（RPM/TPM/RPD）は 2026-10 時点で公式ドキュメントに数値表が無くなり、
+  Google AI Studio の「Rate Limit」画面でのみ確認できる（上限はプロジェクト単位・保証なし・
+  RPD は太平洋時間0時リセット）。旧記載「2.5 Flash = RPD 250 / RPM 10」は古い値なので使わない。
 
 * **部分失敗を全体失敗にしない**（契約§3）。
   バッチが3回リトライしても駄目ならそのバッチだけ passthrough にして次のバッチへ進む。
@@ -71,15 +73,18 @@ API_BASE = "https://generativelanguage.googleapis.com/v1beta/models"
 #   無料枠のレート上限はモデルごとに別枠なので、切り替えると使える枠も増える。
 #   環境変数 GEMINI_MODELS="a,b,c" で上書きできる（コードを触らずに入れ替え可能）。
 #
-#   選定根拠（公式 料金ページ・廃止予定ページを 2026-09-24 に確認）:
-#   - 3.5 Flash-Lite / 3.8 Flash / 3.1 Flash-Lite は「無料枠: 無料」かつ提供終了日未発表。
+#   選定根拠（公式 料金・廃止予定・変更履歴ページを 2026-10-12 に再確認）:
+#   - 3.5 Flash-Lite / 3.6 Flash / 3.8 Flash / 3.1 Flash-Lite は「無料枠: 無料」。
+#   - 3.1 Flash-Lite は 2027-05-07 提供終了予定（後継 3.5 Flash-Lite）。
+#   - 2026-10-08 に 3.7 Flash（→3.8 Flash へ自動転送）と 3.5 Flash（→3.6 Flash へ自動転送）が廃止。
+#     転送先と同じモデルを二重に使うことになるので既定から外した。
 #   - 公式が「新しいプロジェクトでは 3.5 Flash-Lite または 3.8 Flash を使用」と明記。
 #   - 2.5 系は「過去に積極的に使用したユーザーに制限」＝新規キーでは拒否されうる（使わない）。
 #   - 2.0 Flash は 2026-06-01 に提供終了（使えない）。
 #   - 見出しの翻訳・分類は軽い処理なので、枠が大きく空きやすい Flash-Lite を先にする。
-# 5つを同時に使う（無料枠の毎分上限はモデルごとに別）。存在しない・使えないモデルは404/403で自動的に外れる。
+# 4つを同時に使う（無料枠の毎分上限はモデルごとに別）。存在しない・使えないモデルは404/403で自動的に外れる。
 DEFAULT_MODELS = ("gemini-3.5-flash-lite", "gemini-3.8-flash", "gemini-3.1-flash-lite",
-                  "gemini-3.7-flash", "gemini-3.6-flash")
+                  "gemini-3.6-flash")
 MODEL = DEFAULT_MODELS[0]   # 後方互換（ログ表示・テスト用）。実際は configured_models() を使う
 
 # 1リクエストにまとめる記事数。
@@ -94,7 +99,9 @@ BATCH_SIZE = 25
 #   1モデルあたりに直すと最大約130回/実行。日次上限に当たったモデルは自動で外れる。
 REQUEST_BUDGET = 600
 
-# 通常バッチ（リトライを除く）の本数の上限。超える件数の日は1バッチの件数を増やす。
+# 通常バッチ（リトライを除く）の本数の上限。1回の実行で AI に回すのは最大
+#   BATCH_SIZE × MAX_BATCHES 件（25×220＝5,500件）。超えた分は1バッチの件数を増やさず、
+#   今回は素通しにして次回の実行に持ち越す（2026-10-13 変更：24時間窓で件数が増えるため）。
 #   60本 × PACE_SEC 6秒 = 6分。締切25分の内側に収まる。
 #   2,734件 ÷ 25件 = 110バッチ。上限が小さいと1バッチが膨らみ、出力が途中で切れて
 #   全件パース失敗になるので、並列化に合わせて 150 にした（3,750件まで25件/バッチを維持）。
@@ -132,7 +139,7 @@ MAX_AI_ARTICLES = 0
 # 同時に使うモデルの数（1モデル＝1本の作業列）。無料枠の毎分上限はモデルごとに別なので、
 # 3モデルを同時に使うと処理量が約3倍になる（各モデルは6秒間隔＝毎分10回以内）。
 #   環境変数 AI_PARALLEL で変更可能。1 にすると従来どおり1本ずつ順番に処理する。
-MAX_PARALLEL = 5
+MAX_PARALLEL = 4
 # 何バッチ成功するごとに途中結果をファイルに書くか（強制終了されても成果を残す）
 CHECKPOINT_EVERY = 5
 # 締切の残りがこれより少なければ、新しいバッチを始めない
@@ -1015,22 +1022,21 @@ def parse_results(text):
 # ==================================================================
 
 def plan_batches(articles, batch_size=BATCH_SIZE, max_batches=MAX_BATCHES):
-    """記事一覧をバッチに切る。本数が max_batches を超える場合は1バッチの件数を増やす。
+    """記事一覧を batch_size 件ずつのバッチに切る。1バッチの件数は増やさない。
 
     「1記事1リクエスト」を構造的に不可能にするのがこの関数の役目。
-    記事が増えてもリクエスト本数は max_batches で頭打ちになる（＝A12 が件数に依存しない）。
-      例) 240記事 / batch_size=10 → 24本 … が max_batches=20 を超えるので
-          1バッチ12件に広げて20本にする。
+    本数は max_batches で頭打ちにし、入りきらない記事はバッチに入れない
+    （＝今回は処理しない。enrich() が事前に件数を絞り、残りは次回の実行に持ち越す）。
+      例) 6,000記事 / 25件 / 220本 → 25件×220本＝5,500件だけ。残り500件は次回。
     """
     total = len(articles)
     if total == 0:
         return []
     size = max(1, int(batch_size))
+    batches = [articles[i:i + size] for i in range(0, total, size)]
     if max_batches and max_batches > 0:
-        # 切り上げ除算。size を必要なだけ大きくして本数を max_batches 以内に収める。
-        needed = -(-total // max_batches)
-        size = max(size, needed)
-    return [articles[i:i + size] for i in range(0, total, size)]
+        batches = batches[:max_batches]
+    return batches
 
 
 def estimate_requests(article_count, batch_size=BATCH_SIZE, max_batches=MAX_BATCHES):
@@ -1612,6 +1618,17 @@ def enrich(day_payload, date_key=None, api_key=None, batch_size=BATCH_SIZE,
                                      notes + ["途中保存（処理中）"]))
         except Exception as e:
             print("      途中保存に失敗（処理は続行）: %s" % type(e).__name__)
+    # 1回で処理できるのは batch_size × max_batches 件まで。超えた分は1バッチの件数を
+    # 増やさずに今回は素通しにし、次回の実行で続きを処理する（国・媒体が偏らないように選ぶ）。
+    per_run = max(1, int(batch_size)) * max_batches if max_batches and max_batches > 0 else 0
+    if per_run and len(todo) > per_run:
+        selected = select_for_ai(todo, per_run)
+        skipped = len(todo) - len(selected)
+        print("  未処理 %d件 は1回の上限（%d件×%dバッチ＝%d件）を超えるため、%d件 は次回に持ち越します"
+              % (len(todo), max(1, int(batch_size)), max_batches, per_run, skipped))
+        notes.append("1回のバッチ上限 %d件 を超えた %d件 は今回は素通しにしました（次回の実行で続きを処理）"
+                     % (per_run, skipped))
+        todo = selected
     sleep = sleeper or _sleep
     batches = plan_batches(todo, batch_size, max_batches)
     if batches:

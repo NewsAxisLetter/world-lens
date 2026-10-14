@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 """
-フェーズ1 ①収集スクリプト ── 12カ国の複数媒体からRSSを集めて `data/days/D.json` を書く。
+フェーズ1 ①収集スクリプト ── feeds.json に登録された各国の複数媒体（2026-10時点で54カ国・270本）からRSSを集めて `data/days/D.json` を書く。
 
 フェーズ0（NHK1本）からの発展点だけを書く。phase0/scripts/fetch.py は変更しない。
 契約書 `phase1/データ契約.md` §1（feeds.json）§2（days/D.json・schema_version 3）を実装する。
@@ -10,7 +10,7 @@
 -----------------
 1. フィード定義を **コード内定数から `phase1/feeds.json` に外出し**（契約§1）。
    媒体を足す・止めるのがJSON編集だけで済み、スクリプトを触らなくてよくなる。
-2. **26本を順次取得**するので、1本の失敗で全体が止まらないようにした（A8）。
+2. **数百本を順次取得**するので、1本の失敗で全体が止まらないようにした（A8）。
    各フィードを個別に try で囲み、失敗は `status:"failed"` として記録して次へ進む。
 3. **レート配慮**（本タスク要件9）。
    - 同一ホストへの連続アクセスを避けるため、取得順をホストで**インターリーブ**する。
@@ -141,19 +141,39 @@ RETRY_WAIT_SEC = 5                  # 5秒 → 10秒 と伸ばして打ち切り
 
 # 同一ホストに続けて叩かない。取得順のインターリーブで基本的に避けるが、
 # 同じホストに戻ってきた場合はここで最低間隔を強制する。
-# 6秒は「1ホストあたり毎分10リクエスト以下」に相当し、26本を1日1回読む用途としては
-# 十分に控えめ。BBCのように複数フィードを持つホストでも合計2〜3本なので影響は小さい。
+# 6秒は「1ホストあたり毎分10リクエスト以下」に相当し、数百本を1日数回読む用途としては
+# 十分に控えめ。同じホストに複数フィードがあっても、インターリーブで間隔が空くので影響は小さい。
 PER_HOST_MIN_INTERVAL_SEC = 6.0
-# フィード間の一律待ち時間。26本 × 1.0秒 ≒ 26秒で、GitHub Actions の実行時間に収まる。
+# フィード間の一律待ち時間。270本 × 1.0秒 ≒ 4.5分。ジョブ全体の上限（daily.yml の75分）に収まる。
 INTER_FEED_WAIT_SEC = 1.0
 
 # 鮮度監視の既定閾値（日）。feeds.json 側の stale_after_days で媒体ごとに上書きできる。
 DEFAULT_STALE_AFTER_DAYS = 7
 
-# 1フィードから取り込む記事の上限。人民網のように100件返すフィードがあり、
-# 全件入れると1日のJSONが膨らむうえ③のクラスタ計算も重くなる。
-# 「そのフィードが上位に置いた記事」を見たいので先頭から取る。
-MAX_ITEMS_PER_FEED = 40
+# ------------------------------------------------------------------
+# 1フィードから取り込む記事の選び方（2026-10-13 変更：件数制限 → 24時間窓）
+#
+#   1. 取得時刻(fetched_at)から FETCH_WINDOW_HOURS 時間以内に公開された記事は
+#      件数制限なしで全部取る。それより古い記事は取らない。
+#      公開日時が取得時刻より未来の記事（媒体側の時計ずれ・タイムゾーン誤記）は
+#      FUTURE_TOLERANCE_HOURS 時間先までなら採用し、それより先は捨てる。
+#   2. 公開日時が無い・読めない記事は鮮度を判定できないので、従来どおり
+#      RSSの掲載順（＝新しい順）で先頭から UNDATED_MAX_ITEMS 件までだけ取る。
+#   3. 暴走防止として、1フィードの採用件数は SAFETY_MAX_ITEMS_PER_FEED 件で打ち切る。
+#   4. feeds.json の max_items は任意項目。書いたフィードだけ、その値が上限として効く
+#      （安全上限より大きく書いても安全上限で止まる）。書かなければ上限は安全上限だけ。
+#   ※ 鮮度監視（stale_after_days）は窓で絞る「前」の全記事で判定する。
+#     更新が止まったフィードは窓内の記事が0件になるが、empty ではなく stale として検出される。
+#
+#   環境変数: FETCH_WINDOW_HOURS（既定24）／FETCH_SAFETY_MAX（既定300）
+#   （GitHub Actions の vars 未設定は空文字になるので、空なら既定値を使う）
+# ------------------------------------------------------------------
+FETCH_WINDOW_HOURS = int(os.environ.get("FETCH_WINDOW_HOURS", "24") or "24")
+SAFETY_MAX_ITEMS_PER_FEED = int(os.environ.get("FETCH_SAFETY_MAX", "300") or "300")
+UNDATED_MAX_ITEMS = 40
+FUTURE_TOLERANCE_HOURS = 6
+# 後方互換の別名（旧コード・旧テスト用）。現在の意味は「日付なし記事の上限」。
+MAX_ITEMS_PER_FEED = UNDATED_MAX_ITEMS
 
 JST = timezone(timedelta(hours=9), "JST")
 
@@ -380,7 +400,7 @@ def host_of(url):
 def interleave_by_host(feeds):
     """同一ホストが連続しないように取得順を並べ替える（本タスク要件9）。
 
-    26本の中には bbci.co.uk（BBC 2本）や feeds.bbci.co.uk のように
+    フィードの中には bbci.co.uk（BBC 2本）や feeds.bbci.co.uk のように
     同じホストを複数持つものがある。定義順のまま叩くと同一サーバに
     連続で当たって迷惑になりやすい。ホストごとの列を作り、各列から
     1本ずつ順に取り出す（ラウンドロビン）ことで間隔を自然に空ける。
@@ -696,19 +716,20 @@ def make_article_id(url):
     """article_id = sha256(url) の先頭8桁（契約§2）。
 
     URLが同じなら必ず同じIDになるので、同日2回実行しても記事が増えない（A2）。
-    8桁（32bit）は26本×40件＝最大1040件/日の規模では衝突がほぼ起きない
+    8桁（32bit）は1日数千件の規模では衝突がほぼ起きない
     （誕生日問題で約1/4000）。衝突しても後段はURLで一意にマージするので
     記事が消えることはなく、IDが重複するだけ。
     """
     return hashlib.sha256(url.encode("utf-8")).hexdigest()[:8]
 
 
-def parse_items(xml_bytes, feed, fetched_at, max_items=MAX_ITEMS_PER_FEED):
-    """RSS/Atom のXMLから記事レコードの一覧を作る。
+def parse_entries(xml_bytes, feed, fetched_at):
+    """RSS/Atom のXMLから記事レコードを **件数・日付で絞らずに** 全部作る。
 
     RSS 2.0 / RSS 1.0 (RDF) / Atom の3形式に対応する（A7）。
     <description> / <content:encoded> / <summary> は **読み取り自体をしない**。
-    出力は ALLOWED_ARTICLE_FIELDS のキーのみ（C1・A1）。
+    出力は ALLOWED_ARTICLE_FIELDS のキーのみ（C1・A1）。並びはRSSの掲載順。
+    鮮度監視（check_freshness）はこの「絞る前」の一覧で判定する。
     """
     root = ET.fromstring(xml_bytes)     # 壊れたXMLなら ET.ParseError（= 失敗扱い）
     records = []
@@ -718,7 +739,7 @@ def parse_items(xml_bytes, feed, fetched_at, max_items=MAX_ITEMS_PER_FEED):
         link = extract_link(item)
         if not title or not link:       # 見出しかリンクが無いものは使えないので捨てる
             continue
-        rank += 1                       # rank は「採用できた記事」の中での順位（1始まり）
+        rank += 1
         record = {
             "article_id": make_article_id(link),
             "feed_id": feed["feed_id"],
@@ -738,9 +759,67 @@ def parse_items(xml_bytes, feed, fetched_at, max_items=MAX_ITEMS_PER_FEED):
         # ホワイトリストで絞り直す。上で作った dict にキーを足す改造が入っても
         # ここで落ちるので、本文キーが出力に混ざらない（C1）。
         records.append({k: record[k] for k in ALLOWED_ARTICLE_FIELDS})
-        if max_items and rank >= max_items:
-            break
     return records
+
+
+def feed_item_limit(feed, safety_max=None):
+    """そのフィードの採用件数の上限。max_items は任意項目で、書いたときだけ効く。"""
+    safety = SAFETY_MAX_ITEMS_PER_FEED if safety_max is None else safety_max
+    raw = feed.get("max_items") if isinstance(feed, dict) else None
+    try:
+        own = int(raw) if raw not in (None, "") else None
+    except (TypeError, ValueError):
+        own = None                      # 壊れた値は「書いていない」と同じ扱い
+    if own is not None and own > 0:
+        return min(own, safety) if safety and safety > 0 else own
+    return safety
+
+
+def select_recent(records, feed, fetched_at, window_hours=None, undated_max=None,
+                  safety_max=None, future_tolerance_hours=None):
+    """24時間窓で記事を選ぶ（仕様はファイル冒頭 FETCH_WINDOW_HOURS のコメント参照）。
+
+      - 公開日時が [fetched_at - window_hours, fetched_at + future_tolerance_hours] → 全部採用
+      - それ以外の日時 → 捨てる
+      - 日時なし／読めない → 掲載順に先頭から undated_max 件まで採用
+      - 合計は feed_item_limit()（max_items 指定時はその値、無ければ安全上限）で打ち切る
+    掲載順は保ち、rank_in_feed は「採用できた記事」の中での順位（1始まり）に振り直す。
+    """
+    window = FETCH_WINDOW_HOURS if window_hours is None else window_hours
+    undated_cap = UNDATED_MAX_ITEMS if undated_max is None else undated_max
+    future = FUTURE_TOLERANCE_HOURS if future_tolerance_hours is None else future_tolerance_hours
+    limit = feed_item_limit(feed, safety_max)
+    base = parse_utc_iso(fetched_at) or datetime.now(timezone.utc)
+    oldest = base - timedelta(hours=window)
+    newest = base + timedelta(hours=future)
+
+    picked = []
+    undated = 0
+    for r in records:
+        if limit and len(picked) >= limit:
+            break
+        stamp = parse_utc_iso(r.get("published_at"))
+        if stamp is None:
+            if undated >= undated_cap:
+                continue
+            undated += 1
+        elif not (oldest <= stamp <= newest):
+            continue
+        picked.append(dict(r))
+    for i, r in enumerate(picked, 1):
+        r["rank_in_feed"] = i
+    return picked
+
+
+def parse_items(xml_bytes, feed, fetched_at, max_items=None, window_hours=None):
+    """XMLを読み、24時間窓で選んだ記事レコードの一覧を返す（取得の本体）。
+
+    max_items を渡すとそのフィードの max_items 指定と同じ扱い（テスト・手動確認用）。
+    """
+    if max_items:
+        feed = dict(feed, max_items=max_items)
+    return select_recent(parse_entries(xml_bytes, feed, fetched_at), feed, fetched_at,
+                         window_hours=window_hours)
 
 
 # ==================================================================
@@ -831,8 +910,8 @@ def worst_status(feed_statuses):
 
     ★フェーズ0からの変更点
       フェーズ0はフィードが1本しかなかったので「最も悪いもの」を採用していた。
-      26本になると1本でも死ねば必ず failed になり、総合状態が常に failed に
-      張り付いて意味を失う（実測でも 26本中3本が stale/failed）。
+      数十〜数百本になると1本でも死ねば必ず failed になり、総合状態が常に failed に
+      張り付いて意味を失う（26本の時点の実測でも 3本が stale/failed）。
       そこで「記事が取れたフィードが1本でもあれば全体は前進している」と捉え、
       - 1本でも ok があれば ok
       - ok は無いが記事は取れている（stale）なら stale
@@ -1049,7 +1128,8 @@ def collect_feed(feed, fetched_at, throttle=None, now=None, offline_dir=None, lo
         return [], failed_status(feed, error)
 
     try:
-        records = parse_items(xml_bytes, feed, fetched_at)
+        all_records = parse_entries(xml_bytes, feed, fetched_at)
+        records = select_recent(all_records, feed, fetched_at)
     except ET.ParseError as e:
         # HTTP 200 でも中身がXMLでないことがある（HTMLのエラーページ・同意ページ等）。
         log("    → failed（XMLとして読めません）")
@@ -1058,7 +1138,12 @@ def collect_feed(feed, fetched_at, throttle=None, now=None, offline_dir=None, lo
         log("    → failed（想定外のパースエラー）")
         return [], failed_status(feed, "解析に失敗しました: %s: %s" % (type(e).__name__, e))
 
-    status = check_freshness(records, feed, now=now)
+    # 鮮度は窓で絞る前の全記事で判定する（止まったフィードを empty でなく stale で検出するため）。
+    # articles は実際に採用した件数に置き換える。
+    status = check_freshness(all_records, feed, now=now)
+    status["articles"] = len(records)
+    if all_records and not records and status["status"] == STATUS_OK:
+        status["note"] += "（直近%d時間以内の記事は0件）" % FETCH_WINDOW_HOURS
     log("    → %s / %d件 / 最新記事 %s"
         % (status["status"], status["articles"], status["latest_published_at"] or "不明"))
     return records, status
@@ -1128,7 +1213,7 @@ def build_day_meta(day_document):
     return {
         "status": day_document["status"],
         "articles": len(articles),
-        # 12カ国そろっているかがカレンダー上で分かるように国数も持たせる。
+        # 対象国がそろっているかがカレンダー上で分かるように国数も持たせる。
         "countries": len({a.get("country") for a in articles if a.get("country")}),
         "feeds_ok": sum(1 for s in feed_statuses if s["status"] == STATUS_OK),
         "feeds_total": len(feed_statuses),
@@ -1226,7 +1311,7 @@ def run(feeds, date_key, throttle=None, now=None, offline_dir=None, dry_run=Fals
 # ==================================================================
 
 def print_country_coverage(feeds, feed_statuses, log=print):
-    """12カ国×2媒体の充足状況を実測値で表示する（A10の実行時確認）。
+    """国ごとの媒体数（各国2媒体以上）の充足状況を実測値で表示する（A10の実行時確認）。
 
     feeds.json の enabled 本数だけでは「設定上はそろっている」ことしか分からない。
     実際に記事が取れた本数まで出して、当日の実力を毎回ログに残す。
@@ -1237,7 +1322,7 @@ def print_country_coverage(feeds, feed_statuses, log=print):
     got = {s["feed_id"]: s for s in feed_statuses}
 
     log("-" * 72)
-    log("12カ国×2媒体の充足（実測）")
+    log("国ごとの媒体数の充足（実測・各国2媒体以上）")
     log("  国  有効  記事取得できた本数  判定")
     shortfall = []
     for country in sorted(by_country):
@@ -1257,7 +1342,7 @@ def print_country_coverage(feeds, feed_statuses, log=print):
 
 def main(argv=None):
     parser = argparse.ArgumentParser(
-        description="12カ国の複数媒体からRSSを取得して data/days/D.json に保存する")
+        description="feeds.json に登録された各国の複数媒体からRSSを取得して data/days/D.json に保存する")
     parser.add_argument("--feeds", dest="feeds_path", default=FEEDS_PATH,
                         help="フィード定義JSONのパス（既定: phase1/feeds.json）")
     parser.add_argument("--date", dest="date",

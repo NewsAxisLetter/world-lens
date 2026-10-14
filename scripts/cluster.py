@@ -421,7 +421,7 @@ def target_countries(day, joined):
     """収集対象国の集合（silent_countries の母集合）。
 
     feeds[] に country が入っていればそれを使う（記事0件の国も「対象国」なので、
-    silent_countries に出さないと「12カ国のうち言及が無かった国」が欠ける）。
+    silent_countries に出さないと「対象国のうち言及が無かった国」が欠ける）。
     feeds に country が無い古い形なら、記事から復元する。
     """
     countries = set()
