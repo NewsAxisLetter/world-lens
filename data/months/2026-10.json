@@ -1365,12 +1365,23 @@
     },
     "2026-10-15": {
       "status": "ok",
-      "articles": 9229,
+      "articles": 10276,
       "countries": 54,
-      "feeds_ok": 251,
+      "feeds_ok": 245,
       "feeds_total": 270,
-      "generated_at": "2026-10-14T22:37:19Z",
+      "generated_at": "2026-10-15T01:35:51Z",
       "alerts": [
+        {
+          "feed_id": "ae-khaleejtimes",
+          "source": "Khaleej Times",
+          "country": "AE",
+          "status": "empty",
+          "error": null,
+          "latest_published_at": null,
+          "stale_days": null,
+          "threshold_days": 2,
+          "note": "接続はできましたが記事が0件でした（配信形式の変更が疑われます）"
+        },
         {
           "feed_id": "cl-elsiglo",
           "source": "El Siglo",
@@ -1389,9 +1400,9 @@
           "status": "stale",
           "error": null,
           "latest_published_at": "2026-10-06T07:49:34Z",
-          "stale_days": 8.6,
+          "stale_days": 8.7,
           "threshold_days": 3,
-          "note": "最新記事が8.6日前で、閾値3日を超えています（件数は15件あるため接続自体は成功しています）"
+          "note": "最新記事が8.7日前で、閾値3日を超えています（件数は15件あるため接続自体は成功しています）"
         },
         {
           "feed_id": "de-spiegel",
@@ -1400,9 +1411,20 @@
           "status": "stale",
           "error": null,
           "latest_published_at": "2026-10-11T20:08:00Z",
-          "stale_days": 3.1,
+          "stale_days": 3.2,
           "threshold_days": 3,
-          "note": "最新記事が3.1日前で、閾値3日を超えています（件数は20件あるため接続自体は成功しています）"
+          "note": "最新記事が3.2日前で、閾値3日を超えています（件数は20件あるため接続自体は成功しています）"
+        },
+        {
+          "feed_id": "eg-almasry",
+          "source": "Al-Masry Al-Youm",
+          "country": "EG",
+          "status": "failed",
+          "error": "XMLとして読めませんでした: undefined entity: line 529, column 199",
+          "latest_published_at": null,
+          "stale_days": null,
+          "threshold_days": 3,
+          "note": "取得失敗・今回の取得対象外: XMLとして読めませんでした: undefined entity: line 529, column 199"
         },
         {
           "feed_id": "et-ethiopiainsight",
@@ -1411,9 +1433,20 @@
           "status": "stale",
           "error": null,
           "latest_published_at": "2026-09-30T13:35:55Z",
-          "stale_days": 14.4,
+          "stale_days": 14.5,
           "threshold_days": 10,
-          "note": "最新記事が14.4日前で、閾値10日を超えています（件数は9件あるため接続自体は成功しています）"
+          "note": "最新記事が14.5日前で、閾値10日を超えています（件数は9件あるため接続自体は成功しています）"
+        },
+        {
+          "feed_id": "et-reporter",
+          "source": "The Reporter Ethiopia",
+          "country": "ET",
+          "status": "failed",
+          "error": "HTTPError: HTTP Error 202: unexpected status",
+          "latest_published_at": null,
+          "stale_days": null,
+          "threshold_days": 3,
+          "note": "取得失敗・今回の取得対象外: HTTPError: HTTP Error 202: unexpected status"
         },
         {
           "feed_id": "id-cnnindonesia",
@@ -1438,6 +1471,17 @@
           "note": "取得失敗・今回の取得対象外: HTTPError: HTTP Error 403: Forbidden"
         },
         {
+          "feed_id": "ma-telquel",
+          "source": "TelQuel",
+          "country": "MA",
+          "status": "failed",
+          "error": "HTTPError: HTTP Error 302: The HTTP server returned a redirect error that would lead to an infinite loop.\nThe last 30x error message was:\nFound",
+          "latest_published_at": null,
+          "stale_days": null,
+          "threshold_days": 3,
+          "note": "取得失敗・今回の取得対象外: HTTPError: HTTP Error 302: The HTTP server returned a redirect error that would lead to an infinite loop.\nThe last 30x error message was:\nFound"
+        },
+        {
           "feed_id": "mm-irrawaddy",
           "source": "The Irrawaddy",
           "country": "MM",
@@ -1460,15 +1504,26 @@
           "note": "取得失敗・今回の取得対象外: HTTPError: HTTP Error 403: Forbidden"
         },
         {
+          "feed_id": "ve-ultimasnoticias",
+          "source": "Últimas Noticias",
+          "country": "VE",
+          "status": "failed",
+          "error": "HTTPError: HTTP Error 202: unexpected status",
+          "latest_published_at": null,
+          "stale_days": null,
+          "threshold_days": 3,
+          "note": "取得失敗・今回の取得対象外: HTTPError: HTTP Error 202: unexpected status"
+        },
+        {
           "feed_id": "za-amabhungane",
           "source": "amaBhungane",
           "country": "ZA",
           "status": "stale",
           "error": null,
           "latest_published_at": "2026-10-07T02:00:00Z",
-          "stale_days": 7.9,
+          "stale_days": 8.0,
           "threshold_days": 7,
-          "note": "最新記事が7.9日前で、閾値7日を超えています（件数は12件あるため接続自体は成功しています）"
+          "note": "最新記事が8.0日前で、閾値7日を超えています（件数は12件あるため接続自体は成功しています）"
         },
         {
           "feed_id": "bo-abi",
@@ -1510,9 +1565,9 @@
           "status": "stale",
           "error": null,
           "latest_published_at": "2026-10-07T16:30:00Z",
-          "stale_days": 7.3,
+          "stale_days": 7.4,
           "threshold_days": 3,
-          "note": "最新記事が7.3日前で、閾値3日を超えています（件数は20件あるため接続自体は成功しています）"
+          "note": "最新記事が7.4日前で、閾値3日を超えています（件数は20件あるため接続自体は成功しています）"
         },
         {
           "feed_id": "kg-24kg",
@@ -1521,9 +1576,20 @@
           "status": "stale",
           "error": null,
           "latest_published_at": "2026-10-04T09:00:00Z",
-          "stale_days": 10.6,
+          "stale_days": 10.7,
           "threshold_days": 3,
-          "note": "最新記事が10.6日前で、閾値3日を超えています（件数は50件あるため接続自体は成功しています）"
+          "note": "最新記事が10.7日前で、閾値3日を超えています（件数は50件あるため接続自体は成功しています）"
+        },
+        {
+          "feed_id": "zm-timesofzambia",
+          "source": "Times of Zambia",
+          "country": "ZM",
+          "status": "failed",
+          "error": "HTTPError: HTTP Error 202: unexpected status",
+          "latest_published_at": null,
+          "stale_days": null,
+          "threshold_days": 3,
+          "note": "取得失敗・今回の取得対象外: HTTPError: HTTP Error 202: unexpected status"
         },
         {
           "feed_id": "zw-newsday",
@@ -1537,15 +1603,26 @@
           "note": "取得失敗・今回の取得対象外: HTTPError: HTTP Error 403: Forbidden"
         },
         {
+          "feed_id": "zw-newzimbabwe",
+          "source": "NewZimbabwe.com",
+          "country": "ZW",
+          "status": "failed",
+          "error": "HTTPError: HTTP Error 202: unexpected status",
+          "latest_published_at": null,
+          "stale_days": null,
+          "threshold_days": 3,
+          "note": "取得失敗・今回の取得対象外: HTTPError: HTTP Error 202: unexpected status"
+        },
+        {
           "feed_id": "eg-egyptoilgas",
           "source": "Egypt Oil & Gas",
           "country": "EG",
           "status": "stale",
           "error": null,
           "latest_published_at": "2026-04-03T15:33:17Z",
-          "stale_days": 194.3,
+          "stale_days": 194.4,
           "threshold_days": 2,
-          "note": "最新記事が194.3日前で、閾値2日を超えています（件数は1件あるため接続自体は成功しています）"
+          "note": "最新記事が194.4日前で、閾値2日を超えています（件数は1件あるため接続自体は成功しています）"
         },
         {
           "feed_id": "et-capital",
@@ -1568,20 +1645,9 @@
           "stale_days": null,
           "threshold_days": 2,
           "note": "取得失敗・今回の取得対象外: HTTPError: HTTP Error 403: Forbidden"
-        },
-        {
-          "feed_id": "th-prachachat",
-          "source": "Prachachat Turakij",
-          "country": "TH",
-          "status": "stale",
-          "error": null,
-          "latest_published_at": "2026-10-09T15:43:01Z",
-          "stale_days": 5.3,
-          "threshold_days": 2,
-          "note": "最新記事が5.3日前で、閾値2日を超えています（件数は30件あるため接続自体は成功しています）"
         }
       ]
     }
   },
-  "updated_at": "2026-10-14T22:51:15Z"
+  "updated_at": "2026-10-15T01:51:39Z"
 }
