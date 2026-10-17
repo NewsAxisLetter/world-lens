@@ -1902,12 +1902,23 @@
     },
     "2026-10-17": {
       "status": "ok",
-      "articles": 5589,
+      "articles": 6514,
       "countries": 54,
-      "feeds_ok": 255,
+      "feeds_ok": 250,
       "feeds_total": 270,
-      "generated_at": "2026-10-16T22:37:47Z",
+      "generated_at": "2026-10-17T01:34:29Z",
       "alerts": [
+        {
+          "feed_id": "ae-khaleejtimes",
+          "source": "Khaleej Times",
+          "country": "AE",
+          "status": "empty",
+          "error": null,
+          "latest_published_at": null,
+          "stale_days": null,
+          "threshold_days": 2,
+          "note": "接続はできましたが記事が0件でした（配信形式の変更が疑われます）"
+        },
         {
           "feed_id": "cl-elsiglo",
           "source": "El Siglo",
@@ -1926,9 +1937,9 @@
           "status": "stale",
           "error": null,
           "latest_published_at": "2026-09-30T13:35:55Z",
-          "stale_days": 16.4,
+          "stale_days": 16.5,
           "threshold_days": 10,
-          "note": "最新記事が16.4日前で、閾値10日を超えています（件数は9件あるため接続自体は成功しています）"
+          "note": "最新記事が16.5日前で、閾値10日を超えています（件数は9件あるため接続自体は成功しています）"
         },
         {
           "feed_id": "id-cnnindonesia",
@@ -1953,6 +1964,17 @@
           "note": "取得失敗・今回の取得対象外: HTTPError: HTTP Error 403: Forbidden"
         },
         {
+          "feed_id": "ma-telquel",
+          "source": "TelQuel",
+          "country": "MA",
+          "status": "failed",
+          "error": "HTTPError: HTTP Error 302: The HTTP server returned a redirect error that would lead to an infinite loop.\nThe last 30x error message was:\nFound",
+          "latest_published_at": null,
+          "stale_days": null,
+          "threshold_days": 3,
+          "note": "取得失敗・今回の取得対象外: HTTPError: HTTP Error 302: The HTTP server returned a redirect error that would lead to an infinite loop.\nThe last 30x error message was:\nFound"
+        },
+        {
           "feed_id": "mm-irrawaddy",
           "source": "The Irrawaddy",
           "country": "MM",
@@ -1962,17 +1984,6 @@
           "stale_days": null,
           "threshold_days": 3,
           "note": "取得失敗・今回の取得対象外: XMLとして読めませんでした: junk after document element: line 257, column 3"
-        },
-        {
-          "feed_id": "pe-elcomercio",
-          "source": "El Comercio",
-          "country": "PE",
-          "status": "failed",
-          "error": "HTTPError: HTTP Error 500: Internal Server Error",
-          "latest_published_at": null,
-          "stale_days": null,
-          "threshold_days": 3,
-          "note": "取得失敗・今回の取得対象外: HTTPError: HTTP Error 500: Internal Server Error"
         },
         {
           "feed_id": "ve-talcual",
@@ -1992,9 +2003,9 @@
           "status": "stale",
           "error": null,
           "latest_published_at": "2026-10-07T02:00:00Z",
-          "stale_days": 9.9,
+          "stale_days": 10.0,
           "threshold_days": 7,
-          "note": "最新記事が9.9日前で、閾値7日を超えています（件数は12件あるため接続自体は成功しています）"
+          "note": "最新記事が10.0日前で、閾値7日を超えています（件数は12件あるため接続自体は成功しています）"
         },
         {
           "feed_id": "bo-abi",
@@ -2036,9 +2047,9 @@
           "status": "stale",
           "error": null,
           "latest_published_at": "2026-10-07T16:30:00Z",
-          "stale_days": 9.3,
+          "stale_days": 9.4,
           "threshold_days": 3,
-          "note": "最新記事が9.3日前で、閾値3日を超えています（件数は20件あるため接続自体は成功しています）"
+          "note": "最新記事が9.4日前で、閾値3日を超えています（件数は20件あるため接続自体は成功しています）"
         },
         {
           "feed_id": "kg-24kg",
@@ -2047,9 +2058,9 @@
           "status": "stale",
           "error": null,
           "latest_published_at": "2026-10-04T09:00:00Z",
-          "stale_days": 12.6,
+          "stale_days": 12.7,
           "threshold_days": 3,
-          "note": "最新記事が12.6日前で、閾値3日を超えています（件数は50件あるため接続自体は成功しています）"
+          "note": "最新記事が12.7日前で、閾値3日を超えています（件数は50件あるため接続自体は成功しています）"
         },
         {
           "feed_id": "eg-egyptoilgas",
@@ -2058,9 +2069,42 @@
           "status": "stale",
           "error": null,
           "latest_published_at": "2026-04-03T15:33:17Z",
-          "stale_days": 196.3,
+          "stale_days": 196.4,
           "threshold_days": 2,
-          "note": "最新記事が196.3日前で、閾値2日を超えています（件数は1件あるため接続自体は成功しています）"
+          "note": "最新記事が196.4日前で、閾値2日を超えています（件数は1件あるため接続自体は成功しています）"
+        },
+        {
+          "feed_id": "et-capital",
+          "source": "Capital Ethiopia",
+          "country": "ET",
+          "status": "failed",
+          "error": "XMLとして読めませんでした: not well-formed (invalid token): line 1, column 0",
+          "latest_published_at": null,
+          "stale_days": null,
+          "threshold_days": 2,
+          "note": "取得失敗・今回の取得対象外: XMLとして読めませんでした: not well-formed (invalid token): line 1, column 0"
+        },
+        {
+          "feed_id": "ga-legabonais",
+          "source": "Le Gabonais",
+          "country": "GA",
+          "status": "failed",
+          "error": "TimeoutError: The read operation timed out",
+          "latest_published_at": null,
+          "stale_days": null,
+          "threshold_days": 2,
+          "note": "取得失敗・今回の取得対象外: TimeoutError: The read operation timed out"
+        },
+        {
+          "feed_id": "gb-energylivenews",
+          "source": "Energy Live News",
+          "country": "GB",
+          "status": "failed",
+          "error": "HTTPError: HTTP Error 503: Service Unavailable",
+          "latest_published_at": null,
+          "stale_days": null,
+          "threshold_days": 2,
+          "note": "取得失敗・今回の取得対象外: HTTPError: HTTP Error 503: Service Unavailable"
         },
         {
           "feed_id": "jp-gasenenews",
@@ -2072,9 +2116,20 @@
           "stale_days": null,
           "threshold_days": 2,
           "note": "取得失敗・今回の取得対象外: HTTPError: HTTP Error 403: Forbidden"
+        },
+        {
+          "feed_id": "th-prachachat",
+          "source": "Prachachat Turakij",
+          "country": "TH",
+          "status": "stale",
+          "error": null,
+          "latest_published_at": "2026-10-13T03:56:01Z",
+          "stale_days": 3.9,
+          "threshold_days": 2,
+          "note": "最新記事が3.9日前で、閾値2日を超えています（件数は30件あるため接続自体は成功しています）"
         }
       ]
     }
   },
-  "updated_at": "2026-10-16T22:50:08Z"
+  "updated_at": "2026-10-17T01:49:08Z"
 }
