@@ -2132,22 +2132,22 @@
     },
     "2026-10-18": {
       "status": "ok",
-      "articles": 4465,
+      "articles": 5272,
       "countries": 54,
-      "feeds_ok": 251,
+      "feeds_ok": 250,
       "feeds_total": 270,
-      "generated_at": "2026-10-17T22:33:07Z",
+      "generated_at": "2026-10-18T01:34:59Z",
       "alerts": [
         {
           "feed_id": "ae-khaleejtimes",
           "source": "Khaleej Times",
           "country": "AE",
-          "status": "failed",
-          "error": "XMLとして読めませんでした: no element found: line 10, column 15473",
+          "status": "empty",
+          "error": null,
           "latest_published_at": null,
           "stale_days": null,
           "threshold_days": 2,
-          "note": "取得失敗・今回の取得対象外: XMLとして読めませんでした: no element found: line 10, column 15473"
+          "note": "接続はできましたが記事が0件でした（配信形式の変更が疑われます）"
         },
         {
           "feed_id": "cl-elsiglo",
@@ -2167,9 +2167,9 @@
           "status": "stale",
           "error": null,
           "latest_published_at": "2026-09-30T13:35:55Z",
-          "stale_days": 17.4,
+          "stale_days": 17.5,
           "threshold_days": 10,
-          "note": "最新記事が17.4日前で、閾値10日を超えています（件数は9件あるため接続自体は成功しています）"
+          "note": "最新記事が17.5日前で、閾値10日を超えています（件数は9件あるため接続自体は成功しています）"
         },
         {
           "feed_id": "id-cnnindonesia",
@@ -2222,9 +2222,9 @@
           "status": "stale",
           "error": null,
           "latest_published_at": "2026-10-07T02:00:00Z",
-          "stale_days": 10.9,
+          "stale_days": 11.0,
           "threshold_days": 7,
-          "note": "最新記事が10.9日前で、閾値7日を超えています（件数は12件あるため接続自体は成功しています）"
+          "note": "最新記事が11.0日前で、閾値7日を超えています（件数は12件あるため接続自体は成功しています）"
         },
         {
           "feed_id": "bo-abi",
@@ -2266,9 +2266,9 @@
           "status": "stale",
           "error": null,
           "latest_published_at": "2026-10-07T16:30:00Z",
-          "stale_days": 10.3,
+          "stale_days": 10.4,
           "threshold_days": 3,
-          "note": "最新記事が10.3日前で、閾値3日を超えています（件数は20件あるため接続自体は成功しています）"
+          "note": "最新記事が10.4日前で、閾値3日を超えています（件数は20件あるため接続自体は成功しています）"
         },
         {
           "feed_id": "kg-24kg",
@@ -2277,9 +2277,9 @@
           "status": "stale",
           "error": null,
           "latest_published_at": "2026-10-04T09:00:00Z",
-          "stale_days": 13.6,
+          "stale_days": 13.7,
           "threshold_days": 3,
-          "note": "最新記事が13.6日前で、閾値3日を超えています（件数は50件あるため接続自体は成功しています）"
+          "note": "最新記事が13.7日前で、閾値3日を超えています（件数は50件あるため接続自体は成功しています）"
         },
         {
           "feed_id": "eg-egyptoilgas",
@@ -2288,9 +2288,9 @@
           "status": "stale",
           "error": null,
           "latest_published_at": "2026-04-03T15:33:17Z",
-          "stale_days": 197.3,
+          "stale_days": 197.4,
           "threshold_days": 2,
-          "note": "最新記事が197.3日前で、閾値2日を超えています（件数は1件あるため接続自体は成功しています）"
+          "note": "最新記事が197.4日前で、閾値2日を超えています（件数は1件あるため接続自体は成功しています）"
         },
         {
           "feed_id": "et-capital",
@@ -2304,6 +2304,17 @@
           "note": "取得失敗・今回の取得対象外: XMLとして読めませんでした: not well-formed (invalid token): line 1, column 0"
         },
         {
+          "feed_id": "gb-energylivenews",
+          "source": "Energy Live News",
+          "country": "GB",
+          "status": "failed",
+          "error": "HTTPError: HTTP Error 503: Service Unavailable",
+          "latest_published_at": null,
+          "stale_days": null,
+          "threshold_days": 2,
+          "note": "取得失敗・今回の取得対象外: HTTPError: HTTP Error 503: Service Unavailable"
+        },
+        {
           "feed_id": "jp-gasenenews",
           "source": "ガスエネルギー新聞",
           "country": "JP",
@@ -2315,26 +2326,26 @@
           "note": "取得失敗・今回の取得対象外: HTTPError: HTTP Error 403: Forbidden"
         },
         {
-          "feed_id": "kg-tazabek",
-          "source": "Tazabek",
-          "country": "KG",
-          "status": "failed",
-          "error": "XMLとして読めませんでした: mismatched tag: line 39, column 2",
-          "latest_published_at": null,
-          "stale_days": null,
-          "threshold_days": 2,
-          "note": "取得失敗・今回の取得対象外: XMLとして読めませんでした: mismatched tag: line 39, column 2"
-        },
-        {
           "feed_id": "mz-zitamar",
           "source": "Zitamar News",
           "country": "MZ",
           "status": "stale",
           "error": null,
           "latest_published_at": "2026-10-15T16:07:40Z",
-          "stale_days": 2.3,
+          "stale_days": 2.4,
           "threshold_days": 2,
-          "note": "最新記事が2.3日前で、閾値2日を超えています（件数は15件あるため接続自体は成功しています）"
+          "note": "最新記事が2.4日前で、閾値2日を超えています（件数は15件あるため接続自体は成功しています）"
+        },
+        {
+          "feed_id": "sa-alwatan",
+          "source": "Al Watan",
+          "country": "SA",
+          "status": "stale",
+          "error": null,
+          "latest_published_at": "2026-10-15T11:46:00Z",
+          "stale_days": 2.6,
+          "threshold_days": 2,
+          "note": "最新記事が2.6日前で、閾値2日を超えています（件数は50件あるため接続自体は成功しています）"
         },
         {
           "feed_id": "th-prachachat",
@@ -2342,13 +2353,13 @@
           "country": "TH",
           "status": "stale",
           "error": null,
-          "latest_published_at": "2026-10-09T15:43:01Z",
-          "stale_days": 8.3,
+          "latest_published_at": "2026-10-13T03:56:01Z",
+          "stale_days": 4.9,
           "threshold_days": 2,
-          "note": "最新記事が8.3日前で、閾値2日を超えています（件数は30件あるため接続自体は成功しています）"
+          "note": "最新記事が4.9日前で、閾値2日を超えています（件数は30件あるため接続自体は成功しています）"
         }
       ]
     }
   },
-  "updated_at": "2026-10-17T22:46:15Z"
+  "updated_at": "2026-10-18T01:49:35Z"
 }
