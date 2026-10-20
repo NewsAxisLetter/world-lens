@@ -2746,12 +2746,23 @@
     },
     "2026-10-20": {
       "status": "ok",
-      "articles": 5852,
+      "articles": 6914,
       "countries": 54,
       "feeds_ok": 254,
       "feeds_total": 270,
-      "generated_at": "2026-10-19T22:37:32Z",
+      "generated_at": "2026-10-20T01:40:14Z",
       "alerts": [
+        {
+          "feed_id": "ae-khaleejtimes",
+          "source": "Khaleej Times",
+          "country": "AE",
+          "status": "empty",
+          "error": null,
+          "latest_published_at": null,
+          "stale_days": null,
+          "threshold_days": 2,
+          "note": "接続はできましたが記事が0件でした（配信形式の変更が疑われます）"
+        },
         {
           "feed_id": "cl-elsiglo",
           "source": "El Siglo",
@@ -2770,9 +2781,9 @@
           "status": "stale",
           "error": null,
           "latest_published_at": "2026-10-16T07:33:00Z",
-          "stale_days": 3.6,
+          "stale_days": 3.8,
           "threshold_days": 3,
-          "note": "最新記事が3.6日前で、閾値3日を超えています（件数は20件あるため接続自体は成功しています）"
+          "note": "最新記事が3.8日前で、閾値3日を超えています（件数は20件あるため接続自体は成功しています）"
         },
         {
           "feed_id": "id-cnnindonesia",
@@ -2797,6 +2808,17 @@
           "note": "取得失敗・今回の取得対象外: HTTPError: HTTP Error 403: Forbidden"
         },
         {
+          "feed_id": "ke-nation",
+          "source": "Daily Nation",
+          "country": "KE",
+          "status": "failed",
+          "error": "HTTPError: HTTP Error 404: Not Found",
+          "latest_published_at": null,
+          "stale_days": null,
+          "threshold_days": 3,
+          "note": "取得失敗・今回の取得対象外: HTTPError: HTTP Error 404: Not Found"
+        },
+        {
           "feed_id": "mm-irrawaddy",
           "source": "The Irrawaddy",
           "country": "MM",
@@ -2806,17 +2828,6 @@
           "stale_days": null,
           "threshold_days": 3,
           "note": "取得失敗・今回の取得対象外: XMLとして読めませんでした: junk after document element: line 255, column 3"
-        },
-        {
-          "feed_id": "ve-efectococuyo",
-          "source": "Efecto Cocuyo",
-          "country": "VE",
-          "status": "failed",
-          "error": "HTTPError: HTTP Error 403: Forbidden",
-          "latest_published_at": null,
-          "stale_days": null,
-          "threshold_days": 3,
-          "note": "取得失敗・今回の取得対象外: HTTPError: HTTP Error 403: Forbidden"
         },
         {
           "feed_id": "ve-talcual",
@@ -2869,20 +2880,9 @@
           "status": "stale",
           "error": null,
           "latest_published_at": "2026-10-07T16:30:00Z",
-          "stale_days": 12.3,
+          "stale_days": 12.4,
           "threshold_days": 3,
-          "note": "最新記事が12.3日前で、閾値3日を超えています（件数は20件あるため接続自体は成功しています）"
-        },
-        {
-          "feed_id": "br-brasilmineral",
-          "source": "Brasil Mineral",
-          "country": "BR",
-          "status": "stale",
-          "error": null,
-          "latest_published_at": "2026-10-17T16:33:42Z",
-          "stale_days": 2.3,
-          "threshold_days": 2,
-          "note": "最新記事が2.3日前で、閾値2日を超えています（件数は40件あるため接続自体は成功しています）"
+          "note": "最新記事が12.4日前で、閾値3日を超えています（件数は20件あるため接続自体は成功しています）"
         },
         {
           "feed_id": "eg-egyptoilgas",
@@ -2891,20 +2891,9 @@
           "status": "stale",
           "error": null,
           "latest_published_at": "2026-04-03T15:33:17Z",
-          "stale_days": 199.3,
+          "stale_days": 199.4,
           "threshold_days": 2,
-          "note": "最新記事が199.3日前で、閾値2日を超えています（件数は1件あるため接続自体は成功しています）"
-        },
-        {
-          "feed_id": "et-capital",
-          "source": "Capital Ethiopia",
-          "country": "ET",
-          "status": "failed",
-          "error": "XMLとして読めませんでした: not well-formed (invalid token): line 1, column 0",
-          "latest_published_at": null,
-          "stale_days": null,
-          "threshold_days": 2,
-          "note": "取得失敗・今回の取得対象外: XMLとして読めませんでした: not well-formed (invalid token): line 1, column 0"
+          "note": "最新記事が199.4日前で、閾値2日を超えています（件数は1件あるため接続自体は成功しています）"
         },
         {
           "feed_id": "ga-legabonais",
@@ -2913,9 +2902,20 @@
           "status": "stale",
           "error": null,
           "latest_published_at": "2026-10-16T21:03:52Z",
-          "stale_days": 3.1,
+          "stale_days": 3.2,
           "threshold_days": 2,
-          "note": "最新記事が3.1日前で、閾値2日を超えています（件数は10件あるため接続自体は成功しています）"
+          "note": "最新記事が3.2日前で、閾値2日を超えています（件数は10件あるため接続自体は成功しています）"
+        },
+        {
+          "feed_id": "gb-energylivenews",
+          "source": "Energy Live News",
+          "country": "GB",
+          "status": "failed",
+          "error": "HTTPError: HTTP Error 503: Service Unavailable",
+          "latest_published_at": null,
+          "stale_days": null,
+          "threshold_days": 2,
+          "note": "取得失敗・今回の取得対象外: HTTPError: HTTP Error 503: Service Unavailable"
         },
         {
           "feed_id": "jp-gasenenews",
@@ -2931,5 +2931,5 @@
       ]
     }
   },
-  "updated_at": "2026-10-19T22:52:11Z"
+  "updated_at": "2026-10-20T01:53:07Z"
 }
