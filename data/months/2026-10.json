@@ -2932,12 +2932,23 @@
     },
     "2026-10-21": {
       "status": "ok",
-      "articles": 5872,
+      "articles": 6951,
       "countries": 54,
-      "feeds_ok": 253,
+      "feeds_ok": 251,
       "feeds_total": 270,
-      "generated_at": "2026-10-20T22:38:00Z",
+      "generated_at": "2026-10-21T01:40:37Z",
       "alerts": [
+        {
+          "feed_id": "ae-khaleejtimes",
+          "source": "Khaleej Times",
+          "country": "AE",
+          "status": "empty",
+          "error": null,
+          "latest_published_at": null,
+          "stale_days": null,
+          "threshold_days": 2,
+          "note": "接続はできましたが記事が0件でした（配信形式の変更が疑われます）"
+        },
         {
           "feed_id": "cl-elsiglo",
           "source": "El Siglo",
@@ -2956,9 +2967,20 @@
           "status": "stale",
           "error": null,
           "latest_published_at": "2026-10-16T07:33:00Z",
-          "stale_days": 4.6,
+          "stale_days": 4.8,
           "threshold_days": 3,
-          "note": "最新記事が4.6日前で、閾値3日を超えています（件数は20件あるため接続自体は成功しています）"
+          "note": "最新記事が4.8日前で、閾値3日を超えています（件数は20件あるため接続自体は成功しています）"
+        },
+        {
+          "feed_id": "eg-almasry",
+          "source": "Al-Masry Al-Youm",
+          "country": "EG",
+          "status": "failed",
+          "error": "XMLとして読めませんでした: undefined entity: line 18, column 59",
+          "latest_published_at": null,
+          "stale_days": null,
+          "threshold_days": 3,
+          "note": "取得失敗・今回の取得対象外: XMLとして読めませんでした: undefined entity: line 18, column 59"
         },
         {
           "feed_id": "et-reporter",
@@ -3005,15 +3027,15 @@
           "note": "取得失敗・今回の取得対象外: XMLとして読めませんでした: junk after document element: line 266, column 3"
         },
         {
-          "feed_id": "ng-nan-b",
-          "source": "News Agency of Nigeria (NAN)",
-          "country": "NG",
+          "feed_id": "ve-efectococuyo",
+          "source": "Efecto Cocuyo",
+          "country": "VE",
           "status": "failed",
-          "error": "URLError: <urlopen error [Errno 101] Network is unreachable>",
+          "error": "HTTPError: HTTP Error 403: Forbidden",
           "latest_published_at": null,
           "stale_days": null,
           "threshold_days": 3,
-          "note": "取得失敗・今回の取得対象外: URLError: <urlopen error [Errno 101] Network is unreachable>"
+          "note": "取得失敗・今回の取得対象外: HTTPError: HTTP Error 403: Forbidden"
         },
         {
           "feed_id": "ve-talcual",
@@ -3049,9 +3071,20 @@
           "note": "取得失敗・今回の取得対象外: HTTPError: HTTP Error 403: Forbidden"
         },
         {
-          "feed_id": "hu-telex",
-          "source": "Telex",
+          "feed_id": "hu-nepszava",
+          "source": "Népszava",
           "country": "HU",
+          "status": "stale",
+          "error": null,
+          "latest_published_at": "2026-10-07T16:30:00Z",
+          "stale_days": 13.4,
+          "threshold_days": 3,
+          "note": "最新記事が13.4日前で、閾値3日を超えています（件数は20件あるため接続自体は成功しています）"
+        },
+        {
+          "feed_id": "zw-newsday",
+          "source": "NewsDay",
+          "country": "ZW",
           "status": "failed",
           "error": "HTTPError: HTTP Error 403: Forbidden",
           "latest_published_at": null,
@@ -3060,37 +3093,15 @@
           "note": "取得失敗・今回の取得対象外: HTTPError: HTTP Error 403: Forbidden"
         },
         {
-          "feed_id": "hu-nepszava",
-          "source": "Népszava",
-          "country": "HU",
-          "status": "stale",
-          "error": null,
-          "latest_published_at": "2026-10-07T16:30:00Z",
-          "stale_days": 13.3,
-          "threshold_days": 3,
-          "note": "最新記事が13.3日前で、閾値3日を超えています（件数は20件あるため接続自体は成功しています）"
-        },
-        {
           "feed_id": "eg-egyptoilgas",
           "source": "Egypt Oil & Gas",
           "country": "EG",
-          "status": "failed",
-          "error": "URLError: <urlopen error timed out>",
-          "latest_published_at": null,
-          "stale_days": null,
+          "status": "stale",
+          "error": null,
+          "latest_published_at": "2026-04-03T15:33:17Z",
+          "stale_days": 200.4,
           "threshold_days": 2,
-          "note": "取得失敗・今回の取得対象外: URLError: <urlopen error timed out>"
-        },
-        {
-          "feed_id": "et-capital",
-          "source": "Capital Ethiopia",
-          "country": "ET",
-          "status": "failed",
-          "error": "XMLとして読めませんでした: not well-formed (invalid token): line 1, column 0",
-          "latest_published_at": null,
-          "stale_days": null,
-          "threshold_days": 2,
-          "note": "取得失敗・今回の取得対象外: XMLとして読めませんでした: not well-formed (invalid token): line 1, column 0"
+          "note": "最新記事が200.4日前で、閾値2日を超えています（件数は1件あるため接続自体は成功しています）"
         },
         {
           "feed_id": "ga-legabonais",
@@ -3099,9 +3110,20 @@
           "status": "stale",
           "error": null,
           "latest_published_at": "2026-10-16T21:03:52Z",
-          "stale_days": 4.1,
+          "stale_days": 4.2,
           "threshold_days": 2,
-          "note": "最新記事が4.1日前で、閾値2日を超えています（件数は10件あるため接続自体は成功しています）"
+          "note": "最新記事が4.2日前で、閾値2日を超えています（件数は10件あるため接続自体は成功しています）"
+        },
+        {
+          "feed_id": "gb-energylivenews",
+          "source": "Energy Live News",
+          "country": "GB",
+          "status": "failed",
+          "error": "HTTPError: HTTP Error 503: Service Unavailable",
+          "latest_published_at": null,
+          "stale_days": null,
+          "threshold_days": 2,
+          "note": "取得失敗・今回の取得対象外: HTTPError: HTTP Error 503: Service Unavailable"
         },
         {
           "feed_id": "jp-gasenenews",
@@ -3120,13 +3142,13 @@
           "country": "TH",
           "status": "stale",
           "error": null,
-          "latest_published_at": "2026-10-07T01:09:00Z",
-          "stale_days": 13.9,
+          "latest_published_at": "2026-10-15T04:00:04Z",
+          "stale_days": 5.9,
           "threshold_days": 2,
-          "note": "最新記事が13.9日前で、閾値2日を超えています（件数は30件あるため接続自体は成功しています）"
+          "note": "最新記事が5.9日前で、閾値2日を超えています（件数は30件あるため接続自体は成功しています）"
         }
       ]
     }
   },
-  "updated_at": "2026-10-20T22:55:01Z"
+  "updated_at": "2026-10-21T01:54:49Z"
 }
