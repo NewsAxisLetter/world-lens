@@ -3151,22 +3151,22 @@
     },
     "2026-10-22": {
       "status": "ok",
-      "articles": 5886,
+      "articles": 6930,
       "countries": 54,
-      "feeds_ok": 250,
+      "feeds_ok": 252,
       "feeds_total": 270,
-      "generated_at": "2026-10-21T22:38:53Z",
+      "generated_at": "2026-10-22T01:40:24Z",
       "alerts": [
         {
           "feed_id": "ae-khaleejtimes",
           "source": "Khaleej Times",
           "country": "AE",
-          "status": "failed",
-          "error": "XMLとして読めませんでした: no element found: line 12, column 3446",
+          "status": "empty",
+          "error": null,
           "latest_published_at": null,
           "stale_days": null,
           "threshold_days": 2,
-          "note": "取得失敗・今回の取得対象外: XMLとして読めませんでした: no element found: line 12, column 3446"
+          "note": "接続はできましたが記事が0件でした（配信形式の変更が疑われます）"
         },
         {
           "feed_id": "by-belta",
@@ -3186,9 +3186,9 @@
           "status": "stale",
           "error": null,
           "latest_published_at": "2026-10-14T16:24:32Z",
-          "stale_days": 7.3,
+          "stale_days": 7.4,
           "threshold_days": 7,
-          "note": "最新記事が7.3日前で、閾値7日を超えています（件数は10件あるため接続自体は成功しています）"
+          "note": "最新記事が7.4日前で、閾値7日を超えています（件数は10件あるため接続自体は成功しています）"
         },
         {
           "feed_id": "cl-elsiglo",
@@ -3208,20 +3208,9 @@
           "status": "stale",
           "error": null,
           "latest_published_at": "2026-10-16T07:33:00Z",
-          "stale_days": 5.6,
+          "stale_days": 5.8,
           "threshold_days": 3,
-          "note": "最新記事が5.6日前で、閾値3日を超えています（件数は20件あるため接続自体は成功しています）"
-        },
-        {
-          "feed_id": "eg-almasry",
-          "source": "Al-Masry Al-Youm",
-          "country": "EG",
-          "status": "failed",
-          "error": "XMLとして読めませんでした: undefined entity: line 18, column 183",
-          "latest_published_at": null,
-          "stale_days": null,
-          "threshold_days": 3,
-          "note": "取得失敗・今回の取得対象外: XMLとして読めませんでした: undefined entity: line 18, column 183"
+          "note": "最新記事が5.8日前で、閾値3日を超えています（件数は20件あるため接続自体は成功しています）"
         },
         {
           "feed_id": "et-reporter",
@@ -3266,17 +3255,6 @@
           "stale_days": null,
           "threshold_days": 3,
           "note": "取得失敗・今回の取得対象外: XMLとして読めませんでした: junk after document element: line 246, column 3"
-        },
-        {
-          "feed_id": "ng-sahara-b",
-          "source": "Sahara Reporters",
-          "country": "NG",
-          "status": "failed",
-          "error": "XMLとして読めませんでした: syntax error: line 1, column 0",
-          "latest_published_at": null,
-          "stale_days": null,
-          "threshold_days": 3,
-          "note": "取得失敗・今回の取得対象外: XMLとして読めませんでした: syntax error: line 1, column 0"
         },
         {
           "feed_id": "ve-talcual",
@@ -3329,9 +3307,9 @@
           "status": "stale",
           "error": null,
           "latest_published_at": "2026-10-07T16:30:00Z",
-          "stale_days": 14.3,
+          "stale_days": 14.4,
           "threshold_days": 3,
-          "note": "最新記事が14.3日前で、閾値3日を超えています（件数は20件あるため接続自体は成功しています）"
+          "note": "最新記事が14.4日前で、閾値3日を超えています（件数は20件あるため接続自体は成功しています）"
         },
         {
           "feed_id": "eg-egyptoilgas",
@@ -3340,9 +3318,20 @@
           "status": "stale",
           "error": null,
           "latest_published_at": "2026-04-03T15:33:17Z",
-          "stale_days": 201.3,
+          "stale_days": 201.4,
           "threshold_days": 2,
-          "note": "最新記事が201.3日前で、閾値2日を超えています（件数は1件あるため接続自体は成功しています）"
+          "note": "最新記事が201.4日前で、閾値2日を超えています（件数は1件あるため接続自体は成功しています）"
+        },
+        {
+          "feed_id": "et-capital",
+          "source": "Capital Ethiopia",
+          "country": "ET",
+          "status": "failed",
+          "error": "XMLとして読めませんでした: not well-formed (invalid token): line 1, column 0",
+          "latest_published_at": null,
+          "stale_days": null,
+          "threshold_days": 2,
+          "note": "取得失敗・今回の取得対象外: XMLとして読めませんでした: not well-formed (invalid token): line 1, column 0"
         },
         {
           "feed_id": "ga-legabonais",
@@ -3351,20 +3340,9 @@
           "status": "stale",
           "error": null,
           "latest_published_at": "2026-10-16T21:03:52Z",
-          "stale_days": 5.1,
+          "stale_days": 5.2,
           "threshold_days": 2,
-          "note": "最新記事が5.1日前で、閾値2日を超えています（件数は10件あるため接続自体は成功しています）"
-        },
-        {
-          "feed_id": "id-duniaenergi",
-          "source": "Dunia Energi",
-          "country": "ID",
-          "status": "failed",
-          "error": "HTTPError: HTTP Error 403: Forbidden",
-          "latest_published_at": null,
-          "stale_days": null,
-          "threshold_days": 2,
-          "note": "取得失敗・今回の取得対象外: HTTPError: HTTP Error 403: Forbidden"
+          "note": "最新記事が5.2日前で、閾値2日を超えています（件数は10件あるため接続自体は成功しています）"
         },
         {
           "feed_id": "jp-gasenenews",
@@ -3380,5 +3358,5 @@
       ]
     }
   },
-  "updated_at": "2026-10-21T22:54:15Z"
+  "updated_at": "2026-10-22T01:56:46Z"
 }
