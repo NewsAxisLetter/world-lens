@@ -3359,12 +3359,23 @@
     },
     "2026-10-23": {
       "status": "ok",
-      "articles": 5877,
+      "articles": 6903,
       "countries": 54,
-      "feeds_ok": 254,
+      "feeds_ok": 253,
       "feeds_total": 270,
-      "generated_at": "2026-10-22T22:37:10Z",
+      "generated_at": "2026-10-23T01:43:33Z",
       "alerts": [
+        {
+          "feed_id": "ae-khaleejtimes",
+          "source": "Khaleej Times",
+          "country": "AE",
+          "status": "empty",
+          "error": null,
+          "latest_published_at": null,
+          "stale_days": null,
+          "threshold_days": 2,
+          "note": "接続はできましたが記事が0件でした（配信形式の変更が疑われます）"
+        },
         {
           "feed_id": "cl-elsiglo",
           "source": "El Siglo",
@@ -3383,9 +3394,9 @@
           "status": "stale",
           "error": null,
           "latest_published_at": "2026-10-16T07:33:00Z",
-          "stale_days": 6.6,
+          "stale_days": 6.8,
           "threshold_days": 3,
-          "note": "最新記事が6.6日前で、閾値3日を超えています（件数は20件あるため接続自体は成功しています）"
+          "note": "最新記事が6.8日前で、閾値3日を超えています（件数は20件あるため接続自体は成功しています）"
         },
         {
           "feed_id": "id-cnnindonesia",
@@ -3471,9 +3482,9 @@
           "status": "stale",
           "error": null,
           "latest_published_at": "2026-10-07T16:30:00Z",
-          "stale_days": 15.3,
+          "stale_days": 15.4,
           "threshold_days": 3,
-          "note": "最新記事が15.3日前で、閾値3日を超えています（件数は20件あるため接続自体は成功しています）"
+          "note": "最新記事が15.4日前で、閾値3日を超えています（件数は20件あるため接続自体は成功しています）"
         },
         {
           "feed_id": "zw-newsday",
@@ -3493,9 +3504,9 @@
           "status": "stale",
           "error": null,
           "latest_published_at": "2026-04-03T15:33:17Z",
-          "stale_days": 202.3,
+          "stale_days": 202.4,
           "threshold_days": 2,
-          "note": "最新記事が202.3日前で、閾値2日を超えています（件数は1件あるため接続自体は成功しています）"
+          "note": "最新記事が202.4日前で、閾値2日を超えています（件数は1件あるため接続自体は成功しています）"
         },
         {
           "feed_id": "et-capital",
@@ -3515,9 +3526,9 @@
           "status": "stale",
           "error": null,
           "latest_published_at": "2026-10-16T21:03:52Z",
-          "stale_days": 6.1,
+          "stale_days": 6.2,
           "threshold_days": 2,
-          "note": "最新記事が6.1日前で、閾値2日を超えています（件数は10件あるため接続自体は成功しています）"
+          "note": "最新記事が6.2日前で、閾値2日を超えています（件数は10件あるため接続自体は成功しています）"
         },
         {
           "feed_id": "jp-gasenenews",
@@ -3544,5 +3555,5 @@
       ]
     }
   },
-  "updated_at": "2026-10-22T22:51:57Z"
+  "updated_at": "2026-10-23T01:58:03Z"
 }
