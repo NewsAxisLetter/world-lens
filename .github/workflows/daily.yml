@@ -48,7 +48,8 @@ on:
   schedule:
     - cron: '10 22 * * *'   # UTC 22:10 = JST 翌朝 07:10
     - cron: '10 1 * * *'    # UTC 01:10 = JST 当日 10:10（取りこぼし回収）
-
+    - cron: '10 9 * * *'     # UTC 09:00 = JST 当日 18:00（追加分）
+    
   # 手動実行を有効にする。これがあると Actions タブに「Run workflow」ボタンが出ます。
   # 初回の動作確認と、cronが止まったときの復活はこのボタンで行います。
   workflow_dispatch:
