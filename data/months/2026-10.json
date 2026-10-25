@@ -3753,23 +3753,12 @@
     },
     "2026-10-25": {
       "status": "ok",
-      "articles": 5247,
+      "articles": 7241,
       "countries": 54,
-      "feeds_ok": 250,
+      "feeds_ok": 245,
       "feeds_total": 270,
-      "generated_at": "2026-10-25T01:35:17Z",
+      "generated_at": "2026-10-25T09:36:55Z",
       "alerts": [
-        {
-          "feed_id": "ae-khaleejtimes",
-          "source": "Khaleej Times",
-          "country": "AE",
-          "status": "empty",
-          "error": null,
-          "latest_published_at": null,
-          "stale_days": null,
-          "threshold_days": 2,
-          "note": "接続はできましたが記事が0件でした（配信形式の変更が疑われます）"
-        },
         {
           "feed_id": "cl-elsiglo",
           "source": "El Siglo",
@@ -3788,9 +3777,20 @@
           "status": "stale",
           "error": null,
           "latest_published_at": "2026-10-16T07:33:00Z",
-          "stale_days": 8.8,
+          "stale_days": 9.1,
           "threshold_days": 3,
-          "note": "最新記事が8.8日前で、閾値3日を超えています（件数は20件あるため接続自体は成功しています）"
+          "note": "最新記事が9.1日前で、閾値3日を超えています（件数は20件あるため接続自体は成功しています）"
+        },
+        {
+          "feed_id": "eg-almasry",
+          "source": "Al-Masry Al-Youm",
+          "country": "EG",
+          "status": "empty",
+          "error": null,
+          "latest_published_at": null,
+          "stale_days": null,
+          "threshold_days": 3,
+          "note": "接続はできましたが記事が0件でした（配信形式の変更が疑われます）"
         },
         {
           "feed_id": "et-reporter",
@@ -3832,9 +3832,9 @@
           "status": "stale",
           "error": null,
           "latest_published_at": "2026-10-21T08:50:00Z",
-          "stale_days": 3.7,
+          "stale_days": 4.0,
           "threshold_days": 3,
-          "note": "最新記事が3.7日前で、閾値3日を超えています（件数は12件あるため接続自体は成功しています）"
+          "note": "最新記事が4.0日前で、閾値3日を超えています（件数は12件あるため接続自体は成功しています）"
         },
         {
           "feed_id": "mm-irrawaddy",
@@ -3846,17 +3846,6 @@
           "stale_days": null,
           "threshold_days": 3,
           "note": "取得失敗・今回の取得対象外: XMLとして読めませんでした: junk after document element: line 250, column 3"
-        },
-        {
-          "feed_id": "pk-nation",
-          "source": "The Nation (Pakistan)",
-          "country": "PK",
-          "status": "failed",
-          "error": "HTTPError: HTTP Error 500: Internal Server Error",
-          "latest_published_at": null,
-          "stale_days": null,
-          "threshold_days": 2,
-          "note": "取得失敗・今回の取得対象外: HTTPError: HTTP Error 500: Internal Server Error"
         },
         {
           "feed_id": "ve-talcual",
@@ -3881,6 +3870,17 @@
           "note": "取得失敗・今回の取得対象外: HTTPError: HTTP Error 202: unexpected status"
         },
         {
+          "feed_id": "th-prachatai",
+          "source": "Prachatai English",
+          "country": "TH",
+          "status": "stale",
+          "error": null,
+          "latest_published_at": "2026-10-22T09:11:48Z",
+          "stale_days": 3.0,
+          "threshold_days": 3,
+          "note": "最新記事が3.0日前で、閾値3日を超えています（件数は10件あるため接続自体は成功しています）"
+        },
+        {
           "feed_id": "bo-abi",
           "source": "ABI (Agencia Boliviana de Información)",
           "country": "BO",
@@ -3903,15 +3903,26 @@
           "note": "取得失敗・今回の取得対象外: HTTPError: HTTP Error 403: Forbidden"
         },
         {
+          "feed_id": "hu-telex",
+          "source": "Telex",
+          "country": "HU",
+          "status": "failed",
+          "error": "HTTPError: HTTP Error 403: Forbidden",
+          "latest_published_at": null,
+          "stale_days": null,
+          "threshold_days": 3,
+          "note": "取得失敗・今回の取得対象外: HTTPError: HTTP Error 403: Forbidden"
+        },
+        {
           "feed_id": "hu-nepszava",
           "source": "Népszava",
           "country": "HU",
           "status": "stale",
           "error": null,
           "latest_published_at": "2026-10-07T16:30:00Z",
-          "stale_days": 17.4,
+          "stale_days": 17.7,
           "threshold_days": 3,
-          "note": "最新記事が17.4日前で、閾値3日を超えています（件数は20件あるため接続自体は成功しています）"
+          "note": "最新記事が17.7日前で、閾値3日を超えています（件数は20件あるため接続自体は成功しています）"
         },
         {
           "feed_id": "zm-timesofzambia",
@@ -3923,6 +3934,17 @@
           "stale_days": null,
           "threshold_days": 3,
           "note": "取得失敗・今回の取得対象外: HTTPError: HTTP Error 202: unexpected status"
+        },
+        {
+          "feed_id": "zw-newsday",
+          "source": "NewsDay",
+          "country": "ZW",
+          "status": "failed",
+          "error": "HTTPError: HTTP Error 403: Forbidden",
+          "latest_published_at": null,
+          "stale_days": null,
+          "threshold_days": 3,
+          "note": "取得失敗・今回の取得対象外: HTTPError: HTTP Error 403: Forbidden"
         },
         {
           "feed_id": "zw-newzimbabwe",
@@ -3942,9 +3964,9 @@
           "status": "stale",
           "error": null,
           "latest_published_at": "2026-04-03T15:33:17Z",
-          "stale_days": 204.4,
+          "stale_days": 204.8,
           "threshold_days": 2,
-          "note": "最新記事が204.4日前で、閾値2日を超えています（件数は1件あるため接続自体は成功しています）"
+          "note": "最新記事が204.8日前で、閾値2日を超えています（件数は1件あるため接続自体は成功しています）"
         },
         {
           "feed_id": "et-capital",
@@ -3964,9 +3986,9 @@
           "status": "stale",
           "error": null,
           "latest_published_at": "2026-10-16T21:03:52Z",
-          "stale_days": 8.2,
+          "stale_days": 8.5,
           "threshold_days": 2,
-          "note": "最新記事が8.2日前で、閾値2日を超えています（件数は10件あるため接続自体は成功しています）"
+          "note": "最新記事が8.5日前で、閾値2日を超えています（件数は10件あるため接続自体は成功しています）"
         },
         {
           "feed_id": "jp-gasenenews",
@@ -3978,9 +4000,42 @@
           "stale_days": null,
           "threshold_days": 2,
           "note": "取得失敗・今回の取得対象外: HTTPError: HTTP Error 403: Forbidden"
+        },
+        {
+          "feed_id": "kz-energyprom",
+          "source": "EnergyProm",
+          "country": "KZ",
+          "status": "stale",
+          "error": null,
+          "latest_published_at": "2026-10-23T05:00:00Z",
+          "stale_days": 2.2,
+          "threshold_days": 2,
+          "note": "最新記事が2.2日前で、閾値2日を超えています（件数は10件あるため接続自体は成功しています）"
+        },
+        {
+          "feed_id": "mz-carta",
+          "source": "Carta de Moçambique",
+          "country": "MZ",
+          "status": "failed",
+          "error": "HTTPError: HTTP Error 429: Too Many Requests",
+          "latest_published_at": null,
+          "stale_days": null,
+          "threshold_days": 2,
+          "note": "取得失敗・今回の取得対象外: HTTPError: HTTP Error 429: Too Many Requests"
+        },
+        {
+          "feed_id": "ug-businessfocus",
+          "source": "Business Focus",
+          "country": "UG",
+          "status": "stale",
+          "error": null,
+          "latest_published_at": "2026-10-23T04:12:42Z",
+          "stale_days": 2.2,
+          "threshold_days": 2,
+          "note": "最新記事が2.2日前で、閾値2日を超えています（件数は10件あるため接続自体は成功しています）"
         }
       ]
     }
   },
-  "updated_at": "2026-10-25T01:48:22Z"
+  "updated_at": "2026-10-25T09:51:12Z"
 }
