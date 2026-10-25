@@ -3753,12 +3753,23 @@
     },
     "2026-10-25": {
       "status": "ok",
-      "articles": 4392,
+      "articles": 5247,
       "countries": 54,
-      "feeds_ok": 252,
+      "feeds_ok": 250,
       "feeds_total": 270,
-      "generated_at": "2026-10-24T22:35:15Z",
+      "generated_at": "2026-10-25T01:35:17Z",
       "alerts": [
+        {
+          "feed_id": "ae-khaleejtimes",
+          "source": "Khaleej Times",
+          "country": "AE",
+          "status": "empty",
+          "error": null,
+          "latest_published_at": null,
+          "stale_days": null,
+          "threshold_days": 2,
+          "note": "接続はできましたが記事が0件でした（配信形式の変更が疑われます）"
+        },
         {
           "feed_id": "cl-elsiglo",
           "source": "El Siglo",
@@ -3777,9 +3788,20 @@
           "status": "stale",
           "error": null,
           "latest_published_at": "2026-10-16T07:33:00Z",
-          "stale_days": 8.6,
+          "stale_days": 8.8,
           "threshold_days": 3,
-          "note": "最新記事が8.6日前で、閾値3日を超えています（件数は20件あるため接続自体は成功しています）"
+          "note": "最新記事が8.8日前で、閾値3日を超えています（件数は20件あるため接続自体は成功しています）"
+        },
+        {
+          "feed_id": "et-reporter",
+          "source": "The Reporter Ethiopia",
+          "country": "ET",
+          "status": "failed",
+          "error": "HTTPError: HTTP Error 202: unexpected status",
+          "latest_published_at": null,
+          "stale_days": null,
+          "threshold_days": 3,
+          "note": "取得失敗・今回の取得対象外: HTTPError: HTTP Error 202: unexpected status"
         },
         {
           "feed_id": "id-cnnindonesia",
@@ -3810,9 +3832,9 @@
           "status": "stale",
           "error": null,
           "latest_published_at": "2026-10-21T08:50:00Z",
-          "stale_days": 3.6,
+          "stale_days": 3.7,
           "threshold_days": 3,
-          "note": "最新記事が3.6日前で、閾値3日を超えています（件数は12件あるため接続自体は成功しています）"
+          "note": "最新記事が3.7日前で、閾値3日を超えています（件数は12件あるため接続自体は成功しています）"
         },
         {
           "feed_id": "mm-irrawaddy",
@@ -3837,17 +3859,6 @@
           "note": "取得失敗・今回の取得対象外: HTTPError: HTTP Error 500: Internal Server Error"
         },
         {
-          "feed_id": "ve-efectococuyo",
-          "source": "Efecto Cocuyo",
-          "country": "VE",
-          "status": "failed",
-          "error": "HTTPError: HTTP Error 403: Forbidden",
-          "latest_published_at": null,
-          "stale_days": null,
-          "threshold_days": 3,
-          "note": "取得失敗・今回の取得対象外: HTTPError: HTTP Error 403: Forbidden"
-        },
-        {
           "feed_id": "ve-talcual",
           "source": "TalCual",
           "country": "VE",
@@ -3857,6 +3868,17 @@
           "stale_days": null,
           "threshold_days": 3,
           "note": "取得失敗・今回の取得対象外: HTTPError: HTTP Error 403: Forbidden"
+        },
+        {
+          "feed_id": "ve-ultimasnoticias",
+          "source": "Últimas Noticias",
+          "country": "VE",
+          "status": "failed",
+          "error": "HTTPError: HTTP Error 202: unexpected status",
+          "latest_published_at": null,
+          "stale_days": null,
+          "threshold_days": 3,
+          "note": "取得失敗・今回の取得対象外: HTTPError: HTTP Error 202: unexpected status"
         },
         {
           "feed_id": "bo-abi",
@@ -3881,37 +3903,37 @@
           "note": "取得失敗・今回の取得対象外: HTTPError: HTTP Error 403: Forbidden"
         },
         {
-          "feed_id": "hu-telex",
-          "source": "Telex",
-          "country": "HU",
-          "status": "failed",
-          "error": "HTTPError: HTTP Error 403: Forbidden",
-          "latest_published_at": null,
-          "stale_days": null,
-          "threshold_days": 3,
-          "note": "取得失敗・今回の取得対象外: HTTPError: HTTP Error 403: Forbidden"
-        },
-        {
           "feed_id": "hu-nepszava",
           "source": "Népszava",
           "country": "HU",
           "status": "stale",
           "error": null,
           "latest_published_at": "2026-10-07T16:30:00Z",
-          "stale_days": 17.3,
+          "stale_days": 17.4,
           "threshold_days": 3,
-          "note": "最新記事が17.3日前で、閾値3日を超えています（件数は20件あるため接続自体は成功しています）"
+          "note": "最新記事が17.4日前で、閾値3日を超えています（件数は20件あるため接続自体は成功しています）"
         },
         {
-          "feed_id": "zw-newsday",
-          "source": "NewsDay",
-          "country": "ZW",
+          "feed_id": "zm-timesofzambia",
+          "source": "Times of Zambia",
+          "country": "ZM",
           "status": "failed",
-          "error": "HTTPError: HTTP Error 403: Forbidden",
+          "error": "HTTPError: HTTP Error 202: unexpected status",
           "latest_published_at": null,
           "stale_days": null,
           "threshold_days": 3,
-          "note": "取得失敗・今回の取得対象外: HTTPError: HTTP Error 403: Forbidden"
+          "note": "取得失敗・今回の取得対象外: HTTPError: HTTP Error 202: unexpected status"
+        },
+        {
+          "feed_id": "zw-newzimbabwe",
+          "source": "NewZimbabwe.com",
+          "country": "ZW",
+          "status": "failed",
+          "error": "HTTPError: HTTP Error 202: unexpected status",
+          "latest_published_at": null,
+          "stale_days": null,
+          "threshold_days": 3,
+          "note": "取得失敗・今回の取得対象外: HTTPError: HTTP Error 202: unexpected status"
         },
         {
           "feed_id": "eg-egyptoilgas",
@@ -3920,9 +3942,9 @@
           "status": "stale",
           "error": null,
           "latest_published_at": "2026-04-03T15:33:17Z",
-          "stale_days": 204.3,
+          "stale_days": 204.4,
           "threshold_days": 2,
-          "note": "最新記事が204.3日前で、閾値2日を超えています（件数は1件あるため接続自体は成功しています）"
+          "note": "最新記事が204.4日前で、閾値2日を超えています（件数は1件あるため接続自体は成功しています）"
         },
         {
           "feed_id": "et-capital",
@@ -3942,9 +3964,9 @@
           "status": "stale",
           "error": null,
           "latest_published_at": "2026-10-16T21:03:52Z",
-          "stale_days": 8.1,
+          "stale_days": 8.2,
           "threshold_days": 2,
-          "note": "最新記事が8.1日前で、閾値2日を超えています（件数は10件あるため接続自体は成功しています）"
+          "note": "最新記事が8.2日前で、閾値2日を超えています（件数は10件あるため接続自体は成功しています）"
         },
         {
           "feed_id": "jp-gasenenews",
@@ -3960,5 +3982,5 @@
       ]
     }
   },
-  "updated_at": "2026-10-24T22:49:23Z"
+  "updated_at": "2026-10-25T01:48:22Z"
 }
