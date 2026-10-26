@@ -4038,23 +4038,12 @@
     },
     "2026-10-26": {
       "status": "ok",
-      "articles": 4514,
+      "articles": 6331,
       "countries": 54,
-      "feeds_ok": 232,
+      "feeds_ok": 238,
       "feeds_total": 270,
-      "generated_at": "2026-10-26T00:19:13Z",
+      "generated_at": "2026-10-26T06:05:59Z",
       "alerts": [
-        {
-          "feed_id": "ae-khaleejtimes",
-          "source": "Khaleej Times",
-          "country": "AE",
-          "status": "empty",
-          "error": null,
-          "latest_published_at": null,
-          "stale_days": null,
-          "threshold_days": 2,
-          "note": "接続はできましたが記事が0件でした（配信形式の変更が疑われます）"
-        },
         {
           "feed_id": "cl-elsiglo",
           "source": "El Siglo",
@@ -4073,31 +4062,9 @@
           "status": "stale",
           "error": null,
           "latest_published_at": "2026-10-16T07:33:00Z",
-          "stale_days": 9.7,
+          "stale_days": 9.9,
           "threshold_days": 3,
-          "note": "最新記事が9.7日前で、閾値3日を超えています（件数は20件あるため接続自体は成功しています）"
-        },
-        {
-          "feed_id": "eg-almasry",
-          "source": "Al-Masry Al-Youm",
-          "country": "EG",
-          "status": "empty",
-          "error": null,
-          "latest_published_at": null,
-          "stale_days": null,
-          "threshold_days": 3,
-          "note": "接続はできましたが記事が0件でした（配信形式の変更が疑われます）"
-        },
-        {
-          "feed_id": "et-reporter",
-          "source": "The Reporter Ethiopia",
-          "country": "ET",
-          "status": "failed",
-          "error": "HTTPError: HTTP Error 304: Not Modified",
-          "latest_published_at": null,
-          "stale_days": null,
-          "threshold_days": 3,
-          "note": "取得失敗・今回の取得対象外: HTTPError: HTTP Error 304: Not Modified"
+          "note": "最新記事が9.9日前で、閾値3日を超えています（件数は20件あるため接続自体は成功しています）"
         },
         {
           "feed_id": "id-cnnindonesia",
@@ -4122,15 +4089,26 @@
           "note": "取得失敗・今回の取得対象外: HTTPError: HTTP Error 403: Forbidden"
         },
         {
+          "feed_id": "ir-shargh",
+          "source": "Shargh Daily",
+          "country": "IR",
+          "status": "failed",
+          "error": "XMLとして読めませんでした: XML or text declaration not at start of entity: line 2, column 0",
+          "latest_published_at": null,
+          "stale_days": null,
+          "threshold_days": 2,
+          "note": "取得失敗・今回の取得対象外: XMLとして読めませんでした: XML or text declaration not at start of entity: line 2, column 0"
+        },
+        {
           "feed_id": "ke-elephant",
           "source": "The Elephant",
           "country": "KE",
           "status": "stale",
           "error": null,
           "latest_published_at": "2026-10-21T08:50:00Z",
-          "stale_days": 4.6,
+          "stale_days": 4.9,
           "threshold_days": 3,
-          "note": "最新記事が4.6日前で、閾値3日を超えています（件数は12件あるため接続自体は成功しています）"
+          "note": "最新記事が4.9日前で、閾値3日を超えています（件数は12件あるため接続自体は成功しています）"
         },
         {
           "feed_id": "ke-kbc",
@@ -4155,17 +4133,6 @@
           "note": "取得失敗・今回の取得対象外: XMLとして読めませんでした: junk after document element: line 250, column 3"
         },
         {
-          "feed_id": "ve-efectococuyo",
-          "source": "Efecto Cocuyo",
-          "country": "VE",
-          "status": "failed",
-          "error": "HTTPError: HTTP Error 403: Forbidden",
-          "latest_published_at": null,
-          "stale_days": null,
-          "threshold_days": 3,
-          "note": "取得失敗・今回の取得対象外: HTTPError: HTTP Error 403: Forbidden"
-        },
-        {
           "feed_id": "ve-talcual",
           "source": "TalCual",
           "country": "VE",
@@ -4183,9 +4150,9 @@
           "status": "stale",
           "error": null,
           "latest_published_at": "2026-10-22T09:11:48Z",
-          "stale_days": 3.6,
+          "stale_days": 3.9,
           "threshold_days": 3,
-          "note": "最新記事が3.6日前で、閾値3日を超えています（件数は10件あるため接続自体は成功しています）"
+          "note": "最新記事が3.9日前で、閾値3日を超えています（件数は10件あるため接続自体は成功しています）"
         },
         {
           "feed_id": "bo-abi",
@@ -4227,20 +4194,9 @@
           "status": "stale",
           "error": null,
           "latest_published_at": "2026-10-07T16:30:00Z",
-          "stale_days": 18.3,
+          "stale_days": 18.6,
           "threshold_days": 3,
-          "note": "最新記事が18.3日前で、閾値3日を超えています（件数は20件あるため接続自体は成功しています）"
-        },
-        {
-          "feed_id": "zw-newsday",
-          "source": "NewsDay",
-          "country": "ZW",
-          "status": "failed",
-          "error": "HTTPError: HTTP Error 403: Forbidden",
-          "latest_published_at": null,
-          "stale_days": null,
-          "threshold_days": 3,
-          "note": "取得失敗・今回の取得対象外: HTTPError: HTTP Error 403: Forbidden"
+          "note": "最新記事が18.6日前で、閾値3日を超えています（件数は20件あるため接続自体は成功しています）"
         },
         {
           "feed_id": "am-evnreport",
@@ -4249,20 +4205,9 @@
           "status": "stale",
           "error": null,
           "latest_published_at": "2026-10-23T15:39:26Z",
-          "stale_days": 2.4,
+          "stale_days": 2.6,
           "threshold_days": 2,
-          "note": "最新記事が2.4日前で、閾値2日を超えています（件数は50件あるため接続自体は成功しています）"
-        },
-        {
-          "feed_id": "am-newsam",
-          "source": "News.am",
-          "country": "AM",
-          "status": "stale",
-          "error": null,
-          "latest_published_at": "2026-10-23T14:31:00Z",
-          "stale_days": 2.4,
-          "threshold_days": 2,
-          "note": "最新記事が2.4日前で、閾値2日を超えています（件数は100件あるため接続自体は成功しています）"
+          "note": "最新記事が2.6日前で、閾値2日を超えています（件数は50件あるため接続自体は成功しています）"
         },
         {
           "feed_id": "br-brasilmineral",
@@ -4271,20 +4216,20 @@
           "status": "stale",
           "error": null,
           "latest_published_at": "2026-10-23T22:26:40Z",
-          "stale_days": 2.1,
+          "stale_days": 2.3,
           "threshold_days": 2,
-          "note": "最新記事が2.1日前で、閾値2日を超えています（件数は40件あるため接続自体は成功しています）"
+          "note": "最新記事が2.3日前で、閾値2日を超えています（件数は40件あるため接続自体は成功しています）"
         },
         {
           "feed_id": "ca-northernminer",
           "source": "The Northern Miner",
           "country": "CA",
-          "status": "failed",
-          "error": "TimeoutError: The read operation timed out",
-          "latest_published_at": null,
-          "stale_days": null,
+          "status": "stale",
+          "error": null,
+          "latest_published_at": "2026-10-23T20:30:36Z",
+          "stale_days": 2.4,
           "threshold_days": 2,
-          "note": "取得失敗・今回の取得対象外: TimeoutError: The read operation timed out"
+          "note": "最新記事が2.4日前で、閾値2日を超えています（件数は20件あるため接続自体は成功しています）"
         },
         {
           "feed_id": "cl-nuevamineria",
@@ -4293,9 +4238,9 @@
           "status": "stale",
           "error": null,
           "latest_published_at": "2026-10-23T18:31:42Z",
-          "stale_days": 2.3,
+          "stale_days": 2.5,
           "threshold_days": 2,
-          "note": "最新記事が2.3日前で、閾値2日を超えています（件数は12件あるため接続自体は成功しています）"
+          "note": "最新記事が2.5日前で、閾値2日を超えています（件数は12件あるため接続自体は成功しています）"
         },
         {
           "feed_id": "de-pvmagazine",
@@ -4304,9 +4249,9 @@
           "status": "stale",
           "error": null,
           "latest_published_at": "2026-10-23T12:17:00Z",
-          "stale_days": 2.5,
+          "stale_days": 2.8,
           "threshold_days": 2,
-          "note": "最新記事が2.5日前で、閾値2日を超えています（件数は10件あるため接続自体は成功しています）"
+          "note": "最新記事が2.8日前で、閾値2日を超えています（件数は10件あるため接続自体は成功しています）"
         },
         {
           "feed_id": "eg-egyptoilgas",
@@ -4315,9 +4260,9 @@
           "status": "stale",
           "error": null,
           "latest_published_at": "2026-04-03T15:33:17Z",
-          "stale_days": 205.4,
+          "stale_days": 205.6,
           "threshold_days": 2,
-          "note": "最新記事が205.4日前で、閾値2日を超えています（件数は1件あるため接続自体は成功しています）"
+          "note": "最新記事が205.6日前で、閾値2日を超えています（件数は1件あるため接続自体は成功しています）"
         },
         {
           "feed_id": "et-capital",
@@ -4337,9 +4282,9 @@
           "status": "stale",
           "error": null,
           "latest_published_at": "2026-10-16T21:03:52Z",
-          "stale_days": 9.1,
+          "stale_days": 9.4,
           "threshold_days": 2,
-          "note": "最新記事が9.1日前で、閾値2日を超えています（件数は10件あるため接続自体は成功しています）"
+          "note": "最新記事が9.4日前で、閾値2日を超えています（件数は10件あるため接続自体は成功しています）"
         },
         {
           "feed_id": "gb-energylivenews",
@@ -4348,9 +4293,9 @@
           "status": "stale",
           "error": null,
           "latest_published_at": "2026-10-23T17:00:00Z",
-          "stale_days": 2.3,
+          "stale_days": 2.6,
           "threshold_days": 2,
-          "note": "最新記事が2.3日前で、閾値2日を超えています（件数は10件あるため接続自体は成功しています）"
+          "note": "最新記事が2.6日前で、閾値2日を超えています（件数は10件あるため接続自体は成功しています）"
         },
         {
           "feed_id": "jp-gasenenews",
@@ -4370,9 +4315,9 @@
           "status": "stale",
           "error": null,
           "latest_published_at": "2026-10-23T05:00:00Z",
-          "stale_days": 2.8,
+          "stale_days": 3.1,
           "threshold_days": 2,
-          "note": "最新記事が2.8日前で、閾値2日を超えています（件数は10件あるため接続自体は成功しています）"
+          "note": "最新記事が3.1日前で、閾値2日を超えています（件数は10件あるため接続自体は成功しています）"
         },
         {
           "feed_id": "mz-zitamar",
@@ -4381,9 +4326,9 @@
           "status": "stale",
           "error": null,
           "latest_published_at": "2026-10-23T21:16:30Z",
-          "stale_days": 2.1,
+          "stale_days": 2.4,
           "threshold_days": 2,
-          "note": "最新記事が2.1日前で、閾値2日を超えています（件数は15件あるため接続自体は成功しています）"
+          "note": "最新記事が2.4日前で、閾値2日を超えています（件数は15件あるため接続自体は成功しています）"
         },
         {
           "feed_id": "ni-nicaraguaactual",
@@ -4392,9 +4337,9 @@
           "status": "stale",
           "error": null,
           "latest_published_at": "2026-10-23T23:06:01Z",
-          "stale_days": 2.1,
+          "stale_days": 2.3,
           "threshold_days": 2,
-          "note": "最新記事が2.1日前で、閾値2日を超えています（件数は10件あるため接続自体は成功しています）"
+          "note": "最新記事が2.3日前で、閾値2日を超えています（件数は10件あるため接続自体は成功しています）"
         },
         {
           "feed_id": "rs-balkangreenenergy",
@@ -4403,9 +4348,9 @@
           "status": "stale",
           "error": null,
           "latest_published_at": "2026-10-23T14:12:31Z",
-          "stale_days": 2.4,
+          "stale_days": 2.7,
           "threshold_days": 2,
-          "note": "最新記事が2.4日前で、閾値2日を超えています（件数は8件あるため接続自体は成功しています）"
+          "note": "最新記事が2.7日前で、閾値2日を超えています（件数は8件あるため接続自体は成功しています）"
         },
         {
           "feed_id": "ru-vedomosti-energy",
@@ -4414,20 +4359,9 @@
           "status": "stale",
           "error": null,
           "latest_published_at": "2026-10-23T14:20:38Z",
-          "stale_days": 2.4,
+          "stale_days": 2.7,
           "threshold_days": 2,
-          "note": "最新記事が2.4日前で、閾値2日を超えています（件数は200件あるため接続自体は成功しています）"
-        },
-        {
-          "feed_id": "tj-pressa",
-          "source": "Pressa.tj",
-          "country": "TJ",
-          "status": "stale",
-          "error": null,
-          "latest_published_at": "2026-10-23T12:51:40Z",
-          "stale_days": 2.5,
-          "threshold_days": 2,
-          "note": "最新記事が2.5日前で、閾値2日を超えています（件数は10件あるため接続自体は成功しています）"
+          "note": "最新記事が2.7日前で、閾値2日を超えています（件数は200件あるため接続自体は成功しています）"
         },
         {
           "feed_id": "ug-businessfocus",
@@ -4436,9 +4370,9 @@
           "status": "stale",
           "error": null,
           "latest_published_at": "2026-10-23T04:12:42Z",
-          "stale_days": 2.8,
+          "stale_days": 3.1,
           "threshold_days": 2,
-          "note": "最新記事が2.8日前で、閾値2日を超えています（件数は10件あるため接続自体は成功しています）"
+          "note": "最新記事が3.1日前で、閾値2日を超えています（件数は10件あるため接続自体は成功しています）"
         },
         {
           "feed_id": "zw-miningzimbabwe",
@@ -4447,9 +4381,9 @@
           "status": "stale",
           "error": null,
           "latest_published_at": "2026-10-23T10:03:39Z",
-          "stale_days": 2.6,
+          "stale_days": 2.8,
           "threshold_days": 2,
-          "note": "最新記事が2.6日前で、閾値2日を超えています（件数は10件あるため接続自体は成功しています）"
+          "note": "最新記事が2.8日前で、閾値2日を超えています（件数は10件あるため接続自体は成功しています）"
         },
         {
           "feed_id": "zw-independent",
@@ -4458,12 +4392,12 @@
           "status": "stale",
           "error": null,
           "latest_published_at": "2026-10-23T14:42:31Z",
-          "stale_days": 2.4,
+          "stale_days": 2.7,
           "threshold_days": 2,
-          "note": "最新記事が2.4日前で、閾値2日を超えています（件数は10件あるため接続自体は成功しています）"
+          "note": "最新記事が2.7日前で、閾値2日を超えています（件数は10件あるため接続自体は成功しています）"
         }
       ]
     }
   },
-  "updated_at": "2026-10-26T00:35:24Z"
+  "updated_at": "2026-10-26T06:20:00Z"
 }
