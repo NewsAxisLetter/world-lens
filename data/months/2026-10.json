@@ -4630,12 +4630,23 @@
     },
     "2026-10-28": {
       "status": "ok",
-      "articles": 5926,
+      "articles": 9347,
       "countries": 54,
       "feeds_ok": 253,
       "feeds_total": 270,
-      "generated_at": "2026-10-27T15:20:34Z",
+      "generated_at": "2026-10-28T01:19:04Z",
       "alerts": [
+        {
+          "feed_id": "ae-khaleejtimes",
+          "source": "Khaleej Times",
+          "country": "AE",
+          "status": "empty",
+          "error": null,
+          "latest_published_at": null,
+          "stale_days": null,
+          "threshold_days": 2,
+          "note": "接続はできましたが記事が0件でした（配信形式の変更が疑われます）"
+        },
         {
           "feed_id": "cl-elsiglo",
           "source": "El Siglo",
@@ -4646,6 +4657,28 @@
           "stale_days": null,
           "threshold_days": 3,
           "note": "取得失敗・今回の取得対象外: URLError: <urlopen error timed out>"
+        },
+        {
+          "feed_id": "et-reporter",
+          "source": "The Reporter Ethiopia",
+          "country": "ET",
+          "status": "failed",
+          "error": "HTTPError: HTTP Error 304: Not Modified",
+          "latest_published_at": null,
+          "stale_days": null,
+          "threshold_days": 3,
+          "note": "取得失敗・今回の取得対象外: HTTPError: HTTP Error 304: Not Modified"
+        },
+        {
+          "feed_id": "id-antara",
+          "source": "ANTARA",
+          "country": "ID",
+          "status": "failed",
+          "error": "XMLとして読めませんでした: unclosed token: line 664, column 6",
+          "latest_published_at": null,
+          "stale_days": null,
+          "threshold_days": 2,
+          "note": "取得失敗・今回の取得対象外: XMLとして読めませんでした: unclosed token: line 664, column 6"
         },
         {
           "feed_id": "id-cnnindonesia",
@@ -4679,6 +4712,17 @@
           "stale_days": null,
           "threshold_days": 3,
           "note": "取得失敗・今回の取得対象外: URLError: <urlopen error timed out>"
+        },
+        {
+          "feed_id": "ng-nan-b",
+          "source": "News Agency of Nigeria (NAN)",
+          "country": "NG",
+          "status": "failed",
+          "error": "HTTPError: HTTP Error 404: Not Found",
+          "latest_published_at": null,
+          "stale_days": null,
+          "threshold_days": 3,
+          "note": "取得失敗・今回の取得対象外: HTTPError: HTTP Error 404: Not Found"
         },
         {
           "feed_id": "ve-efectococuyo",
@@ -4736,48 +4780,15 @@
           "note": "取得失敗・今回の取得対象外: HTTPError: HTTP Error 403: Forbidden"
         },
         {
-          "feed_id": "hu-telex",
-          "source": "Telex",
-          "country": "HU",
-          "status": "failed",
-          "error": "HTTPError: HTTP Error 403: Forbidden",
-          "latest_published_at": null,
-          "stale_days": null,
-          "threshold_days": 3,
-          "note": "取得失敗・今回の取得対象外: HTTPError: HTTP Error 403: Forbidden"
-        },
-        {
           "feed_id": "hu-nepszava",
           "source": "Népszava",
           "country": "HU",
           "status": "stale",
           "error": null,
           "latest_published_at": "2026-10-07T16:30:00Z",
-          "stale_days": 20.0,
+          "stale_days": 20.4,
           "threshold_days": 3,
-          "note": "最新記事が20.0日前で、閾値3日を超えています（件数は20件あるため接続自体は成功しています）"
-        },
-        {
-          "feed_id": "zw-newsday",
-          "source": "NewsDay",
-          "country": "ZW",
-          "status": "failed",
-          "error": "HTTPError: HTTP Error 403: Forbidden",
-          "latest_published_at": null,
-          "stale_days": null,
-          "threshold_days": 3,
-          "note": "取得失敗・今回の取得対象外: HTTPError: HTTP Error 403: Forbidden"
-        },
-        {
-          "feed_id": "zw-nehanda",
-          "source": "Nehanda Radio",
-          "country": "ZW",
-          "status": "failed",
-          "error": "HTTPError: HTTP Error 403: Forbidden",
-          "latest_published_at": null,
-          "stale_days": null,
-          "threshold_days": 3,
-          "note": "取得失敗・今回の取得対象外: HTTPError: HTTP Error 403: Forbidden"
+          "note": "最新記事が20.4日前で、閾値3日を超えています（件数は20件あるため接続自体は成功しています）"
         },
         {
           "feed_id": "eg-egyptoilgas",
@@ -4786,9 +4797,9 @@
           "status": "stale",
           "error": null,
           "latest_published_at": "2026-04-03T15:33:17Z",
-          "stale_days": 207.0,
+          "stale_days": 207.4,
           "threshold_days": 2,
-          "note": "最新記事が207.0日前で、閾値2日を超えています（件数は1件あるため接続自体は成功しています）"
+          "note": "最新記事が207.4日前で、閾値2日を超えています（件数は1件あるため接続自体は成功しています）"
         },
         {
           "feed_id": "et-capital",
@@ -4800,17 +4811,6 @@
           "stale_days": null,
           "threshold_days": 2,
           "note": "取得失敗・今回の取得対象外: XMLとして読めませんでした: not well-formed (invalid token): line 1, column 0"
-        },
-        {
-          "feed_id": "fr-lemonde-energies",
-          "source": "Le Monde (Énergies)",
-          "country": "FR",
-          "status": "stale",
-          "error": null,
-          "latest_published_at": "2026-10-24T15:18:22Z",
-          "stale_days": 3.0,
-          "threshold_days": 2,
-          "note": "最新記事が3.0日前で、閾値2日を超えています（件数は20件あるため接続自体は成功しています）"
         },
         {
           "feed_id": "jp-gasenenews",
@@ -4826,5 +4826,5 @@
       ]
     }
   },
-  "updated_at": "2026-10-27T15:38:17Z"
+  "updated_at": "2026-10-28T01:35:56Z"
 }
