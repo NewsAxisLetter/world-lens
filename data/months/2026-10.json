@@ -4860,23 +4860,12 @@
     },
     "2026-10-29": {
       "status": "ok",
-      "articles": 9456,
+      "articles": 11408,
       "countries": 54,
-      "feeds_ok": 256,
+      "feeds_ok": 252,
       "feeds_total": 270,
-      "generated_at": "2026-10-29T01:48:31Z",
+      "generated_at": "2026-10-29T07:00:57Z",
       "alerts": [
-        {
-          "feed_id": "ae-khaleejtimes",
-          "source": "Khaleej Times",
-          "country": "AE",
-          "status": "empty",
-          "error": null,
-          "latest_published_at": null,
-          "stale_days": null,
-          "threshold_days": 2,
-          "note": "接続はできましたが記事が0件でした（配信形式の変更が疑われます）"
-        },
         {
           "feed_id": "cl-elsiglo",
           "source": "El Siglo",
@@ -4889,15 +4878,15 @@
           "note": "取得失敗・今回の取得対象外: URLError: <urlopen error timed out>"
         },
         {
-          "feed_id": "eg-almasry",
-          "source": "Al-Masry Al-Youm",
-          "country": "EG",
+          "feed_id": "et-reporter",
+          "source": "The Reporter Ethiopia",
+          "country": "ET",
           "status": "failed",
-          "error": "XMLとして読めませんでした: undefined entity: line 277, column 109",
+          "error": "HTTPError: HTTP Error 202: unexpected status",
           "latest_published_at": null,
           "stale_days": null,
           "threshold_days": 3,
-          "note": "取得失敗・今回の取得対象外: XMLとして読めませんでした: undefined entity: line 277, column 109"
+          "note": "取得失敗・今回の取得対象外: HTTPError: HTTP Error 202: unexpected status"
         },
         {
           "feed_id": "id-cnnindonesia",
@@ -4933,6 +4922,17 @@
           "note": "取得失敗・今回の取得対象外: URLError: <urlopen error timed out>"
         },
         {
+          "feed_id": "ve-efectococuyo",
+          "source": "Efecto Cocuyo",
+          "country": "VE",
+          "status": "failed",
+          "error": "HTTPError: HTTP Error 403: Forbidden",
+          "latest_published_at": null,
+          "stale_days": null,
+          "threshold_days": 3,
+          "note": "取得失敗・今回の取得対象外: HTTPError: HTTP Error 403: Forbidden"
+        },
+        {
           "feed_id": "ve-talcual",
           "source": "TalCual",
           "country": "VE",
@@ -4942,6 +4942,17 @@
           "stale_days": null,
           "threshold_days": 3,
           "note": "取得失敗・今回の取得対象外: HTTPError: HTTP Error 403: Forbidden"
+        },
+        {
+          "feed_id": "ve-ultimasnoticias",
+          "source": "Últimas Noticias",
+          "country": "VE",
+          "status": "failed",
+          "error": "HTTPError: HTTP Error 202: unexpected status",
+          "latest_published_at": null,
+          "stale_days": null,
+          "threshold_days": 3,
+          "note": "取得失敗・今回の取得対象外: HTTPError: HTTP Error 202: unexpected status"
         },
         {
           "feed_id": "bo-abi",
@@ -4983,9 +4994,42 @@
           "status": "stale",
           "error": null,
           "latest_published_at": "2026-10-07T16:30:00Z",
-          "stale_days": 21.4,
+          "stale_days": 21.6,
           "threshold_days": 3,
-          "note": "最新記事が21.4日前で、閾値3日を超えています（件数は20件あるため接続自体は成功しています）"
+          "note": "最新記事が21.6日前で、閾値3日を超えています（件数は20件あるため接続自体は成功しています）"
+        },
+        {
+          "feed_id": "zm-timesofzambia",
+          "source": "Times of Zambia",
+          "country": "ZM",
+          "status": "failed",
+          "error": "HTTPError: HTTP Error 202: unexpected status",
+          "latest_published_at": null,
+          "stale_days": null,
+          "threshold_days": 3,
+          "note": "取得失敗・今回の取得対象外: HTTPError: HTTP Error 202: unexpected status"
+        },
+        {
+          "feed_id": "zw-newsday",
+          "source": "NewsDay",
+          "country": "ZW",
+          "status": "failed",
+          "error": "HTTPError: HTTP Error 403: Forbidden",
+          "latest_published_at": null,
+          "stale_days": null,
+          "threshold_days": 3,
+          "note": "取得失敗・今回の取得対象外: HTTPError: HTTP Error 403: Forbidden"
+        },
+        {
+          "feed_id": "zw-newzimbabwe",
+          "source": "NewZimbabwe.com",
+          "country": "ZW",
+          "status": "failed",
+          "error": "HTTPError: HTTP Error 202: unexpected status",
+          "latest_published_at": null,
+          "stale_days": null,
+          "threshold_days": 3,
+          "note": "取得失敗・今回の取得対象外: HTTPError: HTTP Error 202: unexpected status"
         },
         {
           "feed_id": "eg-egyptoilgas",
@@ -4994,9 +5038,9 @@
           "status": "stale",
           "error": null,
           "latest_published_at": "2026-04-03T15:33:17Z",
-          "stale_days": 208.4,
+          "stale_days": 208.7,
           "threshold_days": 2,
-          "note": "最新記事が208.4日前で、閾値2日を超えています（件数は1件あるため接続自体は成功しています）"
+          "note": "最新記事が208.7日前で、閾値2日を超えています（件数は1件あるため接続自体は成功しています）"
         },
         {
           "feed_id": "ga-legabonais",
@@ -5005,9 +5049,9 @@
           "status": "stale",
           "error": null,
           "latest_published_at": "2026-10-26T23:52:53Z",
-          "stale_days": 2.1,
+          "stale_days": 2.3,
           "threshold_days": 2,
-          "note": "最新記事が2.1日前で、閾値2日を超えています（件数は10件あるため接続自体は成功しています）"
+          "note": "最新記事が2.3日前で、閾値2日を超えています（件数は10件あるため接続自体は成功しています）"
         },
         {
           "feed_id": "jp-gasenenews",
@@ -5023,5 +5067,5 @@
       ]
     }
   },
-  "updated_at": "2026-10-29T02:02:57Z"
+  "updated_at": "2026-10-29T07:17:39Z"
 }
