@@ -5287,23 +5287,12 @@
     },
     "2026-10-31": {
       "status": "ok",
-      "articles": 8839,
+      "articles": 10400,
       "countries": 54,
-      "feeds_ok": 250,
+      "feeds_ok": 253,
       "feeds_total": 270,
-      "generated_at": "2026-10-31T01:35:41Z",
+      "generated_at": "2026-10-31T06:57:16Z",
       "alerts": [
-        {
-          "feed_id": "ae-khaleejtimes",
-          "source": "Khaleej Times",
-          "country": "AE",
-          "status": "empty",
-          "error": null,
-          "latest_published_at": null,
-          "stale_days": null,
-          "threshold_days": 2,
-          "note": "接続はできましたが記事が0件でした（配信形式の変更が疑われます）"
-        },
         {
           "feed_id": "cd-zoomeco",
           "source": "Zoom Eco",
@@ -5333,9 +5322,9 @@
           "status": "stale",
           "error": null,
           "latest_published_at": "2026-10-27T00:48:00Z",
-          "stale_days": 4.0,
+          "stale_days": 4.3,
           "threshold_days": 3,
-          "note": "最新記事が4.0日前で、閾値3日を超えています（件数は20件あるため接続自体は成功しています）"
+          "note": "最新記事が4.3日前で、閾値3日を超えています（件数は20件あるため接続自体は成功しています）"
         },
         {
           "feed_id": "eg-madamasr",
@@ -5344,20 +5333,20 @@
           "status": "stale",
           "error": null,
           "latest_published_at": "2026-10-27T11:26:27Z",
-          "stale_days": 3.6,
+          "stale_days": 3.8,
           "threshold_days": 3,
-          "note": "最新記事が3.6日前で、閾値3日を超えています（件数は10件あるため接続自体は成功しています）"
+          "note": "最新記事が3.8日前で、閾値3日を超えています（件数は10件あるため接続自体は成功しています）"
         },
         {
           "feed_id": "et-reporter",
           "source": "The Reporter Ethiopia",
           "country": "ET",
           "status": "failed",
-          "error": "HTTPError: HTTP Error 202: unexpected status",
+          "error": "HTTPError: HTTP Error 304: Not Modified",
           "latest_published_at": null,
           "stale_days": null,
           "threshold_days": 3,
-          "note": "取得失敗・今回の取得対象外: HTTPError: HTTP Error 202: unexpected status"
+          "note": "取得失敗・今回の取得対象外: HTTPError: HTTP Error 304: Not Modified"
         },
         {
           "feed_id": "id-cnnindonesia",
@@ -5382,15 +5371,15 @@
           "note": "取得失敗・今回の取得対象外: HTTPError: HTTP Error 403: Forbidden"
         },
         {
-          "feed_id": "ve-efectococuyo",
-          "source": "Efecto Cocuyo",
-          "country": "VE",
+          "feed_id": "in-opindia",
+          "source": "OpIndia",
+          "country": "IN",
           "status": "failed",
-          "error": "HTTPError: HTTP Error 403: Forbidden",
+          "error": "TimeoutError: The read operation timed out",
           "latest_published_at": null,
           "stale_days": null,
-          "threshold_days": 3,
-          "note": "取得失敗・今回の取得対象外: HTTPError: HTTP Error 403: Forbidden"
+          "threshold_days": 2,
+          "note": "取得失敗・今回の取得対象外: TimeoutError: The read operation timed out"
         },
         {
           "feed_id": "ve-talcual",
@@ -5402,17 +5391,6 @@
           "stale_days": null,
           "threshold_days": 3,
           "note": "取得失敗・今回の取得対象外: HTTPError: HTTP Error 403: Forbidden"
-        },
-        {
-          "feed_id": "ve-ultimasnoticias",
-          "source": "Últimas Noticias",
-          "country": "VE",
-          "status": "failed",
-          "error": "HTTPError: HTTP Error 202: unexpected status",
-          "latest_published_at": null,
-          "stale_days": null,
-          "threshold_days": 3,
-          "note": "取得失敗・今回の取得対象外: HTTPError: HTTP Error 202: unexpected status"
         },
         {
           "feed_id": "bo-abi",
@@ -5448,37 +5426,26 @@
           "note": "取得失敗・今回の取得対象外: HTTPError: HTTP Error 403: Forbidden"
         },
         {
-          "feed_id": "zm-timesofzambia",
-          "source": "Times of Zambia",
-          "country": "ZM",
-          "status": "failed",
-          "error": "HTTPError: HTTP Error 202: unexpected status",
-          "latest_published_at": null,
-          "stale_days": null,
-          "threshold_days": 3,
-          "note": "取得失敗・今回の取得対象外: HTTPError: HTTP Error 202: unexpected status"
-        },
-        {
-          "feed_id": "zw-newzimbabwe",
-          "source": "NewZimbabwe.com",
+          "feed_id": "zw-newsday",
+          "source": "NewsDay",
           "country": "ZW",
           "status": "failed",
-          "error": "HTTPError: HTTP Error 202: unexpected status",
+          "error": "HTTPError: HTTP Error 403: Forbidden",
           "latest_published_at": null,
           "stale_days": null,
           "threshold_days": 3,
-          "note": "取得失敗・今回の取得対象外: HTTPError: HTTP Error 202: unexpected status"
+          "note": "取得失敗・今回の取得対象外: HTTPError: HTTP Error 403: Forbidden"
         },
         {
           "feed_id": "eg-egyptoilgas",
           "source": "Egypt Oil & Gas",
           "country": "EG",
-          "status": "failed",
-          "error": "TimeoutError: The read operation timed out",
-          "latest_published_at": null,
-          "stale_days": null,
+          "status": "stale",
+          "error": null,
+          "latest_published_at": "2026-04-03T15:33:17Z",
+          "stale_days": 210.6,
           "threshold_days": 2,
-          "note": "取得失敗・今回の取得対象外: TimeoutError: The read operation timed out"
+          "note": "最新記事が210.6日前で、閾値2日を超えています（件数は1件あるため接続自体は成功しています）"
         },
         {
           "feed_id": "ga-legabonais",
@@ -5487,9 +5454,9 @@
           "status": "stale",
           "error": null,
           "latest_published_at": "2026-10-26T23:52:53Z",
-          "stale_days": 4.1,
+          "stale_days": 4.3,
           "threshold_days": 2,
-          "note": "最新記事が4.1日前で、閾値2日を超えています（件数は10件あるため接続自体は成功しています）"
+          "note": "最新記事が4.3日前で、閾値2日を超えています（件数は10件あるため接続自体は成功しています）"
         },
         {
           "feed_id": "jp-gasenenews",
@@ -5509,12 +5476,12 @@
           "status": "stale",
           "error": null,
           "latest_published_at": "2026-10-27T21:43:48Z",
-          "stale_days": 3.2,
+          "stale_days": 3.4,
           "threshold_days": 2,
-          "note": "最新記事が3.2日前で、閾値2日を超えています（件数は200件あるため接続自体は成功しています）"
+          "note": "最新記事が3.4日前で、閾値2日を超えています（件数は200件あるため接続自体は成功しています）"
         }
       ]
     }
   },
-  "updated_at": "2026-10-31T01:51:18Z"
+  "updated_at": "2026-10-31T07:12:07Z"
 }
