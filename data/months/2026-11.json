@@ -4,11 +4,11 @@
   "days": {
     "2026-11-01": {
       "status": "ok",
-      "articles": 7323,
+      "articles": 8870,
       "countries": 54,
-      "feeds_ok": 253,
+      "feeds_ok": 251,
       "feeds_total": 270,
-      "generated_at": "2026-11-01T01:07:28Z",
+      "generated_at": "2026-11-01T07:28:41Z",
       "alerts": [
         {
           "feed_id": "ca-natpost",
@@ -50,9 +50,9 @@
           "status": "stale",
           "error": null,
           "latest_published_at": "2026-10-27T00:48:00Z",
-          "stale_days": 5.0,
+          "stale_days": 5.3,
           "threshold_days": 3,
-          "note": "最新記事が5.0日前で、閾値3日を超えています（件数は20件あるため接続自体は成功しています）"
+          "note": "最新記事が5.3日前で、閾値3日を超えています（件数は20件あるため接続自体は成功しています）"
         },
         {
           "feed_id": "eg-madamasr",
@@ -61,9 +61,20 @@
           "status": "stale",
           "error": null,
           "latest_published_at": "2026-10-27T11:26:27Z",
-          "stale_days": 4.6,
+          "stale_days": 4.8,
           "threshold_days": 3,
-          "note": "最新記事が4.6日前で、閾値3日を超えています（件数は10件あるため接続自体は成功しています）"
+          "note": "最新記事が4.8日前で、閾値3日を超えています（件数は10件あるため接続自体は成功しています）"
+        },
+        {
+          "feed_id": "et-reporter",
+          "source": "The Reporter Ethiopia",
+          "country": "ET",
+          "status": "failed",
+          "error": "HTTPError: HTTP Error 304: Not Modified",
+          "latest_published_at": null,
+          "stale_days": null,
+          "threshold_days": 3,
+          "note": "取得失敗・今回の取得対象外: HTTPError: HTTP Error 304: Not Modified"
         },
         {
           "feed_id": "id-cnnindonesia",
@@ -88,6 +99,17 @@
           "note": "取得失敗・今回の取得対象外: HTTPError: HTTP Error 403: Forbidden"
         },
         {
+          "feed_id": "ir-shargh",
+          "source": "Shargh Daily",
+          "country": "IR",
+          "status": "failed",
+          "error": "XMLとして読めませんでした: XML or text declaration not at start of entity: line 2, column 0",
+          "latest_published_at": null,
+          "stale_days": null,
+          "threshold_days": 2,
+          "note": "取得失敗・今回の取得対象外: XMLとして読めませんでした: XML or text declaration not at start of entity: line 2, column 0"
+        },
+        {
           "feed_id": "ve-talcual",
           "source": "TalCual",
           "country": "VE",
@@ -97,17 +119,6 @@
           "stale_days": null,
           "threshold_days": 3,
           "note": "取得失敗・今回の取得対象外: HTTPError: HTTP Error 403: Forbidden"
-        },
-        {
-          "feed_id": "uz-uza",
-          "source": "UzA (Uzbekistan National News Agency)",
-          "country": "UZ",
-          "status": "failed",
-          "error": "URLError: <urlopen error timed out>",
-          "latest_published_at": null,
-          "stale_days": null,
-          "threshold_days": 3,
-          "note": "取得失敗・今回の取得対象外: URLError: <urlopen error timed out>"
         },
         {
           "feed_id": "bo-abi",
@@ -132,15 +143,15 @@
           "note": "取得失敗・今回の取得対象外: HTTPError: HTTP Error 403: Forbidden"
         },
         {
-          "feed_id": "hu-telex",
-          "source": "Telex",
-          "country": "HU",
+          "feed_id": "ca-northernminer",
+          "source": "The Northern Miner",
+          "country": "CA",
           "status": "failed",
-          "error": "HTTPError: HTTP Error 403: Forbidden",
+          "error": "TimeoutError: The read operation timed out",
           "latest_published_at": null,
           "stale_days": null,
-          "threshold_days": 3,
-          "note": "取得失敗・今回の取得対象外: HTTPError: HTTP Error 403: Forbidden"
+          "threshold_days": 2,
+          "note": "取得失敗・今回の取得対象外: TimeoutError: The read operation timed out"
         },
         {
           "feed_id": "eg-egyptoilgas",
@@ -149,20 +160,20 @@
           "status": "stale",
           "error": null,
           "latest_published_at": "2026-04-03T15:33:17Z",
-          "stale_days": 211.4,
+          "stale_days": 211.7,
           "threshold_days": 2,
-          "note": "最新記事が211.4日前で、閾値2日を超えています（件数は1件あるため接続自体は成功しています）"
+          "note": "最新記事が211.7日前で、閾値2日を超えています（件数は1件あるため接続自体は成功しています）"
         },
         {
-          "feed_id": "ga-legabonais",
-          "source": "Le Gabonais",
+          "feed_id": "ga-directinfos",
+          "source": "Direct Infos Gabon",
           "country": "GA",
           "status": "stale",
           "error": null,
-          "latest_published_at": "2026-10-26T23:52:53Z",
-          "stale_days": 5.1,
+          "latest_published_at": "2026-10-30T06:24:08Z",
+          "stale_days": 2.1,
           "threshold_days": 2,
-          "note": "最新記事が5.1日前で、閾値2日を超えています（件数は10件あるため接続自体は成功しています）"
+          "note": "最新記事が2.1日前で、閾値2日を超えています（件数は15件あるため接続自体は成功しています）"
         },
         {
           "feed_id": "jp-gasenenews",
@@ -176,15 +187,26 @@
           "note": "取得失敗・今回の取得対象外: HTTPError: HTTP Error 403: Forbidden"
         },
         {
+          "feed_id": "kz-energyprom",
+          "source": "EnergyProm",
+          "country": "KZ",
+          "status": "stale",
+          "error": null,
+          "latest_published_at": "2026-10-30T06:00:21Z",
+          "stale_days": 2.1,
+          "threshold_days": 2,
+          "note": "最新記事が2.1日前で、閾値2日を超えています（件数は10件あるため接続自体は成功しています）"
+        },
+        {
           "feed_id": "ni-nicaraguaactual",
           "source": "Nicaragua Actual",
           "country": "NI",
           "status": "failed",
-          "error": "TimeoutError: The read operation timed out",
+          "error": "HTTPError: HTTP Error 502: Bad Gateway",
           "latest_published_at": null,
           "stale_days": null,
           "threshold_days": 2,
-          "note": "取得失敗・今回の取得対象外: TimeoutError: The read operation timed out"
+          "note": "取得失敗・今回の取得対象外: HTTPError: HTTP Error 502: Bad Gateway"
         },
         {
           "feed_id": "ru-vedomosti-energy",
@@ -193,12 +215,12 @@
           "status": "stale",
           "error": null,
           "latest_published_at": "2026-10-27T21:43:48Z",
-          "stale_days": 4.2,
+          "stale_days": 4.4,
           "threshold_days": 2,
-          "note": "最新記事が4.2日前で、閾値2日を超えています（件数は200件あるため接続自体は成功しています）"
+          "note": "最新記事が4.4日前で、閾値2日を超えています（件数は200件あるため接続自体は成功しています）"
         }
       ]
     }
   },
-  "updated_at": "2026-11-01T01:23:17Z"
+  "updated_at": "2026-11-01T07:44:59Z"
 }
