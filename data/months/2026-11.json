@@ -475,23 +475,12 @@
     },
     "2026-11-03": {
       "status": "ok",
-      "articles": 8109,
+      "articles": 10321,
       "countries": 54,
-      "feeds_ok": 248,
+      "feeds_ok": 257,
       "feeds_total": 270,
-      "generated_at": "2026-11-03T03:29:34Z",
+      "generated_at": "2026-11-03T07:52:36Z",
       "alerts": [
-        {
-          "feed_id": "by-zerkalo",
-          "source": "Zerkalo.io",
-          "country": "BY",
-          "status": "failed",
-          "error": "TimeoutError: The read operation timed out",
-          "latest_published_at": null,
-          "stale_days": null,
-          "threshold_days": 2,
-          "note": "取得失敗・今回の取得対象外: TimeoutError: The read operation timed out"
-        },
         {
           "feed_id": "ca-natpost",
           "source": "National Post",
@@ -532,9 +521,9 @@
           "status": "stale",
           "error": null,
           "latest_published_at": "2026-10-27T00:48:00Z",
-          "stale_days": 7.1,
+          "stale_days": 7.3,
           "threshold_days": 3,
-          "note": "最新記事が7.1日前で、閾値3日を超えています（件数は20件あるため接続自体は成功しています）"
+          "note": "最新記事が7.3日前で、閾値3日を超えています（件数は20件あるため接続自体は成功しています）"
         },
         {
           "feed_id": "eg-madamasr",
@@ -543,9 +532,9 @@
           "status": "stale",
           "error": null,
           "latest_published_at": "2026-10-27T11:26:27Z",
-          "stale_days": 6.7,
+          "stale_days": 6.9,
           "threshold_days": 3,
-          "note": "最新記事が6.7日前で、閾値3日を超えています（件数は10件あるため接続自体は成功しています）"
+          "note": "最新記事が6.9日前で、閾値3日を超えています（件数は10件あるため接続自体は成功しています）"
         },
         {
           "feed_id": "et-ethiopiainsight",
@@ -554,20 +543,9 @@
           "status": "stale",
           "error": null,
           "latest_published_at": "2026-10-22T12:08:22Z",
-          "stale_days": 11.6,
+          "stale_days": 11.8,
           "threshold_days": 10,
-          "note": "最新記事が11.6日前で、閾値10日を超えています（件数は9件あるため接続自体は成功しています）"
-        },
-        {
-          "feed_id": "et-reporter",
-          "source": "The Reporter Ethiopia",
-          "country": "ET",
-          "status": "failed",
-          "error": "HTTPError: HTTP Error 202: unexpected status",
-          "latest_published_at": null,
-          "stale_days": null,
-          "threshold_days": 3,
-          "note": "取得失敗・今回の取得対象外: HTTPError: HTTP Error 202: unexpected status"
+          "note": "最新記事が11.8日前で、閾値10日を超えています（件数は9件あるため接続自体は成功しています）"
         },
         {
           "feed_id": "in-express",
@@ -578,17 +556,6 @@
           "latest_published_at": null,
           "stale_days": null,
           "threshold_days": 2,
-          "note": "取得失敗・今回の取得対象外: HTTPError: HTTP Error 403: Forbidden"
-        },
-        {
-          "feed_id": "ve-efectococuyo",
-          "source": "Efecto Cocuyo",
-          "country": "VE",
-          "status": "failed",
-          "error": "HTTPError: HTTP Error 403: Forbidden",
-          "latest_published_at": null,
-          "stale_days": null,
-          "threshold_days": 3,
           "note": "取得失敗・今回の取得対象外: HTTPError: HTTP Error 403: Forbidden"
         },
         {
@@ -603,17 +570,6 @@
           "note": "取得失敗・今回の取得対象外: HTTPError: HTTP Error 403: Forbidden"
         },
         {
-          "feed_id": "ve-ultimasnoticias",
-          "source": "Últimas Noticias",
-          "country": "VE",
-          "status": "failed",
-          "error": "HTTPError: HTTP Error 202: unexpected status",
-          "latest_published_at": null,
-          "stale_days": null,
-          "threshold_days": 3,
-          "note": "取得失敗・今回の取得対象外: HTTPError: HTTP Error 202: unexpected status"
-        },
-        {
           "feed_id": "bo-abi",
           "source": "ABI (Agencia Boliviana de Información)",
           "country": "BO",
@@ -623,17 +579,6 @@
           "stale_days": null,
           "threshold_days": 3,
           "note": "取得失敗・今回の取得対象外: URLError: <urlopen error timed out>"
-        },
-        {
-          "feed_id": "vn-luatkhoa",
-          "source": "Luật Khoa",
-          "country": "VN",
-          "status": "stale",
-          "error": null,
-          "latest_published_at": "2026-10-30T15:25:30Z",
-          "stale_days": 3.5,
-          "threshold_days": 3,
-          "note": "最新記事が3.5日前で、閾値3日を超えています（件数は10件あるため接続自体は成功しています）"
         },
         {
           "feed_id": "ua-espreso",
@@ -647,70 +592,26 @@
           "note": "取得失敗・今回の取得対象外: HTTPError: HTTP Error 403: Forbidden"
         },
         {
-          "feed_id": "hu-telex",
-          "source": "Telex",
-          "country": "HU",
-          "status": "failed",
-          "error": "HTTPError: HTTP Error 403: Forbidden",
-          "latest_published_at": null,
-          "stale_days": null,
-          "threshold_days": 3,
-          "note": "取得失敗・今回の取得対象外: HTTPError: HTTP Error 403: Forbidden"
-        },
-        {
-          "feed_id": "zm-timesofzambia",
-          "source": "Times of Zambia",
-          "country": "ZM",
-          "status": "failed",
-          "error": "HTTPError: HTTP Error 202: unexpected status",
-          "latest_published_at": null,
-          "stale_days": null,
-          "threshold_days": 3,
-          "note": "取得失敗・今回の取得対象外: HTTPError: HTTP Error 202: unexpected status"
-        },
-        {
-          "feed_id": "zw-newzimbabwe",
-          "source": "NewZimbabwe.com",
-          "country": "ZW",
-          "status": "failed",
-          "error": "HTTPError: HTTP Error 202: unexpected status",
-          "latest_published_at": null,
-          "stale_days": null,
-          "threshold_days": 3,
-          "note": "取得失敗・今回の取得対象外: HTTPError: HTTP Error 202: unexpected status"
-        },
-        {
-          "feed_id": "gn-guinee360",
-          "source": "Guinee360",
-          "country": "GN",
-          "status": "failed",
-          "error": "TimeoutError: The read operation timed out",
-          "latest_published_at": null,
-          "stale_days": null,
-          "threshold_days": 3,
-          "note": "取得失敗・今回の取得対象外: TimeoutError: The read operation timed out"
-        },
-        {
-          "feed_id": "by-reform",
-          "source": "Reform.news",
-          "country": "BY",
-          "status": "failed",
-          "error": "TimeoutError: The read operation timed out",
-          "latest_published_at": null,
-          "stale_days": null,
-          "threshold_days": 2,
-          "note": "取得失敗・今回の取得対象外: TimeoutError: The read operation timed out"
-        },
-        {
           "feed_id": "eg-egyptoilgas",
           "source": "Egypt Oil & Gas",
           "country": "EG",
           "status": "stale",
           "error": null,
           "latest_published_at": "2026-04-03T15:33:17Z",
-          "stale_days": 213.5,
+          "stale_days": 213.7,
           "threshold_days": 2,
-          "note": "最新記事が213.5日前で、閾値2日を超えています（件数は1件あるため接続自体は成功しています）"
+          "note": "最新記事が213.7日前で、閾値2日を超えています（件数は1件あるため接続自体は成功しています）"
+        },
+        {
+          "feed_id": "ga-legabonais",
+          "source": "Le Gabonais",
+          "country": "GA",
+          "status": "stale",
+          "error": null,
+          "latest_published_at": "2026-11-01T07:29:09Z",
+          "stale_days": 2.0,
+          "threshold_days": 2,
+          "note": "最新記事が2.0日前で、閾値2日を超えています（件数は10件あるため接続自体は成功しています）"
         },
         {
           "feed_id": "jp-gasenenews",
@@ -726,5 +627,5 @@
       ]
     }
   },
-  "updated_at": "2026-11-03T03:51:46Z"
+  "updated_at": "2026-11-03T08:08:03Z"
 }
