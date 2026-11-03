@@ -625,7 +625,193 @@
           "note": "取得失敗・今回の取得対象外: HTTPError: HTTP Error 403: Forbidden"
         }
       ]
+    },
+    "2026-11-04": {
+      "status": "ok",
+      "articles": 5982,
+      "countries": 54,
+      "feeds_ok": 254,
+      "feeds_total": 270,
+      "generated_at": "2026-11-03T17:01:44Z",
+      "alerts": [
+        {
+          "feed_id": "ca-natpost",
+          "source": "National Post",
+          "country": "CA",
+          "status": "failed",
+          "error": "XMLとして読めませんでした: syntax error: line 1, column 0",
+          "latest_published_at": null,
+          "stale_days": null,
+          "threshold_days": 3,
+          "note": "取得失敗・今回の取得対象外: XMLとして読めませんでした: syntax error: line 1, column 0"
+        },
+        {
+          "feed_id": "cd-zoomeco",
+          "source": "Zoom Eco",
+          "country": "CD",
+          "status": "failed",
+          "error": "XMLとして読めませんでした: mismatched tag: line 46, column 2",
+          "latest_published_at": null,
+          "stale_days": null,
+          "threshold_days": 3,
+          "note": "取得失敗・今回の取得対象外: XMLとして読めませんでした: mismatched tag: line 46, column 2"
+        },
+        {
+          "feed_id": "cl-elsiglo",
+          "source": "El Siglo",
+          "country": "CL",
+          "status": "failed",
+          "error": "URLError: <urlopen error timed out>",
+          "latest_published_at": null,
+          "stale_days": null,
+          "threshold_days": 3,
+          "note": "取得失敗・今回の取得対象外: URLError: <urlopen error timed out>"
+        },
+        {
+          "feed_id": "eg-arabi21",
+          "source": "Arabi21",
+          "country": "EG",
+          "status": "failed",
+          "error": "TimeoutError: The read operation timed out",
+          "latest_published_at": null,
+          "stale_days": null,
+          "threshold_days": 3,
+          "note": "取得失敗・今回の取得対象外: TimeoutError: The read operation timed out"
+        },
+        {
+          "feed_id": "eg-madamasr",
+          "source": "Mada Masr",
+          "country": "EG",
+          "status": "stale",
+          "error": null,
+          "latest_published_at": "2026-10-27T11:26:27Z",
+          "stale_days": 7.2,
+          "threshold_days": 3,
+          "note": "最新記事が7.2日前で、閾値3日を超えています（件数は10件あるため接続自体は成功しています）"
+        },
+        {
+          "feed_id": "et-ethiopiainsight",
+          "source": "Ethiopia Insight",
+          "country": "ET",
+          "status": "stale",
+          "error": null,
+          "latest_published_at": "2026-10-22T12:08:22Z",
+          "stale_days": 12.2,
+          "threshold_days": 10,
+          "note": "最新記事が12.2日前で、閾値10日を超えています（件数は9件あるため接続自体は成功しています）"
+        },
+        {
+          "feed_id": "in-express",
+          "source": "The Indian Express",
+          "country": "IN",
+          "status": "failed",
+          "error": "HTTPError: HTTP Error 403: Forbidden",
+          "latest_published_at": null,
+          "stale_days": null,
+          "threshold_days": 2,
+          "note": "取得失敗・今回の取得対象外: HTTPError: HTTP Error 403: Forbidden"
+        },
+        {
+          "feed_id": "ke-nation",
+          "source": "Daily Nation",
+          "country": "KE",
+          "status": "failed",
+          "error": "HTTPError: HTTP Error 404: Not Found",
+          "latest_published_at": null,
+          "stale_days": null,
+          "threshold_days": 3,
+          "note": "取得失敗・今回の取得対象外: HTTPError: HTTP Error 404: Not Found"
+        },
+        {
+          "feed_id": "ve-efectococuyo",
+          "source": "Efecto Cocuyo",
+          "country": "VE",
+          "status": "failed",
+          "error": "HTTPError: HTTP Error 403: Forbidden",
+          "latest_published_at": null,
+          "stale_days": null,
+          "threshold_days": 3,
+          "note": "取得失敗・今回の取得対象外: HTTPError: HTTP Error 403: Forbidden"
+        },
+        {
+          "feed_id": "ve-talcual",
+          "source": "TalCual",
+          "country": "VE",
+          "status": "failed",
+          "error": "HTTPError: HTTP Error 403: Forbidden",
+          "latest_published_at": null,
+          "stale_days": null,
+          "threshold_days": 3,
+          "note": "取得失敗・今回の取得対象外: HTTPError: HTTP Error 403: Forbidden"
+        },
+        {
+          "feed_id": "ua-espreso",
+          "source": "Espreso TV",
+          "country": "UA",
+          "status": "failed",
+          "error": "HTTPError: HTTP Error 403: Forbidden",
+          "latest_published_at": null,
+          "stale_days": null,
+          "threshold_days": 3,
+          "note": "取得失敗・今回の取得対象外: HTTPError: HTTP Error 403: Forbidden"
+        },
+        {
+          "feed_id": "hu-telex",
+          "source": "Telex",
+          "country": "HU",
+          "status": "failed",
+          "error": "HTTPError: HTTP Error 403: Forbidden",
+          "latest_published_at": null,
+          "stale_days": null,
+          "threshold_days": 3,
+          "note": "取得失敗・今回の取得対象外: HTTPError: HTTP Error 403: Forbidden"
+        },
+        {
+          "feed_id": "eg-egyptoilgas",
+          "source": "Egypt Oil & Gas",
+          "country": "EG",
+          "status": "stale",
+          "error": null,
+          "latest_published_at": "2026-04-03T15:33:17Z",
+          "stale_days": 214.1,
+          "threshold_days": 2,
+          "note": "最新記事が214.1日前で、閾値2日を超えています（件数は1件あるため接続自体は成功しています）"
+        },
+        {
+          "feed_id": "ga-legabonais",
+          "source": "Le Gabonais",
+          "country": "GA",
+          "status": "stale",
+          "error": null,
+          "latest_published_at": "2026-11-01T07:29:09Z",
+          "stale_days": 2.4,
+          "threshold_days": 2,
+          "note": "最新記事が2.4日前で、閾値2日を超えています（件数は10件あるため接続自体は成功しています）"
+        },
+        {
+          "feed_id": "jp-gasenenews",
+          "source": "ガスエネルギー新聞",
+          "country": "JP",
+          "status": "failed",
+          "error": "HTTPError: HTTP Error 403: Forbidden",
+          "latest_published_at": null,
+          "stale_days": null,
+          "threshold_days": 2,
+          "note": "取得失敗・今回の取得対象外: HTTPError: HTTP Error 403: Forbidden"
+        },
+        {
+          "feed_id": "ug-businessfocus",
+          "source": "Business Focus",
+          "country": "UG",
+          "status": "failed",
+          "error": "URLError: <urlopen error _ssl.c:993: The handshake operation timed out>",
+          "latest_published_at": null,
+          "stale_days": null,
+          "threshold_days": 2,
+          "note": "取得失敗・今回の取得対象外: URLError: <urlopen error _ssl.c:993: The handshake operation timed out>"
+        }
+      ]
     }
   },
-  "updated_at": "2026-11-03T08:08:03Z"
+  "updated_at": "2026-11-03T17:15:56Z"
 }
