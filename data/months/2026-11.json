@@ -945,23 +945,12 @@
     },
     "2026-11-06": {
       "status": "ok",
-      "articles": 8818,
+      "articles": 10972,
       "countries": 54,
-      "feeds_ok": 252,
+      "feeds_ok": 253,
       "feeds_total": 270,
-      "generated_at": "2026-11-06T02:24:36Z",
+      "generated_at": "2026-11-06T07:54:45Z",
       "alerts": [
-        {
-          "feed_id": "ae-khaleejtimes",
-          "source": "Khaleej Times",
-          "country": "AE",
-          "status": "empty",
-          "error": null,
-          "latest_published_at": null,
-          "stale_days": null,
-          "threshold_days": 2,
-          "note": "接続はできましたが記事が0件でした（配信形式の変更が疑われます）"
-        },
         {
           "feed_id": "ca-natpost",
           "source": "National Post",
@@ -1013,9 +1002,9 @@
           "status": "stale",
           "error": null,
           "latest_published_at": "2026-11-02T22:19:23Z",
-          "stale_days": 3.2,
+          "stale_days": 3.4,
           "threshold_days": 3,
-          "note": "最新記事が3.2日前で、閾値3日を超えています（件数は15件あるため接続自体は成功しています）"
+          "note": "最新記事が3.4日前で、閾値3日を超えています（件数は15件あるため接続自体は成功しています）"
         },
         {
           "feed_id": "eg-madamasr",
@@ -1024,20 +1013,20 @@
           "status": "stale",
           "error": null,
           "latest_published_at": "2026-10-27T11:26:27Z",
-          "stale_days": 9.6,
+          "stale_days": 9.9,
           "threshold_days": 3,
-          "note": "最新記事が9.6日前で、閾値3日を超えています（件数は10件あるため接続自体は成功しています）"
+          "note": "最新記事が9.9日前で、閾値3日を超えています（件数は10件あるため接続自体は成功しています）"
         },
         {
           "feed_id": "et-reporter",
           "source": "The Reporter Ethiopia",
           "country": "ET",
-          "status": "stale",
-          "error": null,
-          "latest_published_at": "2026-11-02T11:56:56Z",
-          "stale_days": 3.6,
+          "status": "failed",
+          "error": "HTTPError: HTTP Error 304: Not Modified",
+          "latest_published_at": null,
+          "stale_days": null,
           "threshold_days": 3,
-          "note": "最新記事が3.6日前で、閾値3日を超えています（件数は10件あるため接続自体は成功しています）"
+          "note": "取得失敗・今回の取得対象外: HTTPError: HTTP Error 304: Not Modified"
         },
         {
           "feed_id": "in-express",
@@ -1051,26 +1040,15 @@
           "note": "取得失敗・今回の取得対象外: HTTPError: HTTP Error 403: Forbidden"
         },
         {
-          "feed_id": "ma-hespress-en",
-          "source": "Hespress English",
-          "country": "MA",
+          "feed_id": "ru-tass",
+          "source": "TASS",
+          "country": "RU",
           "status": "failed",
-          "error": "HTTPError: HTTP Error 403: Forbidden",
+          "error": "XMLとして読めませんでした: undefined entity: line 58, column 78",
           "latest_published_at": null,
           "stale_days": null,
-          "threshold_days": 3,
-          "note": "取得失敗・今回の取得対象外: HTTPError: HTTP Error 403: Forbidden"
-        },
-        {
-          "feed_id": "ve-efectococuyo",
-          "source": "Efecto Cocuyo",
-          "country": "VE",
-          "status": "failed",
-          "error": "HTTPError: HTTP Error 403: Forbidden",
-          "latest_published_at": null,
-          "stale_days": null,
-          "threshold_days": 3,
-          "note": "取得失敗・今回の取得対象外: HTTPError: HTTP Error 403: Forbidden"
+          "threshold_days": 2,
+          "note": "取得失敗・今回の取得対象外: XMLとして読めませんでした: undefined entity: line 58, column 78"
         },
         {
           "feed_id": "ve-talcual",
@@ -1082,17 +1060,6 @@
           "stale_days": null,
           "threshold_days": 3,
           "note": "取得失敗・今回の取得対象外: HTTPError: HTTP Error 403: Forbidden"
-        },
-        {
-          "feed_id": "za-sanews",
-          "source": "SAnews (GCIS)",
-          "country": "ZA",
-          "status": "failed",
-          "error": "TimeoutError: The read operation timed out",
-          "latest_published_at": null,
-          "stale_days": null,
-          "threshold_days": 3,
-          "note": "取得失敗・今回の取得対象外: TimeoutError: The read operation timed out"
         },
         {
           "feed_id": "ua-espreso",
@@ -1117,15 +1084,26 @@
           "note": "取得失敗・今回の取得対象外: HTTPError: HTTP Error 403: Forbidden"
         },
         {
+          "feed_id": "zw-newsday",
+          "source": "NewsDay",
+          "country": "ZW",
+          "status": "failed",
+          "error": "HTTPError: HTTP Error 403: Forbidden",
+          "latest_published_at": null,
+          "stale_days": null,
+          "threshold_days": 3,
+          "note": "取得失敗・今回の取得対象外: HTTPError: HTTP Error 403: Forbidden"
+        },
+        {
           "feed_id": "eg-egyptoilgas",
           "source": "Egypt Oil & Gas",
           "country": "EG",
           "status": "stale",
           "error": null,
           "latest_published_at": "2026-04-03T15:33:17Z",
-          "stale_days": 216.5,
+          "stale_days": 216.7,
           "threshold_days": 2,
-          "note": "最新記事が216.5日前で、閾値2日を超えています（件数は1件あるため接続自体は成功しています）"
+          "note": "最新記事が216.7日前で、閾値2日を超えています（件数は1件あるため接続自体は成功しています）"
         },
         {
           "feed_id": "ga-legabonais",
@@ -1134,9 +1112,9 @@
           "status": "stale",
           "error": null,
           "latest_published_at": "2026-11-01T07:29:09Z",
-          "stale_days": 4.8,
+          "stale_days": 5.0,
           "threshold_days": 2,
-          "note": "最新記事が4.8日前で、閾値2日を超えています（件数は10件あるため接続自体は成功しています）"
+          "note": "最新記事が5.0日前で、閾値2日を超えています（件数は10件あるため接続自体は成功しています）"
         },
         {
           "feed_id": "jp-gasenenews",
@@ -1148,9 +1126,20 @@
           "stale_days": null,
           "threshold_days": 2,
           "note": "取得失敗・今回の取得対象外: HTTPError: HTTP Error 403: Forbidden"
+        },
+        {
+          "feed_id": "ni-nicaraguainvestiga",
+          "source": "Nicaragua Investiga",
+          "country": "NI",
+          "status": "stale",
+          "error": null,
+          "latest_published_at": "2026-11-04T03:25:46Z",
+          "stale_days": 2.2,
+          "threshold_days": 2,
+          "note": "最新記事が2.2日前で、閾値2日を超えています（件数は13件あるため接続自体は成功しています）"
         }
       ]
     }
   },
-  "updated_at": "2026-11-06T02:37:23Z"
+  "updated_at": "2026-11-06T08:07:01Z"
 }
