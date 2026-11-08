@@ -1295,22 +1295,33 @@
     },
     "2026-11-08": {
       "status": "ok",
-      "articles": 7503,
+      "articles": 8927,
       "countries": 54,
-      "feeds_ok": 252,
+      "feeds_ok": 247,
       "feeds_total": 270,
-      "generated_at": "2026-11-08T01:25:55Z",
+      "generated_at": "2026-11-08T07:16:13Z",
       "alerts": [
         {
-          "feed_id": "ae-khaleejtimes",
-          "source": "Khaleej Times",
-          "country": "AE",
-          "status": "empty",
-          "error": null,
+          "feed_id": "ar-derechadiario-gn",
+          "source": "La Derecha Diario (via Google News)",
+          "country": "AR",
+          "status": "failed",
+          "error": "HTTPError: HTTP Error 503: Service Unavailable",
           "latest_published_at": null,
           "stale_days": null,
-          "threshold_days": 2,
-          "note": "接続はできましたが記事が0件でした（配信形式の変更が疑われます）"
+          "threshold_days": 3,
+          "note": "取得失敗・今回の取得対象外: HTTPError: HTTP Error 503: Service Unavailable"
+        },
+        {
+          "feed_id": "au-theaustralian-gn",
+          "source": "The Australian (via Google News)",
+          "country": "AU",
+          "status": "failed",
+          "error": "HTTPError: HTTP Error 503: Service Unavailable",
+          "latest_published_at": null,
+          "stale_days": null,
+          "threshold_days": 3,
+          "note": "取得失敗・今回の取得対象外: HTTPError: HTTP Error 503: Service Unavailable"
         },
         {
           "feed_id": "ca-natpost",
@@ -1346,26 +1357,48 @@
           "note": "取得失敗・今回の取得対象外: URLError: <urlopen error timed out>"
         },
         {
+          "feed_id": "cl-emol-gn",
+          "source": "Emol (via Google News)",
+          "country": "CL",
+          "status": "failed",
+          "error": "HTTPError: HTTP Error 503: Service Unavailable",
+          "latest_published_at": null,
+          "stale_days": null,
+          "threshold_days": 3,
+          "note": "取得失敗・今回の取得対象外: HTTPError: HTTP Error 503: Service Unavailable"
+        },
+        {
+          "feed_id": "co-elespectador-gn",
+          "source": "El Espectador (via Google News)",
+          "country": "CO",
+          "status": "failed",
+          "error": "HTTPError: HTTP Error 503: Service Unavailable",
+          "latest_published_at": null,
+          "stale_days": null,
+          "threshold_days": 3,
+          "note": "取得失敗・今回の取得対象外: HTTPError: HTTP Error 503: Service Unavailable"
+        },
+        {
+          "feed_id": "cu-cubanet-gn",
+          "source": "CubaNet (via Google News)",
+          "country": "CU",
+          "status": "failed",
+          "error": "HTTPError: HTTP Error 503: Service Unavailable",
+          "latest_published_at": null,
+          "stale_days": null,
+          "threshold_days": 3,
+          "note": "取得失敗・今回の取得対象外: HTTPError: HTTP Error 503: Service Unavailable"
+        },
+        {
           "feed_id": "de-spiegel",
           "source": "Der Spiegel",
           "country": "DE",
           "status": "stale",
           "error": null,
           "latest_published_at": "2026-11-03T09:43:00Z",
-          "stale_days": 4.7,
+          "stale_days": 4.9,
           "threshold_days": 3,
-          "note": "最新記事が4.7日前で、閾値3日を超えています（件数は20件あるため接続自体は成功しています）"
-        },
-        {
-          "feed_id": "eg-almasry",
-          "source": "Al-Masry Al-Youm",
-          "country": "EG",
-          "status": "stale",
-          "error": null,
-          "latest_published_at": "2019-07-03T12:29:30Z",
-          "stale_days": 2684.5,
-          "threshold_days": 3,
-          "note": "最新記事が2684.5日前で、閾値3日を超えています（件数は33件あるため接続自体は成功しています）"
+          "note": "最新記事が4.9日前で、閾値3日を超えています（件数は20件あるため接続自体は成功しています）"
         },
         {
           "feed_id": "eg-madamasr",
@@ -1374,20 +1407,20 @@
           "status": "stale",
           "error": null,
           "latest_published_at": "2026-10-27T11:26:27Z",
-          "stale_days": 11.6,
+          "stale_days": 11.8,
           "threshold_days": 3,
-          "note": "最新記事が11.6日前で、閾値3日を超えています（件数は10件あるため接続自体は成功しています）"
+          "note": "最新記事が11.8日前で、閾値3日を超えています（件数は10件あるため接続自体は成功しています）"
         },
         {
           "feed_id": "et-reporter",
           "source": "The Reporter Ethiopia",
           "country": "ET",
-          "status": "stale",
-          "error": null,
-          "latest_published_at": "2026-11-02T11:56:56Z",
-          "stale_days": 5.6,
+          "status": "failed",
+          "error": "HTTPError: HTTP Error 304: Not Modified",
+          "latest_published_at": null,
+          "stale_days": null,
           "threshold_days": 3,
-          "note": "最新記事が5.6日前で、閾値3日を超えています（件数は10件あるため接続自体は成功しています）"
+          "note": "取得失敗・今回の取得対象外: HTTPError: HTTP Error 304: Not Modified"
         },
         {
           "feed_id": "in-express",
@@ -1399,6 +1432,28 @@
           "stale_days": null,
           "threshold_days": 2,
           "note": "取得失敗・今回の取得対象外: HTTPError: HTTP Error 403: Forbidden"
+        },
+        {
+          "feed_id": "ke-nation",
+          "source": "Daily Nation",
+          "country": "KE",
+          "status": "failed",
+          "error": "HTTPError: HTTP Error 404: Not Found",
+          "latest_published_at": null,
+          "stale_days": null,
+          "threshold_days": 3,
+          "note": "取得失敗・今回の取得対象外: HTTPError: HTTP Error 404: Not Found"
+        },
+        {
+          "feed_id": "mm-gnlm-gn",
+          "source": "Global New Light of Myanmar (via Google News)",
+          "country": "MM",
+          "status": "failed",
+          "error": "HTTPError: HTTP Error 503: Service Unavailable",
+          "latest_published_at": null,
+          "stale_days": null,
+          "threshold_days": 3,
+          "note": "取得失敗・今回の取得対象外: HTTPError: HTTP Error 503: Service Unavailable"
         },
         {
           "feed_id": "ve-efectococuyo",
@@ -1434,26 +1489,15 @@
           "note": "取得失敗・今回の取得対象外: HTTPError: HTTP Error 403: Forbidden"
         },
         {
-          "feed_id": "hu-telex",
-          "source": "Telex",
-          "country": "HU",
-          "status": "failed",
-          "error": "HTTPError: HTTP Error 403: Forbidden",
-          "latest_published_at": null,
-          "stale_days": null,
-          "threshold_days": 3,
-          "note": "取得失敗・今回の取得対象外: HTTPError: HTTP Error 403: Forbidden"
-        },
-        {
           "feed_id": "eg-egyptoilgas",
           "source": "Egypt Oil & Gas",
           "country": "EG",
           "status": "stale",
           "error": null,
           "latest_published_at": "2026-04-03T15:33:17Z",
-          "stale_days": 218.4,
+          "stale_days": 218.7,
           "threshold_days": 2,
-          "note": "最新記事が218.4日前で、閾値2日を超えています（件数は1件あるため接続自体は成功しています）"
+          "note": "最新記事が218.7日前で、閾値2日を超えています（件数は1件あるため接続自体は成功しています）"
         },
         {
           "feed_id": "ga-legabonais",
@@ -1462,9 +1506,9 @@
           "status": "stale",
           "error": null,
           "latest_published_at": "2026-11-01T07:29:09Z",
-          "stale_days": 6.8,
+          "stale_days": 7.0,
           "threshold_days": 2,
-          "note": "最新記事が6.8日前で、閾値2日を超えています（件数は10件あるため接続自体は成功しています）"
+          "note": "最新記事が7.0日前で、閾値2日を超えています（件数は10件あるため接続自体は成功しています）"
         },
         {
           "feed_id": "ir-shana",
@@ -1489,18 +1533,29 @@
           "note": "取得失敗・今回の取得対象外: HTTPError: HTTP Error 403: Forbidden"
         },
         {
+          "feed_id": "kz-energyprom",
+          "source": "EnergyProm",
+          "country": "KZ",
+          "status": "stale",
+          "error": null,
+          "latest_published_at": "2026-11-06T04:30:00Z",
+          "stale_days": 2.1,
+          "threshold_days": 2,
+          "note": "最新記事が2.1日前で、閾値2日を超えています（件数は10件あるため接続自体は成功しています）"
+        },
+        {
           "feed_id": "ru-vedomosti-energy",
           "source": "Ведомости (Энергетика)",
           "country": "RU",
           "status": "stale",
           "error": null,
           "latest_published_at": "2026-11-05T21:23:15Z",
-          "stale_days": 2.2,
+          "stale_days": 2.4,
           "threshold_days": 2,
-          "note": "最新記事が2.2日前で、閾値2日を超えています（件数は200件あるため接続自体は成功しています）"
+          "note": "最新記事が2.4日前で、閾値2日を超えています（件数は200件あるため接続自体は成功しています）"
         }
       ]
     }
   },
-  "updated_at": "2026-11-08T01:37:58Z"
+  "updated_at": "2026-11-08T07:31:52Z"
 }
