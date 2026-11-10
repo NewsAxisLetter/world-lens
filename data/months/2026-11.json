@@ -1832,11 +1832,11 @@
     },
     "2026-11-10": {
       "status": "ok",
-      "articles": 5757,
+      "articles": 8464,
       "countries": 54,
-      "feeds_ok": 251,
+      "feeds_ok": 255,
       "feeds_total": 270,
-      "generated_at": "2026-11-09T19:47:05Z",
+      "generated_at": "2026-11-10T04:07:07Z",
       "alerts": [
         {
           "feed_id": "ca-natpost",
@@ -1878,9 +1878,9 @@
           "status": "stale",
           "error": null,
           "latest_published_at": "2026-11-03T09:43:00Z",
-          "stale_days": 6.4,
+          "stale_days": 6.8,
           "threshold_days": 3,
-          "note": "最新記事が6.4日前で、閾値3日を超えています（件数は20件あるため接続自体は成功しています）"
+          "note": "最新記事が6.8日前で、閾値3日を超えています（件数は20件あるため接続自体は成功しています）"
         },
         {
           "feed_id": "eg-madamasr",
@@ -1889,20 +1889,20 @@
           "status": "stale",
           "error": null,
           "latest_published_at": "2026-10-27T11:26:27Z",
-          "stale_days": 13.3,
+          "stale_days": 13.7,
           "threshold_days": 3,
-          "note": "最新記事が13.3日前で、閾値3日を超えています（件数は10件あるため接続自体は成功しています）"
+          "note": "最新記事が13.7日前で、閾値3日を超えています（件数は10件あるため接続自体は成功しています）"
         },
         {
           "feed_id": "et-reporter",
           "source": "The Reporter Ethiopia",
           "country": "ET",
-          "status": "stale",
-          "error": null,
-          "latest_published_at": "2026-11-02T11:56:56Z",
-          "stale_days": 7.3,
+          "status": "failed",
+          "error": "HTTPError: HTTP Error 304: Not Modified",
+          "latest_published_at": null,
+          "stale_days": null,
           "threshold_days": 3,
-          "note": "最新記事が7.3日前で、閾値3日を超えています（件数は10件あるため接続自体は成功しています）"
+          "note": "取得失敗・今回の取得対象外: HTTPError: HTTP Error 304: Not Modified"
         },
         {
           "feed_id": "in-express",
@@ -1914,17 +1914,6 @@
           "stale_days": null,
           "threshold_days": 2,
           "note": "取得失敗・今回の取得対象外: HTTPError: HTTP Error 403: Forbidden"
-        },
-        {
-          "feed_id": "ke-nation",
-          "source": "Daily Nation",
-          "country": "KE",
-          "status": "failed",
-          "error": "HTTPError: HTTP Error 404: Not Found",
-          "latest_published_at": null,
-          "stale_days": null,
-          "threshold_days": 3,
-          "note": "取得失敗・今回の取得対象外: HTTPError: HTTP Error 404: Not Found"
         },
         {
           "feed_id": "ve-efectococuyo",
@@ -1955,9 +1944,9 @@
           "status": "stale",
           "error": null,
           "latest_published_at": "2026-11-06T10:29:14Z",
-          "stale_days": 3.4,
+          "stale_days": 3.7,
           "threshold_days": 3,
-          "note": "最新記事が3.4日前で、閾値3日を超えています（件数は10件あるため接続自体は成功しています）"
+          "note": "最新記事が3.7日前で、閾値3日を超えています（件数は10件あるため接続自体は成功しています）"
         },
         {
           "feed_id": "ua-espreso",
@@ -1982,26 +1971,15 @@
           "note": "取得失敗・今回の取得対象外: HTTPError: HTTP Error 403: Forbidden"
         },
         {
-          "feed_id": "zw-newsday",
-          "source": "NewsDay",
-          "country": "ZW",
-          "status": "failed",
-          "error": "HTTPError: HTTP Error 403: Forbidden",
-          "latest_published_at": null,
-          "stale_days": null,
-          "threshold_days": 3,
-          "note": "取得失敗・今回の取得対象外: HTTPError: HTTP Error 403: Forbidden"
-        },
-        {
           "feed_id": "eg-egyptoilgas",
           "source": "Egypt Oil & Gas",
           "country": "EG",
           "status": "stale",
           "error": null,
           "latest_published_at": "2026-04-03T15:33:17Z",
-          "stale_days": 220.2,
+          "stale_days": 220.5,
           "threshold_days": 2,
-          "note": "最新記事が220.2日前で、閾値2日を超えています（件数は1件あるため接続自体は成功しています）"
+          "note": "最新記事が220.5日前で、閾値2日を超えています（件数は1件あるため接続自体は成功しています）"
         },
         {
           "feed_id": "ga-legabonais",
@@ -2010,9 +1988,9 @@
           "status": "stale",
           "error": null,
           "latest_published_at": "2026-11-01T07:29:09Z",
-          "stale_days": 8.5,
+          "stale_days": 8.9,
           "threshold_days": 2,
-          "note": "最新記事が8.5日前で、閾値2日を超えています（件数は10件あるため接続自体は成功しています）"
+          "note": "最新記事が8.9日前で、閾値2日を超えています（件数は10件あるため接続自体は成功しています）"
         },
         {
           "feed_id": "jp-gasenenews",
@@ -2024,31 +2002,9 @@
           "stale_days": null,
           "threshold_days": 2,
           "note": "取得失敗・今回の取得対象外: HTTPError: HTTP Error 403: Forbidden"
-        },
-        {
-          "feed_id": "mz-zitamar",
-          "source": "Zitamar News",
-          "country": "MZ",
-          "status": "stale",
-          "error": null,
-          "latest_published_at": "2026-11-07T06:01:46Z",
-          "stale_days": 2.6,
-          "threshold_days": 2,
-          "note": "最新記事が2.6日前で、閾値2日を超えています（件数は15件あるため接続自体は成功しています）"
-        },
-        {
-          "feed_id": "ru-vedomosti-energy",
-          "source": "Ведомости (Энергетика)",
-          "country": "RU",
-          "status": "stale",
-          "error": null,
-          "latest_published_at": "2026-11-05T21:23:15Z",
-          "stale_days": 3.9,
-          "threshold_days": 2,
-          "note": "最新記事が3.9日前で、閾値2日を超えています（件数は200件あるため接続自体は成功しています）"
         }
       ]
     }
   },
-  "updated_at": "2026-11-09T19:58:55Z"
+  "updated_at": "2026-11-10T04:19:04Z"
 }
