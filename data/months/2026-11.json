@@ -2500,11 +2500,11 @@
     },
     "2026-11-13": {
       "status": "ok",
-      "articles": 5943,
+      "articles": 8821,
       "countries": 54,
       "feeds_ok": 251,
       "feeds_total": 270,
-      "generated_at": "2026-11-12T17:34:37Z",
+      "generated_at": "2026-11-13T02:38:37Z",
       "alerts": [
         {
           "feed_id": "ca-natpost",
@@ -2524,9 +2524,9 @@
           "status": "stale",
           "error": null,
           "latest_published_at": "2026-11-05T15:36:35Z",
-          "stale_days": 7.1,
+          "stale_days": 7.5,
           "threshold_days": 7,
-          "note": "最新記事が7.1日前で、閾値7日を超えています（件数は10件あるため接続自体は成功しています）"
+          "note": "最新記事が7.5日前で、閾値7日を超えています（件数は10件あるため接続自体は成功しています）"
         },
         {
           "feed_id": "cd-zoomeco",
@@ -2551,26 +2551,15 @@
           "note": "取得失敗・今回の取得対象外: URLError: <urlopen error timed out>"
         },
         {
-          "feed_id": "cu-granma",
-          "source": "Granma",
-          "country": "CU",
-          "status": "failed",
-          "error": "URLError: <urlopen error [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: certificate has expired (_ssl.c:1011)>",
-          "latest_published_at": null,
-          "stale_days": null,
-          "threshold_days": 3,
-          "note": "取得失敗・今回の取得対象外: URLError: <urlopen error [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: certificate has expired (_ssl.c:1011)>"
-        },
-        {
           "feed_id": "de-spiegel",
           "source": "Der Spiegel",
           "country": "DE",
           "status": "stale",
           "error": null,
           "latest_published_at": "2026-11-03T09:43:00Z",
-          "stale_days": 9.3,
+          "stale_days": 9.7,
           "threshold_days": 3,
-          "note": "最新記事が9.3日前で、閾値3日を超えています（件数は20件あるため接続自体は成功しています）"
+          "note": "最新記事が9.7日前で、閾値3日を超えています（件数は20件あるため接続自体は成功しています）"
         },
         {
           "feed_id": "eg-madamasr",
@@ -2579,9 +2568,9 @@
           "status": "stale",
           "error": null,
           "latest_published_at": "2026-10-27T11:26:27Z",
-          "stale_days": 16.3,
+          "stale_days": 16.6,
           "threshold_days": 3,
-          "note": "最新記事が16.3日前で、閾値3日を超えています（件数は10件あるため接続自体は成功しています）"
+          "note": "最新記事が16.6日前で、閾値3日を超えています（件数は10件あるため接続自体は成功しています）"
         },
         {
           "feed_id": "et-reporter",
@@ -2590,9 +2579,9 @@
           "status": "stale",
           "error": null,
           "latest_published_at": "2026-11-02T11:56:56Z",
-          "stale_days": 10.2,
+          "stale_days": 10.6,
           "threshold_days": 3,
-          "note": "最新記事が10.2日前で、閾値3日を超えています（件数は10件あるため接続自体は成功しています）"
+          "note": "最新記事が10.6日前で、閾値3日を超えています（件数は10件あるため接続自体は成功しています）"
         },
         {
           "feed_id": "in-express",
@@ -2661,26 +2650,26 @@
           "note": "取得失敗・今回の取得対象外: HTTPError: HTTP Error 403: Forbidden"
         },
         {
+          "feed_id": "hu-telex",
+          "source": "Telex",
+          "country": "HU",
+          "status": "failed",
+          "error": "HTTPError: HTTP Error 403: Forbidden",
+          "latest_published_at": null,
+          "stale_days": null,
+          "threshold_days": 3,
+          "note": "取得失敗・今回の取得対象外: HTTPError: HTTP Error 403: Forbidden"
+        },
+        {
           "feed_id": "eg-egyptoilgas",
           "source": "Egypt Oil & Gas",
           "country": "EG",
           "status": "stale",
           "error": null,
           "latest_published_at": "2026-04-03T15:33:17Z",
-          "stale_days": 223.1,
+          "stale_days": 223.5,
           "threshold_days": 2,
-          "note": "最新記事が223.1日前で、閾値2日を超えています（件数は1件あるため接続自体は成功しています）"
-        },
-        {
-          "feed_id": "ga-directinfos",
-          "source": "Direct Infos Gabon",
-          "country": "GA",
-          "status": "failed",
-          "error": "TimeoutError: The read operation timed out",
-          "latest_published_at": null,
-          "stale_days": null,
-          "threshold_days": 2,
-          "note": "取得失敗・今回の取得対象外: TimeoutError: The read operation timed out"
+          "note": "最新記事が223.5日前で、閾値2日を超えています（件数は1件あるため接続自体は成功しています）"
         },
         {
           "feed_id": "jp-gasenenews",
@@ -2692,6 +2681,17 @@
           "stale_days": null,
           "threshold_days": 2,
           "note": "取得失敗・今回の取得対象外: HTTPError: HTTP Error 403: Forbidden"
+        },
+        {
+          "feed_id": "kg-tazabek",
+          "source": "Tazabek",
+          "country": "KG",
+          "status": "failed",
+          "error": "XMLとして読めませんでした: mismatched tag: line 39, column 2",
+          "latest_published_at": null,
+          "stale_days": null,
+          "threshold_days": 2,
+          "note": "取得失敗・今回の取得対象外: XMLとして読めませんでした: mismatched tag: line 39, column 2"
         },
         {
           "feed_id": "sa-argaam",
@@ -2718,5 +2718,5 @@
       ]
     }
   },
-  "updated_at": "2026-11-12T17:49:51Z"
+  "updated_at": "2026-11-13T02:52:04Z"
 }
