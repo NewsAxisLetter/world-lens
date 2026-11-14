@@ -2697,23 +2697,12 @@
     },
     "2026-11-14": {
       "status": "ok",
-      "articles": 8557,
+      "articles": 10307,
       "countries": 54,
-      "feeds_ok": 250,
+      "feeds_ok": 257,
       "feeds_total": 270,
-      "generated_at": "2026-11-14T02:24:49Z",
+      "generated_at": "2026-11-14T07:35:34Z",
       "alerts": [
-        {
-          "feed_id": "ae-gulfnews",
-          "source": "Gulf News",
-          "country": "AE",
-          "status": "empty",
-          "error": null,
-          "latest_published_at": null,
-          "stale_days": null,
-          "threshold_days": 2,
-          "note": "接続はできましたが記事が0件でした（配信形式の変更が疑われます）"
-        },
         {
           "feed_id": "ca-natpost",
           "source": "National Post",
@@ -2732,9 +2721,9 @@
           "status": "stale",
           "error": null,
           "latest_published_at": "2026-11-05T15:36:35Z",
-          "stale_days": 8.5,
+          "stale_days": 8.7,
           "threshold_days": 7,
-          "note": "最新記事が8.5日前で、閾値7日を超えています（件数は10件あるため接続自体は成功しています）"
+          "note": "最新記事が8.7日前で、閾値7日を超えています（件数は10件あるため接続自体は成功しています）"
         },
         {
           "feed_id": "cd-zoomeco",
@@ -2748,26 +2737,15 @@
           "note": "取得失敗・今回の取得対象外: XMLとして読めませんでした: mismatched tag: line 46, column 2"
         },
         {
-          "feed_id": "cl-elsiglo",
-          "source": "El Siglo",
-          "country": "CL",
-          "status": "failed",
-          "error": "URLError: <urlopen error timed out>",
-          "latest_published_at": null,
-          "stale_days": null,
-          "threshold_days": 3,
-          "note": "取得失敗・今回の取得対象外: URLError: <urlopen error timed out>"
-        },
-        {
           "feed_id": "de-spiegel",
           "source": "Der Spiegel",
           "country": "DE",
           "status": "stale",
           "error": null,
           "latest_published_at": "2026-11-03T09:43:00Z",
-          "stale_days": 10.7,
+          "stale_days": 10.9,
           "threshold_days": 3,
-          "note": "最新記事が10.7日前で、閾値3日を超えています（件数は20件あるため接続自体は成功しています）"
+          "note": "最新記事が10.9日前で、閾値3日を超えています（件数は20件あるため接続自体は成功しています）"
         },
         {
           "feed_id": "eg-madamasr",
@@ -2776,9 +2754,9 @@
           "status": "stale",
           "error": null,
           "latest_published_at": "2026-10-27T11:26:27Z",
-          "stale_days": 17.6,
+          "stale_days": 17.8,
           "threshold_days": 3,
-          "note": "最新記事が17.6日前で、閾値3日を超えています（件数は10件あるため接続自体は成功しています）"
+          "note": "最新記事が17.8日前で、閾値3日を超えています（件数は10件あるため接続自体は成功しています）"
         },
         {
           "feed_id": "et-reporter",
@@ -2787,20 +2765,9 @@
           "status": "stale",
           "error": null,
           "latest_published_at": "2026-11-02T11:56:56Z",
-          "stale_days": 11.6,
+          "stale_days": 11.8,
           "threshold_days": 3,
-          "note": "最新記事が11.6日前で、閾値3日を超えています（件数は10件あるため接続自体は成功しています）"
-        },
-        {
-          "feed_id": "in-express",
-          "source": "The Indian Express",
-          "country": "IN",
-          "status": "failed",
-          "error": "HTTPError: HTTP Error 403: Forbidden",
-          "latest_published_at": null,
-          "stale_days": null,
-          "threshold_days": 2,
-          "note": "取得失敗・今回の取得対象外: HTTPError: HTTP Error 403: Forbidden"
+          "note": "最新記事が11.8日前で、閾値3日を超えています（件数は10件あるため接続自体は成功しています）"
         },
         {
           "feed_id": "it-libero",
@@ -2825,8 +2792,8 @@
           "note": "取得失敗・今回の取得対象外: HTTPError: HTTP Error 403: Forbidden"
         },
         {
-          "feed_id": "ve-talcual",
-          "source": "TalCual",
+          "feed_id": "ve-elpitazo",
+          "source": "El Pitazo",
           "country": "VE",
           "status": "failed",
           "error": "HTTPError: HTTP Error 403: Forbidden",
@@ -2834,17 +2801,6 @@
           "stale_days": null,
           "threshold_days": 3,
           "note": "取得失敗・今回の取得対象外: HTTPError: HTTP Error 403: Forbidden"
-        },
-        {
-          "feed_id": "za-sanews",
-          "source": "SAnews (GCIS)",
-          "country": "ZA",
-          "status": "failed",
-          "error": "TimeoutError: The read operation timed out",
-          "latest_published_at": null,
-          "stale_days": null,
-          "threshold_days": 3,
-          "note": "取得失敗・今回の取得対象外: TimeoutError: The read operation timed out"
         },
         {
           "feed_id": "bo-abi",
@@ -2858,59 +2814,26 @@
           "note": "取得失敗・今回の取得対象外: URLError: <urlopen error timed out>"
         },
         {
-          "feed_id": "ua-espreso",
-          "source": "Espreso TV",
-          "country": "UA",
-          "status": "failed",
-          "error": "HTTPError: HTTP Error 403: Forbidden",
-          "latest_published_at": null,
-          "stale_days": null,
-          "threshold_days": 3,
-          "note": "取得失敗・今回の取得対象外: HTTPError: HTTP Error 403: Forbidden"
-        },
-        {
-          "feed_id": "hu-telex",
-          "source": "Telex",
-          "country": "HU",
-          "status": "failed",
-          "error": "HTTPError: HTTP Error 403: Forbidden",
-          "latest_published_at": null,
-          "stale_days": null,
-          "threshold_days": 3,
-          "note": "取得失敗・今回の取得対象外: HTTPError: HTTP Error 403: Forbidden"
-        },
-        {
           "feed_id": "eg-egyptoilgas",
           "source": "Egypt Oil & Gas",
           "country": "EG",
           "status": "stale",
           "error": null,
           "latest_published_at": "2026-04-03T15:33:17Z",
-          "stale_days": 224.5,
+          "stale_days": 224.7,
           "threshold_days": 2,
-          "note": "最新記事が224.5日前で、閾値2日を超えています（件数は1件あるため接続自体は成功しています）"
+          "note": "最新記事が224.7日前で、閾値2日を超えています（件数は1件あるため接続自体は成功しています）"
         },
         {
-          "feed_id": "jp-gasenenews",
-          "source": "ガスエネルギー新聞",
-          "country": "JP",
+          "feed_id": "my-nst",
+          "source": "New Straits Times",
+          "country": "MY",
           "status": "failed",
-          "error": "XMLとして読めませんでした: mismatched tag: line 7, column 2",
+          "error": "HTTPError: HTTP Error 403: Forbidden",
           "latest_published_at": null,
           "stale_days": null,
           "threshold_days": 2,
-          "note": "取得失敗・今回の取得対象外: XMLとして読めませんでした: mismatched tag: line 7, column 2"
-        },
-        {
-          "feed_id": "sa-argaam",
-          "source": "Argaam",
-          "country": "SA",
-          "status": "failed",
-          "error": "HTTPError: HTTP Error 202: unexpected status",
-          "latest_published_at": null,
-          "stale_days": null,
-          "threshold_days": 2,
-          "note": "取得失敗・今回の取得対象外: HTTPError: HTTP Error 202: unexpected status"
+          "note": "取得失敗・今回の取得対象外: HTTPError: HTTP Error 403: Forbidden"
         },
         {
           "feed_id": "vn-vietnamnews-economy",
@@ -2926,5 +2849,5 @@
       ]
     }
   },
-  "updated_at": "2026-11-14T02:40:09Z"
+  "updated_at": "2026-11-14T07:47:31Z"
 }
