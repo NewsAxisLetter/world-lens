@@ -2850,23 +2850,12 @@
     },
     "2026-11-15": {
       "status": "ok",
-      "articles": 7310,
+      "articles": 8886,
       "countries": 54,
-      "feeds_ok": 250,
+      "feeds_ok": 247,
       "feeds_total": 270,
-      "generated_at": "2026-11-15T01:53:13Z",
+      "generated_at": "2026-11-15T07:49:13Z",
       "alerts": [
-        {
-          "feed_id": "ae-khaleejtimes",
-          "source": "Khaleej Times",
-          "country": "AE",
-          "status": "empty",
-          "error": null,
-          "latest_published_at": null,
-          "stale_days": null,
-          "threshold_days": 2,
-          "note": "接続はできましたが記事が0件でした（配信形式の変更が疑われます）"
-        },
         {
           "feed_id": "ca-natpost",
           "source": "National Post",
@@ -2885,20 +2874,31 @@
           "status": "stale",
           "error": null,
           "latest_published_at": "2026-11-05T15:36:35Z",
-          "stale_days": 9.4,
+          "stale_days": 9.7,
           "threshold_days": 7,
-          "note": "最新記事が9.4日前で、閾値7日を超えています（件数は10件あるため接続自体は成功しています）"
+          "note": "最新記事が9.7日前で、閾値7日を超えています（件数は10件あるため接続自体は成功しています）"
         },
         {
           "feed_id": "cd-zoomeco",
           "source": "Zoom Eco",
           "country": "CD",
           "status": "failed",
-          "error": "HTTPError: HTTP Error 415: Unsupported Media Type",
+          "error": "XMLとして読めませんでした: mismatched tag: line 46, column 2",
           "latest_published_at": null,
           "stale_days": null,
           "threshold_days": 3,
-          "note": "取得失敗・今回の取得対象外: HTTPError: HTTP Error 415: Unsupported Media Type"
+          "note": "取得失敗・今回の取得対象外: XMLとして読めませんでした: mismatched tag: line 46, column 2"
+        },
+        {
+          "feed_id": "cl-elsiglo",
+          "source": "El Siglo",
+          "country": "CL",
+          "status": "failed",
+          "error": "URLError: <urlopen error timed out>",
+          "latest_published_at": null,
+          "stale_days": null,
+          "threshold_days": 3,
+          "note": "取得失敗・今回の取得対象外: URLError: <urlopen error timed out>"
         },
         {
           "feed_id": "cn-cdt",
@@ -2907,9 +2907,9 @@
           "status": "stale",
           "error": null,
           "latest_published_at": "2026-11-11T23:46:01Z",
-          "stale_days": 3.1,
+          "stale_days": 3.3,
           "threshold_days": 3,
-          "note": "最新記事が3.1日前で、閾値3日を超えています（件数は15件あるため接続自体は成功しています）"
+          "note": "最新記事が3.3日前で、閾値3日を超えています（件数は15件あるため接続自体は成功しています）"
         },
         {
           "feed_id": "de-spiegel",
@@ -2918,9 +2918,9 @@
           "status": "stale",
           "error": null,
           "latest_published_at": "2026-11-03T09:43:00Z",
-          "stale_days": 11.7,
+          "stale_days": 11.9,
           "threshold_days": 3,
-          "note": "最新記事が11.7日前で、閾値3日を超えています（件数は20件あるため接続自体は成功しています）"
+          "note": "最新記事が11.9日前で、閾値3日を超えています（件数は20件あるため接続自体は成功しています）"
         },
         {
           "feed_id": "eg-madamasr",
@@ -2929,9 +2929,9 @@
           "status": "stale",
           "error": null,
           "latest_published_at": "2026-10-27T11:26:27Z",
-          "stale_days": 18.6,
+          "stale_days": 18.9,
           "threshold_days": 3,
-          "note": "最新記事が18.6日前で、閾値3日を超えています（件数は10件あるため接続自体は成功しています）"
+          "note": "最新記事が18.9日前で、閾値3日を超えています（件数は10件あるため接続自体は成功しています）"
         },
         {
           "feed_id": "et-ethiopiainsight",
@@ -2940,20 +2940,31 @@
           "status": "stale",
           "error": null,
           "latest_published_at": "2026-11-04T11:33:56Z",
-          "stale_days": 10.6,
+          "stale_days": 10.8,
           "threshold_days": 10,
-          "note": "最新記事が10.6日前で、閾値10日を超えています（件数は9件あるため接続自体は成功しています）"
+          "note": "最新記事が10.8日前で、閾値10日を超えています（件数は9件あるため接続自体は成功しています）"
         },
         {
           "feed_id": "et-reporter",
           "source": "The Reporter Ethiopia",
           "country": "ET",
+          "status": "stale",
+          "error": null,
+          "latest_published_at": "2026-11-02T11:56:56Z",
+          "stale_days": 12.8,
+          "threshold_days": 3,
+          "note": "最新記事が12.8日前で、閾値3日を超えています（件数は10件あるため接続自体は成功しています）"
+        },
+        {
+          "feed_id": "in-express",
+          "source": "The Indian Express",
+          "country": "IN",
           "status": "failed",
-          "error": "HTTPError: HTTP Error 304: Not Modified",
+          "error": "HTTPError: HTTP Error 403: Forbidden",
           "latest_published_at": null,
           "stale_days": null,
-          "threshold_days": 3,
-          "note": "取得失敗・今回の取得対象外: HTTPError: HTTP Error 304: Not Modified"
+          "threshold_days": 2,
+          "note": "取得失敗・今回の取得対象外: HTTPError: HTTP Error 403: Forbidden"
         },
         {
           "feed_id": "it-libero",
@@ -2967,6 +2978,17 @@
           "note": "取得失敗・今回の取得対象外: HTTPError: HTTP Error 404: Not Found"
         },
         {
+          "feed_id": "it-repubblica",
+          "source": "la Repubblica",
+          "country": "IT",
+          "status": "failed",
+          "error": "HTTPError: HTTP Error 403: Forbidden",
+          "latest_published_at": null,
+          "stale_days": null,
+          "threshold_days": 3,
+          "note": "取得失敗・今回の取得対象外: HTTPError: HTTP Error 403: Forbidden"
+        },
+        {
           "feed_id": "ve-efectococuyo",
           "source": "Efecto Cocuyo",
           "country": "VE",
@@ -2978,8 +3000,8 @@
           "note": "取得失敗・今回の取得対象外: HTTPError: HTTP Error 403: Forbidden"
         },
         {
-          "feed_id": "ve-elpitazo",
-          "source": "El Pitazo",
+          "feed_id": "ve-talcual",
+          "source": "TalCual",
           "country": "VE",
           "status": "failed",
           "error": "HTTPError: HTTP Error 403: Forbidden",
@@ -3000,6 +3022,17 @@
           "note": "取得失敗・今回の取得対象外: URLError: <urlopen error timed out>"
         },
         {
+          "feed_id": "ua-espreso",
+          "source": "Espreso TV",
+          "country": "UA",
+          "status": "failed",
+          "error": "HTTPError: HTTP Error 403: Forbidden",
+          "latest_published_at": null,
+          "stale_days": null,
+          "threshold_days": 3,
+          "note": "取得失敗・今回の取得対象外: HTTPError: HTTP Error 403: Forbidden"
+        },
+        {
           "feed_id": "hu-telex",
           "source": "Telex",
           "country": "HU",
@@ -3011,26 +3044,15 @@
           "note": "取得失敗・今回の取得対象外: HTTPError: HTTP Error 403: Forbidden"
         },
         {
-          "feed_id": "am-armradio",
-          "source": "Public Radio of Armenia",
-          "country": "AM",
-          "status": "failed",
-          "error": "HTTPError: HTTP Error 415: Unsupported Media Type",
-          "latest_published_at": null,
-          "stale_days": null,
-          "threshold_days": 3,
-          "note": "取得失敗・今回の取得対象外: HTTPError: HTTP Error 415: Unsupported Media Type"
-        },
-        {
           "feed_id": "eg-egyptoilgas",
           "source": "Egypt Oil & Gas",
           "country": "EG",
           "status": "stale",
           "error": null,
           "latest_published_at": "2026-04-03T15:33:17Z",
-          "stale_days": 225.4,
+          "stale_days": 225.7,
           "threshold_days": 2,
-          "note": "最新記事が225.4日前で、閾値2日を超えています（件数は1件あるため接続自体は成功しています）"
+          "note": "最新記事が225.7日前で、閾値2日を超えています（件数は1件あるため接続自体は成功しています）"
         },
         {
           "feed_id": "ga-legabonais",
@@ -3039,14 +3061,14 @@
           "status": "stale",
           "error": null,
           "latest_published_at": "2026-11-12T13:48:59Z",
-          "stale_days": 2.5,
+          "stale_days": 2.8,
           "threshold_days": 2,
-          "note": "最新記事が2.5日前で、閾値2日を超えています（件数は10件あるため接続自体は成功しています）"
+          "note": "最新記事が2.8日前で、閾値2日を超えています（件数は10件あるため接続自体は成功しています）"
         },
         {
-          "feed_id": "my-nst",
-          "source": "New Straits Times",
-          "country": "MY",
+          "feed_id": "jp-gasenenews",
+          "source": "ガスエネルギー新聞",
+          "country": "JP",
           "status": "failed",
           "error": "HTTPError: HTTP Error 403: Forbidden",
           "latest_published_at": null,
@@ -3055,15 +3077,26 @@
           "note": "取得失敗・今回の取得対象外: HTTPError: HTTP Error 403: Forbidden"
         },
         {
-          "feed_id": "pe-rumbominero",
-          "source": "Rumbo Minero",
-          "country": "PE",
+          "feed_id": "kz-energyprom",
+          "source": "EnergyProm",
+          "country": "KZ",
+          "status": "stale",
+          "error": null,
+          "latest_published_at": "2026-11-13T06:00:00Z",
+          "stale_days": 2.1,
+          "threshold_days": 2,
+          "note": "最新記事が2.1日前で、閾値2日を超えています（件数は10件あるため接続自体は成功しています）"
+        },
+        {
+          "feed_id": "sa-argaam",
+          "source": "Argaam",
+          "country": "SA",
           "status": "failed",
-          "error": "HTTPError: HTTP Error 415: Unsupported Media Type",
+          "error": "HTTPError: HTTP Error 202: unexpected status",
           "latest_published_at": null,
           "stale_days": null,
           "threshold_days": 2,
-          "note": "取得失敗・今回の取得対象外: HTTPError: HTTP Error 415: Unsupported Media Type"
+          "note": "取得失敗・今回の取得対象外: HTTPError: HTTP Error 202: unexpected status"
         },
         {
           "feed_id": "vn-vietnamnews-economy",
@@ -3079,5 +3112,5 @@
       ]
     }
   },
-  "updated_at": "2026-11-15T02:05:40Z"
+  "updated_at": "2026-11-15T08:03:41Z"
 }
