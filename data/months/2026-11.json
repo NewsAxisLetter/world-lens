@@ -3508,11 +3508,11 @@
     },
     "2026-11-17": {
       "status": "ok",
-      "articles": 5500,
+      "articles": 8279,
       "countries": 54,
-      "feeds_ok": 241,
+      "feeds_ok": 247,
       "feeds_total": 270,
-      "generated_at": "2026-11-16T19:34:24Z",
+      "generated_at": "2026-11-17T04:30:07Z",
       "alerts": [
         {
           "feed_id": "ca-natpost",
@@ -3554,20 +3554,9 @@
           "status": "stale",
           "error": null,
           "latest_published_at": "2026-11-11T23:46:01Z",
-          "stale_days": 4.8,
+          "stale_days": 5.2,
           "threshold_days": 3,
-          "note": "最新記事が4.8日前で、閾値3日を超えています（件数は15件あるため接続自体は成功しています）"
-        },
-        {
-          "feed_id": "cu-granma",
-          "source": "Granma",
-          "country": "CU",
-          "status": "failed",
-          "error": "URLError: <urlopen error timed out>",
-          "latest_published_at": null,
-          "stale_days": null,
-          "threshold_days": 3,
-          "note": "取得失敗・今回の取得対象外: URLError: <urlopen error timed out>"
+          "note": "最新記事が5.2日前で、閾値3日を超えています（件数は15件あるため接続自体は成功しています）"
         },
         {
           "feed_id": "eg-madamasr",
@@ -3576,9 +3565,9 @@
           "status": "stale",
           "error": null,
           "latest_published_at": "2026-10-27T11:26:27Z",
-          "stale_days": 20.3,
+          "stale_days": 20.7,
           "threshold_days": 3,
-          "note": "最新記事が20.3日前で、閾値3日を超えています（件数は10件あるため接続自体は成功しています）"
+          "note": "最新記事が20.7日前で、閾値3日を超えています（件数は10件あるため接続自体は成功しています）"
         },
         {
           "feed_id": "et-ethiopiainsight",
@@ -3587,9 +3576,9 @@
           "status": "stale",
           "error": null,
           "latest_published_at": "2026-11-04T11:33:56Z",
-          "stale_days": 12.3,
+          "stale_days": 12.7,
           "threshold_days": 10,
-          "note": "最新記事が12.3日前で、閾値10日を超えています（件数は9件あるため接続自体は成功しています）"
+          "note": "最新記事が12.7日前で、閾値10日を超えています（件数は9件あるため接続自体は成功しています）"
         },
         {
           "feed_id": "et-reporter",
@@ -3598,9 +3587,9 @@
           "status": "stale",
           "error": null,
           "latest_published_at": "2026-11-02T11:56:56Z",
-          "stale_days": 14.3,
+          "stale_days": 14.7,
           "threshold_days": 3,
-          "note": "最新記事が14.3日前で、閾値3日を超えています（件数は10件あるため接続自体は成功しています）"
+          "note": "最新記事が14.7日前で、閾値3日を超えています（件数は10件あるため接続自体は成功しています）"
         },
         {
           "feed_id": "id-tempo",
@@ -3636,42 +3625,9 @@
           "note": "取得失敗・今回の取得対象外: HTTPError: HTTP Error 404: Not Found"
         },
         {
-          "feed_id": "ru-tass",
-          "source": "TASS",
-          "country": "RU",
-          "status": "failed",
-          "error": "URLError: <urlopen error timed out>",
-          "latest_published_at": null,
-          "stale_days": null,
-          "threshold_days": 2,
-          "note": "取得失敗・今回の取得対象外: URLError: <urlopen error timed out>"
-        },
-        {
-          "feed_id": "ve-efectococuyo",
-          "source": "Efecto Cocuyo",
-          "country": "VE",
-          "status": "failed",
-          "error": "HTTPError: HTTP Error 403: Forbidden",
-          "latest_published_at": null,
-          "stale_days": null,
-          "threshold_days": 3,
-          "note": "取得失敗・今回の取得対象外: HTTPError: HTTP Error 403: Forbidden"
-        },
-        {
           "feed_id": "ve-talcual",
           "source": "TalCual",
           "country": "VE",
-          "status": "failed",
-          "error": "HTTPError: HTTP Error 403: Forbidden",
-          "latest_published_at": null,
-          "stale_days": null,
-          "threshold_days": 3,
-          "note": "取得失敗・今回の取得対象外: HTTPError: HTTP Error 403: Forbidden"
-        },
-        {
-          "feed_id": "my-utusan",
-          "source": "Utusan Malaysia",
-          "country": "MY",
           "status": "failed",
           "error": "HTTPError: HTTP Error 403: Forbidden",
           "latest_published_at": null,
@@ -3695,11 +3651,11 @@
           "source": "SoftPower News",
           "country": "UG",
           "status": "failed",
-          "error": "URLError: <urlopen error _ssl.c:994: The handshake operation timed out>",
+          "error": "HTTPError: HTTP Error 500: Internal Server Error",
           "latest_published_at": null,
           "stale_days": null,
           "threshold_days": 3,
-          "note": "取得失敗・今回の取得対象外: URLError: <urlopen error _ssl.c:994: The handshake operation timed out>"
+          "note": "取得失敗・今回の取得対象外: HTTPError: HTTP Error 500: Internal Server Error"
         },
         {
           "feed_id": "ua-espreso",
@@ -3735,26 +3691,15 @@
           "note": "取得失敗・今回の取得対象外: HTTPError: HTTP Error 403: Forbidden"
         },
         {
-          "feed_id": "bo-lostiempos",
-          "source": "Los Tiempos",
-          "country": "BO",
-          "status": "failed",
-          "error": "XMLとして読めませんでした: not well-formed (invalid token): line 259, column 11",
-          "latest_published_at": null,
-          "stale_days": null,
-          "threshold_days": 2,
-          "note": "取得失敗・今回の取得対象外: XMLとして読めませんでした: not well-formed (invalid token): line 259, column 11"
-        },
-        {
           "feed_id": "eg-egyptoilgas",
           "source": "Egypt Oil & Gas",
           "country": "EG",
           "status": "stale",
           "error": null,
           "latest_published_at": "2026-04-03T15:33:17Z",
-          "stale_days": 227.2,
+          "stale_days": 227.5,
           "threshold_days": 2,
-          "note": "最新記事が227.2日前で、閾値2日を超えています（件数は1件あるため接続自体は成功しています）"
+          "note": "最新記事が227.5日前で、閾値2日を超えています（件数は1件あるため接続自体は成功しています）"
         },
         {
           "feed_id": "ga-legabonais",
@@ -3763,20 +3708,9 @@
           "status": "stale",
           "error": null,
           "latest_published_at": "2026-11-12T13:48:59Z",
-          "stale_days": 4.3,
+          "stale_days": 4.6,
           "threshold_days": 2,
-          "note": "最新記事が4.3日前で、閾値2日を超えています（件数は10件あるため接続自体は成功しています）"
-        },
-        {
-          "feed_id": "ga-directinfos",
-          "source": "Direct Infos Gabon",
-          "country": "GA",
-          "status": "failed",
-          "error": "TimeoutError: The read operation timed out",
-          "latest_published_at": null,
-          "stale_days": null,
-          "threshold_days": 2,
-          "note": "取得失敗・今回の取得対象外: TimeoutError: The read operation timed out"
+          "note": "最新記事が4.6日前で、閾値2日を超えています（件数は10件あるため接続自体は成功しています）"
         },
         {
           "feed_id": "jp-gasenenews",
@@ -3790,26 +3724,15 @@
           "note": "取得失敗・今回の取得対象外: HTTPError: HTTP Error 403: Forbidden"
         },
         {
-          "feed_id": "kg-tazabek",
-          "source": "Tazabek",
-          "country": "KG",
-          "status": "failed",
-          "error": "XMLとして読めませんでした: mismatched tag: line 39, column 2",
-          "latest_published_at": null,
-          "stale_days": null,
-          "threshold_days": 2,
-          "note": "取得失敗・今回の取得対象外: XMLとして読めませんでした: mismatched tag: line 39, column 2"
-        },
-        {
           "feed_id": "ru-vedomosti-energy",
           "source": "Ведомости (Энергетика)",
           "country": "RU",
           "status": "stale",
           "error": null,
           "latest_published_at": "2026-11-13T20:31:14Z",
-          "stale_days": 3.0,
+          "stale_days": 3.3,
           "threshold_days": 2,
-          "note": "最新記事が3.0日前で、閾値2日を超えています（件数は200件あるため接続自体は成功しています）"
+          "note": "最新記事が3.3日前で、閾値2日を超えています（件数は200件あるため接続自体は成功しています）"
         },
         {
           "feed_id": "sa-argaam",
@@ -3821,6 +3744,17 @@
           "stale_days": null,
           "threshold_days": 2,
           "note": "取得失敗・今回の取得対象外: HTTPError: HTTP Error 202: unexpected status"
+        },
+        {
+          "feed_id": "ug-businessfocus",
+          "source": "Business Focus",
+          "country": "UG",
+          "status": "failed",
+          "error": "TimeoutError: The read operation timed out",
+          "latest_published_at": null,
+          "stale_days": null,
+          "threshold_days": 2,
+          "note": "取得失敗・今回の取得対象外: TimeoutError: The read operation timed out"
         },
         {
           "feed_id": "vn-vietnamnews-economy",
@@ -3836,5 +3770,5 @@
       ]
     }
   },
-  "updated_at": "2026-11-16T19:53:38Z"
+  "updated_at": "2026-11-17T04:44:58Z"
 }
