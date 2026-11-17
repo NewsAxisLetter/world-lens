@@ -3508,11 +3508,11 @@
     },
     "2026-11-17": {
       "status": "ok",
-      "articles": 8279,
+      "articles": 10633,
       "countries": 54,
-      "feeds_ok": 247,
+      "feeds_ok": 245,
       "feeds_total": 270,
-      "generated_at": "2026-11-17T04:30:07Z",
+      "generated_at": "2026-11-17T09:10:15Z",
       "alerts": [
         {
           "feed_id": "ca-natpost",
@@ -3554,9 +3554,9 @@
           "status": "stale",
           "error": null,
           "latest_published_at": "2026-11-11T23:46:01Z",
-          "stale_days": 5.2,
+          "stale_days": 5.4,
           "threshold_days": 3,
-          "note": "最新記事が5.2日前で、閾値3日を超えています（件数は15件あるため接続自体は成功しています）"
+          "note": "最新記事が5.4日前で、閾値3日を超えています（件数は15件あるため接続自体は成功しています）"
         },
         {
           "feed_id": "eg-madamasr",
@@ -3565,9 +3565,9 @@
           "status": "stale",
           "error": null,
           "latest_published_at": "2026-10-27T11:26:27Z",
-          "stale_days": 20.7,
+          "stale_days": 20.9,
           "threshold_days": 3,
-          "note": "最新記事が20.7日前で、閾値3日を超えています（件数は10件あるため接続自体は成功しています）"
+          "note": "最新記事が20.9日前で、閾値3日を超えています（件数は10件あるため接続自体は成功しています）"
         },
         {
           "feed_id": "et-ethiopiainsight",
@@ -3576,9 +3576,9 @@
           "status": "stale",
           "error": null,
           "latest_published_at": "2026-11-04T11:33:56Z",
-          "stale_days": 12.7,
+          "stale_days": 12.9,
           "threshold_days": 10,
-          "note": "最新記事が12.7日前で、閾値10日を超えています（件数は9件あるため接続自体は成功しています）"
+          "note": "最新記事が12.9日前で、閾値10日を超えています（件数は9件あるため接続自体は成功しています）"
         },
         {
           "feed_id": "et-reporter",
@@ -3587,9 +3587,20 @@
           "status": "stale",
           "error": null,
           "latest_published_at": "2026-11-02T11:56:56Z",
-          "stale_days": 14.7,
+          "stale_days": 14.9,
           "threshold_days": 3,
-          "note": "最新記事が14.7日前で、閾値3日を超えています（件数は10件あるため接続自体は成功しています）"
+          "note": "最新記事が14.9日前で、閾値3日を超えています（件数は10件あるため接続自体は成功しています）"
+        },
+        {
+          "feed_id": "id-antara",
+          "source": "ANTARA",
+          "country": "ID",
+          "status": "failed",
+          "error": "XMLとして読めませんでした: unclosed token: line 664, column 6",
+          "latest_published_at": null,
+          "stale_days": null,
+          "threshold_days": 2,
+          "note": "取得失敗・今回の取得対象外: XMLとして読めませんでした: unclosed token: line 664, column 6"
         },
         {
           "feed_id": "id-tempo",
@@ -3623,6 +3634,28 @@
           "stale_days": null,
           "threshold_days": 3,
           "note": "取得失敗・今回の取得対象外: HTTPError: HTTP Error 404: Not Found"
+        },
+        {
+          "feed_id": "ke-nation",
+          "source": "Daily Nation",
+          "country": "KE",
+          "status": "failed",
+          "error": "HTTPError: HTTP Error 404: Not Found",
+          "latest_published_at": null,
+          "stale_days": null,
+          "threshold_days": 3,
+          "note": "取得失敗・今回の取得対象外: HTTPError: HTTP Error 404: Not Found"
+        },
+        {
+          "feed_id": "ve-efectococuyo",
+          "source": "Efecto Cocuyo",
+          "country": "VE",
+          "status": "failed",
+          "error": "HTTPError: HTTP Error 403: Forbidden",
+          "latest_published_at": null,
+          "stale_days": null,
+          "threshold_days": 3,
+          "note": "取得失敗・今回の取得対象外: HTTPError: HTTP Error 403: Forbidden"
         },
         {
           "feed_id": "ve-talcual",
@@ -3697,9 +3730,9 @@
           "status": "stale",
           "error": null,
           "latest_published_at": "2026-04-03T15:33:17Z",
-          "stale_days": 227.5,
+          "stale_days": 227.7,
           "threshold_days": 2,
-          "note": "最新記事が227.5日前で、閾値2日を超えています（件数は1件あるため接続自体は成功しています）"
+          "note": "最新記事が227.7日前で、閾値2日を超えています（件数は1件あるため接続自体は成功しています）"
         },
         {
           "feed_id": "ga-legabonais",
@@ -3708,9 +3741,9 @@
           "status": "stale",
           "error": null,
           "latest_published_at": "2026-11-12T13:48:59Z",
-          "stale_days": 4.6,
+          "stale_days": 4.8,
           "threshold_days": 2,
-          "note": "最新記事が4.6日前で、閾値2日を超えています（件数は10件あるため接続自体は成功しています）"
+          "note": "最新記事が4.8日前で、閾値2日を超えています（件数は10件あるため接続自体は成功しています）"
         },
         {
           "feed_id": "jp-gasenenews",
@@ -3730,9 +3763,9 @@
           "status": "stale",
           "error": null,
           "latest_published_at": "2026-11-13T20:31:14Z",
-          "stale_days": 3.3,
+          "stale_days": 3.5,
           "threshold_days": 2,
-          "note": "最新記事が3.3日前で、閾値2日を超えています（件数は200件あるため接続自体は成功しています）"
+          "note": "最新記事が3.5日前で、閾値2日を超えています（件数は200件あるため接続自体は成功しています）"
         },
         {
           "feed_id": "sa-argaam",
@@ -3744,17 +3777,6 @@
           "stale_days": null,
           "threshold_days": 2,
           "note": "取得失敗・今回の取得対象外: HTTPError: HTTP Error 202: unexpected status"
-        },
-        {
-          "feed_id": "ug-businessfocus",
-          "source": "Business Focus",
-          "country": "UG",
-          "status": "failed",
-          "error": "TimeoutError: The read operation timed out",
-          "latest_published_at": null,
-          "stale_days": null,
-          "threshold_days": 2,
-          "note": "取得失敗・今回の取得対象外: TimeoutError: The read operation timed out"
         },
         {
           "feed_id": "vn-vietnamnews-economy",
@@ -3770,5 +3792,5 @@
       ]
     }
   },
-  "updated_at": "2026-11-17T04:44:58Z"
+  "updated_at": "2026-11-17T09:24:34Z"
 }
