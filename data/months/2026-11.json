@@ -4286,11 +4286,11 @@
     },
     "2026-11-20": {
       "status": "ok",
-      "articles": 5995,
+      "articles": 8833,
       "countries": 54,
-      "feeds_ok": 247,
+      "feeds_ok": 248,
       "feeds_total": 270,
-      "generated_at": "2026-11-19T18:15:09Z",
+      "generated_at": "2026-11-20T03:09:39Z",
       "alerts": [
         {
           "feed_id": "ca-natpost",
@@ -4302,6 +4302,17 @@
           "stale_days": null,
           "threshold_days": 3,
           "note": "取得失敗・今回の取得対象外: XMLとして読めませんでした: syntax error: line 1, column 0"
+        },
+        {
+          "feed_id": "cd-okapi-b",
+          "source": "Radio Okapi",
+          "country": "CD",
+          "status": "failed",
+          "error": "HTTPError: HTTP Error 502: Bad Gateway",
+          "latest_published_at": null,
+          "stale_days": null,
+          "threshold_days": 3,
+          "note": "取得失敗・今回の取得対象外: HTTPError: HTTP Error 502: Bad Gateway"
         },
         {
           "feed_id": "cd-zoomeco",
@@ -4332,9 +4343,9 @@
           "status": "stale",
           "error": null,
           "latest_published_at": "2026-10-27T11:26:27Z",
-          "stale_days": 23.3,
+          "stale_days": 23.7,
           "threshold_days": 3,
-          "note": "最新記事が23.3日前で、閾値3日を超えています（件数は10件あるため接続自体は成功しています）"
+          "note": "最新記事が23.7日前で、閾値3日を超えています（件数は10件あるため接続自体は成功しています）"
         },
         {
           "feed_id": "et-ethiopiainsight",
@@ -4343,20 +4354,20 @@
           "status": "stale",
           "error": null,
           "latest_published_at": "2026-11-04T11:33:56Z",
-          "stale_days": 15.3,
+          "stale_days": 15.7,
           "threshold_days": 10,
-          "note": "最新記事が15.3日前で、閾値10日を超えています（件数は9件あるため接続自体は成功しています）"
+          "note": "最新記事が15.7日前で、閾値10日を超えています（件数は9件あるため接続自体は成功しています）"
         },
         {
           "feed_id": "et-reporter",
           "source": "The Reporter Ethiopia",
           "country": "ET",
-          "status": "failed",
-          "error": "HTTPError: HTTP Error 202: unexpected status",
-          "latest_published_at": null,
-          "stale_days": null,
+          "status": "stale",
+          "error": null,
+          "latest_published_at": "2026-11-02T11:56:56Z",
+          "stale_days": 17.6,
           "threshold_days": 3,
-          "note": "取得失敗・今回の取得対象外: HTTPError: HTTP Error 202: unexpected status"
+          "note": "最新記事が17.6日前で、閾値3日を超えています（件数は10件あるため接続自体は成功しています）"
         },
         {
           "feed_id": "in-express",
@@ -4373,17 +4384,6 @@
           "feed_id": "it-libero",
           "source": "Libero Quotidiano",
           "country": "IT",
-          "status": "failed",
-          "error": "HTTPError: HTTP Error 404: Not Found",
-          "latest_published_at": null,
-          "stale_days": null,
-          "threshold_days": 3,
-          "note": "取得失敗・今回の取得対象外: HTTPError: HTTP Error 404: Not Found"
-        },
-        {
-          "feed_id": "ke-nation",
-          "source": "Daily Nation",
-          "country": "KE",
           "status": "failed",
           "error": "HTTPError: HTTP Error 404: Not Found",
           "latest_published_at": null,
@@ -4414,26 +4414,15 @@
           "note": "取得失敗・今回の取得対象外: HTTPError: HTTP Error 403: Forbidden"
         },
         {
-          "feed_id": "ve-ultimasnoticias",
-          "source": "Últimas Noticias",
-          "country": "VE",
-          "status": "failed",
-          "error": "HTTPError: HTTP Error 202: unexpected status",
-          "latest_published_at": null,
-          "stale_days": null,
-          "threshold_days": 3,
-          "note": "取得失敗・今回の取得対象外: HTTPError: HTTP Error 202: unexpected status"
-        },
-        {
           "feed_id": "za-amabhungane",
           "source": "amaBhungane",
           "country": "ZA",
           "status": "stale",
           "error": null,
           "latest_published_at": "2026-11-12T02:00:00Z",
-          "stale_days": 7.7,
+          "stale_days": 8.1,
           "threshold_days": 7,
-          "note": "最新記事が7.7日前で、閾値7日を超えています（件数は12件あるため接続自体は成功しています）"
+          "note": "最新記事が8.1日前で、閾値7日を超えています（件数は12件あるため接続自体は成功しています）"
         },
         {
           "feed_id": "bo-abi",
@@ -4458,26 +4447,26 @@
           "note": "取得失敗・今回の取得対象外: HTTPError: HTTP Error 403: Forbidden"
         },
         {
+          "feed_id": "hu-telex",
+          "source": "Telex",
+          "country": "HU",
+          "status": "failed",
+          "error": "HTTPError: HTTP Error 403: Forbidden",
+          "latest_published_at": null,
+          "stale_days": null,
+          "threshold_days": 3,
+          "note": "取得失敗・今回の取得対象外: HTTPError: HTTP Error 403: Forbidden"
+        },
+        {
           "feed_id": "zm-timesofzambia",
           "source": "Times of Zambia",
           "country": "ZM",
           "status": "failed",
-          "error": "HTTPError: HTTP Error 202: unexpected status",
+          "error": "XMLとして読めませんでした: not well-formed (invalid token): line 59, column 112",
           "latest_published_at": null,
           "stale_days": null,
           "threshold_days": 3,
-          "note": "取得失敗・今回の取得対象外: HTTPError: HTTP Error 202: unexpected status"
-        },
-        {
-          "feed_id": "zw-newzimbabwe",
-          "source": "NewZimbabwe.com",
-          "country": "ZW",
-          "status": "failed",
-          "error": "HTTPError: HTTP Error 202: unexpected status",
-          "latest_published_at": null,
-          "stale_days": null,
-          "threshold_days": 3,
-          "note": "取得失敗・今回の取得対象外: HTTPError: HTTP Error 202: unexpected status"
+          "note": "取得失敗・今回の取得対象外: XMLとして読めませんでした: not well-formed (invalid token): line 59, column 112"
         },
         {
           "feed_id": "am-evnreport",
@@ -4486,9 +4475,9 @@
           "status": "stale",
           "error": null,
           "latest_published_at": "2026-11-16T11:33:35Z",
-          "stale_days": 3.3,
+          "stale_days": 3.7,
           "threshold_days": 2,
-          "note": "最新記事が3.3日前で、閾値2日を超えています（件数は50件あるため接続自体は成功しています）"
+          "note": "最新記事が3.7日前で、閾値2日を超えています（件数は50件あるため接続自体は成功しています）"
         },
         {
           "feed_id": "eg-egyptoilgas",
@@ -4497,9 +4486,9 @@
           "status": "stale",
           "error": null,
           "latest_published_at": "2026-04-03T15:33:17Z",
-          "stale_days": 230.1,
+          "stale_days": 230.5,
           "threshold_days": 2,
-          "note": "最新記事が230.1日前で、閾値2日を超えています（件数は1件あるため接続自体は成功しています）"
+          "note": "最新記事が230.5日前で、閾値2日を超えています（件数は1件あるため接続自体は成功しています）"
         },
         {
           "feed_id": "jp-gasenenews",
@@ -4513,9 +4502,9 @@
           "note": "取得失敗・今回の取得対象外: HTTPError: HTTP Error 403: Forbidden"
         },
         {
-          "feed_id": "ni-nicaraguaactual",
-          "source": "Nicaragua Actual",
-          "country": "NI",
+          "feed_id": "mz-carta",
+          "source": "Carta de Moçambique",
+          "country": "MZ",
           "status": "failed",
           "error": "HTTPError: HTTP Error 429: Too Many Requests",
           "latest_published_at": null,
@@ -4548,5 +4537,5 @@
       ]
     }
   },
-  "updated_at": "2026-11-19T18:30:08Z"
+  "updated_at": "2026-11-20T03:24:20Z"
 }
