@@ -6193,11 +6193,11 @@
     },
     "2026-11-27": {
       "status": "ok",
-      "articles": 5714,
+      "articles": 8465,
       "countries": 54,
-      "feeds_ok": 245,
+      "feeds_ok": 243,
       "feeds_total": 270,
-      "generated_at": "2026-11-26T19:00:33Z",
+      "generated_at": "2026-11-27T04:14:52Z",
       "alerts": [
         {
           "feed_id": "ca-natpost",
@@ -6217,20 +6217,20 @@
           "status": "stale",
           "error": null,
           "latest_published_at": "2026-11-16T21:37:59Z",
-          "stale_days": 9.9,
+          "stale_days": 10.3,
           "threshold_days": 7,
-          "note": "最新記事が9.9日前で、閾値7日を超えています（件数は10件あるため接続自体は成功しています）"
+          "note": "最新記事が10.3日前で、閾値7日を超えています（件数は10件あるため接続自体は成功しています）"
         },
         {
           "feed_id": "cd-zoomeco",
           "source": "Zoom Eco",
           "country": "CD",
           "status": "failed",
-          "error": "XMLとして読めませんでした: mismatched tag: line 46, column 2",
+          "error": "HTTPError: HTTP Error 415: Unsupported Media Type",
           "latest_published_at": null,
           "stale_days": null,
           "threshold_days": 3,
-          "note": "取得失敗・今回の取得対象外: XMLとして読めませんでした: mismatched tag: line 46, column 2"
+          "note": "取得失敗・今回の取得対象外: HTTPError: HTTP Error 415: Unsupported Media Type"
         },
         {
           "feed_id": "cl-elsiglo",
@@ -6250,9 +6250,9 @@
           "status": "stale",
           "error": null,
           "latest_published_at": "2026-11-19T15:19:00Z",
-          "stale_days": 7.2,
+          "stale_days": 7.5,
           "threshold_days": 3,
-          "note": "最新記事が7.2日前で、閾値3日を超えています（件数は20件あるため接続自体は成功しています）"
+          "note": "最新記事が7.5日前で、閾値3日を超えています（件数は20件あるため接続自体は成功しています）"
         },
         {
           "feed_id": "eg-madamasr",
@@ -6261,9 +6261,20 @@
           "status": "stale",
           "error": null,
           "latest_published_at": "2026-10-27T11:26:27Z",
-          "stale_days": 30.3,
+          "stale_days": 30.7,
           "threshold_days": 3,
-          "note": "最新記事が30.3日前で、閾値3日を超えています（件数は10件あるため接続自体は成功しています）"
+          "note": "最新記事が30.7日前で、閾値3日を超えています（件数は10件あるため接続自体は成功しています）"
+        },
+        {
+          "feed_id": "et-fana",
+          "source": "Fana Broadcasting",
+          "country": "ET",
+          "status": "failed",
+          "error": "URLError: <urlopen error [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: Hostname mismatch, certificate is not valid for 'www.fanamc.com'. (_ssl.c:1011)>",
+          "latest_published_at": null,
+          "stale_days": null,
+          "threshold_days": 2,
+          "note": "取得失敗・今回の取得対象外: URLError: <urlopen error [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: Hostname mismatch, certificate is not valid for 'www.fanamc.com'. (_ssl.c:1011)>"
         },
         {
           "feed_id": "et-reporter",
@@ -6338,9 +6349,9 @@
           "status": "stale",
           "error": null,
           "latest_published_at": "2026-11-12T02:00:00Z",
-          "stale_days": 14.7,
+          "stale_days": 15.1,
           "threshold_days": 7,
-          "note": "最新記事が14.7日前で、閾値7日を超えています（件数は12件あるため接続自体は成功しています）"
+          "note": "最新記事が15.1日前で、閾値7日を超えています（件数は12件あるため接続自体は成功しています）"
         },
         {
           "feed_id": "bo-abi",
@@ -6376,15 +6387,15 @@
           "note": "取得失敗・今回の取得対象外: HTTPError: HTTP Error 403: Forbidden"
         },
         {
-          "feed_id": "hu-telex",
-          "source": "Telex",
-          "country": "HU",
+          "feed_id": "am-armradio",
+          "source": "Public Radio of Armenia",
+          "country": "AM",
           "status": "failed",
-          "error": "HTTPError: HTTP Error 403: Forbidden",
+          "error": "HTTPError: HTTP Error 415: Unsupported Media Type",
           "latest_published_at": null,
           "stale_days": null,
           "threshold_days": 3,
-          "note": "取得失敗・今回の取得対象外: HTTPError: HTTP Error 403: Forbidden"
+          "note": "取得失敗・今回の取得対象外: HTTPError: HTTP Error 415: Unsupported Media Type"
         },
         {
           "feed_id": "zm-timesofzambia",
@@ -6404,9 +6415,9 @@
           "status": "stale",
           "error": null,
           "latest_published_at": "2026-04-03T15:33:17Z",
-          "stale_days": 237.2,
+          "stale_days": 237.5,
           "threshold_days": 2,
-          "note": "最新記事が237.2日前で、閾値2日を超えています（件数は1件あるため接続自体は成功しています）"
+          "note": "最新記事が237.5日前で、閾値2日を超えています（件数は1件あるため接続自体は成功しています）"
         },
         {
           "feed_id": "fr-lemonde-energies",
@@ -6415,9 +6426,9 @@
           "status": "stale",
           "error": null,
           "latest_published_at": "2026-11-24T09:00:00Z",
-          "stale_days": 2.4,
+          "stale_days": 2.8,
           "threshold_days": 2,
-          "note": "最新記事が2.4日前で、閾値2日を超えています（件数は20件あるため接続自体は成功しています）"
+          "note": "最新記事が2.8日前で、閾値2日を超えています（件数は20件あるため接続自体は成功しています）"
         },
         {
           "feed_id": "ga-legabonais",
@@ -6426,9 +6437,9 @@
           "status": "stale",
           "error": null,
           "latest_published_at": "2026-11-19T23:53:28Z",
-          "stale_days": 6.8,
+          "stale_days": 7.2,
           "threshold_days": 2,
-          "note": "最新記事が6.8日前で、閾値2日を超えています（件数は10件あるため接続自体は成功しています）"
+          "note": "最新記事が7.2日前で、閾値2日を超えています（件数は10件あるため接続自体は成功しています）"
         },
         {
           "feed_id": "jp-gasenenews",
@@ -6440,6 +6451,17 @@
           "stale_days": null,
           "threshold_days": 2,
           "note": "取得失敗・今回の取得対象外: HTTPError: HTTP Error 403: Forbidden"
+        },
+        {
+          "feed_id": "pe-rumbominero",
+          "source": "Rumbo Minero",
+          "country": "PE",
+          "status": "failed",
+          "error": "HTTPError: HTTP Error 415: Unsupported Media Type",
+          "latest_published_at": null,
+          "stale_days": null,
+          "threshold_days": 2,
+          "note": "取得失敗・今回の取得対象外: HTTPError: HTTP Error 415: Unsupported Media Type"
         },
         {
           "feed_id": "sa-argaam",
@@ -6457,11 +6479,11 @@
           "source": "Business Focus",
           "country": "UG",
           "status": "failed",
-          "error": "HTTPError: HTTP Error 500: Internal Server Error",
+          "error": "HTTPError: HTTP Error 403: Forbidden",
           "latest_published_at": null,
           "stale_days": null,
           "threshold_days": 2,
-          "note": "取得失敗・今回の取得対象外: HTTPError: HTTP Error 500: Internal Server Error"
+          "note": "取得失敗・今回の取得対象外: HTTPError: HTTP Error 403: Forbidden"
         },
         {
           "feed_id": "vn-vietnamnews-economy",
@@ -6477,5 +6499,5 @@
       ]
     }
   },
-  "updated_at": "2026-11-26T19:16:42Z"
+  "updated_at": "2026-11-27T04:30:24Z"
 }
